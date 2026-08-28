@@ -1,100 +1,85 @@
 # Literature Review
 
-## Purpose
+## Refined Position
 
-This review will establish what is already known about tracking-based defensive behavior and where an open-play state-transition framework may add something. It should prevent novelty claims based merely on measuring off-ball runs, defenders being dragged, space creation, marking relationships, or player gravity.
+The initial novelty check has not eliminated the project, but it has narrowed the candidate contribution. Prior work already models time-varying man/zonal assignments and assignment switches, constructs open-play marking networks, studies what movements activate defenders, and quantifies marking coordination and entropy.
 
-The candidate gap is narrower:
+The candidate gap is therefore not defensive adjustment in general. The project initially framed the gap as a continuous **responsibility-resolution** process organized around Structure / Track / Close / Recover. Phase 1 evidence now challenges mutually exclusive states and shifts the provisional question toward continuously multi-relational behavior: whether changes in collective-team, ball-relative, opponent-relative, and local relationships can be described beyond assignments, marking networks, centroid translation, or aggregate spatial outcomes.
 
-> Existing work has studied several neighboring phenomena separately. This project asks whether open-play defensive behavior can be represented as a dynamic allocation between competing behavioral responsibilities, and whether attacking movement is associated with the frequency, ambiguity, persistence, and consequences of changes in that allocation.
+This remains a candidate gap. See [`novelty_risk_memo.md`](novelty_risk_memo.md) for claims at risk and reframing conditions.
 
-This is a candidate gap, not a confirmed novelty claim. It must be tested through a systematic review of the closest work.
+## Closest Prior Art
 
-## Neighboring Research Areas
+### Groom et al. — Defensive Role and Assignment HMM
 
-### Man/Zonal Assignment Inference
+Groom et al. (2026) introduce a covariate-dependent Hidden Markov Model for corner kicks. The label-free model infers per-frame man-marking assignments and team- and delivery-specific zonal states from tracking data. Its transition model includes persistence in the same assignment, switches between attackers, and zonal-to-man switches; reported player summaries include switch rate.
 
-Unsupervised and Hidden Markov Model approaches have been used to infer man-marking and zonal assignments, particularly for corner kicks. This is a close methodological cousin because it treats defensive responsibility as latent and time-varying.
+This is the closest methodological neighbor and a major novelty constraint. It establishes that latent, time-resolved man/zonal responsibility and assignment transitions have already been modeled without manual assignment labels.
 
-The important comparison is whether methods developed for highly structured restarts transfer conceptually or empirically to dynamic open play. The existence of these methods also means this project should not claim to invent assignment inference. An HMM is not currently selected for this project.
+The remaining setting difference is substantial but not automatically novel. Corner kicks use constrained sequences and stationary learned zones. Open play has a moving block and ball, responsibility release, return toward structure, emerging and disappearing threats, and potentially competing explanations. Groom et al. report that man-to-zone transitions are not permitted in their model, making recovery/release a particularly relevant comparison. The project must not merely present their corner framework in open play.
 
-### Dynamic Marking Networks
+### Calero-Sanz et al. — Marking Networks, Coordination, and Entropy
 
-Tracking studies have constructed transient defender-attacker marking relationships using proximity, direction, and related features. This supports representing defensive relationships as dynamic networks.
+Calero-Sanz et al. (2026) construct dynamic bipartite marking networks from tracking data in 99 matches from the 2019/20 Spanish first division. Marking edges use spatial proximity and directional alignment. One-mode projections represent temporal coordination between teammates and similarity in target allocation. Entropy measures how evenly a player distributes marking effort among opponents.
 
-The review should ask whether those methods model changes between collective structural responsibility, opponent responsibility, engagement, and recovery—or primarily identify marking edges.
+This is the closest open-play neighbor. It establishes that transient marking relationships, coordinated defender activation, target transfers, marking load, and diversity of marking effort are already measurable research objects. The project cannot broadly claim to originate the question of what an off-ball movement forces defenders to do.
 
-### Space Generation and Pitch Control
+The publisher metadata and abstract do not establish instantaneous ambiguity between structural and opponent-relative explanations, transition execution quality, explicit return to structure, or recovery burden as primary objects. Those apparent differences require full-text verification.
 
-Pitch-control and space-generation research measures spatial control and how movement changes available space. Prior work explicitly recognizes that attackers can create space by moving defenders.
+## Critical Conceptual Comparisons
 
-This project's proposed distinction is not “off-ball movement creates space.” It is that a movement may change or destabilize the defensive behavioral solution before clear space is created. Space is a possible downstream consequence and an eventual validation target.
+### Assignment Switch Rate Is Not the Full Transition Process
 
-### Off-Ball Run Valuation and Decoy Runs
+An inferred change from attacker A to attacker B records endpoints. The proposed construct also asks whether the path contains a period of competing responsibility, how long it lasts, whether teammates compensate, and whether the defender subsequently restores a structural relationship. This is a proposed distinction to validate, not evidence that switch rate is deficient.
 
-Existing work values off-ball runs, including runs without a reception, and examines decoy movements. Therefore, “event data misses useful off-ball action” is not a sufficient novelty claim.
+### Marking Entropy Is Not Instantaneous Responsibility Ambiguity
 
-Relevant questions are how these studies define the start and end of a run, attribute affected defenders, handle incomplete probes, and connect movement to later value.
+Marking entropy describes how evenly marking effort is distributed across opponents over an aggregation period. Proposed responsibility ambiguity asks how similarly plausible competing behavioral explanations are at a moment. A defender may mark many opponents through clean transitions, or repeatedly hesitate near a boundary involving only two alternatives.
 
-### Player Gravity
+### Transition Count Is Not Transition Execution
 
-Player-gravity ideas are established in basketball and emerging in soccer. Raw defensive response is confounded by location and situation, so later player comparisons would need to distinguish situational gravity from player-associated residual response.
+Frequent switches may be normal and well coordinated. Transition ambiguity, persistence, teammate compensation, and recovery cost must remain distinct from frequency.
 
-Gravity remains an application rather than the primary construct, and neither attention nor residual response is automatically value or causal influence.
+### Displacement Is Not Responsibility Revision
 
-### Defensive Structure and Team Shape
+One clear tracking decision can create large displacement. Repeated small probes can induce several revisions without dramatic movement. The empirical question is whether responsibility-oriented quantities add information beyond basic spatial measures.
 
-Work on centroids, compactness, defensive lines, formations, local organization, and role-relative position is directly relevant to defining Structure and Recover. The key review question is which structural reference is appropriate for an individual defender in open play and how that choice is validated.
+## Literature Comparison Matrix
 
-### Change Points, Ambiguity, and Responsibility Handoffs
+“Unclear” means the currently verified source record does not establish the claim; it does not mean the work omits it.
 
-The review should search beyond soccer-specific state names for interpretable methods that represent changing explanations, uncertainty between states, persistence, and handoffs. A method's availability does not justify its use: any candidate must have soccer-interpretable inputs, outputs, assumptions, failure modes, and validation.
+| Work | Data setting | Open play? | Primary object | Dynamic assignments? | Transitions modeled? | Ambiguity modeled? | Structural recovery? | Attacker-induced response? | Primary outcome | Overlap with this project | Remaining difference |
+|---|---|---:|---|---|---|---|---|---|---|---|---|
+| Groom et al. (2026) | Premier League corner-kick tracking; 2023/24 season | No | Latent man-marking and zonal assignments; role-conditioned defensive evaluation | Yes, per frame | Yes: persistence, attacker switches, zonal-to-man switches; man-to-zone disallowed | State probabilities exist, but equivalence to proposed ambiguity is unclear | No explicit return-to-moving-structure process verified | Yes, through assignment and downstream coverage/reception analysis | Assignments, switch behavior, role-conditioned defensive credit | Label-free responsibility inference, man/zonal competition, transitions | Open-play moving references; responsibility release; Recover; proposed instantaneous ambiguity and execution process |
+| Calero-Sanz et al. (2026) | Tracking from 99 matches, 2019/20 Spanish first division | Yes | Dynamic marking networks, coordination, target similarity, marking entropy | Dynamic marking relationships; “assignment” terminology requires care | Responsibility transfer is discussed; explicit transition-state model unclear | No equivalent instantaneous construct verified | Unclear / requires full-text verification | Yes: marking load and defenders activated by attackers | Marking load, coordination, similarity, entropy | Open-play transient relationships, multi-defender coordination, target diversity | Competition with collective structure, instantaneous ambiguity, execution and recovery require verification |
+| Space generation / pitch-control literature | Tracking or event/tracking, source-dependent | Often | Spatial control and space created | Not necessarily | Not necessarily | Generally not the primary object; source-specific | Generally not the primary object; source-specific | Yes | Space or control outcomes | Measures consequences of defender/attacker movement | Responsibility revision before or beyond spatial outcome |
+| Off-ball run valuation literature | Source-dependent | Often | Value or consequence of off-ball runs | Not necessarily | Unclear / source-specific | Unclear / source-specific | Unclear / source-specific | Yes | Run or possession value | Non-receiving movement and downstream outcomes | Subtle probes and defensive responsibility process, if measurable |
+| Player-gravity literature | Basketball and emerging soccer work | Source-dependent | Defensive attention beyond context | Not necessarily | Unclear / source-specific | Unclear / source-specific | Unclear / source-specific | Yes | Gravity or attention measure | Defender response to attacker presence/movement | Gravity is a later application, not the state-resolution object |
+| Defensive influence / EPV / graph approaches | Tracking/event setting varies | Often | Off-ball defensive influence or responsibility | Source-dependent | Unclear / source-specific | Unclear / source-specific | Unclear / source-specific | Sometimes | Defensive value or possession outcome | Tracking-based off-ball defensive evaluation | Whether transition ambiguity/recovery supplies distinct information requires source-level comparison |
 
-## Review Questions for Every Source
+## Claims Excluded by Prior Art
 
-For each work, record:
+The project should not claim to invent:
 
-1. What soccer question is asked?
-2. What tracking and event data are used, at what frequency and quality?
-3. What observable inputs enter the method?
-4. What output is estimated, and what does it not measure?
-5. What assumptions connect the geometry to the tactical interpretation?
-6. How are assignments, states, relationships, or outcomes validated?
-7. How are uncertainty, ambiguity, and missing tracking handled?
-8. Is the setting open play, a restart, or another constrained phase?
-9. Are claims descriptive, predictive, or causal?
-10. Which part of this project's framework is informed, contradicted, or left open?
+- man/zonal assignment inference or assignment switches,
+- label-free time-resolved defensive-role inference,
+- dynamic open-play marking networks,
+- asking what an off-ball movement forces defenders to do,
+- space creation by dragging defenders,
+- valuation of non-receiving runs,
+- player gravity,
+- tracking-based off-ball defensive evaluation.
 
 ## Evidence Needed Before a Novelty Claim
 
-- A documented search across the neighboring areas above.
-- Direct comparison with the closest open-play and assignment-inference papers.
-- Confirmation that prior work does not already operationalize the same Structure/Track/Close/Recover competition and transition ambiguity.
-- A clear statement of whether the contribution is conceptual, measurement-based, empirical, or methodological.
-- Negative and conflicting findings, not only supportive examples.
+- Full-text comparison of definitions, temporal resolution, uncertainty, transitions, and validation in both closest works.
+- A broader search for open-play responsibility, change-point, handoff, recovery, and ambiguity formulations.
+- Source-level verification of the neighboring categories in the matrix.
+- Evidence that proposed ambiguity is distinguishable from observation noise and generic model uncertainty.
+- Evidence that state-transition quantities add meaning beyond proximity, displacement, and marking-network measures.
+- Evidence that relational balance, reallocation, accommodation, or recovery add meaning beyond proximity, displacement, centroid translation, aggregate compactness, and marking-network measures.
+- A precise statement of whether any contribution is conceptual, measurement-based, empirical, or methodological.
 
-## Working Source Template
+## Source Review Template
 
-### Citation
-
-Full citation and link; add the canonical entry to `references/bibliography.md`.
-
-### Research Question and Setting
-
-State the soccer problem and whether the data concern open play, set pieces, or another constrained situation.
-
-### Data and Observables
-
-Record provider, sample, tracking frequency, coordinates, events, quality limitations, and the exact measured inputs.
-
-### Method, Assumptions, and Output
-
-Explain first in soccer terms and then mathematically. Separate the estimated quantity from tactical or cognitive interpretation.
-
-### Validation and Failure Modes
-
-Record the validation target, uncertainty treatment, plausible confounders, and known failure cases.
-
-### Relevance, Difference, and Challenge
-
-State which project question the source informs, what remains different, and whether it challenges the motivating theory or proposed measurement.
+For every source, record the soccer question and setting; data and measured inputs; method and assumptions; output and non-measured interpretations; uncertainty and validation; failure modes; descriptive, predictive, or causal claim type; and the exact overlap, difference, or challenge for this project.
