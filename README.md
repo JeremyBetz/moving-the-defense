@@ -69,9 +69,9 @@ Frequent transitions are not inherently harmful. Strong defenses may exchange an
 
 ## Current Status
 
-**Stage: early construct diagnostics following dataset exploration.**
+**Stage: relational representation requirements following early construct diagnostics.**
 
-Metrica Sports Sample Game 1 is the sole empirical sample so far. Phase 0 documented the dataset representation; Phases 1A–1F performed narrowly scoped construct diagnostics spanning structural translation, opponent-relative position, event-anchored convergence, kinematic decomposition, movement coupling, collective accommodation, and local compression. No tactical inference model, state system, relational weighting scheme, or final metric has been selected.
+Metrica Sports Sample Game 1 is the sole empirical sample so far. Phase 0 documented the dataset representation; Phases 1A–1F performed narrowly scoped construct diagnostics spanning structural translation, opponent-relative position, event-anchored convergence, kinematic decomposition, movement coupling, collective accommodation, and local compression. Phase 2A compares what separate relational views preserve or lose across those fixed cases. No tactical inference model, state system, composite representation, relational weighting scheme, or final metric has been selected.
 
 ## What We Have Learned So Far
 
@@ -84,6 +84,7 @@ Metrica Sports Sample Game 1 is the sole empirical sample so far. Phase 0 docume
 | 1D | Is following better seen as movement coupling? | Coupling was difficult to isolate cleanly after removing collective motion; one example was only partially supportive. | Fixed relative position and movement coupling capture different, incomplete aspects. |
 | 1E | Do teammates accommodate individual engagement? | Accommodation-consistent movement was heterogeneous across fixed cases. | Engagement and collective coherence may coexist; relational strengths need not be zero-sum. |
 | 1F | Can local reorganization occur with a stable centroid? | Yes: the 1230.12 s counterexample shows substantial local compression and relationship changes with little centroid movement. | Stable centroid does not imply stable defensive relationships; structure likely needs relational representation. |
+| 2A | What minimum information must a relational representation preserve? | No single tested view suffices: centroid, defender–defender, defender–opponent, and ball-relative views preserve different necessary context. | Retain a sparse set of typed relations separately before proposing any composite representation. |
 
 Negative and ambiguous results are research findings, not implementation failures. They delimit what a future representation must be capable of seeing.
 
@@ -154,6 +155,10 @@ The executed [`notebooks/phase1e_collective_accommodation_diagnostics.ipynb`](no
 ### Phase 1F interior-threat / local-compression diagnostic
 
 The executed [`notebooks/phase1f_interior_threat_local_compression_diagnostics.ipynb`](notebooks/phase1f_interior_threat_local_compression_diagnostics.ipynb) fixes three reception-anchored examples from raw full-team trajectories. Snapshot sequences and separate centroid, threat-distance, defender-pair spacing, relative-depth, other-opponent, and movement-cancellation diagnostics test whether local defensive reorganization can occur while a team centroid remains stable. One case provides a clear counterexample; another combines compression with translation; the third visual candidate does not support coherent multi-defender convergence. No structure or exposure score is introduced.
+
+### Phase 2A relational-representation requirements
+
+The executed [`notebooks/phase2a_relational_representation_requirements.ipynb`](notebooks/phase2a_relational_representation_requirements.ipynb) reuses seven fixed Phase 1 cases to compare separate centroid-relative, defender–defender, defender–opponent, depth, ball-relative, and local-neighborhood views. A before/during/after figure for 1230.12s makes visible why small centroid movement does not imply stable relational geometry. The diagnostic proposes only a provisional minimum information requirement—sparse typed relations with collective and ball context—and does not combine them into a score, network, assignment system, or model.
 
 ## Repository Structure
 

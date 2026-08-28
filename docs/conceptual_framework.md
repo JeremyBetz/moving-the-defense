@@ -96,6 +96,14 @@ The resulting distinction is between **local compression around a threat** and *
 
 Current evidence is therefore testing whether defensive structure needs to be represented relationally rather than by a single team-level reference point.
 
+### Phase 2A representation requirement
+
+Phase 2A treats representation design as an information-preservation problem rather than beginning with a metric. Across fixed Phase 1 cases, no single reference view is sufficient. Centroid-relative geometry preserves a useful collective-translation baseline and focal deviation, but it does not identify which local, opponent, or ball relationships changed. Defender–defender geometry preserves local spacing and depth changes but lacks threat and phase context. Defender–opponent geometry preserves threat-relative change but does not establish responsibility, openness, or defensive quality. Ball-relative geometry supplies important shared context but can dominate collective movement without isolating opponent-specific response.
+
+The 1230.12s counterexample makes the minimum information requirement concrete: small centroid movement coexists with changing defender–defender spacing and depth, changing distances and x/y relationships to the focal and secondary attackers, and partially cancelling defender movements. The negative 4197.04s case remains heterogeneous across the same views, showing why access to more pairwise relationships must not be mistaken for coherent reorganization.
+
+The provisional minimum is a sparse, typed relational description that retains: (1) absolute pitch position and a collective-translation baseline; (2) local defender–defender x/y geometry; (3) selected defender–opponent x/y geometry, including secondary opponents only when inspection justifies it; and (4) ball-relative context. Clearly interpretable line/depth views may supplement these quantities but must not be imposed as universal inferred units. These views remain separate; no composite representation, structure score, network, or ranking has been defined. Sparsity and stable relationship types are requirements against making the representation so flexible that arbitrary post hoc pairs can explain every movement.
+
 Three quantities should remain separate:
 
 1. **Current state:** which behavioral explanation currently fits best?

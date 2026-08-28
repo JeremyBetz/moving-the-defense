@@ -22,6 +22,8 @@ What reference frame best captures collective defensive structure for an individ
 
 Can substantial local and opponent-relative reorganization occur while a whole-team defensive centroid remains approximately stable? Does a defensible structural representation need to retain local compression around a threat and relational exposure elsewhere rather than rely on one team-level reference point?
 
+Phase 2A sharpens this into an information-preservation question: what minimum sparse set of typed collective, defender–defender, defender–opponent, and ball-relative relationships preserves coordinated translation, local compression, focal excursion, engagement-like movement, cancellation, and secondary-opponent changes across the fixed cases? No composite representation is yet selected.
+
 ### RQ2 — Defensive Behavior
 
 Can competing reference frames meaningfully characterize behavior consistent with the historical Structure, Track, Close, and Recover framework, while testing whether these are better represented as overlapping dimensions or relational constraints? **Engage** is a provisional replacement term for Close, not finalized terminology.
@@ -89,6 +91,8 @@ The research must consider whether apparent state changes or later errors are be
 ## Unresolved Design Questions
 
 - Which structural reference is appropriate for each role and phase?
+- Which relationships can be selected consistently enough to remain sparse and interpretable rather than explaining behavior through arbitrary post hoc pairs?
+- Is any single relational view sufficient across coordinated translation, excursion, engagement, accommodation, centroid cancellation, and negative controls? Phase 2A evidence currently suggests no.
 - What time window distinguishes stable relationships from brief coincidence?
 - Should behavior be represented by discrete states, continuous scores, or both?
 - Are Structure, Track, provisional Engage/Close, and Recover mutually exclusive states at all, or overlapping dimensions and relational constraints?
