@@ -69,9 +69,9 @@ Frequent transitions are not inherently harmful. Strong defenses may exchange an
 
 ## Current Status
 
-**Stage: descriptive geometric-motif diagnostics within separate relational channels.**
+**Stage: prospective relationship-selection diagnostics within separate relational channels.**
 
-Metrica Sports Sample Game 1 is the sole empirical sample so far. Phase 0 documented the dataset representation; Phases 1A–1F performed narrowly scoped construct diagnostics spanning structural translation, opponent-relative position, event-anchored convergence, kinematic decomposition, movement coupling, collective accommodation, and local compression. Phase 2A compared what separate relational views preserve or lose; Phase 2B traced those channels through time; Phase 2C tested candidate intervals; Phase 2D compares three overlapping geometric motifs. No tactical inference model, motif classifier, state system, composite representation, relational weighting scheme, or final metric has been selected.
+Metrica Sports Sample Game 1 is the sole empirical sample so far. Phase 0 documented the dataset representation; Phases 1A–1F performed narrowly scoped construct diagnostics spanning structural translation, opponent-relative position, event-anchored convergence, kinematic decomposition, movement coupling, collective accommodation, and local compression. Phase 2A compared what separate relational views preserve or lose; Phase 2B traced those channels through time; Phase 2C tested candidate intervals; Phase 2D compared three overlapping geometric motifs; Phase 2E tests whether those motifs survive relationships selected prospectively at the window start. No tactical inference model, motif classifier, state system, composite representation, relational weighting scheme, or final metric has been selected.
 
 ## What We Have Learned So Far
 
@@ -88,6 +88,7 @@ Metrica Sports Sample Game 1 is the sole empirical sample so far. Phase 0 docume
 | 2B | Can relational reconfiguration be watched unfolding rather than inferred from two snapshots? | In the 1230.12s case, separate channels show broad, partially staggered changes; exact ordering remains noise- and smoothing-sensitive. | Relational reallocation is descriptively feasible as temporal typed change, not yet a score, state transition, or detected event. |
 | 2C | Can temporal change be bounded as a candidate episode without overcalling activity? | Partially: fixed interior-compression logic supports 1230.12s and preserves the negative case, but also marks contextually ambiguous windows; direction-agnostic overlap overcalls. | Episode-ness remains pattern- and context-specific rather than generally operationalizable. |
 | 2D | Are distinct geometric motifs more defensible than one universal episode signature? | Translation, focal excursion, and local compression are descriptively distinct in canonical cases and overlap in adversarial cases; 4197.04s remains mixed. | Use motifs as an incomplete overlapping vocabulary, not states, classes, or a detector. |
+| 2E | Do motifs survive reproducible relationship selection fixed before later movement is inspected? | Unevenly: translation and focal excursion are comparatively robust; 1230.12s compression and 3682.88s overlap are neighborhood-rule-sensitive; opponent selection mostly encodes proximity; 4197.04s remains mixed. | Use start-fixed nearest-two teammates as a disclosed reproducibility baseline, not a validated unit; treat nearest opponents as context, not responsibility. |
 
 Negative and ambiguous results are research findings, not implementation failures. They delimit what a future representation must be capable of seeing.
 
@@ -174,6 +175,10 @@ The executed [`notebooks/phase2c_candidate_reconfiguration_episode_diagnostics.i
 ### Phase 2D geometric reconfiguration-motif diagnostic
 
 The executed [`notebooks/phase2d_geometric_reconfiguration_motif_diagnostics.ipynb`](notebooks/phase2d_geometric_reconfiguration_motif_diagnostics.ipynb) compares coordinated collective translation, focal excursion, and local compression using the same fixed cases and raw physical-unit geometry. Canonical side-by-side figures show distinct emphases before labels are interpreted; tackle, accommodation, and translation-contrast cases preserve motif overlap, while 4197.04s remains heterogeneous. The vocabulary is provisionally more faithful than a universal detector but remains incomplete, descriptive, and unclassified.
+
+### Phase 2E prospective relationship-selection diagnostic
+
+The executed [`notebooks/phase2e_prospective_relationship_selection_diagnostics.ipynb`](notebooks/phase2e_prospective_relationship_selection_diagnostics.ipynb) fixes defender–defender and defender–opponent relationships at each window start, then traces the same identities through the existing Phase 2D cases. It documents staleness and dynamic nearest-identity churn without interpreting switches as handoffs. Translation and focal collective-relative excursion remain comparatively reproducible, but local-compression evidence changes across nearest, radius, and depth/lateral rules; the 1230.12s and 3682.88s compression readings are therefore weakened rather than rescued through post hoc selection. Nearest-opponent rules remain proximity context, not assignment or threat inference.
 
 ## Repository Structure
 

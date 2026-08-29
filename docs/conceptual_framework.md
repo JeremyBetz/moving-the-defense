@@ -134,6 +134,14 @@ All three motifs are **descriptively supported** in these fixed examples, with c
 
 Defensive relational reallocation is therefore refined as temporal change that may be described through one or more overlapping, soccer-interpretable geometric motifs while preserving the typed relationships underneath. It is not itself a motif, class, state, score, or universal event. Pinning, handoff, accommodation, rotation, and exposure remain unresolved possibilities rather than motifs added in Phase 2D.
 
+### Phase 2E prospective relationship selection
+
+Phase 2E treats relationship selection as a falsifiability condition rather than a presentation choice. Defender–defender and defender–opponent relationships are selected from raw geometry at the window start, before subsequent change is inspected. Anchor-time selection is retained only as a separate sensitivity check. Fixed-at-start relationships preserve identity and expose staleness; dynamically reselecting the nearest player stays locally current but can introduce identity churn and erase the fixed-pair change under study.
+
+The results weaken any claim that the Phase 2D motifs are already stable under relationship choice. Coordinated translation and focal collective-relative excursion remain comparatively visible because their primary evidence depends less on a selected opponent. By contrast, the 1230.12s local-compression case is rule-sensitive: start-nearest-two and a fixed 15m neighborhood each contain one contracting and at least one expanding focal pair, while the prospectively selected depth/lateral neighbors both contract. The previously illustrated local trio is not recovered by the primary proximity rule. The 3682.88s translation-plus-compression interpretation is likewise not robustly reproduced by the tested start rules, although large collective translation remains clear. The 4197.04s case remains mixed/no-clean-motif without retuning.
+
+The current reproducibility baseline for defender–defender geometry is a start-fixed focal defender plus two nearest outfield teammates, always shown against raw pitch geometry and accompanied by churn and rule-sensitivity reporting. It is usable but context-sensitive, not a validated representation of a defensive unit. Start-fixed nearest opponents can provide prospective geometric context, but proximity is not responsibility, threat, access, or openness; opponent relationships are not yet reliably selectable as substantive defensive relationships. Different relationship types may therefore require different selection logic. Motifs that disappear under a pre-specified rule must be weakened rather than rescued through post hoc pair changes.
+
 Three quantities should remain separate:
 
 1. **Current state:** which behavioral explanation currently fits best?

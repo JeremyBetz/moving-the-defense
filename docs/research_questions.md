@@ -40,6 +40,8 @@ Phase 2C adds an episode-boundary question: can a persistent overlap of specific
 
 Phase 2D asks whether a small overlapping vocabulary—coordinated collective translation, focal excursion, and local compression—is more faithful to the fixed geometric evidence than a universal episode definition. The motifs are descriptions rather than states or classes; sequences may contain several or none.
 
+Phase 2E asks whether those descriptions survive relationships chosen prospectively at a fixed reference time. Initial evidence is uneven: translation and focal collective-relative excursion are comparatively robust, while local-compression conclusions change under reasonable start-based neighborhood rules and opponent selection remains proximity-only. Prospective selection is therefore a falsification test, not a preprocessing detail or permission to switch rules after inspecting the window.
+
 ### RQ4 — Ambiguity
 
 Can the analysis identify periods in which multiple explanations are similarly plausible, and distinguish genuine boundary behavior from tracking noise?
@@ -104,6 +106,8 @@ The research must consider whether apparent state changes or later errors are be
 - Can activity—many continuously changing relationships—be distinguished prospectively from a specific relational pattern without a composite magnitude or post hoc relationship selection?
 - Which episode patterns, if any, can be pre-specified without turning a useful interior-compression diagnostic into a universal reconfiguration rule?
 - Can prospectively selected typed relationships reproduce translation, excursion, and compression motifs beyond these fixed examples without making relationship selection unfalsifiably flexible?
+- Can a start-fixed nearest-two defensive neighborhood remain locally relevant without hiding meaningful identity change, and when should staleness be reported rather than repaired by dynamic re-selection?
+- Can defender–opponent relationships be selected prospectively by geometry alone without merely renaming proximity as responsibility or threat?
 - What evidence would distinguish a useful overlapping motif vocabulary from a renamed tactical-state taxonomy?
 - What time window distinguishes stable relationships from brief coincidence?
 - Should behavior be represented by discrete states, continuous scores, or both?
