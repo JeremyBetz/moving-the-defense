@@ -69,7 +69,7 @@ Frequent transitions are not inherently harmful. Strong defenses may exchange an
 
 ## Current Status
 
-**Stage: construct definition and prospective falsification design.**
+**Stage: frozen prospective matched-contrast validation design; outcomes not executed.**
 
 Metrica Sports Sample Game 1 is the sole empirical sample so far. Phase 0 documented the dataset representation; Phases 1A–1F performed narrowly scoped construct diagnostics; Phase 2A established typed relational requirements; Phase 2B traced temporal change; Phase 2C tested episode logic; Phase 2D attempted motifs; Phase 2E falsified post-hoc relationship selection; Phase 2F established scale-aware local deformation; and Phase 2G aligns collective, focal, local, opponent, and ball geometry without combining them. No tactical inference model, classifier, state system, composite representation, relational weighting scheme, or final metric has been selected.
 
@@ -92,6 +92,7 @@ Metrica Sports Sample Game 1 is the sole empirical sample so far. Phase 0 docume
 | 2F | Does a prospectively fixed local configuration preserve internal reorganization better than selected compression pairs? | Partially: configuration descriptors separate translation from deformation, but 1230.12s does not recover clean compression across memberships and 4197.04s also deforms. | Treat local compression as a possible subtype of broader local configuration deformation; deformation alone is not a detected reconfiguration. |
 | 2G | Do separate geometric scales show interpretable correspondence within the same sequence? | Partially: collective- and focal-dominant cases remain distinct, but prospective membership, ball context, and the 1232 reference-time reversal weaken multi-scale narratives. | Use correspondence to expose agreement/disagreement, not as propagation, a score, or an operational reallocation event. |
 | 2H | Does relational reallocation remain a distinct falsifiable construct? | Only provisionally under a narrow reference-relative definition; broad and mandatory-cross-scale definitions fail. | Prefer “relational reconfiguration” empirically and test it against prospectively sampled matched ordinary movement. |
+| 3A | Can that test be frozen without outcome leakage? | Design complete: reception anchors, matched ordinary controls, typed outputs, paired statistics, negative control, and leakage audit are pre-specified. | Execute unchanged in Phase 3B; do not treat events as tactical labels. |
 
 Negative and ambiguous results are research findings, not implementation failures. They delimit what a future representation must be capable of seeing.
 
@@ -116,11 +117,11 @@ Individual defenders and teams may differ systematically in how observable movem
 
 A later application may evaluate how much defensive response or relational reallocation an attacker induces beyond what the context would ordinarily predict:
 
-\[
+$$
 \text{attacking gravity above expectation}
 =\text{observed defensive response}
 -\text{expected defensive response given context}.
-\]
+$$
 
 This is conceptual notation, not an existing or validated metric. Future work may distinguish response magnitude, reallocation cost, persistence or recovery burden, and interaction with defensive team style.
 

@@ -166,6 +166,12 @@ The narrowest surviving candidate is: **Defensive relational reconfiguration is 
 
 Terminology decision **B**: retain **defensive relational reallocation** provisionally as historical/theoretical shorthand, but prefer **relational reconfiguration** in empirical sections. “Reallocation” risks cognitive, responsibility-transfer, and zero-sum implications that tracking cannot support. Reference dependence is legitimate only when references are pre-specified and justified; post-hoc reference selection remains unacceptable. Reconfiguration may occur within one scale or across scales.
 
+### Phase 3A prospective validation design
+
+Phase 3A freezes an internal matched-contrast protocol without inspecting outcomes. Completed open-play receptions are metric-independent primary anchors; matched ordinary open-play pseudo-anchors are controls. All references, typed outputs, matching rules, statistics, negative controls, leakage checks, and A/B/C interpretations are fixed in `config/phase3a_validation_protocol.json`. The target is internal geometric discrimination beyond generic movement, not tactical truth or attacker value.
+
+Protocol version 1.0 removes remaining outcome-visible choices through deterministic overlap suppression, symmetric ball-nearest focal selection, fixed identity conventions, strict missingness, explicit resampling, a matching-support failure rule, and a seeded shifted-anchor negative control. These are design commitments rather than findings.
+
 Three quantities should remain separate:
 
 1. **Current state:** which behavioral explanation currently fits best?

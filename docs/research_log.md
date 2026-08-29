@@ -1,5 +1,13 @@
 # Research Log
 
+## 2026-08-28 — Phase 3A Prospective Matched-Contrast Validation Design
+
+Phase 3A froze, but did not execute, an internal validation protocol for Sample Game 1. Completed open-play receptions are primary metric-independent anchors; tackles and possession changes are separate sensitivities. Five-second windows (−2/+3s) are primary and eight-second windows (−3/+5s) are the only length sensitivity. Controls are ordinary open-play pseudo-anchors matched on period, possession, open-play status, 3×3 anchor ball zone, available defenders, and elapsed time. Post-anchor outcomes are excluded from matching.
+
+References, separate typed outputs, paired effect-size/randomization methods, within-family Holm adjustment, within-possession shifted-anchor negative control, leakage audit, unmatched-case reporting, and A/B/C interpretation are frozen in `config/phase3a_validation_protocol.json`. No candidate/control sample or outcome was inspected.
+
+The final integrity audit froze version 1.0 and seed 20260828; earliest-first nonoverlapping candidates; nonoverlapping one-second-grid controls; symmetric ball-nearest focal selection; chronological matching and deterministic ties; fixed neighbor/opponent identities; endpoint ordering reversal; core and ball-family completeness; six multiplicity families; 10,000 bootstrap resamples; exact/100,000-draw sign flips; exact paired binary tests; a 70% support criterion; fixed pre-anchor bins; shifted-anchor construction; literal restart vocabulary; event-carried possession; directional coherence; defending-only activity; and a complete leakage exclusion list.
+
 ## 2026-08-28 — Phase 2H Construct Definition and Falsification Synthesis
 
 Phase 2H synthesized Phase 1A–2G without new windows or metrics. Candidate 1—any typed relationship change—is rejected as ordinary activity. Candidate 2—bounded multi-scale change—is rejected as overinclusive and unnecessarily restrictive. Candidate 3 survives only provisionally: **defensive relational reconfiguration is a coherent, temporally localized change in prospectively specified typed defensive geometric relationships that is not adequately described by the relevant pre-specified baseline motion alone.** Its unresolved terms require prospective validation.

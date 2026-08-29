@@ -48,6 +48,8 @@ Phase 2G asks whether collective, focal, local-configuration, opponent-relationa
 
 Phase 2H rejects “any typed relationship change” as too broad and rejects multi-scale activity as a necessary definition. It provisionally retains a narrower reference-relative construct: coherent, temporally localized change in prospectively specified typed defensive geometry not adequately described by a pre-specified baseline alone. The unresolved task is whether those terms discriminate matched ordinary movement prospectively.
 
+Phase 3A freezes a design to test that discrimination using completed open-play receptions versus context-matched ordinary pseudo-anchors, without treating events as truth labels or inspecting relational outcomes.
+
 ### RQ4 — Ambiguity
 
 Can the analysis identify periods in which multiple explanations are similarly plausible, and distinguish genuine boundary behavior from tracking noise?

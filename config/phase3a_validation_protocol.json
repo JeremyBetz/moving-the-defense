@@ -1,0 +1,100 @@
+{
+  "phase3a_protocol_version": "1.0",
+  "status": "FROZEN_DESIGN_NOT_EXECUTED",
+  "random_seed": 20260828,
+  "dataset": "Metrica Sample Game 1",
+  "coordinate_system": {"pitch_length_m": 105.0, "pitch_width_m": 68.0, "numeric_zero_tolerance": 1e-9},
+  "candidate_anchor": {
+    "primary": "open-play Type=PASS with nonmissing To, valid End Frame/End Time used as reception anchor, and valid tracked ball at anchor; Metrica has no separate completion flag, so these fields operationalize completed reception",
+    "retention_order": "chronological earliest-first",
+    "primary_overlap_rule": "retain earliest eligible anchor; suppress later anchors whose [-2,+3] windows overlap; resume after retained window end",
+    "sensitivity_overlap_rule": "rebuild independently for [-3,+5] and apply earliest-first eight-second overlap suppression",
+    "exclusions": ["restart_or_set_play", "incomplete_pass", "missing_receiver_identity", "missing_anchor_ball", "core_reference_incomplete", "window_crosses_period_boundary"],
+    "sensitivities": ["tackle/challenge at event Start Time with unambiguous event-identified defender; same windows, exclusions, spacing, controls, outputs, and statistics", "possession change at Start Time of the first possession-bearing event whose Team differs from the previous possession-bearing event in the same period; exclude restarts; same windows, exclusions, spacing, focal ball-nearest rule, controls, outputs, and statistics"]
+  },
+  "window": {"primary_seconds": [-2.0, 3.0], "sensitivity_seconds": [-3.0, 5.0], "period_crossing_allowed": false},
+  "restarts": {
+    "event_type_any": ["SET PIECE", "BALL OUT"],
+    "event_subtype_any": ["CORNER KICK", "FREE KICK", "GOAL KICK", "KICK OFF", "THROW IN", "OFFSIDE", "END HALF"],
+    "source": "literal Type/Subtype vocabulary in Sample Game 1 event log",
+    "exclusion_distance_seconds": 5.0
+  },
+  "possession": {
+    "candidate": "PASS Team",
+    "pseudo_anchor": "Team from most recent event at or before anchor whose Type is PASS, RECOVERY, SET PIECE, or SHOT; carry forward within period until next such event; never infer from ball proximity",
+    "possession_bearing_event_types": ["PASS", "RECOVERY", "SET PIECE", "SHOT"]
+  },
+  "pseudo_anchor_grid": {
+    "grid": "integer elapsed-match seconds represented by the nearest exact 25 Hz tracking frame",
+    "subsample": "none",
+    "eligibility": ["open_play", "valid_possession", "full_window_in_same_period", "valid_anchor_ball", "valid_core_references", "absolute_time_from_every_eligible_reception_anchor_gte_5s", "absolute_time_from_every_restart_gte_5s", "no_overlap_with_any_retained_candidate_window"],
+    "control_overlap": "after matching, remove all pseudo-anchors whose window overlaps selected control; controls cannot overlap candidates or other selected controls",
+    "sensitivity": "reconstruct grid eligibility and overlap exclusions using eight-second window"
+  },
+  "matching": {
+    "candidate_order": "chronological; earlier retained candidates receive first access",
+    "hierarchy": ["same period", "same possession team", "same open-play status", "same fixed 3x3 anchor ball-location zone", "same available defending-outfield-player count", "absolute elapsed-time difference <=300s", "minimum absolute elapsed-time difference", "earlier pseudo-anchor on exact tie", "without replacement"],
+    "elapsed_time_caliper_seconds": 300.0,
+    "without_replacement": true,
+    "candidate_control_overlap_allowed": false,
+    "support_failure": {"minimum_matched_fraction": 0.70, "action_below": "declare primary design poorly supported; do not loosen; continue descriptive and frozen sensitivities only"},
+    "pre_anchor_sensitivity_bins": {"ball_displacement_previous_1s_m": ["<2", "2-5", ">5"], "defending_centroid_displacement_previous_1s_m": ["<1", "1-2.5", ">2.5"]},
+    "prohibited": ["post-anchor relational descriptors", "resulting ball movement", "resulting centroid movement", "resulting generic activity", "outcome separation"]
+  },
+  "references": {
+    "focal_primary": "outfield defender nearest tracked ball at anchor for both candidates and controls; exclude if anchor ball missing",
+    "focal_tackle_sensitivity": "event-identified defender only when unambiguous; otherwise exclude",
+    "collective": "leave-one-out defending-outfield centroid",
+    "local": {"selection": "at window start, focal plus nearest and second-nearest eligible outfield teammates", "identities": ["focal", "neighbor_1", "neighbor_2"], "pair_labels": ["focal_neighbor_1", "focal_neighbor_2", "neighbor_1_neighbor_2"], "dynamic_reselection": false},
+    "opponents": {"selection": "at window start, nearest and second-nearest opponents to focal", "identities": ["opponent_1", "opponent_2"], "dynamic_reselection": false},
+    "ball": "separate context family"
+  },
+  "ordering_reversal": {"definition": "compare signs of all three pairwise coordinate differences at window start and end; indicator=1 if any non-tied pair reverses sign", "axes": ["x", "y"], "tie_tolerance": 1e-9, "intermediate_crossings_used": false},
+  "missing_data": {
+    "core_complete_case": ["valid ball x/y at anchor", "valid focal at anchor", "at least two valid outfield teammates at start", "at least two valid opponents at start", "complete focal/local/opponent coordinates throughout window", "complete defending-outfield coordinates required for leave-one-out centroid throughout window"],
+    "ball_family": "family-specific complete case: both matched windows require complete ball coordinates throughout",
+    "core_requires_complete_post_anchor_ball": false,
+    "exclude_before_matching": true,
+    "interpolation": false,
+    "imputation": false
+  },
+  "descriptor_families": {
+    "collective": ["centroid_x_displacement", "centroid_y_displacement", "centroid_path_length", "directional_coherence"],
+    "focal": ["loo_relative_x_change", "loo_relative_y_change", "loo_relative_path_length"],
+    "local_configuration": ["focal_neighbor_1_distance_change", "focal_neighbor_2_distance_change", "neighbor_1_neighbor_2_distance_change", "x_span_change", "y_span_change", "area_change", "x_order_reversal", "y_order_reversal", "focal_relative_x_change", "focal_relative_y_change", "neighbor_1_relative_x_change", "neighbor_1_relative_y_change", "neighbor_2_relative_x_change", "neighbor_2_relative_y_change"],
+    "opponent_relational": ["opponent_1_relative_x_change", "opponent_1_relative_y_change", "opponent_1_distance_change", "opponent_2_relative_x_change", "opponent_2_relative_y_change", "opponent_2_distance_change"],
+    "ball_context": ["ball_displacement", "focal_ball_x_change", "focal_ball_y_change"],
+    "generic_activity": ["sum_defending_outfield_player_path_lengths"]
+  },
+  "directional_coherence": {"definition": "mean-vector magnitude of normalized individual defending-outfield net-displacement vectors across window", "omit_if_net_displacement_lte": 1e-9, "report_omitted_count": true},
+  "generic_activity": {"primary": "sum of physical path lengths of all available defending outfield players across fixed window", "all_outfield_sensitivity": false},
+  "statistics": {
+    "unit": "matched candidate-control pair",
+    "raw_effects_primary": true,
+    "effect_sizes": ["median paired difference", "standardized paired mean difference dz = mean(d)/sd(d); undefined if sd(d)=0"],
+    "bootstrap": {"resamples": 10000, "sampling": "matched pairs with replacement", "confidence_level": 0.95, "interval": "percentile", "base_seed": 20260828, "child_seeds": "deterministically derived from base seed and section name"},
+    "continuous_test": {"null": "paired differences symmetrically centered at zero", "method": "two-sided exact sign-flip when computationally practical; otherwise 100000 Monte Carlo sign flips", "monte_carlo_draws": 100000, "base_seed": 20260828},
+    "binary_ordering_test": "exact McNemar/binomial discordant-pair test",
+    "multiplicity": "Holm adjustment within each of six descriptor families only; no descriptor dropped; p-values secondary"
+  },
+  "negative_control": {
+    "unit": "each retained reception candidate",
+    "same_uninterrupted_possession": true,
+    "grid": "same one-second grid",
+    "minimum_absolute_shift_seconds": 3.0,
+    "minimum_distance_from_any_reception_or_restart_seconds": 5.0,
+    "requirements": ["full_window_same_period", "open_play", "all_core_completeness", "same_possession"],
+    "selection": "uniform random among valid shifted anchors using deterministic child seed from 20260828 and candidate anchor identity",
+    "if_none": "candidate contributes no negative-control pair; do not broaden",
+    "sensitivity": "recompute valid shifts using eight-second window and overlap rules"
+  },
+  "interpretation": {
+    "A": "stable interpretable typed differences remain after matching and are not reproduced by generic activity or negative controls",
+    "B": "some typed differences remain but are overlapping, event-dependent, reference-sensitive, or context-heavy",
+    "C": "differences are absent, vanish under reasonable matching, or are reproduced by generic activity or negative controls"
+  },
+  "leakage_audit": {
+    "permitted_geometry": ["anchor ball location for focal selection and coarse ball-zone matching", "window-start geometry for fixed local/opponent identities", "coordinate completeness"],
+    "never_used_for_sampling_matching_or_exclusion": ["focal relative displacement", "local deformation", "opponent-relative change", "cross-scale correspondence", "resulting ball movement", "resulting centroid movement", "resulting generic activity"]
+  }
+}
