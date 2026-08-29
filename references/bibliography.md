@@ -2,6 +2,8 @@
 
 Working bibliography for the project. Only verified metadata is included; formal citation style will be standardized later.
 
+> **Audit status (2026-08-29):** this bibliography is intentionally incomplete and is not adequate for a manuscript novelty claim. The placeholder sections below require a full source-level search and metadata verification before submission drafting.
+
 ## Defensive Assignment and Marking
 
 Groom, Sean; Wang, Shuo; Belo, Francisco; Rice, Axl; and Anderson, Liam. 2026. “A Machine Learning Framework for Off Ball Defensive Role and Performance Evaluation in Football.” arXiv:2601.00748. <https://arxiv.org/abs/2601.00748>

@@ -1,5 +1,7 @@
 # Novelty and Research Risk Memo
 
+> **Current-status note (2026-08-29):** the candidate contributions below preserve the pre-validation research framing. Phase 3 subsequently failed to distinguish the umbrella reception-anchored construct from generic activity. Phase 4 therefore tests focal departure as a narrower geometric primitive; no reconfiguration, attacker-effect, gravity, or value novelty claim is currently established.
+
 ## Phase 2H terminology and construct risk
 
 Empirical sections should prefer **relational reconfiguration** over **defensive relational reallocation**. Reallocation remains historical/theoretical shorthand but risks implying latent attention, responsibility transfer, or a zero-sum budget that tracking cannot observe. The surviving construct is provisionally limited to coherent, temporally localized change in prospectively specified typed geometry not adequately described by a pre-specified baseline alone.

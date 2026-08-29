@@ -1,5 +1,13 @@
 # Research Log
 
+## 2026-08-29 — Scientific Documentation and Communication Audit
+
+The repository narrative was audited through frozen Phase 4A without executing Phase 4B or inspecting any Game 2 focal-departure outcome. The README now leads with the current focal-departure question, the Phase 3 conclusion C and activity confound are prominent, and downstream reconfiguration, attacker-effect, gravity, and value claims are explicitly conditional and unvalidated.
+
+A claim-status ledger, research roadmap, soccer-readable explainer, documentation index, reproducibility guide, visual inventory, Sloan-readiness assessment, and detailed audit record were added. Eight reproducible communication figures were generated; empirical figures use Sample Game 1 only. The conceptual framework, research questions, literature review, novelty memo, and bibliography received current-status qualifications while historical notebook outputs and earlier log entries were preserved unchanged.
+
+This pass changed communication and navigation only. It introduced no metric, sample, statistical result, tactical label, Phase 4B execution, or Game 2 focal-relative calculation.
+
 ## 2026-08-29 — Phase 4A Data Readiness and Focal-Departure Protocol
 
 Phase 4A narrows the next empirical target to **focal departure from collective defensive motion**, defined geometrically by $\mathbf r_d(t)=\mathbf x_d(t)-\mathbf c_{-d}(t)$. The primary proposed quantity is seven-frame-smoothed focal-relative path length over fixed non-overlapping five-second intervals. It is accumulated reference-relative motion, not meaningful departure, responsibility, attention, tactical error, or reconfiguration. Net x/y, focal absolute activity, and collective activity remain separate.

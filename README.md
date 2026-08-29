@@ -1,230 +1,144 @@
 # Asking Questions
 
-## Multi-Relational Defensive Behavior and Off-Ball Influence in Soccer
+**Asking Questions** is a soccer-tracking research project about how defensive movement should be represented before making claims about tactical response or off-ball influence. The motivating theory is that attackers can pose credible problems that defenders may need to accommodate. Tracking data, however, records positions and movement—not cognition, intent, attention, instructions, or latent responsibility. The project therefore starts with falsifiable geometry and treats tactical meaning as a later validation problem.
 
-**Asking Questions** is a soccer analytics research project about observable changes in defensive behavior during open play. It began with defensive state transitions and decision instability. Phase 1 evidence increasingly challenges a mutually exclusive state interpretation; the current working view is that defending is continuously multi-relational.
+## Current empirical question
 
-The motivating soccer theory is that attacking teams can gain control by repeatedly posing credible tactical problems that require defenders to adjust. Tracking data does not reveal a defender's thoughts, instructions, or mental workload. It records behavior. The empirical project therefore studies defensive movement consistent with reconsideration of responsibility, without treating that movement as a direct measure of cognition.
-
-## Working Behavioral Framework
-
-The current hypotheses distinguish four behavioral regimes:
-
-- **Structure:** maintain a relationship to the defensive block or unit.
-- **Track:** maintain a comparatively stable relationship to a particular opponent.
-- **Close:** actively reduce distance to an immediate threat.
-- **Recover:** reduce displacement from an expected structural position after engagement.
-
-A useful shorthand is:
-
-**Structure → Track → Close → Recover → Structure**
-
-This is neither a mandatory sequence nor a set of known tactical instructions. Transitions may skip or reverse, responsibilities may be handed off, and some behavior may remain ambiguous or unexplained.
-
-Current evidence rejects the state machine as an adequate primary representation. **Defensive relational reallocation** remains historical/theoretical shorthand, but empirical sections prefer **relational reconfiguration** because “reallocation” risks implying attention, responsibility transfer, or a zero-sum budget. The narrow provisional construct is coherent, temporally localized change in prospectively specified typed defensive geometry that is not adequately described by a pre-specified baseline alone. It is not operationalized or validated.
-
-These relationships are not assumed to be zero-sum. A defender may increase opponent engagement while collective coherence remains high or also increases. **Collective accommodation** is provisional language for teammate movement consistent with absorbing or supporting an individual engagement; it is a hypothesis, not an accommodation score, causal claim, or conclusion about team quality.
-
-The original core reference-frame question was:
-
-> Which coordinate system makes the defender look most stationary?
-
-Attacker-relative stability may be consistent with tracking. Stability relative to an appropriate defensive structure may be consistent with structural behavior. Closing and recovery concern directional changes in those relationships. What counts as the appropriate structural reference is itself an open research question.
-
-Phase 1F shows why no single answer is likely sufficient: substantial local and opponent-relative reorganization can occur with little whole-team centroid movement. Centroid and whole-block translation remain useful baselines, but defensive structure increasingly appears to require a relational representation spanning team, ball, opponents, nearby teammates, goal, and space.
-
-## Analytical Hierarchy
-
-The project keeps the theory, observables, consequences, and applications distinct:
-
-1. **Broader theory:** game control may partly arise from asymmetric tactical decision load.
-2. **Proposed mechanism:** credible attacking threats can force defenders to reconsider Structure, Track, Close, and Recover responsibilities.
-3. **Intermediate observables:** behavioral state, transition frequency, ambiguity, persistence, displacement, and recovery burden.
-4. **Possible consequences:** structural disruption, defensive errors, and space creation.
-5. **Later player applications:** attacking probes, off-ball influence, player gravity, and defensive positional economy.
-
-This ordering matters. Space may be a downstream consequence rather than the primary phenomenon, and defensive response is not automatically attacking value.
-
-## Primary Research Question
-
-Can open-play tracking identify sharp changes in the relative explanatory strength or configuration of competing observable defensive relationships without forcing them into mutually exclusive tactical states?
-
-A secondary question is whether attacking movements—including movements that never become completed runs or receptions—systematically precede those transitions. Testing whether accumulated transition or ambiguity burden predicts later instability beyond simple movement or displacement is optional later work, not required for the first empirical contribution.
-
-Closest prior work already infers time-varying man/zonal assignments and switches during corner kicks and constructs dynamic marking networks in open play. The candidate contribution is therefore narrower: whether open-play relational balance, ambiguity, reallocation, accommodation, and recovery can be described transparently beyond assignment or marking-network summaries. This is not yet a confirmed novelty claim or finalized model.
-
-## Competing Hypothesis
-
-Frequent transitions are not inherently harmful. Strong defenses may exchange and update responsibilities frequently but fluidly. The research must therefore distinguish **high transition frequency** from **poor transition execution** and consider alternative explanations such as positioning, compactness, attacking speed, numerical disadvantage, coordination, opponent quality, and fatigue.
-
-## Research Principles
-
-- Soccer understanding should lead to a measurable concept, simple calculation, visualization, interpretation, and only then a next step.
-- Tracking data observes behavior, not cognition or tactical instruction.
-- Manually assigned tactical labels will not be treated as unquestioned ground truth.
-- Geometry, visualization, descriptive statistics, and interpretable models take priority over complex machine learning.
-- No method enters the core pipeline unless its inputs, outputs, purpose, assumptions, failure modes, and validation can be explained.
-- Association between attacking movement and defensive response is not automatically causal.
-- No final decision-load, gravity, or off-ball-value metric has been defined.
-
-## Current Status
-
-**Stage: frozen prospective matched-contrast validation design; outcomes not executed.**
-
-Metrica Sports Sample Game 1 is the sole empirical sample so far. Phase 0 documented the dataset representation; Phases 1A–1F performed narrowly scoped construct diagnostics; Phase 2A established typed relational requirements; Phase 2B traced temporal change; Phase 2C tested episode logic; Phase 2D attempted motifs; Phase 2E falsified post-hoc relationship selection; Phase 2F established scale-aware local deformation; and Phase 2G aligns collective, focal, local, opponent, and ball geometry without combining them. No tactical inference model, classifier, state system, composite representation, relational weighting scheme, or final metric has been selected.
-
-## What We Have Learned So Far
-
-| Phase | Question | Main finding | Consequence |
-|---|---|---|---|
-| 0 | What does one Metrica match actually contain? | Tracking/events align at 25 Hz; identifiers, missingness, coordinates, and halftime orientation are documented. | Reproducible raw-data understanding precedes tactical inference. |
-| 1A | Can a leave-one-out team centroid remove collective translation? | Often yes, but it fails under deformation and split shapes. | Centroid is a useful baseline, not a structural representation. |
-| 1B | Do clear Track/Close examples validate simple primitives? | Fixed attacker-relative Cartesian position was not sufficient for visually Track-like behavior; geometric closure was clearer. | Preserve components and challenge constructs with positive controls. |
-| 1C | Can events enrich Close candidates, and who produces convergence? | Tackles are precise but sparse; receptions are broad and noisy. Closure can come from defender, attacker, or collective movement. | Separate pairwise closure, absolute approach, collective translation, and residual approach. |
-| 1D | Is following better seen as movement coupling? | Coupling was difficult to isolate cleanly after removing collective motion; one example was only partially supportive. | Fixed relative position and movement coupling capture different, incomplete aspects. |
-| 1E | Do teammates accommodate individual engagement? | Accommodation-consistent movement was heterogeneous across fixed cases. | Engagement and collective coherence may coexist; relational strengths need not be zero-sum. |
-| 1F | Can local reorganization occur with a stable centroid? | Yes: the 1230.12 s counterexample shows substantial local compression and relationship changes with little centroid movement. | Stable centroid does not imply stable defensive relationships; structure likely needs relational representation. |
-| 2A | What minimum information must a relational representation preserve? | No single tested view suffices: centroid, defender–defender, defender–opponent, and ball-relative views preserve different necessary context. | Retain a sparse set of typed relations separately before proposing any composite representation. |
-| 2B | Can relational reconfiguration be watched unfolding rather than inferred from two snapshots? | In the 1230.12s case, separate channels show broad, partially staggered changes; exact ordering remains noise- and smoothing-sensitive. | Relational reallocation is descriptively feasible as temporal typed change, not yet a score, state transition, or detected event. |
-| 2C | Can temporal change be bounded as a candidate episode without overcalling activity? | Partially: fixed interior-compression logic supports 1230.12s and preserves the negative case, but also marks contextually ambiguous windows; direction-agnostic overlap overcalls. | Episode-ness remains pattern- and context-specific rather than generally operationalizable. |
-| 2D | Are distinct geometric motifs more defensible than one universal episode signature? | Translation, focal excursion, and local compression are descriptively distinct in canonical cases and overlap in adversarial cases; 4197.04s remains mixed. | Use motifs as an incomplete overlapping vocabulary, not states, classes, or a detector. |
-| 2E | Do motifs survive reproducible relationship selection fixed before later movement is inspected? | Unevenly: translation and focal excursion are comparatively robust; 1230.12s compression and 3682.88s overlap are neighborhood-rule-sensitive; opponent selection mostly encodes proximity; 4197.04s remains mixed. | Use start-fixed nearest-two teammates as a disclosed reproducibility baseline, not a validated unit; treat nearest opponents as context, not responsibility. |
-| 2F | Does a prospectively fixed local configuration preserve internal reorganization better than selected compression pairs? | Partially: configuration descriptors separate translation from deformation, but 1230.12s does not recover clean compression across memberships and 4197.04s also deforms. | Treat local compression as a possible subtype of broader local configuration deformation; deformation alone is not a detected reconfiguration. |
-| 2G | Do separate geometric scales show interpretable correspondence within the same sequence? | Partially: collective- and focal-dominant cases remain distinct, but prospective membership, ball context, and the 1232 reference-time reversal weaken multi-scale narratives. | Use correspondence to expose agreement/disagreement, not as propagation, a score, or an operational reallocation event. |
-| 2H | Does relational reallocation remain a distinct falsifiable construct? | Only provisionally under a narrow reference-relative definition; broad and mandatory-cross-scale definitions fail. | Prefer “relational reconfiguration” empirically and test it against prospectively sampled matched ordinary movement. |
-| 3A | Can that test be frozen without outcome leakage? | Design complete: reception anchors, matched ordinary controls, typed outputs, paired statistics, negative control, and leakage audit are pre-specified. | Execute unchanged in Phase 3B; do not treat events as tactical labels. |
-
-Negative and ambiguous results are research findings, not implementation failures. They delimit what a future representation must be capable of seeing.
-
-## Minimal Notation
-
-For defender (d), attacker (a), and leave-one-out defensive centroid (c):
-
-- Relative position: $\mathbf r_{da}(t)=\mathbf x_a(t)-\mathbf x_d(t)$; pairwise distance: $D_{da}(t)=\lVert\mathbf r_{da}(t)\rVert$.
-- Pairwise closure rate: $-dD_{da}/dt$. This does not identify which player caused convergence.
-- Defender absolute approach: $A_d=\mathbf v_d\cdot\mathbf u_{da}$, where $\mathbf u_{da}=\mathbf r_{da}/D_{da}$.
-- Collective translation: centroid velocity $\mathbf v_c$, or its opponent-directed component $\mathbf v_c\cdot\mathbf u_{da}$.
-- Opponent-directed residual movement: $(\mathbf v_d-\mathbf v_c)\cdot\mathbf u_{da}$.
-- Relational configuration and **defensive relational reallocation** remain conceptual descriptions of which observable relationships explain movement and how sharply that configuration changes. No numerical relational weights or reallocation formula exist yet.
-
-## Future Applications — Not Yet Implemented
-
-### Defensive style
-
-Individual defenders and teams may differ systematically in how observable movement responds to different “sources of gravity” or relational constraints: collective organization, ball, opponents, nearby teammates, goal, and space. This is a future hypothesis, not a team-quality result from Sample Game 1.
-
-### Attacking gravity above expectation
-
-A later application may evaluate how much defensive response or relational reallocation an attacker induces beyond what the context would ordinarily predict:
+The immediate target is **focal departure from collective defensive motion**:
 
 $$
-\text{attacking gravity above expectation}
-=\text{observed defensive response}
--\text{expected defensive response given context}.
+\mathbf r_d(t)=\mathbf x_d(t)-\mathbf c_{-d}(t),
 $$
 
-This is conceptual notation, not an existing or validated metric. Future work may distinguish response magnitude, reallocation cost, persistence or recovery burden, and interaction with defensive team style.
+where $\mathbf x_d(t)$ is an outfield defender’s physical pitch position and $\mathbf c_{-d}(t)$ is the centroid of the other available defending outfield players, excluding the goalkeeper.
 
-## Executed Notebooks
+Phase 4 will test whether focal-relative movement has reproducible structure beyond the defender’s absolute movement, collective translation, aggregate defending activity, and ball movement. Focal departure is continuous reference-relative geometry. It is not automatically meaningful tactical departure, opponent response, error, responsibility change, or relational reconfiguration.
 
-### Phase 0 notebook
+![Phase 4 held-out design](figures/phase4/phase4_heldout_design.png)
 
-The executed [`notebooks/phase0_metrica_sample_game_1.ipynb`](notebooks/phase0_metrica_sample_game_1.ipynb) downloads and verifies the three Sample Game 1 CSVs when absent. Local data remain under the gitignored `data/` directory.
+## Where the project stands
+
+- **Game 1 is development/history.** It supported dataset exploration and a sequence of deliberately narrow construct diagnostics.
+- **Game 2 is held out.** Its schema and outcome-blind support were checked, but no focal-relative Game 2 outcome has been inspected.
+- **The Phase 4A protocol is frozen but not executed.** Its source of truth is [`config/phase4a_focal_departure_validation_protocol.json`](config/phase4a_focal_departure_validation_protocol.json).
+- **Relational reconfiguration remains unvalidated.** Phase 3 did not distinguish it from general event-associated activity.
+- **Gravity and off-ball value are downstream hypotheses.** No gravity, attention, responsibility, ambiguity, recovery-burden, or player-value metric exists.
+
+## The larger “Asking Questions” hypothesis
+
+In soccer language, an attacking position, run, or rotation can “ask a question” by creating a problem the defense may need to solve. The long-term hypothesis is that some attacking actions induce observable defensive responses even without a reception or immediate space gain.
+
+The possible research chain is conditional:
+
+**tracking geometry → validated geometric primitives → contextual/tactical interpretation → possible relational reconfiguration → possible attacker-induced effects → possible gravity or off-ball value**
+
+Every arrow can fail. A successful project may stop after establishing—or rejecting—a useful geometric primitive.
+
+## Major findings and failures
+
+### Descriptively established in Sample Game 1
+
+- A whole-team or leave-one-out centroid is a useful baseline for collective translation, but it is not a complete representation of defensive structure.
+- Large raw movement can shrink substantially in a collective-relative coordinate frame.
+- Small centroid movement can coexist with substantial local and opponent-relative change.
+- Pairwise closure, defender absolute approach, attacker approach, collective translation, and defender residual movement are distinct geometric quantities.
+- Local configuration change is broader than compression and depends materially on which players define the local set.
+- Collective translation and focal-relative movement are distinguishable geometric scales in fixed illustrative cases.
+- Generic defensive activity is a major confound for event-anchored relational analysis.
+
+![Collective translation and focal departure](figures/concepts/collective_translation_vs_focal_departure.png)
+
+### Weakened or rejected
+
+- The historical mutually exclusive **Structure / Track / Close / Recover** state machine is not supported as the primary representation.
+- A nearly fixed attacker-relative Cartesian position is not a general Track primitive.
+- Local compression is not a universal or membership-robust description of defensive reorganization.
+- Generic persistent multi-channel change overcalls ordinary active play and is not a general reconfiguration detector.
+- Receptions are temporal anchors, not positive labels for relational reconfiguration.
+- The Phase 3 reception-based matched validation design failed its frozen support criterion and produced a result of **C**.
+
+Phase 3 retained 315 reception candidates but matched only 46 controls (14.6%, below the frozen 70% requirement). Reception windows showed more collective and focal-relative movement, but within-possession shifted anchors reproduced or exceeded the main apparent effects. Pre-anchor activity matching removed those contrasts while retaining only 15 matches. This is both a design limitation and counterevidence against a reception-specific relational signature.
+
+![Phase 3 validation result](figures/phase3/phase3_validation_failure.png)
+
+## Why Phase 4 is narrower
+
+Phase 3 attempted to validate an umbrella construct using an indirect event anchor. Phase 4 instead tests one basic geometric primitive on deterministic five-second intervals sampled independently of event outcomes.
+
+The primary proposed quantity is seven-frame-smoothed focal-relative path length. Path length is used because a defender can leave and return, producing little endpoint change despite substantial accumulated relative movement. It may still be only focal activity after translation subtraction; the held-out test must decide whether it has reproducible contextual structure and any interpretation beyond “this defender moved differently.”
+
+Outcome-blind readiness passes:
+
+| Readiness quantity | Game 1 | Game 2 |
+|---|---:|---:|
+| Eligible five-second intervals | 422 | 407 |
+| Defender-interval observations | 4,220 | 4,070 |
+| Smallest frozen activity cell | 74 | 75 |
+
+Full rules, negative controls, replication criteria, and falsification conditions are in the [Phase 4 protocol](docs/phase4_focal_departure_validation_protocol.md).
+
+## Evidence levels
+
+This repository distinguishes:
+
+- **Observed:** directly present in tracking/event files.
+- **Calculated:** a reproducible geometric or statistical quantity.
+- **Interpreted:** a soccer-readable description consistent with the geometry.
+- **Hypothesized:** a proposition requiring a future test.
+- **Rejected or falsified:** an operationalization or design contradicted by its diagnostic or frozen test.
+
+See the central [claim-status ledger](docs/claim_status.md) before citing a result.
+
+## Data and reproducibility
+
+The project uses the public [Metrica Sports sample-data repository](https://github.com/metrica-sports/sample-data):
+
+- Sample Game 1: development/history;
+- Sample Game 2: held-out validation.
+
+Raw files belong under `data/metrica_sample_game_1/` and `data/metrica_sample_game_2/`. The entire `data/` directory is ignored except for `.gitkeep`. Game 2 checksums are frozen in the Phase 4 JSON config.
+
+Coordinates are converted from provider-normalized values to a documented 105 × 68 m pitch without clipping. Earlier notebooks retain raw normalized coordinates where that was the phase’s explicit scope. Tracking is 25 Hz. Derivative notebooks use documented centered 5/7/9-frame smoothing; Phase 4 freezes a centered seven-frame primary with 5/9-frame sensitivity and no interpolation.
 
 ```bash
 python3 -m venv .venv
 source .venv/bin/activate
 python -m pip install -r requirements-phase0.txt
-jupyter notebook notebooks/phase0_metrica_sample_game_1.ipynb
+jupyter notebook
 ```
 
-The notebook stops before structural-reference calculations or defensive-state constructs.
+Recommended execution order is chronological only when reconstructing history. For the current study, read the frozen config and protocol before executing anything. Do not inspect Game 2 focal-relative outcomes until the Phase 4A checkpoint is accepted and execution is explicitly authorized.
 
-### Phase 1A diagnostic
+Reproducibility seeds and protocol sources of truth:
 
-The executed [`notebooks/phase1a_whole_team_centroid_diagnostics.ipynb`](notebooks/phase1a_whole_team_centroid_diagnostics.ipynb) tests only the leave-one-out whole-team defensive centroid for three manually selected eight-second sequences. Pitch-length and pitch-width components remain separate. The notebook ends without defining states, scores, thresholds, ambiguity, or another structural reference.
+- Phase 3: [`config/phase3a_validation_protocol.json`](config/phase3a_validation_protocol.json), seed `20260828`;
+- Phase 4: [`config/phase4a_focal_departure_validation_protocol.json`](config/phase4a_focal_departure_validation_protocol.json), seed `20260829`.
 
-### Phase 1B extreme-case diagnostic
+## Reading guide
 
-The executed [`notebooks/phase1b_extreme_case_construct_diagnostics.ipynb`](notebooks/phase1b_extreme_case_construct_diagnostics.ipynb) freezes one visually selected Track-like candidate and one visually selected Close-like candidate before inspecting their diagnostic coordinates. It uses only the existing centroid- and attacker-relative components and retains x/y alongside raw-coordinate distance. These are positive-control candidates, not tactical states or inferred assignments.
+- [Project explainer](docs/project_explainer.md) — verbal explanation in soccer and technical language.
+- [Claim-status ledger](docs/claim_status.md) — what is established, provisional, rejected, or hypothetical.
+- [Conceptual framework](docs/conceptual_framework.md) — equations, terminology, and construct history.
+- [Research roadmap](docs/research_roadmap.md) — conditional path and legitimate stopping points.
+- [Phase 4 protocol](docs/phase4_focal_departure_validation_protocol.md) — current frozen empirical design.
+- [Research log](docs/research_log.md) — full chronological audit trail.
+- [Documentation index](docs/README.md) — reading routes for different audiences.
 
-### Phase 1C event-anchored Close diagnostics
-
-The executed [`notebooks/phase1c_event_anchored_close_diagnostics.ipynb`](notebooks/phase1c_event_anchored_close_diagnostics.ipynb) uses conservatively paired tackle events and completed-pass receptions to generate candidate windows before inspecting tracking geometry. It reports candidate coverage and endpoint distance changes, then plots fixed event-order samples with raw paths, separate opponent-relative x/y, distance, and the existing team-centroid-relative components. A narrow continuation converts coordinates to 105 × 68 m pitch units and decomposes closure into defender, attacker, collective-centroid, and defender-residual approach using centered 5/7/9-frame rolling-position means. It does not define Close or build a detector.
-
-### Phase 1D opponent-movement coupling diagnostic
-
-The executed [`notebooks/phase1d_opponent_movement_coupling_diagnostics.ipynb`](notebooks/phase1d_opponent_movement_coupling_diagnostics.ipynb) fixes two examples from raw trajectories before velocity inspection. It compares attacker, defender, leave-one-out centroid, and defender-residual x/y velocity alongside attacker-relative x/y position, with the existing 105 × 68 m conversion and 5/7/9-frame smoothing framework. The diagnostic is visual only: it does not calculate correlation, response lags, regressions, similarity scores, assignments, or Track classifications.
-
-### Phase 1E collective-accommodation diagnostic
-
-The executed [`notebooks/phase1e_collective_accommodation_diagnostics.ipynb`](notebooks/phase1e_collective_accommodation_diagnostics.ipynb) reuses three of the 11 fixed Phase 1C tackle candidates: two with descriptively large positive focal residual approach and one collective-translation contrast. Soccer-first trajectories and simple teammate displacement, centroid, local-spacing, and separate x/y spread diagnostics examine whether teammate movement is consistent with accommodating focal engagement. No accommodation score, causal inference, success classification, or team-quality comparison is introduced.
-
-### Phase 1F interior-threat / local-compression diagnostic
-
-The executed [`notebooks/phase1f_interior_threat_local_compression_diagnostics.ipynb`](notebooks/phase1f_interior_threat_local_compression_diagnostics.ipynb) fixes three reception-anchored examples from raw full-team trajectories. Snapshot sequences and separate centroid, threat-distance, defender-pair spacing, relative-depth, other-opponent, and movement-cancellation diagnostics test whether local defensive reorganization can occur while a team centroid remains stable. One case provides a clear counterexample; another combines compression with translation; the third visual candidate does not support coherent multi-defender convergence. No structure or exposure score is introduced.
-
-### Phase 2A relational-representation requirements
-
-The executed [`notebooks/phase2a_relational_representation_requirements.ipynb`](notebooks/phase2a_relational_representation_requirements.ipynb) reuses seven fixed Phase 1 cases to compare separate centroid-relative, defender–defender, defender–opponent, depth, ball-relative, and local-neighborhood views. A before/during/after figure for 1230.12s makes visible why small centroid movement does not imply stable relational geometry. The diagnostic proposes only a provisional minimum information requirement—sparse typed relations with collective and ball context—and does not combine them into a score, network, assignment system, or model.
-
-### Phase 2B temporal relational-change diagnostic
-
-The executed [`notebooks/phase2b_temporal_relational_change_diagnostics.ipynb`](notebooks/phase2b_temporal_relational_change_diagnostics.ipynb) reuses the exact Phase 2A windows and traces raw levels plus fixed-smoothed rates within separate typed channels. The 1230.12s worked example shows local compression, opponent-relative reversals, secondary-opponent change, and limited centroid movement unfolding with partially staggered timing. The 4197.04s negative case remains heterogeneous. Broad ordering is visually supportable, but frame-exact onset is not; no channels are combined and no detector or state model is introduced.
-
-### Phase 2C candidate reconfiguration-episode diagnostic
-
-The executed [`notebooks/phase2c_candidate_reconfiguration_episode_diagnostics.ipynb`](notebooks/phase2c_candidate_reconfiguration_episode_diagnostics.ipynb) applies fixed, non-optimized persistence and overlap logic to the same seven windows. A 1230.12s interior-compression interval is visible in typed time series and raw snapshots, while 4197.04s remains negative. However, direction-agnostic activity overcalls and the narrower logic also marks ambiguous tackle, accommodation, and translation windows. The conclusion is partially feasible, not a detector: episode boundaries remain pattern- and context-sensitive, and no channels are combined into a score.
-
-### Phase 2D geometric reconfiguration-motif diagnostic
-
-The executed [`notebooks/phase2d_geometric_reconfiguration_motif_diagnostics.ipynb`](notebooks/phase2d_geometric_reconfiguration_motif_diagnostics.ipynb) compares coordinated collective translation, focal excursion, and local compression using the same fixed cases and raw physical-unit geometry. Canonical side-by-side figures show distinct emphases before labels are interpreted; tackle, accommodation, and translation-contrast cases preserve motif overlap, while 4197.04s remains heterogeneous. The vocabulary is provisionally more faithful than a universal detector but remains incomplete, descriptive, and unclassified.
-
-### Phase 2E prospective relationship-selection diagnostic
-
-The executed [`notebooks/phase2e_prospective_relationship_selection_diagnostics.ipynb`](notebooks/phase2e_prospective_relationship_selection_diagnostics.ipynb) fixes defender–defender and defender–opponent relationships at each window start, then traces the same identities through the existing Phase 2D cases. It documents staleness and dynamic nearest-identity churn without interpreting switches as handoffs. Translation and focal collective-relative excursion remain comparatively reproducible, but local-compression evidence changes across nearest, radius, and depth/lateral rules; the 1230.12s and 3682.88s compression readings are therefore weakened rather than rescued through post hoc selection. Nearest-opponent rules remain proximity context, not assignment or threat inference.
-
-### Phase 2F local-configuration representation diagnostic
-
-The executed [`notebooks/phase2f_local_configuration_representation_diagnostics.ipynb`](notebooks/phase2f_local_configuration_representation_diagnostics.ipynb) traces prospectively fixed local sets through the same seven cases using separate pair distances, x/y spans, polygon area, ordering, local-centroid translation, and member-relative coordinates. The 1230.12s primary set deforms but does not contract cleanly; start-radius and anchor sets materially change the account. Translation dominates the 1888 case; the 590 configuration deforms anisotropically but does not uniquely isolate the focal defender; the 3682 overlap loses a clean compression reading; and 4197 demonstrates that generic deformation can occur in a negative case. The conservative result is B—partially supported: local configuration deformation is a broader primitive than compression, but it remains membership- and context-sensitive.
-
-### Phase 2G cross-scale geometric correspondence diagnostic
-
-The executed [`notebooks/phase2g_cross_scale_geometric_correspondence_diagnostics.ipynb`](notebooks/phase2g_cross_scale_geometric_correspondence_diagnostics.ipynb) aligns collective, focal, local-configuration, start-fixed opponent, and ball-relative views for the same seven cases. Collective-dominant 1888 and focal-dominant 590 remain distinguishable, but 1230 is only provisionally multi-scale, 3682 is only partly local-within-collective, and the 1232 start/anchor reversal prevents a robust narrative. Tackle and 4197 remain unresolved. The result is B—partially supported: correspondence helps audit scale agreement and disagreement but does not establish propagation, attacker influence, or an operational relational-reallocation event.
-
-### Phase 2H construct synthesis
-
-The executed [`notebooks/phase2h_relational_reallocation_construct_synthesis.ipynb`](notebooks/phase2h_relational_reallocation_construct_synthesis.ipynb) rejects definitions that collapse into generic activity or require multi-scale change, retaining only a narrow provisional reference-relative construct. Terminology decision B preserves “reallocation” historically but prefers “relational reconfiguration” empirically.
-
-Phase 3B then tests that construct prospectively under frozen protocol v1.1. Only 46 of 315 reception candidates match (14.6%, below the required 70%); broad collective/focal movement is reproduced by shifted anchors and disappears under sparse pre-anchor movement matching. The frozen conclusion is **C**: this design does not validate relational reconfiguration beyond generic event-associated activity. The next step is a new pre-outcome validation design with adequate support, not attribution, gravity, scoring, or modeling.
-
-Phase 4A freezes that narrower next design around focal departure from collective defensive motion. Game 1 is development/history and Sample Game 2 is untouched held-out validation. Outcome-blind interval and activity-stratum support passes in both matches; no Game 2 focal-relative outcome has been inspected, and validation has not yet been executed.
-
-## Repository Structure
+## Repository map
 
 ```text
-.
-├── README.md
-├── LICENSE
-├── requirements-phase0.txt
-├── data/
-│   └── .gitkeep
-├── docs/
-│   ├── conceptual_framework.md
-│   ├── literature_review.md
-│   ├── novelty_risk_memo.md
-│   ├── research_log.md
-│   └── research_questions.md
-├── notebooks/
-│   ├── phase0_metrica_sample_game_1.ipynb
-│   ├── phase1a_whole_team_centroid_diagnostics.ipynb
-│   ├── phase1b_extreme_case_construct_diagnostics.ipynb
-│   ├── phase1c_event_anchored_close_diagnostics.ipynb
-│   ├── phase1d_opponent_movement_coupling_diagnostics.ipynb
-│   ├── phase1e_collective_accommodation_diagnostics.ipynb
-│   └── phase1f_interior_threat_local_compression_diagnostics.ipynb
-└── references/
-    └── bibliography.md
+config/      frozen machine-readable research protocols
+docs/        current explanations, protocols, claims, roadmap, and audit trail
+figures/     reproducible documentation figures and generation code
+notebooks/   executed diagnostics and validation notebooks by phase
+references/  verified bibliography and acknowledged literature gaps
+data/        local ignored raw Metrica files
 ```
 
-Detailed project thinking lives in [`docs/conceptual_framework.md`](docs/conceptual_framework.md), with questions, hypotheses, literature notes, and dated decisions in the other files under `docs/`.
+## Submission horizon
+
+The repository currently contains a research program and methodological foundation, not a demonstrated conference-level contribution. Before manuscript drafting becomes rational, the focal primitive must be executed on held-out Game 2, survive activity conditioning and frozen sensitivities, earn a soccer interpretation beyond generic differential movement, and then generalize across more than two sample matches or receive credible external validation. See [Sloan-readiness gaps](docs/sloan_readiness.md).
+
+## License
+
+Code and documentation are released under the [MIT License](LICENSE). Metrica sample data remain subject to the source repository’s terms.

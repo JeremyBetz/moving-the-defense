@@ -1,5 +1,7 @@
 # Literature Review
 
+> **Audit note (2026-08-29):** this is an exploratory positioning review, not a submission-ready systematic review. Its state-transition and relational-reconfiguration language records the historical research program. The current empirical target is the narrower focal-departure primitive, and the bibliography still has major source-verification gaps.
+
 ## Refined Position
 
 The initial novelty check has not eliminated the project, but it has narrowed the candidate contribution. Prior work already models time-varying man/zonal assignments and assignment switches, constructs open-play marking networks, studies what movements activate defenders, and quantifies marking coordination and entropy.

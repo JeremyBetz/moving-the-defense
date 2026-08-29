@@ -1,12 +1,14 @@
 # Conceptual Framework
 
+> **Current status (after Phase 4A):** the immediate empirical object is focal departure from collective defensive motion, not a tactical state or a validated relational-reconfiguration construct. Phase 3 failed to distinguish the broader reception-anchored construct from ordinary event-associated activity. The phase-by-phase sections below preserve the research path—including ideas later weakened or rejected—and should be read with the [claim-status ledger](claim_status.md).
+
 ## 1. Project Focus
 
 The historical framing emphasized **defensive state change and decision instability**, not space creation alone. The current working hypothesis is more relational: open-play defensive behavior is continuously multi-relational and may not be well represented by mutually exclusive Structure / Track / Close / Recover states.
 
 The refined main phenomenon is **sharp changes in the relative explanatory strength of competing observable relationships**—including collective-team, ball-relative, and opponent-relative movement. This is a conceptual refinement, not a finalized model or operational definition.
 
-The project asks whether open-play tracking data can describe a defender's movement as an allocation between competing behavioral responsibilities, and whether attacking movement is associated with changes in that allocation. A movement may matter even when the attacker never receives the ball, completes a run, or creates immediate space if it credibly tests a defensive responsibility boundary.
+Historically, the project asked whether open-play tracking data could describe a defender's movement as an allocation between competing behavioral responsibilities, and whether attacking movement was associated with changes in that allocation. That remains a motivating theory, not the current validated empirical target. The current test is narrower: whether a defender's movement relative to the other defending outfield players has reproducible structure beyond ordinary movement and shared activity.
 
 This is a behavioral framework. Tracking data observes player locations and movement; it does not observe cognition, communication, tactical instructions, or what a defender “believes.” Terms such as responsibility and decision instability are interpretations of observable behavior and must be written with that limitation intact.
 
@@ -24,7 +26,9 @@ A cautious conceptual chain is:
 
 Every arrow is a proposition to investigate, not an established causal link.
 
-## 3. Four Hypothesized Behavioral Regimes
+## 3. Historical Construct-Development Framework: Four Hypothesized Behavioral Regimes
+
+The following regimes generated early diagnostics. They are retained for auditability, but they are not an accepted ontology and are not current labels for tracking frames.
 
 ### Structure
 
@@ -40,7 +44,7 @@ $$
 \mathbf{r}_{da}(t)=\mathbf{x}_a(t)-\mathbf{x}_d(t)
 $$
 
-Low variation in this relative position over an appropriate window is evidence consistent with tracking. It is more informative than velocity similarity alone, but it does not reveal a formal marking instruction.
+The early hypothesis was that low variation in this relative position over an appropriate window would be evidence consistent with tracking. Phase 1B rejected fixed attacker-relative Cartesian stability as a general Track primitive. Opponent-relative geometry can still be described, but it does not reveal a formal marking instruction or validated tracking relationship.
 
 ### Close
 

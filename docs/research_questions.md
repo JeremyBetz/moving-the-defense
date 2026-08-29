@@ -1,6 +1,20 @@
 # Research Questions
 
-## Primary Research Question
+> **Current status (after Phase 4A):** the immediate question is whether focal departure from collective defensive motion is a reproducible geometric primitive beyond ordinary activity. The broader questions below preserve the historical and longer-term research program; they are not all active or validated.
+
+## Current Primary Question
+
+Using Sample Game 1 as development/history and untouched Sample Game 2 as held-out validation, does
+
+$$
+\mathbf r_d(t)=\mathbf x_d(t)-\mathbf c_{-d}(t)
+$$
+
+show reproducible distributional and contextual structure beyond absolute focal movement, collective translation, aggregate defending activity, and ball movement?
+
+This question does not assume that focal departure is tactical reconfiguration, opponent response, defensive error, responsibility transfer, gravity, or value.
+
+## Historical Umbrella Research Question
 
 Can open-play tracking data identify sharp changes in the relative explanatory strength of competing observable relationships—collective-team, ball-relative, opponent-relative, and other justified relations—without treating them as mutually exclusive tactical states?
 
