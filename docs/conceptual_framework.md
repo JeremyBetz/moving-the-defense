@@ -180,6 +180,8 @@ Reception windows have longer collective-centroid paths, focal leave-one-out-rel
 
 The frozen conclusion is **C**. The Phase 2H construct remains conceptually coherent enough to specify typed measurements prospectively, but this design does not show that reception-anchored changes are inadequately described by baseline movement. “Coherent” and “temporally localized” are not validated as discriminating empirical properties here; prospective typing is supported procedurally, not substantively. Relational reconfiguration therefore remains an unvalidated descriptive idea rather than an event, state, score, or causal mechanism.
 
+Phase 3C does not redefine or rescue that construct. It recommends additional matches followed by preregistration of one narrower, independently meaningful geometric primitive. Event records may supply time and context, but receptions or possession changes are not validated positive conditions for reconfiguration. Any future test must condition prospectively on passage-level activity and demonstrate adequate support before relational outcomes are inspected.
+
 Three quantities should remain separate:
 
 1. **Current state:** which behavioral explanation currently fits best?

@@ -1,5 +1,13 @@
 # Research Log
 
+## 2026-08-29 — Phase 3C Validation-Design Feasibility
+
+Phase 3C introduced no sample construction or relational-outcome analysis. It treats Phase 3B as both a design failure—14.6% primary matching support—and construct counterevidence: reception alignment mainly selected greater passage-level activity, shifted within-possession anchors reproduced the apparent effects, local configuration was broadly null, and pre-anchor movement matching removed contrasts while retaining only 4.8% support.
+
+Five design families were assessed adversarially. Another Sample Game 1 matching redesign is rejected as post-hoc and support-limited. Within-possession contrasts may be an ingredient but do not solve the confound because shifted anchors already reproduced the signal. Prospective activity conditioning is necessary but likely requires more matches. Additional matches enable support and development/test separation. Events may remain clocks and contextual information, but not positive-condition surrogates without independent semantic justification.
+
+The decision is **B + C: expand data first, then preregister one narrower, independently meaningful geometric primitive**. The umbrella construct remains unchanged and unvalidated. The next execution must distinguish relational structure beyond ordinary defensive activity from greater movement in more active passages; if frozen support cannot do so, it must stop rather than loosen the design.
+
 ## 2026-08-29 — Phase 3B Prospective Matched-Contrast Validation
 
 Phase 3B executed frozen protocol v1.1 without replacing the removed challenge sensitivity. The primary reception sample began with 799 passes, excluded 182 near restarts, retained 617 eligible anchors before overlap suppression, and retained 315 afterward. Only 46 candidates matched frozen ordinary-play controls (14.6% support versus the required 70%), so the primary design is formally poorly supported and was not loosened. Ball-complete analysis retained 20 matched pairs.

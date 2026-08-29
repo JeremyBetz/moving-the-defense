@@ -122,6 +122,7 @@ The research must consider whether apparent state changes or later errors are be
 - Can ball-driven/shared collective correspondence be distinguished from opponent-relational change without optimized lags or attacker attribution?
 - Can the provisional definition of relational reconfiguration distinguish prospectively sampled candidates from matched ordinary movement without post-hoc reference or threshold tuning?
 - Phase 3B answers this negatively for the frozen reception design: matching support is only 14.6%, broad movement differences are reproduced by shifted anchors, and they vanish under the very sparse pre-anchor matching sensitivity. A next design must improve prospective support and separate event-associated activity from relational specificity without loosening rules after seeing outcomes.
+- Phase 3C recommends expanding to additional matches before execution and preregistering one narrower, independently meaningful primitive with activity-conditioned support and held-out testing. Can focal departure, local deformation, or cross-scale disagreement meet that standard without becoming a convenient but soccer-empty target?
 - What evidence would distinguish a useful overlapping motif vocabulary from a renamed tactical-state taxonomy?
 - What time window distinguishes stable relationships from brief coincidence?
 - Should behavior be represented by discrete states, continuous scores, or both?
