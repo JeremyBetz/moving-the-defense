@@ -28,7 +28,7 @@ Every arrow is conditional. Geometry does not become cognition, responsibility, 
 
 ## Current location
 
-> **Current project position:** Phase 4C has externally replicated focal-relative path at the individual-relative-to-collective geometric level across seven IDSSE matches. Tactical defensive response and every later inference remain unvalidated.
+> **Current project position:** Phase 4C externally replicated focal-relative path at the individual-relative-to-collective geometric level across seven IDSSE matches. Phase 5A contextual-expectation feasibility protocol v1.0 is frozen but unexecuted. Tactical defensive response and every later inference remain unvalidated.
 
 The completed frozen Phase 4 design asked whether
 
@@ -59,19 +59,23 @@ Required: transparent definitions and failure modes. A leave-one-out centroid is
 
 Required: outcome-independent sampling, adequate support, development/test separation, negative controls, frozen sensitivities, and explicit falsification. Phase 3 failed here; Phase 4B passed narrowly and Phase 4C externally replicated the geometric primitive.
 
-### 5. Relational reconfiguration
+### 5. Contextual expectation
+
+Required: a strict raw-support feature/target firewall, match-level held-out prediction, transparent nested baselines, training-only preprocessing, and residual/calibration diagnostics. The [frozen Phase 5A protocol](phase5a_contextual_expectation_protocol.md) fixes B0–B4 models using focal history, collective history, ball context, and simple spatial/goal context, plus the validation and feasibility rules, before performance inspection. Protocol v1.0 remains unexecuted. Prediction and residuals have no tactical meaning by themselves.
+
+### 6. Relational reconfiguration
 
 One possible intermediate form of defensive response, requiring several validated primitives to show coherent, temporally localized change not adequately described by baseline movement. It remains unvalidated and is no longer the mandatory center of the program.
 
-### 6. Tactical interpretation
+### 7. Tactical interpretation
 
 Requires soccer context or external semantic evidence. Tracking alone cannot establish intention, instruction, attention, or assignment.
 
-### 7. Attacker association and attribution
+### 8. Attacker association and attribution
 
 Association requires comparable contexts and separation from ball, team, phase, and opponent effects. Attribution is a higher causal bar. No such analysis has been executed.
 
-### 8. Gravity or value
+### 9. Gravity or value
 
 Requires an expected-response baseline, attacker attribution, robustness across matches and teams, and separation of response from downstream value. This is not an inevitable endpoint.
 

@@ -1,6 +1,6 @@
 # Literature Review
 
-> **Current scope (2026-08-29):** targeted positioning for the frozen Phase 4 focal-departure primitive. This is not a systematic review of all soccer tracking research. It does not change the Phase 4A protocol or establish an empirical result.
+> **Current scope (2026-08-29):** targeted positioning for the frozen Phase 4 focal-departure primitive, extended with methodology provenance for the unexecuted Phase 5A contextual-expectation draft. This is not a systematic review of all soccer tracking research. It does not change Phase 4 or establish a Phase 5 empirical result.
 
 ## 1. Collective Organization and Team Geometry
 
@@ -127,3 +127,13 @@ The translation problem sits within established and fragmented prior work rather
 - recent off-ball football reviews and taxonomies emphasize fragmented methods and inconsistent terminology.
 
 Accordingly, neither pinning nor the three-vocabulary framework should be claimed as universally unprecedented. The conservative future contribution hypothesis is a validated, interpretable bridge between football tactical language, observable defensive tracking behavior, contextual expectation, and later attacker-associated response or value. This is a research direction, not a current novelty result.
+
+## Phase 5A Contextual-Expectation Precedent
+
+Phase 5A does not invent expected defensive movement. Wu and Swartz (2023) already predict a soccer defender's contextual two-dimensional velocity and compare observed with typical predicted velocity to construct an anticipation metric. Le et al. (2017) use deep imitation learning to generate contextual defensive ghost trajectories in professional soccer. These are direct precedents for expected-versus-observed defensive movement, although Phase 5A deliberately avoids their tactical/player-evaluation semantics and predicts only the validated scalar focal-relative path.
+
+Trajectory-prediction research also argues against beginning with complexity. Victor et al. (2021) report that deep soccer trajectory models can struggle to outperform linear extrapolation on average displacement, motivating explicit simple baselines and a prospective complexity-admission rule. Penn, Donnelly, and Bhatt (2025) use an interpretable ARMAX-style player-motion model with ball movement for continuous football tracking reconstruction. Their use of future observations for interpolation is appropriate to reconstruction but prohibited for prospective Phase 5A predictors.
+
+Probabilistic and counterfactual methods remain downstream. Yeh et al. (2019) model multimodal multi-agent sports futures with graph/variational recurrent machinery. Teranishi et al. (2022) use predicted multi-agent trajectories as references for off-ball scoring-opportunity valuation. Groom et al. (2026) condition defensive ghosting on inferred corner-kick roles. These show that trajectory references can support later counterfactual or value questions; Phase 5A borrows neither full-trajectory prediction, latent assignments, attacker attribution, nor value.
+
+The detailed borrow/defer mapping is in the [contextual-expectation methodology note](contextual_expectation_methodology.md). The conservative methodological contribution remains validation discipline: determine whether transparent pre-interval focal, collective, ball, and spatial context predicts a previously validated geometric primitive across held-out matches before richer relational or nonlinear models are admitted.

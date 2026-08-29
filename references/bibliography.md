@@ -1,6 +1,6 @@
 # Bibliography
 
-Targeted working bibliography for the Phase 4A literature/novelty audit. Metadata and stable identifiers below were checked against publisher, PubMed/PMC, institutional, or original preprint records. Inclusion means relevance, not endorsement or operational equivalence.
+Targeted working bibliography for the Phase 4A literature/novelty audit and Phase 5A methodology-provenance extension. Metadata and stable identifiers below were checked against publisher, institutional, conference, journal, or original preprint records. Inclusion means relevance, not endorsement or operational equivalence.
 
 ## Collective Organization and Team Geometry
 
@@ -50,6 +50,22 @@ NBA.com Staff. 2026. “Intro to Gravity.” Updated January 8, 2026. Official m
 
 The NBA source is an official product-methodology description, not a peer-reviewed paper. It is retained only to distinguish observed collective-relative defensive movement from downstream expected-versus-observed defensive pressure.
 
+## Contextual Expectation and Trajectory References
+
+Le, Hoang M., Peter Carr, Yisong Yue, and Patrick Lucey. 2017. “Data-Driven Ghosting Using Deep Imitation Learning.” *MIT Sloan Sports Analytics Conference*. <https://authors.library.caltech.edu/records/74xh3-ysx85>
+
+Yeh, Raymond A., Alexander G. Schwing, Jonathan Huang, and Kevin Murphy. 2019. “Diverse Generation for Multi-Agent Sports Games.” In *2019 IEEE/CVF Conference on Computer Vision and Pattern Recognition*, 4605–4614. <https://doi.org/10.1109/CVPR.2019.00474>
+
+Victor, Brandon, Aiden Nibali, Zhen He, and David L. Carey. 2021. “Enhancing Trajectory Prediction Using Sparse Outputs: Application to Team Sports.” *Neural Computing and Applications*. <https://doi.org/10.1007/s00521-021-05888-w>
+
+Teranishi, Masakiyo, Kazushi Tsutsui, Kazuya Takeda, and Keisuke Fujii. 2022. “Evaluation of Creating Scoring Opportunities for Teammates in Soccer via Trajectory Prediction.” In *9th Workshop on Machine Learning and Data Mining for Sports Analytics*, 53–73. <https://arxiv.org/abs/2206.01899>
+
+Wu, Y., and Tim Swartz. 2023. “Evaluation of Off-the-Ball Actions in Soccer.” *Statistica Applicata—Italian Journal of Applied Statistics* 35 (2). <https://doi.org/10.26398/IJAS.0035-008>
+
+Penn, Matthew J., Christl A. Donnelly, and Samir Bhatt. 2025. “Continuous Football Player Tracking from Discrete Broadcast Data.” *Royal Society Open Science* 12 (10): 251175. <https://doi.org/10.1098/rsos.251175>
+
+These sources establish substantial precedent for predicted defensive velocity, soccer ghosting, simple-versus-deep trajectory baselines, interpretable player/ball motion models, predicted-trajectory off-ball valuation, and probabilistic multi-agent futures. Phase 5A borrows only the expected-versus-observed architecture and simple-baseline discipline; it does not claim invention of expected defensive movement.
+
 ## Coverage Limits
 
-This bibliography is substantially stronger for collective geometry, synchronization, and defensive tracking than the previous placeholder list. Remaining gaps include proprietary club/vendor methods, formation-normalization details in computer-science proceedings, complete soccer off-ball valuation coverage, and peer-reviewed expected-versus-observed gravity models. These gaps prohibit claims that no operational equivalent exists.
+This bibliography is substantially stronger for collective geometry, synchronization, defensive tracking, and contextual trajectory references than the previous placeholder list. Remaining gaps include proprietary club/vendor methods, formation-normalization details, complete soccer off-ball valuation coverage, and peer-reviewed expected-versus-observed gravity models. These gaps prohibit claims that no operational equivalent exists.

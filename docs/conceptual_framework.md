@@ -1,6 +1,6 @@
 # Conceptual Framework
 
-> **Current status (post–Phase 4B):** focal-relative path has passed a narrow held-out geometric validation across Metrica Sample Games 1 and 2. The broader program now studies **defensive response** to attacking movement. This synthesis occurred after Phase 4A was frozen and Phase 4B was executed; it did not influence that validation. Relational reconfiguration remains unvalidated. Historical sections preserve ideas later weakened or rejected and should be read with the [claim-status ledger](claim_status.md).
+> **Current status (post–Phase 4C):** focal-relative path has passed narrow held-out Metrica validation and external geometric replication across seven IDSSE matches. Phase 5A contextual-expectation feasibility protocol v1.0 is frozen but unexecuted. The broader program studies **defensive response** to attacking movement, but contextual expectation, tactical response, and relational reconfiguration remain unvalidated. Historical sections preserve ideas later weakened or rejected and should be read with the [claim-status ledger](claim_status.md).
 
 ## 1. Project Focus
 
@@ -213,6 +213,12 @@ Only after that result was closed did the project adopt defensive response as it
 **physical movement → collective defensive movement → individual/local behavior relative to collective movement → contextual expectation → defensive response → attacker association → attribution → attacking value**
 
 Phase 4B reaches the individual-relative-to-collective behavior stage. Every later arrow requires new evidence.
+
+### Phase 4C external replication and Phase 5A boundary
+
+Phase 4C extended the same narrow geometric conclusion to seven professional IDSSE matches in one independent tracking dataset/provider environment relative to Metrica. All seven matches met the frozen core criteria, but focal departure remained strongly associated with generic activity. This strengthens the third inference-ladder level; it does not establish contextual expectation or defensive response.
+
+The frozen [Phase 5A protocol](phase5a_contextual_expectation_protocol.md) asks how well the future five-second scalar focal-relative path can be predicted from strictly pre-interval focal, collective, ball, and spatial context. Its residual is defined only as observed minus predicted geometry. Prediction is not causation, and unexplained movement is not tactical response. Opponent relationships, full trajectory forecasting, ghosting, attribution, and value are deliberately deferred.
 
 Three quantities should remain separate:
 

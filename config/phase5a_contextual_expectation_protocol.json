@@ -1,0 +1,167 @@
+{
+  "protocol": "phase5a_contextual_expectation_feasibility",
+  "version": "1.0",
+  "status": "frozen_not_executed",
+  "research_question": "To what extent can focal-relative path over the next five seconds be predicted from observable pre-interval movement and spatial context?",
+  "data": {
+    "development_evaluation": "IDSSE_DFL_seven_matches",
+    "outer_unit": "match",
+    "outer_folds": 7,
+    "metrica_games_1_2": "construct_history_only",
+    "metrica_game_3": "not_inspected_excluded"
+  },
+  "target": {
+    "unchanged_from_phase4": true,
+    "sampling_hz": 25,
+    "frame_step_seconds": 0.04,
+    "interval_seconds": 5.0,
+    "raw_target_frame_offsets": {"start": 0.0, "stop": 4.96, "count": 125},
+    "centered_smoothing_frames": 7,
+    "centered_smoothing_min_periods": 7,
+    "smoothing_scope": "inside_125_raw_interval_frames_no_external_raw_support",
+    "valid_smoothed_frame_offsets": {"start": 0.12, "stop": 4.84, "count": 119},
+    "path_increment_count": 118,
+    "raw_support_offsets": {"start": 0.0, "stop": 4.96},
+    "reference": "leave_one_out_other_defending_outfield_centroid_fixed_over_target_interval",
+    "exclude_from_reference": ["focal_defender", "goalkeeper"],
+    "quantity": "accumulated_euclidean_path_of_centered_smoothed_focal_relative_coordinates"
+  },
+  "prediction_cutoff": {
+    "definition": "c_equals_target_raw_start_minus_one_frame",
+    "offset_from_target_raw_start_seconds": -0.04,
+    "offset_to_first_valid_smoothed_position_seconds": 0.16,
+    "required_assertion": "feature_max_raw_time <= prediction_cutoff < target_min_raw_support_time",
+    "exact_support_assertions_seconds": {
+      "target_min_raw_support_minus_cutoff": 0.04,
+      "target_max_raw_support_minus_cutoff": 5.0
+    },
+    "fail_before_fit": true
+  },
+  "estimand": {
+    "type": "retrospective_conditional_prediction_evaluation",
+    "population": "phase4_compatible_uninterrupted_target_eligible_and_pre_cutoff_B4_complete_observations",
+    "online_forecast": false,
+    "future_target_eligibility_as_predictor": false,
+    "history_eligibility_uses_pre_cutoff_only": true
+  },
+  "history": {
+    "primary_seconds": 2.0,
+    "primary_frames": 50,
+    "sensitivity_seconds": 1.0,
+    "sensitivity_frames": 25,
+    "primary_raw_offsets_from_cutoff_seconds": {"start": -1.96, "stop": 0.0, "step": 0.04, "count": 50},
+    "primary_smoothed_position_count": 44,
+    "primary_path_increment_count": 43,
+    "sensitivity_raw_offsets_from_cutoff_seconds": {"start": -0.96, "stop": 0.0, "step": 0.04, "count": 25},
+    "sensitivity_smoothed_position_count": 19,
+    "sensitivity_path_increment_count": 18,
+    "position_smoothing": "causal_trailing_7_frame_complete_mean_no_padding",
+    "terminal_velocity": "backward_difference_of_consecutive_trailing_smoothed_positions",
+    "interpolation": false,
+    "acceleration": false,
+    "order_of_operations": ["select_exact_complete_raw_history_and_membership", "standardize_raw_coordinates", "form_raw_leave_one_out_centroid_from_fixed_membership", "causally_smooth_focal_centroid_other_defenders_and_ball", "form_smoothed_focal_relative_coordinates", "calculate_paths_and_terminal_velocities"],
+    "centroid_order": "raw_centroid_then_causal_smoothing",
+    "reference_time": "prediction_cutoff_c",
+    "eligible_reference_player": "defending_non_goalkeeper_on_pitch_at_c_with_finite_coordinates_at_every_raw_history_frame",
+    "minimum_other_outfield_defenders": 8,
+    "reference_excludes": ["focal_defender", "goalkeeper"],
+    "future_substitution_information_used": false,
+    "reference_membership": "fixed_from_information_at_or_before_cutoff_and_stored_separately_from_target_membership"
+  },
+  "common_sample": {
+    "primary": "B4_complete_common_focal_observations_for_B0_through_B4_within_outer_fold",
+    "reporting_groups": ["match", "defending_team", "overall"],
+    "attrition_by_match_and_defending_team": [
+      "phase4_eligible_focal_observations",
+      "history_2s_complete_observations",
+      "ball_history_complete_observations",
+      "B4_complete_observations",
+      "B4_retention_percentage"
+      ,"final_common_comparison_observations"
+    ]
+  },
+  "direction_standardization": {
+    "provider_pitch": {"x_min": -52.5, "x_max": 52.5, "y_min": -34.0, "y_max": 34.0},
+    "sigma": "+1_if_own_goal_provider_x_minus52_5_else_minus1",
+    "x_defending": "sigma_times_x_provider_plus_52_5",
+    "y_defending": "sigma_times_y_provider_plus_34",
+    "own_goal_center": [0.0, 34.0],
+    "opponent_goal_center": [105.0, 34.0],
+    "pitch_center": [52.5, 34.0],
+    "orientation_source": "kickoff_known_team_period_metadata_or_equivalent_target_independent_geometry",
+    "fallback": "defending_goalkeeper_median_provider_x_first_2_seconds_of_period_fixed_before_candidates",
+    "players_and_ball_identical_transform": true,
+    "target_window_orientation_inference": false
+  },
+  "features": {
+    "B0": {"features": [], "model": "outer_training_common_sample_median"},
+    "B1": {"features": ["focal_recent_absolute_path_m", "focal_recent_relative_path_m", "focal_terminal_vx_mps", "focal_terminal_vy_mps", "focal_relative_terminal_vx_mps", "focal_relative_terminal_vy_mps"]},
+    "B2_add": {"features": ["loo_centroid_recent_path_m", "loo_centroid_terminal_vx_mps", "loo_centroid_terminal_vy_mps", "other_defenders_recent_mean_path_m"], "aggregate_excludes": ["focal_defender", "goalkeeper"], "aggregate": "arithmetic_mean_of_each_eligible_other_defenders_causally_smoothed_absolute_history_path", "units": "metres_per_player_over_history_window", "minimum_other_defenders": 8},
+    "B3_add": {"features": ["ball_x_m", "ball_y_m", "ball_terminal_vx_mps", "ball_terminal_vy_mps", "ball_recent_path_m", "focal_minus_ball_x_m", "focal_minus_ball_y_m", "focal_ball_distance_m"], "current_position_support": "transformed_raw_coordinates_at_cutoff_c", "history_path_and_velocity_support": "transformed_causally_smoothed_history"},
+    "B4_add": {
+      "features": ["focal_own_goal_depth_m", "focal_y_m", "focal_own_goal_distance_m", "focal_lateral_distance_m", "ball_lateral_distance_m"],
+      "definitions": {
+        "focal_own_goal_depth_m": {"formula": "focal_x_D_at_c", "units": "m", "signed_or_absolute": "nonnegative_standardized_pitch_coordinate"},
+        "focal_y_m": {"formula": "focal_y_D_at_c", "units": "m", "signed_or_absolute": "nonnegative_standardized_pitch_coordinate_retaining_lateral_side"},
+        "focal_own_goal_distance_m": {"formula": "sqrt(focal_x_D_at_c^2 + (focal_y_D_at_c - 34)^2)", "units": "m", "signed_or_absolute": "nonnegative"},
+        "focal_lateral_distance_m": {"formula": "abs(focal_y_D_at_c - 34)", "units": "m", "signed_or_absolute": "absolute"},
+        "ball_lateral_distance_m": {"formula": "abs(ball_y_D_at_c - 34)", "units": "m", "signed_or_absolute": "absolute"}
+      },
+      "exact_aliases_omitted": {"focal_x_m": "same_as_focal_own_goal_depth_m", "ball_own_goal_depth_m": "same_as_B3_ball_x_m", "ball_standardized_y_m": "same_as_B3_ball_y_m"}
+    },
+    "prohibited_predictors": ["opponent_geometry", "local_teammate_geometry", "player_id", "team_id", "match_id", "inferred_role", "score", "future_event", "assignment", "target_eligibility_indicator", "outcome_derived_feature"]
+  },
+  "model": {
+    "B1_to_B4": "ridge_with_intercept",
+    "ridge_alpha_grid": [0.01, 0.1, 1.0, 10.0, 100.0],
+    "outer_validation": "leave_one_match_out_7",
+    "inner_validation": "leave_one_training_match_out_across_6",
+    "inner_objective": "lowest_median_inner_heldout_MAE_across_6_matches",
+    "alpha_tie_tolerance_m": 0.000001,
+    "alpha_tie_rule": "largest_alpha_within_tolerance_of_minimum",
+    "preprocessing": "fit_mean_sd_and_constant_removal_inside_each_training_split_only",
+    "constant_feature_behavior": "each_pipeline_independently_determines_training_constant_mask_and_applies_that_fitted_mask_unchanged_to_its_validation_or_test_data",
+    "target_scaling": false,
+    "outer_refit": "selected_alpha_refit_on_all_6_outer_training_matches_then_test_seventh",
+    "prediction_clipping": false,
+    "OLS_fallback": false
+  },
+  "metrics": {
+    "primary": "heldout_MAE_by_match",
+    "secondary": ["heldout_median_absolute_error_by_match", "heldout_RMSE_by_match", "heldout_R2_by_match", "prediction_and_error_distributions"],
+    "cross_match": ["median", "range", "IQR"],
+    "pooled_primary": false
+  },
+  "calibration": {
+    "source": "selected_alpha_training_side_cross_fitted_inner_heldout_predictions",
+    "quantiles": [0.0, 0.2, 0.4, 0.6, 0.8, 1.0],
+    "quantile_method": "linear",
+    "duplicate_edges": "collapse_and_report_fewer_realized_bins",
+    "outer_outcomes_define_edges": false,
+    "affects_ABC_classification": false
+  },
+  "decision_rules": {
+    "classification_precedence": ["A", "C", "B"],
+    "relative_MAE_reduction": "computed_per_outerheldout_match_then_median_across_7",
+    "adjacent_materiality": {"median_reduction_min": 0.03, "matches_improved_min": 5, "matches_worsened_10pct_or_more_max": 1},
+    "best_simple": {"levels": ["B1", "B2", "B3", "B4"], "criterion": "lowest_median_outerheldout_MAE", "tie_tolerance_m": 0.000001, "tie_rule": "earliest_ladder_level"},
+    "A": {"some_B1_to_B4_median_reduction_vs_B0_min": 0.10, "matches_improved_min": 6, "matches_worsened_10pct_or_more_max": 1},
+    "C": {"no_B1_to_B4_median_reduction_vs_B0_at_least": 0.03, "and_no_B1_to_B4_matches_improved_at_least": 4},
+    "B": "all_valid_results_neither_A_nor_C",
+    "A_supported_claim_only": "future focal-relative path contains reproducibly predictable structure from pre-interval observable context"
+  },
+  "future_nonlinear_gate": {
+    "fit_in_phase5a": false,
+    "reference": "best_simple_model",
+    "median_MAE_reduction_min": 0.05,
+    "matches_improved_min": 5,
+    "matches_worsened_10pct_or_more_max": 1,
+    "requires_meaningful_scientific_or_prospectively_named_residual_gain": true
+  },
+  "evidence_hierarchy": ["frames", "intervals", "sequences", "players", "teams", "matches"],
+  "primary_conclusions_use": "seven_outerheldout_matches_not_interval_level_significance",
+  "residual": {"name": "contextual_departure_residual", "formula": "observed_focal_relative_path_minus_predicted_focal_relative_path", "positive": "more_path_than_expected_by_fitted_statistical_model", "negative": "less_path_than_expected_by_fitted_statistical_model"},
+  "nonclaims": ["correct_tactical_position", "correct_defender_trajectory", "tactical_defensive_response", "contextual_correctness", "responsibility", "decision_making", "attention", "pinning", "dragging", "tracking", "covering", "handoff", "relational_reconfiguration", "attacker_association", "attribution", "attacker_causation", "defensive_quality", "gravity", "off_ball_value"],
+  "freeze": {"frozen": true, "version": "1.0", "requires_versioned_amendment_for_substantive_change": true},
+  "execution": {"model_fit": false, "target_or_performance_inspected": false, "metrica_game3_accessed": false, "commit_authorized": true}
+}

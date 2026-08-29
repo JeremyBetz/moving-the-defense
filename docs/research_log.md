@@ -1,5 +1,13 @@
 # Research Log
 
+## 2026-08-29 — Phase 5A Contextual-Expectation Feasibility Protocol v1.0 Frozen
+
+Phase 5A was designed without fitting a model or inspecting any future-target association, prediction error, residual, or Metrica Game 3 data. The research question is: **To what extent can focal-relative path over the next five seconds be predicted from observable pre-interval movement and spatial context?** The validated Phase 4 five-second/7-frame leave-one-out target is unchanged.
+
+The temporal-support audit makes the validated target exact. Phase 4 consumes 125 raw frames from $s$ through $s+4.96$ inside the interval; centered seven-frame smoothing yields 119 valid smoothed positions from $s+0.12$ through $s+4.84$ and 118 path increments. It does not consume raw frames outside the interval. The prediction cutoff is the immediately preceding 25 Hz frame, $c=s-0.04$, and the mechanical firewall is defined on raw support: feature support ends at or before $c$, while target raw support begins at $s$.
+
+Protocol v1.0 freezes the exact 50-frame primary and 25-frame sensitivity histories, their 44/43 and 19/18 smoothed-position/path-increment counts, raw-centroid-then-causal-smoothing order, cutoff-fixed history membership, exact B0–B4 features, B4-complete common sample, retrospective conditional estimand, defending-coordinate transformation, Ridge grid and nested leave-one-training-match-out selection, training-side cross-fitted calibration bins, adjacent materiality, A/B/C precedence, and nonlinear complexity gate. Focal and goalkeeper activity are excluded from the B2 other-defender mean. Exact duplicate B4 spatial aliases are omitted. No target/model performance was inspected, and no tactical response, contextual correctness, attacker relationship, attribution, gravity, or value is claimed.
+
 ## 2026-08-29 — Phase 4C IDSSE External Replication
 
 After prospective protocol v1.0 was committed, the seven-match IDSSE/DFL release was accessed for the first time. Outcome-blind mapping linked explicit DFL match/team/player IDs, `TW` goalkeeper roles, 105×68m metric coordinates, 25Hz UTC timestamps, period-opening kickoffs, ball trajectories, substitutions, and event-carried possession/open-play context. The provider `M` frame attribute was verified as match minute rather than a validity flag; finite coordinate presence is the documented implementation clarification. No material protocol issue was found. All seven matches passed support, with 574–708 eligible five-second intervals, at least 244 intervals for each defending team, and 22–29 focal defenders contributing at least 25 intervals.
