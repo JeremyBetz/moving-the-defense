@@ -42,6 +42,8 @@ Phase 2D asks whether a small overlapping vocabulary—coordinated collective tr
 
 Phase 2E asks whether those descriptions survive relationships chosen prospectively at a fixed reference time. Initial evidence is uneven: translation and focal collective-relative excursion are comparatively robust, while local-compression conclusions change under reasonable start-based neighborhood rules and opponent selection remains proximity-only. Prospective selection is therefore a falsification test, not a preprocessing detail or permission to switch rules after inspecting the window.
 
+Phase 2F asks whether the compression failure reflects an inappropriate pair scale. The partial result favors local configuration deformation as a broader primitive: fixed sets preserve translation, pairwise change, anisotropic span change, area, ordering, and member-relative movement separately. However, membership sensitivity remains substantial, the 1230.12s primary set does not reproduce clean compression, and the 4197.04s negative also deforms. Configuration change is therefore descriptive evidence, not sufficient evidence of meaningful reconfiguration.
+
 ### RQ4 — Ambiguity
 
 Can the analysis identify periods in which multiple explanations are similarly plausible, and distinguish genuine boundary behavior from tracking noise?
@@ -108,6 +110,8 @@ The research must consider whether apparent state changes or later errors are be
 - Can prospectively selected typed relationships reproduce translation, excursion, and compression motifs beyond these fixed examples without making relationship selection unfalsifiably flexible?
 - Can a start-fixed nearest-two defensive neighborhood remain locally relevant without hiding meaningful identity change, and when should staleness be reported rather than repaired by dynamic re-selection?
 - Can defender–opponent relationships be selected prospectively by geometry alone without merely renaming proximity as responsibility or threat?
+- Which local-configuration changes are reproducible across prospectively defined start, radius, and anchor sets without treating disagreement as a reason to switch membership?
+- Can meaningful configuration deformation be distinguished from ordinary local deformation during continuous or collective movement without creating a score or detector?
 - What evidence would distinguish a useful overlapping motif vocabulary from a renamed tactical-state taxonomy?
 - What time window distinguishes stable relationships from brief coincidence?
 - Should behavior be represented by discrete states, continuous scores, or both?
