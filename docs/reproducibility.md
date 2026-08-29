@@ -78,7 +78,16 @@ The executed narrative artifact is [`notebooks/phase4b_focal_departure_heldout_v
 
 ## Phase 4C external replication
 
-Frozen prospective protocol v1.0 is [`docs/phase4c_external_replication_protocol.md`](phase4c_external_replication_protocol.md), with machine-readable rules in [`config/phase4c_external_replication_protocol.json`](../config/phase4c_external_replication_protocol.json). It was written and frozen without IDSSE access and has not executed. Provider schema mapping and support checks must occur outcome-blind before focal-relative outcomes.
+Frozen protocol v1.0 is [`docs/phase4c_external_replication_protocol.md`](phase4c_external_replication_protocol.md), with machine-readable rules in [`config/phase4c_external_replication_protocol.json`](../config/phase4c_external_replication_protocol.json). The completed outcome-blind provider mapping is documented in [`docs/phase4c_idsse_mapping_audit.md`](phase4c_idsse_mapping_audit.md) and [`config/phase4c_idsse_implementation.json`](../config/phase4c_idsse_implementation.json). Detailed results are in [`docs/phase4c_external_replication_results.md`](phase4c_external_replication_results.md).
+
+Place the 21 raw IDSSE XML files under ignored `data/idsse_raw/`. Then reproduce mapping/support and the frozen execution separately:
+
+```bash
+python src/phase4c_idsse_external_replication.py --stage mapping
+python src/phase4c_idsse_external_replication.py --stage execute
+```
+
+The first command does not construct focal-relative outcomes. The second writes machine-readable tables to `outputs/phase4c/` and figures to `figures/phase4c/`. The narrative notebook is [`notebooks/phase4c_idsse_external_replication.ipynb`](../notebooks/phase4c_idsse_external_replication.ipynb).
 
 Documentation figures can be regenerated with:
 

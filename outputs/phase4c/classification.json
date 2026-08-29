@@ -1,0 +1,9 @@
+{
+  "category": "A",
+  "label": "strong external replication",
+  "reasons": [],
+  "usable_matches": 7,
+  "core_replicating_matches": 7,
+  "common_translation_pass": true,
+  "protocol_sha256_before_execution": "6e1711ba681bce3c843cde9803758ca68428f2a84e6b25454d9d866cee5dea59"
+}

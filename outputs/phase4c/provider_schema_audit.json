@@ -1,0 +1,796 @@
+{
+  "J03WMX": {
+    "provider_match_id": "DFL-MAT-J03WMX",
+    "teams": {
+      "DFL-CLU-000008": "1. FC K\u00f6ln",
+      "DFL-CLU-00000G": "FC Bayern M\u00fcnchen"
+    },
+    "pitch_m": [
+      105.0,
+      68.0
+    ],
+    "goalkeepers": [
+      "DFL-OBJ-0002DR",
+      "DFL-OBJ-0002HE"
+    ],
+    "kickoffs_utc": {
+      "firstHalf": "2023-05-27T13:30:12.230000+00:00",
+      "secondHalf": "2023-05-27T14:35:43.390000+00:00"
+    },
+    "substitutions": [
+      {
+        "timestamp": "2023-05-27T14:52:05.960000+00:00",
+        "PlayerIn": "DFL-OBJ-0027V2",
+        "Team": "DFL-CLU-000008",
+        "PlayerOut": "DFL-OBJ-0027AX",
+        "PlayingPosition": "RV"
+      },
+      {
+        "timestamp": "2023-05-27T14:52:07.760000+00:00",
+        "PlayerIn": "DFL-OBJ-002G89",
+        "Team": "DFL-CLU-000008",
+        "PlayerOut": "DFL-OBJ-000270",
+        "PlayingPosition": "STZ"
+      },
+      {
+        "timestamp": "2023-05-27T14:52:09.840000+00:00",
+        "PlayerIn": "DFL-OBJ-J01DVC",
+        "Team": "DFL-CLU-000008",
+        "PlayerOut": "DFL-OBJ-0002BO",
+        "PlayingPosition": "ZO"
+      },
+      {
+        "timestamp": "2023-05-27T14:52:20.240000+00:00",
+        "PlayerIn": "DFL-OBJ-J015S4",
+        "Team": "DFL-CLU-00000G",
+        "PlayerOut": "DFL-OBJ-0000IA",
+        "PlayingPosition": "DLM"
+      },
+      {
+        "timestamp": "2023-05-27T15:00:51.880000+00:00",
+        "PlayerIn": "DFL-OBJ-000191",
+        "Team": "DFL-CLU-00000G",
+        "PlayerOut": "DFL-OBJ-J01B8N",
+        "PlayingPosition": "DML"
+      },
+      {
+        "timestamp": "2023-05-27T15:00:52.840000+00:00",
+        "PlayerIn": "DFL-OBJ-0000RP",
+        "Team": "DFL-CLU-00000G",
+        "PlayerOut": "DFL-OBJ-0026PM",
+        "PlayingPosition": "STZ"
+      },
+      {
+        "timestamp": "2023-05-27T15:12:08.040000+00:00",
+        "PlayerIn": "DFL-OBJ-0026ZI",
+        "Team": "DFL-CLU-000008",
+        "PlayerOut": "DFL-OBJ-J01BGM",
+        "PlayingPosition": "LV"
+      },
+      {
+        "timestamp": "2023-05-27T15:12:09.480000+00:00",
+        "PlayerIn": "DFL-OBJ-002GBW",
+        "Team": "DFL-CLU-000008",
+        "PlayerOut": "DFL-OBJ-0028BD",
+        "PlayingPosition": "STZ"
+      },
+      {
+        "timestamp": "2023-05-27T15:14:47.120000+00:00",
+        "PlayerIn": "DFL-OBJ-J01N65",
+        "Team": "DFL-CLU-00000G",
+        "PlayerOut": "DFL-OBJ-000191",
+        "PlayingPosition": "STL"
+      },
+      {
+        "timestamp": "2023-05-27T15:14:43.680000+00:00",
+        "PlayerIn": "DFL-OBJ-002GCR",
+        "Team": "DFL-CLU-00000G",
+        "PlayerOut": "DFL-OBJ-J01APO",
+        "PlayingPosition": "ZO"
+      }
+    ],
+    "restart_counts": {
+      "KickOff": 5,
+      "ThrowIn": 52,
+      "GoalKick": 14,
+      "FreeKick": 20,
+      "CornerKick": 10,
+      "Offside": 2,
+      "FinalWhistle": 2,
+      "Penalty": 1,
+      "RefereeBall": 2
+    },
+    "period_tracking": {
+      "firstHalf": {
+        "frames": 70708,
+        "first_frame": 10000,
+        "last_frame": 80707,
+        "first_time_utc": "2023-05-27T13:30:12.600000+00:00",
+        "last_time_utc": "2023-05-27T14:17:20.880000+00:00",
+        "entities": 26
+      },
+      "secondHalf": {
+        "frames": 75259,
+        "first_frame": 100000,
+        "last_frame": 175258,
+        "first_time_utc": "2023-05-27T14:35:43.360000+00:00",
+        "last_time_utc": "2023-05-27T15:25:53.680000+00:00",
+        "entities": 36
+      }
+    }
+  },
+  "J03WN1": {
+    "provider_match_id": "DFL-MAT-J03WN1",
+    "teams": {
+      "DFL-CLU-00000S": "VfL Bochum 1848",
+      "DFL-CLU-00000B": "Bayer 04 Leverkusen"
+    },
+    "pitch_m": [
+      105.0,
+      68.0
+    ],
+    "goalkeepers": [
+      "DFL-OBJ-0001I0",
+      "DFL-OBJ-0026NY"
+    ],
+    "kickoffs_utc": {
+      "firstHalf": "2023-05-27T13:31:08.650000+00:00",
+      "secondHalf": "2023-05-27T14:33:57.770000+00:00"
+    },
+    "substitutions": [
+      {
+        "timestamp": "2023-05-27T14:44:46.800000+00:00",
+        "PlayerOut": "DFL-OBJ-0027LO",
+        "PlayingPosition": "DML",
+        "PlayerIn": "DFL-OBJ-002G4G",
+        "Team": "DFL-CLU-00000S"
+      },
+      {
+        "timestamp": "2023-05-27T14:44:42.080000+00:00",
+        "PlayerOut": "DFL-OBJ-0000XU",
+        "PlayingPosition": "LV",
+        "PlayerIn": "DFL-OBJ-0028D6",
+        "Team": "DFL-CLU-00000S"
+      },
+      {
+        "timestamp": "2023-05-27T15:06:43.760000+00:00",
+        "PlayerOut": "DFL-OBJ-0002LI",
+        "PlayingPosition": "HR",
+        "PlayerIn": "DFL-OBJ-J01G0J",
+        "Team": "DFL-CLU-00000B"
+      },
+      {
+        "timestamp": "2023-05-27T15:08:58.640000+00:00",
+        "PlayerOut": "DFL-OBJ-0000YV",
+        "PlayingPosition": "STZ",
+        "PlayerIn": "DFL-OBJ-J01AQV",
+        "Team": "DFL-CLU-00000S"
+      },
+      {
+        "timestamp": "2023-05-27T15:09:13.200000+00:00",
+        "PlayerOut": "DFL-OBJ-0027FG",
+        "PlayingPosition": "RA",
+        "PlayerIn": "DFL-OBJ-00002Z",
+        "Team": "DFL-CLU-00000S"
+      },
+      {
+        "timestamp": "2023-05-27T15:17:40.160000+00:00",
+        "PlayerOut": "DFL-OBJ-000172",
+        "PlayingPosition": "DML",
+        "PlayerIn": "DFL-OBJ-002GAV",
+        "Team": "DFL-CLU-00000S"
+      },
+      {
+        "timestamp": "2023-05-27T15:20:36.280000+00:00",
+        "PlayerOut": "DFL-OBJ-002G02",
+        "PlayingPosition": "DMR",
+        "PlayerIn": "DFL-OBJ-J01K4C",
+        "Team": "DFL-CLU-00000B"
+      }
+    ],
+    "restart_counts": {
+      "KickOff": 5,
+      "FreeKick": 27,
+      "CornerKick": 7,
+      "GoalKick": 16,
+      "ThrowIn": 46,
+      "Offside": 3,
+      "FinalWhistle": 2,
+      "RefereeBall": 3
+    },
+    "period_tracking": {
+      "firstHalf": {
+        "frames": 69288,
+        "first_frame": 10000,
+        "last_frame": 79287,
+        "first_time_utc": "2023-05-27T13:31:06.400000+00:00",
+        "last_time_utc": "2023-05-27T14:17:17.880000+00:00",
+        "entities": 26
+      },
+      "secondHalf": {
+        "frames": 72273,
+        "first_frame": 100000,
+        "last_frame": 172272,
+        "first_time_utc": "2023-05-27T14:33:55.840000+00:00",
+        "last_time_utc": "2023-05-27T15:22:06.720000+00:00",
+        "entities": 32
+      }
+    }
+  },
+  "J03WOH": {
+    "provider_match_id": "DFL-MAT-J03WOH",
+    "teams": {
+      "DFL-CLU-00000P": "Fortuna D\u00fcsseldorf",
+      "DFL-CLU-000011": "SSV Jahn Regensburg"
+    },
+    "pitch_m": [
+      105.0,
+      68.0
+    ],
+    "goalkeepers": [
+      "DFL-OBJ-0028FW",
+      "DFL-OBJ-002GNH"
+    ],
+    "kickoffs_utc": {
+      "firstHalf": "2022-08-26T16:32:08.110000+00:00",
+      "secondHalf": "2022-08-26T17:34:58.910000+00:00"
+    },
+    "substitutions": [
+      {
+        "timestamp": "2022-08-26T17:54:51.720000+00:00",
+        "PlayerOut": "DFL-OBJ-0026UQ",
+        "Team": "DFL-CLU-000011",
+        "PlayerIn": "DFL-OBJ-002GFH",
+        "PlayingPosition": "LV"
+      },
+      {
+        "timestamp": "2022-08-26T17:55:22.760000+00:00",
+        "PlayerOut": "DFL-OBJ-00006V",
+        "Team": "DFL-CLU-00000P",
+        "PlayerIn": "DFL-OBJ-002GM9",
+        "PlayingPosition": "IVR"
+      },
+      {
+        "timestamp": "2022-08-26T17:55:27.840000+00:00",
+        "PlayerOut": "DFL-OBJ-002GM1",
+        "Team": "DFL-CLU-00000P",
+        "PlayerIn": "DFL-OBJ-002G5J",
+        "PlayingPosition": "OLM"
+      },
+      {
+        "timestamp": "2022-08-26T18:02:55.436000+00:00",
+        "PlayerOut": "DFL-OBJ-002GAB",
+        "Team": "DFL-CLU-000011",
+        "PlayerIn": "DFL-OBJ-0028OR",
+        "PlayingPosition": "STL"
+      },
+      {
+        "timestamp": "2022-08-26T18:03:11.575000+00:00",
+        "PlayerOut": "DFL-OBJ-0027B0",
+        "Team": "DFL-CLU-000011",
+        "PlayerIn": "DFL-OBJ-0028CD",
+        "PlayingPosition": "ORM"
+      },
+      {
+        "timestamp": "2022-08-26T18:13:10.280000+00:00",
+        "PlayerOut": "DFL-OBJ-002FXT",
+        "Team": "DFL-CLU-00000P",
+        "PlayerIn": "DFL-OBJ-0026RH",
+        "PlayingPosition": "ZO"
+      },
+      {
+        "timestamp": "2022-08-26T18:13:10.280000+00:00",
+        "PlayerOut": "DFL-OBJ-0000F8",
+        "Team": "DFL-CLU-00000P",
+        "PlayerIn": "DFL-OBJ-J01L1F",
+        "PlayingPosition": "ORM"
+      },
+      {
+        "timestamp": "2022-08-26T18:13:10.280000+00:00",
+        "PlayerOut": "DFL-OBJ-00003X",
+        "Team": "DFL-CLU-00000P",
+        "PlayerIn": "DFL-OBJ-00008K",
+        "PlayingPosition": "STZ"
+      },
+      {
+        "timestamp": "2022-08-26T18:15:00.320000+00:00",
+        "PlayerOut": "DFL-OBJ-002G2Y",
+        "Team": "DFL-CLU-000011",
+        "PlayerIn": "DFL-OBJ-002GDZ",
+        "PlayingPosition": "STR"
+      },
+      {
+        "timestamp": "2022-08-26T18:14:49.800000+00:00",
+        "PlayerOut": "DFL-OBJ-0027XP",
+        "Team": "DFL-CLU-000011",
+        "PlayerIn": "DFL-OBJ-0027P7",
+        "PlayingPosition": "ORM"
+      }
+    ],
+    "restart_counts": {
+      "KickOff": 6,
+      "FreeKick": 32,
+      "CornerKick": 6,
+      "GoalKick": 17,
+      "ThrowIn": 36,
+      "FinalWhistle": 2,
+      "Offside": 3,
+      "Penalty": 1,
+      "RefereeBall": 2
+    },
+    "period_tracking": {
+      "firstHalf": {
+        "frames": 69424,
+        "first_frame": 10000,
+        "last_frame": 79423,
+        "first_time_utc": "2022-08-26T16:32:09.720000+00:00",
+        "last_time_utc": "2022-08-26T17:18:26.640000+00:00",
+        "entities": 23
+      },
+      "secondHalf": {
+        "frames": 67790,
+        "first_frame": 100000,
+        "last_frame": 167789,
+        "first_time_utc": "2022-08-26T17:34:58.360000+00:00",
+        "last_time_utc": "2022-08-26T18:20:09.920000+00:00",
+        "entities": 33
+      }
+    }
+  },
+  "J03WOY": {
+    "provider_match_id": "DFL-MAT-J03WOY",
+    "teams": {
+      "DFL-CLU-00000P": "Fortuna D\u00fcsseldorf",
+      "DFL-CLU-00000Q": "F.C. Hansa Rostock"
+    },
+    "pitch_m": [
+      105.0,
+      68.0
+    ],
+    "goalkeepers": [
+      "DFL-OBJ-0028FW",
+      "DFL-OBJ-002FZB"
+    ],
+    "kickoffs_utc": {
+      "firstHalf": "2022-09-10T18:31:31.610000+00:00",
+      "secondHalf": "2022-09-10T19:33:45.810000+00:00"
+    },
+    "substitutions": [
+      {
+        "timestamp": "2022-09-10T19:09:03.653000+00:00",
+        "PlayerOut": "DFL-OBJ-J01KGY",
+        "Team": "DFL-CLU-00000Q",
+        "PlayerIn": "DFL-OBJ-J01GG9",
+        "PlayingPosition": "HL"
+      },
+      {
+        "timestamp": "2022-09-10T19:33:02.225000+00:00",
+        "PlayerOut": "DFL-OBJ-002GLL",
+        "Team": "DFL-CLU-00000Q",
+        "PlayerIn": "DFL-OBJ-0028IJ",
+        "PlayingPosition": "OLM"
+      },
+      {
+        "timestamp": "2022-09-10T19:59:28.901000+00:00",
+        "PlayerOut": "DFL-OBJ-002G5J",
+        "Team": "DFL-CLU-00000P",
+        "PlayerIn": "DFL-OBJ-J0130T",
+        "PlayingPosition": "DML"
+      },
+      {
+        "timestamp": "2022-09-10T19:59:47.600000+00:00",
+        "PlayerOut": "DFL-OBJ-002FXT",
+        "Team": "DFL-CLU-00000P",
+        "PlayerIn": "DFL-OBJ-0026RH",
+        "PlayingPosition": "STZ"
+      },
+      {
+        "timestamp": "2022-09-10T20:09:55.866000+00:00",
+        "PlayerOut": "DFL-OBJ-0028KZ",
+        "Team": "DFL-CLU-00000Q",
+        "PlayerIn": "DFL-OBJ-0001CF",
+        "PlayingPosition": "IVR"
+      },
+      {
+        "timestamp": "2022-09-10T20:10:00.522000+00:00",
+        "PlayerOut": "DFL-OBJ-002FXA",
+        "Team": "DFL-CLU-00000Q",
+        "PlayerIn": "DFL-OBJ-J01MF0",
+        "PlayingPosition": "ORM"
+      },
+      {
+        "timestamp": "2022-09-10T20:10:07.258000+00:00",
+        "PlayerOut": "DFL-OBJ-00019R",
+        "Team": "DFL-CLU-00000Q",
+        "PlayerIn": "DFL-OBJ-0028JQ",
+        "PlayingPosition": "STZ"
+      },
+      {
+        "timestamp": "2022-09-10T20:12:55.080000+00:00",
+        "PlayerOut": "DFL-OBJ-002GM1",
+        "Team": "DFL-CLU-00000P",
+        "PlayerIn": "DFL-OBJ-J01NQ8",
+        "PlayingPosition": "OLM"
+      },
+      {
+        "timestamp": "2022-09-10T20:18:20.310000+00:00",
+        "PlayerOut": "DFL-OBJ-J01H9X",
+        "Team": "DFL-CLU-00000P",
+        "PlayerIn": "DFL-OBJ-J01JQC",
+        "PlayingPosition": "ZO"
+      },
+      {
+        "timestamp": "2022-09-10T20:18:23.719000+00:00",
+        "PlayerOut": "DFL-OBJ-0000F8",
+        "Team": "DFL-CLU-00000P",
+        "PlayerIn": "DFL-OBJ-J01L1F",
+        "PlayingPosition": "ORM"
+      }
+    ],
+    "restart_counts": {
+      "KickOff": 6,
+      "ThrowIn": 54,
+      "FreeKick": 27,
+      "GoalKick": 19,
+      "Offside": 3,
+      "CornerKick": 2,
+      "FinalWhistle": 2,
+      "RefereeBall": 2
+    },
+    "period_tracking": {
+      "firstHalf": {
+        "frames": 69111,
+        "first_frame": 10000,
+        "last_frame": 79110,
+        "first_time_utc": "2022-09-10T18:31:32.360000+00:00",
+        "last_time_utc": "2022-09-10T19:17:36.760000+00:00",
+        "entities": 24
+      },
+      "secondHalf": {
+        "frames": 73425,
+        "first_frame": 100000,
+        "last_frame": 173424,
+        "first_time_utc": "2022-09-10T19:33:46.880000+00:00",
+        "last_time_utc": "2022-09-10T20:22:43.840000+00:00",
+        "entities": 31
+      }
+    }
+  },
+  "J03WPY": {
+    "provider_match_id": "DFL-MAT-J03WPY",
+    "teams": {
+      "DFL-CLU-00000P": "Fortuna D\u00fcsseldorf",
+      "DFL-CLU-000005": "1. FC N\u00fcrnberg"
+    },
+    "pitch_m": [
+      105.0,
+      68.0
+    ],
+    "goalkeepers": [
+      "DFL-OBJ-0001HW",
+      "DFL-OBJ-0028FW"
+    ],
+    "kickoffs_utc": {
+      "firstHalf": "2022-10-15T11:01:28.310000+00:00",
+      "secondHalf": "2022-10-15T12:03:29.010000+00:00"
+    },
+    "substitutions": [
+      {
+        "timestamp": "2022-10-15T12:20:46.800000+00:00",
+        "PlayingPosition": "STZ",
+        "Team": "DFL-CLU-00000P",
+        "PlayerOut": "DFL-OBJ-002G5J",
+        "PlayerIn": "DFL-OBJ-00008K"
+      },
+      {
+        "timestamp": "2022-10-15T12:20:49.680000+00:00",
+        "PlayingPosition": "LV",
+        "Team": "DFL-CLU-00000P",
+        "PlayerOut": "DFL-OBJ-0026RH",
+        "PlayerIn": "DFL-OBJ-J01CP5"
+      },
+      {
+        "timestamp": "2022-10-15T12:20:53.160000+00:00",
+        "PlayingPosition": "ZO",
+        "Team": "DFL-CLU-00000P",
+        "PlayerOut": "DFL-OBJ-J01H9X",
+        "PlayerIn": "DFL-OBJ-J01NQ8"
+      },
+      {
+        "timestamp": "2022-10-15T12:22:56.796000+00:00",
+        "PlayingPosition": "OLM",
+        "Team": "DFL-CLU-000005",
+        "PlayerOut": "DFL-OBJ-002595",
+        "PlayerIn": "DFL-OBJ-0026IA"
+      },
+      {
+        "timestamp": "2022-10-15T12:22:59.252000+00:00",
+        "PlayingPosition": "STR",
+        "Team": "DFL-CLU-000005",
+        "PlayerOut": "DFL-OBJ-J0178P",
+        "PlayerIn": "DFL-OBJ-002G78"
+      },
+      {
+        "timestamp": "2022-10-15T12:33:45.577000+00:00",
+        "PlayingPosition": "HL",
+        "Team": "DFL-CLU-000005",
+        "PlayerOut": "DFL-OBJ-002FYC",
+        "PlayerIn": "DFL-OBJ-00286U"
+      },
+      {
+        "timestamp": "2022-10-15T12:34:06.161000+00:00",
+        "PlayingPosition": "ORM",
+        "Team": "DFL-CLU-00000P",
+        "PlayerOut": "DFL-OBJ-0000F8",
+        "PlayerIn": "DFL-OBJ-002GM1"
+      },
+      {
+        "timestamp": "2022-10-15T12:41:16.269000+00:00",
+        "PlayingPosition": "DMZ",
+        "Team": "DFL-CLU-000005",
+        "PlayerOut": "DFL-OBJ-0000EJ",
+        "PlayerIn": "DFL-OBJ-J01K2L"
+      },
+      {
+        "timestamp": "2022-10-15T12:41:34.421000+00:00",
+        "PlayingPosition": "RV",
+        "Team": "DFL-CLU-000005",
+        "PlayerOut": "DFL-OBJ-0001LJ",
+        "PlayerIn": "DFL-OBJ-0001BX"
+      }
+    ],
+    "restart_counts": {
+      "KickOff": 3,
+      "ThrowIn": 41,
+      "FreeKick": 20,
+      "CornerKick": 11,
+      "GoalKick": 18,
+      "Offside": 2,
+      "FinalWhistle": 2,
+      "RefereeBall": 4
+    },
+    "period_tracking": {
+      "firstHalf": {
+        "frames": 69131,
+        "first_frame": 10000,
+        "last_frame": 79130,
+        "first_time_utc": "2022-10-15T11:01:29.320000+00:00",
+        "last_time_utc": "2022-10-15T11:47:34.520000+00:00",
+        "entities": 23
+      },
+      "secondHalf": {
+        "frames": 77080,
+        "first_frame": 100000,
+        "last_frame": 177079,
+        "first_time_utc": "2022-10-15T12:03:29.960000+00:00",
+        "last_time_utc": "2022-10-15T12:54:53.120000+00:00",
+        "entities": 32
+      }
+    }
+  },
+  "J03WQQ": {
+    "provider_match_id": "DFL-MAT-J03WQQ",
+    "teams": {
+      "DFL-CLU-00000P": "Fortuna D\u00fcsseldorf",
+      "DFL-CLU-00000H": "FC St. Pauli"
+    },
+    "pitch_m": [
+      105.0,
+      68.0
+    ],
+    "goalkeepers": [
+      "DFL-OBJ-0028FW",
+      "DFL-OBJ-0028LZ"
+    ],
+    "kickoffs_utc": {
+      "firstHalf": "2022-11-05T12:01:27.810000+00:00",
+      "secondHalf": "2022-11-05T13:03:51.810000+00:00"
+    },
+    "substitutions": [
+      {
+        "timestamp": "2022-11-05T13:24:55.120000+00:00",
+        "PlayerIn": "DFL-OBJ-J01L1F",
+        "PlayerOut": "DFL-OBJ-002FXT",
+        "Team": "DFL-CLU-00000P",
+        "PlayingPosition": "STL"
+      },
+      {
+        "timestamp": "2022-11-05T13:24:34.320000+00:00",
+        "PlayerIn": "DFL-OBJ-0000F8",
+        "PlayerOut": "DFL-OBJ-002GM1",
+        "Team": "DFL-CLU-00000P",
+        "PlayingPosition": "RM"
+      },
+      {
+        "timestamp": "2022-11-05T13:27:59.441000+00:00",
+        "PlayerIn": "DFL-OBJ-0027W9",
+        "PlayerOut": "DFL-OBJ-J0157X",
+        "Team": "DFL-CLU-00000H",
+        "PlayingPosition": "RV"
+      },
+      {
+        "timestamp": "2022-11-05T13:28:03.511000+00:00",
+        "PlayerIn": "DFL-OBJ-0028HW",
+        "PlayerOut": "DFL-OBJ-0027QN",
+        "Team": "DFL-CLU-00000H",
+        "PlayingPosition": "STZ"
+      },
+      {
+        "timestamp": "2022-11-05T13:28:10.454000+00:00",
+        "PlayerIn": "DFL-OBJ-J01HCH",
+        "PlayerOut": "DFL-OBJ-002GIY",
+        "Team": "DFL-CLU-00000H",
+        "PlayingPosition": "ORM"
+      },
+      {
+        "timestamp": "2022-11-05T13:36:28.023000+00:00",
+        "PlayerIn": "DFL-OBJ-00005H",
+        "PlayerOut": "DFL-OBJ-002G5J",
+        "Team": "DFL-CLU-00000P",
+        "PlayingPosition": "DMR"
+      },
+      {
+        "timestamp": "2022-11-05T13:40:21.889000+00:00",
+        "PlayerIn": "DFL-OBJ-0027AY",
+        "PlayerOut": "DFL-OBJ-0026V5",
+        "Team": "DFL-CLU-00000H",
+        "PlayingPosition": "OLM"
+      },
+      {
+        "timestamp": "2022-11-05T13:40:31.433000+00:00",
+        "PlayerIn": "DFL-OBJ-002GMV",
+        "PlayerOut": "DFL-OBJ-002FZR",
+        "Team": "DFL-CLU-00000H",
+        "PlayingPosition": "ORM"
+      },
+      {
+        "timestamp": "2022-11-05T13:50:02.129000+00:00",
+        "PlayerIn": "DFL-OBJ-00006V",
+        "PlayerOut": "DFL-OBJ-0026RH",
+        "Team": "DFL-CLU-00000P",
+        "PlayingPosition": "IVL"
+      }
+    ],
+    "restart_counts": {
+      "KickOff": 3,
+      "ThrowIn": 42,
+      "FreeKick": 20,
+      "GoalKick": 18,
+      "CornerKick": 15,
+      "FinalWhistle": 2,
+      "Offside": 1,
+      "RefereeBall": 1
+    },
+    "period_tracking": {
+      "firstHalf": {
+        "frames": 69204,
+        "first_frame": 10000,
+        "last_frame": 79203,
+        "first_time_utc": "2022-11-05T12:01:28.120000+00:00",
+        "last_time_utc": "2022-11-05T12:47:36.240000+00:00",
+        "entities": 23
+      },
+      "secondHalf": {
+        "frames": 73141,
+        "first_frame": 100000,
+        "last_frame": 173140,
+        "first_time_utc": "2022-11-05T13:03:52.320000+00:00",
+        "last_time_utc": "2022-11-05T13:52:37.920000+00:00",
+        "entities": 32
+      }
+    }
+  },
+  "J03WR9": {
+    "provider_match_id": "DFL-MAT-J03WR9",
+    "teams": {
+      "DFL-CLU-00000P": "Fortuna D\u00fcsseldorf",
+      "DFL-CLU-00000I": "1. FC Kaiserslautern"
+    },
+    "pitch_m": [
+      105.0,
+      68.0
+    ],
+    "goalkeepers": [
+      "DFL-OBJ-00003W",
+      "DFL-OBJ-0028FW"
+    ],
+    "kickoffs_utc": {
+      "firstHalf": "2022-11-11T17:31:11.980000+00:00",
+      "secondHalf": "2022-11-11T18:33:23.020000+00:00"
+    },
+    "substitutions": [
+      {
+        "timestamp": "2022-11-11T18:31:51.460000+00:00",
+        "PlayerIn": "DFL-OBJ-0000F9",
+        "Team": "DFL-CLU-00000I",
+        "PlayingPosition": "IVL",
+        "PlayerOut": "DFL-OBJ-0028GO"
+      },
+      {
+        "timestamp": "2022-11-11T18:32:00.029000+00:00",
+        "PlayerIn": "DFL-OBJ-0028G2",
+        "Team": "DFL-CLU-00000I",
+        "PlayingPosition": "ORM",
+        "PlayerOut": "DFL-OBJ-0026MI"
+      },
+      {
+        "timestamp": "2022-11-11T18:59:22.680000+00:00",
+        "PlayerIn": "DFL-OBJ-00017G",
+        "Team": "DFL-CLU-00000I",
+        "PlayingPosition": "ZO",
+        "PlayerOut": "DFL-OBJ-0025YM"
+      },
+      {
+        "timestamp": "2022-11-11T19:04:20.760000+00:00",
+        "PlayerIn": "DFL-OBJ-002G5J",
+        "Team": "DFL-CLU-00000P",
+        "PlayingPosition": "OLM",
+        "PlayerOut": "DFL-OBJ-0026RH"
+      },
+      {
+        "timestamp": "2022-11-11T19:04:24.760000+00:00",
+        "PlayerIn": "DFL-OBJ-0000F8",
+        "Team": "DFL-CLU-00000P",
+        "PlayingPosition": "ORM",
+        "PlayerOut": "DFL-OBJ-002GM1"
+      },
+      {
+        "timestamp": "2022-11-11T19:08:41.640000+00:00",
+        "PlayerIn": "DFL-OBJ-002GPI",
+        "Team": "DFL-CLU-00000I",
+        "PlayingPosition": "STZ",
+        "PlayerOut": "DFL-OBJ-0000YE"
+      },
+      {
+        "timestamp": "2022-11-11T19:14:15.240000+00:00",
+        "PlayerIn": "DFL-OBJ-J01CVM",
+        "Team": "DFL-CLU-00000P",
+        "PlayingPosition": "STR",
+        "PlayerOut": "DFL-OBJ-00008K"
+      },
+      {
+        "timestamp": "2022-11-11T19:14:27.720000+00:00",
+        "PlayerIn": "DFL-OBJ-002G0F",
+        "Team": "DFL-CLU-00000I",
+        "PlayingPosition": "OLM",
+        "PlayerOut": "DFL-OBJ-00265G"
+      },
+      {
+        "timestamp": "2022-11-11T19:18:06.480000+00:00",
+        "PlayerIn": "DFL-OBJ-J01NQ8",
+        "Team": "DFL-CLU-00000P",
+        "PlayingPosition": "ORM",
+        "PlayerOut": "DFL-OBJ-J01CVM"
+      }
+    ],
+    "restart_counts": {
+      "KickOff": 4,
+      "GoalKick": 17,
+      "ThrowIn": 37,
+      "FreeKick": 26,
+      "CornerKick": 6,
+      "FinalWhistle": 2,
+      "Offside": 2,
+      "Penalty": 1,
+      "RefereeBall": 1
+    },
+    "period_tracking": {
+      "firstHalf": {
+        "frames": 68354,
+        "first_frame": 10000,
+        "last_frame": 78353,
+        "first_time_utc": "2022-11-11T17:31:12.360000+00:00",
+        "last_time_utc": "2022-11-11T18:16:46.480000+00:00",
+        "entities": 23
+      },
+      "secondHalf": {
+        "frames": 78456,
+        "first_frame": 100000,
+        "last_frame": 178455,
+        "first_time_utc": "2022-11-11T18:33:23.680000+00:00",
+        "last_time_utc": "2022-11-11T19:25:41.880000+00:00",
+        "entities": 30
+      }
+    }
+  }
+}

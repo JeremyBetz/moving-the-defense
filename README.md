@@ -18,11 +18,11 @@ $$
 
 where $\mathbf x_d(t)$ is an outfield defender’s physical pitch position and $\mathbf c_{-d}(t)$ is the centroid of the other available defending outfield players, excluding the goalkeeper.
 
-Phase 4B tested this quantity under the frozen Phase 4A protocol. The supported claim is deliberately narrow:
+Phase 4B tested this quantity in two Metrica sample matches, and Phase 4C then executed a separately frozen external-replication protocol across seven IDSSE/DFL matches. The supported claim is deliberately narrow:
 
-> **Focal-relative path is a reproducible focal-versus-collective geometric primitive with stable activity-context structure in these two sample matches.**
+> **Focal-relative path externally replicated as a focal-versus-collective geometric primitive across seven professional matches from an independent tracking dataset/provider environment under the frozen criteria.**
 
-All 9/9 frozen activity cells met the compatibility rule, activity relationships retained direction, and every frozen window/smoothing sensitivity preserved the qualitative result. Focal departure nevertheless remains substantially associated with generic activity; focal absolute-path correlations were 0.541 and 0.462. Phase 4B did not estimate an activity-free effect or establish a tactical response.
+Phase 4C produced A — strong external replication: all seven matches were usable and core-replicating, every strict misaligned-reference control passed, common translation cancelled, and all nine sensitivities passed in every match. Focal departure nevertheless remains substantially associated with generic activity; IDSSE focal absolute-path correlations were 0.644–0.710. Neither phase estimated an activity-free effect or established a tactical response.
 
 ![Phase 4 held-out design](figures/phase4/phase4_heldout_design.png)
 
@@ -30,7 +30,8 @@ All 9/9 frozen activity cells met the compatibility rule, activity relationships
 
 - **Game 1 is development/history.** It supported dataset exploration and a sequence of deliberately narrow construct diagnostics.
 - **Game 2 completed the first held-out validation.** Phase 4B executed the unchanged frozen protocol and is closed.
-- **Phase 4B validates geometry only.** It does not establish pinning, dragging, tracking, covering, handoffs, tactical defensive response, attacker attribution, or value.
+- **IDSSE completed multi-match external replication in one additional provider/data environment.** Phase 4C produced category A across all seven matches; this is not evidence from seven independent providers.
+- **Phases 4B/4C validate geometry only.** They do not establish pinning, dragging, tracking, covering, handoffs, tactical defensive response, attacker attribution, or value.
 - **Relational reconfiguration remains unvalidated.** Phase 3 did not distinguish it from general event-associated activity.
 - **Gravity and off-ball value are downstream hypotheses.** No gravity, attention, responsibility, ambiguity, recovery-burden, or player-value metric exists.
 
@@ -125,12 +126,13 @@ python -m pip install -r requirements-phase0.txt
 jupyter notebook
 ```
 
-Recommended execution order is chronological only when reconstructing history. Phase 4B is complete. Future data roles are prospectively separated in the [post–Phase 4 data strategy](docs/post_phase4_data_strategy.md); no additional tracking dataset has been inspected for the next phase.
+Recommended execution order is chronological only when reconstructing history. Phase 4C is complete. Future data roles and inference levels must remain separated; external geometric replication does not authorize tactical or attacker-attribution claims.
 
 Reproducibility seeds and protocol sources of truth:
 
 - Phase 3: [`config/phase3a_validation_protocol.json`](config/phase3a_validation_protocol.json), seed `20260828`;
 - Phase 4: [`config/phase4a_focal_departure_validation_protocol.json`](config/phase4a_focal_departure_validation_protocol.json), seed `20260829`.
+- Phase 4C: [`config/phase4c_external_replication_protocol.json`](config/phase4c_external_replication_protocol.json), bootstrap seed `20260830`.
 
 ## Reading guide
 
@@ -141,6 +143,7 @@ Reproducibility seeds and protocol sources of truth:
 - [Post–Phase 4 data strategy](docs/post_phase4_data_strategy.md) — prospective roles for external replication and later modeling data.
 - [Research roadmap](docs/research_roadmap.md) — conditional path and legitimate stopping points.
 - [Phase 4 protocol](docs/phase4_focal_departure_validation_protocol.md) — current frozen empirical design.
+- [Phase 4C results](docs/phase4c_external_replication_results.md) — multi-match geometric replication in an independent tracking dataset/provider environment.
 - [Research log](docs/research_log.md) — full chronological audit trail.
 - [Documentation index](docs/README.md) — reading routes for different audiences.
 

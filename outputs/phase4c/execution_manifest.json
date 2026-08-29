@@ -1,0 +1,8 @@
+{
+  "protocol_sha256_before_execution": "6e1711ba681bce3c843cde9803758ca68428f2a84e6b25454d9d866cee5dea59",
+  "implementation_sha256": "252787c7e797f6eb51c6ad1c267d896ce755ac3c113c4d11ff5b289f22ba57ec",
+  "bootstrap_seed_base": 20260830,
+  "bootstrap_match_seed_rule": "seed 20260830 restarted independently for each match",
+  "bootstrap_resamples_per_match": 10000,
+  "raw_data_directory_ignored": true
+}

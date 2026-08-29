@@ -28,7 +28,7 @@ Every arrow is conditional. Geometry does not become cognition, responsibility, 
 
 ## Current location
 
-> **Current project position:** Phase 4B has validated focal-relative path narrowly at the individual-relative-to-collective geometric level in two Metrica sample matches. Tactical defensive response and every later inference remain unvalidated.
+> **Current project position:** Phase 4C has externally replicated focal-relative path at the individual-relative-to-collective geometric level across seven IDSSE matches. Tactical defensive response and every later inference remain unvalidated.
 
 The completed frozen Phase 4 design asked whether
 
@@ -36,13 +36,13 @@ $$
 \mathbf r_d(t)=\mathbf x_d(t)-\mathbf c_{-d}(t)
 $$
 
-has stable distributional and contextual structure under frozen activity diagnostics. It did, while remaining substantially activity-associated.
+has stable distributional and contextual structure under frozen activity diagnostics. Phase 4B supported it in two Metrica matches; Phase 4C then produced A — strong external replication across seven professional matches from one independent tracking dataset/provider environment relative to Metrica. The primitive remains substantially activity-associated and Phase 4C does not estimate an activity-independent effect.
 
 ## What each layer requires
 
 ### 1. Tracking geometry
 
-Required: synchronized player/ball coordinates, known sampling, documented missingness, physical units, period boundaries, and stable player availability. Established for the two Metrica sample matches at the schema/readiness level.
+Required: synchronized player/ball coordinates, known sampling, documented missingness, physical units, period boundaries, and stable player availability. Established for the two Metrica sample matches and mapped successfully across all seven IDSSE matches.
 
 ### 2. Reference frames
 
@@ -51,13 +51,13 @@ Required: transparent definitions and failure modes. A leave-one-out centroid is
 ### 3. Scale-specific primitives
 
 - **Collective translation:** descriptively established as a baseline.
-- **Focal departure:** reproducible across Games 1 and 2 under the frozen test; still geometric and activity-associated.
+- **Focal departure:** externally replicated across seven IDSSE matches under the frozen Phase 4C test; still geometric and activity-associated.
 - **Local deformation:** descriptively useful but membership-sensitive.
 - **Opponent-relative geometry:** mathematically clear but semantically weak without justified opponent selection.
 
 ### 4. Validation beyond activity
 
-Required: outcome-independent sampling, adequate support, development/test separation, negative controls, frozen sensitivities, and explicit falsification. Phase 3 failed here; Phase 4B passed narrowly at the geometric level.
+Required: outcome-independent sampling, adequate support, development/test separation, negative controls, frozen sensitivities, and explicit falsification. Phase 3 failed here; Phase 4B passed narrowly and Phase 4C externally replicated the geometric primitive.
 
 ### 5. Relational reconfiguration
 
@@ -85,4 +85,4 @@ Requires an expected-response baseline, attacker attribution, robustness across 
 
 A scientifically successful project can end at any of these points if it clearly establishes why the next arrow is unsupported.
 
-The prospectively stated dataset sequence is in the [post–Phase 4 data strategy](post_phase4_data_strategy.md). [Phase 4C external-replication protocol v1.0](phase4c_external_replication_protocol.md) was frozen without IDSSE access and remains unexecuted.
+The prospectively stated dataset sequence is in the [post–Phase 4 data strategy](post_phase4_data_strategy.md). [Phase 4C protocol v1.0](phase4c_external_replication_protocol.md) was frozen before IDSSE access; the completed [external-replication result](phase4c_external_replication_results.md) is A at the geometric level.

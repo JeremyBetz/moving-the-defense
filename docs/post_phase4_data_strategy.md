@@ -20,11 +20,11 @@ The intended inferential sequence is explicit: **Metrica Game 1 development → 
 
 **Role:** first untouched held-out validation. **Status:** completed in Phase 4B. It supports narrow cross-match replication of focal-relative path within the Metrica sample environment.
 
-### IDSSE / DFL data
+### IDSSE / DFL data — completed Phase 4C role
 
-**Intended role:** first serious external, multi-match replication of the focal-relative geometric primitive.
+**Role:** completed first external, multi-match replication of the focal-relative geometric primitive. Phase 4C produced A — strong external replication at the geometric level.
 
-Prior repository research records seven complete Bundesliga/2. Bundesliga matches, official optical/TRACAB tracking at 25 Hz, and synchronized event/metadata. Its independent environment addresses the main next threat: was Game 1→2 replication only a same-provider, two-match property? Do not download or inspect focal-departure outcomes before a dedicated protocol is written and frozen.
+The seven complete Bundesliga/2. Bundesliga matches provide official optical/TRACAB tracking at 25Hz and synchronized event/metadata. The frozen Phase 4C protocol was written before access, and all seven matches subsequently passed as core replications. This answers the measurement-portability threat under the frozen criteria, not later tactical-semantic questions.
 
 ### Metrica Sample Game 3
 
@@ -42,14 +42,14 @@ Prior repository research records seven complete Bundesliga/2. Bundesliga matche
 
 **Potential later role:** sensing-technology robustness where it answers a specific scientific question. Different datasets should not be pooled indiscriminately.
 
-## Likely next empirical phase—not executed
+## Completed external-replication phase
 
-The likely next phase is **Phase 4C: external cross-match replication of focal departure using IDSSE**. Prospective protocol v1.0 is now frozen in the [Phase 4C protocol](phase4c_external_replication_protocol.md) and machine-readable config, but it has not been executed.
+**Phase 4C: external cross-match replication of focal departure using IDSSE** is complete. Protocol v1.0 is frozen in the [Phase 4C protocol](phase4c_external_replication_protocol.md); the outcome-blind [mapping audit](phase4c_idsse_mapping_audit.md) and [results](phase4c_external_replication_results.md) preserve the execution record.
 
-Candidate research question:
+Research question answered at the geometric level:
 
 > Does the focal-relative path primitive exhibit stable measurement behavior across multiple professional matches from an independent tracking dataset?
 
-The dedicated frozen protocol covers computability and data quality; match-level distributions and variation; focal and collective activity relationships; common-translation invariance; contemporaneous versus misaligned references; window/smoothing robustness; player/team/match hierarchy; and provider/reference sensitivity. Its success thresholds are authoritative; this strategy document does not restate them. Provider differences must not be tuned away to reproduce Metrica's numerical distribution.
+The dedicated frozen protocol covered computability and data quality; match-level distributions and variation; focal and collective activity relationships; common-translation invariance; contemporaneous versus misaligned references; window/smoothing robustness; player/team/match hierarchy; and provider/reference sensitivity. Provider differences were retained rather than tuned away.
 
-Phase 4C was reviewed and frozen before IDSSE inspection. This document fixes dataset purpose; the dedicated protocol fixes execution and A/B/C/P rules. Freezing alone does not constitute data access or execution.
+Phase 4C was reviewed and frozen before IDSSE inspection and executed without changing its substantive rules. Category A establishes external measurement replication only; future data use requires a new prospectively justified question rather than automatic expansion.

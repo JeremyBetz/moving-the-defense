@@ -1,0 +1,59 @@
+{
+  "implementation_name": "Phase 4C IDSSE provider implementation",
+  "implementation_version": "1.0",
+  "frozen_protocol_commit": "d6c8facfd04c8153b136fe7311d2fdadda12de08",
+  "mapping_completed_before_focal_outcomes": true,
+  "material_protocol_issue": false,
+  "matches": ["J03WMX", "J03WN1", "J03WOH", "J03WOY", "J03WPY", "J03WQQ", "J03WR9"],
+  "coordinates": {
+    "fields": ["Frame.X", "Frame.Y"],
+    "units": "metres",
+    "pitch_m": [105.0, 68.0],
+    "orientation_normalization": false,
+    "valid_observation": "frame present and X/Y finite",
+    "M_field_interpretation": "match minute, not a validity flag",
+    "interpolation": false
+  },
+  "identity": {
+    "match": "General.MatchId",
+    "team": "Team.TeamId / FrameSet.TeamId",
+    "player": "Player.PersonId / FrameSet.PersonId",
+    "goalkeeper": "Player.PlayingPosition == TW"
+  },
+  "time": {
+    "tracking": "Frame.T converted to UTC nanoseconds",
+    "events": "Event.EventTime converted to UTC nanoseconds",
+    "period": "FrameSet.GameSection and period-opening KickOff.GameSection",
+    "sampling_hz": 25,
+    "interval_grid": "half-open period-kickoff-relative whole multiples; first boundary not before tracking; exact regular frame count"
+  },
+  "context": {
+    "possession": "latest event-carried team from Play, OtherBallAction, ShotAtGoal, BallClaiming, and TacklingGame possession-change semantics",
+    "open_play": "Play.FromOpenPlay true; explicit restart vocabulary sets false until later open-play event",
+    "restart_tags": ["KickOff", "ThrowIn", "GoalKick", "FreeKick", "CornerKick", "Penalty", "RefereeBall", "Offside", "FinalWhistle"],
+    "defending_team": "other metadata team"
+  },
+  "construct": {
+    "focal_excluded": true,
+    "goalkeeper_excluded": true,
+    "membership_fixed_within_interval": true,
+    "complete_defending_outfield_min": 9,
+    "no_padding": true,
+    "no_interpolation": true
+  },
+  "frozen_execution": {
+    "primary_window_seconds": 5,
+    "primary_smoothing_frames": 7,
+    "sensitivity_window_seconds": [4, 5, 6],
+    "sensitivity_smoothing_frames": [5, 7, 9],
+    "bootstrap_resamples": 10000,
+    "bootstrap_cluster": "interval within match",
+    "seed": 20260830,
+    "protocol_config": "config/phase4c_external_replication_protocol.json"
+  },
+  "outcome_blind_support_gate": {
+    "usable_matches": 7,
+    "required_min": 5,
+    "passed": true
+  }
+}
