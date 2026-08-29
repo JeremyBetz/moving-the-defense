@@ -1,5 +1,17 @@
 # Research Log
 
+## 2026-08-28 — Phase 2B Temporal Relational-Change Diagnostic
+
+Phase 2B reused the exact seven Phase 2A windows and frozen relationship selections. No example search followed metric inspection. Raw absolute/collective, defender–defender, defender–opponent, ball-relative, and clearly interpretable depth channels remain separate. Rates are centered finite differences of centered 7-frame rolling means, with fixed 5/7/9-frame sensitivity, full-window edge handling, and no interpolation.
+
+At 1230.12s, the relational change is visible as a temporal process rather than only a before/after contrast. Away20 and Away21 reduce distance to Home10 throughout the pre-anchor interval. Away19 initially separates, reaches a local maximum distance before the anchor, and then converges. Away19–Away20 and Away19–Away21 spacing first increases slightly and then contracts strongly, while Away20–Away21 changes less initially and contracts later. Selected secondary-opponent relationships move in different directions and the ball-relative components change substantially around the reception. Individual movements partly cancel while centroid displacement remains limited near the anchor.
+
+The cross-case comparison preserves distinct qualitative signatures without classifying them. Coordinated movement shows large collective translation with slower, non-rigid internal change. The excursion shows strong focal collective-relative and opponent-relative change against a more stable local relation. Tackle/engagement combines convergence, local contraction, and translation too tightly for confident ordering. The accommodation window contains strong contraction and non-monotonic opponent distances that endpoint comparison would miss. The translation contrast retains focal changes beyond a large centroid component. At 4197.04s, one defender approaches while another separates and defender-pair spacings move in opposing directions, retaining the negative/heterogeneous result.
+
+Broad temporal ordering is visually supportable in the 1230.12s anchor, but not at frame precision. The fixed smoothing sensitivity preserves direction changes while shifting or rounding extrema. Raw first differences are too noisy, several channels reproduce collective or ball-driven motion, and ball movement remains a major alternative explanation. No automated lead–lag, threshold, change point, or causal order is justified.
+
+The result gives **defensive relational reallocation** limited feasibility as an observable temporal reconfiguration of typed relationships. It is not a zero-sum transfer, state transition, single magnitude, or causal mechanism. No composite score, weights, gravity/style metric, structure/exposure score, assignment inference, classifier, change-point algorithm, optimized lag, clustering, network, HMM, ML, or dataset expansion was introduced.
+
 ## 2026-08-28 — Phase 2A Relational Representation Requirements
 
 Phase 2A began as a representation-design diagnostic rather than a modeling phase. It reused seven fixed Sample Game 1 sequences from Phases 1A, 1C, 1E, and 1F: coordinated collective movement (1888–1896s), apparent excursion (590–598s), tackle/engagement (550.76–555.76s), the primary interior-threat anchor (1228.12–1232.12s around 1230.12s), collective accommodation/engagement (1229.28–1234.28s), the collective-translation contrast (3679.88–3684.88s), and the negative interior-threat case (4195.04–4199.04s). No new window search or dataset expansion occurred.

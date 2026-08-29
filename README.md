@@ -69,9 +69,9 @@ Frequent transitions are not inherently harmful. Strong defenses may exchange an
 
 ## Current Status
 
-**Stage: relational representation requirements following early construct diagnostics.**
+**Stage: temporal diagnostics of separate relational channels.**
 
-Metrica Sports Sample Game 1 is the sole empirical sample so far. Phase 0 documented the dataset representation; Phases 1A–1F performed narrowly scoped construct diagnostics spanning structural translation, opponent-relative position, event-anchored convergence, kinematic decomposition, movement coupling, collective accommodation, and local compression. Phase 2A compares what separate relational views preserve or lose across those fixed cases. No tactical inference model, state system, composite representation, relational weighting scheme, or final metric has been selected.
+Metrica Sports Sample Game 1 is the sole empirical sample so far. Phase 0 documented the dataset representation; Phases 1A–1F performed narrowly scoped construct diagnostics spanning structural translation, opponent-relative position, event-anchored convergence, kinematic decomposition, movement coupling, collective accommodation, and local compression. Phase 2A compared what separate relational views preserve or lose; Phase 2B tests whether changes within those same typed channels can be followed through time. No tactical inference model, state system, composite representation, relational weighting scheme, or final metric has been selected.
 
 ## What We Have Learned So Far
 
@@ -85,6 +85,7 @@ Metrica Sports Sample Game 1 is the sole empirical sample so far. Phase 0 docume
 | 1E | Do teammates accommodate individual engagement? | Accommodation-consistent movement was heterogeneous across fixed cases. | Engagement and collective coherence may coexist; relational strengths need not be zero-sum. |
 | 1F | Can local reorganization occur with a stable centroid? | Yes: the 1230.12 s counterexample shows substantial local compression and relationship changes with little centroid movement. | Stable centroid does not imply stable defensive relationships; structure likely needs relational representation. |
 | 2A | What minimum information must a relational representation preserve? | No single tested view suffices: centroid, defender–defender, defender–opponent, and ball-relative views preserve different necessary context. | Retain a sparse set of typed relations separately before proposing any composite representation. |
+| 2B | Can relational reconfiguration be watched unfolding rather than inferred from two snapshots? | In the 1230.12s case, separate channels show broad, partially staggered changes; exact ordering remains noise- and smoothing-sensitive. | Relational reallocation is descriptively feasible as temporal typed change, not yet a score, state transition, or detected event. |
 
 Negative and ambiguous results are research findings, not implementation failures. They delimit what a future representation must be capable of seeing.
 
@@ -159,6 +160,10 @@ The executed [`notebooks/phase1f_interior_threat_local_compression_diagnostics.i
 ### Phase 2A relational-representation requirements
 
 The executed [`notebooks/phase2a_relational_representation_requirements.ipynb`](notebooks/phase2a_relational_representation_requirements.ipynb) reuses seven fixed Phase 1 cases to compare separate centroid-relative, defender–defender, defender–opponent, depth, ball-relative, and local-neighborhood views. A before/during/after figure for 1230.12s makes visible why small centroid movement does not imply stable relational geometry. The diagnostic proposes only a provisional minimum information requirement—sparse typed relations with collective and ball context—and does not combine them into a score, network, assignment system, or model.
+
+### Phase 2B temporal relational-change diagnostic
+
+The executed [`notebooks/phase2b_temporal_relational_change_diagnostics.ipynb`](notebooks/phase2b_temporal_relational_change_diagnostics.ipynb) reuses the exact Phase 2A windows and traces raw levels plus fixed-smoothed rates within separate typed channels. The 1230.12s worked example shows local compression, opponent-relative reversals, secondary-opponent change, and limited centroid movement unfolding with partially staggered timing. The 4197.04s negative case remains heterogeneous. Broad ordering is visually supportable, but frame-exact onset is not; no channels are combined and no detector or state model is introduced.
 
 ## Repository Structure
 

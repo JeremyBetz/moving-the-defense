@@ -104,6 +104,14 @@ The 1230.12s counterexample makes the minimum information requirement concrete: 
 
 The provisional minimum is a sparse, typed relational description that retains: (1) absolute pitch position and a collective-translation baseline; (2) local defender–defender x/y geometry; (3) selected defender–opponent x/y geometry, including secondary opponents only when inspection justifies it; and (4) ball-relative context. Clearly interpretable line/depth views may supplement these quantities but must not be imposed as universal inferred units. These views remain separate; no composite representation, structure score, network, or ranking has been defined. Sparsity and stable relationship types are requirements against making the representation so flexible that arbitrary post hoc pairs can explain every movement.
 
+### Phase 2B temporal refinement
+
+Phase 2B adds a temporal requirement: a defensible relational representation must preserve not only before/after differences but the direction, persistence, and approximate ordering of change within each relationship type. In the 1230.12s case, Away20 and Away21 converge toward Home10 before the event anchor, Away19 initially separates and then reverses, and different defender-pair spacings begin contracting at different times. Selected secondary-opponent and ball-relative relationships also change non-uniformly. The reorganization can therefore be watched unfolding without forcing a discrete state transition.
+
+This supports **defensive relational reallocation** only in a limited descriptive sense: an interpretable temporal reconfiguration of typed geometric relationships. It does not mean transfer of zero-sum relational weights or movement through mutually exclusive states. The typed channels may share ball-driven or collective motion and are not independent causal mechanisms.
+
+Temporal ordering remains coarse. Centered 5/7/9-frame smoothing preserves broad direction changes but shifts or rounds local extrema, while unsmoothed 25 Hz first differences are too noisy for reliable interpretation. Current evidence supports partially staggered change at a broad sub-second-to-second scale, not frame-exact onset, optimized lead–lag estimates, or causal sequencing. The heterogeneous 4197.04s case remains distinguishable descriptively because its typed channels change in opposing ways rather than showing broadly convergent local reorganization; this is not a classification rule.
+
 Three quantities should remain separate:
 
 1. **Current state:** which behavioral explanation currently fits best?

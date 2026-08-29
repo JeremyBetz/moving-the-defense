@@ -34,6 +34,8 @@ Can meaningful changes between these behavioral explanations be identified witho
 
 This now includes testing whether current relational balance, ambiguity between similarly plausible relationships, and the rate or magnitude of relational reallocation can be distinguished empirically. No relational weights or composite score are yet defined.
 
+Phase 2B adds the descriptive temporal question: can direction, persistence, and approximate ordering of change be read within separate typed channels without defining a state transition or combining them? At present, broad staggered changes are visible in the strongest fixed case, but frame-exact ordering is not robust.
+
 ### RQ4 — Ambiguity
 
 Can the analysis identify periods in which multiple explanations are similarly plausible, and distinguish genuine boundary behavior from tracking noise?
@@ -93,6 +95,8 @@ The research must consider whether apparent state changes or later errors are be
 - Which structural reference is appropriate for each role and phase?
 - Which relationships can be selected consistently enough to remain sparse and interpretable rather than explaining behavior through arbitrary post hoc pairs?
 - Is any single relational view sufficient across coordinated translation, excursion, engagement, accommodation, centroid cancellation, and negative controls? Phase 2A evidence currently suggests no.
+- Can broad ordering among collective, defender–defender, defender–opponent, and ball-relative changes be reproduced without optimized lags or an analyst-imposed narrative?
+- How much temporal precision survives the fixed 5/7/9-frame smoothing sensitivity, tracking noise, and rapid ball movement?
 - What time window distinguishes stable relationships from brief coincidence?
 - Should behavior be represented by discrete states, continuous scores, or both?
 - Are Structure, Track, provisional Engage/Close, and Recover mutually exclusive states at all, or overlapping dimensions and relational constraints?
