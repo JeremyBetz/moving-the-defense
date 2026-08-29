@@ -1,5 +1,11 @@
 # Novelty and Research Risk Memo
 
+## Phase 2H terminology and construct risk
+
+Empirical sections should prefer **relational reconfiguration** over **defensive relational reallocation**. Reallocation remains historical/theoretical shorthand but risks implying latent attention, responsibility transfer, or a zero-sum budget that tracking cannot observe. The surviving construct is provisionally limited to coherent, temporally localized change in prospectively specified typed geometry not adequately described by a pre-specified baseline alone.
+
+Novelty now depends on prospective discrimination from matched ordinary movement. Failure under independent sampling, additional matches, reasonable reference sensitivity, ball/collective controls, or expert correspondence would require retiring or narrowing the construct.
+
 ## Purpose
 
 This memo identifies the closest prior work, the project's overlap with it, the remaining candidate contribution, and evidence that would require substantial reframing. Novelty remains provisional pending closer methodological comparison and empirical construct validation.

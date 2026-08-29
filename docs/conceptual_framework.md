@@ -158,6 +158,14 @@ The result is **B — partially supported**. Collective-dominant movement at 188
 
 Cross-scale correspondence adds information primarily by making **disagreement among scales** auditable. It does not yet operationalize defensive relational reallocation or show ordered spread across scales. Ball motion and shared collective movement remain major alternative explanations, and prospective membership weakens several apparently compelling cases. A future “asking questions” hypothesis may test whether attacking actions are consequential when defensive geometry changes across multiple scales, but no observed correspondence is attributed to a specific attacker here.
 
+### Phase 2H construct synthesis
+
+The broad definition—any change in a typed relationship—is rejected because ordinary active soccer satisfies it. A mandatory cross-scale definition is also rejected: generic activity and shared ball/collective movement can affect many scales, while the supported 590 focal departure does not require robust local change.
+
+The narrowest surviving candidate is: **Defensive relational reconfiguration is a coherent, temporally localized change in prospectively specified typed defensive geometric relationships that is not adequately described by the relevant pre-specified baseline motion alone.** This is conceptual, not operational. “Coherent,” “localized,” and “adequately described” require prospective matched-contrast validation and must not hide post-hoc references or thresholds.
+
+Terminology decision **B**: retain **defensive relational reallocation** provisionally as historical/theoretical shorthand, but prefer **relational reconfiguration** in empirical sections. “Reallocation” risks cognitive, responsibility-transfer, and zero-sum implications that tracking cannot support. Reference dependence is legitimate only when references are pre-specified and justified; post-hoc reference selection remains unacceptable. Reconfiguration may occur within one scale or across scales.
+
 Three quantities should remain separate:
 
 1. **Current state:** which behavioral explanation currently fits best?

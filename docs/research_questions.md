@@ -46,6 +46,8 @@ Phase 2F asks whether the compression failure reflects an inappropriate pair sca
 
 Phase 2G asks whether collective, focal, local-configuration, opponent-relational, and ball-relative geometry show interpretable correspondence within the same sequence. Initial evidence is partial: collective- and focal-dominant cases remain separable, but prospective membership weakens the multi-scale 1230/3682 accounts, the 1232 start/anchor reversal undermines robustness, and ball/shared movement remains a major alternative. Correspondence currently exposes agreement and disagreement; it does not establish propagation or a reallocation event.
 
+Phase 2H rejects “any typed relationship change” as too broad and rejects multi-scale activity as a necessary definition. It provisionally retains a narrower reference-relative construct: coherent, temporally localized change in prospectively specified typed defensive geometry not adequately described by a pre-specified baseline alone. The unresolved task is whether those terms discriminate matched ordinary movement prospectively.
+
 ### RQ4 — Ambiguity
 
 Can the analysis identify periods in which multiple explanations are similarly plausible, and distinguish genuine boundary behavior from tracking noise?
@@ -116,6 +118,7 @@ The research must consider whether apparent state changes or later errors are be
 - Can meaningful configuration deformation be distinguished from ordinary local deformation during continuous or collective movement without creating a score or detector?
 - Can cross-scale correspondence be reproduced under prospective membership without simply restating that many geometric quantities move during soccer?
 - Can ball-driven/shared collective correspondence be distinguished from opponent-relational change without optimized lags or attacker attribution?
+- Can the provisional definition of relational reconfiguration distinguish prospectively sampled candidates from matched ordinary movement without post-hoc reference or threshold tuning?
 - What evidence would distinguish a useful overlapping motif vocabulary from a renamed tactical-state taxonomy?
 - What time window distinguishes stable relationships from brief coincidence?
 - Should behavior be represented by discrete states, continuous scores, or both?

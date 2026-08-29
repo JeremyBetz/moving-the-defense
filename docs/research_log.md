@@ -1,5 +1,13 @@
 # Research Log
 
+## 2026-08-28 — Phase 2H Construct Definition and Falsification Synthesis
+
+Phase 2H synthesized Phase 1A–2G without new windows or metrics. Candidate 1—any typed relationship change—is rejected as ordinary activity. Candidate 2—bounded multi-scale change—is rejected as overinclusive and unnecessarily restrictive. Candidate 3 survives only provisionally: **defensive relational reconfiguration is a coherent, temporally localized change in prospectively specified typed defensive geometric relationships that is not adequately described by the relevant pre-specified baseline motion alone.** Its unresolved terms require prospective validation.
+
+Terminology decision **B** retains “defensive relational reallocation” as historical/theoretical shorthand but prefers “relational reconfiguration” empirically. Tracking does not observe attention, decision, responsibility, recognition, instruction, workload, causal transfer, or a zero-sum relational budget. Reference dependence is acceptable only with pre-specified justified references; the 1232 reversal shows why post-hoc selection is disqualifying.
+
+The recommended next phase is prospective matched-contrast validation with pre-registered references, metric-independent sampling, matched ordinary movement, independent expert judgments, and explicit ball/phase context. Retire the construct if it cannot discriminate contrasts without post-hoc tuning, if reasonable references contradict too often, if ball/collective motion explains apparent cases, or if geometry fails to correspond with independent interpretation.
+
 ## 2026-08-28 — Phase 2G Cross-Scale Geometric Correspondence Diagnostic
 
 Phase 2G reused the exact seven Phase 2D–2F windows and the Phase 2E/2F defaults: focal plus two nearest outfield teammates at the start, start-fixed nearest two opponents as geometric context, a fixed 15m neighborhood as sensitivity, and anchor sets only as separate sensitivity. Aligned raw views retained collective centroid movement, focal leave-one-out x/y, local pair/span/area deformation, opponent-relative x/y/distance, and ball-relative x/y. No scale was combined.

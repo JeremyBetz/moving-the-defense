@@ -21,7 +21,7 @@ A useful shorthand is:
 
 This is neither a mandatory sequence nor a set of known tactical instructions. Transitions may skip or reverse, responsibilities may be handed off, and some behavior may remain ambiguous or unexplained.
 
-Current Phase 1 evidence places this state-machine interpretation under explicit reconsideration. The working hypothesis is that defensive behavior is continuously multi-relational, with collective-team, ball-relative, and opponent-relative relationships potentially operating at the same time. The refined phenomenon of interest is **sharp changes in the relative explanatory strength of competing observable relationships**. **Defensive relational reallocation** is provisional language for such behavioral/geometric change; it does not imply cognition, intention, instruction, or literal psychological allocation. No relational weights or composite score have been defined.
+Current evidence rejects the state machine as an adequate primary representation. **Defensive relational reallocation** remains historical/theoretical shorthand, but empirical sections prefer **relational reconfiguration** because “reallocation” risks implying attention, responsibility transfer, or a zero-sum budget. The narrow provisional construct is coherent, temporally localized change in prospectively specified typed defensive geometry that is not adequately described by a pre-specified baseline alone. It is not operationalized or validated.
 
 These relationships are not assumed to be zero-sum. A defender may increase opponent engagement while collective coherence remains high or also increases. **Collective accommodation** is provisional language for teammate movement consistent with absorbing or supporting an individual engagement; it is a hypothesis, not an accommodation score, causal claim, or conclusion about team quality.
 
@@ -69,7 +69,7 @@ Frequent transitions are not inherently harmful. Strong defenses may exchange an
 
 ## Current Status
 
-**Stage: cross-scale geometric correspondence diagnostics within separate relational channels.**
+**Stage: construct definition and prospective falsification design.**
 
 Metrica Sports Sample Game 1 is the sole empirical sample so far. Phase 0 documented the dataset representation; Phases 1A–1F performed narrowly scoped construct diagnostics; Phase 2A established typed relational requirements; Phase 2B traced temporal change; Phase 2C tested episode logic; Phase 2D attempted motifs; Phase 2E falsified post-hoc relationship selection; Phase 2F established scale-aware local deformation; and Phase 2G aligns collective, focal, local, opponent, and ball geometry without combining them. No tactical inference model, classifier, state system, composite representation, relational weighting scheme, or final metric has been selected.
 
@@ -91,6 +91,7 @@ Metrica Sports Sample Game 1 is the sole empirical sample so far. Phase 0 docume
 | 2E | Do motifs survive reproducible relationship selection fixed before later movement is inspected? | Unevenly: translation and focal excursion are comparatively robust; 1230.12s compression and 3682.88s overlap are neighborhood-rule-sensitive; opponent selection mostly encodes proximity; 4197.04s remains mixed. | Use start-fixed nearest-two teammates as a disclosed reproducibility baseline, not a validated unit; treat nearest opponents as context, not responsibility. |
 | 2F | Does a prospectively fixed local configuration preserve internal reorganization better than selected compression pairs? | Partially: configuration descriptors separate translation from deformation, but 1230.12s does not recover clean compression across memberships and 4197.04s also deforms. | Treat local compression as a possible subtype of broader local configuration deformation; deformation alone is not a detected reconfiguration. |
 | 2G | Do separate geometric scales show interpretable correspondence within the same sequence? | Partially: collective- and focal-dominant cases remain distinct, but prospective membership, ball context, and the 1232 reference-time reversal weaken multi-scale narratives. | Use correspondence to expose agreement/disagreement, not as propagation, a score, or an operational reallocation event. |
+| 2H | Does relational reallocation remain a distinct falsifiable construct? | Only provisionally under a narrow reference-relative definition; broad and mandatory-cross-scale definitions fail. | Prefer “relational reconfiguration” empirically and test it against prospectively sampled matched ordinary movement. |
 
 Negative and ambiguous results are research findings, not implementation failures. They delimit what a future representation must be capable of seeing.
 
@@ -189,6 +190,10 @@ The executed [`notebooks/phase2f_local_configuration_representation_diagnostics.
 ### Phase 2G cross-scale geometric correspondence diagnostic
 
 The executed [`notebooks/phase2g_cross_scale_geometric_correspondence_diagnostics.ipynb`](notebooks/phase2g_cross_scale_geometric_correspondence_diagnostics.ipynb) aligns collective, focal, local-configuration, start-fixed opponent, and ball-relative views for the same seven cases. Collective-dominant 1888 and focal-dominant 590 remain distinguishable, but 1230 is only provisionally multi-scale, 3682 is only partly local-within-collective, and the 1232 start/anchor reversal prevents a robust narrative. Tackle and 4197 remain unresolved. The result is B—partially supported: correspondence helps audit scale agreement and disagreement but does not establish propagation, attacker influence, or an operational relational-reallocation event.
+
+### Phase 2H construct synthesis
+
+The executed [`notebooks/phase2h_relational_reallocation_construct_synthesis.ipynb`](notebooks/phase2h_relational_reallocation_construct_synthesis.ipynb) rejects definitions that collapse into generic activity or require multi-scale change, retaining only a narrow provisional reference-relative construct. Terminology decision B preserves “reallocation” historically but prefers “relational reconfiguration” empirically. The next recommended step is prospective matched-contrast validation—not attribution, gravity, or modeling.
 
 ## Repository Structure
 
