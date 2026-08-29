@@ -6,7 +6,7 @@ The project currently has a research program and methodological foundation. It d
 |---|---|---|---|
 | Clear soccer problem | Partially developed | “Asking questions” is intuitive, but the validated empirical object is not established. | Show why a validated primitive matters to a recognizable defensive problem. |
 | Defensible contribution | Missing | State-machine novelty weakened; relational umbrella failed Phase 3. | A held-out primitive result that adds information beyond ordinary movement and existing marking/space work. |
-| Literature positioning | Partially developed | Two close 2026 works are identified; many bibliography sections remain unverified. | Full source-level review across defensive assignment, tracking representation, off-ball value, and gravity. |
+| Literature positioning | Substantially improved but incomplete | Eighteen targeted sources now cover centroid geometry, player-team synchrony, defensive tracking, marking/assignment, relative movement, and gravity. The strongest threat is established player-to-team-center and player-team phase analysis. | Extend into proprietary/formation-normalization methods, soccer off-ball valuation, and peer-reviewed expected-response/gravity work before manuscript claims. |
 | Data sufficiency | Missing | Two public sample matches; one is held out. | Multi-match evidence beyond a single held-out sample, preferably with diverse teams/contexts. |
 | Development/validation separation | Currently adequate for next diagnostic | Game 1/Game 2 split and frozen Phase 4 protocol. | Preserve the split during execution; add external matches for broader generalization. |
 | Reproducibility | Partially developed | Executed notebooks, configs, checksums, seeds, ignored raw data, figure generator. | One command or scripted pipeline, pinned environment, automated integrity checks. |
@@ -32,3 +32,29 @@ The project currently has a research program and methodological foundation. It d
 7. Decide whether the contribution is a validated primitive, a tactical construct, or a negative methodological result.
 
 Failure at Phase 4 could still support a useful methodological paper only if the negative result generalizes and clearly changes how tracking constructs should be validated. Gravity, off-ball value, and a universal reconfiguration detector are not prerequisites for a worthwhile contribution.
+
+## Literature-Audit Implications
+
+### Closest competing approaches
+
+- Player distance to the team center with entropy/relative-phase analysis (Sampaio and Maçãs, 2012).
+- Player-team cluster-phase synchronization (Duarte, Araújo, and Correia, 2013).
+- Player deviation from group-average player-ball-goal phase and reciprocal compensation (Carrilho et al., 2020).
+- Dynamic defensive assignment inference and contextual ghosting (Groom et al., 2026).
+- Open-play marking coordination, target similarity, and entropy (Calero-Sanz et al., 2026).
+
+### Likely contribution if Phase 4 succeeds
+
+The credible contribution would be validation/application novelty: a simple leave-one-out collective-relative defensive path survives explicit focal, collective, team, ball, negative-reference, sensitivity, and held-out checks. It would not be strong measurement novelty, tactical reconfiguration, gravity, or value.
+
+### Likely contribution if Phase 4 fails
+
+Failure alone is not a paper. A methodological contribution would require a broader demonstration that apparently intuitive centroid-relative movement quantities are dominated by activity, unstable across matches, or otherwise fail in a way that changes analytical practice.
+
+### Remaining literature gaps
+
+- Proprietary club/vendor metrics and non-public applied work.
+- Formation-normalization and center-of-mass-frame methods in computer-science proceedings.
+- Comprehensive soccer off-ball movement valuation.
+- Peer-reviewed expected-versus-observed defensive-pressure/gravity methods.
+- Direct evidence about leave-one-out collective references in other invasion sports.

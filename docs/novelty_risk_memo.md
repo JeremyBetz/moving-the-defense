@@ -1,91 +1,76 @@
 # Novelty and Research Risk Memo
 
-> **Current-status note (2026-08-29):** the candidate contributions below preserve the pre-validation research framing. Phase 3 subsequently failed to distinguish the umbrella reception-anchored construct from generic activity. Phase 4 therefore tests focal departure as a narrower geometric primitive; no reconfiguration, attacker-effect, gravity, or value novelty claim is currently established.
+## Current Judgment
 
-## Phase 2H terminology and construct risk
+**B - limited measurement novelty but potentially meaningful validation/application novelty.**
 
-Empirical sections should prefer **relational reconfiguration** over **defensive relational reallocation**. Reallocation remains historical/theoretical shorthand but risks implying latent attention, responsibility transfer, or a zero-sum budget that tracking cannot observe. The surviving construct is provisionally limited to coherent, temporally localized change in prospectively specified typed geometry not adequately described by a pre-specified baseline alone.
+Centroid-relative player position, distance to a team geometrical center, player-team synchronization, and relative-phase analysis are established in soccer. Phase 4 must not be presented as inventing the decomposition of individual from collective movement.
 
-Novelty now depends on prospective discrimination from matched ordinary movement. Failure under independent sampling, additional matches, reasonable reference sensitivity, ball/collective controls, or expert correspondence would require retiring or narrowing the construct.
+## Strongest Prior-Art Threat
 
-## Purpose
+Sampaio and Maçãs (2012) analyzed soccer players' distance to the team center through time, including approximate entropy and relative phase. Duarte, Araújo, and Correia (2013) explicitly quantified player-team synchrony. Carrilho et al. (2020) measured player deviation from a group-average phase and interpreted reciprocal compensation.
 
-This memo identifies the closest prior work, the project's overlap with it, the remaining candidate contribution, and evidence that would require substantial reframing. Novelty remains provisional pending closer methodological comparison and empirical construct validation.
+Together, these works support the adversarial statement:
 
-## Closest Prior Art
+> Player-versus-collective movement is established soccer-tracking methodology; focal departure is a simple refinement, not a wholly new mathematical family.
 
-### Groom et al. (2026)
+The statement that Phase 4 is "simply standard relative phase expressed differently" is too strong. Relative phase and accumulated Cartesian residual path have different definitions, units, and questions. The statement that centroid-relative geometry is already widely used is substantially true.
 
-**What they do:** Groom, Wang, Belo, Rice, and Anderson use a covariate-dependent Hidden Markov Model on corner-kick tracking data to infer time-resolved man-marking and zonal assignments without manual assignment labels. Their model includes switches between attackers and from zonal to man-marking responsibility, and supports assignment-switch metrics and downstream defensive evaluation.
+## If Phase 4 Succeeds Unchanged, What Could Be New?
 
-**Overlap:** Both projects treat defensive responsibility as time-varying, infer it from tracking geometry, distinguish collective/zonal and opponent-relative responsibility, and care about transitions rather than static marking alone.
+A successful held-out result could support this limited claim:
 
-**Remaining differences:** Their setting is the constrained geometry of corner kicks, with learned stationary zonal distributions. Their reported model does not permit man-to-zone transitions. Open play requires moving structural references, release of opponent responsibility, return toward collective structure, continuously moving ball and block, and periods in which several behavioral explanations may be plausible. The proposed Recover process is therefore important, but it must be empirically distinguished rather than asserted as novel.
+> A leave-one-out defensive collective-relative path quantity—excluding the focal defender and goalkeeper—shows reproducible structure beyond absolute focal movement, collective translation, aggregate defensive activity, and ball movement under a frozen development/held-out design.
 
-**Threat to novelty:** This work invalidates any claim that prior research has not modeled transitions between zonal and opponent assignments, or that label-free time-resolved defensive assignment inference is new. Simply transferring their model to open play would be an application change, not a sufficient conceptual contribution.
+Possible novelty would lie primarily in:
 
-### Calero-Sanz et al. (2026)
+- **validation:** explicit confound conditioning, negative collective references, frozen sensitivities, and held-out replication;
+- **defensive application:** using the simple geometry as an interpretation-light individual defensive primitive rather than a team dispersion or synchrony summary;
+- **methodological discipline:** demonstrating what the primitive does and does not add beyond ordinary activity before tactical attribution.
 
-**What they do:** Calero-Sanz, López del Campo, Resta, and Buldú construct dynamic bipartite defender-attacker marking networks from tracking data in 99 professional LaLiga matches. Spatial proximity and directional alignment define marking interactions. Network projections characterize teammate coordination and similarity in marking-target allocation; entropy measures how evenly marking effort is distributed across opponents.
+Even then, "reproducible focal departure" would not mean meaningful reconfiguration. A soccer interpretation beyond differential movement would remain a separate requirement.
 
-**Overlap:** Their open-play framework represents transient defender-attacker relationships, marking load, coordinated activation, target-allocation similarity, and diversity of marking effort. It directly supports asking how attacking movement activates defenders and transfers responsibility.
+## What Could Definitely Not Be Claimed as New?
 
-**Remaining differences:** Based on the publisher record, instantaneous competition between structural and opponent-relative explanations, transition execution, explicit return to structure, recovery burden, and disruption persistence are not established as primary objects. Full-text comparison is still needed before treating these as differences.
+- Team centroids or geometrical centers in soccer.
+- Player distance or position relative to a team center.
+- Removing or normalizing for team location to study shape or formation.
+- Player-team synchronization, cluster phase, or relative-phase analysis.
+- Interpersonal coordination, reciprocal compensation, or collective-motion analysis.
+- Dynamic marking networks, man/zonal assignment inference, or assignment switching.
+- Tracking-based defensive evaluation, off-ball movement analysis, pitch control, or space valuation.
+- Player gravity or observed-versus-expected defensive pressure.
+- Relational reconfiguration, attacker-induced response, attention, responsibility, gravity, or off-ball value on the basis of Phase 4 alone.
 
-**Threat to novelty:** This work invalidates the broad claim that nobody has asked what off-ball movement forces a defense to do. A contribution must provide information beyond the resulting marking network, target distribution, or spatial outcome.
+## Exact Operational Distinction
 
-## Established Neighboring Areas
+The frozen primitive uses:
 
-- **Space generation and pitch control:** dragging defenders and changing controlled space are established research subjects.
-- **Off-ball run valuation:** prior work values movements without a reception, so event-data invisibility is not sufficient novelty.
-- **Player gravity:** established in basketball and emerging in soccer; this project is not inventing gravity.
-- **Defensive influence models:** tracking, graph-attention, ghosting, EPV, and responsibility-based approaches already evaluate aspects of off-ball defending.
+$$
+\mathbf c_{-d}(t)=\frac{1}{|O_d(t)|}\sum_{j\in O_d(t)}\mathbf x_j(t),
+\qquad
+\mathbf r_d(t)=\mathbf x_d(t)-\mathbf c_{-d}(t),
+$$
 
-These areas require source-level bibliography expansion before detailed comparative claims are used in a paper.
+where $O_d(t)$ contains the other available defending outfield players. It then accumulates Euclidean increments of $\mathbf r_d(t)$. The closest centroid literature generally uses all-player centers, scalar player-center distance, aggregate stretch, or phase-derived synchrony. This is a real operational difference, but not enough for strong measurement novelty by itself.
 
-## Claims We Should Not Make
+## Key Risks After the Audit
 
-- Previous work models marking, whereas this project uniquely models transitions between zonal and opponent responsibility.
-- No prior work asks what an off-ball movement forces defenders to do.
-- This project invents space creation by dragging defenders, valuation of non-receiving runs, player gravity, marking networks, assignment inference, or tracking-based off-ball defensive evaluation.
-- Assignment switch rate is equivalent to the project's full transition construct.
-- Marking entropy is equivalent to instantaneous responsibility ambiguity.
-- Frequent transitions necessarily indicate poor defending or cognitive overload.
-- Tracking data reveals intent, belief, instruction, communication, or mental bandwidth.
+1. **Trivial-transform risk:** reviewers may regard leave-one-out centroid-relative path as an obvious variant of established centroid-distance measures.
+2. **Activity risk:** the result may be almost entirely focal activity expressed in a translated frame.
+3. **Interpretation risk:** replication may not provide meaning beyond "the defender moved differently from teammates."
+4. **Scope risk:** two public sample matches are insufficient for a broad soccer contribution.
+5. **Prior-art scope risk:** formation-normalization or proprietary analytics work may contain closer operational equivalents not visible in the reviewed public literature.
+6. **Conceptual overreach risk:** marking, coordination, and gravity literature already occupies much of the downstream narrative.
 
-## Candidate Contribution
+## Reframing Conditions
 
-The original candidate contribution was a continuous responsibility-resolution process organized around Structure / Track / Close / Recover. Phase 1 construct diagnostics now place that state interpretation under reconsideration.
+- If a closer source proves operationally equivalent, retain Phase 4 as a replication/validation test and abandon measurement novelty.
+- If Phase 4 replicates but is absorbed by activity, describe it as a geometric accounting result, not a tactical primitive.
+- If it replicates beyond activity but lacks soccer interpretation, claim validated geometry only.
+- If it fails held-out replication, preserve the falsification; do not rescue it by changing the frozen test.
+- Do not proceed from success directly to reconfiguration, attacker attribution, gravity, or value.
 
-> We investigate whether open-play defending can be represented as continuously multi-relational behavior, and whether sharp changes in the relative explanatory strength or configuration of team-, ball-, opponent-, and local relationships provide information beyond assignments, marking networks, or aggregate spatial summaries.
+## Bottom Line
 
-A concise tactical formulation is:
-
-> The tactical effect of an attacking movement may reside not only in displacement, but in the relational reorganization it induces across individual engagement, collective accommodation, and recovery.
-
-Both statements are candidate contributions, not established novelty or causal findings.
-
-## Critical Distinctions
-
-- **Switch rate versus transition process:** an A-to-B assignment change omits the duration and structure of the path through competing responsibility, teammate compensation, false movement, and subsequent recovery.
-- **Marking entropy versus instantaneous responsibility ambiguity:** entropy can summarize the distribution of marking effort across opponents over time. Proposed ambiguity asks how similarly plausible competing behavioral explanations are at a particular moment. High diversity can coexist with clean transitions; repeated ambiguity can occur between only two alternatives.
-- **Transition frequency versus execution quality:** a good defense may switch often and fluidly. Persistence, coordination, ambiguity, and recovery cost may be more informative than count alone.
-- **Displacement versus responsibility revision:** large movement can follow one stable solution, while small movement can repeatedly test a boundary between solutions.
-
-## Falsification and Reframing Conditions
-
-The project should be substantially reframed if:
-
-1. Existing open-play work already operationalizes essentially the same instantaneous Structure/Track/Close/Recover responsibility process.
-2. Responsibility ambiguity cannot be distinguished from tracking noise or arbitrary model uncertainty.
-3. The proposed states cannot be identified with reasonable construct validity from tracking geometry.
-4. State-transition measures add no meaningful descriptive or predictive information beyond displacement, proximity, or marking-network measures.
-5. Attacking probes cannot be operationalized without unsupported inference about attacker intent.
-6. Transition frequency or ambiguity has no meaningful relationship to defensive consequences and is not useful as a descriptive construct on its own.
-7. Relational descriptions add no reproducible information beyond proximity, ball distance, centroid translation, aggregate compactness, or existing marking-network representations.
-
-## Current Research Position
-
-The project currently appears worth continuing, but the original mutually exclusive state framing is not supported as an assumed ontology. Phase 1 evidence favors a provisional multi-relational view: defensive relationships may overlap, need not be zero-sum, and can reorganize locally while a team centroid remains stable. Phase 1F supplies a concrete counterexample showing why structure may require relational representation rather than one team-level reference point.
-
-The novelty claim remains provisional. Full-text methodological comparison and broader construct validation must establish whether relational balance, ambiguity, reallocation, accommodation, and recovery are distinct, reproducible, and informative beyond existing marking networks and simpler geometry.
+The credible novelty proposition is not "we invented focal-relative movement." It is "we subjected a simple, defensively framed leave-one-out collective-relative path to unusually explicit confound and held-out validation." Whether that proposition becomes scientifically meaningful depends entirely on the unchanged Phase 4 result and later interpretation.

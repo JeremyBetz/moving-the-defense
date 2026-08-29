@@ -27,6 +27,7 @@ This ledger is the shortest authoritative guide to what the project can and cann
 | Attackers induce defensive response or reconfiguration. | Future hypothesis | Asking Questions theory | No attacker-attribution analysis has been executed. | Ball, team, opponent, and passage activity confound association. | Validated defensive primitives, comparable contexts, prospective attribution design. |
 | Soccer gravity or off-ball value has been measured. | Future hypothesis; not implemented | Roadmap only | None. | Response is not value; causal attribution and expected response are absent. | Multi-match primitive validation, attacker attribution, baselines, and downstream consequence analysis. |
 | Focal departure has reproducible structure beyond ordinary activity. | **Current held-out test; not yet known** | Phase 4A protocol | Outcome-blind Game 1/Game 2 support passes; protocol is frozen. | No Game 2 focal-relative outcome has been inspected. | Execute Phase 4B unchanged and preserve falsification conditions. |
+| The focal-departure measurement family is strongly novel. | Not supported by literature audit | Phase 4A literature audit | Player-to-team-center distance and player-team synchronization are established soccer methods. | The exact leave-one-out accumulated path was not identified, but it is a close refinement of known geometry. | Any contribution must come mainly from validation rigor, defensive application, or later interpretation—not invention of centroid-relative motion. |
 
 ## Current target in plain language
 
