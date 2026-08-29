@@ -122,6 +122,18 @@ This does not yield a general episode definition. The same fixed logic also iden
 
 The conservative conclusion is **B — partially feasible**. A pattern-specific, non-optimized interval can describe one kind of relational reconfiguration, but episode boundaries and interpretation remain too context-sensitive for general use. “Defensive relational reallocation” may provisionally include a bounded interval of persistent, jointly interpretable change in preserved relationship types. It must not mean any multi-channel activity, a universal event, scalar magnitude, causal mechanism, or tactical state.
 
+### Phase 2D geometric motif vocabulary
+
+Phase 2D replaces the search for one universal episode signature with a small descriptive vocabulary of three overlapping geometric motifs. **Coordinated collective translation** emphasizes substantial, broadly aligned absolute and centroid movement with internal geometry remaining comparatively coherent rather than rigid. **Focal excursion** emphasizes one defender's movement relative to the leave-one-out centroid or fixed local teammates, without implying opponent tracking or closing. **Local compression** emphasizes contraction across multiple preselected defender pairs, with centroid movement permitted to be small or large and without implying defensive success or threat control.
+
+The canonical fixed cases support different emphases in raw geometry. At 1888–1896s, centroid net displacement is 31.021m, median outfield displacement is 31.042m, mean displacement-direction cosine is 0.990, and focal leave-one-out net displacement is only 2.099m; internal pair distances still change, so translation is not rigid-shape preservation. At 590–598s, the centroid moves 13.763m while focal leave-one-out net/path movement is 7.625/12.392m and local pair directions are mixed, supporting a focal-excursion description. At 1228.12–1232.12s, centroid net movement is only 2.856m while the three fixed defender-pair changes are −12.40m, −14.73m, and −2.75m, supporting local compression.
+
+The motifs are not mutually exclusive. The tackle window combines highly aligned translation, focal deviation, opponent convergence, and mixed local contraction/expansion. The accommodation window contains compression followed by expansion. The 3682.88s contrast combines a 19.314m centroid displacement with contraction in two fixed local pairs, showing translation plus compression. The unchanged 4197.04s trio remains heterogeneous: two pair distances expand, one contracts, and focal leave-one-out net movement is only 0.524m.
+
+All three motifs are **descriptively supported** in these fixed examples, with context qualifications. A motif vocabulary is provisionally more empirically defensible than a universal relational-reallocation detector because it preserves geometric type, permits overlap and no-clean-motif cases, and remains readable from raw trajectories. It is not a complete taxonomy, motif classifier, or generalizable result. Relationship selection must remain prospective and stable or the vocabulary becomes unfalsifiable.
+
+Defensive relational reallocation is therefore refined as temporal change that may be described through one or more overlapping, soccer-interpretable geometric motifs while preserving the typed relationships underneath. It is not itself a motif, class, state, score, or universal event. Pinning, handoff, accommodation, rotation, and exposure remain unresolved possibilities rather than motifs added in Phase 2D.
+
 Three quantities should remain separate:
 
 1. **Current state:** which behavioral explanation currently fits best?

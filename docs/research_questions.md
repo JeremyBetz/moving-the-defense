@@ -38,6 +38,8 @@ Phase 2B adds the descriptive temporal question: can direction, persistence, and
 
 Phase 2C adds an episode-boundary question: can a persistent overlap of specific typed changes define a soccer-defensible candidate interval without reducing continuous activity to an event? Current evidence is partially supportive for interior compression but too pattern- and context-dependent for a general operational definition.
 
+Phase 2D asks whether a small overlapping vocabulary—coordinated collective translation, focal excursion, and local compression—is more faithful to the fixed geometric evidence than a universal episode definition. The motifs are descriptions rather than states or classes; sequences may contain several or none.
+
 ### RQ4 — Ambiguity
 
 Can the analysis identify periods in which multiple explanations are similarly plausible, and distinguish genuine boundary behavior from tracking noise?
@@ -101,6 +103,8 @@ The research must consider whether apparent state changes or later errors are be
 - How much temporal precision survives the fixed 5/7/9-frame smoothing sensitivity, tracking noise, and rapid ball movement?
 - Can activity—many continuously changing relationships—be distinguished prospectively from a specific relational pattern without a composite magnitude or post hoc relationship selection?
 - Which episode patterns, if any, can be pre-specified without turning a useful interior-compression diagnostic into a universal reconfiguration rule?
+- Can prospectively selected typed relationships reproduce translation, excursion, and compression motifs beyond these fixed examples without making relationship selection unfalsifiably flexible?
+- What evidence would distinguish a useful overlapping motif vocabulary from a renamed tactical-state taxonomy?
 - What time window distinguishes stable relationships from brief coincidence?
 - Should behavior be represented by discrete states, continuous scores, or both?
 - Are Structure, Track, provisional Engage/Close, and Recover mutually exclusive states at all, or overlapping dimensions and relational constraints?

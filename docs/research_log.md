@@ -1,5 +1,21 @@
 # Research Log
 
+## 2026-08-28 — Phase 2D Geometric Reconfiguration-Motif Diagnostic
+
+Phase 2D reused the exact seven Phase 2C windows and fixed relationships. Three signatures were written before the cross-case comparison: coordinated collective translation, focal excursion, and local compression. They are overlapping geometric motifs, not tactical states, assignments, causal mechanisms, quality claims, scores, or classes. Primary evidence uses raw 105 × 68m geometry, so derivative smoothing does not drive the distinctions.
+
+The canonical translation case at 1888–1896s has 31.021m centroid net movement, 31.042m median outfield net movement, 0.990 mean displacement-direction cosine, and only 2.099m focal leave-one-out net movement. Selected internal distances change by −0.46m, +2.67m, and +2.71m, confirming comparatively coherent rather than rigid translation.
+
+The canonical excursion at 590–598s has 13.763m centroid movement but 7.625m focal leave-one-out net movement and 12.392m focal leave-one-out path length. Selected local pair changes are mixed (+3.42m, −6.56m, +3.62m), while the illustrative Home2–Away23 distance falls 16.597m and ball-relative spans are large. The geometry supports focal excursion without establishing tracking, closing, or responsibility.
+
+The 1230.12s canonical compression case has only 2.856m centroid net movement while selected defender-pair distances change by −12.40m, −14.73m, and −2.75m. Focal leave-one-out movement is also large, so excursion-like movement coexists with the multi-defender compression pattern. Compression is geometric only and does not establish success, engagement, or threat control.
+
+Adversarial cases preserve overlap. Tackle/engagement combines 18.993m centroid movement, 0.976 direction alignment, 13.806m focal leave-one-out movement, and mixed pair changes. The accommodation sequence compresses then expands. The 3682.88s contrast combines 19.314m centroid movement and 0.991 alignment with contraction in two fixed pairs, explaining the Phase 2C translation/compression overlap. At 4197.04s, focal leave-one-out net movement is only 0.524m and pair changes are +5.12m, −5.56m, and +5.29m; the unchanged case remains heterogeneous/no-clean-motif.
+
+All three motifs are descriptively supported in their canonical cases, with context sensitivity. A motif vocabulary is provisionally more defensible than a universal detector because raw geometry distinguishes the canonical emphases and the vocabulary permits overlap and no-clean-motif cases. It is not complete, classified, or validated beyond Sample Game 1. Stable prospective relationship selection remains necessary for falsifiability.
+
+Defensive relational reallocation is refined as temporal change describable through one or more overlapping geometric motifs while retaining typed relationships. It is not a motif, state, class, score, or universal event. No motif classifier/score, composite index, weights, gravity metric, attacker attribution, assignment inference, tactical-state model, HMM, clustering, network, ML, optimized change point, causal inference, or dataset expansion was introduced.
+
 ## 2026-08-28 — Phase 2C Candidate Reconfiguration-Episode Diagnostic
 
 Phase 2C reused the exact seven Phase 2B windows and relationship selections. It tested interval logic rather than a classifier: same-direction change in a 5/7/9-frame-smoothed relationship had to persist for at least 0.6s, and any overlap interval also had to last 0.6s. These are fixed illustrative, non-optimized choices. No magnitude threshold was used.
