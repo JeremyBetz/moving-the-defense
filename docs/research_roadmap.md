@@ -85,4 +85,4 @@ Requires an expected-response baseline, attacker attribution, robustness across 
 
 A scientifically successful project can end at any of these points if it clearly establishes why the next arrow is unsupported.
 
-The prospectively stated dataset sequence and likely—but unexecuted—external replication phase are in the [post–Phase 4 data strategy](post_phase4_data_strategy.md).
+The prospectively stated dataset sequence is in the [post–Phase 4 data strategy](post_phase4_data_strategy.md). [Phase 4C external-replication protocol v1.0](phase4c_external_replication_protocol.md) was frozen without IDSSE access and remains unexecuted.

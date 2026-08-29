@@ -76,6 +76,10 @@ python src/phase4b_focal_departure_validation.py
 
 The executed narrative artifact is [`notebooks/phase4b_focal_departure_heldout_validation.ipynb`](../notebooks/phase4b_focal_departure_heldout_validation.ipynb); detailed results are in [`docs/phase4b_focal_departure_validation_results.md`](phase4b_focal_departure_validation_results.md). The analysis writes derived tables to `outputs/phase4b/` and figures to `figures/phase4b/`.
 
+## Phase 4C external replication
+
+Frozen prospective protocol v1.0 is [`docs/phase4c_external_replication_protocol.md`](phase4c_external_replication_protocol.md), with machine-readable rules in [`config/phase4c_external_replication_protocol.json`](../config/phase4c_external_replication_protocol.json). It was written and frozen without IDSSE access and has not executed. Provider schema mapping and support checks must occur outcome-blind before focal-relative outcomes.
+
 Documentation figures can be regenerated with:
 
 ```bash

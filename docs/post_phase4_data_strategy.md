@@ -44,12 +44,12 @@ Prior repository research records seven complete Bundesliga/2. Bundesliga matche
 
 ## Likely next empirical phase—not executed
 
-The likely next phase is **Phase 4C: external cross-match replication of focal departure using IDSSE**.
+The likely next phase is **Phase 4C: external cross-match replication of focal departure using IDSSE**. Prospective protocol v1.0 is now frozen in the [Phase 4C protocol](phase4c_external_replication_protocol.md) and machine-readable config, but it has not been executed.
 
 Candidate research question:
 
 > Does the focal-relative path primitive exhibit stable measurement behavior across multiple professional matches from an independent tracking dataset?
 
-A future protocol may consider computability and data quality; match-level distributions and variation; focal and collective activity relationships; common-translation invariance; contemporaneous versus misaligned references; window/smoothing robustness; player/team/match hierarchy; and provider/reference sensitivity. Detailed success thresholds are not frozen here. Provider differences must not be tuned away to reproduce Metrica's numerical distribution.
+The dedicated frozen protocol covers computability and data quality; match-level distributions and variation; focal and collective activity relationships; common-translation invariance; contemporaneous versus misaligned references; window/smoothing robustness; player/team/match hierarchy; and provider/reference sensitivity. Its success thresholds are authoritative; this strategy document does not restate them. Provider differences must not be tuned away to reproduce Metrica's numerical distribution.
 
-Phase 4C must be prospectively specified before IDSSE inspection. This document fixes dataset purpose, not an executable protocol.
+Phase 4C was reviewed and frozen before IDSSE inspection. This document fixes dataset purpose; the dedicated protocol fixes execution and A/B/C/P rules. Freezing alone does not constitute data access or execution.

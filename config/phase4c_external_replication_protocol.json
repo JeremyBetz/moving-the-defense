@@ -1,0 +1,309 @@
+{
+  "protocol_name": "Phase 4C external focal-departure replication",
+  "protocol_version": "1.0",
+  "status": "frozen_prospective_not_executed",
+  "designed_without_idsse_access": true,
+  "research_question": "Does the focal-relative path primitive exhibit stable measurement behavior across multiple professional matches from an independent tracking dataset?",
+  "target_dataset": {
+    "name": "IDSSE / DFL",
+    "expected_matches_from_prior_metadata": 7,
+    "expected_tracking_source": "official optical/TRACAB",
+    "expected_sampling_hz": 25,
+    "schema_status": "unresolved_until_outcome_blind_mapping",
+    "data_accessed_during_design": false
+  },
+  "construct": {
+    "name": "focal departure from collective defensive motion",
+    "definition": "focal defender position minus the contemporaneous centroid of the other available defending outfield players",
+    "exclude_focal_from_reference": true,
+    "exclude_goalkeeper_from_reference": true,
+    "membership_fixed_within_interval": true,
+    "primary_outcome": "accumulated Euclidean path of smoothed focal-relative x/y coordinates in metres",
+    "prohibit_construct_redesign": true
+  },
+  "coordinates_and_sampling": {
+    "units": "physical metres",
+    "pitch_dimensions": "provider metadata; document per match",
+    "orientation_normalization": false,
+    "expected_sampling_hz": 25,
+    "missing_coordinate_interpolation": false
+  },
+  "sampling": {
+    "primary_interval_seconds": 5,
+    "sensitivity_interval_seconds": [4, 5, 6],
+    "half_open": true,
+    "nonoverlapping": true,
+    "grid": "smallest elapsed-match multiple of interval length not before tracking begins in each period",
+    "primary_frames_at_25hz": 125,
+    "same_period": true,
+    "single_event_defined_possession_team": true,
+    "exclude_possession_change": true,
+    "exclude_restart_set_piece_ball_out": true,
+    "complete_valid_ball_required": true,
+    "minimum_complete_defending_outfield_players": 9,
+    "every_complete_outfield_player_is_focal": true
+  },
+  "smoothing": {
+    "method": "centered rolling arithmetic mean applied separately to x and y within interval",
+    "primary_frames": 7,
+    "sensitivity_frames": [5, 7, 9],
+    "no_padding": true,
+    "no_interpolation": true,
+    "invalid_edges_omitted_from_path": true
+  },
+  "support": {
+    "usable_match_all_required": [
+      "faithful outcome-blind provider mapping with no unresolved interval/reference issue",
+      "at least 100 eligible five-second intervals",
+      "at least 40 eligible intervals for each defending team",
+      "at least 8 focal defenders with at least 25 eligible intervals"
+    ],
+    "eligible_intervals_per_match_min": 100,
+    "eligible_intervals_per_defending_team_min": 40,
+    "focal_defenders_with_25_intervals_min": 8,
+    "defender_interval_observation_gate": "removed_as_redundant_because_100_intervals_x_minimum_9_focals_implies_at_least_900",
+    "one_failed_requirement": "match_not_primary_usable",
+    "matches_required_for_strong": 6,
+    "matches_required_for_mixed_min": 5,
+    "fewer_than_five_classification": "P_portability_inconclusive"
+  },
+  "distributional_reporting": {
+    "levels": ["overall", "match", "defending_team", "eligible_focal_defender"],
+    "quantiles": [0.1, 0.25, 0.5, 0.75, 0.9],
+    "report_iqr": true,
+    "report_fraction_at_or_below_1e-8": true,
+    "numerical_zero_fraction_is_independent_core_criterion": false,
+    "metrica_numerical_identity_required": false
+  },
+  "activity": {
+    "continuous_primary_variables": [
+      "focal_absolute_path_m",
+      "full_defending_outfield_centroid_path_m",
+      "sum_defending_outfield_paths_m",
+      "ball_path_m"
+    ],
+    "relationship": "per-match Spearman with interval-cluster bootstrap uncertainty",
+    "activity_free_score_prohibited": true,
+    "metrica_cut_transport": {
+      "role": "diagnostic_only",
+      "source": "config/phase4a_focal_departure_validation_protocol.json activity_conditioning.cuts_m",
+      "use_frozen_physical_metre_cuts_unchanged": true,
+      "cell_occupancy_required": false,
+      "numerical_cell_matching_required": false
+    },
+    "within_match_terciles": {
+      "role": "provider-portable_descriptive_only",
+      "defined_from_activity_before_focal_outcomes": true,
+      "enter_success_classification": false,
+      "evidence_metrica_thresholds_transported": false
+    }
+  },
+  "negative_controls": {
+    "common_translation": {
+      "translation": "one observed valid collective trajectory applied identically to fixed relative defender positions",
+      "maximum_focal_relative_path_m": 1e-8,
+      "must_pass": true
+    },
+    "temporally_misaligned_reference": {
+      "same_match": true,
+      "same_period": true,
+      "same_defending_team": true,
+      "collective_activity_bins": "stable rank full-centroid path ascending; ties period,start,interval_id; zero-based rank r assigned min(2,floor(3*r/N))",
+      "same_within_match_collective_activity_rank_bin": true,
+      "separation_seconds_min": 10,
+      "separation_seconds_max": 120,
+      "selection_order": ["minimum absolute start-time separation", "earlier start", "interval_id"],
+      "continuous_activity_distance_optimization": false,
+      "optimize_rule": false,
+      "report": ["eligible_interval_support_fraction", "paired_median_difference_m", "fraction_misaligned_greater"],
+      "match_pass": {
+        "eligible_interval_support_fraction_min": 0.7,
+        "paired_median_difference_strictly_positive": true,
+        "fraction_misaligned_greater_min_exclusive": 0.5
+      },
+      "match_material_contradiction": {
+        "eligible_interval_support_fraction_min": 0.7,
+        "paired_median_difference_strictly_negative": true,
+        "fraction_misaligned_greater_max_exclusive": 0.5
+      },
+      "zero_or_low_support": "inconclusive_not_pass_not_material_contradiction",
+      "uncertainty_changes_classification": false
+    }
+  },
+  "hierarchy": {
+    "order": ["frames", "intervals", "possessions_or_sequences", "players", "teams", "matches"],
+    "primary_reporting_unit": "match",
+    "pooled_results_secondary": true,
+    "pooled_result_cannot_override_match_contradiction": true,
+    "bootstrap_cluster": "interval_within_match",
+    "complex_hierarchical_model": false
+  },
+  "uncertainty": {
+    "bootstrap_resamples": 10000,
+    "random_seed": 20260830,
+    "cluster": "interval_within_match",
+    "role": "estimate uncertainty; does not replace match-level directional criteria"
+  },
+  "core_replicating_match": {
+    "all_required": true,
+    "primary_usable": true,
+    "distribution": {
+      "all_finite_nonnegative": true,
+      "median_m_strictly_greater_than": 1e-8,
+      "iqr_m_strictly_greater_than": 1e-8
+    },
+    "focal_absolute_spearman_positive": true,
+    "other_activity_relationships_sign_and_magnitude_reported": true,
+    "other_activity_relationships_positive_count_required": false,
+    "no_primary_activity_rho_at_or_below": -0.1,
+    "misaligned_match_control_pass": true,
+    "sensitivity_match_pass": true
+  },
+  "activity_reversal": {
+    "applies_to": [
+      "focal_absolute_path_m",
+      "full_defending_outfield_centroid_path_m",
+      "sum_defending_outfield_paths_m",
+      "ball_path_m"
+    ],
+    "material_boundary": "rho <= -0.10",
+    "isolated": "one variable in one match; report and match is non-core; does not alone preclude A",
+    "repeated_or_concentrated_precludes_A": [
+      "same variable reversed in 2 matches",
+      "2 or more variables reversed within 1 match"
+    ],
+    "behavioral_failure_C": [
+      "same variable reversed in at least 3 usable matches",
+      "at least 2 variables reversed within each of at least 2 usable matches"
+    ],
+    "metrica_magnitude_equality_required": false,
+    "bootstrap_changes_classification": false
+  },
+  "sensitivity_match_pass": {
+    "settings_total": 9,
+    "primary_setting_must_pass": [
+      "core distribution rules",
+      "positive focal absolute path rho",
+      "none of four activity relationships rho <= -0.10",
+      "strict match-level misaligned control"
+    ],
+    "setting_consistent_all": [
+      "all paths finite and nonnegative",
+      "median and IQR > 1e-8 m",
+      "none of four activity relationships rho <= -0.10",
+      "misaligned eligible-interval support >= 0.70",
+      "misaligned paired median >= 0",
+      "fraction misaligned-minus-contemporaneous differences >= 0 is >= 0.50"
+    ],
+    "setting_consistent_min": 8,
+    "no_setting_any_activity_rho_at_or_below": -0.1,
+    "no_setting_material_misaligned_contradiction": true,
+    "dataset_behavioral_failure_if_match_failures_min": 3
+  },
+  "classification": {
+    "precedence": [
+      "determine primary usability outcome-blind",
+      "if fewer than 5 usable matches classify P",
+      "else if any C rule holds classify C",
+      "else if every A rule holds classify A",
+      "else classify B"
+    ],
+    "A_strong": {
+      "primary_usable_matches_min": 6,
+      "core_replicating_matches_min_of_7": 6,
+      "common_translation_pass": true,
+      "misaligned_control_passing_matches_min": 6,
+      "repeated_or_concentrated_activity_reversal_allowed": false,
+      "matches_with_material_misaligned_reversal_max": 0
+    },
+    "B_mixed_partial": {
+      "primary_usable_matches_min": 5,
+      "definition": "P and C excluded, but at least one A rule is not met",
+      "examples": [
+        "4 or 5 core matches, or 6 core matches with another non-C A failure",
+        "1 or 2 material misaligned-control contradictions",
+        "isolated or repeated activity reversals below C frequency",
+        "1 or 2 matches fail sensitivity",
+        "substantial match/team/dimension heterogeneity"
+      ]
+    },
+    "C_behavioral_failure_any_with_at_least_5_usable": [
+      "common-translation invariance fails after audit",
+      "3 or fewer core-replicating matches",
+      "same activity variable rho <= -0.10 in at least 3 usable matches",
+      "at least 2 activity variables rho <= -0.10 within each of at least 2 usable matches",
+      "at least 3 usable matches materially contradict misaligned control",
+      "at least 3 usable matches fail frozen sensitivity rule"
+    ],
+    "P_portability_inconclusive": {
+      "primary_usable_matches_max": 4,
+      "reasons": [
+        "unresolved provider mapping or construct-equivalence issue",
+        "insufficient eligible interval/team/player support",
+        "identity, coordinate, goalkeeper, substitution, ball, possession, event, or missingness limitation"
+      ],
+      "behavioral_replication_claim_allowed": false
+    },
+    "mutually_exclusive": true
+  },
+  "implementation_resolution": {
+    "stage": "after data access but before focal-relative outcome construction",
+    "allowed_checks": [
+      "provenance_and_checksum",
+      "license_and_access",
+      "schema",
+      "coordinates_and_pitch",
+      "time_frame_period",
+      "identity_goalkeeper_lineup_substitution",
+      "event_possession_restart",
+      "ball_quality",
+      "missingness",
+      "outcome_blind_support"
+    ],
+    "implementation_only_resolution_may_continue_if_construct_and_criteria_unchanged": true,
+    "material_change_requires_versioned_amendment_before_outcomes": true,
+    "no_faithful_mapping": "record_measurement_portability_failure",
+    "post_outcome_rescue_changes_prohibited": true
+  },
+  "numeric_boundary_purposes": {
+    "100_eligible_intervals": "protect temporal support",
+    "40_intervals_per_defending_team": "prevent one-side domination",
+    "8_focal_defenders_with_25_intervals": "prevent a very small defender subset from carrying a match",
+    "70_percent_misaligned_support": "require the reference control to apply broadly",
+    "strict_positive_median_and_majority": "require directional worsening under the inappropriate reference without an effect-size target",
+    "rho_at_or_below_minus_0_10": "distinguish material reversal from weak or near-null deviation",
+    "5_seconds_7_frames_and_4_5_6_by_5_7_9": "transfer established measurement scales and test limited robustness without optimization",
+    "8_of_9_sensitivity_settings": "allow one support-edge result but no material directional reversal",
+    "6_of_7_strong_replication": "require replication in all but one target match",
+    "3_match_failure_boundaries": "represent repeated failure across nearly half the target dataset",
+    "1e-8_metres": "identify numerical zero or calculation failure rather than a football effect size",
+    "numerical_zero_percentage_cutoff": null
+  },
+  "explicit_nonclaims": [
+    "tactical defensive response",
+    "pinning",
+    "dragging",
+    "tracking",
+    "covering",
+    "handoffs",
+    "step-outs",
+    "relational reconfiguration",
+    "attacker association",
+    "attribution or causation",
+    "defensive quality",
+    "gravity",
+    "off-ball value",
+    "activity-free focal departure",
+    "provider-invariant numerical magnitude"
+  ],
+  "prohibited": [
+    "IDSSE outcome inspection before protocol freeze",
+    "Metrica numerical target tuning",
+    "construct redesign",
+    "post-outcome threshold or bin tuning",
+    "post-outcome normalization or filtering changes",
+    "outcome-selected illustrative examples",
+    "football-semantic labeling",
+    "complex hierarchical model without amendment"
+  ]
+}

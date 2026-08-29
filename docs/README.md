@@ -14,11 +14,12 @@
 2. [Research questions](research_questions.md)
 3. [Phase 3 protocol](phase3_validation_protocol.md) and [Phase 3C feasibility decision](phase3c_validation_design_feasibility.md)
 4. [Phase 4 focal-departure protocol](phase4_focal_departure_validation_protocol.md) and [Phase 4B results](phase4b_focal_departure_validation_results.md)
-5. [Football-concept translation framework](football_concept_translation_framework.md)
-6. [Post–Phase 4 data strategy](post_phase4_data_strategy.md)
-7. [Reproducibility guide](reproducibility.md)
-8. [Research log](research_log.md)
-9. Executed notebooks and machine-readable configs
+5. [Frozen Phase 4C external-replication protocol](phase4c_external_replication_protocol.md)
+6. [Football-concept translation framework](football_concept_translation_framework.md)
+7. [Post–Phase 4 data strategy](post_phase4_data_strategy.md)
+8. [Reproducibility guide](reproducibility.md)
+9. [Research log](research_log.md)
+10. Executed notebooks and machine-readable configs
 
 ## Project author preparing a presentation
 
