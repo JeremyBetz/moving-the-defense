@@ -47,13 +47,13 @@ Both works are closer to any eventual interpretation of relational reconfigurati
 
 Tracking-based tactical analysis already studies relative movement patterns, space occupation, pitch control, formation, and defensive outcomes. Beernaerts et al. (2020), for example, recognize qualitative relative movement patterns between soccer objects, while broader reviews document a large and heterogeneous tracking literature (Memmert, Lemmink, and Sampaio, 2017; Goes et al., 2021).
 
-This work is conceptually adjacent but does not make focal departure an off-ball value measure. $L_d$ contains no attacker attribution, expected response, controlled-space change, possession value, or outcome. A successful Phase 4 test could establish reproducible residual defensive movement; it could not establish who caused it or whether it was valuable.
+This work is conceptually adjacent but does not make focal departure an off-ball value measure. $L_d$ contains no attacker attribution, expected response, controlled-space change, possession value, or outcome. Phase 4B established reproducible focal-versus-collective movement in two sample matches; it did not establish who caused it or whether it was valuable.
 
 ## 5. Gravity and Defensive Response Above Expectation
 
 The NBA's official Gravity statistic compares observed defensive pressure with expected pressure conditional on player and ball context. That expected-versus-observed architecture clarifies the distance from Phase 4: focal departure is an observed defensive geometric quantity, not an attacker-specific response above expectation.
 
-Gravity is therefore a downstream/application neighbor. Even if $L_d$ validates, a soccer gravity contribution would still require attacker attribution, an expected-response model, comparable contexts, and downstream interpretation. Conversely, existing gravity work does not operationally subsume the frozen focal-relative path.
+Gravity is therefore a downstream/application neighbor. Although $L_d$ validated narrowly as geometry, a soccer gravity contribution would still require attacker attribution, an expected-response model, comparable contexts, and downstream interpretation. Conversely, existing gravity work does not operationally subsume the frozen focal-relative path.
 
 ## 6. Position of the Present Project
 
@@ -89,7 +89,7 @@ No reviewed source is classified A, but the B precedents mean strong measurement
 
 ### Validation novelty
 
-**Potentially meaningful.** The explicit attempt to determine whether residual path contains reproducible structure beyond focal, collective, team, and ball activity—using frozen negative references, sensitivities, and a held-out match—was not identified in the closest literature. This can only become a contribution if Phase 4 succeeds or yields a genuinely generalizable falsification lesson.
+**Potentially meaningful.** The explicit test of whether residual path contains reproducible activity-context structure—using frozen negative references, sensitivities, and a held-out match—was not identified in the closest literature. Phase 4B succeeded narrowly at that geometric level, while leaving tactical interpretation and external generalization unresolved.
 
 ### Defensive-application novelty
 
@@ -110,3 +110,20 @@ No reviewed source is classified A, but the B precedents mean strong measurement
 The strongest prior-art threat is the established use of player-to-team-centroid distance and player-team relative phase. Phase 4 should eventually be described as a stringent validation of a simple leave-one-out collective-relative movement primitive, not as the invention of player-versus-team geometry. If it succeeds, the defensible contribution would concern reproducibility, confound control, and a narrowly defensive application. If it fails, the result is publishable only if the failure teaches a broader, well-supported lesson about validating collective-relative tracking quantities.
 
 Full source records are in the [bibliography](../references/bibliography.md), and the detailed search audit is in [the Phase 4A literature and novelty audit](phase4a_literature_novelty_audit.md).
+
+## Post–Phase 4B Translation Program
+
+After Phase 4B closed, the broader program was reframed around translating football concepts into validated defensive-response signatures. This later synthesis did not motivate the frozen focal-departure test.
+
+The translation problem sits within established and fragmented prior work rather than opening an empty field:
+
+- player-to-team-centroid distance, relative phase, synchronization, and collective geometry provide close measurement precedents;
+- off-ball space-generation research already considers attackers attracting or dragging defenders and creating space;
+- off-ball-run work has measured subsequent defensive pressure;
+- marking-network research represents defender–attacker relationships and changing marking organization;
+- tactical/action literature includes football concepts related to balance, withdrawal, covering, and reorganization;
+- basketball gravity provides an observed-versus-expected defensive-response application precedent;
+- ghosting and counterfactual trajectory research provide expected-defensive-movement precedents; and
+- recent off-ball football reviews and taxonomies emphasize fragmented methods and inconsistent terminology.
+
+Accordingly, neither pinning nor the three-vocabulary framework should be claimed as universally unprecedented. The conservative future contribution hypothesis is a validated, interpretable bridge between football tactical language, observable defensive tracking behavior, contextual expectation, and later attacker-associated response or value. This is a research direction, not a current novelty result.

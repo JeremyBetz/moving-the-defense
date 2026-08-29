@@ -4,18 +4,18 @@ The project currently has a research program and methodological foundation. It d
 
 | Requirement | Status | Current position | Minimum next evidence |
 |---|---|---|---|
-| Clear soccer problem | Partially developed | “Asking questions” is intuitive, but the validated empirical object is not established. | Show why a validated primitive matters to a recognizable defensive problem. |
-| Defensible contribution | Missing | State-machine novelty weakened; relational umbrella failed Phase 3. | A held-out primitive result that adds information beyond ordinary movement and existing marking/space work. |
+| Clear soccer problem | Conceptually clear; empirically open | “When an attacker does not receive, can we measure what they made the defense do?” is football-facing. | Validate at least one football-concept signature without semantic overreach. |
+| Defensible contribution | Narrow foundation only | Focal-relative geometry replicated; state-machine novelty weakened and relational reconfiguration remains unvalidated. | External replication plus football interpretation beyond ordinary movement. |
 | Literature positioning | Substantially improved but incomplete | Eighteen targeted sources now cover centroid geometry, player-team synchrony, defensive tracking, marking/assignment, relative movement, and gravity. The strongest threat is established player-to-team-center and player-team phase analysis. | Extend into proprietary/formation-normalization methods, soccer off-ball valuation, and peer-reviewed expected-response/gravity work before manuscript claims. |
-| Data sufficiency | Missing | Two public sample matches; one is held out. | Multi-match evidence beyond a single held-out sample, preferably with diverse teams/contexts. |
-| Development/validation separation | Currently adequate for next diagnostic | Game 1/Game 2 split and frozen Phase 4 protocol. | Preserve the split during execution; add external matches for broader generalization. |
+| Data sufficiency | Missing | Two public sample matches completed one development/held-out test. | Multi-match evidence, preferably with diverse teams/contexts and an independent provider. |
+| Development/validation separation | Demonstrated once | Game 1 development/Game 2 held-out protocol executed unchanged. | Prospectively freeze external replication before inspecting outcomes. |
 | Reproducibility | Partially developed | Executed notebooks, configs, checksums, seeds, ignored raw data, figure generator. | One command or scripted pipeline, pinned environment, automated integrity checks. |
-| Falsifiable construct | Partially developed | Focal departure has explicit replication/falsification rules. | Execute unchanged and accept failure if criteria are not met. |
-| Baseline comparisons | Partially developed | Absolute focal, collective, team, ball activity and negative references are frozen. | Demonstrate added structure and clarify what “beyond” means without post-hoc modeling. |
-| Robustness | Missing empirically | Interval and smoothing sensitivities are frozen but unexecuted. | Held-out sensitivity results plus additional-match robustness. |
-| Generalization | Missing | No focal outcome beyond Game 1 has been inspected. | Held-out Game 2 and later multi-match replication. |
+| Falsifiable construct | Established for one primitive | Focal departure had explicit rules and passed narrowly. | Apply the same discipline to external replication and concept-specific signatures. |
+| Baseline comparisons | Executed narrowly | Absolute focal, collective, team, ball activity and negative references were reported. | External replication and later contextual expectation without post-hoc residualization. |
+| Robustness | Passed within frozen Phase 4 scope | All 4/5/6-second × 5/7/9-frame settings preserved the conclusion. | Multiple-match and provider robustness. |
+| Generalization | Limited | Game 1→2 same-provider replication passed. | Independent multi-match/provider replication. |
 | Soccer interpretation | Missing for focal departure | Geometry is clear; tactical meaning is deliberately withheld. | Contextual analysis or independent annotation showing meaning beyond different movement. |
-| Compelling figures | Partially developed | Strong explanatory figures and extensive notebook diagnostics now exist. | Manuscript-quality held-out result and robustness figures after execution. |
+| Compelling figures | Partially developed | Held-out distribution, activity, sensitivity, and explanatory figures exist. | External-replication and football-interpretation figures suitable for a manuscript. |
 | Limitations | Currently adequate | Cognitive, semantic, activity, membership, and data limits are explicit. | Reassess after results; quantify data-quality and external-validity limits. |
 | External validation | Intentionally deferred | Human annotation is desirable but not required for current primitive test. | Expert annotation or another semantic source before tactical claims. |
 | Practical/tactical relevance | Missing | No coach/player decision use is demonstrated. | Show a stable phenomenon that changes soccer interpretation or analysis practice. |
@@ -23,15 +23,15 @@ The project currently has a research program and methodological foundation. It d
 
 ## Minimum milestones before manuscript drafting is rational
 
-1. Execute Phase 4 unchanged on held-out Game 2.
-2. Show focal departure replicates beyond generic activity—or preserve a clean falsification.
-3. Establish a soccer interpretation beyond “different movement.”
-4. Add more matches or an external dataset and reproduce the finding.
+1. Replicate focal departure across multiple matches from an independent provider.
+2. Preserve the substantial generic-activity association rather than claiming an activity-free effect.
+3. Establish a football interpretation beyond “different movement.”
+4. Validate at least one football-concept signature prospectively.
 5. Complete the literature review and define the incremental contribution precisely.
 6. Produce manuscript-quality baseline, robustness, and failure-mode figures.
 7. Decide whether the contribution is a validated primitive, a tactical construct, or a negative methodological result.
 
-Failure at Phase 4 could still support a useful methodological paper only if the negative result generalizes and clearly changes how tracking constructs should be validated. Gravity, off-ball value, and a universal reconfiguration detector are not prerequisites for a worthwhile contribution.
+Failure in external replication could still support a useful methodological lesson if it shows that the Metrica result is provider- or match-specific. Gravity, off-ball value, and a universal reconfiguration detector are not prerequisites for a worthwhile contribution.
 
 ## Literature-Audit Implications
 
@@ -43,11 +43,11 @@ Failure at Phase 4 could still support a useful methodological paper only if the
 - Dynamic defensive assignment inference and contextual ghosting (Groom et al., 2026).
 - Open-play marking coordination, target similarity, and entropy (Calero-Sanz et al., 2026).
 
-### Likely contribution if Phase 4 succeeds
+### Contribution supported by Phase 4B
 
-The credible contribution would be validation/application novelty: a simple leave-one-out collective-relative defensive path survives explicit focal, collective, team, ball, negative-reference, sensitivity, and held-out checks. It would not be strong measurement novelty, tactical reconfiguration, gravity, or value.
+The credible result is validation/application groundwork: a simple leave-one-out collective-relative defensive path survived explicit focal, collective, team, ball, negative-reference, sensitivity, and held-out checks. It is not strong measurement novelty, an activity-free effect, tactical reconfiguration, gravity, or value.
 
-### Likely contribution if Phase 4 fails
+### Historical failure alternative
 
 Failure alone is not a paper. A methodological contribution would require a broader demonstration that apparently intuitive centroid-relative movement quantities are dominated by activity, unstable across matches, or otherwise fail in a way that changes analytical practice.
 

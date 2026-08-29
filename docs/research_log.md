@@ -1,5 +1,15 @@
 # Research Log
 
+## 2026-08-29 — Post–Phase 4B Defensive-Response Synthesis
+
+After Phase 4B was completed and committed, the broader program was reorganized around one formal primary question: **How can tracking data measure defensive responses to attacking movement in open-play football?** The motivating football question—**When an attacker does not receive the ball, can we measure what they made the defense do?**—supplies intuition rather than a second primary question or causal claim. Translating pinning, dragging, tracking, covering, handing off, and stretching into validated tracking patterns is a downstream question. The formal umbrella is defensive response: observable individual or collective defensive behavior occurring in the context of attacking positioning or movement. This synthesis did not motivate or alter the frozen Phase 4A/4B design or result.
+
+The project now distinguishes football language, observable tracking language, and theoretical language. Pinning, dragging, tracking, covering, passing on, stretching, squeezing, overload response, recovery, and decoy influence are candidate football hypotheses—not labels supplied by focal departure or other geometry. A ten-stage validation ladder separates football definition, observable consequences, alternatives, measurement, controls, held-out replication, football interpretation, attacker association, attribution, and value. Activity, relative movement, unexpected response, attacker association, attacker induction, and attacking value remain distinct.
+
+Relational reconfiguration is retained as one possible intermediate form of defensive response rather than the single construct the program must validate. It remains unvalidated. Phase 4B remains positioned only at individual behavior relative to collective movement: focal-relative path replicated across two Metrica sample matches, while remaining substantially associated with generic activity.
+
+A prospective data strategy assigns IDSSE/DFL the likely role of first independent multi-match replication, with Metrica Game 3 reserved only for a justified same-provider portability check and larger broadcast-derived datasets reserved for later contextual/expected-response or provider-robustness questions. No new dataset was downloaded or inspected, and no Phase 4C protocol or success threshold was created.
+
 ## 2026-08-29 — Phase 4B Held-Out Focal-Departure Validation
 
 After the outcome-blind firewall exactly reproduced checksums, schema, interval/attrition counts, team and defender support, frozen Game 1 activity cuts, and misaligned-control support, protocol v1.0 was executed once on held-out Metrica Sample Game 2. The primary five-second/seven-frame focal-relative path distribution replicated closely: medians were 5.489m in Game 1 and 5.653m in Game 2, with IQRs 4.404m and 4.246m. All nine frozen focal-activity × collective-activity cells met the half-pooled-IQR compatibility criterion (seven required), with interval-cluster bootstrap uncertainty retained.

@@ -6,16 +6,19 @@
 2. [Project explainer](project_explainer.md)
 3. [Claim-status ledger](claim_status.md)
 4. [Research roadmap](research_roadmap.md)
+5. [Football-concept translation framework](football_concept_translation_framework.md)
 
 ## Technical reader — 30–60 minutes
 
 1. [Conceptual framework](conceptual_framework.md)
 2. [Research questions](research_questions.md)
 3. [Phase 3 protocol](phase3_validation_protocol.md) and [Phase 3C feasibility decision](phase3c_validation_design_feasibility.md)
-4. [Phase 4 focal-departure protocol](phase4_focal_departure_validation_protocol.md)
-5. [Reproducibility guide](reproducibility.md)
-6. [Research log](research_log.md)
-7. Executed notebooks and machine-readable configs
+4. [Phase 4 focal-departure protocol](phase4_focal_departure_validation_protocol.md) and [Phase 4B results](phase4b_focal_departure_validation_results.md)
+5. [Football-concept translation framework](football_concept_translation_framework.md)
+6. [Post–Phase 4 data strategy](post_phase4_data_strategy.md)
+7. [Reproducibility guide](reproducibility.md)
+8. [Research log](research_log.md)
+9. Executed notebooks and machine-readable configs
 
 ## Project author preparing a presentation
 
@@ -23,7 +26,8 @@
 2. [Claim-status ledger](claim_status.md)
 3. [Visual inventory](visual_inventory.md)
 4. [Research roadmap](research_roadmap.md)
-5. [Latest validation protocol](phase4_focal_departure_validation_protocol.md)
+5. [Phase 4B results](phase4b_focal_departure_validation_results.md)
+6. [Football-concept translation framework](football_concept_translation_framework.md)
 
 ## Literature and contribution risk
 

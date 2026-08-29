@@ -16,11 +16,11 @@ Together, these works support the adversarial statement:
 
 The statement that Phase 4 is "simply standard relative phase expressed differently" is too strong. Relative phase and accumulated Cartesian residual path have different definitions, units, and questions. The statement that centroid-relative geometry is already widely used is substantially true.
 
-## If Phase 4 Succeeds Unchanged, What Could Be New?
+## What Phase 4B Adds
 
-A successful held-out result could support this limited claim:
+The completed held-out result supports this limited claim:
 
-> A leave-one-out defensive collective-relative path quantity—excluding the focal defender and goalkeeper—shows reproducible structure beyond absolute focal movement, collective translation, aggregate defensive activity, and ball movement under a frozen development/held-out design.
+> A leave-one-out defensive collective-relative path quantity—excluding the focal defender and goalkeeper—shows reproducible focal-versus-collective geometry with stable activity-context structure under a frozen development/held-out design.
 
 Possible novelty would lie primarily in:
 
@@ -28,7 +28,11 @@ Possible novelty would lie primarily in:
 - **defensive application:** using the simple geometry as an interpretation-light individual defensive primitive rather than a team dispersion or synchrony summary;
 - **methodological discipline:** demonstrating what the primitive does and does not add beyond ordinary activity before tactical attribution.
 
-Even then, "reproducible focal departure" would not mean meaningful reconfiguration. A soccer interpretation beyond differential movement would remain a separate requirement.
+The quantity remains substantially activity-associated, so this is not an activity-free effect. “Reproducible focal departure” does not mean meaningful reconfiguration. A football interpretation beyond differential movement remains a separate requirement.
+
+## Post-validation contribution hypothesis
+
+The new football-concept translation framework was created after Phase 4B and did not influence it. Its possible contribution is a validated, interpretable bridge between football tactical concepts, observable defensive tracking behavior, contextual expectation, and later attacker-associated response or value. Prior work already covers centroid geometry, synchronization, off-ball space generation, marking networks, tactical actions, gravity, and ghosting. The bridge is therefore a conservative research hypothesis, not a claim that pinning or the framework is universally unprecedented.
 
 ## What Could Definitely Not Be Claimed as New?
 
@@ -61,16 +65,16 @@ where $O_d(t)$ contains the other available defending outfield players. It then 
 3. **Interpretation risk:** replication may not provide meaning beyond "the defender moved differently from teammates."
 4. **Scope risk:** two public sample matches are insufficient for a broad soccer contribution.
 5. **Prior-art scope risk:** formation-normalization or proprietary analytics work may contain closer operational equivalents not visible in the reviewed public literature.
-6. **Conceptual overreach risk:** marking, coordination, and gravity literature already occupies much of the downstream narrative.
+6. **Conceptual overreach risk:** marking, coordination, off-ball movement, tactical-language, ghosting, and gravity literature already occupies much of the downstream narrative.
 
 ## Reframing Conditions
 
 - If a closer source proves operationally equivalent, retain Phase 4 as a replication/validation test and abandon measurement novelty.
-- If Phase 4 replicates but is absorbed by activity, describe it as a geometric accounting result, not a tactical primitive.
-- If it replicates beyond activity but lacks soccer interpretation, claim validated geometry only.
-- If it fails held-out replication, preserve the falsification; do not rescue it by changing the frozen test.
+- Because Phase 4B replicated while retaining substantial activity association, describe it as validated geometry with activity-context structure, not an activity-free tactical primitive.
+- Until it earns football interpretation, claim validated geometry only.
+- Preserve the frozen held-out result and its limits; do not rescue or strengthen it through post-validation reframing.
 - Do not proceed from success directly to reconfiguration, attacker attribution, gravity, or value.
 
 ## Bottom Line
 
-The credible novelty proposition is not "we invented focal-relative movement." It is "we subjected a simple, defensively framed leave-one-out collective-relative path to unusually explicit confound and held-out validation." Whether that proposition becomes scientifically meaningful depends entirely on the unchanged Phase 4 result and later interpretation.
+The credible novelty proposition is not “we invented focal-relative movement” or “we invented pinning.” It is that a simple leave-one-out collective-relative path received explicit confound and held-out validation, and may support a disciplined future bridge from football concepts to defensive tracking signatures. The first part is established narrowly; the bridge remains hypothetical.

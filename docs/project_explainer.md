@@ -70,26 +70,30 @@ It rules out a convenient shortcut: receptions cannot be treated as positive rec
 
 If the metric or thresholds change after looking at Game 2 outcomes, the second match becomes another development sample. Freezing the protocol first creates a genuine chance for failure and makes replication interpretable.
 
-## 14. What exactly will Phase 4 test?
+## 14. What exactly did Phase 4 test?
 
-It will sample deterministic non-overlapping five-second intervals, calculate focal-relative path for every eligible outfield defender, characterize Game 1 distributions and activity relationships, and test those once in Game 2. Events provide possession/context, not positive labels.
+It sampled deterministic non-overlapping five-second intervals, calculated focal-relative path for every eligible outfield defender, characterized Game 1 distributions and activity relationships, and tested them once in Game 2. Events provided possession/context, not positive labels.
 
-## 15. What would support focal departure?
+## 15. What did Phase 4B establish?
 
-The quantity should reproduce its distributional shape and contextual relationships in held-out Game 2, retain variation after activity conditioning, behave sensibly under contemporaneous versus misaligned collective references, and remain qualitatively stable across frozen interval and smoothing sensitivities.
+The geometric quantity replicated: all 9/9 frozen activity cells passed, directions were stable, common translation cancelled, misaligned references produced much larger paths, and all frozen sensitivities preserved the qualitative result. Focal departure remained positively associated with generic activity and no activity-free effect was estimated.
 
-## 16. What would falsify or weaken it?
+## 16. What remains weak or unsupported?
 
-It weakens if it is almost completely determined by absolute movement, if collective/ball/team activity explains all structure, if Game 1 relationships reverse in Game 2, if membership or substitutions destabilize the reference, if results depend on arbitrary windows, or if the only interpretation is “this defender moved differently.”
+The result spans only two same-provider sample matches and still may mean little beyond “this defender moved differently from teammates.” It does not establish pinning, dragging, tracking, covering, handoffs, tactical response, relational reconfiguration, responsibility, quality, gravity, or value.
 
 ## 17. How far are we from defensive reconfiguration claims?
 
-At least one major empirical layer away. Focal departure must first validate as a primitive. Then it would need contextual or semantic interpretation and integration with other validated scales. The umbrella construct already failed one prospective validation design.
+At least one major empirical layer away. Focal departure now validates narrowly as a primitive, but it still needs contextual or semantic interpretation and integration with other validated scales. The umbrella construct already failed one prospective validation design.
 
 ## 18. How far are we from gravity or off-ball value?
 
 Several conditional layers away. Gravity requires attacker attribution and an expected-response baseline; value additionally requires downstream soccer consequences. A reproducible defensive movement quantity would not by itself establish either.
 
+## 19. What is the post-validation research question?
+
+The single formal question is: **How can tracking data measure defensive responses to attacking movement in open-play football?** The motivating football question is: **When an attacker does not receive the ball, can we measure what they made the defense do?** A downstream question asks whether concepts such as pinning, dragging, tracking, covering, handing off, and stretching can eventually be translated into validated tracking patterns. The program separates football language, tracking measurements, and theoretical mechanisms. Association is not attribution, and attribution is not causation.
+
 ## A useful one-minute summary
 
-The project started by asking whether attackers cause defenders to switch among tactical states. Diagnostics showed that the states overlap, simple Track failed, and local stories depend on reference choice. A prospective reception-based validation then mostly detected active passages, not a relational signature. The project has therefore narrowed to a basic held-out question: does one defender’s movement relative to the rest of the defense contain reproducible structure beyond ordinary activity? Game 1 developed the protocol; Game 2 remains untouched for the test.
+The project started by asking whether attackers cause defenders to switch among tactical states. Diagnostics showed that states overlap, simple Track failed, and local stories depend on reference choice. A reception-based validation mostly detected active passages. Phase 4 then narrowed to one primitive and found that focal-relative path replicated across Games 1 and 2 while remaining activity-associated. Only after that test closed did the project broaden toward translating football concepts such as pinning, dragging, covering, and passing on into separately validated defensive-response signatures. None of those tactical concepts is established yet.

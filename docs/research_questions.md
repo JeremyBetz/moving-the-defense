@@ -1,26 +1,42 @@
 # Research Questions
 
-> **Current status (after Phase 4A):** the immediate question is whether focal departure from collective defensive motion is a reproducible geometric primitive beyond ordinary activity. The broader questions below preserve the historical and longer-term research program; they are not all active or validated.
+> **Current status (post–Phase 4B):** focal-relative path passed its narrow held-out geometric test. The question hierarchy below was formalized after Phase 4B closed and did not influence the frozen validation. Historical questions remain for auditability.
 
-## Current Primary Question
+## Primary Research Question
 
-Using Sample Game 1 as development/history and untouched Sample Game 2 as held-out validation, does
+> **How can tracking data measure defensive responses to attacking movement in open-play football?**
+
+This is the project's single formal primary research question.
+
+## Motivating Football Question
+
+> **When an attacker does not receive the ball, can we measure what they made the defense do?**
+
+This is the intuitive football-facing motivation, not a second formal primary question and not a causal empirical claim.
+
+## Downstream Translation Question
+
+> **Can football concepts used to describe off-ball influence—such as pinning, dragging, tracking, covering, handing off, and stretching—be translated into validated, interpretable patterns of defensive response in tracking data?**
+
+This is nested within the broader program. It does not assume that these concepts are currently measurable, operationally defined, or validated.
+
+Phase 4B answers only a prerequisite question. Using Sample Game 1 as development/history and Sample Game 2 as held-out validation,
 
 $$
 \mathbf r_d(t)=\mathbf x_d(t)-\mathbf c_{-d}(t)
 $$
 
-show reproducible distributional and contextual structure beyond absolute focal movement, collective translation, aggregate defending activity, and ball movement?
+showed reproducible distributional and contextual structure under frozen activity tests.
 
-This question does not assume that focal departure is tactical reconfiguration, opponent response, defensive error, responsibility transfer, gravity, or value.
+The result does not establish an activity-free effect, tactical response, reconfiguration, opponent response, defensive error, responsibility transfer, gravity, or value.
 
-## Historical Umbrella Research Question
+## Historical Relational-Reconfiguration Question
 
 Can open-play tracking data identify sharp changes in the relative explanatory strength of competing observable relationships—collective-team, ball-relative, opponent-relative, and other justified relations—without treating them as mutually exclusive tactical states?
 
 “Responsibility” refers here to an observable behavioral explanation, not a known instruction or cognitive state.
 
-The provisional term **defensive relational reallocation** refers to substantial behavioral/geometric change in which relationships best explain movement. It does not denote cognition, intention, tactical instruction, or literal psychological allocation.
+The provisional term **defensive relational reallocation** referred to substantial behavioral/geometric change in which relationships best explain movement. **Relational reconfiguration** is now retained as one possible intermediate form of defensive response, not the program's single central phenomenon. It does not denote cognition, intention, instruction, or literal psychological allocation and remains unvalidated.
 
 ## Candidate Subquestions
 
@@ -136,8 +152,8 @@ The research must consider whether apparent state changes or later errors are be
 - Can ball-driven/shared collective correspondence be distinguished from opponent-relational change without optimized lags or attacker attribution?
 - Can the provisional definition of relational reconfiguration distinguish prospectively sampled candidates from matched ordinary movement without post-hoc reference or threshold tuning?
 - Phase 3B answers this negatively for the frozen reception design: matching support is only 14.6%, broad movement differences are reproduced by shifted anchors, and they vanish under the very sparse pre-anchor matching sensitivity. A next design must improve prospective support and separate event-associated activity from relational specificity without loosening rules after seeing outcomes.
-- Phase 3C recommends expanding to additional matches before execution and preregistering one narrower, independently meaningful primitive with activity-conditioned support and held-out testing. Can focal departure, local deformation, or cross-scale disagreement meet that standard without becoming a convenient but soccer-empty target?
-- Phase 4A selects focal departure from collective defensive motion for the next held-out test. Does smoothed focal-relative path contain stable, soccer-interpretable structure beyond focal absolute movement, collective translation, aggregate defending activity, and ball motion, and does that structure replicate from development Game 1 to held-out Game 2?
+- Historical Phase 3C recommendation: expand beyond the original match and preregister one narrower primitive with activity-conditioned held-out testing. Phase 4A selected focal departure for that role.
+- Phase 4B resolution: smoothed focal-relative path replicated geometrically from Game 1 to Game 2 with stable activity-context structure, while remaining substantially activity-associated and without acquiring soccer or attacker meaning.
 - What evidence would distinguish a useful overlapping motif vocabulary from a renamed tactical-state taxonomy?
 - What time window distinguishes stable relationships from brief coincidence?
 - Should behavior be represented by discrete states, continuous scores, or both?

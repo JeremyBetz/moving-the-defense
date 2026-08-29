@@ -1,18 +1,32 @@
 # Conceptual Framework
 
-> **Current status (after Phase 4A):** the immediate empirical object is focal departure from collective defensive motion, not a tactical state or a validated relational-reconfiguration construct. Phase 3 failed to distinguish the broader reception-anchored construct from ordinary event-associated activity. The phase-by-phase sections below preserve the research path—including ideas later weakened or rejected—and should be read with the [claim-status ledger](claim_status.md).
+> **Current status (post–Phase 4B):** focal-relative path has passed a narrow held-out geometric validation across Metrica Sample Games 1 and 2. The broader program now studies **defensive response** to attacking movement. This synthesis occurred after Phase 4A was frozen and Phase 4B was executed; it did not influence that validation. Relational reconfiguration remains unvalidated. Historical sections preserve ideas later weakened or rejected and should be read with the [claim-status ledger](claim_status.md).
 
 ## 1. Project Focus
 
+The single formal primary research question is: **How can tracking data measure defensive responses to attacking movement in open-play football?**
+
+The motivating football question is: **When an attacker does not receive the ball, can we measure what they made the defense do?** A downstream translation question asks whether football concepts such as pinning, dragging, tracking, covering, handing off, and stretching can eventually be connected to validated, interpretable tracking patterns. It is nested within the broader program and does not imply those concepts are already measurable.
+
+**Defensive response** means observable individual or collective defensive behavior occurring in the context of attacking positioning or movement. It is an empirical umbrella, not a causal conclusion. Tracking does not observe cognition, attention, responsibility, instruction, intention, decision-making, or psychological workload. Association, attacker attribution, causation, and attacking value are separate stages.
+
+Three vocabularies must remain distinct:
+
+1. **Football language:** pin, drag, track, cover, pass on, step, hold, shift, squeeze, stretch, overload, recover.
+2. **Observable tracking language:** position, displacement, velocity, focal-relative path, collective translation, local deformation, opponent coupling, distance, persistence, width/depth, temporal correspondence.
+3. **Theoretical language:** defensive response, relational reconfiguration, ambiguity, collective accommodation, propagation, recovery burden, attacker-associated response, off-ball influence.
+
+**Football concept ≠ tracking measurement ≠ theoretical mechanism.** See the [football-concept translation framework](football_concept_translation_framework.md).
+
 The historical framing emphasized **defensive state change and decision instability**, not space creation alone. The current working hypothesis is more relational: open-play defensive behavior is continuously multi-relational and may not be well represented by mutually exclusive Structure / Track / Close / Recover states.
 
-The refined main phenomenon is **sharp changes in the relative explanatory strength of competing observable relationships**—including collective-team, ball-relative, and opponent-relative movement. This is a conceptual refinement, not a finalized model or operational definition.
+The historical refined phenomenon was **sharp changes in the relative explanatory strength of competing observable relationships**—including collective-team, ball-relative, and opponent-relative movement. It remains a conceptual candidate rather than the single organizing target.
 
 Historically, the project asked whether open-play tracking data could describe a defender's movement as an allocation between competing behavioral responsibilities, and whether attacking movement was associated with changes in that allocation. That remains a motivating theory, not the current validated empirical target. The current test is narrower: whether a defender's movement relative to the other defending outfield players has reproducible structure beyond ordinary movement and shared activity.
 
 This is a behavioral framework. Tracking data observes player locations and movement; it does not observe cognition, communication, tactical instructions, or what a defender “believes.” Terms such as responsibility and decision instability are interpretations of observable behavior and must be written with that limitation intact.
 
-**Defensive relational reallocation** is provisional language for a substantial change in which observable relationships best explain a defender's movement. It refers only to behavioral geometry. It must not be interpreted as cognition, intention, tactical instruction, or literal psychological allocation.
+**Defensive relational reallocation** is historical provisional language for substantial change in which observable relationships best explain movement. The preferred empirical term remains **relational reconfiguration**: a possible intermediate defensive response in which defender-team, defender-opponent, ball, and local relationships change coherently over time. It is not the project's umbrella and remains unvalidated.
 
 ## 2. Broader Theory: Asking Questions
 
@@ -188,6 +202,18 @@ Phase 3C does not redefine or rescue that construct. It recommends additional ma
 
 Phase 4A selects **focal departure from collective defensive motion** as that narrower primitive: $\mathbf r_d(t)=\mathbf x_d(t)-\mathbf c_{-d}(t)$. It is continuous reference-relative geometry, not a state or interpretation. Focal-relative path length is the proposed primary magnitude because accumulated relative motion can cancel at endpoints, but it may still be only focal activity after translation subtraction. Development Game 1 and held-out Game 2 must establish reproducibility and contextual structure before any opponent, reconfiguration, or attacker meaning is considered.
 
+### Phase 4B held-out result and post-validation synthesis
+
+Phase 4B executed the unchanged frozen protocol and supports only this claim: **focal-relative path is a reproducible focal-versus-collective geometric primitive with stable activity-context structure in these two sample matches.** All nine activity cells met the frozen compatibility rule, activity relationships retained direction, common translation cancelled, misaligned similarly active references produced much larger paths, and all frozen window/smoothing sensitivities preserved the qualitative conclusion.
+
+Focal departure remains substantially associated with generic activity; focal absolute-path correlations were 0.541 and 0.462. Phase 4B did not estimate an activity-independent effect or validate defensive response in a tactical sense, relational reconfiguration, pinning, dragging, tracking, covering, handoffs, attacker induction, defensive quality, gravity, or value.
+
+Only after that result was closed did the project adopt defensive response as its broader empirical umbrella and formalize the football/observable/theoretical translation problem. The core inference ladder is:
+
+**physical movement → collective defensive movement → individual/local behavior relative to collective movement → contextual expectation → defensive response → attacker association → attribution → attacking value**
+
+Phase 4B reaches the individual-relative-to-collective behavior stage. Every later arrow requires new evidence.
+
 Three quantities should remain separate:
 
 1. **Current state:** which behavioral explanation currently fits best?
@@ -240,7 +266,7 @@ One exploratory idea for disruption burden is the time integral of structural di
 
 ## 7. Consequences Are Separate from Response
 
-Defensive adjustment may precede structural disruption, space, progression, or error, but response is not equivalent to value. An attacker can attract attention without producing a useful consequence. Later work may connect defensive response to pitch control, passing options, progression, box entries, shots, xThreat, or EPV, but these outcomes are outside the initial scope.
+Defensive adjustment may precede structural disruption, space, progression, or error, but response is not equivalent to value. Defensive positioning may change around an attacker without producing a useful consequence; tracking does not establish attention. Later work may connect defensive response to pitch control, passing options, progression, box entries, shots, xThreat, or EPV, but these outcomes are outside the initial scope.
 
 Likewise, a residual association between a player's movement and unusually large defensive response is not automatically causal.
 
