@@ -69,9 +69,9 @@ Frequent transitions are not inherently harmful. Strong defenses may exchange an
 
 ## Current Status
 
-**Stage: prospective local-configuration representation diagnostics within separate relational channels.**
+**Stage: cross-scale geometric correspondence diagnostics within separate relational channels.**
 
-Metrica Sports Sample Game 1 is the sole empirical sample so far. Phase 0 documented the dataset representation; Phases 1A–1F performed narrowly scoped construct diagnostics spanning structural translation, opponent-relative position, event-anchored convergence, kinematic decomposition, movement coupling, collective accommodation, and local compression. Phase 2A compared what separate relational views preserve or lose; Phase 2B traced those channels through time; Phase 2C tested candidate intervals; Phase 2D compared three overlapping geometric motifs; Phase 2E tested prospective relationship selection; Phase 2F tests whether fixed local configurations provide a more reproducible scale for internal reorganization. No tactical inference model, motif classifier, state system, composite representation, relational weighting scheme, or final metric has been selected.
+Metrica Sports Sample Game 1 is the sole empirical sample so far. Phase 0 documented the dataset representation; Phases 1A–1F performed narrowly scoped construct diagnostics; Phase 2A established typed relational requirements; Phase 2B traced temporal change; Phase 2C tested episode logic; Phase 2D attempted motifs; Phase 2E falsified post-hoc relationship selection; Phase 2F established scale-aware local deformation; and Phase 2G aligns collective, focal, local, opponent, and ball geometry without combining them. No tactical inference model, classifier, state system, composite representation, relational weighting scheme, or final metric has been selected.
 
 ## What We Have Learned So Far
 
@@ -90,6 +90,7 @@ Metrica Sports Sample Game 1 is the sole empirical sample so far. Phase 0 docume
 | 2D | Are distinct geometric motifs more defensible than one universal episode signature? | Translation, focal excursion, and local compression are descriptively distinct in canonical cases and overlap in adversarial cases; 4197.04s remains mixed. | Use motifs as an incomplete overlapping vocabulary, not states, classes, or a detector. |
 | 2E | Do motifs survive reproducible relationship selection fixed before later movement is inspected? | Unevenly: translation and focal excursion are comparatively robust; 1230.12s compression and 3682.88s overlap are neighborhood-rule-sensitive; opponent selection mostly encodes proximity; 4197.04s remains mixed. | Use start-fixed nearest-two teammates as a disclosed reproducibility baseline, not a validated unit; treat nearest opponents as context, not responsibility. |
 | 2F | Does a prospectively fixed local configuration preserve internal reorganization better than selected compression pairs? | Partially: configuration descriptors separate translation from deformation, but 1230.12s does not recover clean compression across memberships and 4197.04s also deforms. | Treat local compression as a possible subtype of broader local configuration deformation; deformation alone is not a detected reconfiguration. |
+| 2G | Do separate geometric scales show interpretable correspondence within the same sequence? | Partially: collective- and focal-dominant cases remain distinct, but prospective membership, ball context, and the 1232 reference-time reversal weaken multi-scale narratives. | Use correspondence to expose agreement/disagreement, not as propagation, a score, or an operational reallocation event. |
 
 Negative and ambiguous results are research findings, not implementation failures. They delimit what a future representation must be capable of seeing.
 
@@ -97,11 +98,11 @@ Negative and ambiguous results are research findings, not implementation failure
 
 For defender (d), attacker (a), and leave-one-out defensive centroid (c):
 
-- Relative position: \(\mathbf r_{da}(t)=\mathbf x_a(t)-\mathbf x_d(t)\); pairwise distance: \(D_{da}(t)=\lVert\mathbf r_{da}(t)\rVert\).
-- Pairwise closure rate: \(-dD_{da}/dt\). This does not identify which player caused convergence.
-- Defender absolute approach: \(A_d=\mathbf v_d\cdot\mathbf u_{da}\), where \(\mathbf u_{da}=\mathbf r_{da}/D_{da}\).
-- Collective translation: centroid velocity \(\mathbf v_c\), or its opponent-directed component \(\mathbf v_c\cdot\mathbf u_{da}\).
-- Opponent-directed residual movement: \((\mathbf v_d-\mathbf v_c)\cdot\mathbf u_{da}\).
+- Relative position: $\mathbf r_{da}(t)=\mathbf x_a(t)-\mathbf x_d(t)$; pairwise distance: $D_{da}(t)=\lVert\mathbf r_{da}(t)\rVert$.
+- Pairwise closure rate: $-dD_{da}/dt$. This does not identify which player caused convergence.
+- Defender absolute approach: $A_d=\mathbf v_d\cdot\mathbf u_{da}$, where $\mathbf u_{da}=\mathbf r_{da}/D_{da}$.
+- Collective translation: centroid velocity $\mathbf v_c$, or its opponent-directed component $\mathbf v_c\cdot\mathbf u_{da}$.
+- Opponent-directed residual movement: $(\mathbf v_d-\mathbf v_c)\cdot\mathbf u_{da}$.
 - Relational configuration and **defensive relational reallocation** remain conceptual descriptions of which observable relationships explain movement and how sharply that configuration changes. No numerical relational weights or reallocation formula exist yet.
 
 ## Future Applications — Not Yet Implemented
@@ -184,6 +185,10 @@ The executed [`notebooks/phase2e_prospective_relationship_selection_diagnostics.
 ### Phase 2F local-configuration representation diagnostic
 
 The executed [`notebooks/phase2f_local_configuration_representation_diagnostics.ipynb`](notebooks/phase2f_local_configuration_representation_diagnostics.ipynb) traces prospectively fixed local sets through the same seven cases using separate pair distances, x/y spans, polygon area, ordering, local-centroid translation, and member-relative coordinates. The 1230.12s primary set deforms but does not contract cleanly; start-radius and anchor sets materially change the account. Translation dominates the 1888 case; the 590 configuration deforms anisotropically but does not uniquely isolate the focal defender; the 3682 overlap loses a clean compression reading; and 4197 demonstrates that generic deformation can occur in a negative case. The conservative result is B—partially supported: local configuration deformation is a broader primitive than compression, but it remains membership- and context-sensitive.
+
+### Phase 2G cross-scale geometric correspondence diagnostic
+
+The executed [`notebooks/phase2g_cross_scale_geometric_correspondence_diagnostics.ipynb`](notebooks/phase2g_cross_scale_geometric_correspondence_diagnostics.ipynb) aligns collective, focal, local-configuration, start-fixed opponent, and ball-relative views for the same seven cases. Collective-dominant 1888 and focal-dominant 590 remain distinguishable, but 1230 is only provisionally multi-scale, 3682 is only partly local-within-collective, and the 1232 start/anchor reversal prevents a robust narrative. Tackle and 4197 remain unresolved. The result is B—partially supported: correspondence helps audit scale agreement and disagreement but does not establish propagation, attacker influence, or an operational relational-reallocation event.
 
 ## Repository Structure
 

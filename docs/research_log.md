@@ -1,5 +1,17 @@
 # Research Log
 
+## 2026-08-28 — Phase 2G Cross-Scale Geometric Correspondence Diagnostic
+
+Phase 2G reused the exact seven Phase 2D–2F windows and the Phase 2E/2F defaults: focal plus two nearest outfield teammates at the start, start-fixed nearest two opponents as geometric context, a fixed 15m neighborhood as sensitivity, and anchor sets only as separate sensitivity. Aligned raw views retained collective centroid movement, focal leave-one-out x/y, local pair/span/area deformation, opponent-relative x/y/distance, and ball-relative x/y. No scale was combined.
+
+Collective- and focal-dominant geometry remain distinguishable. At 1888–1896s, the team/local centroids move 31.021/31.259m while focal leave-one-out movement is 2.099m. At 590–598s, team movement is 13.763m and focal leave-one-out movement 7.625m, while local pairs and area change anisotropically; opponent distance changes (+1.56/−16.60m) remain selection-sensitive and ball-relative spans are large (34.621m x, 16.759m y).
+
+The multi-scale cases are weaker. At 1230.12s, team-centroid movement is only 2.856m and focal deviation 12.675m, but the prospective local trio has mixed pair changes (+4.67/−3.13/−2.05m), nearly stable spans, and increasing area. Start-opponent changes are mixed (−1.96/+6.63m), while ball-relative spans are 9.282/12.508m. This is only provisionally multi-scale and does not recover the original compression story. At 3682.88s, 19.314m collective movement coexists with 12.247m focal deviation and mixed local/opponent changes, but spans/area expand; local-within-collective is partial rather than clean. At 1232.28s, the start 19/22/23 trio expands in every pair while anchor 19/21/20 contracts in every pair, so the cross-scale interpretation is not robust to reference time.
+
+The tackle remains entangled across collective, focal, local, opponent, ball, and event mechanics. The 4197.04s case retains only 0.524m focal leave-one-out movement while local deformation and ball-relative movement occur without coherent cross-scale agreement; it remains heterogeneous without changing membership. The outcome is **B — partially supported**: cross-scale correspondence is useful for distinguishing collective- from focal-dominant cases and exposing disagreement, but it does not operationalize relational reallocation or support causal propagation. The future hypothesis that attacking actions may matter when geometry changes across multiple scales remains untested and unattributed.
+
+No propagation/cross-scale score, reallocation magnitude, classifier, attacker influence/gravity metric, responsibility/handoff inference, network, clustering, PCA, HMM, ML, optimized threshold/lag, causal inference, expected-response model, or dataset expansion was introduced.
+
 ## 2026-08-28 — Phase 2F Local-Configuration Representation Diagnostic
 
 Phase 2F reused the exact seven Phase 2D/2E windows. The primary fixed set was the focal defender plus two nearest outfield teammates at the nearest start frame. A non-optimized fixed 15m start neighborhood and anchor-fixed trio were separate sensitivity views. Membership did not change during a trace. Separate descriptors were all internal pair distances, x/y spans, triangle or convex-hull area, x/y ordering, local-centroid translation, and member x/y coordinates relative to that centroid. No derivatives or smoothing were required.

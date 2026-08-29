@@ -34,11 +34,11 @@ Candidate structural references include a whole-team centroid, local teammate ne
 
 ### Track
 
-The defender maintains a comparatively stable attacker-relative position. For defender \(d\) and attacker \(a\):
+The defender maintains a comparatively stable attacker-relative position. For defender $d$ and attacker $a$:
 
-\[
+$$
 \mathbf{r}_{da}(t)=\mathbf{x}_a(t)-\mathbf{x}_d(t)
-\]
+$$
 
 Low variation in this relative position over an appropriate window is evidence consistent with tracking. It is more informative than velocity similarity alone, but it does not reveal a formal marking instruction.
 
@@ -46,21 +46,21 @@ Low variation in this relative position over an appropriate window is evidence c
 
 The defender actively changes a relationship by approaching an attacker or the ball. If attacker distance is
 
-\[
+$$
 r_{da}(t)=\lVert\mathbf{x}_a(t)-\mathbf{x}_d(t)\rVert,
-\]
+$$
 
-then sustained \(dr_{da}/dt<0\), supported by defender velocity projected toward the threat, is evidence consistent with closing. Tracking maintains a relationship; closing reduces it.
+then sustained $dr_{da}/dt<0$, supported by defender velocity projected toward the threat, is evidence consistent with closing. Tracking maintains a relationship; closing reduces it.
 
 This is the historical Phase 0/1 formulation. Phase 1C evidence now makes **Engage** a provisional replacement term for **Close**, but that terminology is not finalized and is not being applied globally yet. The reason is conceptual, not cosmetic: literal reduction of absolute defender–attacker distance is only one way a defender can strengthen or prioritize an opponent relationship.
 
 ### Recover
 
-The defender is displaced and moves toward an expected structural position. If \(\hat{\mathbf{x}}_{structure}(t)\) is a defensible estimate of that position, recovery is consistent with decreasing
+The defender is displaced and moves toward an expected structural position. If $\hat{\mathbf{x}}_{structure}(t)$ is a defensible estimate of that position, recovery is consistent with decreasing
 
-\[
+$$
 \lVert\mathbf{x}_d(t)-\hat{\mathbf{x}}_{structure}(t)\rVert.
-\]
+$$
 
 Structure and Recover are distinct: one maintains an existing structural relationship; the other repairs displacement. The expected structural position must be justified rather than assumed.
 
@@ -149,6 +149,14 @@ Phase 2F tests whether the Phase 2E relationship-selection failure reflects a mi
 The result is **B — partially supported**. Local-configuration deformation is a more defensible descriptive primitive than local compression, but it does not rescue the earlier compression claim. In the 1230.12s primary start trio (Away19/22/17), x/y spans are almost unchanged, area increases, and pair changes are mixed. The 15m neighborhood contracts modestly in span and hull area but still contains mixed pair directions; the anchor trio expands in x and area while contracting in y. The visually compelling Away19/20/21 convergence is not reproduced by the prospective primary membership. At 3682.88s, large local translation coexists with mixed deformation rather than clean compression. At 4197.04s, the primary trio shows area loss and partial contraction while the larger neighborhood changes anisotropically with mixed pairs, demonstrating that deformation alone can also make a negative case look compression-like.
 
 “Local compression” should therefore be weakened to a possible subtype of **local configuration deformation**, meaning contraction in specified dimensions or relationships. Configuration deformation is not automatically meaningful defensive reconfiguration: membership remains context-sensitive, area can hide anisotropy, ordering can change through small crossings, and ordinary continuous or collective play can deform local sets. The current motif vocabulary is consequently scale-aware but less categorical: coordinated translation is collective-scale, focal excursion is focal-relative, and local deformation is a configuration-scale descriptive family. None is a detected state, score, cause, or attacker attribution.
+
+### Phase 2G cross-scale geometric correspondence
+
+Phase 2G aligns five preserved views within each fixed sequence: collective translation, focal leave-one-out collective-relative movement, prospectively fixed local-configuration deformation, start-fixed nearest-opponent geometry as context, and ball-relative geometry. **Cross-scale correspondence** means only visible co-occurrence or disagreement among these typed scales. It does not mean causal propagation, responsibility transfer, a reallocation magnitude, or an inferred state.
+
+The result is **B — partially supported**. Collective-dominant movement at 1888–1896s remains distinguishable from focal-dominant movement at 590–598s without thresholds. At 1230.12s, small team-centroid movement, substantial focal deviation, mixed prospective local deformation, changing opponent geometry, and substantial ball-relative motion support only a weak/provisional multi-scale description; the prospective representation does not restore the original compression coherence. The 3682.88s case is only partly local-within-collective because large translation coexists with expanding spans/area and mixed pair changes. The 1232.28s start trio expands while its anchor trio contracts strongly, so an appealing cross-scale sequence depends on reference time and is not robust. The tackle and 4197.04s cases remain unresolved/heterogeneous.
+
+Cross-scale correspondence adds information primarily by making **disagreement among scales** auditable. It does not yet operationalize defensive relational reallocation or show ordered spread across scales. Ball motion and shared collective movement remain major alternative explanations, and prospective membership weakens several apparently compelling cases. A future “asking questions” hypothesis may test whether attacking actions are consequential when defensive geometry changes across multiple scales, but no observed correspondence is attributed to a specific attacker here.
 
 Three quantities should remain separate:
 

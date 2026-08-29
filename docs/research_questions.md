@@ -44,6 +44,8 @@ Phase 2E asks whether those descriptions survive relationships chosen prospectiv
 
 Phase 2F asks whether the compression failure reflects an inappropriate pair scale. The partial result favors local configuration deformation as a broader primitive: fixed sets preserve translation, pairwise change, anisotropic span change, area, ordering, and member-relative movement separately. However, membership sensitivity remains substantial, the 1230.12s primary set does not reproduce clean compression, and the 4197.04s negative also deforms. Configuration change is therefore descriptive evidence, not sufficient evidence of meaningful reconfiguration.
 
+Phase 2G asks whether collective, focal, local-configuration, opponent-relational, and ball-relative geometry show interpretable correspondence within the same sequence. Initial evidence is partial: collective- and focal-dominant cases remain separable, but prospective membership weakens the multi-scale 1230/3682 accounts, the 1232 start/anchor reversal undermines robustness, and ball/shared movement remains a major alternative. Correspondence currently exposes agreement and disagreement; it does not establish propagation or a reallocation event.
+
 ### RQ4 — Ambiguity
 
 Can the analysis identify periods in which multiple explanations are similarly plausible, and distinguish genuine boundary behavior from tracking noise?
@@ -112,6 +114,8 @@ The research must consider whether apparent state changes or later errors are be
 - Can defender–opponent relationships be selected prospectively by geometry alone without merely renaming proximity as responsibility or threat?
 - Which local-configuration changes are reproducible across prospectively defined start, radius, and anchor sets without treating disagreement as a reason to switch membership?
 - Can meaningful configuration deformation be distinguished from ordinary local deformation during continuous or collective movement without creating a score or detector?
+- Can cross-scale correspondence be reproduced under prospective membership without simply restating that many geometric quantities move during soccer?
+- Can ball-driven/shared collective correspondence be distinguished from opponent-relational change without optimized lags or attacker attribution?
 - What evidence would distinguish a useful overlapping motif vocabulary from a renamed tactical-state taxonomy?
 - What time window distinguishes stable relationships from brief coincidence?
 - Should behavior be represented by discrete states, continuous scores, or both?
