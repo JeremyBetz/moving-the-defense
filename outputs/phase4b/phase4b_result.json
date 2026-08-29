@@ -1,0 +1,45 @@
+{
+  "protocol_version": "1.0",
+  "seed": 20260829,
+  "support_pass": true,
+  "compatible_primary_cells": 9,
+  "required_compatible_cells": 7,
+  "cell_replication_pass": true,
+  "activity_relationship_sign_reversal_present": false,
+  "focal_absolute_rho_game1": 0.5410572733460154,
+  "focal_absolute_rho_game2": 0.4620027828350075,
+  "almost_completely_determined_falsifier": false,
+  "sensitivity_direction_stable": true,
+  "common_translation_max_path_m": 1.3042912378393105e-12,
+  "common_translation_pass": true,
+  "negative_control": [
+    {
+      "game": 1,
+      "n_observations": 3780,
+      "n_intervals": 378,
+      "contemporaneous_median": 5.39580485966186,
+      "misaligned_median": 12.05784238876084,
+      "median_paired_difference_misaligned_minus_contemporaneous": 5.34367585406128,
+      "fraction_misaligned_greater": 0.8671957671957672
+    },
+    {
+      "game": 2,
+      "n_observations": 3660,
+      "n_intervals": 366,
+      "contemporaneous_median": 5.639661118350059,
+      "misaligned_median": 13.70482477334209,
+      "median_paired_difference_misaligned_minus_contemporaneous": 6.894323300260303,
+      "fraction_misaligned_greater": 0.9245901639344263
+    }
+  ],
+  "replication_requirements": {
+    "support": true,
+    "shapes_reported": true,
+    "seven_of_nine_cells": true,
+    "effect_size_and_bootstrap_reported": true,
+    "sensitivity_preserved": true
+  },
+  "geometric_replication": true,
+  "activity_relationship_materiality_requires_scientific_review": true,
+  "distinguishable_from_generic_activity_requires_scientific_review": true
+}

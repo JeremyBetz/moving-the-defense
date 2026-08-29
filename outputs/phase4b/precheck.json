@@ -1,0 +1,70 @@
+{
+  "checksums": "pass",
+  "schema": "pass",
+  "matches": {
+    "1": {
+      "grid_intervals": 1158,
+      "eligible_intervals": 422,
+      "defender_interval_observations": 4220,
+      "attrition": {
+        "possession_change": 273,
+        "ball_incomplete": 413,
+        "restart": 43,
+        "no_possession": 7,
+        "frame_or_membership": 0
+      },
+      "eligible_by_defending_team": {
+        "Home": 224,
+        "Away": 198
+      },
+      "minimum_3x3_cell": 74,
+      "defenders_ge_50": 25,
+      "misaligned_support_intervals": 378
+    },
+    "2": {
+      "grid_intervals": 1127,
+      "eligible_intervals": 407,
+      "defender_interval_observations": 4070,
+      "attrition": {
+        "possession_change": 256,
+        "ball_incomplete": 421,
+        "restart": 43,
+        "no_possession": 0,
+        "frame_or_membership": 0
+      },
+      "eligible_by_defending_team": {
+        "Away": 217,
+        "Home": 190
+      },
+      "minimum_3x3_cell": 75,
+      "defenders_ge_50": 21,
+      "misaligned_support_intervals": 366
+    }
+  },
+  "game1_cutpoints_reproduced": {
+    "focal_absolute_path_m": [
+      7.674419770317199,
+      13.010199201186518
+    ],
+    "full_defending_outfield_centroid_path_m": [
+      7.036640693697627,
+      11.02549721018043
+    ],
+    "sum_defending_outfield_paths_m": [
+      90.67011661247727,
+      125.74665071340688
+    ],
+    "ball_path_m": [
+      23.924028866998565,
+      35.086935898737956
+    ]
+  },
+  "implementation": {
+    "primary": "centered rolling x/y; leave-one-out outfield centroid; accumulated Euclidean path",
+    "negative_controls": "common translation plus frozen nearest misaligned interval",
+    "sensitivities": "4/5/6 seconds and 5/7/9 frames",
+    "replication": "7/9 cells within 0.5 pooled combined-sample cell IQR; direction and sensitivity checks",
+    "quantile_resolution": "exact frozen cuts imply linear quantiles for focal observations and nearest observed order statistics for interval-level quantities",
+    "ambiguity_resolution": "pooled within-cell IQR = IQR of combined Game-1 and Game-2 outcomes in that cell"
+  }
+}

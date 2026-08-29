@@ -60,6 +60,22 @@ For historical reconstruction, execute notebooks in filename phase order. Each n
 5. execute held-out outcomes only after authorization;
 6. preserve all frozen sensitivities and falsification results.
 
+## Phase 4B held-out execution
+
+Run the outcome-blind firewall without constructing focal-relative outcomes:
+
+```bash
+python src/phase4b_focal_departure_validation.py --precheck
+```
+
+After authorization, reproduce the complete frozen analysis and machine-readable outputs with:
+
+```bash
+python src/phase4b_focal_departure_validation.py
+```
+
+The executed narrative artifact is [`notebooks/phase4b_focal_departure_heldout_validation.ipynb`](../notebooks/phase4b_focal_departure_heldout_validation.ipynb); detailed results are in [`docs/phase4b_focal_departure_validation_results.md`](phase4b_focal_departure_validation_results.md). The analysis writes derived tables to `outputs/phase4b/` and figures to `figures/phase4b/`.
+
 Documentation figures can be regenerated with:
 
 ```bash

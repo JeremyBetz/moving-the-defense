@@ -1,0 +1,9 @@
+game,variable,spearman_rho
+1,focal_absolute_path_m,0.5410572733460154
+1,full_defending_outfield_centroid_path_m,0.3397218922279592
+1,sum_defending_outfield_paths_m,0.4086476610140855
+1,ball_path_m,0.31491386295216817
+2,focal_absolute_path_m,0.4620027828350075
+2,full_defending_outfield_centroid_path_m,0.2410437086539533
+2,sum_defending_outfield_paths_m,0.3330537312569949
+2,ball_path_m,0.18455711151655352

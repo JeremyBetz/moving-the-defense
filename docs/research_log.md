@@ -1,5 +1,15 @@
 # Research Log
 
+## 2026-08-29 — Phase 4B Held-Out Focal-Departure Validation
+
+After the outcome-blind firewall exactly reproduced checksums, schema, interval/attrition counts, team and defender support, frozen Game 1 activity cuts, and misaligned-control support, protocol v1.0 was executed once on held-out Metrica Sample Game 2. The primary five-second/seven-frame focal-relative path distribution replicated closely: medians were 5.489m in Game 1 and 5.653m in Game 2, with IQRs 4.404m and 4.246m. All nine frozen focal-activity × collective-activity cells met the half-pooled-IQR compatibility criterion (seven required), with interval-cluster bootstrap uncertainty retained.
+
+Focal-relative path remained positively associated with ordinary movement. Spearman correlations with focal absolute path were 0.541/0.462 in Games 1/2; full-centroid, aggregate-defender, and ball-path relationships were also positive but weaker and did not reverse. Thus the frozen almost-determined falsifier did not trigger, and stable conditional structure remained, but no activity-free or causal effect is claimed. Common-translation invariance passed at numerical tolerance. A similarly active but temporally misaligned collective reference increased median relative path from 5.396m to 12.058m in Game 1 and from 5.640m to 13.705m in Game 2, showing the importance of contemporaneous alignment without acting as a tactical null. All frozen 4/5/6-second and 5/7/9-frame settings preserved the qualitative result.
+
+The supported conclusion is narrow: focal-relative path is a cross-match reproducible geometric primitive with stable activity-context structure in these sample matches. It is not validated as opponent-induced response, responsibility, attention, tactical intent/error, quality, or relational reconfiguration. The latter remains unvalidated.
+
+Final audit confirmed two pre-outcome implementation clarifications rather than protocol changes. Exact frozen Game 1 cut values imply linear quantiles across focal observations and nearest observed order statistics for interval-level quantities. “Pooled within-cell IQR” was fixed before outcome construction as the IQR of the combined Game 1/Game 2 observations inside each frozen cell. No alternative definition was tested against held-out results. The latter uses held-out observations only as part of the prospectively specified cross-match compatibility calculation; it does not tune cells, the 0.5 multiplier, the 7/9 rule, or the pooling interpretation.
+
 ## 2026-08-29 — Scientific Documentation and Communication Audit
 
 The repository narrative was audited through frozen Phase 4A without executing Phase 4B or inspecting any Game 2 focal-departure outcome. The README now leads with the current focal-departure question, the Phase 3 conclusion C and activity confound are prominent, and downstream reconfiguration, attacker-effect, gravity, and value claims are explicitly conditional and unvalidated.
