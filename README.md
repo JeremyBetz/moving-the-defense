@@ -194,7 +194,9 @@ The executed [`notebooks/phase2g_cross_scale_geometric_correspondence_diagnostic
 
 ### Phase 2H construct synthesis
 
-The executed [`notebooks/phase2h_relational_reallocation_construct_synthesis.ipynb`](notebooks/phase2h_relational_reallocation_construct_synthesis.ipynb) rejects definitions that collapse into generic activity or require multi-scale change, retaining only a narrow provisional reference-relative construct. Terminology decision B preserves “reallocation” historically but prefers “relational reconfiguration” empirically. The next recommended step is prospective matched-contrast validation—not attribution, gravity, or modeling.
+The executed [`notebooks/phase2h_relational_reallocation_construct_synthesis.ipynb`](notebooks/phase2h_relational_reallocation_construct_synthesis.ipynb) rejects definitions that collapse into generic activity or require multi-scale change, retaining only a narrow provisional reference-relative construct. Terminology decision B preserves “reallocation” historically but prefers “relational reconfiguration” empirically.
+
+Phase 3B then tests that construct prospectively under frozen protocol v1.1. Only 46 of 315 reception candidates match (14.6%, below the required 70%); broad collective/focal movement is reproduced by shifted anchors and disappears under sparse pre-anchor movement matching. The frozen conclusion is **C**: this design does not validate relational reconfiguration beyond generic event-associated activity. The next step is a new pre-outcome validation design with adequate support, not attribution, gravity, scoring, or modeling.
 
 ## Repository Structure
 

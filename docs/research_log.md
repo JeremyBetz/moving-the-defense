@@ -1,5 +1,15 @@
 # Research Log
 
+## 2026-08-29 — Phase 3B Prospective Matched-Contrast Validation
+
+Phase 3B executed frozen protocol v1.1 without replacing the removed challenge sensitivity. The primary reception sample began with 799 passes, excluded 182 near restarts, retained 617 eligible anchors before overlap suppression, and retained 315 afterward. Only 46 candidates matched frozen ordinary-play controls (14.6% support versus the required 70%), so the primary design is formally poorly supported and was not loosened. Ball-complete analysis retained 20 matched pairs.
+
+Among the 46 matched pairs, median candidate-minus-control differences were +3.92 m for collective-centroid path, +5.01 m for focal leave-one-out-relative path, +2.81 m for nearest prospectively selected opponent distance change, and +33.96 m for summed defending-outfield activity. Local-configuration endpoint descriptors were broadly null after within-family adjustment. The opponent result indicates more distance change, not engagement, responsibility, openness, or tactical meaning.
+
+The strongest counterevidence is that the seeded within-possession shifted-anchor comparison reproduces and often exceeds collective, focal, nearest-opponent, ball, and generic-activity differences. The independently rebuilt eight-second design retains 244 candidates but matches only 21 (8.6%); collective/focal paths and activity remain elevated while local geometry is null. Frozen pre-anchor movement-bin matching leaves 15 pairs (4.8%) and removes the collective, focal, opponent, ball, and activity contrasts. Possession-change sensitivity retains 136 candidates and matches 23 (16.9%); it again primarily separates collective/focal paths, ball displacement, and generic activity, not stable local or opponent-specific geometry.
+
+The frozen result is **C**. Prospectively specified typed channels and references are executable, but the evidence does not establish that their observed changes are coherent, temporally localized relational reconfiguration beyond baseline activity. The result weakens empirical use of “defensive relational reallocation” and leaves the Phase 2H construct unvalidated. The next scientific step is a new pre-outcome design focused first on adequate control support and event-associated activity, not a larger model, score, attacker attribution, or post-hoc refinement of these outcomes.
+
 ## 2026-08-29 — Phase 3A Protocol v1.1 Pre-execution Amendment
 
 Before any Phase 3B sample or relational outcome was constructed, implementation audit found that Metrica's paired `CHALLENGE` records did not unambiguously identify a defender or possession team under protocol v1.0. Version 1.1 removes the tackle/challenge sensitivity rather than adding event-semantic assumptions. Possession-change sensitivity remains executable from the frozen possession-bearing types, event Start Time/Frame, event Team, symmetric ball-nearest focal rule, candidate suppression, controls, matching, and windows. Every other v1.0 rule and seed remains unchanged.

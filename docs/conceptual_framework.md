@@ -170,7 +170,15 @@ Terminology decision **B**: retain **defensive relational reallocation** provisi
 
 Phase 3A freezes an internal matched-contrast protocol without inspecting outcomes. Completed open-play receptions are metric-independent primary anchors; matched ordinary open-play pseudo-anchors are controls. All references, typed outputs, matching rules, statistics, negative controls, leakage checks, and A/B/C interpretations are fixed in `config/phase3a_validation_protocol.json`. The target is internal geometric discrimination beyond generic movement, not tactical truth or attacker value.
 
-Protocol version 1.0 removes remaining outcome-visible choices through deterministic overlap suppression, symmetric ball-nearest focal selection, fixed identity conventions, strict missingness, explicit resampling, a matching-support failure rule, and a seeded shifted-anchor negative control. These are design commitments rather than findings.
+Protocol version 1.1 retains the v1.0 outcome-blind commitments—deterministic overlap suppression, symmetric ball-nearest focal selection, fixed identity conventions, strict missingness, explicit resampling, a matching-support failure rule, and a seeded shifted-anchor negative control—while removing only the pre-execution challenge sensitivity whose event semantics were ambiguous. These are design commitments rather than findings.
+
+### Phase 3B prospective matched-contrast result
+
+Phase 3B executes the pre-outcome-amended protocol v1.1, which differs from v1.0 only by removing the semantically ambiguous tackle/challenge sensitivity. The primary reception design is poorly supported: 46 of 315 retained candidates match (14.6%), below the frozen 70% requirement. The rules were not loosened.
+
+Reception windows have longer collective-centroid paths, focal leave-one-out-relative paths, nearest-opponent distance changes, and generic defending-player path length than matched controls. These are not specific evidence of relational reconfiguration. The seeded within-possession shifted-anchor comparison reproduces or exceeds the same broad movement pattern, and the pre-anchor movement-matching sensitivity retains only 15 pairs and removes those contrasts. Eight-second and possession-change results likewise emphasize collective/focal movement, ball motion, and generic activity rather than stable local-configuration or opponent-specific changes.
+
+The frozen conclusion is **C**. The Phase 2H construct remains conceptually coherent enough to specify typed measurements prospectively, but this design does not show that reception-anchored changes are inadequately described by baseline movement. “Coherent” and “temporally localized” are not validated as discriminating empirical properties here; prospective typing is supported procedurally, not substantively. Relational reconfiguration therefore remains an unvalidated descriptive idea rather than an event, state, score, or causal mechanism.
 
 Three quantities should remain separate:
 
