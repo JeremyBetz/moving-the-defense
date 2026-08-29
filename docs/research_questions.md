@@ -36,6 +36,8 @@ This now includes testing whether current relational balance, ambiguity between 
 
 Phase 2B adds the descriptive temporal question: can direction, persistence, and approximate ordering of change be read within separate typed channels without defining a state transition or combining them? At present, broad staggered changes are visible in the strongest fixed case, but frame-exact ordering is not robust.
 
+Phase 2C adds an episode-boundary question: can a persistent overlap of specific typed changes define a soccer-defensible candidate interval without reducing continuous activity to an event? Current evidence is partially supportive for interior compression but too pattern- and context-dependent for a general operational definition.
+
 ### RQ4 — Ambiguity
 
 Can the analysis identify periods in which multiple explanations are similarly plausible, and distinguish genuine boundary behavior from tracking noise?
@@ -97,6 +99,8 @@ The research must consider whether apparent state changes or later errors are be
 - Is any single relational view sufficient across coordinated translation, excursion, engagement, accommodation, centroid cancellation, and negative controls? Phase 2A evidence currently suggests no.
 - Can broad ordering among collective, defender–defender, defender–opponent, and ball-relative changes be reproduced without optimized lags or an analyst-imposed narrative?
 - How much temporal precision survives the fixed 5/7/9-frame smoothing sensitivity, tracking noise, and rapid ball movement?
+- Can activity—many continuously changing relationships—be distinguished prospectively from a specific relational pattern without a composite magnitude or post hoc relationship selection?
+- Which episode patterns, if any, can be pre-specified without turning a useful interior-compression diagnostic into a universal reconfiguration rule?
 - What time window distinguishes stable relationships from brief coincidence?
 - Should behavior be represented by discrete states, continuous scores, or both?
 - Are Structure, Track, provisional Engage/Close, and Recover mutually exclusive states at all, or overlapping dimensions and relational constraints?

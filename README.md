@@ -69,9 +69,9 @@ Frequent transitions are not inherently harmful. Strong defenses may exchange an
 
 ## Current Status
 
-**Stage: temporal diagnostics of separate relational channels.**
+**Stage: candidate interval diagnostics within separate relational channels.**
 
-Metrica Sports Sample Game 1 is the sole empirical sample so far. Phase 0 documented the dataset representation; Phases 1A–1F performed narrowly scoped construct diagnostics spanning structural translation, opponent-relative position, event-anchored convergence, kinematic decomposition, movement coupling, collective accommodation, and local compression. Phase 2A compared what separate relational views preserve or lose; Phase 2B tests whether changes within those same typed channels can be followed through time. No tactical inference model, state system, composite representation, relational weighting scheme, or final metric has been selected.
+Metrica Sports Sample Game 1 is the sole empirical sample so far. Phase 0 documented the dataset representation; Phases 1A–1F performed narrowly scoped construct diagnostics spanning structural translation, opponent-relative position, event-anchored convergence, kinematic decomposition, movement coupling, collective accommodation, and local compression. Phase 2A compared what separate relational views preserve or lose; Phase 2B traced those channels through time; Phase 2C tests whether simple persistent overlaps can support candidate intervals. No tactical inference model, state system, composite representation, relational weighting scheme, or final metric has been selected.
 
 ## What We Have Learned So Far
 
@@ -86,6 +86,7 @@ Metrica Sports Sample Game 1 is the sole empirical sample so far. Phase 0 docume
 | 1F | Can local reorganization occur with a stable centroid? | Yes: the 1230.12 s counterexample shows substantial local compression and relationship changes with little centroid movement. | Stable centroid does not imply stable defensive relationships; structure likely needs relational representation. |
 | 2A | What minimum information must a relational representation preserve? | No single tested view suffices: centroid, defender–defender, defender–opponent, and ball-relative views preserve different necessary context. | Retain a sparse set of typed relations separately before proposing any composite representation. |
 | 2B | Can relational reconfiguration be watched unfolding rather than inferred from two snapshots? | In the 1230.12s case, separate channels show broad, partially staggered changes; exact ordering remains noise- and smoothing-sensitive. | Relational reallocation is descriptively feasible as temporal typed change, not yet a score, state transition, or detected event. |
+| 2C | Can temporal change be bounded as a candidate episode without overcalling activity? | Partially: fixed interior-compression logic supports 1230.12s and preserves the negative case, but also marks contextually ambiguous windows; direction-agnostic overlap overcalls. | Episode-ness remains pattern- and context-specific rather than generally operationalizable. |
 
 Negative and ambiguous results are research findings, not implementation failures. They delimit what a future representation must be capable of seeing.
 
@@ -164,6 +165,10 @@ The executed [`notebooks/phase2a_relational_representation_requirements.ipynb`](
 ### Phase 2B temporal relational-change diagnostic
 
 The executed [`notebooks/phase2b_temporal_relational_change_diagnostics.ipynb`](notebooks/phase2b_temporal_relational_change_diagnostics.ipynb) reuses the exact Phase 2A windows and traces raw levels plus fixed-smoothed rates within separate typed channels. The 1230.12s worked example shows local compression, opponent-relative reversals, secondary-opponent change, and limited centroid movement unfolding with partially staggered timing. The 4197.04s negative case remains heterogeneous. Broad ordering is visually supportable, but frame-exact onset is not; no channels are combined and no detector or state model is introduced.
+
+### Phase 2C candidate reconfiguration-episode diagnostic
+
+The executed [`notebooks/phase2c_candidate_reconfiguration_episode_diagnostics.ipynb`](notebooks/phase2c_candidate_reconfiguration_episode_diagnostics.ipynb) applies fixed, non-optimized persistence and overlap logic to the same seven windows. A 1230.12s interior-compression interval is visible in typed time series and raw snapshots, while 4197.04s remains negative. However, direction-agnostic activity overcalls and the narrower logic also marks ambiguous tackle, accommodation, and translation windows. The conclusion is partially feasible, not a detector: episode boundaries remain pattern- and context-sensitive, and no channels are combined into a score.
 
 ## Repository Structure
 

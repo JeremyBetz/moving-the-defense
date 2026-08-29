@@ -1,5 +1,19 @@
 # Research Log
 
+## 2026-08-28 — Phase 2C Candidate Reconfiguration-Episode Diagnostic
+
+Phase 2C reused the exact seven Phase 2B windows and relationship selections. It tested interval logic rather than a classifier: same-direction change in a 5/7/9-frame-smoothed relationship had to persist for at least 0.6s, and any overlap interval also had to last 0.6s. These are fixed illustrative, non-optimized choices. No magnitude threshold was used.
+
+Direction-agnostic overlap among focal collective-relative, defender–defender, and defender–opponent change covered nearly the full eligible duration of every case with a fixed opponent pair. This is a clear overcalling result: multiple relationships move persistently during ordinary active play, so typed activity alone does not establish relational reconfiguration.
+
+A narrower interior-compression lens required persistent contraction in at least two already-displayed defender pairs and two already-displayed defender–opponent distances. At 1230.12s, the fixed 7-frame version gives an illustrative interval from −1.20s to +1.84s, lasting 3.04s. Across it, Away19–20, Away19–21, and Away20–21 spacing changes are −12.232m, −14.441m, and −2.518m; Away19/20/21 distance changes to Home10 are −3.385m, −9.380m, and −10.992m. Selected secondary relationships change by +5.371m, +0.082m, and −6.833m, while centroid displacement is +1.990m x and +0.242m y. Raw interval snapshots show the same convergence and retain ball context.
+
+The adversarial comparison limits the finding. The same compression logic marks tackle/engagement, accommodation, and a late segment of the collective-translation contrast; those intervals retain major shared-motion alternatives. It does not capture the focal excursion as a clean episode. The 4197.04s heterogeneous case remains negative for all 5/7/9-frame versions without retuning because its selected directions are mixed. Smoothing sensitivity preserves broad intervals but shifts edges by roughly the expected few frames.
+
+The result is **B — partially feasible**. Simple interval logic can support a visually defensible, pattern-specific candidate at 1230.12s and preserve the negative case, but episode-ness is not generally operationalizable. Activity overcalls, interior compression is only one reconfiguration pattern, and boundaries remain context-sensitive. Defensive relational reallocation may provisionally include a bounded interval of persistent change across specifically justified typed relationships; it is not any activity overlap, a universal detected event, scalar magnitude, state, or causal mechanism.
+
+No composite score, summed magnitude, weights, reallocation index, gravity/style metric, structure/exposure score, assignment inference, state classifier, automated change point, optimized threshold, clustering, network, HMM, ML, causal inference, or dataset expansion was introduced.
+
 ## 2026-08-28 — Phase 2B Temporal Relational-Change Diagnostic
 
 Phase 2B reused the exact seven Phase 2A windows and frozen relationship selections. No example search followed metric inspection. Raw absolute/collective, defender–defender, defender–opponent, ball-relative, and clearly interpretable depth channels remain separate. Rates are centered finite differences of centered 7-frame rolling means, with fixed 5/7/9-frame sensitivity, full-window edge handling, and no interpolation.

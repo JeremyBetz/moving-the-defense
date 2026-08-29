@@ -112,6 +112,16 @@ This supports **defensive relational reallocation** only in a limited descriptiv
 
 Temporal ordering remains coarse. Centered 5/7/9-frame smoothing preserves broad direction changes but shifts or rounds local extrema, while unsmoothed 25 Hz first differences are too noisy for reliable interpretation. Current evidence supports partially staggered change at a broad sub-second-to-second scale, not frame-exact onset, optimized lead–lag estimates, or causal sequencing. The heterogeneous 4197.04s case remains distinguishable descriptively because its typed channels change in opposing ways rather than showing broadly convergent local reorganization; this is not a classification rule.
 
+### Phase 2C episode feasibility
+
+Phase 2C tests whether temporal reconfiguration can be bounded as a candidate interval without collapsing channels. A fixed illustrative diagnostic retains same-direction 7-frame-smoothed change lasting at least 0.6s and examines overlap across typed channels. Direction-agnostic overlap is too permissive: once focal, defender–defender, and defender–opponent relationships are inspected, most eligible active-play windows contain sustained simultaneous change. **Activity is therefore not relational reconfiguration.**
+
+A narrower interior-compression lens—persistent contraction in at least two already-fixed defender pairs and two already-fixed defender–opponent distances—produces a visually defensible 1230.12s interval from approximately −1.20s to +1.84s. Across that interval, all three selected defender pairs contract, all three defenders reduce distance to Home10, selected secondary-opponent relationships redistribute in different directions, and centroid movement remains modest relative to several local changes. The same interval is visible in raw pitch snapshots.
+
+This does not yield a general episode definition. The same fixed logic also identifies tackle/engagement and accommodation intervals and a late interval in the collective-translation contrast, where shared motion remains a strong explanation. It does not represent the focal excursion well. The 4197.04s negative case remains negative without retuning because its selected relationship directions are mixed. Fixed 5/7/9-frame sensitivity preserves broad intervals but shifts their edges.
+
+The conservative conclusion is **B — partially feasible**. A pattern-specific, non-optimized interval can describe one kind of relational reconfiguration, but episode boundaries and interpretation remain too context-sensitive for general use. “Defensive relational reallocation” may provisionally include a bounded interval of persistent, jointly interpretable change in preserved relationship types. It must not mean any multi-channel activity, a universal event, scalar magnitude, causal mechanism, or tactical state.
+
 Three quantities should remain separate:
 
 1. **Current state:** which behavioral explanation currently fits best?
