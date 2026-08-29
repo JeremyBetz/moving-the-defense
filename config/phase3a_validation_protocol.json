@@ -1,5 +1,5 @@
 {
-  "phase3a_protocol_version": "1.0",
+  "phase3a_protocol_version": "1.1",
   "status": "FROZEN_DESIGN_NOT_EXECUTED",
   "random_seed": 20260828,
   "dataset": "Metrica Sample Game 1",
@@ -10,7 +10,7 @@
     "primary_overlap_rule": "retain earliest eligible anchor; suppress later anchors whose [-2,+3] windows overlap; resume after retained window end",
     "sensitivity_overlap_rule": "rebuild independently for [-3,+5] and apply earliest-first eight-second overlap suppression",
     "exclusions": ["restart_or_set_play", "incomplete_pass", "missing_receiver_identity", "missing_anchor_ball", "core_reference_incomplete", "window_crosses_period_boundary"],
-    "sensitivities": ["tackle/challenge at event Start Time with unambiguous event-identified defender; same windows, exclusions, spacing, controls, outputs, and statistics", "possession change at Start Time of the first possession-bearing event whose Team differs from the previous possession-bearing event in the same period; exclude restarts; same windows, exclusions, spacing, focal ball-nearest rule, controls, outputs, and statistics"]
+    "sensitivities": ["possession change at event Start Time/Start Frame of the first possession-bearing event whose Team differs from the previous possession-bearing event in the same period; qualifying Types are PASS, RECOVERY, SET PIECE, and SHOT; exclude restarts; event Team is possession team; same windows, exclusions, spacing, focal ball-nearest rule, controls, matching, outputs, and statistics"]
   },
   "window": {"primary_seconds": [-2.0, 3.0], "sensitivity_seconds": [-3.0, 5.0], "period_crossing_allowed": false},
   "restarts": {
@@ -43,7 +43,6 @@
   },
   "references": {
     "focal_primary": "outfield defender nearest tracked ball at anchor for both candidates and controls; exclude if anchor ball missing",
-    "focal_tackle_sensitivity": "event-identified defender only when unambiguous; otherwise exclude",
     "collective": "leave-one-out defending-outfield centroid",
     "local": {"selection": "at window start, focal plus nearest and second-nearest eligible outfield teammates", "identities": ["focal", "neighbor_1", "neighbor_2"], "pair_labels": ["focal_neighbor_1", "focal_neighbor_2", "neighbor_1_neighbor_2"], "dynamic_reselection": false},
     "opponents": {"selection": "at window start, nearest and second-nearest opponents to focal", "identities": ["opponent_1", "opponent_2"], "dynamic_reselection": false},

@@ -2,7 +2,11 @@
 
 ## Frozen status
 
-Protocol version **1.0**, random seed **20260828**. Design only; no validation outcomes inspected. The JSON configuration is the executable source of truth.
+Protocol version **1.1**, random seed **20260828**. Design only; no validation outcomes inspected. The JSON configuration is the executable source of truth.
+
+### Protocol history
+
+**v1.1 — pre-execution amendment:** Removed the tackle/challenge sensitivity because Metrica's paired `CHALLENGE` events do not provide an unambiguous prospectively frozen defender/possession interpretation. No Phase 3B samples or outcomes had been constructed or inspected. All other v1.0 rules remain unchanged.
 
 > Defensive relational reconfiguration is a coherent, temporally localized change in prospectively specified typed defensive geometric relationships that is not adequately described by the relevant pre-specified baseline motion alone.
 
@@ -10,7 +14,7 @@ The target is internal geometric discrimination, not tactical truth, semantic va
 
 ## Candidates and overlap
 
-Primary anchors are open-play `PASS` events with nonmissing `To`; valid `End Frame`/`End Time` defines the reception anchor because Metrica has no separate completion flag. A tracked ball is required at that anchor. For the five-second window $[-2,+3]$, sort anchors chronologically, retain the earliest, suppress every later anchor whose window overlaps it, and resume after its end. Rebuild eligibility independently for the eight-second $[-3,+5]$ sensitivity. Tackle sensitivity uses event `Start Time` and an unambiguous event defender. Possession-change sensitivity uses the `Start Time` of the first possession-bearing event whose team differs from the preceding possession-bearing event in the same period, excluding restarts. Both reuse all frozen windows, spacing, controls, outputs, and statistics; tackles are not primary because they mechanically enrich convergence.
+Primary anchors are open-play `PASS` events with nonmissing `To`; valid `End Frame`/`End Time` defines the reception anchor because Metrica has no separate completion flag. A tracked ball is required at that anchor. For the five-second window $[-2,+3]$, sort anchors chronologically, retain the earliest, suppress every later anchor whose window overlaps it, and resume after its end. Rebuild eligibility independently for the eight-second $[-3,+5]$ sensitivity. Possession-change sensitivity uses the event `Start Time`/`Start Frame` of the first `PASS`, `RECOVERY`, `SET PIECE`, or `SHOT` whose `Team` differs from the preceding qualifying event in the same period; that event team is possession, restarts are excluded, and all frozen windows, spacing, focal, controls, matching, outputs, and statistics are reused. Challenge sensitivity is not executable in v1.1 and is not replaced.
 
 No window crosses a period boundary. Candidate focal selection is symmetric with controls: the defending outfield player nearest the tracked ball at the anchor. Receiver identity establishes eligibility/context only. Missing anchor ball means exclusion. Tackle sensitivity uses an unambiguous event-identified defender or excludes the event.
 

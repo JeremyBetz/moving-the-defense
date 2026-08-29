@@ -1,5 +1,9 @@
 # Research Log
 
+## 2026-08-29 — Phase 3A Protocol v1.1 Pre-execution Amendment
+
+Before any Phase 3B sample or relational outcome was constructed, implementation audit found that Metrica's paired `CHALLENGE` records did not unambiguously identify a defender or possession team under protocol v1.0. Version 1.1 removes the tackle/challenge sensitivity rather than adding event-semantic assumptions. Possession-change sensitivity remains executable from the frozen possession-bearing types, event Start Time/Frame, event Team, symmetric ball-nearest focal rule, candidate suppression, controls, matching, and windows. Every other v1.0 rule and seed remains unchanged.
+
 ## 2026-08-28 — Phase 3A Prospective Matched-Contrast Validation Design
 
 Phase 3A froze, but did not execute, an internal validation protocol for Sample Game 1. Completed open-play receptions are primary metric-independent anchors; tackles and possession changes are separate sensitivities. Five-second windows (−2/+3s) are primary and eight-second windows (−3/+5s) are the only length sensitivity. Controls are ordinary open-play pseudo-anchors matched on period, possession, open-play status, 3×3 anchor ball zone, available defenders, and elapsed time. Post-anchor outcomes are excluded from matching.
