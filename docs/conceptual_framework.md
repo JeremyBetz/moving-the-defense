@@ -182,6 +182,8 @@ The frozen conclusion is **C**. The Phase 2H construct remains conceptually cohe
 
 Phase 3C does not redefine or rescue that construct. It recommends additional matches followed by preregistration of one narrower, independently meaningful geometric primitive. Event records may supply time and context, but receptions or possession changes are not validated positive conditions for reconfiguration. Any future test must condition prospectively on passage-level activity and demonstrate adequate support before relational outcomes are inspected.
 
+Phase 4A selects **focal departure from collective defensive motion** as that narrower primitive: $\mathbf r_d(t)=\mathbf x_d(t)-\mathbf c_{-d}(t)$. It is continuous reference-relative geometry, not a state or interpretation. Focal-relative path length is the proposed primary magnitude because accumulated relative motion can cancel at endpoints, but it may still be only focal activity after translation subtraction. Development Game 1 and held-out Game 2 must establish reproducibility and contextual structure before any opponent, reconfiguration, or attacker meaning is considered.
+
 Three quantities should remain separate:
 
 1. **Current state:** which behavioral explanation currently fits best?

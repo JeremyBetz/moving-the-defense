@@ -1,5 +1,15 @@
 # Research Log
 
+## 2026-08-29 — Phase 4A Data Readiness and Focal-Departure Protocol
+
+Phase 4A narrows the next empirical target to **focal departure from collective defensive motion**, defined geometrically by $\mathbf r_d(t)=\mathbf x_d(t)-\mathbf c_{-d}(t)$. The primary proposed quantity is seven-frame-smoothed focal-relative path length over fixed non-overlapping five-second intervals. It is accumulated reference-relative motion, not meaningful departure, responsibility, attention, tactical error, or reconfiguration. Net x/y, focal absolute activity, and collective activity remain separate.
+
+Metrica Sample Game 2 was downloaded from the same public repository into gitignored raw storage. Its three-file schema, 25 Hz tracking, coordinates, identifiers, periods, events, missingness, and conditioning-only support are compatible with Game 1. Game 1 is frozen as development/history and Game 2 as held-out validation. No Game 2 focal-relative coordinate, path, distribution, example, or contextual outcome was calculated.
+
+Outcome-blind five-second readiness yields 422 intervals/4,220 defender-intervals in Game 1 and 407/4,070 in Game 2. Both defending teams exceed 150 intervals in each match; the smallest Game-1-defined focal-absolute-by-collective activity cell contains 74 observations in Game 1 and 75 in Game 2. The frozen support criteria pass.
+
+Distributional replication is selected as the primary future design, with within-team contrasts secondary. Activity conditioning includes focal absolute movement, collective path, aggregate defending movement, ball path, period, and team context. Event data supplies possession/context only. Common-translation invariance and temporally misaligned collective references are frozen negative controls. Phase 4A stops before outcome execution.
+
 ## 2026-08-29 — Phase 3C Validation-Design Feasibility
 
 Phase 3C introduced no sample construction or relational-outcome analysis. It treats Phase 3B as both a design failure—14.6% primary matching support—and construct counterevidence: reception alignment mainly selected greater passage-level activity, shifted within-possession anchors reproduced the apparent effects, local configuration was broadly null, and pre-anchor movement matching removed contrasts while retaining only 4.8% support.

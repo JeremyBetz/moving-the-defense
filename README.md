@@ -198,6 +198,8 @@ The executed [`notebooks/phase2h_relational_reallocation_construct_synthesis.ipy
 
 Phase 3B then tests that construct prospectively under frozen protocol v1.1. Only 46 of 315 reception candidates match (14.6%, below the required 70%); broad collective/focal movement is reproduced by shifted anchors and disappears under sparse pre-anchor movement matching. The frozen conclusion is **C**: this design does not validate relational reconfiguration beyond generic event-associated activity. The next step is a new pre-outcome validation design with adequate support, not attribution, gravity, scoring, or modeling.
 
+Phase 4A freezes that narrower next design around focal departure from collective defensive motion. Game 1 is development/history and Sample Game 2 is untouched held-out validation. Outcome-blind interval and activity-stratum support passes in both matches; no Game 2 focal-relative outcome has been inspected, and validation has not yet been executed.
+
 ## Repository Structure
 
 ```text

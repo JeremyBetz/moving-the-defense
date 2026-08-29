@@ -1,0 +1,210 @@
+{
+  "phase4a_protocol_version": "1.0",
+  "status": "frozen_design_not_executed",
+  "random_seed": 20260829,
+  "target": {
+    "name": "focal departure from collective defensive motion",
+    "definition": "For focal outfield defender d, r_d(t) = x_d(t) - c_{-d}(t), where c_{-d}(t) is the centroid of the other available defending outfield players.",
+    "interpretation": [
+      "geometric",
+      "behavioral",
+      "reference-relative",
+      "continuous",
+      "not inherently good or bad",
+      "not necessarily opponent-induced",
+      "not responsibility, attention, tactical error, or relational reconfiguration by itself"
+    ]
+  },
+  "data": {
+    "development": "Metrica Sample Game 1",
+    "held_out_validation": "Metrica Sample Game 2",
+    "source": "https://github.com/metrica-sports/sample-data",
+    "sample_game_2_sha256": {
+      "Sample_Game_2_RawEventsData.csv": "edf31a18599265b77a8baf150f2ce6d89456fb0324b62ea7a391229657a619ba",
+      "Sample_Game_2_RawTrackingData_Away_Team.csv": "aa639f40762eade46c389020fe4458266b5ba14027b1e96e22e75db62803718b",
+      "Sample_Game_2_RawTrackingData_Home_Team.csv": "3f9990ac204b07133e4202441d6fcbb386897c7c7f81e1bc3ce4d35bc8644694"
+    },
+    "sample_game_2_schema": {
+      "tracking_joined_shape": [141156, 59],
+      "event_shape": [1935, 14],
+      "home_player_ids": ["11", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "12", "13", "14"],
+      "away_player_ids": ["25", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "26"],
+      "event_types": ["BALL LOST", "BALL OUT", "CARD", "CHALLENGE", "FAULT RECEIVED", "PASS", "RECOVERY", "SET PIECE", "SHOT"],
+      "coordinate_range": [-0.05, 1.05],
+      "periods": [1, 2]
+    },
+    "held_out_rule": "No focal-relative quantity or outcome may be inspected on Sample Game 2 before this protocol is committed and execution is explicitly authorized.",
+    "raw_data_gitignored": true
+  },
+  "coordinates": {
+    "source": "raw normalized provider coordinates",
+    "physical_conversion_m": [105.0, 68.0],
+    "orientation_normalization": false,
+    "sampling_hz": 25
+  },
+  "identities": {
+    "goalkeeper_ids": {
+      "Home": "11",
+      "Away": "25"
+    },
+    "outfield_set": "non-goalkeeper player identities with complete x/y throughout the interval",
+    "minimum_complete_outfield_defenders": 9,
+    "membership": "fixed within interval",
+    "each_complete_outfield_defender_is_a_focal_observation": true
+  },
+  "sampling": {
+    "interval_seconds": 5.0,
+    "window": "half-open [t,t+5), exactly 125 frames",
+    "grid": "non-overlapping five-second grid; first start in each period is the smallest elapsed-match multiple of five not before period tracking begins",
+    "same_period": true,
+    "possession": "latest PASS, RECOVERY, SET PIECE, or SHOT team at interval start; exclude any interval in which that event-defined team changes",
+    "restart_exclusion": {
+      "types": ["SET PIECE", "BALL OUT"],
+      "subtypes": ["CORNER KICK", "FREE KICK", "GOAL KICK", "KICK OFF", "THROW IN", "OFFSIDE", "END HALF"]
+    },
+    "ball_complete_throughout": true,
+    "events_are_positive_labels": false,
+    "interval_length_rationale": "Five seconds matches the previously used primary diagnostic scale, is long enough to contain coordinated movement, and remains short relative to most uninterrupted possessions; it is frozen before held-out focal outcomes.",
+    "interval_sensitivity_seconds": [4.0, 6.0]
+  },
+  "smoothing": {
+    "primary_frames": 7,
+    "method": "centered rolling arithmetic mean applied separately to x and y within each interval",
+    "edge_handling": "no padding; first and last three frames have no smoothed value and are omitted from path accumulation",
+    "missing_coordinates": "no interpolation; interval/focal eligibility is resolved before smoothing",
+    "sensitivity_frames": [5, 9]
+  },
+  "descriptors": {
+    "primary": "focal_relative_path_length_m = sum of Euclidean increments of smoothed r_d(t)",
+    "primary_rationale": "Path length preserves accumulated relative movement that can cancel in endpoint changes and directly measures movement relative to the leave-one-out baseline. It is not interpreted as meaningful departure without activity/context diagnostics.",
+    "secondary": [
+      "focal_relative_net_x_change_m",
+      "focal_relative_net_y_change_m",
+      "focal_relative_net_displacement_m",
+      "focal_absolute_path_m",
+      "leave_one_out_centroid_path_m",
+      "full_defending_outfield_centroid_path_m"
+    ],
+    "prohibited": [
+      "composite focal-departure score",
+      "opponent attribution",
+      "responsibility or attention inference",
+      "relational-reconfiguration classification"
+    ]
+  },
+  "activity_conditioning": {
+    "variables": [
+      "focal_absolute_path_m",
+      "full_defending_outfield_centroid_path_m",
+      "sum_defending_outfield_paths_m",
+      "ball_path_m",
+      "period",
+      "possession_team",
+      "defending_team"
+    ],
+    "primary_joint_strata": [
+      "focal_absolute_path_m tercile",
+      "full_defending_outfield_centroid_path_m tercile"
+    ],
+    "marginal_strata": [
+      "sum_defending_outfield_paths_m tercile",
+      "ball_path_m tercile"
+    ],
+    "cut_source": "Sample Game 1 conditioning variables only; no focal-relative outcome",
+    "cuts_m": {
+      "focal_absolute_path_m": [7.674419770317201, 13.01019920118652],
+      "full_defending_outfield_centroid_path_m": [7.036640693697627, 11.02549721018043],
+      "sum_defending_outfield_paths_m": [90.67011661247726, 125.74665071340688],
+      "ball_path_m": [23.924028866998565, 35.086935898737956]
+    },
+    "warning": "Contemporaneous conditioning is descriptive, not causal, and must not be described as estimating an activity-free effect."
+  },
+  "validation": {
+    "primary_approach": "distributional replication",
+    "description": "Estimate Game 1 focal-relative distributions and activity-context relationships, then evaluate their direction, magnitude compatibility, and shape in untouched Game 2.",
+    "secondary_diagnostic": "defender-within-team contrasts within the same interval, restricted to defenders with at least 50 eligible intervals; no role inference",
+    "not_primary": {
+      "activity_conditioned_distribution": "incorporated as context but cannot alone establish meaning",
+      "defender_within_team": "useful shared-passage control but role-confounded",
+      "within_defender_temporal": "secondary only because substitutions leave uneven support"
+    },
+    "summaries": [
+      "median, IQR, and 10th/25th/50th/75th/90th percentiles",
+      "separate Spearman relationships with each activity variable",
+      "3x3 focal-absolute-path by collective-path cell medians and IQRs",
+      "within-interval focal-relative-path IQR across defenders"
+    ],
+    "uncertainty": "cluster bootstrap by five-second interval; 10000 resamples; seed 20260829",
+    "significance_alone_sufficient": false
+  },
+  "support": {
+    "criteria": {
+      "eligible_intervals_per_match_min": 300,
+      "defender_interval_observations_per_match_min": 3000,
+      "eligible_intervals_per_defending_team_min": 150,
+      "primary_3x3_activity_cell_observations_min": 50,
+      "within_defender_diagnostic_intervals_min": 50
+    },
+    "readiness_counts": {
+      "Sample Game 1": {
+        "grid_intervals": 1158,
+        "eligible_intervals": 422,
+        "defender_interval_observations": 4220,
+        "interval_attrition": {"possession_change": 273, "ball_incomplete": 413, "restart": 43, "no_possession": 7},
+        "eligible_intervals_by_defending_team": {"Away": 198, "Home": 224},
+        "minimum_primary_3x3_cell": 74,
+        "defenders_with_at_least_50_intervals": 25
+      },
+      "Sample Game 2": {
+        "grid_intervals": 1127,
+        "eligible_intervals": 407,
+        "defender_interval_observations": 4070,
+        "interval_attrition": {"possession_change": 256, "ball_incomplete": 421, "restart": 43},
+        "eligible_intervals_by_defending_team": {"Away": 217, "Home": 190},
+        "minimum_primary_3x3_cell": 75,
+        "defenders_with_at_least_50_intervals": 21
+      }
+    },
+    "status": "passes outcome-blind readiness criteria",
+    "stop_rule": "Do not execute if recomputation from checksummed raw files fails any criterion; do not alter criteria after focal outcomes are viewed."
+  },
+  "negative_controls": {
+    "common_translation_invariance": "Apply an identical observed translation trajectory to every defender from fixed initial relative positions; focal-relative path must be zero up to numerical tolerance. This is a calculation/invariance check, not empirical evidence.",
+    "temporally_misaligned_collective_reference": {
+      "rule": "Replace the contemporaneous collective reference with the nearest eligible non-overlapping interval from the same period, defending team, and Game-1-frozen collective-activity tercile, 10-120 seconds away; earlier time wins ties.",
+      "interpretation": "Tests whether contemporaneous collective alignment contains information beyond a similarly active but temporally unrelated reference; it is not a tactical null.",
+      "outcome_blind_support": {"Sample Game 1": "378/422 intervals (89.6%)", "Sample Game 2": "366/407 intervals (89.9%)"}
+    },
+    "player_identity_permutation": "rejected because permuting all focal identities within the same team/interval only relabels the complete defender distribution and destroys legitimate identity/role structure without a clear null"
+  },
+  "replication": {
+    "requirements": [
+      "Game 2 support criteria pass before outcomes",
+      "overall and activity-cell distribution shapes are reported in both matches",
+      "at least seven of nine primary activity cells have an absolute Game-2-minus-Game-1 median difference no greater than 0.5 pooled within-cell IQR, with interval-cluster bootstrap uncertainty reported",
+      "the directions of separately reported activity relationships do not materially reverse",
+      "effect-size compatibility and uncertainty are considered; identical estimates and statistical significance are not required",
+      "5/7/9-frame and 4/5/6-second sensitivities preserve the qualitative conclusion"
+    ],
+    "failure_is_preserved": true
+  },
+  "falsification": [
+    "focal-relative path is almost completely determined by focal absolute activity, operationalized as absolute Spearman rho >=0.95 in both matches with no stable conditional variation",
+    "collective, ball, or aggregate activity accounts for all reproducible contextual structure",
+    "Game 1 contextual relationships materially fail or reverse in held-out Game 2",
+    "player identity or unobserved role dominates so strongly that no match-replicating primitive remains",
+    "missingness or substitution patterns make leave-one-out membership unstable or violate support",
+    "the qualitative result changes across frozen 4/5/6-second or 5/7/9-frame sensitivities",
+    "leave-one-out centroid gives misleading behavior under common rotations, compression, or asymmetric deformation",
+    "the quantity has no soccer interpretation beyond 'this defender moved differently'"
+  ],
+  "scope_exclusions": [
+    "attacker-induced departure",
+    "defensive attention or responsibility",
+    "question propagation",
+    "relational reconfiguration",
+    "gravity or off-ball value",
+    "tactical success or error",
+    "model fitting, clustering, HMM, network analysis, or ML"
+  ]
+}
