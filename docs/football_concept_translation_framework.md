@@ -103,7 +103,9 @@ No level licenses skipping the next.
 
 ## 7. Core inference ladder and current status
 
-**physical movement → collective defensive movement → individual/local behavior relative to collective movement → contextual expectation → defensive response → attacker association → attribution → attacking value**
+**physical movement → collective defensive movement → individual/local behavior relative to collective movement → contextual expectation → opponent-information association → tactical defensive-response interpretation → attacker attribution → attacking value**
+
+Opponent-information association is a predictive-information rung only. It does not establish tactical response, attacker induction, attribution, or value.
 
 Phase 4B reaches only the third stage. It supports this claim:
 

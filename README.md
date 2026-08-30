@@ -26,6 +26,8 @@ Phase 4C produced A — strong external replication: all seven matches were usab
 
 Phase 5A then executed a prospectively frozen contextual-expectation test across the same seven IDSSE matches. It produced **A — contextual expectation feasible**: the best simple model reduced median match-heldout MAE by 20.58% versus an unconditional baseline and improved all seven matches. Almost all useful gain was already in recent focal movement; collective, ball, and spatial additions were individually below the frozen materiality threshold. This is statistical predictability of geometry, not tactical expectation or defensive response.
 
+Phase 5B protocol v1.0 is **frozen but unexecuted**. It asks whether prospectively selected nearby-opponent geometry, attacker motion, and defender–opponent relational dynamics add held-out predictive information beyond the unchanged Phase 5A B4 baseline. No Phase 5B model has been fitted and no outcome has been inspected.
+
 ![Phase 4 held-out design](figures/phase4/phase4_heldout_design.png)
 
 ## Where the project stands
@@ -34,6 +36,7 @@ Phase 5A then executed a prospectively frozen contextual-expectation test across
 - **Game 2 completed the first held-out validation.** Phase 4B executed the unchanged frozen protocol and is closed.
 - **IDSSE completed multi-match external replication in one additional provider/data environment.** Phase 4C produced category A across all seven matches; this is not evidence from seven independent providers.
 - **Phase 5A established a simple statistical expectation baseline.** Recent focal motion materially predicts future focal-relative path; the tested collective, ball, and spatial increments do not materially improve that baseline.
+- **Phase 5B v1.0 is frozen and unexecuted.** Its nearest-attacker rule is geometric and prospective, not a marking or responsibility inference.
 - **Phases 4B/4C validate geometry only.** They do not establish pinning, dragging, tracking, covering, handoffs, tactical defensive response, attacker attribution, or value.
 - **Relational reconfiguration remains unvalidated.** Phase 3 did not distinguish it from general event-associated activity.
 - **Gravity and off-ball value are downstream hypotheses.** No gravity, attention, responsibility, ambiguity, recovery-burden, or player-value metric exists.
@@ -44,7 +47,9 @@ In soccer language, an attacking position, run, or rotation can “ask a questio
 
 The current inference chain is conditional:
 
-**physical movement → collective defensive movement → individual/local behavior relative to collective movement → contextual expectation → defensive response → attacker association → attribution → attacking value**
+**physical movement → collective defensive movement → individual/local behavior relative to collective movement → contextual expectation → opponent-information association → tactical defensive-response interpretation → attacker attribution → attacking value**
+
+Phase 5B is designed to reach, at most, the opponent-information-association rung. Predictive opponent information would not by itself establish tactical response, attribution, or value.
 
 Every arrow can fail. A successful project may stop after establishing—or rejecting—a useful geometric primitive.
 

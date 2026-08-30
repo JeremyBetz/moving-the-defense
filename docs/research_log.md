@@ -406,3 +406,29 @@ Before implementation, decide which structural reference candidates should be co
 The initial project definition centered on quantifying off-ball influence through defensive adjustment. It introduced the four behavioral regimes, distinguished tracking from closing and recovery, and proposed competing reference frames rather than large-scale manual tactical labeling.
 
 That foundation remains useful, but the charter consolidation above supersedes its ordering: defensive state change and ambiguity are primary; off-ball influence is a later application.
+
+## 2026-08-30 — Phase 5B Opponent-Relational Increment Protocol Draft
+
+Phase 5A remains closed at A — contextual expectation feasible. No Phase 5A protocol or result was changed. Phase 5B was designed prospectively to ask whether opponent-relative information adds held-out predictive information beyond the unchanged B4 non-opponent baseline.
+
+The draft proposes three nearest attacking outfield players at cutoff $c$ as the primary fixed set and one nearest attacker as a sensitivity. Selection uses only cutoff geometry, fixes identity across history, and never substitutes a later-ranked attacker after missingness is observed. The cumulative ladder separates cutoff geometry (B5), selected-attacker recent motion (B6), and nonlinear pair-history/approach geometry (B7). Exact linear aliases—attacker absolute coordinates, aggregate velocities, relative velocity components, and total closure when its components are present—were removed to keep adjacent increments interpretable under Ridge.
+
+The primary comparison is a B7-complete common sample across B4–B7. The proposed negative control uses same-frame distance ranks A4–A6 rather than temporal splicing, which would create impossible pair geometry. Ball-nearest-attacker overlap is a diagnostic only and is not called ball-carrier identity without independent provider evidence.
+
+The design remains explicitly subject to human review: $K$, exact feature sets, common-sample policy, missingness, reused Ridge grid and materiality rule, A/B/C thresholds, control, ball diagnostic, rank-specific representation, and bearing exclusion are not frozen. No models were fitted; no Phase 5B outcome, target correlation, MAE, residual improvement, feature importance, or Game 3 data were inspected.
+
+## 2026-08-30 — Phase 5B v1.0 Freeze-Review Revision
+
+Human review approved the prospective selection rule, $K=3$ primary/$K=1$ sensitivity, exact 14/9/12 feature additions, primary common sample, Ridge/CV architecture, adjacent materiality, model-selection rule, ball-nearest proxy, and bearing exclusion. The $K=1$ model comparison now uses the exact $K=3$/B7-complete observations so representation is not confounded with sample size.
+
+The overall A rule was revised prospectively: a cumulative ≥5% B5–B7 gain with the required match consistency can classify A without any single adjacent step passing 3%. Adjacent materiality remains mandatory for component-family claims. A4–A6 was renamed the nonlocal-opponent locality control and moved to a separate A1–A6-complete subset; it does not shrink or classify the primary experiment.
+
+The evidence ladder now names opponent-information association between contextual expectation and tactical defensive-response interpretation. This remains a predictive-information rung, not causation, assignment, tactical response, attribution, or value. The protocol is an exact v1.0 freeze-review candidate, but it is not frozen or executed.
+
+## 2026-08-30 — Phase 5B v1.0 Frozen
+
+Final implementation-precision review approved and froze the Phase 5B protocol before any model, target correlation, MAE change, residual result, feature importance, or outcome was inspected. The terminal focal–attacker projection tolerance is exactly $10^{-9}$m; a distance at or below it makes the projection features and observation B7-incomplete without division, epsilon adjustment, or imputation.
+
+The exact Phase 5A B4 specification must be refitted and re-evaluated on the Phase 5B $K=3$/B7-complete common sample inside the same nested match folds; Phase 5A aggregate B4 MAE values cannot be copied into a changed sample. The $K=1$ comparison uses those same primary observations. A4–A6 completeness remains confined to the secondary locality-control subset.
+
+Version 1.0 is frozen and unexecuted. Any substantive change requires a versioned pre-outcome amendment. No Game 3 data were accessed.

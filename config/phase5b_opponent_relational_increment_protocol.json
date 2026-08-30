@@ -1,0 +1,181 @@
+{
+  "protocol": "phase5b_opponent_relational_predictive_increment",
+  "version": "1.0",
+  "status": "frozen_not_executed",
+  "research_question": "Does prospectively specified opponent-relative information improve held-out prediction of future focal-relative path beyond recent focal, collective, ball, and spatial context?",
+  "inheritance": {
+    "source": "config/phase5a_contextual_expectation_protocol.json",
+    "preserve_exactly": ["target", "prediction_cutoff", "estimand", "history", "direction_standardization", "B0_to_B4", "ridge_implementation", "scaling", "nested_leave_one_match_out", "metrics", "calibration"],
+    "B4_role": "unchanged_non_opponent_baseline"
+  },
+  "data": {
+    "development_evaluation": "IDSSE_DFL_seven_matches",
+    "outer_folds": 7,
+    "metrica_games_1_2": "construct_history_only",
+    "metrica_game_3": "not_inspected_excluded"
+  },
+  "opponent_selection": {
+    "reference_time": "prediction_cutoff_c",
+    "frame_requirement": "tracking_frame_exactly_equal_to_c_no_nearest_frame_substitution",
+    "eligible_pool": "attacking_outfield_players_on_pitch_with_finite_standardized_xy_at_c",
+    "attacking_goalkeeper_excluded_by": "provider_role_metadata_and_on_pitch_bookkeeping",
+    "ranking": "ascending_euclidean_distance_to_focal_at_c_in_standardized_105x68m_coordinates",
+    "tie_break": "stable_provider_player_id_ascending_lexical_audit_only_not_predictor",
+    "primary_K": 3,
+    "sensitivity_K": 1,
+    "sensitivity_sample": "exact_primary_K3_B7_complete_observations_no_sample_expansion",
+    "rank_names": ["A1", "A2", "A3"],
+    "history_membership": "identities_fixed_at_c_for_entire_pre_cutoff_history",
+    "dynamic_reranking": false,
+    "future_information": false,
+    "tactical_assignment_interpretation": false
+  },
+  "coordinates": {
+    "frame": "phase5a_defending_oriented_105x68m",
+    "x": "metres_increasing_from_defending_own_goal_to_opponent_goal",
+    "y": "metres_retaining_standardized_pitch_width_side_0_to_68",
+    "cutoff_geometry": "transformed_raw_positions_at_c",
+    "history_positions": "causal_trailing_7_frame_complete_mean",
+    "terminal_velocity": "backward_difference_of_last_two_causal_smoothed_positions_divided_by_0_04_seconds"
+  },
+  "history_support": {
+    "primary_seconds": 2.0,
+    "raw_frames": 50,
+    "raw_offsets_from_cutoff_seconds": {"start": -1.96, "stop": 0.0, "step": 0.04, "count": 50},
+    "causal_trailing_smoothing_frames": 7,
+    "complete_smoothed_positions": 44,
+    "path_increments": 43,
+    "first_valid_smoothed_offset_seconds": -1.72,
+    "last_valid_smoothed_offset_seconds": 0.0,
+    "terminal_velocity_support_offsets_seconds": [-0.04, 0.0],
+    "raw_data_after_cutoff_used": false,
+    "one_second_sensitivity": {"raw_frames": 25, "raw_offsets_start": -0.96, "raw_offsets_stop": 0.0, "complete_smoothed_positions": 19, "path_increments": 18, "first_valid_smoothed_offset": -0.72, "K1_uses_corresponding_K3_observations": true}
+  },
+  "feature_ladder": {
+    "cumulative": true,
+    "B4": "exact_phase5a_B4",
+    "B5_add": {
+      "question": "where_nearby_attackers_are_at_c",
+      "rank_specific_for_each_Ai": ["focal_minus_Ai_x_m", "focal_minus_Ai_y_m", "focal_Ai_distance_m", "Ai_ball_distance_m"],
+      "configuration": ["selected_attackers_x_span_m", "selected_attackers_y_span_m"],
+      "primary_K3_addition_count": 14,
+      "sensitivity_K1_addition_count": 4,
+      "K1_selected_set_spans": "omitted_singleton_no_meaningful_span",
+      "omitted_exact_or_linear_aliases": ["attacker_absolute_x_y_given_B4_focal_position_and_signed_displacement", "minimum_mean_range_focal_distance_given_rank_specific_distances"],
+      "density_diagnostic": "A3_distance_continuous_no_threshold_counts"
+    },
+    "B6_add": {
+      "question": "how_fixed_nearby_attackers_moved_before_c",
+      "rank_specific_for_each_Ai": ["Ai_recent_absolute_path_m", "Ai_terminal_vx_mps", "Ai_terminal_vy_mps"],
+      "primary_K3_addition_count": 9,
+      "sensitivity_K1_addition_count": 3,
+      "acceleration": false,
+      "omitted_exact_linear_aliases": ["mean_selected_attacker_path", "mean_selected_attacker_terminal_vx_vy"]
+    },
+    "B7_add": {
+      "question": "nonlinear_pre_cutoff_pair_dynamics_beyond_independent_movement",
+      "rank_specific_for_each_Ai": ["focal_Ai_distance_change_m", "focal_Ai_relative_path_m", "focal_approach_toward_Ai_mps", "Ai_approach_toward_focal_mps"],
+      "primary_K3_addition_count": 12,
+      "sensitivity_K1_addition_count": 4,
+      "relative_vector": "r_Ai(t)=smoothed_x_Ai(t)-smoothed_x_focal(t)",
+      "distance_change": "norm(r_Ai(c))-norm(r_Ai(first_valid_smoothed_history_time)); negative=closer positive=farther",
+      "relative_path": "sum_over_consecutive_valid_smoothed_times norm(r_Ai(t_i)-r_Ai(t_i_minus_1))",
+      "focal_to_attacker_unit_vector": "u_FAi=(smoothed_x_Ai(c)-smoothed_x_focal(c))/norm(smoothed_x_Ai(c)-smoothed_x_focal(c))",
+      "focal_approach": "focal_terminal_velocity_dot_u_FAi; positive=toward_attacker",
+      "attacker_approach": "attacker_terminal_velocity_dot_negative_u_FAi; positive=toward_focal",
+      "terminal_projection_distance_tolerance_m": 1e-09,
+      "zero_or_near_zero_terminal_distance": "if_smoothed_terminal_focal_attacker_distance_m_less_than_or_equal_to_1e-9_mark_both_projection_features_for_that_attacker_incomplete_and_entire_observation_B7_incomplete_no_division_epsilon_imputation_or_direction",
+      "omitted_exact_aliases": ["terminal_pairwise_closure_rate_equals_sum_of_approach_components", "relative_terminal_vx_vy_equals_focal_velocity_minus_attacker_velocity"],
+      "bearing_change": "excluded_primary_wraparound_and_near_coincidence_instability"
+    }
+  },
+  "missingness_and_samples": {
+    "selected_history_requirement": "complete_raw_history_for_every_selected_attacker",
+    "interpolation": false,
+    "imputation": false,
+    "history_shortening": false,
+    "reranking_after_selection": false,
+    "replacement_after_selection": false,
+    "primary": "K3_B7_complete_common_sample_across_B4_B5_B6_B7_within_every_split",
+    "B5_B6_larger_support": "reported_only_not_fitted_for_primary_ladder",
+    "K1": "same_primary_K3_B7_complete_observations_representation_sensitivity_broader_support_descriptive_only",
+    "attrition_reporting": ["phase4_target_eligible", "B4_complete", "at_least_K_attackers_finite_at_c", "B5_complete", "selected_attackers_complete_history", "B6_complete", "B7_complete_final_common"],
+    "groups": ["match", "defending_team", "overall"]
+  },
+  "B4_same_sample_baseline": {
+    "required": true,
+    "sample": "exact_primary_K3_B7_complete_common_sample",
+    "procedure": "refit_and_reevaluate_exact_frozen_phase5a_B4_inside_same_outer_and_inner_folds",
+    "reuse_phase5a_aggregate_MAE": false,
+    "redesign_allowed": false,
+    "preserve": ["features", "target", "preprocessing", "alpha_selection", "ridge_implementation", "validation"]
+  },
+  "model": {
+    "family": "ridge_with_intercept_numpy_closed_form",
+    "alpha_grid": [0.01, 0.1, 1.0, 10.0, 100.0],
+    "outer_validation": "leave_one_match_out_7",
+    "inner_validation": "leave_one_training_match_out_across_6",
+    "inner_objective": "lowest_median_inner_heldout_MAE_across_6_matches",
+    "alpha_tie_tolerance_m": 0.000001,
+    "alpha_tie_rule": "largest_alpha_within_tolerance_of_minimum",
+    "preprocessing": "training_only_constant_removal_mean_and_population_SD_ddof0",
+    "pseudoinverse_fallback": "deterministic_report_actual_use",
+    "new_nonlinear_model": false
+  },
+  "metrics_and_comparisons": {
+    "primary": "heldout_MAE_by_match",
+    "comparisons": ["B4_to_B5", "B5_to_B6", "B6_to_B7", "B4_to_lowest_median_B5_B7"],
+    "reuse_phase5a_secondary_metrics_calibration": true,
+    "cross_match": ["median", "range", "IQR"],
+    "pooled_primary": false
+  },
+  "component_interpretation": {
+    "requires_adjacent_materiality": true,
+    "B4_to_B5": "Local opponent geometry added materially reproducible predictive information beyond the non-opponent baseline.",
+    "B5_to_B6": "Recent selected-attacker movement added materially reproducible predictive information beyond local opponent geometry.",
+    "B6_to_B7": "Pre-cutoff defender-opponent relational dynamics added materially reproducible predictive information beyond independent attacker movement.",
+    "below_3pct": "small_or_directionally_consistent_but_non_material_under_frozen_rule"
+  },
+  "decision_rules": {
+    "status": "frozen_before_outcomes",
+    "classification_precedence": ["A", "C", "B"],
+    "relative_MAE_reduction": "computed_per_outerheldout_match_then_median_across_7",
+    "adjacent_materiality": {"median_reduction_min": 0.03, "matches_improved_min": 5, "matches_worsened_10pct_or_more_max": 1},
+    "best_opponent_information_model": {"levels": ["B5", "B6", "B7"], "criterion": "lowest_median_outerheldout_MAE", "tie_tolerance_m": 0.000001, "tie_rule": "earliest_ladder_level"},
+    "A": {"some_B5_to_B7_median_reduction_vs_B4_min": 0.05, "matches_improved_min": 6, "matches_worsened_10pct_or_more_max": 1, "adjacent_transition_material_required": false},
+    "C": {"no_B5_to_B7_median_reduction_vs_B4_at_least": 0.02, "and_no_B5_to_B7_matches_improved_at_least": 4},
+    "B": "all_valid_results_neither_A_nor_C",
+    "A_claim_only": "prospectively_specified_opponent_relative_information_adds_reproducible_heldout_predictive_information_about_future_focal_relative_movement_beyond_tested_non_opponent_baseline"
+  },
+  "locality_control": {
+    "name": "nonlocal_opponent_locality_control",
+    "selection": "distance_ranks_A4_A5_A6_at_c_fixed_through_history",
+    "features": "same_B5_B6_B7_families",
+    "comparison_sample": "secondary_subset_complete_for_primary_A1_A3_B7_and_nonlocal_A4_A6_B7",
+    "primary_sample_requires_A4_A6": false,
+    "sample_attrition_groups": ["match", "defending_team", "overall"],
+    "comparison": "local_A1_A3_model_vs_matched_dimensional_nonlocal_A4_A6_model_on_same_control_complete_subset",
+    "tests": "locality_not_causality_assignment_or_arbitrary_opponent_irrelevance",
+    "classification_effect": false,
+    "temporal_misalignment_rejected": "would_splice_focal_and_opponent_geometry_from_different_times"
+  },
+  "ball_proximity_diagnostic": {
+    "primary_models_split_by_carrier": false,
+    "selection_excludes_ball_nearest_player": false,
+    "proxy": "attacking_outfield_player_nearest_ball_at_c_and_distance",
+    "report_overlap": ["A1", "A2", "A3", "outside_selected_set"],
+    "name_constraint": "ball_nearest_attacking_player_proxy_not_ball_carrier_without_independent_identity"
+  },
+  "residual_diagnostics": ["B4_prediction_magnitude", "focal_recent_absolute_path", "focal_recent_relative_path", "A1_distance", "A2_distance", "A3_distance", "mean_A1_A3_recent_absolute_path", "A3_distance_as_local_configuration_scale", "selected_attackers_x_span", "selected_attackers_y_span", "ball_recent_path", "focal_depth", "focal_lateral_position", "match", "defending_team", "focal_player"],
+  "prohibitions": ["future_opponent_selection", "target_window_opponent_features", "tactical_labels", "assignment_or_responsibility", "IDs_as_predictors", "feature_selection_tuning", "threshold_optimization", "new_nonlinear_models", "HMM", "clustering", "network_model", "causal_inference", "gravity", "off_ball_value", "Metrica_development", "Metrica_Game_3_access"],
+  "nonclaims": ["attacker_causation", "tactical_defensive_response", "marking", "assignment", "responsibility", "attention", "decision_making", "pinning", "dragging", "tracking", "covering", "handoffs", "relational_reconfiguration", "tactical_correctness", "defensive_quality", "gravity", "off_ball_value"],
+  "failure_interpretation": {
+    "C": "The validated focal-relative primitive did not demonstrate practically useful opponent-specific predictive information under the tested representation; this constrains progression but does not prove attackers do not influence defenders.",
+    "B": "Mixed or partial opponent-information increment; report exact failed A and C criteria.",
+    "A": "Progression to a later football or tactical interpretation validation phase is justified; causation remains unsupported."
+  },
+  "human_review_decisions_incorporated": true,
+  "freeze_approval_required": false,
+  "frozen_before_outcomes": true,
+  "execution_performed": false
+}

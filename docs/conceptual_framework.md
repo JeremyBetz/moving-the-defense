@@ -2,6 +2,10 @@
 
 > **Current status (post–Phase 5A):** focal-relative path has passed narrow held-out Metrica validation and external geometric replication across seven IDSSE matches. Frozen Phase 5A establishes contextual predictability in the statistical sense, driven primarily by focal recent movement. Tactical defensive response and relational reconfiguration remain unvalidated. Historical sections preserve ideas later weakened or rejected and should be read with the [claim-status ledger](claim_status.md).
 
+Frozen Phase 5B v1.0 is an unexecuted question: whether prospectively selected opponent information adds predictive information beyond Phase 5A B4. A positive result would establish only opponent-information association. Geometric proximity is not a tactical relationship, and predictive increment is not attacker causation or defensive response.
+
+The forward-looking evidentiary sequence is therefore **contextual expectation → opponent-information association → tactical defensive-response interpretation → attacker attribution → value**. Phase 5B can reach only the second term in that sequence.
+
 ## 1. Project Focus
 
 The single formal primary research question is: **How can tracking data measure defensive responses to attacking movement in open-play football?**
@@ -210,7 +214,7 @@ Focal departure remains substantially associated with generic activity; focal ab
 
 Only after that result was closed did the project adopt defensive response as its broader empirical umbrella and formalize the football/observable/theoretical translation problem. The core inference ladder is:
 
-**physical movement → collective defensive movement → individual/local behavior relative to collective movement → contextual expectation → defensive response → attacker association → attribution → attacking value**
+**physical movement → collective defensive movement → individual/local behavior relative to collective movement → contextual expectation → opponent-information association → tactical defensive-response interpretation → attacker attribution → attacking value**
 
 Phase 4B reaches the individual-relative-to-collective behavior stage. Every later arrow requires new evidence.
 
@@ -218,7 +222,7 @@ Phase 4B reaches the individual-relative-to-collective behavior stage. Every lat
 
 Phase 4C extended the same narrow geometric conclusion to seven professional IDSSE matches in one independent tracking dataset/provider environment relative to Metrica. All seven matches met the frozen core criteria, but focal departure remained strongly associated with generic activity. This strengthens the third inference-ladder level; it does not establish contextual expectation or defensive response.
 
-The frozen [Phase 5A protocol](phase5a_contextual_expectation_protocol.md) finds category-A predictive feasibility across seven held-out matches. The [execution](phase5a_contextual_expectation_results.md) shows that focal recent movement contains nearly all useful improvement: collective, ball, and spatial additions are consistent but not materially incremental. Phase 4 externally validated the ladder's individual/local-relative geometry level; Phase 5A supplies feasibility evidence for contextual expectation, not a definitive cross-provider contextual-expectation metric. The residual remains only observed minus predicted geometry. Prediction is not causation, and unexplained movement is not tactical response. The next level—defensive response—along with opponent relationships, attribution, and value remains unvalidated.
+The frozen [Phase 5A protocol](phase5a_contextual_expectation_protocol.md) finds category-A predictive feasibility across seven held-out matches. The [execution](phase5a_contextual_expectation_results.md) shows that focal recent movement contains nearly all useful improvement: collective, ball, and spatial additions are consistent but not materially incremental. Phase 4 externally validated the ladder's individual/local-relative geometry level; Phase 5A supplies feasibility evidence for contextual expectation, not a definitive cross-provider contextual-expectation metric. The residual remains only observed minus predicted geometry. Prediction is not causation, and unexplained movement is not tactical response. Opponent-information association, tactical defensive-response interpretation, attribution, and value remain unvalidated.
 
 Three quantities should remain separate:
 

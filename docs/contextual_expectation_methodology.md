@@ -26,3 +26,5 @@ The distinction among prediction, residual, response, and value is strict:
 Probabilistic and multimodal trajectory prediction remains a later methodological direction because real player futures can be non-unique. It is unnecessary for the initial scalar feasibility question and would obscure whether recent focal, collective, ball, or spatial context provides the predictive information.
 
 Full source records are retained in the [bibliography](../references/bibliography.md). This provenance summary informs protocol design only; no model has been fitted.
+
+Phase 5A is now executed and closed. The separate [opponent-representation methodology note](opponent_representation_methodology.md) extends provenance for frozen, unexecuted Phase 5B v1.0 without changing Phase 5A's frozen method or result.

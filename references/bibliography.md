@@ -1,6 +1,6 @@
 # Bibliography
 
-Targeted working bibliography for the Phase 4A literature/novelty audit and Phase 5A methodology-provenance extension. Metadata and stable identifiers below were checked against publisher, institutional, conference, journal, or original preprint records. Inclusion means relevance, not endorsement or operational equivalence.
+Targeted working bibliography for the Phase 4A literature/novelty audit and Phase 5A–5B methodology-provenance extensions. Metadata and stable identifiers below were checked against publisher, institutional, conference, journal, or original preprint records. Inclusion means relevance, not endorsement or operational equivalence.
 
 ## Collective Organization and Team Geometry
 
@@ -36,6 +36,10 @@ Groom, Sean, Shuo Wang, Francisco Belo, Axl Rice, and Liam Anderson. 2026. “A 
 
 Calero-Sanz, Jorge, Roberto López del Campo, Ricardo Resta, and Javier M. Buldú. 2026. “Beyond Marking Networks in Soccer: Coordination, Similarity and Entropy.” *Chaos, Solitons & Fractals* 211, Part 2: 118819. <https://doi.org/10.1016/j.chaos.2026.118819>
 
+Buldú, Javier M., David Garrido, Daniel R. Antequera, Javier Busquets, Ernesto Estrada, Ricardo Resta, and Roberto López del Campo. 2020. “Football Tracking Networks: Beyond Event-Based Connectivity.” arXiv:2011.06014. <https://arxiv.org/abs/2011.06014>
+
+Franks, Alexander, Andrew Miller, Luke Bornn, and Kirk Goldsberry. 2015. “Characterizing the Spatial Structure of Defensive Skill in Professional Basketball.” *The Annals of Applied Statistics* 9 (1): 94–121. <https://doi.org/10.1214/14-AOAS799>
+
 ## Relative Movement and Tracking-Method Reviews
 
 Beernaerts, Jasper, Bernard De Baets, Matthieu Lenoir, and Nico Van de Weghe. 2020. “Spatial Movement Pattern Recognition in Soccer Based on Relative Player Movements.” *PLOS ONE* 15 (1): e0227746. <https://doi.org/10.1371/journal.pone.0227746>
@@ -64,7 +68,7 @@ Wu, Y., and Tim Swartz. 2023. “Evaluation of Off-the-Ball Actions in Soccer.�
 
 Penn, Matthew J., Christl A. Donnelly, and Samir Bhatt. 2025. “Continuous Football Player Tracking from Discrete Broadcast Data.” *Royal Society Open Science* 12 (10): 251175. <https://doi.org/10.1098/rsos.251175>
 
-These sources establish substantial precedent for predicted defensive velocity, soccer ghosting, simple-versus-deep trajectory baselines, interpretable player/ball motion models, predicted-trajectory off-ball valuation, and probabilistic multi-agent futures. Phase 5A borrows only the expected-versus-observed architecture and simple-baseline discipline; it does not claim invention of expected defensive movement.
+These sources establish substantial precedent for predicted defensive velocity, soccer ghosting, simple-versus-deep trajectory baselines, interpretable player/ball motion models, predicted-trajectory off-ball valuation, and probabilistic multi-agent futures. Phase 5A borrows only the expected-versus-observed architecture and simple-baseline discipline; it does not claim invention of expected defensive movement. Buldú et al. and Franks et al. additionally anchor Phase 5B's proximity/network and matchup-model provenance; Phase 5B borrows neither a network nor a latent assignment model.
 
 ## Coverage Limits
 
