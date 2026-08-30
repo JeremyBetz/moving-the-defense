@@ -1,0 +1,15 @@
+{
+  "anchor_count": 7,
+  "neutral_count": 14,
+  "horizons_s": [
+    0.4,
+    0.8,
+    1.2
+  ],
+  "all_anchor_summaries_finite": true,
+  "no_opponent_features": true,
+  "no_model_fit": true,
+  "no_threshold_fit": true,
+  "metrica_game3_accessed": false,
+  "passed": true
+}

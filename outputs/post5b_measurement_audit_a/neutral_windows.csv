@@ -1,0 +1,15 @@
+case,label,period,start,end,team,focal,tau,grid_index
+neutral_300,Neutral 300–308.0s,1,300.0,308.0,Home,1,304.0,1
+neutral_600,Neutral 600–608.0s,1,600.0,608.0,Away,15,604.0,2
+neutral_900,Neutral 900–908.0s,1,900.0,908.0,Home,1,904.0,3
+neutral_1200,Neutral 1200–1208.0s,1,1200.0,1208.0,Away,15,1204.0,4
+neutral_1500,Neutral 1500–1508.0s,1,1500.0,1508.0,Home,1,1504.0,5
+neutral_2100,Neutral 2100–2108.0s,1,2100.0,2108.0,Home,2,2104.0,7
+neutral_2700,Neutral 2700–2708.0s,1,2700.0,2708.0,Home,2,2704.0,9
+neutral_3000,Neutral 3000–3008.0s,2,3000.0,3008.0,Away,15,3004.0,10
+neutral_3300,Neutral 3300–3308.0s,2,3300.0,3308.0,Home,2,3304.0,11
+neutral_3600,Neutral 3600–3608.0s,2,3600.0,3608.0,Away,15,3604.0,12
+neutral_3900,Neutral 3900–3908.0s,2,3900.0,3908.0,Home,2,3904.0,13
+neutral_4200,Neutral 4200–4208.0s,2,4200.0,4208.0,Away,15,4204.0,14
+neutral_4500,Neutral 4500–4508.0s,2,4500.0,4508.0,Home,2,4504.0,15
+neutral_5100,Neutral 5100–5108.0s,2,5100.0,5108.0,Home,2,5104.0,17

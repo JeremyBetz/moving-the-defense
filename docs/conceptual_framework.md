@@ -6,6 +6,8 @@ Frozen Phase 5B v1.0 produced B — mixed/partial: prospectively selected oppone
 
 The evidentiary sequence remains **contextual expectation → opponent-information association → tactical defensive-response interpretation → attacker attribution → value**. Phase 5B supplies limited evidence only at the second term.
 
+Post-5B Measurement Audit A preserves focal-relative path as the validated amount-of-movement primitive while testing two additions in Sample Game 1: signed net displacement and deterministic short-horizon continuation innovation. Directional displacement is retained as a complementary descriptive representation because it preserves axis/sign distinctions that scalar path collapses. Continuation innovation receives only a mixed audit result because neutral windows overlap the anchors and several movements are already underway in the preceding two seconds. It is not retained as a validated response-onset measure; its horizons, thresholds, persistence rules, and candidate times must not be tuned from this audit. A future representation may need to describe change across a finite interval rather than require one universal onset instant, but that is a research implication rather than an established result. No new inference-ladder level is established.
+
 ## 1. Project Focus
 
 The single formal primary research question is: **How can tracking data measure defensive responses to attacking movement in open-play football?**

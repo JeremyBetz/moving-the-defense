@@ -1,0 +1,25 @@
+{
+  "audit": "Post-5B Measurement Audit A \u2014 direction and response onset",
+  "data": "Metrica Sample Game 1 only",
+  "metrica_game3_accessed": false,
+  "horizons_s": [
+    0.4,
+    0.8,
+    1.2
+  ],
+  "fps": 25.0,
+  "pitch_m": [
+    105.0,
+    68.0
+  ],
+  "continuation": "causal trailing-7-frame relative position; terminal one-frame velocity; constant-velocity projection",
+  "neutral_rule": "8 s windows at 300 s grid points 300..5700; exclude period crossing, anchor overlap, or SET PIECE/BALL OUT in [start-2,end]; alternate team by original grid index; lowest numeric supported outfield focal",
+  "neutral_count": 14,
+  "anchor_count": 7,
+  "input_sha256": {
+    "Sample_Game_1_RawTrackingData_Home_Team.csv": "0a3d0eff7785950379c587d3597b86a2d91c2492281b4652e1abb97c99b6b364",
+    "Sample_Game_1_RawTrackingData_Away_Team.csv": "0a3df68a92af0290ede472e62de3b6489ddee29223da09bdf0cf76c8e0ab0618",
+    "Sample_Game_1_RawEventsData.csv": "097dda6345e17390dca095331458fd00e47960c480c76f4356fd4edf2575ef05"
+  },
+  "source_sha256": "66d21c77a470ab3c28d202e46d64ba819b22cf17d9b1660cb997ef4a75fa105c"
+}

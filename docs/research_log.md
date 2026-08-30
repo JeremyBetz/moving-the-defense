@@ -1,5 +1,15 @@
 # Research Log
 
+## 2026-08-30 — Post-5B Measurement Audit A: Direction and Response Onset
+
+This small Sample Game 1 audit reused the seven fixed Phase 1–2 windows and added 14 neutral eight-second windows selected by a predeclared 300-second grid rule, restart/period/anchor exclusions, alternating team, and lowest-ID supported outfield focal. It did not inspect Game 3, add opponent features, train a model, define an onset threshold, or alter focal-relative path.
+
+Directional displacement preserved distinctions that scalar path necessarily loses. The 550 anchor and neutral 3000 window have similar relative paths (15.770/15.500 m) but opposite longitudinal displacements (+6.371/−13.450 m); the 590 and 3682 anchors likewise have similar paths but opposite dominant x directions. Scalar path remains useful for amount of relative movement.
+
+Constant-velocity continuation innovation was mixed. The 1888 translation case combines 32.268 m focal and 31.590 m centroid paths with only 0.118 m 0.8-second innovation, while the lower-activity 590 excursion reaches 0.613 m. However, neutral 5100 reaches 0.912 m, exceeding five of seven anchors. The 550, 1230, 1232, and 3682 movements are already visible within the preceding two seconds, so candidate times do not consistently localize geometric onset.
+
+The qualitative result is **B — mixed**. Scalar focal-relative path remains the validated movement-magnitude primitive; directional displacement is retained as a complementary descriptive view; continuation innovation is not retained as a validated response-onset measure. No innovation threshold, horizon, persistence rule, or candidate-time placement may be tuned from this audit. The finite-history result suggests, without establishing, that a future defensive-response representation may need to describe geometric change across an interval rather than require a universal onset instant. The exact supported claim is: **Directional focal-relative displacement preserves geometric distinctions that scalar focal-relative path magnitude collapses, but constant-velocity continuation innovation is only a mixed diagnostic because historically interesting and deterministic neutral windows overlap and several anchor departures are already visible in the preceding two seconds.** No Phase 5C design was created.
+
 ## 2026-08-30 — Phase 5B Opponent-Relational Increment Execution
 
 Frozen protocol v1.0 executed once across the seven IDSSE matches without accessing Metrica Game 3. The primary common sample retained 44,752 of 44,767 Phase 5A observations (99.97%), and the Phase 4 target reproduced to maximum absolute difference $1.28\times10^{-12}$ m.

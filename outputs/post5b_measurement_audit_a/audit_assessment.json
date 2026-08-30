@@ -1,0 +1,19 @@
+{
+  "classification": "B",
+  "label": "MIXED",
+  "formal_validation_justified_now": false,
+  "supported_claim": "Directional focal-relative displacement preserves geometric distinctions that scalar focal-relative path magnitude collapses, but constant-velocity continuation innovation is only a mixed diagnostic because historically interesting and deterministic neutral windows overlap and several anchor departures are already visible in the preceding two seconds.",
+  "strongest_promising_example": "The 1888-1896 coordinated-translation window combines 32.268 m focal absolute path and 31.590 m centroid path with only 0.118 m 0.8 s innovation at tau, while the 590-598 excursion has lower absolute activity but 0.613 m innovation and an x-direction reversal around tau.",
+  "strongest_counterexample": "The deterministic neutral 5100-5108 s window has 0.912 m 0.8 s innovation at tau, larger than five of seven anchors, without having been selected as a historically meaningful case.",
+  "retained_representations": [
+    "scalar focal-relative path as validated movement-magnitude primitive",
+    "directional focal-relative displacement as complementary descriptive representation"
+  ],
+  "not_retained_as_validated": "constant-velocity continuation innovation as a response-onset measure",
+  "temporal_constraint": "Several historically interesting movements were already developing within a Phase 5A-style two-second history window, so pre-cutoff focal motion can contain developing movement of later interest.",
+  "research_implication_not_result": "A future defensive-response representation may need to describe geometric change across a finite interval rather than require a single universal response-onset instant.",
+  "thresholds_frozen": false,
+  "post_audit_tuning_authorized": false,
+  "response_classification_performed": false,
+  "attacker_causation_tested": false
+}

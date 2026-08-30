@@ -71,6 +71,8 @@ The [frozen Phase 5B protocol](phase5b_opponent_relational_increment_protocol.md
 
 Phase 5B does not choose among several unresolved explanations: focal pre-cutoff motion may already encode emerging opponent association; nearest-attacker selection may miss relevant relationships; opponent information may be team-, space-, or ball-conditioned; the scalar five-second target may discard directional structure; or opponent information may already be mediated through focal and collective motion. These are future design questions, not Phase 5B findings, and no Phase 5C design is defined here.
 
+The [post-5B direction/onset audit](post5b_measurement_audit_direction_onset.md) tests two of those measurement concerns in Sample Game 1 without opponent features or a new model. Scalar focal-relative path remains the validated movement-magnitude primitive, and signed directional displacement is retained as a complementary descriptive view. Constant-velocity continuation innovation is B — mixed and is not retained as a validated onset measure; no threshold, horizon, persistence rule, or candidate-time tuning is authorized from this audit. Because several movements were already developing inside the preceding two seconds, a later representation may need to describe change across a finite interval rather than require one universal onset instant. This is a research implication only. No Phase 5C protocol is defined.
+
 ### 6. Relational reconfiguration
 
 One possible intermediate form of defensive response, requiring several validated primitives to show coherent, temporally localized change not adequately described by baseline movement. It remains unvalidated and is no longer the mandatory center of the program.
