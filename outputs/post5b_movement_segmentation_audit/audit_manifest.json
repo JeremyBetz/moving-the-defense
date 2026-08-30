@@ -1,0 +1,32 @@
+{
+  "audit": "Post-5B outcome-blind attacking movement segmentation",
+  "classification": "B \u2014 mixed",
+  "rules_sha256": "c0c8d6eb7d35eae4e2d1a34b58234c3360ad85d351e725f50714f026b8052862",
+  "source_sha256": "6518b9a37811c77f96963f680fd469f79a6fb3f3961a3da5cfc7951a553abbe9",
+  "inputs_sha256": {
+    "Sample_Game_1_RawTrackingData_Home_Team.csv": "0a3d0eff7785950379c587d3597b86a2d91c2492281b4652e1abb97c99b6b364",
+    "Sample_Game_1_RawTrackingData_Away_Team.csv": "0a3df68a92af0290ede472e62de3b6489ddee29223da09bdf0cf76c8e0ab0618",
+    "Sample_Game_1_RawEventsData.csv": "097dda6345e17390dca095331458fd00e47960c480c76f4356fd4edf2575ef05"
+  },
+  "metrica_game3_accessed": false,
+  "defensive_coordinates_used": false,
+  "defensive_outcomes_used": false,
+  "method_parameters_predeclared": true,
+  "counts": {
+    "method_a_episodes": 38651,
+    "method_b_runs": 720,
+    "method_c_windows": 20955,
+    "method_a_peak_below_5_5_mps_pct": 95.78277405500505,
+    "lower_speed_displacement_ge_3m_n": 15845,
+    "lower_speed_displacement_ge_3m_pct": 40.99505834260433,
+    "fragmentation_any_n": 16320,
+    "fragmentation_any_pct": 42.22400455356912,
+    "merging_direction_any_n": 763,
+    "merging_direction_any_pct": 1.9740757030865954,
+    "method_a_without_b_overlap_n": 37383,
+    "method_a_without_b_overlap_pct": 96.71936043051926,
+    "method_a_split_by_fixed_boundary_pct": 51.835657550904244,
+    "fixed_windows_combining_multiple_a_pct": 92.8418038654259,
+    "median_a_start_to_nearest_fixed_boundary_s": 1.0
+  }
+}

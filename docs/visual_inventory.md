@@ -16,6 +16,7 @@
 | 3A | No figures | Appropriate design notebook. |
 | 3B | Statistical panels | Complete technical output; new summary figure communicates the failure more directly. |
 | Post-5B Audit A | Seven anchor audit panels plus deterministic neutral comparison | Descriptive measurement audit; direction is useful, onset innovation is mixed and unvalidated. |
+| Post-5B Movement Segmentation | Ten attacker-only trajectory, speed, distribution, and edge-case figures | Outcome-blind movement audit; B — mixed, with common fragmentation and occasional merging. |
 
 All executed notebooks contain zero stored error outputs. Notebook figures are phase-specific evidence; documentation figures below are curated explanations.
 
@@ -46,3 +47,7 @@ No additional visual should be created merely to make the project look complete.
 ## Post-5B Measurement Audit A figures
 
 [`figures/post5b_measurement_audit_a/`](../figures/post5b_measurement_audit_a/) contains seven soccer-readable anchor panels and two cross-window summaries. Each anchor panel aligns absolute focal/centroid trajectories, focal-relative space, signed x/y position, scalar path accumulation, activity, continuation innovation, and a 0.8-second vector comparison. These figures are exploratory Sample Game 1 evidence, not validation or tactical annotation.
+
+## Post-5B movement-segmentation figures
+
+[`figures/post5b_movement_segmentation_audit/`](../figures/post5b_movement_segmentation_audit/) contains ten attacker-only figures: deterministic trajectory and speed samples, distributions, signed geometry, Method A/B/C comparisons, and predeclared fragmentation, direction/merging, and lower-speed edge cases. No defender is shown. The figures diagnose the fixed exploratory rule; they are not validation or tactical evidence.

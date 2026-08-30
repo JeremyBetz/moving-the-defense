@@ -1,0 +1,17 @@
+{
+  "method_a_episodes": 38651,
+  "method_b_runs": 720,
+  "method_c_windows": 20955,
+  "method_a_peak_below_5_5_mps_pct": 95.78277405500505,
+  "lower_speed_displacement_ge_3m_n": 15845,
+  "lower_speed_displacement_ge_3m_pct": 40.99505834260433,
+  "fragmentation_any_n": 16320,
+  "fragmentation_any_pct": 42.22400455356912,
+  "merging_direction_any_n": 763,
+  "merging_direction_any_pct": 1.9740757030865954,
+  "method_a_without_b_overlap_n": 37383,
+  "method_a_without_b_overlap_pct": 96.71936043051926,
+  "method_a_split_by_fixed_boundary_pct": 51.835657550904244,
+  "fixed_windows_combining_multiple_a_pct": 92.8418038654259,
+  "median_a_start_to_nearest_fixed_boundary_s": 1.0
+}

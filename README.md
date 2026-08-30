@@ -28,6 +28,8 @@ Phase 5A then executed a prospectively frozen contextual-expectation test across
 
 Phase 5B then executed its frozen opponent-information test and produced **B — mixed/partial**. B5, B6, and B7 improve median held-out MAE versus B4 by 0.323%, 0.290%, and 0.426%; all improve six of seven matches with no ≥10% worsening, but none reaches the frozen 5% A criterion and no adjacent feature-family increment reaches 3% materiality. A1–A3 do not reproducibly outperform matched-dimensional A4–A6 representations. The tested nearest-opponent representation therefore does not establish meaningful local opponent-response information. This is limited opponent-information association, not tactical defensive response or attacker attribution.
 
+A subsequent outcome-blind [attacking movement segmentation audit](docs/post5b_attacking_movement_segmentation_audit.md) asks an upstream measurement question using Sample Game 1 only. Its result is **B — mixed**: speed-valley intervals reproducibly retain lower-speed and directional player geometry, but the tested rule fragments many trajectories and occasionally merges long or multi-leg movement. These are movement-effort episodes only—not tactical runs, defensive response, attacker influence, or value—and no Phase 5C design is defined.
+
 ![Phase 4 held-out design](figures/phase4/phase4_heldout_design.png)
 
 ## Where the project stands
@@ -37,6 +39,7 @@ Phase 5B then executed its frozen opponent-information test and produced **B —
 - **IDSSE completed multi-match external replication in one additional provider/data environment.** Phase 4C produced category A across all seven matches; this is not evidence from seven independent providers.
 - **Phase 5A established a simple statistical expectation baseline.** Recent focal motion materially predicts future focal-relative path; the tested collective, ball, and spatial increments do not materially improve that baseline.
 - **Phase 5B produced a mixed/partial opponent-information result.** Its prospectively selected nearest attackers are geometric neighbors, not marking or responsibility assignments; the small predictive gains were neither material nor demonstrably local.
+- **Outcome-blind attacker movement segmentation is promising but not protocol-ready.** The fixed speed-valley rule received B — mixed because fragmentation is common and direction-change merging remains possible.
 - **Phases 4B/4C validate geometry only.** They do not establish pinning, dragging, tracking, covering, handoffs, tactical defensive response, attacker attribution, or value.
 - **Relational reconfiguration remains unvalidated.** Phase 3 did not distinguish it from general event-associated activity.
 - **Gravity and off-ball value are downstream hypotheses.** No gravity, attention, responsibility, ambiguity, recovery-burden, or player-value metric exists.

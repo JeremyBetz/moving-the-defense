@@ -70,6 +70,14 @@ Penn, Matthew J., Christl A. Donnelly, and Samir Bhatt. 2025. “Continuous Foot
 
 These sources establish substantial precedent for predicted defensive velocity, soccer ghosting, simple-versus-deep trajectory baselines, interpretable player/ball motion models, predicted-trajectory off-ball valuation, and probabilistic multi-agent futures. Phase 5A borrows only the expected-versus-observed architecture and simple-baseline discipline; it does not claim invention of expected defensive movement. Buldú et al. and Franks et al. additionally anchor Phase 5B's proximity/network and matchup-model provenance; Phase 5B borrows neither a network nor a latent assignment model.
 
+## Player-Speed and Movement-Effort Segmentation
+
+Llana, Sergio, Borja Burriel, Fernando Madrero, and Javier Fernández. 2022. “Is It Worth the Effort? Understanding and Contextualizing Physical Metrics in Soccer.” arXiv:2204.02313. <https://arxiv.org/abs/2204.02313>
+
+FIFA Training Centre. 2024. “Speed Technical Coordination — Part 1: Introduction.” Methodology overview. <https://www.fifatrainingcentre.com/en/practice/speed-technical-coordination/speed-technical-coordination-part-1--introduction.php>
+
+Llana et al. provide direct precedent for rolling-smoothed player speed, valley-to-valley run segmentation, and peak-speed descriptors. FIFA supplies an official methodological range for common high-speed-running thresholds, not a peer-reviewed universal definition. The post-5B audit adapts these precedents prospectively and does not claim novelty for speed-valley segmentation.
+
 ## Coverage Limits
 
 This bibliography is substantially stronger for collective geometry, synchronization, defensive tracking, and contextual trajectory references than the previous placeholder list. Remaining gaps include proprietary club/vendor methods, formation-normalization details, complete soccer off-ball valuation coverage, and peer-reviewed expected-versus-observed gravity models. These gaps prohibit claims that no operational equivalent exists.

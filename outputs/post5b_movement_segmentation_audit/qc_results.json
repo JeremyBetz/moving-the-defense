@@ -1,0 +1,13 @@
+{
+  "players_processed": 26,
+  "players_with_episodes": 26,
+  "anchors_or_defensive_outcomes_used": false,
+  "opposing_player_coordinates_joined": false,
+  "method_a_deterministic": true,
+  "method_b_predeclared": true,
+  "method_c_predeclared": true,
+  "visual_sample_deterministic": true,
+  "metrica_game3_accessed": false,
+  "figure_count": 10,
+  "passed": true
+}

@@ -8,6 +8,8 @@ The evidentiary sequence remains **contextual expectation → opponent-informati
 
 Post-5B Measurement Audit A preserves focal-relative path as the validated amount-of-movement primitive while testing two additions in Sample Game 1: signed net displacement and deterministic short-horizon continuation innovation. Directional displacement is retained as a complementary descriptive representation because it preserves axis/sign distinctions that scalar path collapses. Continuation innovation receives only a mixed audit result because neutral windows overlap the anchors and several movements are already underway in the preceding two seconds. It is not retained as a validated response-onset measure; its horizons, thresholds, persistence rules, and candidate times must not be tuned from this audit. A future representation may need to describe change across a finite interval rather than require one universal onset instant, but that is a research implication rather than an established result. No new inference-ladder level is established.
 
+The next outcome-blind movement-segmentation audit moves upstream from defense and uses only an attacking player's own trajectory. Speed-valley intervals preserve signed geometry and substantial lower-speed movement, but the tested implementation is B — mixed because it over-fragments many trajectories and occasionally merges long or multi-leg motion. “Movement-effort episode” therefore remains a geometric temporal unit under refinement, not a tactical run, defensive response, or attacker-influence event.
+
 ## 1. Project Focus
 
 The single formal primary research question is: **How can tracking data measure defensive responses to attacking movement in open-play football?**

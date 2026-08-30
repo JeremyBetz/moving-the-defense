@@ -1,5 +1,11 @@
 # Research Log
 
+## 2026-08-30 — Post-5B Outcome-Blind Attacking Movement Segmentation Audit
+
+Sample Game 1 attacker-own trajectories were segmented without defender coordinates, downstream outcomes, or manual visual selection. A prospectively recorded speed-valley rule produced 38,651 episodes across 26 supported outfield players; 95.78% peaked below the 5.5 m/s high-speed comparator threshold, and 41.00% combined a lower peak with at least 3 m displacement. Four-second grids split 51.84% of valley episodes and 92.84% of fixed windows combined portions of multiple episodes.
+
+The result is **B — mixed**. The attacker-only approach remains promising, but it cannot be carried unchanged into later defensive-response sampling: 42.22% of episodes meet a predeclared fragmentation diagnostic, versus 1.97% meeting a merging/direction diagnostic. Over-fragmentation is therefore the primary refinement problem. A later outcome-blind design may investigate whether valleys need substantive prominence/depth, but no new threshold, separation, hysteresis, or splitting rule was selected. The retained 56.30 m/s maximum separately requires prospective tracking-support/QC investigation; it was not clipped or used to retune segmentation. Movement-effort episodes remain geometric units, not tactical runs, defensive responses, attacker influence, or value. No Phase 5C design was created.
+
 ## 2026-08-30 — Post-5B Measurement Audit A: Direction and Response Onset
 
 This small Sample Game 1 audit reused the seven fixed Phase 1–2 windows and added 14 neutral eight-second windows selected by a predeclared 300-second grid rule, restart/period/anchor exclusions, alternating team, and lowest-ID supported outfield focal. It did not inspect Game 3, add opponent features, train a model, define an onset threshold, or alter focal-relative path.

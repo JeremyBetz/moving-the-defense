@@ -73,6 +73,8 @@ Phase 5B does not choose among several unresolved explanations: focal pre-cutoff
 
 The [post-5B direction/onset audit](post5b_measurement_audit_direction_onset.md) tests two of those measurement concerns in Sample Game 1 without opponent features or a new model. Scalar focal-relative path remains the validated movement-magnitude primitive, and signed directional displacement is retained as a complementary descriptive view. Constant-velocity continuation innovation is B — mixed and is not retained as a validated onset measure; no threshold, horizon, persistence rule, or candidate-time tuning is authorized from this audit. Because several movements were already developing inside the preceding two seconds, a later representation may need to describe change across a finite interval rather than require one universal onset instant. This is a research implication only. No Phase 5C protocol is defined.
 
+The [outcome-blind attacking movement segmentation audit](post5b_attacking_movement_segmentation_audit.md) then tests whether attacker-own tracking can supply finite candidate time units before any defense is inspected. Its fixed speed-valley rule is B — mixed: it preserves lower-speed/directional geometry but has substantial fragmentation and occasional merging. Outcome-blind refinement is justified; this is not authorization to design Phase 5C or to tune segmentation against defensive outcomes.
+
 ### 6. Relational reconfiguration
 
 One possible intermediate form of defensive response, requiring several validated primitives to show coherent, temporally localized change not adequately described by baseline movement. It remains unvalidated and is no longer the mandatory center of the program.

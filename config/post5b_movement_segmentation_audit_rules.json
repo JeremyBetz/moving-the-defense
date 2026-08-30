@@ -1,0 +1,70 @@
+{
+  "status": "exploratory_audit_rules_predeclared_before_output_review",
+  "data": "Metrica Sample Game 1 only",
+  "frame_rate_hz": 25,
+  "pitch_m": [105, 68],
+  "players": "all supported outfield tracking columns; no possession filter",
+  "smoothing": {
+    "method": "centered rolling mean of x and y",
+    "frames": 7,
+    "support_s": 0.28,
+    "edge_treatment": "require all 7 frames; exclude unsupported smoothed edges",
+    "velocity": "Euclidean consecutive-smoothed-position difference divided by observed frame interval",
+    "acceleration": "not used"
+  },
+  "open_play_blocks": {
+    "period_boundaries": "hard boundaries",
+    "ball_out_to_set_piece": "exclude from each BALL OUT timestamp through the next SET PIECE timestamp in the same period",
+    "set_piece": "hard boundary even without a preceding BALL OUT",
+    "unsupported_tracking": "hard boundary"
+  },
+  "method_a": {
+    "candidate_valley": "maximal flat run whose speed is no greater than both immediate neighbors and strictly lower than at least one; use flat-run midpoint",
+    "minimum_valley_separation_s": 1.0,
+    "close_valley_resolution": "chronological; retain lower-speed candidate, with earlier time on exact tie",
+    "episode": "consecutive retained valley midpoints within one eligible block",
+    "minimum_episode_duration_s": 1.0,
+    "speed_inclusion_threshold": null
+  },
+  "method_b": {
+    "label": "simplified common-threshold high-speed comparator",
+    "start_speed_mps": 5.5,
+    "end_speed_mps": 5.5,
+    "minimum_duration_s": 1.0,
+    "acceleration_condition": null
+  },
+  "method_c": {
+    "window_duration_s": 4.0,
+    "grid_origin": "period first tracking time",
+    "overlap": false,
+    "eligibility": "complete player support and no excluded stoppage"
+  },
+  "diagnostics": {
+    "short_duration_s_max": 1.5,
+    "tiny_path_m_max": 1.0,
+    "tiny_displacement_m_max": 0.5,
+    "long_duration_s_min": 8.0,
+    "low_displacement_path_ratio_max": 0.5,
+    "direction_change_min_path_m": 3.0,
+    "direction_change_absolute_heading_deg_min": 180.0,
+    "heading_increment_min_speed_mps": 0.5,
+    "lower_speed_peak_mps_max": 5.5,
+    "meaningful_net_displacement_m_min": 3.0
+  },
+  "visual_sample": {
+    "primary": "16 indices evenly spaced over episodes sorted by start time, period, team, numeric player ID",
+    "edge_cases": [
+      "shortest duration",
+      "longest duration",
+      "highest absolute heading change among path>=3m",
+      "lowest peak speed among net displacement>=3m",
+      "first chronological Method-B-overlap episode"
+    ]
+  },
+  "firewall": {
+    "defender_coordinates": false,
+    "defensive_outcomes": false,
+    "events_for_selection": ["BALL OUT", "SET PIECE"],
+    "game3_access": false
+  }
+}
