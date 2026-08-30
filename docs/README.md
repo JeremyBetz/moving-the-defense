@@ -37,6 +37,7 @@ The football concepts are candidate interpretations, not automatic labels or val
 4. `outputs/` — committed machine-readable derived results.
 5. `notebooks/` — executed narrative artifacts and historical diagnostics.
 6. [Repository/state audit](repository_state_audit_2026-08-30.md) — current coherence and reproducibility findings.
+7. [Post-5B tracking-support QC audit](post5b_tracking_support_qc_audit.md) — diagnosis of the retained extreme-speed observation before segmentation refinement.
 
 ## Reproducing a specific completed analysis
 

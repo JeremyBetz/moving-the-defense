@@ -1,5 +1,11 @@
 # Research Log
 
+## 2026-08-30 — Outcome-blind tracking-support / QC audit
+
+After the accepted movement-segmentation audit retained a 56.30 m/s maximum, a separate attacker/player-only QC audit traced it to Home Player 10 at 117.68 s. The raw source contains six exact coordinate duplications with Home Player 1, continued near-coincidence, and then six extreme raw steps restoring Home 10 to a distant trace. Frames and timestamps remain regular; centered smoothing attenuates and spreads rather than creates the discontinuity. The tracking-support diagnosis is **A**: an identity/position continuity mechanism is observable and prospective rule directions are clear, although the provider's internal cause and numeric tolerances remain unresolved. Exact equality alone is not invalidity; the diagnosis depends on the combined duplication/near-coincidence, restoration, and extreme-step pattern.
+
+The broader tail contains still larger discontinuities for Home 3 and Away 22, so this is not a one-player cleanup issue. No speed cutoff, deletion, clipping, interpolation, segmentation refinement, defensive outcome, Game 3 access, or football interpretation was introduced. Tracking support and valley-boundary refinement remain logically separate. See [`post5b_tracking_support_qc_audit.md`](post5b_tracking_support_qc_audit.md).
+
 ## 2026-08-30 — Repository Coherence and Sloan-Readiness Audit
 
 A non-empirical repository/state audit reconciled current-facing documentation through the accepted B — mixed attacking movement-segmentation result. The local scientific checkpoint remained the source of truth; no frozen protocol/result artifact, historical notebook, defensive outcome, or Metrica Game 3 data was inspected or changed. The README, explainer, claim ledger, roadmap, Sloan-readiness assessment, documentation guide, reproducibility guide, literature scope, and visual inventory were updated to reflect completed Phase 4C/5A/5B evidence and both post-5B audits.

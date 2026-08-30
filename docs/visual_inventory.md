@@ -1,5 +1,11 @@
 # Visual Inventory
 
+## Post-5B tracking-support QC audit
+
+| Figure | Role | Claim boundary |
+|---|---|---|
+| `figures/post5b_tracking_support_qc_audit/extreme_trace.png` | Raw/smoothed position, displacement, and speed around the retained Home 10 extreme | Tracking-support diagnosis only; not defensive response, tactical movement, or segmentation validation. |
+
 ## Existing notebook coverage
 
 | Phase | Current visual role | Audit assessment |

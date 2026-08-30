@@ -1,0 +1,70 @@
+{
+  "classification": "A \u2014 identifiable tracking-support mechanism; prospective rule direction is clear",
+  "best_supported_failure_mode": "D \u2014 identity discontinuity / duplicated player trace followed by positional restoration",
+  "supported_methodological_claim": "Extreme derived kinematics can arise from failures of player-identity/trajectory continuity even when frame, timestamp, and coordinate support appear complete. Tracking-support validity should therefore be evaluated on the underlying trajectory before movement segmentation rather than repaired through post-hoc clipping of derived speed.",
+  "extreme": {
+    "team": "Home",
+    "player": "10",
+    "period": 1,
+    "frame": 2942,
+    "time_s": 117.68,
+    "smooth_speed_mps": 56.295117239421835,
+    "smooth_step_displacement_m": 2.2518046895772255,
+    "dt_s": 0.04000000000000625,
+    "raw_coordinate_before_m": [
+      87.36315,
+      24.43036
+    ],
+    "raw_coordinate_at_m": [
+      89.7813,
+      23.302239999999998
+    ],
+    "raw_coordinate_after_m": [
+      92.26559999999999,
+      22.14352
+    ],
+    "smoothed_coordinate_before_m": [
+      87.49080000000001,
+      24.37052
+    ],
+    "smoothed_coordinate_at_m": [
+      89.53065,
+      23.41677142857143
+    ],
+    "smoothed_coordinate_after_m": [
+      91.23645,
+      22.62593142857143
+    ],
+    "raw_max_speed_mps": 70.4387669468912,
+    "raw_max_frame": 2944,
+    "raw_max_time_s": 117.76,
+    "centered_mean_identity": "smoothed step at frame 2942 equals (raw frame 2945 - raw frame 2938) / 7",
+    "centered_support_raw_frame_2938_m": [
+      80.4825,
+      27.63928
+    ],
+    "centered_support_raw_frame_2945_m": [
+      94.76145,
+      20.96304
+    ]
+  },
+  "support_checks": {
+    "missing_coordinates_local": 0,
+    "non_unit_frame_steps_local": 0,
+    "unexpected_timestamp_steps_local": 0,
+    "duplicated_timestamps_local": 0,
+    "exact_home10_home1_colocation_frames_local": 6,
+    "exact_colocation_frames_local_all_teammates": 6,
+    "outfield_identity_pairs_with_exact_colocation": 43
+  },
+  "interpretation": "The raw source duplicates Home 10 and Home 1 coordinates for six frames, remains nearly coincident around that run, then restores Home 10 to a distant trace through six implausibly large raw steps. Centered smoothing attenuates and spreads rather than creates the discontinuity.",
+  "colocation_caution": "Exact cross-identity coordinate equality alone is not proof of an invalid trajectory. The Home 10 diagnosis depends on duplication/near-coincidence, discontinuous restoration to a distant trace, and extreme raw positional changes in combination.",
+  "prospective_rule_types": [
+    "require contiguous expected frames",
+    "require expected timestamp continuity",
+    "require complete raw support across every centered smoothing window",
+    "apply trajectory-continuity checks capable of identifying unresolved identity/discontinuity events",
+    "invalidate a downstream episode if its supporting raw trajectory crosses a support discontinuity"
+  ],
+  "segmentation_relation": "Tracking QC asks whether the trajectory is supported; valley refinement asks which minima bound movement efforts given a supported trajectory. They are logically independent."
+}
