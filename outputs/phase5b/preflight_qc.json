@@ -1,0 +1,18 @@
+{
+  "matches_exact": true,
+  "B5_count": true,
+  "B6_count": true,
+  "B7_count": true,
+  "K1_counts": true,
+  "feature_times_at_or_before_cutoff": true,
+  "selection_at_cutoff": true,
+  "selected_ids_fixed": true,
+  "dynamic_reranking": false,
+  "primary_all_finite": true,
+  "projection_tolerance_m": 1e-09,
+  "near_zero_pairs": 0,
+  "primary_observations": 44752,
+  "model_fit": false,
+  "metrica_game3_accessed": false,
+  "passed": true
+}

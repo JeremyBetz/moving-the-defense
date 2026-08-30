@@ -16,7 +16,7 @@
 4. [Phase 4 focal-departure protocol](phase4_focal_departure_validation_protocol.md) and [Phase 4B results](phase4b_focal_departure_validation_results.md)
 5. [Phase 4C protocol](phase4c_external_replication_protocol.md), [IDSSE mapping audit](phase4c_idsse_mapping_audit.md), and [external-replication results](phase4c_external_replication_results.md)
 6. [Frozen Phase 5A contextual-expectation protocol](phase5a_contextual_expectation_protocol.md), [execution results](phase5a_contextual_expectation_results.md), and [methodology provenance](contextual_expectation_methodology.md)
-7. [Frozen Phase 5B opponent-relational increment protocol](phase5b_opponent_relational_increment_protocol.md) and [opponent-representation provenance](opponent_representation_methodology.md) — v1.0 frozen, not executed
+7. [Frozen Phase 5B opponent-relational increment protocol](phase5b_opponent_relational_increment_protocol.md), [execution results](phase5b_opponent_relational_increment_results.md), and [opponent-representation provenance](opponent_representation_methodology.md)
 8. [Football-concept translation framework](football_concept_translation_framework.md)
 9. [Post–Phase 4 data strategy](post_phase4_data_strategy.md)
 10. [Reproducibility guide](reproducibility.md)

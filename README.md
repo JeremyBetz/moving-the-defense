@@ -26,7 +26,7 @@ Phase 4C produced A — strong external replication: all seven matches were usab
 
 Phase 5A then executed a prospectively frozen contextual-expectation test across the same seven IDSSE matches. It produced **A — contextual expectation feasible**: the best simple model reduced median match-heldout MAE by 20.58% versus an unconditional baseline and improved all seven matches. Almost all useful gain was already in recent focal movement; collective, ball, and spatial additions were individually below the frozen materiality threshold. This is statistical predictability of geometry, not tactical expectation or defensive response.
 
-Phase 5B protocol v1.0 is **frozen but unexecuted**. It asks whether prospectively selected nearby-opponent geometry, attacker motion, and defender–opponent relational dynamics add held-out predictive information beyond the unchanged Phase 5A B4 baseline. No Phase 5B model has been fitted and no outcome has been inspected.
+Phase 5B then executed its frozen opponent-information test and produced **B — mixed/partial**. B5, B6, and B7 improve median held-out MAE versus B4 by 0.323%, 0.290%, and 0.426%; all improve six of seven matches with no ≥10% worsening, but none reaches the frozen 5% A criterion and no adjacent feature-family increment reaches 3% materiality. A1–A3 do not reproducibly outperform matched-dimensional A4–A6 representations. The tested nearest-opponent representation therefore does not establish meaningful local opponent-response information. This is limited opponent-information association, not tactical defensive response or attacker attribution.
 
 ![Phase 4 held-out design](figures/phase4/phase4_heldout_design.png)
 
@@ -36,7 +36,7 @@ Phase 5B protocol v1.0 is **frozen but unexecuted**. It asks whether prospective
 - **Game 2 completed the first held-out validation.** Phase 4B executed the unchanged frozen protocol and is closed.
 - **IDSSE completed multi-match external replication in one additional provider/data environment.** Phase 4C produced category A across all seven matches; this is not evidence from seven independent providers.
 - **Phase 5A established a simple statistical expectation baseline.** Recent focal motion materially predicts future focal-relative path; the tested collective, ball, and spatial increments do not materially improve that baseline.
-- **Phase 5B v1.0 is frozen and unexecuted.** Its nearest-attacker rule is geometric and prospective, not a marking or responsibility inference.
+- **Phase 5B produced a mixed/partial opponent-information result.** Its prospectively selected nearest attackers are geometric neighbors, not marking or responsibility assignments; the small predictive gains were neither material nor demonstrably local.
 - **Phases 4B/4C validate geometry only.** They do not establish pinning, dragging, tracking, covering, handoffs, tactical defensive response, attacker attribution, or value.
 - **Relational reconfiguration remains unvalidated.** Phase 3 did not distinguish it from general event-associated activity.
 - **Gravity and off-ball value are downstream hypotheses.** No gravity, attention, responsibility, ambiguity, recovery-burden, or player-value metric exists.
@@ -49,7 +49,7 @@ The current inference chain is conditional:
 
 **physical movement → collective defensive movement → individual/local behavior relative to collective movement → contextual expectation → opponent-information association → tactical defensive-response interpretation → attacker attribution → attacking value**
 
-Phase 5B is designed to reach, at most, the opponent-information-association rung. Predictive opponent information would not by itself establish tactical response, attribution, or value.
+Phase 5B supplies limited evidence at the opponent-information-association rung. Predictive opponent information does not by itself establish tactical response, attribution, or value.
 
 Every arrow can fail. A successful project may stop after establishing—or rejecting—a useful geometric primitive.
 
@@ -142,6 +142,7 @@ Reproducibility seeds and protocol sources of truth:
 - Phase 4: [`config/phase4a_focal_departure_validation_protocol.json`](config/phase4a_focal_departure_validation_protocol.json), seed `20260829`.
 - Phase 4C: [`config/phase4c_external_replication_protocol.json`](config/phase4c_external_replication_protocol.json), bootstrap seed `20260830`.
 - Phase 5A: [`config/phase5a_contextual_expectation_protocol.json`](config/phase5a_contextual_expectation_protocol.json), frozen deterministic nested match-heldout design; [results](docs/phase5a_contextual_expectation_results.md).
+- Phase 5B: [`config/phase5b_opponent_relational_increment_protocol.json`](config/phase5b_opponent_relational_increment_protocol.json), frozen opponent-information increment design; [results](docs/phase5b_opponent_relational_increment_results.md).
 
 ## Reading guide
 

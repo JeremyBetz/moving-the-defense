@@ -1,5 +1,15 @@
 # Research Log
 
+## 2026-08-30 — Phase 5B Opponent-Relational Increment Execution
+
+Frozen protocol v1.0 executed once across the seven IDSSE matches without accessing Metrica Game 3. The primary common sample retained 44,752 of 44,767 Phase 5A observations (99.97%), and the Phase 4 target reproduced to maximum absolute difference $1.28\times10^{-12}$ m.
+
+The mechanically determined result is **B — mixed/partial**. Refitted B4 has median held-out MAE 2.1142 m; B5, B6, and B7 reach 2.1096, 2.1094, and 2.1048 m. Each opponent model improves six of seven matches with no ≥10% worsening, but gains versus B4 are only 0.323%, 0.290%, and 0.426%. No adjacent step passes the frozen 3% materiality rule. B7 is the technical best simple model, not evidence that every opponent feature family is scientifically material.
+
+The same-sample $K=3$ B7 representation narrowly outperforms $K=1$ by a median 0.298%, while A1–A3 do not reproducibly outperform matched-dimensional A4–A6 representations. The tested nearest-opponent representation therefore does not provide evidence that local opponent information is materially more predictive than nonlocal opponent information; this is representation-specific, not universal. The one-second history sensitivity also classifies B. The supported claim is limited to a small, mixed held-out opponent-information association beyond B4. Tactical defensive response, assignment, attacker influence, attribution, relational reconfiguration, gravity, and value remain unvalidated.
+
+Unresolved possibilities retained without choosing among them or defining Phase 5C are: emerging opponent association may already be present in focal pre-cutoff movement; nearest-attacker selection may miss relevant attacking relationships; opponent information may be attacking-team-, space-, or ball-conditioned; the scalar five-second target may discard tactical/directional structure; and weak increments may reflect information already mediated through focal or collective motion.
+
 ## 2026-08-29 — Phase 5A Contextual-Expectation Feasibility Execution
 
 Frozen protocol v1.0 executed once across seven IDSSE leave-one-match-out folds. The 44,767-observation B4-complete primary sample retained 99.97% of Phase 4-eligible focal observations. All raw-time leakage checks passed, and the constructed targets reproduced Phase 4C paths to a maximum absolute difference of $1.28\times10^{-12}$m.

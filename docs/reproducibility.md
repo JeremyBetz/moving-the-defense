@@ -102,6 +102,17 @@ MPLCONFIGDIR=/tmp/phase5a-mpl .venv/bin/python src/phase5a_contextual_expectatio
 
 The execution writes machine-readable outputs under `outputs/phase5a/` and figures under `figures/phase5a/`. The narrative artifacts are the [executed notebook](../notebooks/phase5a_contextual_expectation_feasibility.ipynb) and [results report](phase5a_contextual_expectation_results.md). The execution manifest records frozen protocol hashes and implementation clarifications.
 
+## Phase 5B opponent-relational increment
+
+Frozen protocol v1.0 is [`docs/phase5b_opponent_relational_increment_protocol.md`](phase5b_opponent_relational_increment_protocol.md), with machine-readable rules in [`config/phase5b_opponent_relational_increment_protocol.json`](../config/phase5b_opponent_relational_increment_protocol.json). Reproduce its outcome-blind preflight and governed execution separately:
+
+```bash
+MPLCONFIGDIR=/tmp/phase5b-mpl .venv/bin/python src/phase5b_opponent_relational_increment.py preflight
+MPLCONFIGDIR=/tmp/phase5b-mpl .venv/bin/python src/phase5b_opponent_relational_increment.py execute
+```
+
+The execution writes machine-readable outputs under `outputs/phase5b/` and figures under `figures/phase5b/`. The [executed reporting notebook](../notebooks/phase5b_opponent_relational_increment.ipynb) reads those saved outputs without refitting; the detailed [results report](phase5b_opponent_relational_increment_results.md) preserves the claim boundary. The manifest records all governing hashes and confirms that Metrica Game 3 was not accessed.
+
 Documentation figures can be regenerated with:
 
 ```bash

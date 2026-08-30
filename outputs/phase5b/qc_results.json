@@ -1,0 +1,36 @@
+{
+  "protocol_feature_counts": {
+    "B5": 14,
+    "B6": 9,
+    "B7": 12,
+    "K1": [
+      4,
+      3,
+      4
+    ]
+  },
+  "cutoff_firewall": true,
+  "selection_at_c": true,
+  "selected_ids_fixed": true,
+  "reranking": false,
+  "zero_distance_rule_applied_pairs": 0,
+  "common_sample_identical_B4_B7": true,
+  "B4_refit_on_phase5b_sample": true,
+  "outer_folds": 7,
+  "inner_training_match_folds": 6,
+  "training_only_preprocessing": true,
+  "classification_mechanically_reproduced": true,
+  "K1_same_sample": true,
+  "locality_control_affects_classification": false,
+  "target_reproduction": {
+    "phase5b_primary_observations": 44752,
+    "matched_phase4c_observations": 44752,
+    "maximum_absolute_target_difference_m": 1.2816414596272807e-12,
+    "passed": true
+  },
+  "all_actual_solvers": [
+    "solve"
+  ],
+  "metrica_game3_accessed": false,
+  "passed": true
+}

@@ -30,9 +30,9 @@ The opponent-information-association rung means only reproducible incremental pr
 
 ## Current location
 
-> **Current project position:** Phase 4C externally replicated focal-relative path at the individual-relative-to-collective geometric level across seven IDSSE matches. Phase 5A now establishes category-A contextual predictability, driven primarily by focal recent movement; collective, ball, and spatial increments are not materially additive under the frozen rule. Tactical defensive response and every later inference remain unvalidated.
+> **Current project position:** Phase 4C externally replicated focal-relative path at the individual-relative-to-collective geometric level across seven IDSSE matches. Phase 5A establishes category-A contextual predictability, driven primarily by focal recent movement. Phase 5B adds only category-B mixed/partial opponent-information association: small gains that are neither material nor demonstrably local. Tactical defensive response and every later inference remain unvalidated.
 
-Phase 5B v1.0 is **frozen but unexecuted**. It will test whether cutoff-fixed nearby-opponent geometry, recent attacker motion, and nonlinear defender–opponent pair dynamics add match-heldout predictive information beyond the unchanged Phase 5A B4 baseline. It has not been fitted or inspected. Even a positive result would stop at opponent-information association, below tactical defensive-response interpretation and attacker attribution.
+Phase 5B v1.0 executed once under its frozen rules and classified **B — mixed/partial**. B7 is technically best, reducing median held-out MAE from 2.114 m to 2.105 m, but the 0.43% gain is small and no adjacent step is materially incremental. The result stops at limited opponent-information association, below tactical defensive-response interpretation and attacker attribution.
 
 The completed frozen Phase 4 design asked whether
 
@@ -67,7 +67,9 @@ Required: outcome-independent sampling, adequate support, development/test separ
 
 The [frozen Phase 5A protocol](phase5a_contextual_expectation_protocol.md) passed its raw-support firewall and executed once. The [result](phase5a_contextual_expectation_results.md) is A: every simple contextual level improves on B0 across seven held-out matches, but only focal recent movement is a materially additive ladder step. This supplies feasibility evidence for the contextual-expectation level within IDSSE; it is not definitive cross-provider validation of a contextual-expectation metric and does not establish defensive response. Prediction and residuals have no tactical meaning by themselves.
 
-The [frozen Phase 5B protocol](phase5b_opponent_relational_increment_protocol.md) preserves B4 and specifies a typed opponent-information ladder. It fixes three nearest attacking outfield identities at the prediction cutoff, retains a same-sample one-attacker sensitivity, forbids future-informed pair selection, and requires a common B7-complete sample with B4 re-evaluated on that sample. No Phase 5B result exists.
+The [frozen Phase 5B protocol](phase5b_opponent_relational_increment_protocol.md) preserves B4 and specifies a typed opponent-information ladder. The [execution result](phase5b_opponent_relational_increment_results.md) is B — mixed/partial: all opponent models improve six of seven matches, but gains are below 1%, no adjacent increment is material, and the locality control provides no strong local-specificity evidence.
+
+Phase 5B does not choose among several unresolved explanations: focal pre-cutoff motion may already encode emerging opponent association; nearest-attacker selection may miss relevant relationships; opponent information may be team-, space-, or ball-conditioned; the scalar five-second target may discard directional structure; or opponent information may already be mediated through focal and collective motion. These are future design questions, not Phase 5B findings, and no Phase 5C design is defined here.
 
 ### 6. Relational reconfiguration
 

@@ -1,10 +1,10 @@
 # Conceptual Framework
 
-> **Current status (post–Phase 5A):** focal-relative path has passed narrow held-out Metrica validation and external geometric replication across seven IDSSE matches. Frozen Phase 5A establishes contextual predictability in the statistical sense, driven primarily by focal recent movement. Tactical defensive response and relational reconfiguration remain unvalidated. Historical sections preserve ideas later weakened or rejected and should be read with the [claim-status ledger](claim_status.md).
+> **Current status (post–Phase 5B):** focal-relative path has passed narrow held-out Metrica validation and external geometric replication across seven IDSSE matches. Phase 5A establishes contextual predictability in the statistical sense, driven primarily by focal recent movement. Phase 5B finds only a small, mixed opponent-information increment beyond that baseline. Tactical defensive response and relational reconfiguration remain unvalidated. Historical sections preserve ideas later weakened or rejected and should be read with the [claim-status ledger](claim_status.md).
 
-Frozen Phase 5B v1.0 is an unexecuted question: whether prospectively selected opponent information adds predictive information beyond Phase 5A B4. A positive result would establish only opponent-information association. Geometric proximity is not a tactical relationship, and predictive increment is not attacker causation or defensive response.
+Frozen Phase 5B v1.0 produced B — mixed/partial: prospectively selected opponent information improved six of seven held-out matches, but median gains were below 1%, no adjacent increment was material, and local attackers did not consistently outperform nonlocal controls. This is limited opponent-information association. Geometric proximity is not a tactical relationship, and predictive increment is not attacker causation or defensive response.
 
-The forward-looking evidentiary sequence is therefore **contextual expectation → opponent-information association → tactical defensive-response interpretation → attacker attribution → value**. Phase 5B can reach only the second term in that sequence.
+The evidentiary sequence remains **contextual expectation → opponent-information association → tactical defensive-response interpretation → attacker attribution → value**. Phase 5B supplies limited evidence only at the second term.
 
 ## 1. Project Focus
 

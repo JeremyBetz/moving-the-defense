@@ -1,0 +1,29 @@
+{
+  "classification": {
+    "category": "B",
+    "label": "MIXED_PARTIAL",
+    "best_opponent_model": "B7",
+    "A_qualifying_models": [],
+    "classification_precedence": [
+      "A",
+      "C",
+      "B"
+    ],
+    "mechanically_verified": true
+  },
+  "one_second_history_classification": {
+    "category": "B",
+    "label": "MIXED_PARTIAL",
+    "best_opponent_model": "B7",
+    "A_qualifying_models": [],
+    "classification_precedence": [
+      "A",
+      "C",
+      "B"
+    ],
+    "mechanically_verified": true
+  },
+  "maximum_claim_if_A": "Prospectively specified opponent-relative information adds reproducible held-out predictive information about future focal-relative movement beyond the tested non-opponent contextual baseline.",
+  "inference_rung": "opponent_information_association",
+  "nonclaims_preserved": true
+}
