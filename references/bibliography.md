@@ -78,6 +78,10 @@ FIFA Training Centre. 2024. “Speed Technical Coordination — Part 1: Introduc
 
 Llana et al. provide direct precedent for rolling-smoothed player speed, valley-to-valley run segmentation, and peak-speed descriptors. FIFA supplies an official methodological range for common high-speed-running thresholds, not a peer-reviewed universal definition. The post-5B audit adapts these precedents prospectively and does not claim novelty for speed-valley segmentation.
 
+Esposito, Francesco, Maurizio Bertollo, Dario Pompa, Maria Angonese, and Marco Beato. 2026. “Off-the-Ball Behaviors in Elite Football Using Spatiotemporal Tracking Data: A Scoping Review.” *Science and Medicine in Football*, online ahead of print. <https://doi.org/10.1080/24733938.2026.2713521>
+
+Esposito et al. synthesize 32 elite-football tracking studies and emphasize fragmented definitions, heterogeneous methods, simplified outcomes, and limited opponent/context integration. It is a field-level context source, not evidence that this project's movement segmentation or defensive-response bridge is validated or novel.
+
 ## Coverage Limits
 
 This bibliography is substantially stronger for collective geometry, synchronization, defensive tracking, and contextual trajectory references than the previous placeholder list. Remaining gaps include proprietary club/vendor methods, formation-normalization details, complete soccer off-ball valuation coverage, and peer-reviewed expected-versus-observed gravity models. These gaps prohibit claims that no operational equivalent exists.

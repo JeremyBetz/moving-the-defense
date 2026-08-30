@@ -103,15 +103,15 @@ No level licenses skipping the next.
 
 ## 7. Core inference ladder and current status
 
-**physical movement → collective defensive movement → individual/local behavior relative to collective movement → contextual expectation → opponent-information association → tactical defensive-response interpretation → attacker attribution → attacking value**
+**football question → measurable attacking movement → measurable defensive movement → individual/local behavior relative to collective movement → movement magnitude and signed geometric change → contextual expectation → opponent-information association → tactical defensive-response interpretation → attacker attribution → attacking value**
 
 Opponent-information association is a predictive-information rung only. It does not establish tactical response, attacker induction, attribution, or value.
 
-Phase 4B reaches only the third stage. It supports this claim:
+Phase 4B first reached the individual-relative-to-collective geometric stage, and Phase 4C externally replicated it across seven IDSSE matches from one independent provider environment. Together they support this claim:
 
-> **Focal-relative path is a reproducible focal-versus-collective geometric primitive with stable activity-context structure in these two sample matches.**
+> **Focal-relative path is a reproducible focal-versus-collective geometric primitive across the two Metrica sample matches and seven IDSSE matches under frozen criteria.**
 
-It does not estimate an activity-free effect. Focal-relative path remains positively associated with generic activity ($\rho=0.541$ in Game 1 and $0.462$ in Game 2 for focal absolute path). Common translation cancels, all frozen sensitivities preserve the qualitative result, and temporally misaligned similarly active references yield much larger paths. The latter supports contemporaneous focal-versus-collective geometry beyond movement magnitudes alone; it does not establish tactical coordination, organization, synchronization, responsibility, or attention.
+It does not estimate an activity-free effect. Focal-relative path remains positively associated with generic activity. Common translation cancels, all frozen sensitivities preserve the qualitative result, and temporally misaligned similarly active references yield much larger paths. Phase 5A adds contextual-prediction feasibility, primarily from recent focal movement; Phase 5B adds only a small mixed opponent-information association without local primacy. Signed displacement is descriptive, continuation innovation is not validated as onset, and attacker-only movement segmentation is promising but mixed. None establishes tactical coordination, responsibility, attention, attacker causation, or value.
 
 ## 8. Relationship to current validated primitives
 
@@ -119,7 +119,7 @@ Focal departure can contribute to hypotheses about dragging, holding, stepping, 
 
 ## 9. Relational reconfiguration
 
-Relational reconfiguration is retained as one possible intermediate form of defensive response: a candidate description of cases in which defender-team, defender-opponent, ball, and local relationships change coherently over time. It is no longer the single phenomenon the entire project must validate. It remains unvalidated; Phase 4B did not validate it.
+Relational reconfiguration is retained as one possible intermediate form of defensive response: a candidate description of cases in which defender-team, defender-opponent, ball, and local relationships change coherently over time. It is no longer the single phenomenon the entire project must validate. It remains unvalidated; Phases 4–5 and the post-5B audits did not validate it.
 
 ## 10. Relationship to prior research
 

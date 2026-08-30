@@ -1,51 +1,68 @@
 # Documentation Guide
 
-## New reader — about five minutes
+Use current-facing summaries before historical notebooks. The [claim-status ledger](claim_status.md) governs whenever older language conflicts with later evidence.
 
-1. [Project README](../README.md)
-2. [Project explainer](project_explainer.md)
-3. [Claim-status ledger](claim_status.md)
-4. [Research roadmap](research_roadmap.md)
-5. [Football-concept translation framework](football_concept_translation_framework.md)
+## First-time visitor — five minutes
 
-## Technical reader — 30–60 minutes
+1. [Project README](../README.md) — football problem, strongest evidence, failures, and current frontier.
+2. [Project explainer](project_explainer.md) — intuitive questions and answers before technical detail.
+3. [Claim-status ledger](claim_status.md) — exactly what is validated, descriptive, mixed, rejected, or unsupported.
+4. [Research roadmap](research_roadmap.md) — current frontier and October 1, 2026 submission constraint.
 
-1. [Conceptual framework](conceptual_framework.md)
-2. [Research questions](research_questions.md)
-3. [Phase 3 protocol](phase3_validation_protocol.md) and [Phase 3C feasibility decision](phase3c_validation_design_feasibility.md)
-4. [Phase 4 focal-departure protocol](phase4_focal_departure_validation_protocol.md) and [Phase 4B results](phase4b_focal_departure_validation_results.md)
-5. [Phase 4C protocol](phase4c_external_replication_protocol.md), [IDSSE mapping audit](phase4c_idsse_mapping_audit.md), and [external-replication results](phase4c_external_replication_results.md)
-6. [Frozen Phase 5A contextual-expectation protocol](phase5a_contextual_expectation_protocol.md), [execution results](phase5a_contextual_expectation_results.md), and [methodology provenance](contextual_expectation_methodology.md)
-7. [Frozen Phase 5B opponent-relational increment protocol](phase5b_opponent_relational_increment_protocol.md), [execution results](phase5b_opponent_relational_increment_results.md), and [opponent-representation provenance](opponent_representation_methodology.md)
-8. [Post-5B Measurement Audit A: direction and response onset](post5b_measurement_audit_direction_onset.md)
-9. [Football-concept translation framework](football_concept_translation_framework.md)
-10. [Post–Phase 4 data strategy](post_phase4_data_strategy.md)
-11. [Reproducibility guide](reproducibility.md)
-12. [Research log](research_log.md)
-13. Executed notebooks and machine-readable configs
-
-## Project author preparing a presentation
+## Football practitioner
 
 1. [Project explainer](project_explainer.md)
-2. [Claim-status ledger](claim_status.md)
+2. [Football-concept translation framework](football_concept_translation_framework.md)
 3. [Visual inventory](visual_inventory.md)
-4. [Research roadmap](research_roadmap.md)
-5. [Phase 4B results](phase4b_focal_departure_validation_results.md)
-6. [Phase 4C external-replication results](phase4c_external_replication_results.md)
-7. [Football-concept translation framework](football_concept_translation_framework.md)
+4. [Claim-status ledger](claim_status.md)
 
-## Literature and contribution risk
+The football concepts are candidate interpretations, not automatic labels or validated tactical decisions.
 
-- [Literature review](literature_review.md)
-- [Novelty-risk memo](novelty_risk_memo.md)
-- [Bibliography](../references/bibliography.md)
-- [Sloan-readiness gap analysis](sloan_readiness.md)
+## Technical or quantitative reviewer
 
-## Audit trail
+1. [Conceptual framework](conceptual_framework.md)
+2. [Claim-status ledger](claim_status.md)
+3. [Phase 3 protocol](phase3_validation_protocol.md) and [failed feasibility route](phase3c_validation_design_feasibility.md)
+4. [Phase 4 protocol](phase4_focal_departure_validation_protocol.md), [held-out results](phase4b_focal_departure_validation_results.md), and [external-replication results](phase4c_external_replication_results.md)
+5. [Phase 5A protocol/results](phase5a_contextual_expectation_results.md) and [Phase 5B protocol/results](phase5b_opponent_relational_increment_results.md)
+6. [Direction/onset audit](post5b_measurement_audit_direction_onset.md)
+7. [Attacking movement-segmentation audit](post5b_attacking_movement_segmentation_audit.md)
+8. [Reproducibility guide](reproducibility.md)
+
+## Methodological reviewer
+
+1. [Research log](research_log.md) — chronological record of freezes, executions, failures, and reinterpretations.
+2. `config/` — governing machine-readable protocols and predeclared exploratory rules.
+3. `src/` — reproducible implementations for governed later analyses.
+4. `outputs/` — committed machine-readable derived results.
+5. `notebooks/` — executed narrative artifacts and historical diagnostics.
+6. [Repository/state audit](repository_state_audit_2026-08-30.md) — current coherence and reproducibility findings.
+
+## Reproducing a specific completed analysis
+
+Start with [the reproducibility guide](reproducibility.md), then use the matching protocol/config, implementation, results report, notebook, and output directory:
+
+| Analysis | Protocol/rules | Implementation | Results |
+|---|---|---|---|
+| Phase 4B held-out focal path | `config/phase4a_focal_departure_validation_protocol.json` | `src/phase4b_focal_departure_validation.py` | [report](phase4b_focal_departure_validation_results.md) |
+| Phase 4C external replication | `config/phase4c_external_replication_protocol.json` | `src/phase4c_idsse_external_replication.py` | [report](phase4c_external_replication_results.md) |
+| Phase 5A contextual expectation | `config/phase5a_contextual_expectation_protocol.json` | `src/phase5a_contextual_expectation_feasibility.py` | [report](phase5a_contextual_expectation_results.md) |
+| Phase 5B opponent increment | `config/phase5b_opponent_relational_increment_protocol.json` | `src/phase5b_opponent_relational_increment.py` | [report](phase5b_opponent_relational_increment_results.md) |
+| Post-5B direction/onset | fixed audit implementation | `src/post5b_measurement_audit_direction_onset.py` | [report](post5b_measurement_audit_direction_onset.md) |
+| Attacking movement segmentation | `config/post5b_movement_segmentation_audit_rules.json` | `src/post5b_attacking_movement_segmentation_audit.py` | [report](post5b_attacking_movement_segmentation_audit.md) |
+
+## Potential mentor or collaborator
+
+1. [Project README](../README.md)
+2. [Sloan readiness](sloan_readiness.md)
+3. [Literature review](literature_review.md) and [bibliography](../references/bibliography.md)
+4. [Novelty-risk memo](novelty_risk_memo.md)
+5. [Research roadmap](research_roadmap.md)
+6. [Repository/state audit](repository_state_audit_2026-08-30.md)
+
+## Historical integrity
 
 - [Research log](research_log.md) preserves the actual chronology, including rejected ideas and failed designs.
-- [Documentation audit](documentation_audit.md) records the current repo-wide communication audit.
-- `config/` contains protocol sources of truth.
-- `notebooks/` contains executed phase-specific calculations and figures.
-
-Historical notebooks should not be read as current project claims without checking the [claim-status ledger](claim_status.md).
+- [The 2026-08-29 documentation audit](documentation_audit.md) is a historical checkpoint through frozen Phase 4A, not the current project state.
+- Historical notebooks are intentionally not rewritten after later evidence weakens their interpretation.
+- Frozen protocol and result artifacts are immutable scientific records; current-facing summaries add clarification rather than altering them.

@@ -4,7 +4,7 @@
 
 **B - limited measurement novelty but potentially meaningful validation/application novelty.**
 
-Centroid-relative player position, distance to a team geometrical center, player-team synchronization, and relative-phase analysis are established in soccer. Phase 4 must not be presented as inventing the decomposition of individual from collective movement.
+Centroid-relative player position, distance to a team geometrical center, player-team synchronization, and relative-phase analysis are established in football. Phase 4 must not be presented as inventing the decomposition of individual from collective movement.
 
 ## Strongest Prior-Art Threat
 
@@ -63,7 +63,7 @@ where $O_d(t)$ contains the other available defending outfield players. It then 
 1. **Trivial-transform risk:** reviewers may regard leave-one-out centroid-relative path as an obvious variant of established centroid-distance measures.
 2. **Activity risk:** the result may be almost entirely focal activity expressed in a translated frame.
 3. **Interpretation risk:** replication may not provide meaning beyond "the defender moved differently from teammates."
-4. **Scope risk:** two public sample matches are insufficient for a broad soccer contribution.
+4. **Scope risk:** two public Metrica matches plus seven IDSSE matches from one additional provider environment remain insufficient for universal football generalization.
 5. **Prior-art scope risk:** formation-normalization or proprietary analytics work may contain closer operational equivalents not visible in the reviewed public literature.
 6. **Conceptual overreach risk:** marking, coordination, off-ball movement, tactical-language, ghosting, and gravity literature already occupies much of the downstream narrative.
 

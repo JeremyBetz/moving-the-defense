@@ -1,60 +1,76 @@
-# Sloan-Readiness Gap Analysis
+# Sloan Readiness
 
-The project currently has a research program and methodological foundation. It does **not** yet have a demonstrated Sloan Sports Analytics Conference-level contribution or a paper-ready empirical result.
+## Submission constraint
 
-| Requirement | Status | Current position | Minimum next evidence |
-|---|---|---|---|
-| Clear soccer problem | Conceptually clear; empirically open | “When an attacker does not receive, can we measure what they made the defense do?” is football-facing. | Validate at least one football-concept signature without semantic overreach. |
-| Defensible contribution | Narrow foundation only | Focal-relative geometry replicated; state-machine novelty weakened and relational reconfiguration remains unvalidated. | External replication plus football interpretation beyond ordinary movement. |
-| Literature positioning | Substantially improved but incomplete | Eighteen targeted sources now cover centroid geometry, player-team synchrony, defensive tracking, marking/assignment, relative movement, and gravity. The strongest threat is established player-to-team-center and player-team phase analysis. | Extend into proprietary/formation-normalization methods, soccer off-ball valuation, and peer-reviewed expected-response/gravity work before manuscript claims. |
-| Data sufficiency | Missing | Two public sample matches completed one development/held-out test. | Multi-match evidence, preferably with diverse teams/contexts and an independent provider. |
-| Development/validation separation | Demonstrated once | Game 1 development/Game 2 held-out protocol executed unchanged. | Prospectively freeze external replication before inspecting outcomes. |
-| Reproducibility | Partially developed | Executed notebooks, configs, checksums, seeds, ignored raw data, figure generator. | One command or scripted pipeline, pinned environment, automated integrity checks. |
-| Falsifiable construct | Established for one primitive | Focal departure had explicit rules and passed narrowly. | Apply the same discipline to external replication and concept-specific signatures. |
-| Baseline comparisons | Executed narrowly | Absolute focal, collective, team, ball activity and negative references were reported. | External replication and later contextual expectation without post-hoc residualization. |
-| Robustness | Passed within frozen Phase 4 scope | All 4/5/6-second × 5/7/9-frame settings preserved the conclusion. | Multiple-match and provider robustness. |
-| Generalization | Limited | Game 1→2 same-provider replication passed. | Independent multi-match/provider replication. |
-| Soccer interpretation | Missing for focal departure | Geometry is clear; tactical meaning is deliberately withheld. | Contextual analysis or independent annotation showing meaning beyond different movement. |
-| Compelling figures | Partially developed | Held-out distribution, activity, sensitivity, and explanatory figures exist. | External-replication and football-interpretation figures suitable for a manuscript. |
-| Limitations | Currently adequate | Cognitive, semantic, activity, membership, and data limits are explicit. | Reassess after results; quantify data-quality and external-validity limits. |
-| External validation | Intentionally deferred | Human annotation is desirable but not required for current primitive test. | Expert annotation or another semantic source before tactical claims. |
-| Practical/tactical relevance | Missing | No coach/player decision use is demonstrated. | Show a stable phenomenon that changes soccer interpretation or analysis practice. |
-| Manuscript narrative | Intentionally deferred | The history is scientifically valuable but too exploratory for a paper claim. | Draft only after a held-out result and clear contribution survive. |
+The [2027 MIT Sloan Sports Analytics Conference Research Paper Competition](https://www.sloansportsconference.com/research-paper-competition) lists the abstract deadline as **October 1, 2026, 11:59 p.m. Eastern**. Round one requires a concise account of actual methods, results, and industry relevance. It does not require completion of the project’s ultimate research vision.
 
-## Minimum milestones before manuscript drafting is rational
+The repository currently supports a serious methodological story, but not yet a complete attacker-movement-to-defensive-change contribution.
 
-1. Replicate focal departure across multiple matches from an independent provider.
-2. Preserve the substantial generic-activity association rather than claiming an activity-free effect.
-3. Establish a football interpretation beyond “different movement.”
-4. Validate at least one football-concept signature prospectively.
-5. Complete the literature review and define the incremental contribution precisely.
-6. Produce manuscript-quality baseline, robustness, and failure-mode figures.
-7. Decide whether the contribution is a validated primitive, a tactical construct, or a negative methodological result.
+## Strongest submission foundation already completed
 
-Failure in external replication could still support a useful methodological lesson if it shows that the Metrica result is provider- or match-specific. Gravity, off-ball value, and a universal reconfiguration detector are not prerequisites for a worthwhile contribution.
+- **Important negative result:** Phase 3 rejected reception events as a reliable validation route for relational reconfiguration and exposed generic active-play movement as a major confound.
+- **Held-out validation:** focal-relative defensive path replicated from Metrica Sample Game 1 to held-out Game 2 under frozen rules.
+- **External replication:** the same geometric primitive replicated across seven IDSSE professional matches from one independent dataset/provider environment.
+- **Contextual expectation:** future focal-relative path is predictably structured, with most useful information already present in recent focal motion.
+- **Opponent-information constraint:** simple nearest-opponent geometry adds only a small, mixed increment and does not establish local opponent primacy.
+- **Directional insight:** signed displacement preserves geometry that scalar path magnitude loses.
+- **Timing failure:** constant-velocity continuation innovation is not a validated response-onset measure.
+- **Attacking-interval groundwork:** outcome-blind attacker-only movement segmentation is promising but mixed; fragmentation is the dominant failure.
 
-## Literature-Audit Implications
+Together these results show disciplined narrowing, prospective falsification, and cross-environment geometric replication. They do not yet establish that an attacking movement is associated with a particular defensive change.
 
-### Closest competing approaches
+## Current scientific gap
 
-- Player distance to the team center with entropy/relative-phase analysis (Sampaio and Maçãs, 2012).
-- Player-team cluster-phase synchronization (Duarte, Araújo, and Correia, 2013).
-- Player deviation from group-average player-ball-goal phase and reciprocal compensation (Carrilho et al., 2020).
-- Dynamic defensive assignment inference and contextual ghosting (Groom et al., 2026).
-- Open-play marking coordination, target similarity, and entropy (Calero-Sanz et al., 2026).
+The central missing bridge is:
 
-### Contribution supported by Phase 4B
+```text
+attacking movement episode
+        ↓
+defensive geometric change
+```
 
-The credible result is validation/application groundwork: a simple leave-one-out collective-relative defensive path survived explicit focal, collective, team, ball, negative-reference, sensitivity, and held-out checks. It is not strong measurement novelty, an activity-free effect, tactical reconfiguration, gravity, or value.
+Both sides need defensible finite representations before their relationship is tested. The current attacker speed-valley rule is not ready unchanged, and focal-relative path supplies amount of movement rather than tactical meaning.
 
-### Historical failure alternative
+The gap is **not** the absence of a gravity score. Gravity, attacker attribution, tactical classification, causal influence, and final off-ball value are later possibilities, not abstract prerequisites.
 
-Failure alone is not a paper. A methodological contribution would require a broader demonstration that apparently intuitive centroid-relative movement quantities are dominated by activity, unstable across matches, or otherwise fail in a way that changes analytical practice.
+## Readiness by requirement
 
-### Remaining literature gaps
+| Requirement | Current status | Remaining need before a strong abstract |
+|---|---|---|
+| Football problem | Clear | Keep the attacker-movement-to-defensive-change question central. |
+| Reproducible defensive primitive | Externally replicated geometry | Preserve activity and semantic limitations. |
+| Attacking temporal unit | B — mixed exploratory audit | Outcome-blind refinement, then a frozen validation test. |
+| Bridge evidence | Not executed | One clean prospective test with negative alternatives. |
+| Tactical interpretation | Unsupported | Not required if the contribution is framed as geometry/methodology. |
+| Development/validation discipline | Strong across Phases 3–5B | Apply the same discipline to any bridge test. |
+| Reproducibility | Substantial but incomplete | Resolve environment drift, document large artifacts, and add lightweight automated integrity checks. |
+| Literature positioning | Targeted, not systematic | Extend movement/change-point and elite-tracking coverage; avoid universal novelty claims. |
+| Figures | Strong explanatory base | Add a validated attacker-interval/defensive-change figure only if that test exists. |
+| Practical relevance | Plausible applications only | Explain analyst-review and style-description uses without claiming a deployed product. |
 
-- Proprietary club/vendor metrics and non-public applied work.
-- Formation-normalization and center-of-mass-frame methods in computer-science proceedings.
-- Comprehensive soccer off-ball movement valuation.
-- Peer-reviewed expected-versus-observed defensive-pressure/gravity methods.
-- Direct evidence about leave-one-out collective references in other invasion sports.
+## Pre-deadline evidence standard
+
+A coherent abstract-ready contribution should ideally include:
+
+1. a defensible attacking-movement temporal representation;
+2. one prospectively frozen bridge test to defensive geometric change;
+3. explicit activity, ball/shared-motion, tracking-QC, and negative-reference stress tests;
+4. a conservative classification that preserves mixed or negative evidence;
+5. clear football figures traceable to machine-readable results;
+6. a repository that reproduces the governed analyses from documented environments and data roles.
+
+The abstract may still be worthwhile if the bridge fails, provided the failure demonstrates a general methodological trap rather than merely insufficient tuning.
+
+## What the abstract need not claim
+
+- gravity or off-ball value;
+- a universal tactical-state system;
+- automatic pinning, dragging, tracking, or handoff labels;
+- correct defensive decisions;
+- attacker causation or credit;
+- coaching prescriptions;
+- team/player rankings.
+
+## Current readiness conclusion
+
+The project is **foundation-rich but bridge-incomplete**. It already has a credible validated primitive, external replication, strong negative evidence, and transparent claim control. The next abstract-relevant scientific milestone is a defensible attacker-movement-to-defensive-geometric-change bridge—not a larger model or more ambitious interpretation.

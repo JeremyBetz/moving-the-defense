@@ -1,104 +1,103 @@
 # Research Roadmap
 
-This roadmap shows logical dependencies rather than promising a predetermined destination.
+This roadmap is a dependency map, not a promise that the project will reach tactical attribution or value.
 
-![Research evolution](../figures/concepts/research_evolution.png)
-
-## Conditional inference chain
+## Conditional evidence hierarchy
 
 ```text
-Physical movement
+football question
         ↓
-Collective defensive movement
+measurable attacking movement
         ↓
-Individual/local behavior relative to collective movement
+measurable defensive movement
         ↓
-Contextual expectation
+defender movement relative to the collective
         ↓
-Opponent-information association
+movement magnitude + signed geometric change
         ↓
-Tactical defensive-response interpretation
+contextual expectation
         ↓
-Attacker attribution
+opponent association
         ↓
-Attacking value
+tactical interpretation
+        ↓
+attacker attribution
+        ↓
+attacking value
 ```
 
-Every arrow is conditional. Geometry does not become cognition, responsibility, or value merely by adding more descriptors.
+Every arrow can fail. Football language does not become a tracking construct merely because a trajectory looks familiar, and a tracking association does not become a causal mechanism merely because it is predictable.
 
-The opponent-information-association rung means only reproducible incremental predictive information from a prospectively fixed geometric opponent representation. It is not attacker induction, tactical assignment, or validated football-semantic response.
+## Completed evidence
 
-## Current location
+### Negative foundation
 
-> **Current project position:** Phase 4C externally replicated focal-relative path at the individual-relative-to-collective geometric level across seven IDSSE matches. Phase 5A establishes category-A contextual predictability, driven primarily by focal recent movement. Phase 5B adds only category-B mixed/partial opponent-information association: small gains that are neither material nor demonstrably local. Tactical defensive response and every later inference remain unvalidated.
+- The historical Structure / Track / Close / Recover state ontology was weakened: behaviours overlap and a simple fixed attacker-relative Track representation failed.
+- Prospective relationship selection showed that local compression and opponent stories are reference-sensitive.
+- Phase 3’s frozen reception-based relational validation produced **C**. Generic active-play movement and poor matching support defeated the proposed validation route.
 
-Phase 5B v1.0 executed once under its frozen rules and classified **B — mixed/partial**. B7 is technically best, reducing median held-out MAE from 2.114 m to 2.105 m, but the 0.43% gain is small and no adjacent step is materially incremental. The result stops at limited opponent-information association, below tactical defensive-response interpretation and attacker attribution.
+### Replicated defensive geometry
 
-The completed frozen Phase 4 design asked whether
+- Phase 4B replicated focal-relative path from Metrica Sample Game 1 to held-out Sample Game 2 under a frozen protocol.
+- Phase 4C externally replicated it across seven IDSSE professional matches from one independent tracking dataset/provider environment.
+- The validated result is geometric: how much a defender moves differently from the other defending outfield players. It remains activity-associated and has no tactical or attacker semantics.
 
-$$
-\mathbf r_d(t)=\mathbf x_d(t)-\mathbf c_{-d}(t)
-$$
+### Context and opponent information
 
-has stable distributional and contextual structure under frozen activity diagnostics. Phase 4B supported it in two Metrica matches; Phase 4C then produced A — strong external replication across seven professional matches from one independent tracking dataset/provider environment relative to Metrica. The primitive remains substantially activity-associated and Phase 4C does not estimate an activity-independent effect.
+- Phase 5A produced **A — contextual expectation feasible**. Future focal-relative path is predictably structured, but recent focal movement supplies almost all material gain.
+- Phase 5B produced **B — mixed/partial**. Opponent information adds a small held-out association, but nearest-opponent locality is not materially superior to nonlocal controls.
 
-## What each layer requires
+### Post-5B measurement audits
 
-### 1. Tracking geometry
+- Signed focal-relative displacement is retained descriptively because scalar path loses direction.
+- Constant-velocity continuation innovation is not validated as response onset.
+- Outcome-blind attacker-only speed-valley segmentation is **B — mixed**: it retains substantial lower-speed movement, but 42.22% of episodes meet a fragmentation diagnostic. The current rule is not ready for later response sampling.
 
-Required: synchronized player/ball coordinates, known sampling, documented missingness, physical units, period boundaries, and stable player availability. Established for the two Metrica sample matches and mapped successfully across all seven IDSSE matches.
+## Current methodological frontier
 
-### 2. Reference frames
+> **Can attacking movement and defensive geometric change be represented as defensible finite units before testing their relationship?**
 
-Required: transparent definitions and failure modes. A leave-one-out centroid is useful for translation but insufficient for full structure. Local and opponent references remain selection-sensitive.
+The immediate open problem is representation integrity. The attacker’s interval must be defined without defensive outcomes, and the defensive change must remain geometric rather than tactical. The current movement-segmentation implementation is historical evidence, not an accepted next protocol. No “Phase 5C” exists unless a separate design is prospectively specified and frozen.
 
-### 3. Scale-specific primitives
+## October 1, 2026 constraint
 
-- **Collective translation:** descriptively established as a baseline.
-- **Focal departure:** externally replicated across seven IDSSE matches under the frozen Phase 4C test; still geometric and activity-associated.
-- **Local deformation:** descriptively useful but membership-sensitive.
-- **Opponent-relative geometry:** mathematically clear but semantically weak without justified opponent selection.
+The [2027 MIT Sloan Sports Analytics Conference Research Paper Competition](https://www.sloansportsconference.com/research-paper-competition) lists **October 1, 2026, 11:59 p.m. Eastern** as the round-one abstract deadline. The abstract is limited to actual evidence; the deadline is a communication constraint, not a reason to relax scientific gates.
 
-### 4. Validation beyond activity
+### Pre-October 1 priorities
 
-Required: outcome-independent sampling, adequate support, development/test separation, negative controls, frozen sensitivities, and explicit falsification. Phase 3 failed here; Phase 4B passed narrowly and Phase 4C externally replicated the geometric primitive.
+1. Finish a defensible, outcome-blind temporal representation of attacking movement.
+2. Run at least one prospectively frozen bridge test connecting attacking movement with defensive geometric change.
+3. Stress-test the bridge against activity, ball/shared movement, tracking quality, reference choice, and negative controls.
+4. Preserve a conservative result even if it is mixed or negative.
+5. Produce an abstract-ready evidence story, clear football figures, and a reproducible public repository.
+6. Complete literature positioning around movement segmentation, expected defence, opponent relationships, and off-ball action—without novelty inflation.
 
-### 5. Contextual expectation
+The October submission can succeed as a validated measurement/bridge contribution or a well-supported methodological warning. It does not require a gravity metric, final player value, tactical classifier, or causal attribution.
 
-The [frozen Phase 5A protocol](phase5a_contextual_expectation_protocol.md) passed its raw-support firewall and executed once. The [result](phase5a_contextual_expectation_results.md) is A: every simple contextual level improves on B0 across seven held-out matches, but only focal recent movement is a materially additive ladder step. This supplies feasibility evidence for the contextual-expectation level within IDSSE; it is not definitive cross-provider validation of a contextual-expectation metric and does not establish defensive response. Prediction and residuals have no tactical meaning by themselves.
+## Conditional post-October work
 
-The [frozen Phase 5B protocol](phase5b_opponent_relational_increment_protocol.md) preserves B4 and specifies a typed opponent-information ladder. The [execution result](phase5b_opponent_relational_increment_results.md) is B — mixed/partial: all opponent models improve six of seven matches, but gains are below 1%, no adjacent increment is material, and the locality control provides no strong local-specificity evidence.
+Only if the attacking-interval and defensive-change representations survive prospective validation:
 
-Phase 5B does not choose among several unresolved explanations: focal pre-cutoff motion may already encode emerging opponent association; nearest-attacker selection may miss relevant relationships; opponent information may be team-, space-, or ball-conditioned; the scalar five-second target may discard directional structure; or opponent information may already be mediated through focal and collective motion. These are future design questions, not Phase 5B findings, and no Phase 5C design is defined here.
+- replicate the bridge across additional matches/provider environments;
+- test whether ball, team, opponent, and spatial context explain the association;
+- investigate concept-specific observable consequences with independent football interpretation;
+- examine whether candidate moments can support analyst video review.
 
-The [post-5B direction/onset audit](post5b_measurement_audit_direction_onset.md) tests two of those measurement concerns in Sample Game 1 without opponent features or a new model. Scalar focal-relative path remains the validated movement-magnitude primitive, and signed directional displacement is retained as a complementary descriptive view. Constant-velocity continuation innovation is B — mixed and is not retained as a validated onset measure; no threshold, horizon, persistence rule, or candidate-time tuning is authorized from this audit. Because several movements were already developing inside the preceding two seconds, a later representation may need to describe change across a finite interval rather than require one universal onset instant. This is a research implication only. No Phase 5C protocol is defined.
+These are conditional directions, not approved experiments.
 
-The [outcome-blind attacking movement segmentation audit](post5b_attacking_movement_segmentation_audit.md) then tests whether attacker-own tracking can supply finite candidate time units before any defense is inspected. Its fixed speed-valley rule is B — mixed: it preserves lower-speed/directional geometry but has substantial fragmentation and occasional merging. Outcome-blind refinement is justified; this is not authorization to design Phase 5C or to tune segmentation against defensive outcomes.
+## Later interpretive steps
 
-### 6. Relational reconfiguration
+Tactical language such as pinning, dragging, tracking, covering, handing off, stretching, or recovery requires semantic evidence beyond geometry. Attacker attribution requires a stronger design than opponent association. Gravity and off-ball value additionally require an expected-response reference and downstream consequence model.
 
-One possible intermediate form of defensive response, requiring several validated primitives to show coherent, temporally localized change not adequately described by baseline movement. It remains unvalidated and is no longer the mandatory center of the program.
+Potential applications—team or player defensive-style profiles, scouting descriptions, match-review surfacing, video indexing, and coaching feedback—remain downstream and must not be presented as current capabilities.
 
-### 7. Tactical interpretation
+## Legitimate stopping conditions
 
-Requires soccer context or external semantic evidence. Tracking alone cannot establish intention, instruction, attention, or assignment.
+- An attacker-only temporal representation remains too unstable without outcome-informed tuning.
+- A bridge test cannot separate active play or ball movement from attacker-associated defensive geometry.
+- Opponent association remains too weak or nonlocal for football interpretation.
+- A replicated geometric primitive remains useful only as descriptive movement.
+- Semantic validation contradicts the proposed football concept.
+- Attribution or value cannot be supported without causal overreach.
 
-### 8. Attacker association and attribution
-
-Association requires comparable contexts and separation from ball, team, phase, and opponent effects. Attribution is a higher causal bar. No such analysis has been executed.
-
-### 9. Gravity or value
-
-Requires an expected-response baseline, attacker attribution, robustness across matches and teams, and separation of response from downstream value. This is not an inevitable endpoint.
-
-## Legitimate stopping points
-
-- **External replication fails:** retain the Metrica result as same-provider geometry and stop broader generalization.
-- **Primitive replicates but lacks soccer meaning:** useful as geometry, not as a tactical construct.
-- **Primitive replicates and earns contextual interpretation:** proceed cautiously to broader multi-match analysis.
-- **Umbrella construct remains unsupported:** retain validated primitives without forcing them into reconfiguration; project success does not require reconfiguration.
-- **Attacker attribution fails:** stop before gravity or value claims.
-
-A scientifically successful project can end at any of these points if it clearly establishes why the next arrow is unsupported.
-
-The prospectively stated dataset sequence is in the [post–Phase 4 data strategy](post_phase4_data_strategy.md). [Phase 4C protocol v1.0](phase4c_external_replication_protocol.md) was frozen before IDSSE access; the completed [external-replication result](phase4c_external_replication_results.md) is A at the geometric level.
+A scientifically successful project may stop at any of these points if it establishes clearly why the next arrow is unsupported.

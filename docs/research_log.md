@@ -1,5 +1,11 @@
 # Research Log
 
+## 2026-08-30 — Repository Coherence and Sloan-Readiness Audit
+
+A non-empirical repository/state audit reconciled current-facing documentation through the accepted B — mixed attacking movement-segmentation result. The local scientific checkpoint remained the source of truth; no frozen protocol/result artifact, historical notebook, defensive outcome, or Metrica Game 3 data was inspected or changed. The README, explainer, claim ledger, roadmap, Sloan-readiness assessment, documentation guide, reproducibility guide, literature scope, and visual inventory were updated to reflect completed Phase 4C/5A/5B evidence and both post-5B audits.
+
+The current frontier is finite representation of attacking movement and defensive geometric change before their relationship is tested. The audit records large derived outputs and environment/workflow limitations without deleting evidence. No next experiment or Phase 5C protocol was designed. The detailed findings are in [`repository_state_audit_2026-08-30.md`](repository_state_audit_2026-08-30.md).
+
 ## 2026-08-30 — Post-5B Outcome-Blind Attacking Movement Segmentation Audit
 
 Sample Game 1 attacker-own trajectories were segmented without defender coordinates, downstream outcomes, or manual visual selection. A prospectively recorded speed-valley rule produced 38,651 episodes across 26 supported outfield players; 95.78% peaked below the 5.5 m/s high-speed comparator threshold, and 41.00% combined a lower peak with at least 3 m displacement. Four-second grids split 51.84% of valley episodes and 92.84% of fixed windows combined portions of multiple episodes.

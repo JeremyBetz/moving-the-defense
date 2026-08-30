@@ -2,14 +2,24 @@
 
 ## Environment
 
+The current local checkpoint was audited under Python 3.13.15. The bounded requirements are intentionally lightweight rather than a platform-specific lockfile; exact package versions used by governed executions are recorded in their manifests where applicable.
+
 ```bash
 python3 -m venv .venv
 source .venv/bin/activate
+python -m ensurepip --upgrade
 python -m pip install -r requirements-phase0.txt
 jupyter notebook
 ```
 
-Python, pandas, NumPy, Matplotlib, Jupyter, nbclient, and ipykernel are sufficient for the current notebooks and documentation figures. The local environment is ignored by Git.
+An equivalent `uv` setup is:
+
+```bash
+uv venv .venv
+uv pip install --python .venv/bin/python -r requirements-phase0.txt
+```
+
+Python, pandas, NumPy, Matplotlib, Jupyter, nbclient, and ipykernel cover the tracked source implementations and documentation figures. XML parsing uses the Python standard library. The local environment is ignored by Git.
 
 ## Raw data
 
@@ -20,7 +30,7 @@ data/metrica_sample_game_1/
 data/metrica_sample_game_2/
 ```
 
-`data/*` is ignored and `data/.gitkeep` is retained. Sample Game 2 SHA-256 checksums are recorded in [`config/phase4a_focal_departure_validation_protocol.json`](../config/phase4a_focal_departure_validation_protocol.json).
+`data/*` is ignored and `data/.gitkeep` is retained. Sample Game 2 SHA-256 checksums are recorded in [`config/phase4a_focal_departure_validation_protocol.json`](../config/phase4a_focal_departure_validation_protocol.json). The 21 IDSSE XML files used for completed external replication belong under ignored `data/idsse_raw/`; their governed mapping and hashes are recorded in Phase 4C artifacts. Metrica Sample Game 3 is not part of the current evidence and must not be added to a reproduction run.
 
 ## Coordinate and time conventions
 
@@ -42,22 +52,28 @@ data/metrica_sample_game_2/
 
 - Phase 3: [`config/phase3a_validation_protocol.json`](../config/phase3a_validation_protocol.json), version 1.1, seed `20260828`.
 - Phase 4: [`config/phase4a_focal_departure_validation_protocol.json`](../config/phase4a_focal_departure_validation_protocol.json), version 1.0, seed `20260829`.
+- Phase 4C: [`config/phase4c_external_replication_protocol.json`](../config/phase4c_external_replication_protocol.json) plus provider mapping in [`config/phase4c_idsse_implementation.json`](../config/phase4c_idsse_implementation.json).
+- Phase 5A: [`config/phase5a_contextual_expectation_protocol.json`](../config/phase5a_contextual_expectation_protocol.json).
+- Phase 5B: [`config/phase5b_opponent_relational_increment_protocol.json`](../config/phase5b_opponent_relational_increment_protocol.json).
+- Outcome-blind movement-segmentation audit: [`config/post5b_movement_segmentation_audit_rules.json`](../config/post5b_movement_segmentation_audit_rules.json), exploratory predeclared rules rather than a frozen validation protocol.
 
 Documentation explains the rules; configs govern execution. If prose and config conflict, stop and resolve the literal inconsistency before outcomes.
 
 ## Development/test separation
 
-Sample Game 1 is development/history. Sample Game 2 is the first held-out focal-departure validation match. Schema, missingness, eligibility, and conditioning-only support may be inspected before execution. Do not calculate or visualize Game 2 focal-relative coordinates, paths, distributions, examples, or contextual relationships until Phase 4B is explicitly authorized.
+Sample Game 1 is development/history. Sample Game 2 completed the first held-out focal-departure validation. Seven IDSSE matches then completed external replication and the Phase 5A/5B predictive tests in one additional provider environment. Historical pre-outcome firewalls remain binding records of how those results were produced; they are not current claims that completed outcomes remain uninspected.
 
 ## Execution order
 
-For historical reconstruction, execute notebooks in filename phase order. Each notebook is intentionally scoped and many reuse fixed cases. For current work:
+For historical reconstruction, execute notebooks in filename phase order. Each notebook is intentionally scoped and many reuse fixed cases. For governed reproduction, run the matching source implementation and protocol rather than assuming every notebook is a standalone pipeline.
+
+The historical Phase 4 sequence was:
 
 1. verify Game 2 checksums;
 2. read the Phase 4 JSON and protocol;
 3. reproduce outcome-blind support counts;
 4. stop if any frozen support condition fails;
-5. execute held-out outcomes only after authorization;
+5. execute held-out outcomes only after the recorded authorization;
 6. preserve all frozen sensitivities and falsification results.
 
 ## Phase 4B held-out execution
@@ -120,3 +136,22 @@ python figures/generate_documentation_figures.py
 ```
 
 That script reads Game 1 only for empirical figures.
+
+## Post-5B measurement audits
+
+The direction/onset and movement-segmentation audits are exploratory, saved-result analyses rather than frozen validation phases:
+
+```bash
+MPLCONFIGDIR=/tmp/post5b-mpl .venv/bin/python src/post5b_measurement_audit_direction_onset.py
+MPLCONFIGDIR=/tmp/post5b-mpl .venv/bin/python src/post5b_attacking_movement_segmentation_audit.py
+```
+
+Their reports, executed notebooks, figures, and machine-readable outputs are under matching `post5b_*` paths. The segmentation audit manifest hashes its source, rules, and Game 1 inputs. Reproducing it requires Game 1 only and must not introduce defender coordinates or defensive outcomes.
+
+## Known reproducibility limitations
+
+- There is no one-command end-to-end workflow or continuous integration check.
+- Requirements are bounded but not fully locked across platforms.
+- Several large derived CSVs are committed for auditability; a future archive policy should preserve hashes and provenance before moving them.
+- Two preflight/result attrition pairs are byte-identical because the governed sample did not change; they are retained as phase-specific evidence rather than deduplicated post hoc.
+- The movement-segmentation audit retained a 56.30 m/s maximum. Tracking-support QC must be designed separately and prospectively before formal segmentation validation.

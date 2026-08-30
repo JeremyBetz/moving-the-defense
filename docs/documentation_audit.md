@@ -6,6 +6,8 @@ Scope: repository-wide scientific communication through frozen Phase 4A
 
 Exclusion: Phase 4B execution and all Game 2 focal-departure outcomes
 
+> **Historical checkpoint:** this audit accurately records the repository at its stated date and scope. It is superseded for current-state navigation by the [2026-08-30 repository/state audit](repository_state_audit_2026-08-30.md); its intentionally future-facing Phase 4 statements should not be read as current status.
+
 ## Audit conclusion
 
 The repository now has a current-facing narrative that matches its actual scientific position: the historical state ontology was challenged, the umbrella relational-reconfiguration design failed its Phase 3 validation test, and the next empirical object is the narrower focal-departure primitive under a frozen held-out protocol. Historical notebooks and the research log remain intact as an audit trail.

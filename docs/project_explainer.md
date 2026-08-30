@@ -1,99 +1,133 @@
 # Explaining the Project
 
-This document is a verbal guide for explaining the work accurately to a technically literate soccer audience.
+This is the football-first guide to the repository. Technical definitions follow the intuition; historical terminology is retained only where it explains how the research changed.
 
-## 1. What originally motivated the project?
+## 1. What football problem are we trying to measure?
 
-The original idea was that attackers influence defenders even when they do not receive the ball. A checked run, rotation, or threatening position may cause defensive movement that conventional event data misses. The first framing tried to describe defenders as moving through Structure, Track, Close, and Recover states.
+In association football, an attacker can affect defenders without touching the ball. A winger can hold a full-back, a striker can threaten the space behind, or a midfielder can appear between lines. Analysts describe these actions as pinning, dragging, tracking, covering, handing off, or stretching.
 
-## 2. What does “asking questions” mean?
+Tracking data records where players moved. It does not record why. The project asks how to build defensible measurements of attacking movement and defensive change before attaching those football meanings.
 
-It is soccer shorthand for posing a credible tactical problem. A winger holding width, a striker threatening depth, or a midfielder appearing between lines may require some defensive response. “Question” is theoretical language; the data do not reveal whether a defender consciously recognized it.
+## 2. What is the one-minute explanation?
 
-## 3. Why can we not measure defensive cognition directly?
+If the whole back line slides five metres left, that is mostly a defensive shift. If three defenders slide and one steps away from the unit, we want to separate that individual adjustment from the shared shift. The project has validated a narrow geometric measurement of that difference, shown that recent movement predicts much of it, and found only weak extra information from simple nearest-opponent geometry. It is now working upstream on how to break an attacker’s own movement into finite efforts without using what the defence subsequently did.
 
-Tracking gives coordinates. It does not record instructions, gaze, communication, intention, attention, recognition, or responsibility. We can calculate movement consistent with an interpretation, but we cannot equate the calculation with the hidden mental or tactical process.
+The project can measure movement. It cannot yet say that an attacker caused, deserved credit for, or tactically required a defensive action.
 
-## 4. What does tracking data give us?
+## 3. Why can’t we just count sprints, passes, or receptions?
 
-At 25 Hz, the Metrica files provide anonymized player and ball positions plus event timestamps. After converting normalized coordinates to 105 × 68 m, we can calculate trajectories, distances, relative positions, centroids, paths, and velocity components. Missing ball and player coordinates remain explicit; nothing is interpolated where a protocol prohibits it.
+- Sprint filters omit lower-speed movement that may still change position materially.
+- Passes and receptions describe ball events, not every off-ball action.
+- A reception-based validation in this project mostly selected active passages; shifted control times reproduced the apparent effect.
+- Counting an event after movement would leak outcome information into the definition of the attacking action.
 
-## 5. Why are reference frames important?
+The attacking movement itself therefore needs an outcome-independent temporal representation.
 
-A defender can travel 20 m on the pitch while maintaining nearly the same position relative to the defensive block. Raw coordinates describe absolute movement; a moving reference describes movement relative to something else. The same trajectory can therefore look like large translation in one frame and little departure in another.
+## 4. Why are defensive shifts a problem for measurement?
+
+A defender can travel 20 m while maintaining nearly the same place within a shifting unit. Raw pitch distance mixes individual movement with team movement. The project uses the other defending outfield players as a transparent moving reference.
 
 ![Raw and collective-relative motion](../figures/concepts/raw_vs_collective_relative.png)
 
-## 6. What is collective translation?
-
-Collective translation is shared movement of the defending group. A simple baseline is the centroid of the defending outfield players. For focal defender $d$, the leave-one-out centroid is
+For focal defender $d$,
 
 $$
-\mathbf c_{-d}(t)=\frac{1}{N-1}\sum_{j\neq d}\mathbf x_j(t).
-$$
-
-It is useful but not “the structure.” Opposing movements can cancel, and a mean cannot preserve local spacing, rotation, opponents, or ball context.
-
-## 7. What is focal departure?
-
-Focal departure is the movement of one defender relative to that leave-one-out collective baseline:
-
-$$
+\mathbf c_{-d}(t)=\frac{1}{N-1}\sum_{j\neq d}\mathbf x_j(t),
+\qquad
 \mathbf r_d(t)=\mathbf x_d(t)-\mathbf c_{-d}(t).
 $$
 
-Phase 4 proposes the path length of $\mathbf r_d(t)$ over a five-second interval as the primary magnitude. It measures accumulated relative motion, including leaving and returning. It does not say why the defender moved differently.
+The accumulated path of $\mathbf r_d(t)$ measures how much the defender moved differently from the other outfield defenders. The centroid is a baseline for shared movement, not a complete representation of defensive structure.
 
-## 8. Why did the original Track concept fail?
+## 5. What did the project first try?
 
-The simple proposal was that a defender following an opponent should have a stable attacker-relative x/y vector. In the visually strongest Game 1 Track candidate, that vector was not more stable than the collective-relative alternative. Movement coupling and opponent geometry may capture other aspects, but fixed Cartesian stability is not a general Track primitive.
+The original framing treated Structure, Track, Close, and Recover as possible defensive states. Diagnostics showed that the behaviours overlap, fixed attacker-relative stability was not a general Track representation, and local interpretations changed under reasonable prospective relationship choices.
 
-## 9. Why did local compression become local deformation?
+Those terms remain useful football prompts and part of the research history. They are not validated states or labels.
 
-Some selected defenders clearly converged in one interior-threat sequence. Later prospective selection showed that different reasonable local memberships contained contraction, expansion, and mixed anisotropic change. “Deformation” accurately includes shrinking, stretching, rotation, and reordering; “compression” is only one subtype.
+## 6. What failed prospectively?
 
-![Local membership sensitivity](../figures/concepts/local_membership_sensitivity.png)
+Phase 3 froze a reception-anchored matched design intended to validate relational reconfiguration. Only 46 of 315 candidates matched, far below the required support. Shifted anchors reproduced or exceeded the main contrasts, and activity-matched contrasts disappeared in a very small subset. The result was **C**.
 
-## 10. What did Phase 3 test?
+This failure established that generic active-play movement can masquerade as meaningful defensive structure. Relational reconfiguration remains unvalidated.
 
-Phase 3 froze a reception-anchored matched design before viewing outcomes. Receptions were candidate clocks, ordinary open-play pseudo-anchors were controls, and typed collective, focal, local, opponent, ball, and generic-activity descriptors stayed separate.
+![Phase 3 validation failure](../figures/phase3/phase3_validation_failure.png)
 
-## 11. Why did Phase 3 fail?
+## 7. What measurement eventually replicated?
 
-Only 46 of 315 candidates matched, far below the frozen 70% support threshold. Reception windows showed more movement, but shifted anchors inside the same possession reproduced or exceeded the main apparent effects. When the sparse sensitivity also matched pre-anchor activity, the contrasts disappeared. The frozen conclusion was C.
+Focal-relative path—the accumulated amount a defender moves relative to the other defending outfield players—replicated from development Game 1 to held-out Metrica Game 2. A separately frozen protocol then externally replicated its geometric behaviour across seven IDSSE professional matches from one independent dataset/provider environment.
 
-## 12. Why is that failure useful?
+It is a validated, reproducible movement-magnitude primitive. It is not an activity-free effect, tactical response, marking decision, or attacker influence measure.
 
-It rules out a convenient shortcut: receptions cannot be treated as positive reconfiguration cases. It also shows that generic passage activity must be central in future designs and that one match cannot support strict contextual matching.
+## 8. Why didn’t replication solve the football problem?
 
-## 13. Why is Game 2 held out?
+The primitive says **how much movement differed from the unit**, not:
 
-If the metric or thresholds change after looking at Game 2 outcomes, the second match becomes another development sample. Freezing the protocol first creates a genuine chance for failure and makes replication interpretable.
+- what triggered it;
+- which opponent mattered;
+- whether the defender stepped, held, dropped, tracked, or recovered for a tactical reason;
+- whether the movement was correct;
+- whether an attacker deserves credit.
 
-## 14. What exactly did Phase 4 test?
+Those are later evidentiary levels.
 
-It sampled deterministic non-overlapping five-second intervals, calculated focal-relative path for every eligible outfield defender, characterized Game 1 distributions and activity relationships, and tested them once in Game 2. Events provided possession/context, not positive labels.
+## 9. What did contextual prediction tell us?
 
-## 15. What did Phase 4B establish?
+Phase 5A showed that future focal-relative path contains reproducibly predictable structure. The best simple model reduced median held-out MAE by 20.58% versus an unconditional baseline and improved all seven matches. Most of that gain—about 90%—was already present in the focal defender’s recent movement. Collective, ball, and spatial context added small directional improvements but no material adjacent step under the frozen rule.
 
-The geometric quantity replicated: all 9/9 frozen activity cells passed, directions were stable, common translation cancelled, misaligned references produced much larger paths, and all frozen sensitivities preserved the qualitative result. Focal departure remained positively associated with generic activity and no activity-free effect was estimated.
+This is statistical expectation, not tactical expectation. A residual is not a tactical error or attacker-induced response.
 
-## 16. What remains weak or unsupported?
+## 10. What did opponent information tell us?
 
-The result spans only two same-provider sample matches and still may mean little beyond “this defender moved differently from teammates.” It does not establish pinning, dragging, tracking, covering, handoffs, tactical response, relational reconfiguration, responsibility, quality, gravity, or value.
+Phase 5B added prospectively selected opponent geometry. The best opponent model improved median held-out error by only 0.43%, improved six of seven matches, and did not show that nearest opponents were materially more informative than nonlocal controls.
 
-## 17. How far are we from defensive reconfiguration claims?
+The result is **B — mixed/partial**: a small opponent-information association under one tested representation. It does not establish marking, responsibility, local opponent primacy, tactical response, or causation.
 
-At least one major empirical layer away. Focal departure now validates narrowly as a primitive, but it still needs contextual or semantic interpretation and integration with other validated scales. The umbrella construct already failed one prospective validation design.
+## 11. What did the direction/onset audit add?
 
-## 18. How far are we from gravity or off-ball value?
+Scalar path measures amount but loses sign and axis. Signed focal-relative displacement is therefore retained as a complementary descriptive view.
 
-Several conditional layers away. Gravity requires attacker attribution and an expected-response baseline; value additionally requires downstream soccer consequences. A reproducible defensive movement quantity would not by itself establish either.
+A simple constant-velocity continuation innovation did not survive as a response-onset measure. Neutral windows overlapped historical anchors, and several movements were already developing inside the preceding two seconds. Future work may need to describe geometric change over a finite interval rather than force one universal onset instant.
 
-## 19. What is the post-validation research question?
+## 12. Why define attacker movement independently?
 
-The single formal question is: **How can tracking data measure defensive responses to attacking movement in open-play football?** The motivating football question is: **When an attacker does not receive the ball, can we measure what they made the defense do?** A downstream question asks whether concepts such as pinning, dragging, tracking, covering, handing off, and stretching can eventually be translated into validated tracking patterns. The program separates football language, tracking measurements, and theoretical mechanisms. Association is not attribution, and attribution is not causation.
+A later bridge test must not choose attacking actions because the defence reacted interestingly. The movement-segmentation audit therefore used only each attacker’s own trajectory plus global match-state exclusions.
 
-## A useful one-minute summary
+Its speed-valley implementation produced 38,651 candidate episodes and retained substantial lower-speed movement: 15,845 episodes peaked below 5.5 m/s while displacing at least 3 m. But 42.22% met a fragmentation diagnostic, compared with 1.97% meeting a merging/direction diagnostic. The result is **B — mixed**.
 
-The project started by asking whether attackers cause defenders to switch among tactical states. Diagnostics showed that states overlap, simple Track failed, and local stories depend on reference choice. A reception-based validation mostly detected active passages. Phase 4 then narrowed to one primitive and found that focal-relative path replicated across Games 1 and 2 while remaining activity-associated. Only after that test closed did the project broaden toward translating football concepts such as pinning, dragging, covering, and passing on into separately validated defensive-response signatures. None of those tactical concepts is established yet.
+The attacker-only approach remains promising, but the current rule is not ready for formal validation. A 56.30 m/s maximum also requires a separate prospective tracking-QC investigation.
+
+## 13. Where does the evidence stop?
+
+```text
+football question
+→ attacking movement
+→ defensive movement
+→ defender relative to unit
+→ magnitude + direction
+→ contextual expectation
+→ opponent association
+→ tactical interpretation
+→ attacker attribution
+→ value
+```
+
+Every arrow is conditional. Current evidence reaches externally replicated defender-relative geometry, contextual-prediction feasibility, and a small mixed opponent-information association. Tactical interpretation and everything after it remain unsupported.
+
+## 14. What is the current methodological frontier?
+
+> **Can attacking movement and defensive geometric change be represented as defensible finite units before testing their relationship?**
+
+This is a representation problem, not yet an attacker-response experiment. No next-phase protocol has been designed or frozen.
+
+## 15. What could the work eventually support?
+
+Conditional future applications include defensive-style profiling, opponent- or zone-specific tendency analysis, scouting descriptions, candidate-moment surfacing, video indexing, and—only after semantic validation—coaching feedback.
+
+The project does not currently evaluate quality, identify correct decisions, label tactical concepts automatically, prescribe actions, measure gravity, or assign off-ball value.
+
+## The rule to remember
+
+> **Football concept ≠ tracking measurement ≠ theoretical mechanism.**
+
+“Consistent with a defender stepping out” is not the same as “the defender was responsible for this attacker,” and neither establishes that the attacker caused the movement.

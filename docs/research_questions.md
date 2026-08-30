@@ -1,6 +1,6 @@
 # Research Questions
 
-> **Current status (post–Phase 4B):** focal-relative path passed its narrow held-out geometric test. The question hierarchy below was formalized after Phase 4B closed and did not influence the frozen validation. Historical questions remain for auditability.
+> **Current status (post–Phase 5B audits):** focal-relative path passed held-out Metrica validation and external IDSSE geometric replication. Contextual prediction is feasible; opponent information adds only a small mixed increment; direction is retained descriptively; onset innovation is unvalidated; and outcome-blind attacking movement segmentation is promising but mixed. The current frontier is finite representation of attacking movement and defensive geometric change before their relationship is tested. Historical questions remain for auditability.
 
 ## Primary Research Question
 
@@ -29,6 +29,12 @@ $$
 showed reproducible distributional and contextual structure under frozen activity tests.
 
 The result does not establish an activity-free effect, tactical response, reconfiguration, opponent response, defensive error, responsibility transfer, gravity, or value.
+
+## Current Methodological Frontier
+
+> **Can attacking movement and defensive geometric change be represented as defensible finite units before testing their relationship?**
+
+This is not a second primary research question. It is the present prerequisite within the broader program. The attacker-only speed-valley audit provides B — mixed evidence for finite movement efforts but cannot be carried forward unchanged because fragmentation is common. Signed focal-relative displacement complements the validated scalar defensive path, while response-onset timing remains unresolved.
 
 ## Historical Relational-Reconfiguration Question
 

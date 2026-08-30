@@ -1,6 +1,6 @@
 # Literature Review
 
-> **Current scope (2026-08-29):** targeted positioning for the frozen Phase 4 focal-departure primitive, extended with methodology provenance for the unexecuted Phase 5A contextual-expectation draft. This is not a systematic review of all soccer tracking research. It does not change Phase 4 or establish a Phase 5 empirical result.
+> **Current scope (audited 2026-08-30):** targeted positioning for the Phase 4 focal-relative primitive, Phase 5 contextual/opponent representations, and the post-5B movement-segmentation audit. This is not a systematic review of all football tracking research. It does not strengthen any empirical claim merely by identifying precedent.
 
 ## 1. Collective Organization and Team Geometry
 
@@ -151,3 +151,5 @@ The frozen Phase 5B distinction is validation design, not invention of a geometr
 Speed-based physical-effort segmentation is prior art. Llana et al. (2022) describe speed from consecutive tracking frames, rolling smoothing, valley-to-valley run sections, and a peak-speed high-intensity descriptor. FIFA's training-methodology overview places commonly used high-speed running thresholds in the 5.5–7.0 m/s range. The post-5B audit uses a prospectively specified deterministic valley implementation and a simplified 5.5 m/s comparator; it does not claim exact reproduction or novelty for either.
 
 The project-specific adaptation is narrower: outcome-independent attacking movement-effort episodes as potential future temporal units before defensive geometry is inspected. This adaptation is exploratory and B — mixed. Any differentiated contribution would depend on later validation of the bridge from attacker movement episode to defensive geometric change, contextual expectation, opponent association, and football interpretation—not on inventing movement segmentation.
+
+Esposito et al. (2026) provide a timely field-level constraint. Their scoping review of elite off-ball football tracking reports fragmented definitions, heterogeneous methods, simplified outcomes, and limited integration of opponents and situational context across 32 included studies. That supports the project's emphasis on transparent temporal units and claim separation, but it also raises the novelty bar: attacking movement episodes sit inside an active, methodologically diverse literature rather than an empty problem space. The present bibliography still lacks a source-complete review of generic trajectory/change-point algorithms and proprietary high-speed/off-ball run definitions; no universal segmentation-novelty claim is supportable.

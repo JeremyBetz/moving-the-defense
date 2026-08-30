@@ -1,10 +1,10 @@
 # Conceptual Framework
 
-> **Current status (post–Phase 5B):** focal-relative path has passed narrow held-out Metrica validation and external geometric replication across seven IDSSE matches. Phase 5A establishes contextual predictability in the statistical sense, driven primarily by focal recent movement. Phase 5B finds only a small, mixed opponent-information increment beyond that baseline. Tactical defensive response and relational reconfiguration remain unvalidated. Historical sections preserve ideas later weakened or rejected and should be read with the [claim-status ledger](claim_status.md).
+> **Current status (post–Phase 5B audits):** focal-relative path has passed held-out Metrica validation and external geometric replication across seven IDSSE matches from one independent provider environment. Phase 5A establishes contextual-prediction feasibility, driven primarily by recent focal movement. Phase 5B finds only a small, mixed opponent-information increment. Signed displacement is retained descriptively; continuation innovation is not a validated onset measure; and attacker-only speed-valley segmentation is B — mixed because fragmentation is common. Tactical defensive response and relational reconfiguration remain unvalidated. Historical sections preserve ideas later weakened or rejected and should be read with the [claim-status ledger](claim_status.md).
 
 Frozen Phase 5B v1.0 produced B — mixed/partial: prospectively selected opponent information improved six of seven held-out matches, but median gains were below 1%, no adjacent increment was material, and local attackers did not consistently outperform nonlocal controls. This is limited opponent-information association. Geometric proximity is not a tactical relationship, and predictive increment is not attacker causation or defensive response.
 
-The evidentiary sequence remains **contextual expectation → opponent-information association → tactical defensive-response interpretation → attacker attribution → value**. Phase 5B supplies limited evidence only at the second term.
+The full evidentiary sequence is **football question → measurable attacking movement → measurable defensive movement → individual movement relative to the defensive unit → movement magnitude and signed geometric change → contextual expectation → opponent-information association → tactical defensive-response interpretation → attacker attribution → value**. Every arrow is conditional. Phase 5B supplies limited evidence only at opponent-information association; the post-5B segmentation audit moves upstream to the still-unvalidated attacking temporal unit.
 
 Post-5B Measurement Audit A preserves focal-relative path as the validated amount-of-movement primitive while testing two additions in Sample Game 1: signed net displacement and deterministic short-horizon continuation innovation. Directional displacement is retained as a complementary descriptive representation because it preserves axis/sign distinctions that scalar path collapses. Continuation innovation receives only a mixed audit result because neutral windows overlap the anchors and several movements are already underway in the preceding two seconds. It is not retained as a validated response-onset measure; its horizons, thresholds, persistence rules, and candidate times must not be tuned from this audit. A future representation may need to describe change across a finite interval rather than require one universal onset instant, but that is a research implication rather than an established result. No new inference-ladder level is established.
 
@@ -30,7 +30,7 @@ The historical framing emphasized **defensive state change and decision instabil
 
 The historical refined phenomenon was **sharp changes in the relative explanatory strength of competing observable relationships**—including collective-team, ball-relative, and opponent-relative movement. It remains a conceptual candidate rather than the single organizing target.
 
-Historically, the project asked whether open-play tracking data could describe a defender's movement as an allocation between competing behavioral responsibilities, and whether attacking movement was associated with changes in that allocation. That remains a motivating theory, not the current validated empirical target. The current test is narrower: whether a defender's movement relative to the other defending outfield players has reproducible structure beyond ordinary movement and shared activity.
+Historically, the project asked whether open-play tracking data could describe a defender's movement as an allocation between competing behavioral responsibilities, and whether attacking movement was associated with changes in that allocation. That remains a motivating theory, not the current validated empirical target. The current methodological frontier is narrower: whether attacking movement and defensive geometric change can each be represented as defensible finite units before their relationship is tested.
 
 This is a behavioral framework. Tracking data observes player locations and movement; it does not observe cognition, communication, tactical instructions, or what a defender “believes.” Terms such as responsibility and decision instability are interpretations of observable behavior and must be written with that limitation intact.
 
@@ -38,7 +38,7 @@ This is a behavioral framework. Tracking data observes player locations and move
 
 ## 2. Broader Theory: Asking Questions
 
-Soccer can be viewed partly as a competition over which team determines the problems both teams must solve. Positioning, rotations, runs, and threatened actions can pose tactical questions. Physical and technical qualities can make a threat more credible or cheaper for the attacker to pose.
+Football can be viewed partly as a competition over which team determines the problems both teams must solve. Positioning, rotations, runs, and threatened actions can pose tactical questions. Physical and technical qualities can make a threat more credible or cheaper for the attacker to pose.
 
 The broader hypothesis is that a team may gain control by imposing repeated defensive recognition and adjustment while its own movements remain comparatively simple or rehearsed. This is a theory about **asymmetric tactical decision load**, not a claim that tracking data measures mental bandwidth.
 
@@ -158,7 +158,7 @@ The motifs are not mutually exclusive. The tackle window combines highly aligned
 
 All three motifs are **descriptively supported** in these fixed examples, with context qualifications. A motif vocabulary is provisionally more empirically defensible than a universal relational-reallocation detector because it preserves geometric type, permits overlap and no-clean-motif cases, and remains readable from raw trajectories. It is not a complete taxonomy, motif classifier, or generalizable result. Relationship selection must remain prospective and stable or the vocabulary becomes unfalsifiable.
 
-Defensive relational reallocation is therefore refined as temporal change that may be described through one or more overlapping, soccer-interpretable geometric motifs while preserving the typed relationships underneath. It is not itself a motif, class, state, score, or universal event. Pinning, handoff, accommodation, rotation, and exposure remain unresolved possibilities rather than motifs added in Phase 2D.
+Defensive relational reallocation is therefore refined as temporal change that may be described through one or more overlapping, football-interpretable geometric motifs while preserving the typed relationships underneath. It is not itself a motif, class, state, score, or universal event. Pinning, handoff, accommodation, rotation, and exposure remain unresolved possibilities rather than motifs added in Phase 2D.
 
 ### Phase 2E prospective relationship selection
 
@@ -186,7 +186,7 @@ Cross-scale correspondence adds information primarily by making **disagreement a
 
 ### Phase 2H construct synthesis
 
-The broad definition—any change in a typed relationship—is rejected because ordinary active soccer satisfies it. A mandatory cross-scale definition is also rejected: generic activity and shared ball/collective movement can affect many scales, while the supported 590 focal departure does not require robust local change.
+The broad definition—any change in a typed relationship—is rejected because ordinary active football satisfies it. A mandatory cross-scale definition is also rejected: generic activity and shared ball/collective movement can affect many scales, while the supported 590 focal departure does not require robust local change.
 
 The narrowest surviving candidate is: **Defensive relational reconfiguration is a coherent, temporally localized change in prospectively specified typed defensive geometric relationships that is not adequately described by the relevant pre-specified baseline motion alone.** This is conceptual, not operational. “Coherent,” “localized,” and “adequately described” require prospective matched-contrast validation and must not hide post-hoc references or thresholds.
 
@@ -312,6 +312,6 @@ Prior work already models man/zonal assignment switches in corner kicks and tran
 
 The initial workflow is:
 
-**soccer understanding → measurable concept → simple calculation → visualization → interpretation → next step**
+**football understanding → measurable concept → simple calculation → visualization → interpretation → next step**
 
 No method should enter the core pipeline unless its inputs, outputs, purpose, assumptions, failure modes, and validation strategy can be explained. No final decision-load formula, gravity score, player rating, or causal claim is currently endorsed.

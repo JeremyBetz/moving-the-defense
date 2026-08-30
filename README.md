@@ -1,180 +1,169 @@
 # Asking Questions
 
-**Asking Questions** is a soccer-tracking research project with one formal primary research question:
+**Asking Questions** is an association-football tracking research project about a familiar football idea:
+
+> When an attacker does not receive the ball, can we measure what they made the defence do?
+
+Analysts say that an attacker pinned a full-back, dragged a centre-back away, or forced a line to drop. Tracking data records where everyone moved, but it does not record why. This project is building the measurement foundation needed to separate one defender’s movement from the shift of the defensive unit, define attacking movement without using the defensive outcome, and eventually test whether particular attacking movements are associated with particular defensive changes.
+
+The formal research question is:
 
 > **How can tracking data measure defensive responses to attacking movement in open-play football?**
 
-Its motivating football question is more intuitive: **When an attacker does not receive the ball, can we measure what they made the defense do?** A downstream translation question asks whether concepts such as pinning, dragging, tracking, covering, handing off, and stretching can eventually be translated into validated, interpretable tracking patterns. That translation is a later research problem, not an established capability.
+The governing distinction is:
 
-“Defensive response” is a broad behavioral umbrella: observable individual or collective defensive behavior occurring in the context of attacking positioning or movement. Tracking records positions and movement—not cognition, attention, responsibility, instruction, intention, decisions, or psychological workload. Association, attribution, causation, and value are separate evidentiary levels.
+> **Football concept ≠ tracking measurement ≠ theoretical mechanism.**
 
-## Current empirical foundation
+A geometric association is not a marking assignment, tactical decision, causal effect, or player value.
 
-The current validated foundation is **focal departure from collective defensive motion**:
+## The measurement problem
+
+If the whole back line slides five metres left, a defender may travel a long way while barely changing position relative to the unit. If three defenders slide and one steps away from them, the individual change is hidden inside the shared shift.
+
+The project therefore uses the other defending outfield players as a simple moving reference. For focal defender $d$,
 
 $$
 \mathbf r_d(t)=\mathbf x_d(t)-\mathbf c_{-d}(t),
 $$
 
-where $\mathbf x_d(t)$ is an outfield defender’s physical pitch position and $\mathbf c_{-d}(t)$ is the centroid of the other available defending outfield players, excluding the goalkeeper.
+where $\mathbf c_{-d}(t)$ is the centroid of the other available defending outfield players, excluding the goalkeeper. The accumulated path of $\mathbf r_d(t)$ answers a limited question: **how much did this defender move differently from the rest of the defensive unit?** It does not answer why.
 
-Phase 4B tested this quantity in two Metrica sample matches, and Phase 4C then executed a separately frozen external-replication protocol across seven IDSSE/DFL matches. The supported claim is deliberately narrow:
+![A shared defensive shift and an individual departure](figures/concepts/collective_translation_vs_focal_departure.png)
 
-> **Focal-relative path externally replicated as a focal-versus-collective geometric primitive across seven professional matches from an independent tracking dataset/provider environment under the frozen criteria.**
+## What survived validation
 
-Phase 4C produced A — strong external replication: all seven matches were usable and core-replicating, every strict misaligned-reference control passed, common translation cancelled, and all nine sensitivities passed in every match. Focal departure nevertheless remains substantially associated with generic activity; IDSSE focal absolute-path correlations were 0.644–0.710. Neither phase estimated an activity-free effect or established a tactical response.
+The focal-relative path is the project’s strongest result:
 
-Phase 5A then executed a prospectively frozen contextual-expectation test across the same seven IDSSE matches. It produced **A — contextual expectation feasible**: the best simple model reduced median match-heldout MAE by 20.58% versus an unconditional baseline and improved all seven matches. Almost all useful gain was already in recent focal movement; collective, ball, and spatial additions were individually below the frozen materiality threshold. This is statistical predictability of geometry, not tactical expectation or defensive response.
+- the definition and controls were frozen before held-out outcomes;
+- it replicated from Metrica Sample Game 1 to held-out Sample Game 2;
+- it then externally replicated across seven professional IDSSE matches from **one independent dataset/provider environment**, not seven providers;
+- common translation cancelled, strict misaligned-reference controls passed, and all frozen smoothing/window sensitivities passed.
 
-Phase 5B then executed its frozen opponent-information test and produced **B — mixed/partial**. B5, B6, and B7 improve median held-out MAE versus B4 by 0.323%, 0.290%, and 0.426%; all improve six of seven matches with no ≥10% worsening, but none reaches the frozen 5% A criterion and no adjacent feature-family increment reaches 3% materiality. A1–A3 do not reproducibly outperform matched-dimensional A4–A6 representations. The tested nearest-opponent representation therefore does not establish meaningful local opponent-response information. This is limited opponent-information association, not tactical defensive response or attacker attribution.
+The supported claim remains geometric:
 
-A subsequent outcome-blind [attacking movement segmentation audit](docs/post5b_attacking_movement_segmentation_audit.md) asks an upstream measurement question using Sample Game 1 only. Its result is **B — mixed**: speed-valley intervals reproducibly retain lower-speed and directional player geometry, but the tested rule fragments many trajectories and occasionally merges long or multi-leg movement. These are movement-effort episodes only—not tactical runs, defensive response, attacker influence, or value—and no Phase 5C design is defined.
+> **Focal-relative path externally replicated as a focal-versus-collective movement primitive across seven professional matches from an independent tracking dataset/provider environment under frozen criteria.**
 
-![Phase 4 held-out design](figures/phase4/phase4_heldout_design.png)
+It remains substantially associated with generic player activity and is not a validated tactical response.
 
-## Where the project stands
+## What failed—and why it matters
 
-- **Game 1 is development/history.** It supported dataset exploration and a sequence of deliberately narrow construct diagnostics.
-- **Game 2 completed the first held-out validation.** Phase 4B executed the unchanged frozen protocol and is closed.
-- **IDSSE completed multi-match external replication in one additional provider/data environment.** Phase 4C produced category A across all seven matches; this is not evidence from seven independent providers.
-- **Phase 5A established a simple statistical expectation baseline.** Recent focal motion materially predicts future focal-relative path; the tested collective, ball, and spatial increments do not materially improve that baseline.
-- **Phase 5B produced a mixed/partial opponent-information result.** Its prospectively selected nearest attackers are geometric neighbors, not marking or responsibility assignments; the small predictive gains were neither material nor demonstrably local.
-- **Outcome-blind attacker movement segmentation is promising but not protocol-ready.** The fixed speed-valley rule received B — mixed because fragmentation is common and direction-change merging remains possible.
-- **Phases 4B/4C validate geometry only.** They do not establish pinning, dragging, tracking, covering, handoffs, tactical defensive response, attacker attribution, or value.
-- **Relational reconfiguration remains unvalidated.** Phase 3 did not distinguish it from general event-associated activity.
-- **Gravity and off-ball value are downstream hypotheses.** No gravity, attention, responsibility, ambiguity, recovery-burden, or player-value metric exists.
+The project began with a more ambitious Structure / Track / Close / Recover state interpretation. Diagnostics showed that those ideas overlap, a simple fixed attacker-relative “Track” representation failed, and local stories changed when reasonable player relationships were selected prospectively.
 
-## The larger “Asking Questions” hypothesis
+Phase 3 then froze a reception-based validation design for relational reconfiguration. It produced **C**:
 
-In soccer language, an attacking position, run, or rotation can “ask a question” by creating a problem the defense may need to solve. The long-term hypothesis is that some attacking actions are systematically associated with observable defensive responses even without a reception or immediate space gain. Attribution and causation require later evidence.
+- only 46 of 315 reception candidates matched controls, versus 70% required support;
+- shifted anchors inside the same possession reproduced or exceeded the apparent effects;
+- pre-anchor activity matching removed the contrasts in a very small matched subset.
 
-The current inference chain is conditional:
+The lesson is central: active football passages can make generic movement look like meaningful structure. Receptions are useful clocks, not positive labels for defensive reconfiguration. Relational reconfiguration remains unvalidated.
 
-**physical movement → collective defensive movement → individual/local behavior relative to collective movement → contextual expectation → opponent-information association → tactical defensive-response interpretation → attacker attribution → attacking value**
+![Why the reception-based route failed](figures/phase3/phase3_validation_failure.png)
 
-Phase 5B supplies limited evidence at the opponent-information-association rung. Predictive opponent information does not by itself establish tactical response, attribution, or value.
+## What prediction and opponent information added
 
-Every arrow can fail. A successful project may stop after establishing—or rejecting—a useful geometric primitive.
+After geometric replication, Phase 5A asked whether future focal-relative path was statistically predictable from pre-interval context. It produced **A — contextual expectation feasible**:
 
-## Major findings and failures
+- median held-out MAE improved from 2.666 m to 2.114 m in the best simple model;
+- every contextual model improved all seven held-out matches versus the unconditional baseline;
+- almost 90% of the total improvement was already supplied by the focal defender’s recent movement;
+- collective, ball, and spatial additions were small and directionally consistent, but not materially incremental under the frozen rule.
 
-### Descriptively established in Sample Game 1
+Phase 5B then added prospectively selected opponent geometry. It produced **B — mixed/partial**: the best opponent model improved median MAE by only 0.43%, improved six of seven matches, and did not show that nearest opponents were materially more informative than matched nonlocal opponents. This is a small predictive association, not tactical response or attacker attribution.
 
-- A whole-team or leave-one-out centroid is a useful baseline for collective translation, but it is not a complete representation of defensive structure.
-- Large raw movement can shrink substantially in a collective-relative coordinate frame.
-- Small centroid movement can coexist with substantial local and opponent-relative change.
-- Pairwise closure, defender absolute approach, attacker approach, collective translation, and defender residual movement are distinct geometric quantities.
-- Local configuration change is broader than compression and depends materially on which players define the local set.
-- Collective translation and focal-relative movement are distinguishable geometric scales in fixed illustrative cases.
-- Generic defensive activity is a major confound for event-anchored relational analysis.
+## Why the project moved upstream again
 
-![Collective translation and focal departure](figures/concepts/collective_translation_vs_focal_departure.png)
+Two post-5B audits exposed a timing problem.
 
-### Weakened or rejected
+First, signed focal-relative displacement retained direction that scalar path magnitude loses. But constant-velocity continuation innovation did not cleanly identify response onset: neutral windows overlapped historical examples, and movement of later interest was often already developing inside the preceding two seconds.
 
-- The historical mutually exclusive **Structure / Track / Close / Recover** state machine is not supported as the primary representation.
-- A nearly fixed attacker-relative Cartesian position is not a general Track primitive.
-- Local compression is not a universal or membership-robust description of defensive reorganization.
-- Generic persistent multi-channel change overcalls ordinary active play and is not a general reconfiguration detector.
-- Receptions are temporal anchors, not positive labels for relational reconfiguration.
-- The Phase 3 reception-based matched validation design failed its frozen support criterion and produced a result of **C**.
+Second, the project tested whether an attacker’s own trajectory could be broken into finite movement efforts without looking at defenders or outcomes. The outcome-blind speed-valley audit produced **B — mixed**:
 
-Phase 3 retained 315 reception candidates but matched only 46 controls (14.6%, below the frozen 70% requirement). Reception windows showed more collective and focal-relative movement, but within-possession shifted anchors reproduced or exceeded the main apparent effects. Pre-anchor activity matching removed those contrasts while retaining only 15 matches. This is both a design limitation and counterevidence against a reception-specific relational signature.
+- 38,651 candidate movement-effort episodes;
+- 95.78% peaked below the 5.5 m/s high-speed comparator;
+- 15,845 (41.00%) combined that lower peak with at least 3 m displacement;
+- median displacement/path was 0.987;
+- 42.22% met a predeclared fragmentation diagnostic;
+- only 1.97% met a merging/direction-change diagnostic;
+- a 56.30 m/s maximum remains a separate unresolved tracking-QC warning.
 
-![Phase 3 validation result](figures/phase3/phase3_validation_failure.png)
+The basic attacker-only approach survives, but the current valley rule must not be carried unchanged into later response sampling. Over-fragmentation is the primary problem; no refinement rule has been selected.
 
-## Why Phase 4 was narrower
+## Current frontier
 
-Phase 3 attempted to validate an umbrella construct using an indirect event anchor. Phase 4 instead tested one basic geometric primitive on deterministic five-second intervals sampled independently of event outcomes.
+The evidence hierarchy is:
 
-The primary quantity was seven-frame-smoothed focal-relative path length. Path length was used because a defender can leave and return, producing little endpoint change despite substantial accumulated relative movement. It replicated geometrically, but tactical meaning remains withheld.
-
-Outcome-blind readiness passes:
-
-| Readiness quantity | Game 1 | Game 2 |
-|---|---:|---:|
-| Eligible five-second intervals | 422 | 407 |
-| Defender-interval observations | 4,220 | 4,070 |
-| Smallest frozen activity cell | 74 | 75 |
-
-Full rules are in the [Phase 4 protocol](docs/phase4_focal_departure_validation_protocol.md); the committed outcome is in the [Phase 4B results](docs/phase4b_focal_departure_validation_results.md).
-
-## Translating football concepts
-
-The post-validation program asks whether football ideas such as pinning, dragging, tracking, covering, passing on, stretching, squeezing, overloading, recovering, and decoy movement can be connected to validated tracking signatures. The governing rule is:
-
-> **Football concept ≠ tracking measurement ≠ theoretical mechanism.**
-
-Candidate signatures and their alternatives are specified in the [football-concept translation framework](docs/football_concept_translation_framework.md). Relational reconfiguration is retained as one possible intermediate form of defensive response, not the project's single central phenomenon, and remains unvalidated.
-
-## Evidence levels
-
-This repository distinguishes:
-
-- **Observed:** directly present in tracking/event files.
-- **Calculated:** a reproducible geometric or statistical quantity.
-- **Interpreted:** a soccer-readable description consistent with the geometry.
-- **Hypothesized:** a proposition requiring a future test.
-- **Rejected or falsified:** an operationalization or design contradicted by its diagnostic or frozen test.
-
-See the central [claim-status ledger](docs/claim_status.md) before citing a result.
-
-## Data and reproducibility
-
-The project uses the public [Metrica Sports sample-data repository](https://github.com/metrica-sports/sample-data):
-
-- Sample Game 1: development/history;
-- Sample Game 2: completed first held-out validation.
-
-Raw files belong under `data/metrica_sample_game_1/` and `data/metrica_sample_game_2/`. The entire `data/` directory is ignored except for `.gitkeep`. Game 2 checksums are frozen in the Phase 4 JSON config.
-
-Coordinates are converted from provider-normalized values to a documented 105 × 68 m pitch without clipping. Earlier notebooks retain raw normalized coordinates where that was the phase’s explicit scope. Tracking is 25 Hz. Derivative notebooks use documented centered 5/7/9-frame smoothing; Phase 4 freezes a centered seven-frame primary with 5/9-frame sensitivity and no interpolation.
-
-```bash
-python3 -m venv .venv
-source .venv/bin/activate
-python -m pip install -r requirements-phase0.txt
-jupyter notebook
+```text
+football question
+        ↓
+measurable attacking movement
+        ↓
+measurable defensive movement
+        ↓
+defender movement relative to the collective
+        ↓
+movement magnitude + signed geometric change
+        ↓
+contextual expectation
+        ↓
+opponent association
+        ↓
+tactical interpretation
+        ↓
+attacker attribution
+        ↓
+attacking value
 ```
 
-Recommended execution order is chronological only when reconstructing history. Phase 4C is complete. Future data roles and inference levels must remain separated; external geometric replication does not authorize tactical or attacker-attribution claims.
+Every arrow is conditional. The current methodological frontier is approximately:
 
-Reproducibility seeds and protocol sources of truth:
+> **Can attacking movement and defensive geometric change be represented as defensible finite units before testing their relationship?**
 
-- Phase 3: [`config/phase3a_validation_protocol.json`](config/phase3a_validation_protocol.json), seed `20260828`;
-- Phase 4: [`config/phase4a_focal_departure_validation_protocol.json`](config/phase4a_focal_departure_validation_protocol.json), seed `20260829`.
-- Phase 4C: [`config/phase4c_external_replication_protocol.json`](config/phase4c_external_replication_protocol.json), bootstrap seed `20260830`.
-- Phase 5A: [`config/phase5a_contextual_expectation_protocol.json`](config/phase5a_contextual_expectation_protocol.json), frozen deterministic nested match-heldout design; [results](docs/phase5a_contextual_expectation_results.md).
-- Phase 5B: [`config/phase5b_opponent_relational_increment_protocol.json`](config/phase5b_opponent_relational_increment_protocol.json), frozen opponent-information increment design; [results](docs/phase5b_opponent_relational_increment_results.md).
+The project has not reached tactical interpretation, attacker attribution, causal influence, gravity, or off-ball value.
 
-## Reading guide
+## Potential applications—not current products
 
-- [Project explainer](docs/project_explainer.md) — verbal explanation in soccer and technical language.
-- [Claim-status ledger](docs/claim_status.md) — what is established, provisional, rejected, or hypothetical.
-- [Conceptual framework](docs/conceptual_framework.md) — equations, terminology, and construct history.
-- [Football-concept translation framework](docs/football_concept_translation_framework.md) — disciplined bridge from football hypotheses to observable consequences.
-- [Post–Phase 4 data strategy](docs/post_phase4_data_strategy.md) — prospective roles for external replication and later modeling data.
-- [Research roadmap](docs/research_roadmap.md) — conditional path and legitimate stopping points.
-- [Phase 4 protocol](docs/phase4_focal_departure_validation_protocol.md) — current frozen empirical design.
-- [Phase 4C results](docs/phase4c_external_replication_results.md) — multi-match geometric replication in an independent tracking dataset/provider environment.
-- [Research log](docs/research_log.md) — full chronological audit trail.
-- [Documentation index](docs/README.md) — reading routes for different audiences.
+If later semantic and contextual validation succeeds, the measurement foundation could support:
+
+- team defensive-style profiles: how often defenders break from, hold with, or recover toward the unit;
+- individual defensive-style profiles without immediately calling tendencies good or bad;
+- opponent- or zone-specific comparisons;
+- scouting and recruitment descriptions of defensive tendencies;
+- automatic surfacing of candidate moments for match analysts;
+- video indexing of unusual defensive adjustments;
+- coaching feedback only after tactical interpretation is independently validated.
+
+The repository does **not** currently evaluate defensive quality, identify correct decisions, automatically label pinning/dragging/tracking, prescribe coaching actions, or measure attacker value.
+
+## Evidence and reproducibility
+
+The project preserves prospective protocols, machine-readable configs, executed notebooks, negative controls, saved results, and failed approaches. The shortest authoritative guide is the [claim-status ledger](docs/claim_status.md).
+
+Data roles:
+
+- Metrica Sample Game 1 — development and historical diagnostics;
+- Metrica Sample Game 2 — completed held-out validation;
+- seven IDSSE matches — completed external replication and predictive tests in one additional provider environment;
+- Metrica Sample Game 3 — untouched and not part of the current evidence.
+
+Start with the [documentation guide](docs/README.md) or the football-first [project explainer](docs/project_explainer.md). Technical reproduction instructions are in [docs/reproducibility.md](docs/reproducibility.md).
 
 ## Repository map
 
 ```text
-config/      frozen machine-readable research protocols
-docs/        current explanations, protocols, claims, roadmap, and audit trail
-figures/     reproducible documentation figures and generation code
-notebooks/   executed diagnostics and validation notebooks by phase
-references/  verified bibliography and acknowledged literature gaps
-data/        local ignored raw Metrica files
+config/      frozen protocols and predeclared exploratory rules
+docs/        current explanations, claim controls, results, and audit trail
+figures/     documentation and result figures
+notebooks/   executed historical diagnostics and governed analyses
+outputs/     machine-readable derived results
+references/  bibliography and provenance
+src/         reproducible analysis implementations
+data/        ignored local raw data
 ```
 
 ## Submission horizon
 
-The repository now contains one successful narrow held-out geometric validation, not yet a conference-level tactical contribution. Before manuscript drafting becomes rational, the primitive must generalize across matches/providers and earn a football interpretation beyond generic differential movement. See [Sloan-readiness gaps](docs/sloan_readiness.md).
+The 2027 MIT Sloan Sports Analytics Conference abstract deadline is **October 1, 2026, 11:59 p.m. Eastern**. The deadline requires a coherent evidence story, not completion of the ultimate gravity/value vision. See the [research roadmap](docs/research_roadmap.md) and [Sloan-readiness audit](docs/sloan_readiness.md).
 
 ## License
 
-Code and documentation are released under the [MIT License](LICENSE). Metrica sample data remain subject to the source repository’s terms.
+Code and documentation are released under the [MIT License](LICENSE). Provider data remain subject to their source terms.
