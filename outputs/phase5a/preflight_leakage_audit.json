@@ -1,0 +1,16 @@
+{
+  "observations": 44767,
+  "feature_at_or_before_cutoff": true,
+  "cutoff_before_target_raw_support": true,
+  "one_frame_gap": true,
+  "target_125_119_118": true,
+  "history_counts": true,
+  "minimum_reference_count": true,
+  "target_and_history_membership_stored_separately": true,
+  "future_eligibility_predictor": false,
+  "future_substitution_membership": false,
+  "centered_predictor_smoothing": false,
+  "interpolation": false,
+  "identity_predictors": false,
+  "passed": true
+}

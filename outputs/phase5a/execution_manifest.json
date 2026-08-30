@@ -1,0 +1,22 @@
+{
+  "stage": "executed",
+  "timestamp_utc": "2026-08-29T22:29:43.140969+00:00",
+  "frozen_commit": "d675c8cdd8a0bc16b7e3887d4303c4012a3c1791",
+  "protocol_md_sha256": "3753e8e23d0dc0f2a8349a84d1f55d39dc3ed87dd10337fb9fd20cc349a09377",
+  "protocol_json_sha256": "2b83f93246d34ae5612692daebdc4cd69a30d53bd6fc874f8c5ceeff3a1cebad",
+  "phase4_source_sha256": "15bdbbcb49b58d253ca4ca7a059ac81cdeeee7d33584c176034c0d32b9f2c4d8",
+  "phase4_protocol_sha256": "942c1974d7ecb478890479e7cf246d7dddcf71236cf6884fd2caebdd293d50ee",
+  "phase4_config_sha256": "6e1711ba681bce3c843cde9803758ca68428f2a84e6b25454d9d866cee5dea59",
+  "implementation_sha256": "826813428ad592b9605b0ca11b48b39f016e897418476712bf3d0f15bdf17935",
+  "clarifications": {
+    "scaling_sd_ddof": 0,
+    "ridge_solver": "numpy solve with deterministic pseudoinverse fallback",
+    "ridge_objective": "sum_squared_error_plus_alpha_times_squared_coefficient_norm"
+  },
+  "python": "3.13.15 (main, Aug 25 2026, 13:50:12) [Clang 22.1.3 ]",
+  "platform": "macOS-26.6.2-arm64-arm-64bit-Mach-O",
+  "numpy": "2.5.2",
+  "pandas": "2.3.3",
+  "model_fit": true,
+  "metrica_game3_accessed": false
+}

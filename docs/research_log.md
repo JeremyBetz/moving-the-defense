@@ -1,5 +1,15 @@
 # Research Log
 
+## 2026-08-29 — Phase 5A Contextual-Expectation Feasibility Execution
+
+Frozen protocol v1.0 executed once across seven IDSSE leave-one-match-out folds. The 44,767-observation B4-complete primary sample retained 99.97% of Phase 4-eligible focal observations. All raw-time leakage checks passed, and the constructed targets reproduced Phase 4C paths to a maximum absolute difference of $1.28\times10^{-12}$m.
+
+The result is **A — contextual expectation feasible**. B4 is the lowest-median-MAE simple level: median match-heldout MAE falls from 2.666m for B0 to 2.114m for B4, a 20.58% median relative reduction; all seven matches improve and none worsens by at least 10%. B1, B2, and B3 also individually satisfy A versus B0.
+
+Only B0→B1 passes the frozen adjacent materiality rule (18.64%, 7/7 improvements). B1→B2 (1.78%), B2→B3 (0.75%), and B3→B4 (0.25%) improve all seven matches but remain below 3%. B1 supplies a median 89.7% of the full B0→B4 MAE reduction. The frozen one-second sensitivity also yields A/B4 and makes B1 even stronger without changing the qualitative ladder conclusion.
+
+B4 calibration slopes range 0.882–1.084 (median 0.999). Overall residual correlations with focal, centroid, other-defender, and ball history activity are between −0.022 and +0.014, but residual dispersion, outliers, and player/team heterogeneity remain. The supported claim is only that future focal-relative path contains reproducibly predictable structure from pre-interval observable context. Most useful information in the tested ladder was already contained in focal recent movement. No tactical response, attacker association, causation, gravity, or value is validated.
+
 ## 2026-08-29 — Phase 5A Contextual-Expectation Feasibility Protocol v1.0 Frozen
 
 Phase 5A was designed without fitting a model or inspecting any future-target association, prediction error, residual, or Metrica Game 3 data. The research question is: **To what extent can focal-relative path over the next five seconds be predicted from observable pre-interval movement and spatial context?** The validated Phase 4 five-second/7-frame leave-one-out target is unchanged.

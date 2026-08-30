@@ -1,0 +1,21 @@
+{
+  "phase": "5A",
+  "protocol_version": "1.0",
+  "primary_history": "2s_50_raw_44_smoothed_43_increments",
+  "primary_common_observations": 44767,
+  "primary_classification": "A_contextual_expectation_feasible",
+  "best_simple_model": "B4",
+  "primary_median_MAE_m": {"B0": 2.6659293100277877, "B1": 2.165298199566168, "B2": 2.1289022617073408, "B3": 2.1192310831356256, "B4": 2.1139455310038757},
+  "primary_B4_median_relative_improvement_vs_B0": 0.20579412575505635,
+  "primary_B4_matches_improved_vs_B0": 7,
+  "primary_B4_matches_worsened_10pct_or_more": 0,
+  "material_adjacent_steps": ["B0_to_B1"],
+  "nonmaterial_adjacent_steps": ["B1_to_B2", "B2_to_B3", "B3_to_B4"],
+  "median_fraction_of_full_B0_to_B4_MAE_reduction_already_in_B1": 0.8970036135082309,
+  "sensitivity_1s_classification": "A_contextual_expectation_feasible",
+  "sensitivity_1s_best_simple_model": "B4",
+  "sensitivity_1s_B4_median_MAE_m": 2.048268999003212,
+  "maximum_supported_claim": "Future focal-relative path contains reproducibly predictable structure from pre-interval observable context.",
+  "supported_decomposition": "Most useful predictive information in the tested ladder was already contained in the focal defender's recent movement.",
+  "tactical_interpretation_validated": false
+}

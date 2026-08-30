@@ -1,0 +1,3 @@
+history,observations,feature_at_or_before_cutoff,cutoff_before_target_raw_support,one_frame_gap,target_125_119_118,history_counts,minimum_reference_count,target_and_history_membership_stored_separately,future_eligibility_predictor,future_substitution_membership,centered_predictor_smoothing,interpolation,identity_predictors,passed
+2s,44767,True,True,True,True,True,True,True,False,False,False,False,False,True
+1s,44769,True,True,True,True,True,True,True,False,False,False,False,False,True

@@ -1,0 +1,5 @@
+prior,current,median_relative_MAE_improvement,matches_improved,matches_worsened_10pct_or_more,materiality_pass
+B0,B1,0.2146022995673185,7,0,True
+B1,B2,0.01795371084760485,7,0,False
+B2,B3,0.003301511301450296,7,0,False
+B3,B4,0.0024437506907533622,6,0,False

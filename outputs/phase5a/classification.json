@@ -1,0 +1,34 @@
+{
+  "primary": {
+    "category": "A",
+    "best_simple_model": "B4",
+    "A_qualifying_models": [
+      "B1",
+      "B2",
+      "B3",
+      "B4"
+    ],
+    "classification_precedence": [
+      "A",
+      "C",
+      "B"
+    ]
+  },
+  "sensitivity": {
+    "category": "A",
+    "best_simple_model": "B4",
+    "A_qualifying_models": [
+      "B1",
+      "B2",
+      "B3",
+      "B4"
+    ],
+    "classification_precedence": [
+      "A",
+      "C",
+      "B"
+    ]
+  },
+  "maximum_claim_if_A": "Future focal-relative path contains reproducibly predictable structure from pre-interval observable context.",
+  "nonclaims_preserved": true
+}

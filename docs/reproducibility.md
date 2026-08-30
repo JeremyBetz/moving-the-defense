@@ -89,6 +89,19 @@ python src/phase4c_idsse_external_replication.py --stage execute
 
 The first command does not construct focal-relative outcomes. The second writes machine-readable tables to `outputs/phase4c/` and figures to `figures/phase4c/`. The narrative notebook is [`notebooks/phase4c_idsse_external_replication.ipynb`](../notebooks/phase4c_idsse_external_replication.ipynb).
 
+## Phase 5A contextual expectation
+
+Frozen protocol v1.0 is [`docs/phase5a_contextual_expectation_protocol.md`](phase5a_contextual_expectation_protocol.md), with machine-readable rules in [`config/phase5a_contextual_expectation_protocol.json`](../config/phase5a_contextual_expectation_protocol.json). The implementation uses NumPy's standard Ridge solution and requires only the existing Phase 4C IDSSE raw files/caches.
+
+Run the target-free support/leakage preflight first, inspect its gate, and execute separately:
+
+```bash
+MPLCONFIGDIR=/tmp/phase5a-mpl .venv/bin/python src/phase5a_contextual_expectation_feasibility.py preflight
+MPLCONFIGDIR=/tmp/phase5a-mpl .venv/bin/python src/phase5a_contextual_expectation_feasibility.py execute
+```
+
+The execution writes machine-readable outputs under `outputs/phase5a/` and figures under `figures/phase5a/`. The narrative artifacts are the [executed notebook](../notebooks/phase5a_contextual_expectation_feasibility.ipynb) and [results report](phase5a_contextual_expectation_results.md). The execution manifest records frozen protocol hashes and implementation clarifications.
+
 Documentation figures can be regenerated with:
 
 ```bash

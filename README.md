@@ -24,6 +24,8 @@ Phase 4B tested this quantity in two Metrica sample matches, and Phase 4C then e
 
 Phase 4C produced A — strong external replication: all seven matches were usable and core-replicating, every strict misaligned-reference control passed, common translation cancelled, and all nine sensitivities passed in every match. Focal departure nevertheless remains substantially associated with generic activity; IDSSE focal absolute-path correlations were 0.644–0.710. Neither phase estimated an activity-free effect or established a tactical response.
 
+Phase 5A then executed a prospectively frozen contextual-expectation test across the same seven IDSSE matches. It produced **A — contextual expectation feasible**: the best simple model reduced median match-heldout MAE by 20.58% versus an unconditional baseline and improved all seven matches. Almost all useful gain was already in recent focal movement; collective, ball, and spatial additions were individually below the frozen materiality threshold. This is statistical predictability of geometry, not tactical expectation or defensive response.
+
 ![Phase 4 held-out design](figures/phase4/phase4_heldout_design.png)
 
 ## Where the project stands
@@ -31,6 +33,7 @@ Phase 4C produced A — strong external replication: all seven matches were usab
 - **Game 1 is development/history.** It supported dataset exploration and a sequence of deliberately narrow construct diagnostics.
 - **Game 2 completed the first held-out validation.** Phase 4B executed the unchanged frozen protocol and is closed.
 - **IDSSE completed multi-match external replication in one additional provider/data environment.** Phase 4C produced category A across all seven matches; this is not evidence from seven independent providers.
+- **Phase 5A established a simple statistical expectation baseline.** Recent focal motion materially predicts future focal-relative path; the tested collective, ball, and spatial increments do not materially improve that baseline.
 - **Phases 4B/4C validate geometry only.** They do not establish pinning, dragging, tracking, covering, handoffs, tactical defensive response, attacker attribution, or value.
 - **Relational reconfiguration remains unvalidated.** Phase 3 did not distinguish it from general event-associated activity.
 - **Gravity and off-ball value are downstream hypotheses.** No gravity, attention, responsibility, ambiguity, recovery-burden, or player-value metric exists.
@@ -133,6 +136,7 @@ Reproducibility seeds and protocol sources of truth:
 - Phase 3: [`config/phase3a_validation_protocol.json`](config/phase3a_validation_protocol.json), seed `20260828`;
 - Phase 4: [`config/phase4a_focal_departure_validation_protocol.json`](config/phase4a_focal_departure_validation_protocol.json), seed `20260829`.
 - Phase 4C: [`config/phase4c_external_replication_protocol.json`](config/phase4c_external_replication_protocol.json), bootstrap seed `20260830`.
+- Phase 5A: [`config/phase5a_contextual_expectation_protocol.json`](config/phase5a_contextual_expectation_protocol.json), frozen deterministic nested match-heldout design; [results](docs/phase5a_contextual_expectation_results.md).
 
 ## Reading guide
 

@@ -28,7 +28,7 @@ Every arrow is conditional. Geometry does not become cognition, responsibility, 
 
 ## Current location
 
-> **Current project position:** Phase 4C externally replicated focal-relative path at the individual-relative-to-collective geometric level across seven IDSSE matches. Phase 5A contextual-expectation feasibility protocol v1.0 is frozen but unexecuted. Tactical defensive response and every later inference remain unvalidated.
+> **Current project position:** Phase 4C externally replicated focal-relative path at the individual-relative-to-collective geometric level across seven IDSSE matches. Phase 5A now establishes category-A contextual predictability, driven primarily by focal recent movement; collective, ball, and spatial increments are not materially additive under the frozen rule. Tactical defensive response and every later inference remain unvalidated.
 
 The completed frozen Phase 4 design asked whether
 
@@ -61,7 +61,7 @@ Required: outcome-independent sampling, adequate support, development/test separ
 
 ### 5. Contextual expectation
 
-Required: a strict raw-support feature/target firewall, match-level held-out prediction, transparent nested baselines, training-only preprocessing, and residual/calibration diagnostics. The [frozen Phase 5A protocol](phase5a_contextual_expectation_protocol.md) fixes B0–B4 models using focal history, collective history, ball context, and simple spatial/goal context, plus the validation and feasibility rules, before performance inspection. Protocol v1.0 remains unexecuted. Prediction and residuals have no tactical meaning by themselves.
+The [frozen Phase 5A protocol](phase5a_contextual_expectation_protocol.md) passed its raw-support firewall and executed once. The [result](phase5a_contextual_expectation_results.md) is A: every simple contextual level improves on B0 across seven held-out matches, but only focal recent movement is a materially additive ladder step. This supplies feasibility evidence for the contextual-expectation level within IDSSE; it is not definitive cross-provider validation of a contextual-expectation metric and does not establish defensive response. Prediction and residuals have no tactical meaning by themselves.
 
 ### 6. Relational reconfiguration
 
