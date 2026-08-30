@@ -1,0 +1,152 @@
+{
+  "protocol": "Post-5B outcome-blind attacking movement prominence refinement",
+  "version": "1.0",
+  "status": "frozen_before_refined_segmentation_execution",
+  "scientific_question": "Can the existing attacker-only speed-valley segmentation be refined using valley prominence so that meaningful over-fragmentation is reduced without materially increasing merging/direction failures or collapsing lower-speed movement coverage?",
+  "development_data": "Metrica Sample Game 1",
+  "heldout_validation_data": "Metrica Sample Game 2",
+  "game2_eligibility": {
+    "classification": "A",
+    "judgment": "untouched for this specific segmentation outcome and eligible as held-out validation",
+    "evidence": "Tracked history contains Game 2 Phase 4 defensive-geometry validation but no Game 2 attacker-movement segmentation, prominence calculation, refined episode count, or refinement result."
+  },
+  "historical_method_a": {
+    "position_smoothing": "centered 7-frame rolling mean of x and y with complete support",
+    "speed": "Euclidean consecutive-smoothed-position difference divided by observed frame interval",
+    "candidate_valley": "maximal flat speed run no higher than both immediate neighbors and strictly lower than at least one; use midpoint",
+    "minimum_valley_separation_s": 1.0,
+    "close_valley_resolution": "after prominence filtering, retain lower-speed candidate; earlier candidate on exact tie",
+    "episode": "consecutive retained valleys inside one eligible block",
+    "minimum_episode_duration_s": 1.0,
+    "speed_inclusion_threshold": null
+  },
+  "prominence": {
+    "signal": "negative smoothed speed",
+    "scope": "entire eligible player block; no finite local window parameter",
+    "definition": "standard topographic peak prominence applied to negative speed. For valley i, find the nearest strictly deeper speed valley on each side, using the eligible-block edge when none exists; let L_i and R_i be the maximum speed encountered from i through those left/right limits. Prominence is min(L_i, R_i) - v_i.",
+    "plateau_index": "historical plateau midpoint",
+    "comparison": "candidate prominence >= configured threshold",
+    "units": "m/s",
+    "operation_order": [
+      "construct historical plateau-aware candidate valleys",
+      "for nonzero candidates compute standard prominence within the eligible block",
+      "remove candidates below the configured prominence threshold",
+      "apply the historical 1.0-second consolidation to remaining candidates",
+      "form consecutive-valley episodes and apply the historical 1.0-second numerical-stability minimum"
+    ],
+    "implementation_note": "Use a deterministic implementation mathematically equivalent to standard peak prominence; SciPy is not an explicit project dependency and is not required by this protocol."
+  },
+  "candidate_prominence_mps": [
+    0.0,
+    0.25,
+    0.5,
+    1.0
+  ],
+  "candidate_rationale": "0.0 is the historical baseline. The three nonzero candidates form a closed modest-to-strong ladder in physical speed units, chosen before any refined output and not extendable after execution.",
+  "historical_baseline": {
+    "episodes": 38651,
+    "fragmentation_any_pct_exact": 42.22400455356912,
+    "fragmentation_operational_baseline_pct": 42.22,
+    "merging_direction_any_pct_exact": 1.9740757030865954,
+    "merging_direction_operational_baseline_pct": 1.97,
+    "lower_speed_displacement_ge3_all_episode_share_exact": 0.4099505834260433,
+    "lower_speed_displacement_ge3_count": 15845
+  },
+  "development_criteria": {
+    "fragmentation": {
+      "formula": "100 * count(diag_fragmentation_any) / count(all candidate episodes)",
+      "success": "relative reduction from the documented 42.22% operational baseline >= 20%",
+      "maximum_candidate_pct": 33.776
+    },
+    "merging_direction": {
+      "formula": "100 * count(diag_merging_any) / count(all candidate episodes)",
+      "success": "candidate rate <= 3.97%; this is the frozen stricter operational cap",
+      "maximum_candidate_pct": 3.97
+    },
+    "lower_speed_coverage": {
+      "formula": "count(peak_speed_mps < 5.5 and displacement_m >= 3.0) / count(all candidate episodes)",
+      "denominator_note": "The historical 41.00% is an all-episode joint share, not a conditional share among episodes with displacement >= 3 m. The all-episode denominator is retained.",
+      "historical_share_exact": 0.4099505834260433,
+      "maximum_relative_decrease": 0.1,
+      "minimum_candidate_share": 0.368955525083439,
+      "minimum_candidate_pct": 36.8955525083439
+    },
+    "implementation_qc": [
+      "historical 0.0 branch reproduces all saved Method A episode identities and diagnostics",
+      "every retained nonzero boundary is a historical candidate valley meeting the configured prominence",
+      "no episode crosses a period, unsupported-coordinate, BALL OUT, or SET PIECE boundary",
+      "no interpolation, clipping, winsorization, speed cap, or defensive/outcome input",
+      "repeated execution is deterministic"
+    ]
+  },
+  "candidate_selection": {
+    "eligibility": "nonzero candidate must pass fragmentation, merging/direction, lower-speed coverage, and implementation/QC criteria",
+    "none_eligible": "select no candidate; classify B or C mechanically",
+    "one_eligible": "select that candidate provisionally subject to visual coherence",
+    "multiple_eligible": "select the lowest nonzero prominence provisionally subject to visual coherence",
+    "rationale": "smallest intervention in the historical method",
+    "visual_override": "visual audit cannot rescue failed quantitative criteria; a visual coherence failure prevents advancement to held-out validation"
+  },
+  "classification": {
+    "A": "At least one nonzero candidate passes every quantitative and implementation criterion; the least-restrictive eligible candidate passes the predeclared visual coherence review.",
+    "B": "At least one nonzero candidate achieves the >=20% fragmentation reduction, but no candidate passes the complete quantitative/QC/visual package.",
+    "C": "No nonzero candidate achieves the >=20% fragmentation reduction, or the refinement is unstable, uninterpretable, or fails implementation QC.",
+    "visual_coherence": "All displayed refined boundaries trace to qualifying valleys; no displayed episode violates an eligibility block; removed/retained boundaries are interpretable in every team-period stratum; and no repeated unanticipated failure mode appears across both teams and both periods. Any ambiguity withholds A."
+  },
+  "visual_audit": {
+    "source": "historical Game 1 Method A table and the future selected candidate only",
+    "core_chronological": "Within each team x period stratum of n rows, sort historical episodes by start_s, numeric player, start_frame, end_frame and select zero-based indices floor((n-1)*q+0.5) for q in {1/6, 3/6, 5/6}.",
+    "fragmentation": "Within each team x period stratum, select the earliest historical diag_fragmentation_any episode by start_s, numeric player, start_frame, end_frame.",
+    "merging_risk": "Within each team x period stratum, select the longest historical diag_merging_any episode, breaking ties by start_s, numeric player, start_frame, end_frame.",
+    "deduplication": "Take the union by historical episode_id and retain all selection-reason labels.",
+    "display": "attacking/player trajectory and speed only; compare historical and selected-prominence boundaries; no defender or outcome overlay",
+    "manual_additions": false
+  },
+  "tracking_qc": {
+    "treatment": "B — preserve the historical primary scope because no automatic numeric support rule is frozen",
+    "primary": "do not silently exclude or repair tracking intervals",
+    "confirmed_sensitivity_flag": "Home Player 10 period 1 raw-support interval frames 2911-2945; report primary metrics unchanged and a separate diagnostic sensitivity excluding episodes whose required raw/smoothing support intersects this interval",
+    "other_tail_flags": "Home 3 and Away 22 maxima remain descriptive QC flags and are not automatically excluded without a frozen support rule",
+    "prohibition": "prominence must not be interpreted as repairing identity or trajectory discontinuities"
+  },
+  "firewall": {
+    "allowed": [
+      "player own x/y trajectory",
+      "player own speed and episode geometry",
+      "period/frame/time support",
+      "global BALL OUT and SET PIECE exclusions already used historically",
+      "predeclared fragmentation and merging/direction diagnostics"
+    ],
+    "prohibited": [
+      "defender coordinates as outcomes",
+      "focal-relative defensive change",
+      "receptions",
+      "tackles",
+      "passes",
+      "shots",
+      "expected value",
+      "tactical annotations",
+      "attacker-to-defender bridge results",
+      "Metrica Sample Game 3"
+    ]
+  },
+  "heldout_validation": {
+    "prerequisite": "Game 1 result classifies A and the selected rule is frozen before any Game 2 segmentation output",
+    "no_retuning": true,
+    "tests": [
+      "fragmentation rate decreases relative to the Game 2 no-prominence baseline",
+      "merging/direction rate remains <= 3.97%",
+      "all-episode lower-speed displacement>=3 m share remains >=90% of the Game 2 no-prominence share",
+      "deterministic Game 2 visual sample passes the same coherence review"
+    ],
+    "game2_parameter_change": "none"
+  },
+  "stopping_rule": "After this closed prominence ladder, do not add direction splitting, another refinement, changed duration thresholds, changed valley spacing, or changed smoothing because a criterion is narrowly missed. If prominence fails, stop and reassess the segmentation construct conceptually before another implementation.",
+  "execution_status": {
+    "refined_segmentation_executed": false,
+    "game1_refined_outputs_inspected": false,
+    "game2_segmentation_outputs_inspected": false,
+    "game3_accessed": false,
+    "defensive_outcomes_accessed": false
+  }
+}

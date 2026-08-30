@@ -59,6 +59,8 @@ Every arrow can fail. Football language does not become a tracking construct mer
 
 The immediate open problem is representation integrity. The attacker’s interval must be defined without defensive outcomes, and the defensive change must remain geometric rather than tactical. The current movement-segmentation implementation is historical evidence, not an accepted next protocol. No “Phase 5C” exists unless a separate design is prospectively specified and frozen.
 
+The first bounded refinement is now prospectively frozen: a closed Game 1 speed-valley prominence ladder with explicit fragmentation, merging/direction, lower-speed-coverage, visual, tracking-QC, and anti-tuning rules. It has not been executed. Game 2 remains eligible for this specific held-out segmentation question; advancement requires a complete Game 1 A result, and no Game 2 retuning is permitted.
+
 ## October 1, 2026 constraint
 
 The [2027 MIT Sloan Sports Analytics Conference Research Paper Competition](https://www.sloansportsconference.com/research-paper-competition) lists **October 1, 2026, 11:59 p.m. Eastern** as the round-one abstract deadline. The abstract is limited to actual evidence; the deadline is a communication constraint, not a reason to relax scientific gates.

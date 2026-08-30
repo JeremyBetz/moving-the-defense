@@ -118,7 +118,7 @@ Every arrow is conditional. Current evidence reaches externally replicated defen
 
 > **Can attacking movement and defensive geometric change be represented as defensible finite units before testing their relationship?**
 
-This is a representation problem, not yet an attacker-response experiment. No next-phase protocol has been designed or frozen.
+This is a representation problem, not yet an attacker-response experiment. A bounded outcome-blind prominence-refinement protocol is now frozen but has not executed; no attacker-to-defender bridge protocol has been designed.
 
 ## 15. What could the work eventually support?
 

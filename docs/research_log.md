@@ -1,5 +1,11 @@
 # Research Log
 
+## 2026-08-30 — Prominence-refinement protocol freeze
+
+Before any refined episode construction, protocol v1.0 froze a closed prominence ladder of 0.00/0.25/0.50/1.00 m/s on the historical plateau-aware speed valleys. Game 1 is development; repository-history review found no Game 2 segmentation/prominence outcome, so Game 2 remains eligible as held-out validation despite its unrelated Phase 4 use. The frozen criteria require at least 20% relative fragmentation reduction (operational rate ≤33.776%), merging/direction ≤3.97%, and the all-episode lower-speed-plus-≥3 m joint share ≥36.8955525083439%, with the least-restrictive qualifying candidate selected.
+
+The protocol retains the historical primary scope and handles the confirmed Home 10 discontinuity only as a separate sensitivity because no automatic support threshold exists. It adds no direction splitting, support filter, tactical label, defensive outcome, Game 3 access, or bridge test. Failure stops the refinement sequence rather than opening post-hoc tuning. See [`post5b_attacking_movement_prominence_refinement_protocol.md`](post5b_attacking_movement_prominence_refinement_protocol.md).
+
 ## 2026-08-30 — Outcome-blind tracking-support / QC audit
 
 After the accepted movement-segmentation audit retained a 56.30 m/s maximum, a separate attacker/player-only QC audit traced it to Home Player 10 at 117.68 s. The raw source contains six exact coordinate duplications with Home Player 1, continued near-coincidence, and then six extreme raw steps restoring Home 10 to a distant trace. Frames and timestamps remain regular; centered smoothing attenuates and spreads rather than creates the discontinuity. The tracking-support diagnosis is **A**: an identity/position continuity mechanism is observable and prospective rule directions are clear, although the provider's internal cause and numeric tolerances remain unresolved. Exact equality alone is not invalidity; the diagnosis depends on the combined duplication/near-coincidence, restoration, and extreme-step pattern.

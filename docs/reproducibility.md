@@ -154,4 +154,4 @@ Their reports, executed notebooks, figures, and machine-readable outputs are und
 - Requirements are bounded but not fully locked across platforms.
 - Several large derived CSVs are committed for auditability; a future archive policy should preserve hashes and provenance before moving them.
 - Two preflight/result attrition pairs are byte-identical because the governed sample did not change; they are retained as phase-specific evidence rather than deduplicated post hoc.
-- The movement-segmentation audit retained a 56.30 m/s maximum. Tracking-support QC must be designed separately and prospectively before formal segmentation validation.
+- The movement-segmentation audit retained a 56.30 m/s maximum. A later outcome-blind audit traced it to identity/trajectory discontinuity and froze only support-rule directions, not a numeric filter. The separate prominence-refinement protocol is now frozen but unexecuted; it must not be used to repair tracking discontinuities.

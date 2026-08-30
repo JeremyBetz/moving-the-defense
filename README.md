@@ -84,9 +84,9 @@ Second, the project tested whether an attacker’s own trajectory could be broke
 - median displacement/path was 0.987;
 - 42.22% met a predeclared fragmentation diagnostic;
 - only 1.97% met a merging/direction-change diagnostic;
-- a 56.30 m/s maximum remains a separate unresolved tracking-QC warning.
+- a retained 56.30 m/s maximum was subsequently traced to an identity/trajectory-continuity failure rather than ordinary movement or smoothing alone.
 
-The basic attacker-only approach survives, but the current valley rule must not be carried unchanged into later response sampling. Over-fragmentation is the primary problem; no refinement rule has been selected.
+The basic attacker-only approach survives, but the current valley rule must not be carried unchanged into later response sampling. Over-fragmentation is the primary problem. A closed prominence-refinement protocol is now frozen but unexecuted; it adds no tactical or defensive-outcome information.
 
 ## Current frontier
 

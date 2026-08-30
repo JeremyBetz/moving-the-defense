@@ -38,6 +38,7 @@ The football concepts are candidate interpretations, not automatic labels or val
 5. `notebooks/` — executed narrative artifacts and historical diagnostics.
 6. [Repository/state audit](repository_state_audit_2026-08-30.md) — current coherence and reproducibility findings.
 7. [Post-5B tracking-support QC audit](post5b_tracking_support_qc_audit.md) — diagnosis of the retained extreme-speed observation before segmentation refinement.
+8. [Frozen prominence-refinement protocol](post5b_attacking_movement_prominence_refinement_protocol.md) — prospective Game 1 development and Game 2 held-out plan; not yet executed.
 
 ## Reproducing a specific completed analysis
 
