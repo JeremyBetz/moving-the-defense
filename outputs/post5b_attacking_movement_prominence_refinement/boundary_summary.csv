@@ -1,0 +1,5 @@
+threshold_mps,retained_boundaries,historical_boundaries_removed,nonhistorical_boundaries_added
+0.0,40241,0,0
+0.25,13079,27339,177
+0.5,9756,30581,96
+1.0,6720,33588,67

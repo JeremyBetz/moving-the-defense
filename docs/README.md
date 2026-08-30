@@ -38,7 +38,8 @@ The football concepts are candidate interpretations, not automatic labels or val
 5. `notebooks/` — executed narrative artifacts and historical diagnostics.
 6. [Repository/state audit](repository_state_audit_2026-08-30.md) — current coherence and reproducibility findings.
 7. [Post-5B tracking-support QC audit](post5b_tracking_support_qc_audit.md) — diagnosis of the retained extreme-speed observation before segmentation refinement.
-8. [Frozen prominence-refinement protocol](post5b_attacking_movement_prominence_refinement_protocol.md) — prospective Game 1 development and Game 2 held-out plan; not yet executed.
+8. [Frozen prominence-refinement protocol](post5b_attacking_movement_prominence_refinement_protocol.md) — governing Game 1 design and conditional Game 2 plan.
+9. [Prominence-refinement results](post5b_attacking_movement_prominence_refinement_results.md) — Game 1 B result; no candidate selected and Game 2 not opened.
 
 ## Reproducing a specific completed analysis
 
@@ -52,6 +53,7 @@ Start with [the reproducibility guide](reproducibility.md), then use the matchin
 | Phase 5B opponent increment | `config/phase5b_opponent_relational_increment_protocol.json` | `src/phase5b_opponent_relational_increment.py` | [report](phase5b_opponent_relational_increment_results.md) |
 | Post-5B direction/onset | fixed audit implementation | `src/post5b_measurement_audit_direction_onset.py` | [report](post5b_measurement_audit_direction_onset.md) |
 | Attacking movement segmentation | `config/post5b_movement_segmentation_audit_rules.json` | `src/post5b_attacking_movement_segmentation_audit.py` | [report](post5b_attacking_movement_segmentation_audit.md) |
+| Prominence refinement | `config/post5b_attacking_movement_prominence_refinement_rules.json` | `src/post5b_attacking_movement_prominence_refinement.py` | [report](post5b_attacking_movement_prominence_refinement_results.md) |
 
 ## Potential mentor or collaborator
 

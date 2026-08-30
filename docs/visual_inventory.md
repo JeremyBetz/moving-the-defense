@@ -6,6 +6,12 @@
 |---|---|---|
 | `figures/post5b_tracking_support_qc_audit/extreme_trace.png` | Raw/smoothed position, displacement, and speed around the retained Home 10 extreme | Tracking-support diagnosis only; not defensive response, tactical movement, or segmentation validation. |
 
+## Post-5B prominence-refinement execution
+
+| Figure | Role | Claim boundary |
+|---|---|---|
+| `figures/post5b_attacking_movement_prominence_refinement/deterministic_boundary_comparison.png` | Frozen 20-episode sample comparing historical and prominence-filtered boundaries | Descriptive implementation audit; visual appearance did not select a threshold or determine B. |
+
 ## Existing notebook coverage
 
 | Phase | Current visual role | Audit assessment |

@@ -1,10 +1,18 @@
 # Research Log
 
+## 2026-08-30 — Prominence-refinement Game 1 execution
+
+After the visual-role clarification was saved and absence of prior results verified, protocol v1.0 executed exactly once on Game 1. The 0.00 branch reproduced all 38,651 historical episodes and diagnostic identities to maximum numerical difference $7.11\times10^{-15}$. The 0.25/0.50/1.00 m/s candidates reduced fragmentation from 42.224% to 7.781%/2.840%/1.170% and passed the frozen lower-speed coverage rule, but merging/direction rose from 1.974% to 35.878%/52.136%/69.032%, far beyond the 3.97% cap.
+
+The mechanical result is **B**, with no eligible or selected candidate. Excluding episodes whose support intersects confirmed Home 10 frames 2911–2945 leaves B and no selection unchanged. The deterministic visual sample exposed no objective implementation inconsistency and had no classification role. No threshold was added or tuned, Game 2 and Game 3 remained unopened, and no defensive outcome was used. The anti-tuning rule now requires conceptual reassessment rather than another segmentation repair. See [`post5b_attacking_movement_prominence_refinement_results.md`](post5b_attacking_movement_prominence_refinement_results.md).
+
 ## 2026-08-30 — Prominence-refinement protocol freeze
 
 Before any refined episode construction, protocol v1.0 froze a closed prominence ladder of 0.00/0.25/0.50/1.00 m/s on the historical plateau-aware speed valleys. Game 1 is development; repository-history review found no Game 2 segmentation/prominence outcome, so Game 2 remains eligible as held-out validation despite its unrelated Phase 4 use. The frozen criteria require at least 20% relative fragmentation reduction (operational rate ≤33.776%), merging/direction ≤3.97%, and the all-episode lower-speed-plus-≥3 m joint share ≥36.8955525083439%, with the least-restrictive qualifying candidate selected.
 
 The protocol retains the historical primary scope and handles the confirmed Home 10 discontinuity only as a separate sensitivity because no automatic support threshold exists. It adds no direction splitting, support filter, tactical label, defensive outcome, Game 3 access, or bridge test. Failure stops the refinement sequence rather than opening post-hoc tuning. See [`post5b_attacking_movement_prominence_refinement_protocol.md`](post5b_attacking_movement_prominence_refinement_protocol.md).
+
+**Pre-execution clarification:** before any refined segmentation was generated, v1.0 was clarified so A/B/C and threshold selection depend only on frozen quantitative criteria plus objective implementation/QC validity. The deterministic visual audit is descriptive and can invalidate execution only by exposing an objective reproducibility defect; subjective appearance cannot rescue, reject, select, or tune a candidate.
 
 ## 2026-08-30 — Outcome-blind tracking-support / QC audit
 

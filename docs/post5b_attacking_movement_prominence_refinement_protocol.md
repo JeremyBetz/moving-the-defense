@@ -4,6 +4,8 @@
 **Status:** frozen before refined segmentation execution
 **Scope:** protocol design only; no refined episode has been constructed or inspected
 
+> **Execution status:** this document preserves the pre-execution design. It subsequently executed once on Game 1 and classified **B**, with no selected prominence and no Game 2 execution. See the [results](post5b_attacking_movement_prominence_refinement_results.md).
+
 The machine-readable source of truth is [`config/post5b_attacking_movement_prominence_refinement_rules.json`](../config/post5b_attacking_movement_prominence_refinement_rules.json).
 
 ## 1. Scientific question
@@ -110,15 +112,15 @@ A conditional share among episodes displacing at least 3 m may be reported descr
 
 ## 9. Selection and classification
 
-A nonzero candidate is eligible only if it passes fragmentation, merging/direction safety, lower-speed coverage, and every implementation/QC requirement. If none qualifies, select none. If one qualifies, select it provisionally. If several qualify, provisionally select the **lowest nonzero prominence**, making the smallest intervention in the historical method.
+A nonzero candidate is eligible only if it passes fragmentation, merging/direction safety, lower-speed coverage, and every implementation/QC requirement. If none qualifies, select none. If one qualifies, select it. If several qualify, select the **lowest nonzero prominence**, making the smallest intervention in the historical method.
 
-The deterministic visual audit cannot rescue a failed numerical criterion. A visual coherence failure prevents advancement to held-out validation.
+Quantitative criteria plus objective implementation/QC validity determine selection and classification completely. The deterministic visual audit is descriptive: it cannot rescue a failed criterion, reject a candidate because another threshold looks better, change selection based on football aesthetics, or trigger threshold tuning.
 
-- **A:** at least one nonzero candidate passes the complete quantitative and implementation package, and the least-restrictive eligible candidate passes the visual coherence review.
-- **B:** at least one candidate achieves the required 20% fragmentation reduction, but none passes the complete quantitative/QC/visual package.
+- **A:** at least one nonzero candidate passes the complete quantitative and implementation/QC package.
+- **B:** at least one candidate achieves the required 20% fragmentation reduction, but none passes the complete quantitative and implementation/QC package.
 - **C:** no candidate achieves the required fragmentation reduction, or the refinement is unstable, uninterpretable, or fails implementation QC.
 
-Visual coherence requires every displayed refined boundary to trace to a qualifying valley, no displayed episode to violate an eligible block, removed and retained boundaries to be interpretable in every team-period stratum, and no repeated unanticipated failure mode across both teams and both periods. Ambiguity withholds A.
+Visual review may invalidate execution only by exposing an objective implementation/QC inconsistency—for example, a plotted boundary absent from the documented algorithm, plotted values disagreeing with machine-readable output, a reported qualifying valley failing the implemented prominence rule, mismatched timestamps/player identities, or another reproducibility defect. Such a finding is recorded as implementation QC failure rather than a subjective segmentation judgment.
 
 ## 10. Deterministic visual audit
 
@@ -130,7 +132,7 @@ The sample is selected from the historical Game 1 Method A table before refined 
 4. in each stratum, add the longest historical merging/direction-risk example, breaking ties by start time, player, and frames;
 5. take the union by historical episode ID and retain all reason labels.
 
-After execution, plots may show only the player's trajectory and speed with historical versus selected-prominence boundaries. No defensive player, event outcome, or manually chosen example may be added.
+After execution, plots may show only the player's trajectory and speed with historical versus selected-prominence boundaries. No defensive player, event outcome, or manually chosen example may be added. Visual appearance has no selection or classification role unless it reveals an objective implementation/QC defect.
 
 ## 11. Tracking-support treatment
 
@@ -163,4 +165,4 @@ After this closed prominence ladder, do not add direction splitting, another ref
 
 ## 15. Result status and nonclaims
 
-No refined segmentation has been executed. This protocol creates no result table, episode count, selected threshold, validated support filter, tactical movement construct, defensive response, attacker influence, gravity, or value.
+At freeze time, no refined segmentation had been executed. The protocol itself created no result table, episode count, selected threshold, validated support filter, tactical movement construct, defensive response, attacker influence, gravity, or value. The later governed result is recorded separately.
