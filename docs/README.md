@@ -44,11 +44,12 @@ The football concepts are candidate interpretations, not automatic labels or val
 9. [Prominence-refinement results](post5b_attacking_movement_prominence_refinement_results.md) — Game 1 B result; no candidate selected and Game 2 not opened.
 10. [Attacking-movement representation audit](attacking_movement_representation_audit.md) — prior-art and construct-selection pass that selected 2D velocity-state change points; no execution.
 11. [Frozen directional-segmentation protocol v1.0](protocols/attacking_directional_segmentation_v1.md) and [Game 1 result](results/attacking_directional_segmentation_game1_v1.md) — exact 2D velocity objective; B result from overwhelming fragmentation and frequency instability, so Game 2 was not opened.
-12. [Open football analytics ecosystem alignment](open_source_ecosystem_alignment.md) — infrastructure audit and numerical-equivalence gate for possible Kloppy/Polars/mplsoccer integration; no migration performed.
-13. [Kloppy–Metrica Game 1 equivalence](kloppy_metrica_equivalence.md) — first bounded ingestion experiment; B result, explicit adapter required, no loader migration.
-14. [Kloppy–IDSSE/Sportec equivalence](kloppy_idsse_equivalence.md) — one-match external-provider experiment; B / NOT READY, with Phase 4C geometry preserved but canonical clock/coordinate rules still unresolved.
-15. [Canonical tracking contract](canonical_tracking_contract.md) — governed Polars schema, time/coordinate/support semantics, provenance rules, and READY decision for new analyses; historical pipelines remain unchanged.
-16. [UnravelSports interoperability](unravelsports_interoperability.md) — bounded B audit: useful reference layer and thin canonical compatibility view, but no governed pipeline integration.
+12. [Attacking-movement representation fork](attacking_movement_representation_fork.md) — continuous fixed-window attacker geometry selected as the next unvalidated primary family; geometry-first episodes deferred.
+13. [Open football analytics ecosystem alignment](open_source_ecosystem_alignment.md) — infrastructure audit and numerical-equivalence gate for possible Kloppy/Polars/mplsoccer integration; no migration performed.
+14. [Kloppy–Metrica Game 1 equivalence](kloppy_metrica_equivalence.md) — first bounded ingestion experiment; B result, explicit adapter required, no loader migration.
+15. [Kloppy–IDSSE/Sportec equivalence](kloppy_idsse_equivalence.md) — one-match external-provider experiment; B / NOT READY, with Phase 4C geometry preserved but canonical clock/coordinate rules still unresolved.
+16. [Canonical tracking contract](canonical_tracking_contract.md) — governed Polars schema, time/coordinate/support semantics, provenance rules, and READY decision for new analyses; historical pipelines remain unchanged.
+17. [UnravelSports interoperability](unravelsports_interoperability.md) — bounded B audit: useful reference layer and thin canonical compatibility view, but no governed pipeline integration.
 
 ## Reproducing a specific completed analysis
 

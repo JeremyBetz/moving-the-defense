@@ -3,6 +3,8 @@
 **Status:** construct-selection and prior-art audit; no segmentation executed  
 **Development/held-out boundary:** Metrica Sample Game 1 development only; Sample Games 2 and 3 unopened for attacker segmentation
 
+> **Retrospective status (2026-08-31):** the selected frozen 2D velocity change-point representation executed on Game 1 and classified B, with 99.799332% fragmentation and failed 10 Hz recall/F1/count stability. The result rejects that specification for held-out use. The subsequent [representation fork](attacking_movement_representation_fork.md) selects continuous fixed-window attacker geometry as the next primary family while retaining geometry-first episodes as deferred. The historical reasoning below is preserved.
+
 ## Current problem
 
 Moving the Defense needs a finite, attacker-only interval over which defensive geometric change can later be measured. It does not yet need a provider-style run or a tactical action. The historical Game 1 speed-valley rule generated 38,651 reproducible movement-effort episodes and retained lower-speed geometry, but 42.22% met a frozen fragmentation diagnostic. The frozen prominence experiment removed many shallow valleys, yet every nonzero candidate raised merging/direction failures from 1.974% to 35.878%–69.032%. No candidate qualified.

@@ -1,5 +1,11 @@
 # Research Log
 
+## 2026-08-31 — Attacking-movement representation fork
+
+No new data analysis was run. The speed-valley, prominence, and frozen 2D velocity change-point results were synthesized as three distinct failures of boundary semantics rather than evidence that speed, change points, or discreteness are universally invalid. A targeted prior-art review compared continuous football coordination/kinematics and movement-path descriptors with geometry-first trajectory simplification.
+
+The decision is **B — pivot to continuous attacking-movement representation**. The next primary candidate is a two-second trailing attacker-only window, with prospectively frozen one- and four-second sensitivities, retaining separate signed displacement, path length, straightness, absolute heading change, and total speed variation. This is a construct recommendation, not a validated measurement or frozen protocol. Geometry-first discrete episodes remain a deferred secondary family. No Game 2, Game 3, defensive outcome, new segmentation, or bridge result was inspected. See [`attacking_movement_representation_fork.md`](attacking_movement_representation_fork.md).
+
 ## 2026-08-31 — Directional-segmentation Game 1 execution
 
 Frozen protocol v1.0 executed once on Metrica Sample Game 1 after all controlled fixtures passed. The empirical common radial scale was 0.016098810494 m/s from 2,790,392 eligible velocity pairs. The complete supported partition contained 247,175 regimes across 26 outfield players and 45 blocks; 217,151 were tagged directional movement and 30,024 low motion.

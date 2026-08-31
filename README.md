@@ -120,6 +120,8 @@ Every arrow is conditional. The current methodological frontier is approximately
 
 > **Can attacking movement and defensive geometric change be represented as defensible finite units before testing their relationship?**
 
+After three discrete boundary specifications produced complementary fragmentation/merging failures, the next unvalidated primary candidate is continuous fixed-window attacker geometry: signed displacement, path, straightness, heading change, and speed variation kept separate. Geometry-first episodes remain a deferred possibility; no attacker-to-defender bridge has begun.
+
 The project has not reached tactical interpretation, attacker attribution, causal influence, gravity, or off-ball value.
 
 ## Potential applications—not current products

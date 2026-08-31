@@ -65,6 +65,8 @@ The first bounded refinement executed under its frozen rules and classified **B*
 
 The completed [representation audit](attacking_movement_representation_audit.md) selected penalized change points in the attacker's two-dimensional velocity state. [Protocol v1.0](protocols/attacking_directional_segmentation_v1.md) froze its BIC-derived penalty, fixtures, support treatment, diagnostics, and decision tree before execution. The [Game 1 result](results/attacking_directional_segmentation_game1_v1.md) is **B**: hard QC and merging control passed, but 99.80% fragmentation and unstable 10 Hz recall/F1/counts reject the representation for held-out use. Game 2 remains unopened for attacker segmentation, and the A-only prerequisite was not met.
 
+The subsequent [representation fork](attacking_movement_representation_fork.md) selects **continuous fixed-window attacker geometry** as the next primary candidate: signed displacement, path, straightness, heading change, and speed variation remain separate over a prospectively fixed trailing window. Geometry-first episodes are deferred rather than falsified. The next legitimate task is to freeze an outcome-blind Game 1 validation protocol for those continuous observables—not to tune another boundary rule or begin the attacker-to-defender bridge.
+
 ## October 1, 2026 constraint
 
 The [2027 MIT Sloan Sports Analytics Conference Research Paper Competition](https://www.sloansportsconference.com/research-paper-competition) lists **October 1, 2026, 11:59 p.m. Eastern** as the round-one abstract deadline. The abstract is limited to actual evidence; the deadline is a communication constraint, not a reason to relax scientific gates.

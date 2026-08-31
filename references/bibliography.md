@@ -102,6 +102,10 @@ Esposito, Francesco, Maurizio Bertollo, Dario Pompa, Maria Angonese, and Marco B
 
 Esposito et al. synthesize 32 elite-football tracking studies and emphasize fragmented definitions, heterogeneous methods, simplified outcomes, and limited opponent/context integration. It is a field-level context source, not evidence that this project's movement segmentation or defensive-response bridge is validated or novel.
 
+Rodríguez-Sánchez, Paula, Roberto López del Campo, Ricardo Resta, José J. Ramasco, Javier M. Buldú, and Johann H. Martínez. 2026. “Vector Field Theory in Motion: Revealing Latent Potentials in Soccer Dynamics.” arXiv:2607.27838. <https://arxiv.org/abs/2607.27838>
+
+This preprint reconstructs continuous spatial velocity fields and potentials from football tracking at a collective scale. It is a representation precedent, not evidence for the validity, tactical meaning, or novelty of Moving the Defense's proposed individual fixed-window attacker geometry.
+
 ## Coverage Limits
 
 This bibliography is substantially stronger for collective geometry, synchronization, defensive tracking, contextual trajectory references, and the main movement-representation families considered after the failed prominence refinement. Remaining gaps include proprietary club/vendor boundary algorithms, formation-normalization details, complete football off-ball valuation coverage, and peer-reviewed expected-versus-observed gravity models. These gaps prohibit claims that no operational equivalent exists.
