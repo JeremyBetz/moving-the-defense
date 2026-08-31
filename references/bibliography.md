@@ -78,10 +78,26 @@ FIFA Training Centre. 2024. “Speed Technical Coordination — Part 1: Introduc
 
 Llana et al. provide direct precedent for rolling-smoothed player speed, valley-to-valley run segmentation, and peak-speed descriptors. FIFA supplies an official methodological range for common high-speed-running thresholds, not a peer-reviewed universal definition. The post-5B audit adapts these precedents prospectively and does not claim novelty for speed-valley segmentation.
 
+Kai, Tomohiro, Shin Hirai, Yuhei Anbe, and Yohei Takai. 2021. “A New Approach to Quantify Angles and Time of Changes-of-Direction during Soccer Matches.” *PLOS ONE* 16 (5): e0251292. <https://doi.org/10.1371/journal.pone.0251292>
+
+Corbett, David, Alice J. Sweeting, and Sam Robertson. 2019. “A Change Point Approach to Analysing the Match Activity Profiles of Team-Sport Athletes.” *Journal of Sports Sciences* 37 (14): 1600–1608. <https://doi.org/10.1080/02640414.2019.1577941>
+
+Edelhoff, Hendrik, Johannes Signer, and Niko Balkenhol. 2016. “Path Segmentation for Beginners: An Overview of Current Methods for Detecting Changes in Animal Movement Patterns.” *Movement Ecology* 4: 21. <https://doi.org/10.1186/s40462-016-0086-5>
+
+Lee, Jae-Gil, Jiawei Han, and Kyu-Young Whang. 2007. “Trajectory Clustering: A Partition-and-Group Framework.” In *Proceedings of the 2007 ACM SIGMOD International Conference on Management of Data*, 593–604. <https://doi.org/10.1145/1247480.1247546>
+
+Yin, Shuhui, Nancy Song, and Haw Yang. 2018. “Detection of Velocity and Diffusion Coefficient Change Points in Single-Particle Trajectories.” *Biophysical Journal* 115 (2): 217–229. <https://doi.org/10.1016/j.bpj.2017.11.008>
+
+Gradient Sports. 2026. “Measuring Off-Ball Movement Using Broadcast Tracking & Event Data.” May 6. <https://www.gradientsports.com/blog/measuring-off-ball-movement-using-broadcast-tracking-event-data>
+
+SkillCorner. 2023. “Game Intelligence: Off-Ball Run Types.” September 25. <https://skillcorner.com/articles/game-intelligence-off-ball-run-types>
+
+SkillCorner. 2025. “Game Intelligence: Analysing Off Ball Runs.” June 17. <https://skillcorner.com/us/articles/game-intelligence-analysing-off-ball-runs>
+
 Esposito, Francesco, Maurizio Bertollo, Dario Pompa, Maria Angonese, and Marco Beato. 2026. “Off-the-Ball Behaviors in Elite Football Using Spatiotemporal Tracking Data: A Scoping Review.” *Science and Medicine in Football*, online ahead of print. <https://doi.org/10.1080/24733938.2026.2713521>
 
 Esposito et al. synthesize 32 elite-football tracking studies and emphasize fragmented definitions, heterogeneous methods, simplified outcomes, and limited opponent/context integration. It is a field-level context source, not evidence that this project's movement segmentation or defensive-response bridge is validated or novel.
 
 ## Coverage Limits
 
-This bibliography is substantially stronger for collective geometry, synchronization, defensive tracking, and contextual trajectory references than the previous placeholder list. Remaining gaps include proprietary club/vendor methods, formation-normalization details, complete soccer off-ball valuation coverage, and peer-reviewed expected-versus-observed gravity models. These gaps prohibit claims that no operational equivalent exists.
+This bibliography is substantially stronger for collective geometry, synchronization, defensive tracking, contextual trajectory references, and the main movement-representation families considered after the failed prominence refinement. Remaining gaps include proprietary club/vendor boundary algorithms, formation-normalization details, complete football off-ball valuation coverage, and peer-reviewed expected-versus-observed gravity models. These gaps prohibit claims that no operational equivalent exists.

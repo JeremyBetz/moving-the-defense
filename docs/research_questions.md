@@ -34,7 +34,7 @@ The result does not establish an activity-free effect, tactical response, reconf
 
 > **Can attacking movement and defensive geometric change be represented as defensible finite units before testing their relationship?**
 
-This is not a second primary research question. It is the present prerequisite within the broader program. The attacker-only speed-valley audit provides B — mixed evidence for finite movement efforts. Its frozen prominence refinement also classified B: fragmentation fell sharply, but merging/direction exceeded the safety cap at every tested threshold, so none was selected. Signed focal-relative displacement complements the validated scalar defensive path, while response-onset timing remains unresolved.
+This is not a second primary research question. It is the present prerequisite within the broader program. The attacker-only speed-valley audit provides B — mixed evidence for finite movement efforts. Its frozen prominence refinement also classified B: fragmentation fell sharply, but merging/direction exceeded the safety cap at every tested threshold, so none was selected. A targeted prior-art audit now selects an attacker-only **directional movement segment**, provisionally defined by sustained changes in the full two-dimensional velocity state, as the next construct to test. That selection is not an execution or validation. Signed focal-relative displacement complements the validated scalar defensive path, while response-onset timing remains unresolved.
 
 ## Historical Relational-Reconfiguration Question
 

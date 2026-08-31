@@ -61,7 +61,9 @@ Every arrow can fail. Football language does not become a tracking construct mer
 
 The immediate open problem is representation integrity. The attacker’s interval must be defined without defensive outcomes, and the defensive change must remain geometric rather than tactical. The current movement-segmentation implementation is historical evidence, not an accepted next protocol. No “Phase 5C” exists unless a separate design is prospectively specified and frozen.
 
-The first bounded refinement executed under its frozen rules and classified **B**. Prominence sharply reduced fragmentation but drove merging/direction to 35.88%–69.03% against a 3.97% cap. No candidate was selected, so the protocol forbids Game 2 execution and further threshold repair. The next legitimate step is conceptual reassessment of the temporal-unit construct, not direction splitting or another tuning pass.
+The first bounded refinement executed under its frozen rules and classified **B**. Prominence sharply reduced fragmentation but drove merging/direction to 35.88%–69.03% against a 3.97% cap. No candidate was selected, so the protocol forbids Game 2 execution and further threshold repair.
+
+The completed [representation audit](attacking_movement_representation_audit.md) selects **directional movement segments** as the next construct and penalized change points in the attacker's two-dimensional velocity state as the next candidate family. This is a literature-supported protocol recommendation, not a validated method or an executed experiment. The next legitimate step is to freeze its Game 1 fixtures, parameters, and objective gates; Game 2 remains unopened for attacker segmentation unless Game 1 earns the prospectively defined A result.
 
 ## October 1, 2026 constraint
 

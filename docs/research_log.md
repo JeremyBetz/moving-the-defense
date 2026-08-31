@@ -1,5 +1,11 @@
 # Research Log
 
+## 2026-08-31 — Attacking-movement representation audit
+
+Following the frozen prominence-refinement B result, a targeted outcome-blind prior-art audit separated locomotor efforts, generic movement episodes, directional movement segments, tactical runs, and off-ball actions. Football change-of-direction measurement, team-sport velocity change points, general movement-path segmentation, trajectory simplification, and current commercial off-ball-run definitions were compared without inspecting attacker-segmentation outcomes from Metrica Games 2 or 3 or any defensive outcome.
+
+The audit selects exactly one next candidate family: penalized multivariate change-point segmentation of the attacker's $[v_x,v_y]$ state, provisionally implemented with PELT and squared-error cost under a frozen protocol. This changes the construct from scalar effort valleys to directional movement regimes; it does not add a heading threshold or reopen prominence tuning. Piecewise curvature/path simplification is deferred, and hand-built speed-plus-heading/jerk rules are rejected for the next experiment because their interacting thresholds would recreate the repair problem. No segmentation was executed. Prospective fixtures, Game 1 gates, frequency sensitivity, and an A-only condition for later opening Game 2 are recorded in [`attacking_movement_representation_audit.md`](attacking_movement_representation_audit.md).
+
 ## 2026-08-31 — UnravelSports interoperability audit
 
 UnravelSports 1.2.1 was evaluated as an optional/reference layer over canonical contract v1.0.0 using only bounded Kloppy `limit=250` loads from Metrica Game 1 and IDSSE `J03WMX` (249 and 250 frames emitted respectively). The package added only SciPy to the existing runtime; graph/deep-learning extras were not installed. Shared positions matched within $1.78\times10^{-14}$ m only after explicit provider-specific axis mappings. Shared complete-row seven-frame velocity components matched within $4.82\times10^{-13}$ m/s, but the wrapper changed orientation, removed null/support rows, omitted canonical provenance/clocks, derived and capped kinematics, and inferred Metrica possession/ball carrier. The classification is **B — useful interoperability/reference layer, but no governed pipeline integration yet**.
