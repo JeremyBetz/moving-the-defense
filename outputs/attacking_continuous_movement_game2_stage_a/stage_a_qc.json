@@ -1,0 +1,19 @@
+{
+  "canonical_schema_valid": true,
+  "clipping_used": false,
+  "continuous_features_computed": false,
+  "defensive_outcomes_accessed": false,
+  "every_raw_row_has_deterministic_status": true,
+  "excluded_rows_in_valid_segments": 0,
+  "frequency_diagnostic_computed": false,
+  "game3_accessed": false,
+  "hard_jump_links_surviving": 0,
+  "interpolation_used": false,
+  "invalid_coordinates_excluded": true,
+  "period_boundaries_respected": true,
+  "qualifying_duplicate_rows_surviving": 0,
+  "registry_rows_have_required_fields": true,
+  "smoothing_used": false,
+  "stable_player_ids": true,
+  "unique_canonical_row_keys": true
+}

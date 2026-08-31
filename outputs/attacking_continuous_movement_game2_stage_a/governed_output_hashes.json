@@ -1,0 +1,12 @@
+{
+  "canonical_provenance.json": "57f3a8a9d4f356717e503c57f4f1de259fae01027d46ee1fa44dce453d7dc258",
+  "exact_coordinate_duplication_runs.csv": "feedb0673db0eb4bb2c0431e9e7c5c167458903c1fdfd9ae641523f63a74cf77",
+  "frame_time_continuity.csv": "ee568cf445bb8315c002b52f8d720c28939e5dfd44f8c1d53eb5d962c7369f6b",
+  "manifest.json": "7b8dac6385ad8e40406ffdbff6602891dd3ae5060c816497a1441a09429d0824",
+  "raw_link_diagnostics.csv": "3a4106fad367c80e62af25823b42fad900ce209158816c815576bda9fd230b12",
+  "raw_support_inventory.csv": "6b9a91f8d5c3bae0b95336fe967b64f03ef7d3c1f0a318e3c74faf2024a90956",
+  "stage_a_qc.json": "9a7e6602c24f3845aa7d6bdbdfc9c1054e84716e64122d8d24a854ac975cd863",
+  "stage_a_result.json": "c63eaa6601ad6605c108efd82fa92d0d7e53e75df7414ccc91d7991187d1599f",
+  "trajectory_validity_registry.csv": "22c202c83c564e4b0c6fb3aa0ceb8729f7bdb2b6651b980bd1024fd4002d98b5",
+  "valid_support_segments.csv": "d618232b7363d0311560e935e23dd3ad77def8f1af26319df90c4c536f43460b"
+}

@@ -15,6 +15,8 @@ from infrastructure.kloppy_metrica_adapter import (  # noqa: E402
     CANONICAL_COLUMNS,
     PITCH_LENGTH_M,
     PITCH_WIDTH_M,
+    canonical_provenance,
+    game_paths,
     game1_paths,
     load_dataset,
     read_provider_frame_index,
@@ -74,6 +76,24 @@ class KloppyMetricaAdapterTest(unittest.TestCase):
         self.assertFalse(bool(missing_ball.observed))
         self.assertTrue(np.isnan(missing_ball.x_norm))
         self.assertTrue(np.isnan(missing_ball.y_norm))
+
+    def test_match_identity_parameter_preserves_game1_defaults(self):
+        default = canonical_provenance(self.dataset, self.home, self.away)
+        self.assertEqual(default["provider_match_id"], "Sample Game 1")
+        self.assertEqual(default["canonical_match_id"], "metrica:sample-game-1")
+        overridden = canonical_provenance(
+            self.dataset,
+            self.home,
+            self.away,
+            provider_match_id="Example Match",
+            canonical_match_id="metrica:example-match",
+        )
+        changed = {
+            key for key in default
+            if default[key] != overridden[key]
+        }
+        self.assertEqual(changed, {"provider_match_id", "canonical_match_id"})
+        self.assertEqual(game_paths(ROOT, 1), (self.home, self.away))
 
 
 if __name__ == "__main__":

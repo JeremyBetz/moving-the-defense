@@ -1,0 +1,68 @@
+{
+  "canonical_ingestion": {
+    "adapter_version": "1.0.0",
+    "canonical_contract_version": "1.0.0",
+    "canonical_frames": 141156,
+    "canonical_rows": 3811212,
+    "coordinate_convention": "metres, pitch centre origin, +x right, +y up, fixed pitch frame",
+    "eligible_outfield_players": 24,
+    "kloppy_version": "3.19.0",
+    "periods": [
+      1,
+      2
+    ],
+    "pitch_length_m": 105.0,
+    "pitch_width_m": 68.0,
+    "player_periods": 48,
+    "provider_frame_semantics": "integer global provider frame preserved as canonical string",
+    "provider_time_semantics": "raw Metrica Time [s] as match clock; Kloppy period-relative timestamp",
+    "teams": [
+      "metrica:Away",
+      "metrica:Home"
+    ]
+  },
+  "duplicate_canonical_row_keys": 0,
+  "exact_duplicate_runs_all_pairs": 176,
+  "frame_time_continuity_issues": 0,
+  "hard_link_affected_player_periods": 29,
+  "hard_link_affected_players": 19,
+  "hard_link_registry_intervals": 29,
+  "hard_links_above_20_mps": 497,
+  "maximum_observed_raw_link_speed_mps": 182.04742033361183,
+  "qualifying_duplicate_affected_player_periods": 31,
+  "qualifying_duplicate_affected_players": 22,
+  "qualifying_duplicate_distinct_identity_pairs": 31,
+  "qualifying_duplicate_frame_count_max": 328,
+  "qualifying_duplicate_frame_count_median": 43.0,
+  "qualifying_duplicate_frame_count_min": 5,
+  "qualifying_duplicate_registry_intervals": 97,
+  "qualifying_sustained_same_team_duplicate_events": 57,
+  "raw_support": {
+    "canonical_outfield_rows": 3387744,
+    "coordinate_invalid_rows": 564620,
+    "final_invalid_union_rows": 1294716,
+    "final_valid_rows": 2093028,
+    "finite_out_of_bounds_rows": 18120,
+    "hard_jump_invalid_rows_before_overlap": 726886,
+    "internal_unsupported_gaps": 0,
+    "observed_valid_rows_before_registry": 2823124,
+    "overlap_all_three_rows": 0,
+    "overlap_hard_and_duplicate_rows": 3209,
+    "overlap_universal_and_duplicate_rows": 0,
+    "overlap_universal_and_hard_rows": 0,
+    "player_periods_ending_before_period_end": 4,
+    "player_periods_starting_after_period_start": 4,
+    "sustained_duplicate_invalid_rows_before_overlap": 6419,
+    "universal_invalid_rows": 564620
+  },
+  "registry_entries": 138,
+  "registry_entries_by_rule": {
+    "hard_raw_jump": 29,
+    "sustained_exact_same_team_duplication": 97,
+    "universal_invalid_support": 12
+  },
+  "reported_links_above_10_mps": 1408,
+  "stage_a_classification": "READY",
+  "unresolved_support_ambiguities": [],
+  "valid_support_segments": 134
+}

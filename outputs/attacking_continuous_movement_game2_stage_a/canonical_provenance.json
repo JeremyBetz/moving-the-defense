@@ -1,0 +1,78 @@
+{
+  "adapter_version": "1.0.0",
+  "ball_object_id_provider": null,
+  "ball_state_available": false,
+  "canonical_coordinate_system": "metres, pitch centre origin, +x right, +y top, fixed pitch frame",
+  "canonical_match_id": "metrica:sample-game-2",
+  "contract_version": "1.0.0",
+  "coordinate_transform": [
+    "Kloppy 3.19.0 parses Metrica y bottom-to-top",
+    "x_m = kloppy_x * 105 - 52.5",
+    "y_m = kloppy_y * 68 - 34"
+  ],
+  "coordinates_attacking_direction_normalized": false,
+  "goalkeeper_source": "frozen project metadata: Home 11, Away 25",
+  "interpolation_used": false,
+  "kloppy_version": "3.19.0",
+  "orientation_metadata": "away-home",
+  "pitch_m": [
+    105.0,
+    68.0
+  ],
+  "player_id_map_provider_to_canonical": {
+    "away_15": "metrica:Away:15",
+    "away_16": "metrica:Away:16",
+    "away_17": "metrica:Away:17",
+    "away_18": "metrica:Away:18",
+    "away_19": "metrica:Away:19",
+    "away_20": "metrica:Away:20",
+    "away_21": "metrica:Away:21",
+    "away_22": "metrica:Away:22",
+    "away_23": "metrica:Away:23",
+    "away_24": "metrica:Away:24",
+    "away_25": "metrica:Away:25",
+    "away_26": "metrica:Away:26",
+    "home_1": "metrica:Home:1",
+    "home_10": "metrica:Home:10",
+    "home_11": "metrica:Home:11",
+    "home_12": "metrica:Home:12",
+    "home_13": "metrica:Home:13",
+    "home_14": "metrica:Home:14",
+    "home_2": "metrica:Home:2",
+    "home_3": "metrica:Home:3",
+    "home_4": "metrica:Home:4",
+    "home_5": "metrica:Home:5",
+    "home_6": "metrica:Home:6",
+    "home_7": "metrica:Home:7",
+    "home_8": "metrica:Home:8",
+    "home_9": "metrica:Home:9"
+  },
+  "possession_team_available": false,
+  "provider": "metrica",
+  "provider_frame_id_available": true,
+  "provider_match_id": "Sample Game 2",
+  "provider_raw_timestamp_available": false,
+  "source_coordinate_system": "normalized x left-to-right, y top-to-bottom",
+  "source_files": [
+    {
+      "path": "data/metrica_sample_game_2/Sample_Game_2_RawTrackingData_Home_Team.csv",
+      "sha256": "3f9990ac204b07133e4202441d6fcbb386897c7c7f81e1bc3ce4d35bc8644694"
+    },
+    {
+      "path": "data/metrica_sample_game_2/Sample_Game_2_RawTrackingData_Away_Team.csv",
+      "sha256": "aa639f40762eade46c389020fe4458266b5ba14027b1e96e22e75db62803718b"
+    }
+  ],
+  "support_rule": "Kloppy coordinate-object presence; unavailable reason retained as not_observed_unspecified",
+  "team_id_map_provider_to_canonical": {
+    "away": "metrica:Away",
+    "home": "metrica:Home"
+  },
+  "time_match_rule": "raw Metrica Time [s] preserved from provider frame-index sidecar",
+  "time_period_rule": "Kloppy period-relative timestamp",
+  "transformation_log": [
+    "load via Kloppy",
+    "canonical fixed-pitch coordinate transform",
+    "explicit roster null rows"
+  ]
+}

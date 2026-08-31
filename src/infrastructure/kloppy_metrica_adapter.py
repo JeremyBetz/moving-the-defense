@@ -64,12 +64,16 @@ class AdapterProvenance:
     interpolation_used: bool
 
 
-def game1_paths(root: Path) -> tuple[Path, Path]:
-    data = root / "data" / "metrica_sample_game_1"
+def game_paths(root: Path, game_number: int) -> tuple[Path, Path]:
+    data = root / "data" / f"metrica_sample_game_{game_number}"
     return (
-        data / "Sample_Game_1_RawTrackingData_Home_Team.csv",
-        data / "Sample_Game_1_RawTrackingData_Away_Team.csv",
+        data / f"Sample_Game_{game_number}_RawTrackingData_Home_Team.csv",
+        data / f"Sample_Game_{game_number}_RawTrackingData_Away_Team.csv",
     )
+
+
+def game1_paths(root: Path) -> tuple[Path, Path]:
+    return game_paths(root, 1)
 
 
 def read_provider_frame_index(home_path: Path) -> pd.DataFrame:
@@ -338,7 +342,14 @@ def iter_canonical_polars_chunks(
         yield canonical_frame(rows)
 
 
-def canonical_provenance(dataset, home_path: Path, away_path: Path) -> dict:
+def canonical_provenance(
+    dataset,
+    home_path: Path,
+    away_path: Path,
+    *,
+    provider_match_id: str = "Sample Game 1",
+    canonical_match_id: str = "metrica:sample-game-1",
+) -> dict:
     """Return the governed provenance sidecar for canonical Metrica output."""
     team_map = {
         team.team_id: canonical_team_key(team_name(team.team_id))
@@ -352,8 +363,8 @@ def canonical_provenance(dataset, home_path: Path, away_path: Path) -> dict:
         "contract_version": CONTRACT_VERSION,
         "adapter_version": ADAPTER_VERSION,
         "provider": "metrica",
-        "provider_match_id": "Sample Game 1",
-        "canonical_match_id": "metrica:sample-game-1",
+        "provider_match_id": provider_match_id,
+        "canonical_match_id": canonical_match_id,
         "kloppy_version": str(kloppy.__version__),
         "source_files": [
             {"path": str(path.relative_to(path.parents[2])), "sha256": _sha256(path)}

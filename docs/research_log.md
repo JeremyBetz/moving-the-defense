@@ -1,5 +1,13 @@
 # Research Log
 
+## 2026-08-31 — Game 2 continuous-representation Stage A READY
+
+This was the first authorized Game 2 access under the frozen continuous held-out protocol. Raw tracking was loaded through Kloppy 3.19.0 and the governed Metrica adapter into canonical contract v1.0.0. Across 141,156 frames, 24 rostered outfield identities, and 48 player-periods, the audit assigned every one of 3,387,744 outfield rows a deterministic support status without smoothing or calculating a continuous feature.
+
+The frozen diagnostics found 497 raw links strictly above 20 m/s and 57 sustained exact same-team duplication events. Universal invalid support, hard-link endpoint/bounded-segment handling, and duplication handling produced a 138-interval registry. Its complement contains 2,093,028 valid raw rows in 134 support segments. These substantial exclusions were applied mechanically rather than shortened after inspection. No qualifying hard link or duplicate survives inside valid support; no unresolved identity/support ambiguity remains; and an independent execution reproduced all governed files byte-for-byte.
+
+The result is **STAGE A READY**. The maximum claim is that Game 2 raw trajectory support passed the prospectively frozen pre-result integrity audit and its registry/support segments were frozen before continuous features. The attacker representation has not yet replicated. No smoothing, signed displacement, path, straightness, frequency comparison, defender/outcome inspection, bridge analysis, or Game 3 access occurred. See [`results/attacking_continuous_movement_game2_stage_a.md`](results/attacking_continuous_movement_game2_stage_a.md).
+
 ## 2026-08-31 — Held-out Game 2 continuous-representation protocol frozen
 
 No Game 2 or Game 3 data was accessed. A strict [within-provider held-out protocol](protocols/attacking_continuous_movement_game2_heldout_v1.md) now inherits the complete Game 1 representation and every frequency gate unchanged. It requires a separately committed Stage-A canonical trajectory-support audit before any Game 2 smoothing or continuous feature is calculated.

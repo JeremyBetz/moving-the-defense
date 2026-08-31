@@ -1,0 +1,58 @@
+{
+  "analysis": "Game 2 continuous attacker movement Stage-A support audit",
+  "firewall": {
+    "continuous_features": false,
+    "defensive_outcomes": false,
+    "events": false,
+    "frequency_diagnostic": false,
+    "game3": false,
+    "smoothing": false
+  },
+  "frozen_rules": {
+    "hard_raw_jump_mps": 20.0,
+    "hard_raw_jump_operator": ">",
+    "raw_dt_s": 0.04,
+    "report_only_raw_jump_mps": 10.0,
+    "report_only_raw_jump_operator": ">",
+    "same_team_exact_duplicate_min_consecutive_frames": 5,
+    "time_tolerance_s": 1e-09
+  },
+  "governing_files": [
+    {
+      "path": "docs/protocols/attacking_continuous_movement_game2_heldout_v1.md",
+      "sha256": "d0661e854cac676778722599403adfcbe5a133217199b0862ceab010527b8634"
+    },
+    {
+      "path": "docs/protocols/attacking_continuous_movement_v1.md",
+      "sha256": "47b4eb61c2a13d0bbb9d8b88bbeb989f3cc8d62df4727b12f067801d50fb341a"
+    },
+    {
+      "path": "docs/results/attacking_continuous_movement_game1_v1.md",
+      "sha256": "a0b5aea37e37b3b5ddb4a46e5513e42df89c7828f847dfe8564339cb8c9f60d7"
+    },
+    {
+      "path": "src/attacking_continuous_movement_game2_stage_a.py",
+      "sha256": "6817bc931104b04138dbc7e9293b04e997e93871f8aeb45af300a8c11bf57d82"
+    }
+  ],
+  "source_files": [
+    {
+      "path": "data/metrica_sample_game_2/Sample_Game_2_RawTrackingData_Home_Team.csv",
+      "sha256": "3f9990ac204b07133e4202441d6fcbb386897c7c7f81e1bc3ce4d35bc8644694"
+    },
+    {
+      "path": "data/metrica_sample_game_2/Sample_Game_2_RawTrackingData_Away_Team.csv",
+      "sha256": "aa639f40762eade46c389020fe4458266b5ba14027b1e96e22e75db62803718b"
+    }
+  ],
+  "stage": "A \u2014 raw trajectory support only",
+  "versions": {
+    "adapter": "1.0.0",
+    "canonical_contract": "1.0.0",
+    "kloppy": "3.19.0",
+    "numpy": "2.5.2",
+    "pandas": "2.3.3",
+    "polars": "1.44.1",
+    "python": "3.13.15"
+  }
+}
