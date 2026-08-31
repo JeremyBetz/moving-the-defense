@@ -1,0 +1,16 @@
+window_s,eligible,exclusion_reason,len
+1,false,frozen_stage_a_registry_or_segment_boundary,146484
+1,false,raw_support_invalid,112900
+1,false,smoothing_edge,72
+1,false,window_before_period_start,240
+1,true,eligible,417872
+2,false,frozen_stage_a_registry_or_segment_boundary,146827
+2,false,raw_support_invalid,112880
+2,false,smoothing_edge,72
+2,false,window_before_period_start,480
+2,true,eligible,417309
+4,false,frozen_stage_a_registry_or_segment_boundary,147497
+4,false,raw_support_invalid,112840
+4,false,smoothing_edge,72
+4,false,window_before_period_start,960
+4,true,eligible,416199

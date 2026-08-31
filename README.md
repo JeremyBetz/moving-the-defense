@@ -88,7 +88,7 @@ Second, the project tested whether an attacker’s own trajectory could be broke
 - only 1.97% met a merging/direction-change diagnostic;
 - a retained 56.30 m/s maximum was subsequently traced to an identity/trajectory-continuity failure rather than ordinary movement or smoothing alone.
 
-The basic attacker-only approach survives, but the current valley rule must not be carried unchanged into later response sampling. A frozen prominence refinement reduced fragmentation sharply but produced 35.88%–69.03% merging/direction failures against a 3.97% safety cap. A subsequent frozen two-dimensional velocity change-point representation failed in the opposite direction: **99.80%** of its 247,175 Game 1 regimes met the fragmentation diagnostic, and its 10 Hz recall, F1, and count-stability gates failed. Both results are **B**; neither method was selected, and Game 2 remains unopened.
+The basic attacker-only approach survives, but the current valley rule must not be carried unchanged into later response sampling. A frozen prominence refinement reduced fragmentation sharply but produced 35.88%–69.03% merging/direction failures against a 3.97% safety cap. A subsequent frozen two-dimensional velocity change-point representation failed in the opposite direction: **99.80%** of its 247,175 Game 1 regimes met the fragmentation diagnostic, and its 10 Hz recall, F1, and count-stability gates failed. Both results are **B**; neither discrete method was selected or opened on Game 2.
 
 ## Current frontier
 
@@ -120,7 +120,7 @@ Every arrow is conditional. The current methodological frontier is approximately
 
 > **Can attacking movement and defensive geometric change be represented as defensible finite units before testing their relationship?**
 
-After three discrete boundary specifications produced complementary fragmentation/merging failures, [continuous attacker movement v1.0](docs/results/attacking_continuous_movement_game1_v1.md) classified **A on development Game 1**. Signed displacement, path length, and straightness were deterministic, support-valid, and passed every frozen 25/10 Hz gate over 1/2/4-second windows. A separate held-out Game 2 protocol is frozen, and its mandatory [raw trajectory-support checkpoint](docs/results/attacking_continuous_movement_game2_stage_a.md) is **READY** with a committed registry created before any Game 2 continuous feature. The representation itself has not yet replicated, this is not cross-provider validation, and no attacker-to-defender bridge has begun.
+After three discrete boundary specifications produced complementary fragmentation/merging failures, continuous attacker movement v1.0 retained signed displacement, path length, and straightness without imposing universal episode boundaries. It classified **A** on [development Game 1](docs/results/attacking_continuous_movement_game1_v1.md), then **A** on [held-out Game 2](docs/results/attacking_continuous_movement_game2_v1.md) after a separately frozen [raw trajectory-support checkpoint](docs/results/attacking_continuous_movement_game2_stage_a.md). All hard checks and all 15 frozen 25/10 Hz gates passed at 1/2/4-second windows, with byte-identical reproduction. The measurement has therefore replicated across both Metrica sample matches under the frozen within-provider protocol. This is not cross-provider or tactical validation, and no attacker-to-defender bridge has begun.
 
 The project has not reached tactical interpretation, attacker attribution, causal influence, gravity, or off-ball value.
 

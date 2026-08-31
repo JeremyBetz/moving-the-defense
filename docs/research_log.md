@@ -1,5 +1,11 @@
 # Research Log
 
+## 2026-08-31 — Continuous attacker movement replicates on held-out Game 2
+
+The first authorized Game 2 feature execution consumed the separately committed Stage-A registry unchanged: 2,093,028 valid raw outfield rows in 134 support segments, with no support rediscovery, revision, or added exclusion. The frozen centred seven-frame mean and 1/2/4 s continuous geometry produced 417,872, 417,309, and 416,199 eligible observations respectively across 24 outfield players and 44 contributing player-periods.
+
+The result is **A — within-provider held-out replication**. All 36 mathematical checks had zero violations; all 14 fixtures and five transformations passed; all 15 frozen 25/10 Hz gates passed with exact eligibility matching; and an independent rerun produced byte-identical hashes for all 19 governed outputs. The supported claim is limited to replication of the frozen attacker-only geometric representation across both Metrica sample matches. The resampling diagnostic is not independent native-10 Hz evidence, and no defensive outcome, bridge, tactical meaning, or Game 3 data was inspected. The prerequisite for a later separately frozen attacker-to-defender bridge protocol is now met. See [`results/attacking_continuous_movement_game2_v1.md`](results/attacking_continuous_movement_game2_v1.md).
+
 ## 2026-08-31 — Game 2 continuous-representation Stage A READY
 
 This was the first authorized Game 2 access under the frozen continuous held-out protocol. Raw tracking was loaded through Kloppy 3.19.0 and the governed Metrica adapter into canonical contract v1.0.0. Across 141,156 frames, 24 rostered outfield identities, and 48 player-periods, the audit assigned every one of 3,387,744 outfield rows a deterministic support status without smoothing or calculating a continuous feature.

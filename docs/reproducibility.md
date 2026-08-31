@@ -102,7 +102,7 @@ MPLCONFIGDIR=/tmp/moving-the-defense-mpl .venv/bin/python src/attacking_continuo
 
 For the required independent check, rerun with `--output` to a separate directory, then use `--verify-against` from the governed output directory. Complete support, feature, frequency-comparison, fixture, summary, provenance, and hash artifacts are under `outputs/attacking_continuous_movement_game1_v1/`.
 
-- Held-out continuous attacker movement: [`docs/protocols/attacking_continuous_movement_game2_heldout_v1.md`](protocols/attacking_continuous_movement_game2_heldout_v1.md), frozen before Game 2 access. Its mandatory [Stage-A trajectory-support result](results/attacking_continuous_movement_game2_stage_a.md) is READY; no Game 2 continuous feature or frequency result exists. Reproduce the support registry and its independent byte-level check with:
+- Held-out continuous attacker movement: [`docs/protocols/attacking_continuous_movement_game2_heldout_v1.md`](protocols/attacking_continuous_movement_game2_heldout_v1.md), frozen before Game 2 access. Its mandatory [Stage-A trajectory-support result](results/attacking_continuous_movement_game2_stage_a.md) is READY, and the [held-out representation result](results/attacking_continuous_movement_game2_v1.md) is A. Reproduce the support registry and its independent byte-level check with:
 
 ```bash
 MPLCONFIGDIR=/tmp/moving-the-defense-stage-a .venv/bin/python src/attacking_continuous_movement_game2_stage_a.py
@@ -110,6 +110,15 @@ MPLCONFIGDIR=/tmp/moving-the-defense-stage-a .venv/bin/python src/attacking_cont
 ```
 
 Governed provenance, raw-support inventory, diagnostic triggers, registry, support segments, hashes, and reproduction verification are under `outputs/attacking_continuous_movement_game2_stage_a/`.
+
+Then reproduce the continuous representation and tests with:
+
+```bash
+MPLCONFIGDIR=/tmp/moving-the-defense-game2-v1 .venv/bin/python src/attacking_continuous_movement_game2_v1.py
+.venv/bin/python -m unittest tests.test_attacking_continuous_movement_game2_v1
+```
+
+For the independent check, rerun with `--output` to a separate directory and call the governed output with `--verify-against`. The 19 governed outputs must match byte-for-byte. Feature, support-linkage, 25/10 Hz comparison, mathematical-QC, fixture, invariance, provenance, hash, reproduction, and final-classification artifacts are under `outputs/attacking_continuous_movement_game2_v1/`.
 
 Where a machine-readable config is listed, documentation explains the rules and the config governs execution. The continuous attacker-movement v1 freeze is currently governed directly by its protocol document; an implementation may transcribe it to config only through a pre-execution exact-consistency check. If prose and config conflict, stop and resolve the literal inconsistency before outcomes.
 

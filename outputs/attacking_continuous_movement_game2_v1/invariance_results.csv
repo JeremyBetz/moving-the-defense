@@ -1,0 +1,6 @@
+transformation,delta_x_m,delta_y_m,path_length_m,straightness,pass
+translation,1,1,2,0.7071067811865476,true
+rotation,1,-1,2,0.7071067811865476,true
+mirror_x,-1,1,2,0.7071067811865476,true
+mirror_y,1,-1,2,0.7071067811865476,true
+traversal_reversal,-1,-1,2,0.7071067811865476,true

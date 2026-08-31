@@ -1,0 +1,120 @@
+{
+  "canonical_contract_sha256": "bdbde97bfe8d69d5938bbccd344a9ef7d915ed2f72857eeace542b6621a6f4f9",
+  "canonical_module_sha256": "80fe2d45d81d0e65bcc87c2e1e8c343705f02b0649d68aa8edf498498e3a3d7f",
+  "canonical_provenance": {
+    "adapter_version": "1.0.0",
+    "ball_object_id_provider": null,
+    "ball_state_available": false,
+    "canonical_coordinate_system": "metres, pitch centre origin, +x right, +y top, fixed pitch frame",
+    "canonical_match_id": "metrica:sample-game-2",
+    "contract_version": "1.0.0",
+    "coordinate_transform": [
+      "Kloppy 3.19.0 parses Metrica y bottom-to-top",
+      "x_m = kloppy_x * 105 - 52.5",
+      "y_m = kloppy_y * 68 - 34"
+    ],
+    "coordinates_attacking_direction_normalized": false,
+    "goalkeeper_source": "frozen project metadata: Home 11, Away 25",
+    "interpolation_used": false,
+    "kloppy_version": "3.19.0",
+    "orientation_metadata": "away-home",
+    "pitch_m": [
+      105.0,
+      68.0
+    ],
+    "player_id_map_provider_to_canonical": {
+      "away_15": "metrica:Away:15",
+      "away_16": "metrica:Away:16",
+      "away_17": "metrica:Away:17",
+      "away_18": "metrica:Away:18",
+      "away_19": "metrica:Away:19",
+      "away_20": "metrica:Away:20",
+      "away_21": "metrica:Away:21",
+      "away_22": "metrica:Away:22",
+      "away_23": "metrica:Away:23",
+      "away_24": "metrica:Away:24",
+      "away_25": "metrica:Away:25",
+      "away_26": "metrica:Away:26",
+      "home_1": "metrica:Home:1",
+      "home_10": "metrica:Home:10",
+      "home_11": "metrica:Home:11",
+      "home_12": "metrica:Home:12",
+      "home_13": "metrica:Home:13",
+      "home_14": "metrica:Home:14",
+      "home_2": "metrica:Home:2",
+      "home_3": "metrica:Home:3",
+      "home_4": "metrica:Home:4",
+      "home_5": "metrica:Home:5",
+      "home_6": "metrica:Home:6",
+      "home_7": "metrica:Home:7",
+      "home_8": "metrica:Home:8",
+      "home_9": "metrica:Home:9"
+    },
+    "possession_team_available": false,
+    "provider": "metrica",
+    "provider_frame_id_available": true,
+    "provider_match_id": "Sample Game 2",
+    "provider_raw_timestamp_available": false,
+    "source_coordinate_system": "normalized x left-to-right, y top-to-bottom",
+    "source_files": [
+      {
+        "path": "data/metrica_sample_game_2/Sample_Game_2_RawTrackingData_Home_Team.csv",
+        "sha256": "3f9990ac204b07133e4202441d6fcbb386897c7c7f81e1bc3ce4d35bc8644694"
+      },
+      {
+        "path": "data/metrica_sample_game_2/Sample_Game_2_RawTrackingData_Away_Team.csv",
+        "sha256": "aa639f40762eade46c389020fe4458266b5ba14027b1e96e22e75db62803718b"
+      }
+    ],
+    "support_rule": "Kloppy coordinate-object presence; unavailable reason retained as not_observed_unspecified",
+    "team_id_map_provider_to_canonical": {
+      "away": "metrica:Away",
+      "home": "metrica:Home"
+    },
+    "time_match_rule": "raw Metrica Time [s] preserved from provider frame-index sidecar",
+    "time_period_rule": "Kloppy period-relative timestamp",
+    "transformation_log": [
+      "load via Kloppy",
+      "canonical fixed-pitch coordinate transform",
+      "explicit roster null rows"
+    ]
+  },
+  "frozen_game1_source": "src/attacking_continuous_movement_game1_v1.py",
+  "frozen_game1_source_sha256": "fb640a9e53984e605609fe53535eac914ce9276326db9fcfece044378d7d5004",
+  "heldout_protocol": "docs/protocols/attacking_continuous_movement_game2_heldout_v1.md",
+  "heldout_protocol_sha256": "d0661e854cac676778722599403adfcbe5a133217199b0862ceab010527b8634",
+  "metrica_adapter_sha256": "459fdffea1ec6dd69f6efb381b456ebfaa63bf54c32fb3b4932ee26a544f9d45",
+  "numpy": "2.5.2",
+  "pandas": "2.3.3",
+  "polars": "1.44.1",
+  "protocol": "docs/protocols/attacking_continuous_movement_v1.md",
+  "protocol_sha256": "47b4eb61c2a13d0bbb9d8b88bbeb989f3cc8d62df4727b12f067801d50fb341a",
+  "python": "3.13.15",
+  "scientific_output_files": [
+    "evaluation_support_1s.parquet",
+    "features_1s.parquet",
+    "frequency_comparison_1s.parquet",
+    "evaluation_support_2s.parquet",
+    "features_2s.parquet",
+    "frequency_comparison_2s.parquet",
+    "evaluation_support_4s.parquet",
+    "features_4s.parquet",
+    "frequency_comparison_4s.parquet",
+    "distribution_diagnostics.csv",
+    "frequency_metrics.csv",
+    "exclusion_summary.csv",
+    "mathematical_qc.csv",
+    "game1_game2_descriptive_comparison.csv",
+    "fixtures.csv",
+    "invariance_results.csv",
+    "pre_reproduction_results.json"
+  ],
+  "source": "src/attacking_continuous_movement_game2_v1.py",
+  "source_sha256": "beda5bb36e273735f083669e2921c9b7794321a041f9039ede62a298ca9a4c6d",
+  "stage_a_registry_sha256": "22c202c83c564e4b0c6fb3aa0ceb8729f7bdb2b6651b980bd1024fd4002d98b5",
+  "stage_a_result": "docs/results/attacking_continuous_movement_game2_stage_a.md",
+  "stage_a_result_sha256": "61936163634133ecfff6e6a09cd268b8be03babd6657acce5c8585c2009d60d2",
+  "stage_a_support_segments_sha256": "d618232b7363d0311560e935e23dd3ad77def8f1af26319df90c4c536f43460b",
+  "support_discovery_performed": false,
+  "support_registry_revised": false
+}

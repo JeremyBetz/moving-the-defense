@@ -1,0 +1,23 @@
+{
+  "distribution_diagnostics.csv": "00884641dd8378cd5f35ee44c922b0130d74622f8968bc0a48333b8de81fbac5",
+  "evaluation_support_1s.parquet": "d049153da1aef59d43814f6cda452f5b02dab7177e9805c3a2a650029b0b6fe8",
+  "evaluation_support_2s.parquet": "71c475f7afc1163afd268c90bd6696d3c86c04c0b0a0f91924259e1b9476cb5c",
+  "evaluation_support_4s.parquet": "e0eda68e4eb5bdfb34d29b022f0b50f94622fd4cefcda3fdd77a096c8c7c0df4",
+  "exclusion_summary.csv": "05805abb89a588ae8c0a16d9f8b77c3b78e302463af516d1842ea56682f9cdb0",
+  "features_1s.parquet": "6b9312a6cc08eadb469af82ebc9557449cff1f634020b70eef93af96bc6c833a",
+  "features_2s.parquet": "7bd66bef02c6068d6703e40f91e32377530d2d27214e59d7cc9111d9d1a52d1c",
+  "features_4s.parquet": "ad139161e4d01cf7bdfa1975d2404b9077930e183c5afdec6016cdaa60ebe9b0",
+  "final_results.json": "bba88d6a9cc42c614980d4e9b76b3045acd6fd82887e5cc7e57d08f3dadf662e",
+  "fixtures.csv": "cc4968d8864e47d91a4f3d910b3968b38e43190b76c04afc55f67a5ecb6051dc",
+  "frequency_comparison_1s.parquet": "df1753bee8b7c4f6ee81a174697ace24153fccd6e3ae462f2405ba7e6b66f9dc",
+  "frequency_comparison_2s.parquet": "b1c3c18676959442a3f6d03f3077b5504c916abcf909ce05aa0e14e68e1f0966",
+  "frequency_comparison_4s.parquet": "8a188fb49455a2a9911c934e15a9ce3b223a6d6e9ce556bf9348f071b712ac19",
+  "frequency_metrics.csv": "f2d8441815b4caf237f6024eb86cd566813b0c8214f8acf6d6c58f5d9546d1c4",
+  "game1_game2_descriptive_comparison.csv": "061c7f1063a1348fcf104c60768554173ce6acadf5eba6d8c157b6044ce9d022",
+  "invariance_results.csv": "2a038cfc653bcc4d751ad0660cf4a5ce12121d6bb0be2c3e1863ade5a69c2445",
+  "manifest.json": "5558ed43360a5bc9d65fd826b45e28bb5ad41b86264779021a1da31f6b300733",
+  "mathematical_qc.csv": "25b26a853bd79fc5ee0b5e527c4df6a4c985d90ff421d47f2bff06f8c8b07b26",
+  "pre_reproduction_results.json": "852558f079c96001a40d9c6c23301149e6a4b553d03e8ed9f4d7573d92ef0dea",
+  "reproduction_verification.json": "4bfce7b73a72605d76d75af0b4fdfbe41172b9826340c448776b2fa345c04fa0",
+  "scientific_output_hashes.json": "e1ab4991daf569d9f0043684b7e6480e7a2a1ba0e8c700371a9dcba59d120c26"
+}
