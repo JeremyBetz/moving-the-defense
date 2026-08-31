@@ -4,6 +4,8 @@
 
 **Decision:** **B — pivot to a continuous attacking-movement representation.** Geometry-first discrete episodes remain a secondary, deferred possibility rather than the next experiment.
 
+> **Prospective resolution (2026-08-31):** [continuous protocol v1.0](protocols/attacking_continuous_movement_v1.md) subsequently retained signed displacement, path length, and derived straightness, while deferring heading change and speed variation before any Game 1 continuous output. The five-family discussion below records the construct fork that preceded that minimality decision.
+
 ## Why this fork exists
 
 Moving the Defense eventually wants to ask:

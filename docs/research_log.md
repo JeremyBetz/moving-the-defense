@@ -1,5 +1,11 @@
 # Research Log
 
+## 2026-08-31 — Continuous attacking-movement protocol v1.0 frozen
+
+No scientific output was generated. Before Game 1 execution, the five fork candidates were reduced to three observable families: signed canonical x/y displacement, travelled path length, and straightness as an explicitly derived directness view. Absolute heading change and total speed variation were deferred because their additional thresholds and sampling/derivative sensitivity were not justified for the minimal v1 construct.
+
+The [frozen protocol](protocols/attacking_continuous_movement_v1.md) fixes 2.0 s primary and 1.0/4.0 s sensitivity windows, a period-aligned 0.20 s evaluation grid, the historical centred seven-frame trajectory, complete-support rules and Game 1 trajectory registry, exact stationary handling, synthetic/invariance fixtures, observable-specific 25/10 Hz gates, and a mechanical A/B/C decision. This was a protocol-design pass only: Game 1 continuous features, segmentation, defenders, defensive outcomes, the bridge, Game 2, and Game 3 were not inspected.
+
 ## 2026-08-31 — Attacking-movement representation fork
 
 No new data analysis was run. The speed-valley, prominence, and frozen 2D velocity change-point results were synthesized as three distinct failures of boundary semantics rather than evidence that speed, change points, or discreteness are universally invalid. A targeted prior-art review compared continuous football coordination/kinematics and movement-path descriptors with geometry-first trajectory simplification.

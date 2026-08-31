@@ -93,8 +93,9 @@ data/metrica_sample_game_2/
 - Phase 5A: [`config/phase5a_contextual_expectation_protocol.json`](../config/phase5a_contextual_expectation_protocol.json).
 - Phase 5B: [`config/phase5b_opponent_relational_increment_protocol.json`](../config/phase5b_opponent_relational_increment_protocol.json).
 - Outcome-blind movement-segmentation audit: [`config/post5b_movement_segmentation_audit_rules.json`](../config/post5b_movement_segmentation_audit_rules.json), exploratory predeclared rules rather than a frozen validation protocol.
+- Continuous attacker movement: [`docs/protocols/attacking_continuous_movement_v1.md`](protocols/attacking_continuous_movement_v1.md), version 1.0, frozen before Game 1 execution. No implementation or result artifact exists yet.
 
-Documentation explains the rules; configs govern execution. If prose and config conflict, stop and resolve the literal inconsistency before outcomes.
+Where a machine-readable config is listed, documentation explains the rules and the config governs execution. The continuous attacker-movement v1 freeze is currently governed directly by its protocol document; an implementation may transcribe it to config only through a pre-execution exact-consistency check. If prose and config conflict, stop and resolve the literal inconsistency before outcomes.
 
 ## Development/test separation
 
