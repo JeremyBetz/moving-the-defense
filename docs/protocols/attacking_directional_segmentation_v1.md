@@ -5,6 +5,10 @@
 **Held out:** Metrica Sample Game 2 remains unopened for attacker segmentation; Sample Game 3 remains untouched  
 **Execution status:** not executed
 
+### Pre-execution erratum — 2026-08-31
+
+An attempted implementation stopped before code or results when it found that the direction-change bullet below omitted the historical minimum-path condition even though this protocol explicitly intended to retain the historical diagnostic. No Game 1 directional segmentation, fixture result, or aggregate was generated or inspected; Games 2 and 3 and defensive outcomes remained untouched. Before execution, the definition was restored to the exact historical conjunction—path at least 3.0 m **and** absolute heading change at least 180°—including its original geometry, denominator, and numerical comparisons. This is a provenance-restoring protocol clarification, not empirical tuning. The 3.97% safety limit was derived from that historical definition and would not apply to a heading-only replacement.
+
 ## 1. Question and construct
 
 This protocol asks whether an attacker-only partition into **directional movement segments** can reduce the fragmentation/merging trade-off left by scalar speed valleys.
@@ -180,7 +184,15 @@ Failure of a required fixture is hard implementation/model QC failure. Fixtures 
 
 ## 10. Independent development diagnostics
 
-Every accepted regime retains duration, path, displacement, signed x/y displacement, peak/mean speed, fitted mean velocity, within-regime squared residual, displacement/path ratio, maximum chord deviation, total absolute heading change, and support provenance. Heading calculations omit velocity samples below 0.50 m/s and break across such samples; they are diagnostics only.
+Every accepted regime retains duration, path, displacement, signed x/y displacement, peak/mean speed, fitted mean velocity, within-regime squared residual, displacement/path ratio, maximum chord deviation, total absolute heading change, and support provenance. Historical path and heading conventions are retained exactly for the frozen diagnostics:
+
+1. Take the segment's supported smoothed-position sequence $\widetilde{\mathbf p}_0,\ldots,\widetilde{\mathbf p}_k$ and increments $\Delta\mathbf p_i=\widetilde{\mathbf p}_{i+1}-\widetilde{\mathbf p}_i$.
+2. Path is $\sum_i\|\Delta\mathbf p_i\|_2$.
+3. An increment contributes a heading only when $\|\Delta\mathbf p_i\|_2>10^{-9}$ m and its endpoint speed is at least 0.50 m/s.
+4. Compute contributing headings with `atan2(dy, dx)`, retain them in temporal order, unwrap that filtered sequence, take consecutive differences, then sum the absolute differences in degrees. The historical implementation does not insert an additional break between retained headings when an omitted increment lies between them.
+5. With fewer than two contributing headings, signed and absolute heading change are exactly 0°.
+
+These are diagnostic calculations only.
 
 ### Fragmentation
 
@@ -201,8 +213,20 @@ Retain the historical independent composite:
 
 - duration ≥8.0 s;
 - displacement/path ≤0.5 when path is nonzero;
-- total absolute heading change ≥180°;
+- **direction-change component:** path ≥3.0 m **and** total absolute heading change ≥180°;
 - `merging_direction_any`: at least one condition.
+
+The exact historical numerical comparisons are:
+
+```text
+diag_long = duration_s >= 8.0 - 1e-9
+diag_low_displacement_path_ratio = displacement_path_ratio <= 0.5 + 1e-12
+diag_direction_change = (path_m >= 3.0 - 1e-9)
+                        AND (absolute_heading_change_deg >= 180.0 - 1e-9)
+diag_merging_any = diag_long OR diag_low_displacement_path_ratio OR diag_direction_change
+```
+
+The denominator is every accepted segmented regime entering the frozen pass/fail diagnostics, directly corresponding to every historical Method A episode in the baseline calculation. Low-motion tags do not remove regimes from this denominator. The historical baseline was 763 / 38,651 = 1.9740757030865954%.
 
 Pass requires `merging_direction_any ≤ 3.97%`, the already frozen historical safety cap (approximately twice the 1.974% baseline). This protects against solving fragmentation by creating long, reversing, or tortuous units. The audit's proposed 5% cap is withdrawn as an unjustified relaxation.
 
