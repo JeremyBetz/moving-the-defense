@@ -1,5 +1,11 @@
 # Research Log
 
+## 2026-08-31 — UnravelSports interoperability audit
+
+UnravelSports 1.2.1 was evaluated as an optional/reference layer over canonical contract v1.0.0 using only bounded Kloppy `limit=250` loads from Metrica Game 1 and IDSSE `J03WMX` (249 and 250 frames emitted respectively). The package added only SciPy to the existing runtime; graph/deep-learning extras were not installed. Shared positions matched within $1.78\times10^{-14}$ m only after explicit provider-specific axis mappings. Shared complete-row seven-frame velocity components matched within $4.82\times10^{-13}$ m/s, but the wrapper changed orientation, removed null/support rows, omitted canonical provenance/clocks, derived and capped kinematics, and inferred Metrica possession/ball carrier. The classification is **B — useful interoperability/reference layer, but no governed pipeline integration yet**.
+
+A minimal canonical-to-Unravel-shaped compatibility view was retained because it preserves canonical rows, namespaced identities, nulls, fixed coordinates, and provider-only possession without derived fields. UnravelSports kinematics remain reference only; pressing and EFPI are deferred; graphs are not used. No historical pipeline, scientific output, protocol, measurement, claim, or untested match changed. See [`unravelsports_interoperability.md`](unravelsports_interoperability.md).
+
 ## 2026-08-30 — Canonical tracking contract v1.0.0
 
 The two B equivalence experiments were converted into a prospective infrastructure contract rather than a historical migration. Contract v1.0.0 separates raw/provider time, provider frame identity, period time, and strictly increasing match-global time; fixes canonical coordinates to centred metres with +x right/+y top and no attacking-direction normalization; requires reversible namespaced IDs, one roster-player row plus ball per frame, explicit support states, noninferential ball fields, and a complete hashed provenance sidecar. It also freezes future numerical/discrete-boundary policy without altering a historical threshold.

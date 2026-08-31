@@ -1,0 +1,18 @@
+{
+  "classification": "B",
+  "decision": "useful interoperability/reference layer, but no governed pipeline integration",
+  "unravelsports_version": "1.2.1",
+  "kloppy_version": "3.19.0",
+  "polars_version": "1.44.1",
+  "scipy_version": "1.18.1",
+  "frame_limit_per_provider": 250,
+  "shared_coordinates_pass_after_explicit_axis_mapping": true,
+  "row_membership_equivalent": false,
+  "support_semantics_preserved": false,
+  "kinematics_exact_substitute": false,
+  "canonical_contract_replaced": false,
+  "governed_measurement_replaced": false,
+  "game3_accessed": false,
+  "historical_pipeline_migrated": false,
+  "source_sha256": "1ebc3f5580d8d2466e318f1e884924bd2dbaeb74c9efc5a2ec97c51bc6804532"
+}

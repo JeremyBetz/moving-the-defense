@@ -24,6 +24,8 @@ The second gate, [Kloppy–IDSSE/Sportec match J03WMX](kloppy_idsse_equivalence.
 
 Those blockers are now resolved prospectively by [canonical tracking contract v1.0.0](canonical_tracking_contract.md). Complete Metrica Game 1 and IDSSE `J03WMX` logical tables passed one explicit Polars schema and provider-independent invariants, while bounded historical focal-relative/control quantities remained equivalent. The Kloppy→governed adapter→canonical Polars architecture is therefore **READY for new analyses**. Historical loaders and governed results are not migrated or rewritten.
 
+The subsequent [UnravelSports interoperability audit](unravelsports_interoperability.md) produced **B**. UnravelSports 1.2.1 is useful as a reference/optional layer, and a thin row-preserving compatibility view is safe to integrate. Its full `KloppyPolarsDataset` is not canonical because it changes orientation, removes unsupported rows, derives and caps kinematics, and may infer possession, ball carrier, and goalkeeper identity. No governed measurement or historical pipeline was replaced.
+
 ## 2. Current architecture
 
 The current pipeline has three main paths:

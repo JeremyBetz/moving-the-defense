@@ -26,6 +26,17 @@ MPLCONFIGDIR=/tmp/moving-the-defense-mpl .venv/bin/python src/canonical_tracking
 
 The full logical tables are validated in consecutive Polars chunks. Only bounded schema samples, provenance sidecars, invariant summaries, and downstream equivalence results are committed under `outputs/canonical_tracking_contract/`.
 
+## UnravelSports interoperability audit
+
+UnravelSports 1.2.1 is pinned for the bounded, non-governed [interoperability audit](unravelsports_interoperability.md). It adds SciPy at runtime; graph/deep-learning extras are not required or installed. With only Metrica Game 1 and IDSSE `J03WMX` present, reproduce the `limit=250` comparison with:
+
+```bash
+MPLCONFIGDIR=/tmp/moving-the-defense-mpl .venv/bin/python src/unravelsports_interoperability_audit.py
+.venv/bin/python -m unittest tests.test_unravelsports_compat
+```
+
+The audit writes only to `outputs/unravelsports_interoperability/`. It does not authorize using UnravelSports inference, filtering, kinematics, pressing, EFPI, or graph tooling in a governed scientific pipeline.
+
 ## Environment
 
 The current local checkpoint was audited under Python 3.13.15. The bounded requirements are intentionally lightweight rather than a platform-specific lockfile; exact package versions used by governed executions are recorded in their manifests where applicable.
@@ -45,7 +56,7 @@ uv venv .venv
 uv pip install --python .venv/bin/python -r requirements-phase0.txt
 ```
 
-Python, pandas, NumPy, Polars, Kloppy, Matplotlib, Jupyter, nbclient, and ipykernel cover the tracked source implementations and documentation figures. XML parsing uses the Python standard library. The local environment is ignored by Git.
+Python, pandas, NumPy, Polars, Kloppy, UnravelSports, SciPy, Matplotlib, Jupyter, nbclient, and ipykernel cover the tracked source implementations and documentation figures. XML parsing uses the Python standard library. The local environment is ignored by Git.
 
 ## Raw data
 
