@@ -1,0 +1,3 @@
+period,current_frames,kloppy_frames,first_frame,last_frame,first_provider_timestamp_ns,last_provider_timestamp_ns,first_kloppy_period_time_s,last_kloppy_period_time_s,frame_ids_exact,provider_timestamps_exact
+firstHalf,70708,70708,10000,80707,1685194212600000000,1685197040880000000,0.0,2828.28,True,True
+secondHalf,75259,75259,100000,175258,1685198143360000000,1685201153680000000,0.0,3010.32,True,True

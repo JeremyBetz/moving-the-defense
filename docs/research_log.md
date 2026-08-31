@@ -1,5 +1,11 @@
 # Research Log
 
+## 2026-08-30 — Kloppy–IDSSE/Sportec J03WMX equivalence experiment
+
+The second bounded ecosystem gate loaded the first canonical Phase 4C match, `J03WMX`, independently through Kloppy 3.19.0 and the governed IDSSE cache. All 145,967 frame IDs and UTC timestamps, 40 player/team identities, two goalkeeper identities, player/ball presence masks, provider ball states/possession teams, 695 eligible intervals, 6,949 focal outcomes, nine activity cells, activity relationships, and misaligned controls matched. The maximum coordinate difference was $1.83\times10^{-6}$ m because the historical cache stores float32 while Kloppy parses float64; focal-relative path differed by at most $6.81\times10^{-6}$ m. Fresh current-pipeline outcomes reproduced the committed Phase 4C result to $2.84\times10^{-14}$ m.
+
+The result is **B / NOT READY**. Kloppy requires a raw sidecar for absolute UTC time and the provider ball object ID, explicit roster null-row construction, and a governed cross-provider contract for clock and coordinate-origin semantics before it can back the default canonical Polars path. No historical loader, output, protocol, measurement, threshold, other IDSSE match, Metrica Game 3, or scientific claim changed. See [`kloppy_idsse_equivalence.md`](kloppy_idsse_equivalence.md).
+
 ## 2026-08-30 — Kloppy–Metrica Game 1 equivalence experiment
 
 The first bounded implementation gate from the ecosystem audit loaded Metrica Sample Game 1 independently through Kloppy 3.19.0 and the existing project pipeline. An experimental adapter restored the raw Metrica y-axis, preserved provider global frame/time alongside Kloppy period time, mapped native and project identities reversibly, supplied the frozen goalkeeper identities, and emitted explicit null player/ball rows without interpolation.

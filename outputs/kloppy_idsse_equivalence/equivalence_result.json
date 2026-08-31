@@ -1,0 +1,915 @@
+{
+  "classification": "B",
+  "architecture_decision": "NOT READY",
+  "interpretation": "Mostly compatible through explicit provider rules; the common schema works geometrically, but raw absolute time, coordinate-origin semantics, ball/provider fields, null-row construction, and discrete boundary stability still require a governed canonical contract.",
+  "selected_match": "J03WMX",
+  "provider_match_id": "DFL-MAT-J03WMX",
+  "kloppy_version": "3.19.0",
+  "structural_pass": true,
+  "coordinate_pass": true,
+  "downstream_pass": true,
+  "structural": {
+    "periods": [
+      {
+        "period": "firstHalf",
+        "current_frames": 70708,
+        "kloppy_frames": 70708,
+        "first_frame": 10000,
+        "last_frame": 80707,
+        "first_provider_timestamp_ns": 1685194212600000000,
+        "last_provider_timestamp_ns": 1685197040880000000,
+        "first_kloppy_period_time_s": 0.0,
+        "last_kloppy_period_time_s": 2828.28,
+        "frame_ids_exact": true,
+        "provider_timestamps_exact": true
+      },
+      {
+        "period": "secondHalf",
+        "current_frames": 75259,
+        "kloppy_frames": 75259,
+        "first_frame": 100000,
+        "last_frame": 175258,
+        "first_provider_timestamp_ns": 1685198143360000000,
+        "last_provider_timestamp_ns": 1685201153680000000,
+        "first_kloppy_period_time_s": 0.0,
+        "last_kloppy_period_time_s": 3010.32,
+        "frame_ids_exact": true,
+        "provider_timestamps_exact": true
+      }
+    ],
+    "frame_rate_hz": 25,
+    "current_player_ids": [
+      "DFL-OBJ-0000IA",
+      "DFL-OBJ-0000LT",
+      "DFL-OBJ-0000M0",
+      "DFL-OBJ-0000RP",
+      "DFL-OBJ-00012X",
+      "DFL-OBJ-000191",
+      "DFL-OBJ-000270",
+      "DFL-OBJ-0002AU",
+      "DFL-OBJ-0002BO",
+      "DFL-OBJ-0002DR",
+      "DFL-OBJ-0002F5",
+      "DFL-OBJ-0002HE",
+      "DFL-OBJ-0026PM",
+      "DFL-OBJ-0026ZI",
+      "DFL-OBJ-0027AX",
+      "DFL-OBJ-0027B6",
+      "DFL-OBJ-0027G0",
+      "DFL-OBJ-0027G6",
+      "DFL-OBJ-0027KL",
+      "DFL-OBJ-0027V2",
+      "DFL-OBJ-0028BD",
+      "DFL-OBJ-002G0R",
+      "DFL-OBJ-002G4A",
+      "DFL-OBJ-002G89",
+      "DFL-OBJ-002GBW",
+      "DFL-OBJ-002GCR",
+      "DFL-OBJ-002GIC",
+      "DFL-OBJ-002GKO",
+      "DFL-OBJ-002GLJ",
+      "DFL-OBJ-J00USE",
+      "DFL-OBJ-J0117H",
+      "DFL-OBJ-J015S4",
+      "DFL-OBJ-J017RE",
+      "DFL-OBJ-J01APO",
+      "DFL-OBJ-J01B8N",
+      "DFL-OBJ-J01BGM",
+      "DFL-OBJ-J01D1W",
+      "DFL-OBJ-J01DVC",
+      "DFL-OBJ-J01LJ2",
+      "DFL-OBJ-J01N65"
+    ],
+    "kloppy_player_ids": [
+      "DFL-OBJ-0000IA",
+      "DFL-OBJ-0000LT",
+      "DFL-OBJ-0000M0",
+      "DFL-OBJ-0000RP",
+      "DFL-OBJ-00012X",
+      "DFL-OBJ-000191",
+      "DFL-OBJ-000270",
+      "DFL-OBJ-0002AU",
+      "DFL-OBJ-0002BO",
+      "DFL-OBJ-0002DR",
+      "DFL-OBJ-0002F5",
+      "DFL-OBJ-0002HE",
+      "DFL-OBJ-0026PM",
+      "DFL-OBJ-0026ZI",
+      "DFL-OBJ-0027AX",
+      "DFL-OBJ-0027B6",
+      "DFL-OBJ-0027G0",
+      "DFL-OBJ-0027G6",
+      "DFL-OBJ-0027KL",
+      "DFL-OBJ-0027V2",
+      "DFL-OBJ-0028BD",
+      "DFL-OBJ-002G0R",
+      "DFL-OBJ-002G4A",
+      "DFL-OBJ-002G89",
+      "DFL-OBJ-002GBW",
+      "DFL-OBJ-002GCR",
+      "DFL-OBJ-002GIC",
+      "DFL-OBJ-002GKO",
+      "DFL-OBJ-002GLJ",
+      "DFL-OBJ-J00USE",
+      "DFL-OBJ-J0117H",
+      "DFL-OBJ-J015S4",
+      "DFL-OBJ-J017RE",
+      "DFL-OBJ-J01APO",
+      "DFL-OBJ-J01B8N",
+      "DFL-OBJ-J01BGM",
+      "DFL-OBJ-J01D1W",
+      "DFL-OBJ-J01DVC",
+      "DFL-OBJ-J01LJ2",
+      "DFL-OBJ-J01N65"
+    ],
+    "player_team_mapping_exact": true,
+    "current_goalkeeper_ids": [
+      "DFL-OBJ-0002DR",
+      "DFL-OBJ-0002HE"
+    ],
+    "kloppy_goalkeeper_ids": [
+      "DFL-OBJ-0002DR",
+      "DFL-OBJ-0002HE"
+    ],
+    "goalkeeper_ids_exact": true,
+    "ball_state_exact": true,
+    "ball_possession_mapping_exact": true,
+    "provider_ball_object_id_preserved_by_kloppy": false,
+    "provider_ball_object_id_location": "raw/provider provenance sidecar",
+    "provider_ball_object_ids": [
+      "DFL-OBJ-0000XT"
+    ],
+    "canonical_core_columns_match_metrica": [
+      "period",
+      "frame_id",
+      "provider_time_s",
+      "kloppy_period_time_s",
+      "object_type",
+      "team_id",
+      "player_id",
+      "kloppy_player_id",
+      "is_goalkeeper",
+      "observed",
+      "x_norm",
+      "y_norm",
+      "x_m",
+      "y_m"
+    ],
+    "idsse_sidecar_columns": [
+      "provider_timestamp_ns",
+      "period_label",
+      "ball_state",
+      "ball_owning_team_id"
+    ],
+    "canonical_full_rows": 5984647,
+    "canonical_materialization": "streamed; only a three-frame schema sample is committed",
+    "all_player_presence_masks_exact": true,
+    "players_compared": 40,
+    "player_period_rows": [
+      {
+        "period": "firstHalf",
+        "team_id": "DFL-CLU-000008",
+        "player_id": "DFL-OBJ-0000M0",
+        "current_observed_frames": 0,
+        "kloppy_observed_frames": 0,
+        "presence_mask_exact": true
+      },
+      {
+        "period": "firstHalf",
+        "team_id": "DFL-CLU-000008",
+        "player_id": "DFL-OBJ-00012X",
+        "current_observed_frames": 70708,
+        "kloppy_observed_frames": 70708,
+        "presence_mask_exact": true
+      },
+      {
+        "period": "firstHalf",
+        "team_id": "DFL-CLU-000008",
+        "player_id": "DFL-OBJ-000270",
+        "current_observed_frames": 70708,
+        "kloppy_observed_frames": 70708,
+        "presence_mask_exact": true
+      },
+      {
+        "period": "firstHalf",
+        "team_id": "DFL-CLU-000008",
+        "player_id": "DFL-OBJ-0002BO",
+        "current_observed_frames": 70708,
+        "kloppy_observed_frames": 70708,
+        "presence_mask_exact": true
+      },
+      {
+        "period": "firstHalf",
+        "team_id": "DFL-CLU-000008",
+        "player_id": "DFL-OBJ-0002HE",
+        "current_observed_frames": 70708,
+        "kloppy_observed_frames": 70708,
+        "presence_mask_exact": true
+      },
+      {
+        "period": "firstHalf",
+        "team_id": "DFL-CLU-000008",
+        "player_id": "DFL-OBJ-0026ZI",
+        "current_observed_frames": 0,
+        "kloppy_observed_frames": 0,
+        "presence_mask_exact": true
+      },
+      {
+        "period": "firstHalf",
+        "team_id": "DFL-CLU-000008",
+        "player_id": "DFL-OBJ-0027AX",
+        "current_observed_frames": 70708,
+        "kloppy_observed_frames": 70708,
+        "presence_mask_exact": true
+      },
+      {
+        "period": "firstHalf",
+        "team_id": "DFL-CLU-000008",
+        "player_id": "DFL-OBJ-0027B6",
+        "current_observed_frames": 70708,
+        "kloppy_observed_frames": 70708,
+        "presence_mask_exact": true
+      },
+      {
+        "period": "firstHalf",
+        "team_id": "DFL-CLU-000008",
+        "player_id": "DFL-OBJ-0027V2",
+        "current_observed_frames": 0,
+        "kloppy_observed_frames": 0,
+        "presence_mask_exact": true
+      },
+      {
+        "period": "firstHalf",
+        "team_id": "DFL-CLU-000008",
+        "player_id": "DFL-OBJ-0028BD",
+        "current_observed_frames": 70708,
+        "kloppy_observed_frames": 70708,
+        "presence_mask_exact": true
+      },
+      {
+        "period": "firstHalf",
+        "team_id": "DFL-CLU-000008",
+        "player_id": "DFL-OBJ-002G0R",
+        "current_observed_frames": 0,
+        "kloppy_observed_frames": 0,
+        "presence_mask_exact": true
+      },
+      {
+        "period": "firstHalf",
+        "team_id": "DFL-CLU-000008",
+        "player_id": "DFL-OBJ-002G4A",
+        "current_observed_frames": 70708,
+        "kloppy_observed_frames": 70708,
+        "presence_mask_exact": true
+      },
+      {
+        "period": "firstHalf",
+        "team_id": "DFL-CLU-000008",
+        "player_id": "DFL-OBJ-002G89",
+        "current_observed_frames": 0,
+        "kloppy_observed_frames": 0,
+        "presence_mask_exact": true
+      },
+      {
+        "period": "firstHalf",
+        "team_id": "DFL-CLU-000008",
+        "player_id": "DFL-OBJ-002GBW",
+        "current_observed_frames": 0,
+        "kloppy_observed_frames": 0,
+        "presence_mask_exact": true
+      },
+      {
+        "period": "firstHalf",
+        "team_id": "DFL-CLU-000008",
+        "player_id": "DFL-OBJ-002GKO",
+        "current_observed_frames": 70708,
+        "kloppy_observed_frames": 70708,
+        "presence_mask_exact": true
+      },
+      {
+        "period": "firstHalf",
+        "team_id": "DFL-CLU-000008",
+        "player_id": "DFL-OBJ-002GLJ",
+        "current_observed_frames": 0,
+        "kloppy_observed_frames": 0,
+        "presence_mask_exact": true
+      },
+      {
+        "period": "firstHalf",
+        "team_id": "DFL-CLU-000008",
+        "player_id": "DFL-OBJ-J01BGM",
+        "current_observed_frames": 70708,
+        "kloppy_observed_frames": 70708,
+        "presence_mask_exact": true
+      },
+      {
+        "period": "firstHalf",
+        "team_id": "DFL-CLU-000008",
+        "player_id": "DFL-OBJ-J01D1W",
+        "current_observed_frames": 70708,
+        "kloppy_observed_frames": 70708,
+        "presence_mask_exact": true
+      },
+      {
+        "period": "firstHalf",
+        "team_id": "DFL-CLU-000008",
+        "player_id": "DFL-OBJ-J01DVC",
+        "current_observed_frames": 0,
+        "kloppy_observed_frames": 0,
+        "presence_mask_exact": true
+      },
+      {
+        "period": "firstHalf",
+        "team_id": "DFL-CLU-000008",
+        "player_id": "DFL-OBJ-J01LJ2",
+        "current_observed_frames": 0,
+        "kloppy_observed_frames": 0,
+        "presence_mask_exact": true
+      },
+      {
+        "period": "firstHalf",
+        "team_id": "DFL-CLU-00000G",
+        "player_id": "DFL-OBJ-0000IA",
+        "current_observed_frames": 70708,
+        "kloppy_observed_frames": 70708,
+        "presence_mask_exact": true
+      },
+      {
+        "period": "firstHalf",
+        "team_id": "DFL-CLU-00000G",
+        "player_id": "DFL-OBJ-0000LT",
+        "current_observed_frames": 0,
+        "kloppy_observed_frames": 0,
+        "presence_mask_exact": true
+      },
+      {
+        "period": "firstHalf",
+        "team_id": "DFL-CLU-00000G",
+        "player_id": "DFL-OBJ-0000RP",
+        "current_observed_frames": 0,
+        "kloppy_observed_frames": 0,
+        "presence_mask_exact": true
+      },
+      {
+        "period": "firstHalf",
+        "team_id": "DFL-CLU-00000G",
+        "player_id": "DFL-OBJ-000191",
+        "current_observed_frames": 0,
+        "kloppy_observed_frames": 0,
+        "presence_mask_exact": true
+      },
+      {
+        "period": "firstHalf",
+        "team_id": "DFL-CLU-00000G",
+        "player_id": "DFL-OBJ-0002AU",
+        "current_observed_frames": 70708,
+        "kloppy_observed_frames": 70708,
+        "presence_mask_exact": true
+      },
+      {
+        "period": "firstHalf",
+        "team_id": "DFL-CLU-00000G",
+        "player_id": "DFL-OBJ-0002DR",
+        "current_observed_frames": 70708,
+        "kloppy_observed_frames": 70708,
+        "presence_mask_exact": true
+      },
+      {
+        "period": "firstHalf",
+        "team_id": "DFL-CLU-00000G",
+        "player_id": "DFL-OBJ-0002F5",
+        "current_observed_frames": 70708,
+        "kloppy_observed_frames": 70708,
+        "presence_mask_exact": true
+      },
+      {
+        "period": "firstHalf",
+        "team_id": "DFL-CLU-00000G",
+        "player_id": "DFL-OBJ-0026PM",
+        "current_observed_frames": 70708,
+        "kloppy_observed_frames": 70708,
+        "presence_mask_exact": true
+      },
+      {
+        "period": "firstHalf",
+        "team_id": "DFL-CLU-00000G",
+        "player_id": "DFL-OBJ-0027G0",
+        "current_observed_frames": 70708,
+        "kloppy_observed_frames": 70708,
+        "presence_mask_exact": true
+      },
+      {
+        "period": "firstHalf",
+        "team_id": "DFL-CLU-00000G",
+        "player_id": "DFL-OBJ-0027G6",
+        "current_observed_frames": 70708,
+        "kloppy_observed_frames": 70708,
+        "presence_mask_exact": true
+      },
+      {
+        "period": "firstHalf",
+        "team_id": "DFL-CLU-00000G",
+        "player_id": "DFL-OBJ-0027KL",
+        "current_observed_frames": 70708,
+        "kloppy_observed_frames": 70708,
+        "presence_mask_exact": true
+      },
+      {
+        "period": "firstHalf",
+        "team_id": "DFL-CLU-00000G",
+        "player_id": "DFL-OBJ-002GCR",
+        "current_observed_frames": 0,
+        "kloppy_observed_frames": 0,
+        "presence_mask_exact": true
+      },
+      {
+        "period": "firstHalf",
+        "team_id": "DFL-CLU-00000G",
+        "player_id": "DFL-OBJ-002GIC",
+        "current_observed_frames": 0,
+        "kloppy_observed_frames": 0,
+        "presence_mask_exact": true
+      },
+      {
+        "period": "firstHalf",
+        "team_id": "DFL-CLU-00000G",
+        "player_id": "DFL-OBJ-J00USE",
+        "current_observed_frames": 0,
+        "kloppy_observed_frames": 0,
+        "presence_mask_exact": true
+      },
+      {
+        "period": "firstHalf",
+        "team_id": "DFL-CLU-00000G",
+        "player_id": "DFL-OBJ-J0117H",
+        "current_observed_frames": 0,
+        "kloppy_observed_frames": 0,
+        "presence_mask_exact": true
+      },
+      {
+        "period": "firstHalf",
+        "team_id": "DFL-CLU-00000G",
+        "player_id": "DFL-OBJ-J015S4",
+        "current_observed_frames": 0,
+        "kloppy_observed_frames": 0,
+        "presence_mask_exact": true
+      },
+      {
+        "period": "firstHalf",
+        "team_id": "DFL-CLU-00000G",
+        "player_id": "DFL-OBJ-J017RE",
+        "current_observed_frames": 70708,
+        "kloppy_observed_frames": 70708,
+        "presence_mask_exact": true
+      },
+      {
+        "period": "firstHalf",
+        "team_id": "DFL-CLU-00000G",
+        "player_id": "DFL-OBJ-J01APO",
+        "current_observed_frames": 70708,
+        "kloppy_observed_frames": 70708,
+        "presence_mask_exact": true
+      },
+      {
+        "period": "firstHalf",
+        "team_id": "DFL-CLU-00000G",
+        "player_id": "DFL-OBJ-J01B8N",
+        "current_observed_frames": 70708,
+        "kloppy_observed_frames": 70708,
+        "presence_mask_exact": true
+      },
+      {
+        "period": "firstHalf",
+        "team_id": "DFL-CLU-00000G",
+        "player_id": "DFL-OBJ-J01N65",
+        "current_observed_frames": 0,
+        "kloppy_observed_frames": 0,
+        "presence_mask_exact": true
+      },
+      {
+        "period": "secondHalf",
+        "team_id": "DFL-CLU-000008",
+        "player_id": "DFL-OBJ-0000M0",
+        "current_observed_frames": 0,
+        "kloppy_observed_frames": 0,
+        "presence_mask_exact": true
+      },
+      {
+        "period": "secondHalf",
+        "team_id": "DFL-CLU-000008",
+        "player_id": "DFL-OBJ-00012X",
+        "current_observed_frames": 75259,
+        "kloppy_observed_frames": 75259,
+        "presence_mask_exact": true
+      },
+      {
+        "period": "secondHalf",
+        "team_id": "DFL-CLU-000008",
+        "player_id": "DFL-OBJ-000270",
+        "current_observed_frames": 24579,
+        "kloppy_observed_frames": 24579,
+        "presence_mask_exact": true
+      },
+      {
+        "period": "secondHalf",
+        "team_id": "DFL-CLU-000008",
+        "player_id": "DFL-OBJ-0002BO",
+        "current_observed_frames": 24638,
+        "kloppy_observed_frames": 24638,
+        "presence_mask_exact": true
+      },
+      {
+        "period": "secondHalf",
+        "team_id": "DFL-CLU-000008",
+        "player_id": "DFL-OBJ-0002HE",
+        "current_observed_frames": 75259,
+        "kloppy_observed_frames": 75259,
+        "presence_mask_exact": true
+      },
+      {
+        "period": "secondHalf",
+        "team_id": "DFL-CLU-000008",
+        "player_id": "DFL-OBJ-0026ZI",
+        "current_observed_frames": 20710,
+        "kloppy_observed_frames": 20710,
+        "presence_mask_exact": true
+      },
+      {
+        "period": "secondHalf",
+        "team_id": "DFL-CLU-000008",
+        "player_id": "DFL-OBJ-0027AX",
+        "current_observed_frames": 24554,
+        "kloppy_observed_frames": 24554,
+        "presence_mask_exact": true
+      },
+      {
+        "period": "secondHalf",
+        "team_id": "DFL-CLU-000008",
+        "player_id": "DFL-OBJ-0027B6",
+        "current_observed_frames": 75259,
+        "kloppy_observed_frames": 75259,
+        "presence_mask_exact": true
+      },
+      {
+        "period": "secondHalf",
+        "team_id": "DFL-CLU-000008",
+        "player_id": "DFL-OBJ-0027V2",
+        "current_observed_frames": 50705,
+        "kloppy_observed_frames": 50705,
+        "presence_mask_exact": true
+      },
+      {
+        "period": "secondHalf",
+        "team_id": "DFL-CLU-000008",
+        "player_id": "DFL-OBJ-0028BD",
+        "current_observed_frames": 54635,
+        "kloppy_observed_frames": 54635,
+        "presence_mask_exact": true
+      },
+      {
+        "period": "secondHalf",
+        "team_id": "DFL-CLU-000008",
+        "player_id": "DFL-OBJ-002G0R",
+        "current_observed_frames": 0,
+        "kloppy_observed_frames": 0,
+        "presence_mask_exact": true
+      },
+      {
+        "period": "secondHalf",
+        "team_id": "DFL-CLU-000008",
+        "player_id": "DFL-OBJ-002G4A",
+        "current_observed_frames": 75259,
+        "kloppy_observed_frames": 75259,
+        "presence_mask_exact": true
+      },
+      {
+        "period": "secondHalf",
+        "team_id": "DFL-CLU-000008",
+        "player_id": "DFL-OBJ-002G89",
+        "current_observed_frames": 50680,
+        "kloppy_observed_frames": 50680,
+        "presence_mask_exact": true
+      },
+      {
+        "period": "secondHalf",
+        "team_id": "DFL-CLU-000008",
+        "player_id": "DFL-OBJ-002GBW",
+        "current_observed_frames": 20624,
+        "kloppy_observed_frames": 20624,
+        "presence_mask_exact": true
+      },
+      {
+        "period": "secondHalf",
+        "team_id": "DFL-CLU-000008",
+        "player_id": "DFL-OBJ-002GKO",
+        "current_observed_frames": 75259,
+        "kloppy_observed_frames": 75259,
+        "presence_mask_exact": true
+      },
+      {
+        "period": "secondHalf",
+        "team_id": "DFL-CLU-000008",
+        "player_id": "DFL-OBJ-002GLJ",
+        "current_observed_frames": 0,
+        "kloppy_observed_frames": 0,
+        "presence_mask_exact": true
+      },
+      {
+        "period": "secondHalf",
+        "team_id": "DFL-CLU-000008",
+        "player_id": "DFL-OBJ-J01BGM",
+        "current_observed_frames": 54549,
+        "kloppy_observed_frames": 54549,
+        "presence_mask_exact": true
+      },
+      {
+        "period": "secondHalf",
+        "team_id": "DFL-CLU-000008",
+        "player_id": "DFL-OBJ-J01D1W",
+        "current_observed_frames": 75259,
+        "kloppy_observed_frames": 75259,
+        "presence_mask_exact": true
+      },
+      {
+        "period": "secondHalf",
+        "team_id": "DFL-CLU-000008",
+        "player_id": "DFL-OBJ-J01DVC",
+        "current_observed_frames": 50621,
+        "kloppy_observed_frames": 50621,
+        "presence_mask_exact": true
+      },
+      {
+        "period": "secondHalf",
+        "team_id": "DFL-CLU-000008",
+        "player_id": "DFL-OBJ-J01LJ2",
+        "current_observed_frames": 0,
+        "kloppy_observed_frames": 0,
+        "presence_mask_exact": true
+      },
+      {
+        "period": "secondHalf",
+        "team_id": "DFL-CLU-00000G",
+        "player_id": "DFL-OBJ-0000IA",
+        "current_observed_frames": 24874,
+        "kloppy_observed_frames": 24874,
+        "presence_mask_exact": true
+      },
+      {
+        "period": "secondHalf",
+        "team_id": "DFL-CLU-00000G",
+        "player_id": "DFL-OBJ-0000LT",
+        "current_observed_frames": 0,
+        "kloppy_observed_frames": 0,
+        "presence_mask_exact": true
+      },
+      {
+        "period": "secondHalf",
+        "team_id": "DFL-CLU-00000G",
+        "player_id": "DFL-OBJ-0000RP",
+        "current_observed_frames": 37515,
+        "kloppy_observed_frames": 37515,
+        "presence_mask_exact": true
+      },
+      {
+        "period": "secondHalf",
+        "team_id": "DFL-CLU-00000G",
+        "player_id": "DFL-OBJ-000191",
+        "current_observed_frames": 20889,
+        "kloppy_observed_frames": 20889,
+        "presence_mask_exact": true
+      },
+      {
+        "period": "secondHalf",
+        "team_id": "DFL-CLU-00000G",
+        "player_id": "DFL-OBJ-0002AU",
+        "current_observed_frames": 75259,
+        "kloppy_observed_frames": 75259,
+        "presence_mask_exact": true
+      },
+      {
+        "period": "secondHalf",
+        "team_id": "DFL-CLU-00000G",
+        "player_id": "DFL-OBJ-0002DR",
+        "current_observed_frames": 75259,
+        "kloppy_observed_frames": 75259,
+        "presence_mask_exact": true
+      },
+      {
+        "period": "secondHalf",
+        "team_id": "DFL-CLU-00000G",
+        "player_id": "DFL-OBJ-0002F5",
+        "current_observed_frames": 75259,
+        "kloppy_observed_frames": 75259,
+        "presence_mask_exact": true
+      },
+      {
+        "period": "secondHalf",
+        "team_id": "DFL-CLU-00000G",
+        "player_id": "DFL-OBJ-0026PM",
+        "current_observed_frames": 37744,
+        "kloppy_observed_frames": 37744,
+        "presence_mask_exact": true
+      },
+      {
+        "period": "secondHalf",
+        "team_id": "DFL-CLU-00000G",
+        "player_id": "DFL-OBJ-0027G0",
+        "current_observed_frames": 75259,
+        "kloppy_observed_frames": 75259,
+        "presence_mask_exact": true
+      },
+      {
+        "period": "secondHalf",
+        "team_id": "DFL-CLU-00000G",
+        "player_id": "DFL-OBJ-0027G6",
+        "current_observed_frames": 75259,
+        "kloppy_observed_frames": 75259,
+        "presence_mask_exact": true
+      },
+      {
+        "period": "secondHalf",
+        "team_id": "DFL-CLU-00000G",
+        "player_id": "DFL-OBJ-0027KL",
+        "current_observed_frames": 75259,
+        "kloppy_observed_frames": 75259,
+        "presence_mask_exact": true
+      },
+      {
+        "period": "secondHalf",
+        "team_id": "DFL-CLU-00000G",
+        "player_id": "DFL-OBJ-002GCR",
+        "current_observed_frames": 16669,
+        "kloppy_observed_frames": 16669,
+        "presence_mask_exact": true
+      },
+      {
+        "period": "secondHalf",
+        "team_id": "DFL-CLU-00000G",
+        "player_id": "DFL-OBJ-002GIC",
+        "current_observed_frames": 0,
+        "kloppy_observed_frames": 0,
+        "presence_mask_exact": true
+      },
+      {
+        "period": "secondHalf",
+        "team_id": "DFL-CLU-00000G",
+        "player_id": "DFL-OBJ-J00USE",
+        "current_observed_frames": 0,
+        "kloppy_observed_frames": 0,
+        "presence_mask_exact": true
+      },
+      {
+        "period": "secondHalf",
+        "team_id": "DFL-CLU-00000G",
+        "player_id": "DFL-OBJ-J0117H",
+        "current_observed_frames": 0,
+        "kloppy_observed_frames": 0,
+        "presence_mask_exact": true
+      },
+      {
+        "period": "secondHalf",
+        "team_id": "DFL-CLU-00000G",
+        "player_id": "DFL-OBJ-J015S4",
+        "current_observed_frames": 50385,
+        "kloppy_observed_frames": 50385,
+        "presence_mask_exact": true
+      },
+      {
+        "period": "secondHalf",
+        "team_id": "DFL-CLU-00000G",
+        "player_id": "DFL-OBJ-J017RE",
+        "current_observed_frames": 75259,
+        "kloppy_observed_frames": 75259,
+        "presence_mask_exact": true
+      },
+      {
+        "period": "secondHalf",
+        "team_id": "DFL-CLU-00000G",
+        "player_id": "DFL-OBJ-J01APO",
+        "current_observed_frames": 58590,
+        "kloppy_observed_frames": 58590,
+        "presence_mask_exact": true
+      },
+      {
+        "period": "secondHalf",
+        "team_id": "DFL-CLU-00000G",
+        "player_id": "DFL-OBJ-J01B8N",
+        "current_observed_frames": 37674,
+        "kloppy_observed_frames": 37674,
+        "presence_mask_exact": true
+      },
+      {
+        "period": "secondHalf",
+        "team_id": "DFL-CLU-00000G",
+        "player_id": "DFL-OBJ-J01N65",
+        "current_observed_frames": 16696,
+        "kloppy_observed_frames": 16696,
+        "presence_mask_exact": true
+      }
+    ]
+  },
+  "scientific_support": {
+    "current_intervals": 695,
+    "kloppy_intervals": 695,
+    "interval_ids_exact": true,
+    "current_outcomes": 6949,
+    "kloppy_outcomes": 6949,
+    "outcome_keys_exact": true,
+    "fresh_current_vs_frozen_phase4c_max_metric_difference": 2.842170943040401e-14,
+    "current_control": {
+      "eligible_interval_support_fraction": 0.9467625899280575,
+      "supported_intervals": 658,
+      "paired_focal_observations": 6579,
+      "paired_median_difference_m": 2.3615927222177167,
+      "fraction_misaligned_greater": 0.7736738106095151,
+      "fraction_misaligned_nonnegative": 0.7736738106095151,
+      "pass": true,
+      "material_contradiction": false,
+      "classification": "pass"
+    },
+    "kloppy_frozen_pair_control": {
+      "eligible_interval_support_fraction": 0.9467625899280575,
+      "supported_intervals": 658,
+      "paired_focal_observations": 6579,
+      "paired_median_difference_m": 2.361592767097438,
+      "fraction_misaligned_greater": 0.7736738106095151,
+      "fraction_misaligned_nonnegative": 0.7736738106095151,
+      "pass": true,
+      "material_contradiction": false,
+      "classification": "pass"
+    },
+    "frozen_phase4c_control": {
+      "match_id": "J03WMX",
+      "seconds": 5,
+      "smoothing_frames": 7,
+      "eligible_interval_support_fraction": 0.9467625899280576,
+      "supported_intervals": 658,
+      "paired_focal_observations": 6579,
+      "paired_median_difference_m": 2.3615927222177167,
+      "fraction_misaligned_greater": 0.7736738106095151,
+      "fraction_misaligned_nonnegative": 0.7736738106095151,
+      "pass": true,
+      "material_contradiction": false,
+      "classification": "pass"
+    },
+    "regenerated_pair_mismatch_count": 0,
+    "regenerated_pair_mismatches": [],
+    "regenerated_control_comparison": {
+      "n": 6579,
+      "max_absolute_difference": 5.203404370490716e-06,
+      "median_absolute_difference": 1.914312823814157e-07,
+      "p99_absolute_difference": 2.1286064334313814e-06,
+      "tolerance": 0.001,
+      "mismatches_above_tolerance": 0,
+      "mismatch_share": 0.0
+    },
+    "metrica_activity_cells_current": 9,
+    "metrica_activity_cells_kloppy": 9,
+    "idsse_descriptive_rows_current": 9,
+    "idsse_descriptive_rows_kloppy": 9,
+    "activity_correlations_pass": true
+  },
+  "tolerances": {
+    "coordinates_m": 1e-05,
+    "point_components_m": 0.0001,
+    "paths_and_scalar_outputs_m": 0.001,
+    "activity_correlations": 1e-06
+  },
+  "provenance": {
+    "provider": "sportec",
+    "provider_format": "DFL/Sportec XML (match information + raw observed positions)",
+    "provider_match_id": "DFL-MAT-J03WMX",
+    "kloppy_version": "3.19.0",
+    "frame_rate_hz": 25,
+    "coordinate_system": "SportecTrackingDataCoordinateSystem",
+    "orientation": "away-home",
+    "pitch_length_m": 105.0,
+    "pitch_width_m": 68.0,
+    "timestamp_rule": "raw UTC nanoseconds from provider ball-frame sidecar; Kloppy time retained separately",
+    "goalkeeper_rule": "Kloppy starting_position == Goalkeeper, checked against frozen provider metadata",
+    "interpolation_used": false,
+    "tactical_fields_inferred": false
+  },
+  "inputs": {
+    "DFL_02_01_matchinformation_DFL-COM-000001_DFL-MAT-J03WMX.xml": {
+      "bytes": 11930,
+      "sha256": "a884728647a564cf8b20e5223a1d04a5da6f6725e1e506c8651505327c197ba9"
+    },
+    "DFL_03_02_events_raw_DFL-COM-000001_DFL-MAT-J03WMX.xml": {
+      "bytes": 776578,
+      "sha256": "6f9741ea62e9dee35b604942e1dad2ac0a4dc3fce14ef2f3858aa12b74dafe00"
+    },
+    "DFL_04_03_positions_raw_observed_DFL-COM-000001_DFL-MAT-J03WMX.xml": {
+      "bytes": 418524833,
+      "sha256": "d3dd92e509421a6466acb0a083c009035f1751bc5fd9ef42ffa8f20d01cf7d49"
+    }
+  },
+  "source_sha256": "54af3df33ff808837747eab15bd06d629bd51a39ebfff2734a6f9df65680293a",
+  "adapter_sha256": "e56f63c6c7a763584ac32e67c80003fa3ada92b2926f1b84d255660a9957f9f5",
+  "phase4c_protocol_sha256": "6e1711ba681bce3c843cde9803758ca68428f2a84e6b25454d9d866cee5dea59",
+  "phase4c_implementation_sha256": "252787c7e797f6eb51c6ad1c267d896ce755ac3c113c4d11ff5b289f22ba57ec",
+  "metrica_game3_accessed": false,
+  "unravelsports_used": false,
+  "interpolation_used": false,
+  "existing_phase4c_outputs_modified": false
+}

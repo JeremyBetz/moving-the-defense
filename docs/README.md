@@ -44,6 +44,7 @@ The football concepts are candidate interpretations, not automatic labels or val
 9. [Prominence-refinement results](post5b_attacking_movement_prominence_refinement_results.md) — Game 1 B result; no candidate selected and Game 2 not opened.
 10. [Open football analytics ecosystem alignment](open_source_ecosystem_alignment.md) — infrastructure audit and numerical-equivalence gate for possible Kloppy/Polars/mplsoccer integration; no migration performed.
 11. [Kloppy–Metrica Game 1 equivalence](kloppy_metrica_equivalence.md) — first bounded ingestion experiment; B result, explicit adapter required, no loader migration.
+12. [Kloppy–IDSSE/Sportec equivalence](kloppy_idsse_equivalence.md) — one-match external-provider experiment; B / NOT READY, with Phase 4C geometry preserved but canonical clock/coordinate rules still unresolved.
 
 ## Reproducing a specific completed analysis
 
@@ -59,6 +60,7 @@ Start with [the reproducibility guide](reproducibility.md), then use the matchin
 | Attacking movement segmentation | `config/post5b_movement_segmentation_audit_rules.json` | `src/post5b_attacking_movement_segmentation_audit.py` | [report](post5b_attacking_movement_segmentation_audit.md) |
 | Prominence refinement | `config/post5b_attacking_movement_prominence_refinement_rules.json` | `src/post5b_attacking_movement_prominence_refinement.py` | [report](post5b_attacking_movement_prominence_refinement_results.md) |
 | Kloppy–Metrica equivalence | current loader + experimental adapter | `src/kloppy_metrica_equivalence.py` | [report](kloppy_metrica_equivalence.md) |
+| Kloppy–IDSSE equivalence | current Phase 4C loader + experimental adapter | `src/kloppy_idsse_equivalence.py` | [report](kloppy_idsse_equivalence.md) |
 
 ## Potential mentor or collaborator
 

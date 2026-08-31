@@ -20,6 +20,8 @@ The original six-package environment was deliberately small: NumPy, Pandas, Matp
 
 The first implementation gate is now recorded in the [Kloppy–Metrica Game 1 equivalence report](kloppy_metrica_equivalence.md). Kloppy 3.19.0 reproduced Game 1 support and continuous Phase 4 geometry within numerical precision only after explicit y-axis, timestamp, identity, goalkeeper, and null-row adaptation. Independently regenerated negative-control pairing also exposed sensitivity at a frozen activity cut. The result does not authorize migration.
 
+The second gate, [Kloppy–IDSSE/Sportec match J03WMX](kloppy_idsse_equivalence.md), also produced B. All frames, presence masks, identities, 695 eligible intervals, 6,949 focal outcomes, activity relationships, and controls reproduced within the expected float32/float64 precision difference. However, absolute UTC time and the provider ball ID require a raw sidecar, while cross-provider clock and coordinate-origin semantics still need a governed canonical contract. The proposed default Kloppy→adapter→canonical Polars architecture therefore remains **NOT READY**.
+
 ## 2. Current architecture
 
 The current pipeline has three main paths:
