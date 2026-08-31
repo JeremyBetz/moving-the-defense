@@ -63,7 +63,7 @@ The immediate open problem is representation integrity. The attacker’s interva
 
 The first bounded refinement executed under its frozen rules and classified **B**. Prominence sharply reduced fragmentation but drove merging/direction to 35.88%–69.03% against a 3.97% cap. No candidate was selected, so the protocol forbids Game 2 execution and further threshold repair.
 
-The completed [representation audit](attacking_movement_representation_audit.md) selects **directional movement segments** as the next construct and penalized change points in the attacker's two-dimensional velocity state as the next candidate family. [Protocol v1.0](protocols/attacking_directional_segmentation_v1.md) now freezes its BIC-derived penalty, Game 1 fixtures, support treatment, diagnostics, and decision tree. This is a prospectively governed method, not a validated method or an executed experiment. Game 2 remains unopened for attacker segmentation unless Game 1 earns A mechanically and a separate held-out/support preflight freezes before any Game 2 segmentation.
+The completed [representation audit](attacking_movement_representation_audit.md) selected penalized change points in the attacker's two-dimensional velocity state. [Protocol v1.0](protocols/attacking_directional_segmentation_v1.md) froze its BIC-derived penalty, fixtures, support treatment, diagnostics, and decision tree before execution. The [Game 1 result](results/attacking_directional_segmentation_game1_v1.md) is **B**: hard QC and merging control passed, but 99.80% fragmentation and unstable 10 Hz recall/F1/counts reject the representation for held-out use. Game 2 remains unopened for attacker segmentation, and the A-only prerequisite was not met.
 
 ## October 1, 2026 constraint
 

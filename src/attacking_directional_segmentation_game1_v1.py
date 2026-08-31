@@ -2,7 +2,9 @@
 from __future__ import annotations
 
 import argparse
+import gzip
 import hashlib
+import io
 import json
 import math
 import sys
@@ -320,6 +322,14 @@ def quantiles(s: pd.Series) -> dict:
     return {"min":float(s.min()),"q25":float(q.loc[.25]),"median":float(q.loc[.5]),"q75":float(q.loc[.75]),"max":float(s.max())}
 
 
+def write_deterministic_gzip_csv(frame: pd.DataFrame, path: Path) -> None:
+    """Write compact tracked output without timestamp/path-dependent gzip headers."""
+    with path.open("wb") as raw:
+        with gzip.GzipFile(filename="", mode="wb", fileobj=raw, mtime=0) as compressed:
+            with io.TextIOWrapper(compressed, encoding="utf-8", newline="") as text:
+                frame.to_csv(text,index=False,float_format="%.12g")
+
+
 def main(output: Path) -> None:
     output.mkdir(parents=True,exist_ok=True)
     blocks,ledger,provenance=load_blocks(); sigma,nscale=radial_sigma([b.q25 for b in blocks])
@@ -337,21 +347,25 @@ def main(output: Path) -> None:
     elif not hard or ((frag>=.4222-1e-12) and not gates["merging_direction"]): classification="C"
     else: classification="B"
     supported_seconds=float(sum(len(b.q25["velocity"])/25 for b in blocks))
+    ordered=regimes.sort_values(["block_id","start_index"])
+    adjacent=np.hypot(ordered.groupby("block_id").mean_vx_mps.diff(),ordered.groupby("block_id").mean_vy_mps.diff()).dropna()
     summary={"classification":classification,"eligible_players":int(regimes.player_key.nunique()),"eligible_segmented_blocks":len(blocks),"supported_duration_s":supported_seconds,
              "total_regimes":den,"directional_movement_regimes":int(regimes.regime_type.eq("directional_movement_segment").sum()),"low_motion_regimes":int(regimes.regime_type.eq("low_motion_regime").sum()),
              "noise_scale_25hz_mps":sigma,"noise_scale_source_pairs_25hz":nscale,"noise_scale_10hz_mps":sigma10,"noise_scale_source_pairs_10hz":nscale10,
              "duration_s":quantiles(regimes.duration_s),"path_m":quantiles(regimes.path_m),"displacement_m":quantiles(regimes.displacement_m),"mean_speed_mps":quantiles(regimes.mean_speed_mps),
+             "displacement_path_ratio":quantiles(regimes.displacement_path_ratio.dropna()),"adjacent_regime_mean_velocity_vector_change_mps":quantiles(adjacent),
              "fragmentation":{"numerator":frag_n,"denominator":den,"rate":frag,"historical_baseline":.4222,"frozen_limit":.33776,"pass":gates["fragmentation"]},
              "merging_direction":{"numerator":merge_n,"denominator":den,"rate":merging,"historical_numerator":763,"historical_denominator":38651,"historical_rate":763/38651,"frozen_limit":.0397,"pass":gates["merging_direction"]},
              "frequency_sensitivity":sens,"gates":gates,"regimes_per_supported_minute":den/(supported_seconds/60),
              "lower_speed_peak_below_5_5_count":int((regimes.peak_speed_mps<5.5).sum()),"lower_speed_peak_below_5_5_displacement_ge_3_count":int(regimes.diag_lower_speed_meaningful_displacement.sum()),
              "moving_direction_resultant_le_0_5_count":int(regimes.diag_resultant_le_0_5.sum())}
-    ledger.to_csv(output/"support_blocks.csv",index=False); fixtures.to_csv(output/"fixtures.csv",index=False); regimes.to_csv(output/"regimes.csv",index=False,float_format="%.12g")
+    ledger.to_csv(output/"support_blocks.csv",index=False); fixtures.to_csv(output/"fixtures.csv",index=False)
+    write_deterministic_gzip_csv(regimes,output/"regimes.csv.gz")
     (output/"noise_estimator_fixture.json").write_text(json.dumps(noise_fixture,indent=2,sort_keys=True)+"\n")
-    b25.to_csv(output/"boundaries_25hz.csv",index=False,float_format="%.12g"); matches.to_csv(output/"boundary_matches_10hz.csv",index=False,float_format="%.12g")
+    write_deterministic_gzip_csv(b25,output/"boundaries_25hz.csv.gz"); write_deterministic_gzip_csv(matches,output/"boundary_matches_10hz.csv.gz")
     (output/"results.json").write_text(json.dumps(summary,indent=2,sort_keys=True)+"\n")
     manifest={"protocol":"docs/protocols/attacking_directional_segmentation_v1.md","protocol_sha256":sha256(ROOT/"docs/protocols/attacking_directional_segmentation_v1.md"),
-              "source_sha256":sha256(Path(__file__)),"canonical_provenance":provenance,"scientific_output_files":["support_blocks.csv","fixtures.csv","noise_estimator_fixture.json","regimes.csv","boundaries_25hz.csv","boundary_matches_10hz.csv","results.json"]}
+              "source_sha256":sha256(Path(__file__)),"canonical_provenance":provenance,"scientific_output_files":["support_blocks.csv","fixtures.csv","noise_estimator_fixture.json","regimes.csv.gz","boundaries_25hz.csv.gz","boundary_matches_10hz.csv.gz","results.json"]}
     (output/"manifest.json").write_text(json.dumps(manifest,indent=2,sort_keys=True)+"\n")
 
 

@@ -1,5 +1,13 @@
 # Research Log
 
+## 2026-08-31 — Directional-segmentation Game 1 execution
+
+Frozen protocol v1.0 executed once on Metrica Sample Game 1 after all controlled fixtures passed. The empirical common radial scale was 0.016098810494 m/s from 2,790,392 eligible velocity pairs. The complete supported partition contained 247,175 regimes across 26 outfield players and 45 blocks; 217,151 were tagged directional movement and 30,024 low motion.
+
+The mechanical result is **B**. Hard QC and the 3.97% merging/direction cap passed (547/247,175; 0.2213%), as did 10 Hz precision (0.9915). Fragmentation failed severely (246,679/247,175; 99.7993% against 33.776%): the duration median and both quartiles equal the frozen 0.40 s minimum. Ten-hertz recall (0.7848), F1 (0.8761), and segment-count stability (20.84% difference) also failed. Every governed output and manifest matched byte-for-byte on an independent full rerun.
+
+No parameter, support rule, diagnostic, or model was changed; no alternative was run. Games 2 and 3 and defensive outcomes remained untouched. The representation does not qualify for held-out evaluation, so the Game 2 prerequisite is not met. See [`results/attacking_directional_segmentation_game1_v1.md`](results/attacking_directional_segmentation_game1_v1.md).
+
 ## 2026-08-31 — Directional-segmentation protocol v1.0 frozen
 
 Before any new segmentation output, the selected directional movement construct was frozen as a two-dimensional Gaussian mean-change approximation on the attacker's smoothed $[v_x,v_y]$. The primary objective uses one rotation-preserving common radial scale, normalized squared Euclidean segment cost, a $3\log n$ Schwarz/BIC penalty per change, exact PELT, and a 0.40 s minimum. There is no penalty ladder. Low-motion regimes remain explicit partition intervals and do not affect boundaries or A/B/C.

@@ -1,0 +1,101 @@
+{
+  "adjacent_regime_mean_velocity_vector_change_mps": {
+    "max": 30.320634074670348,
+    "median": 0.26905353814391786,
+    "min": 0.003279866141036115,
+    "q25": 0.14529521474272641,
+    "q75": 0.5034037948802357
+  },
+  "classification": "B",
+  "directional_movement_regimes": 217151,
+  "displacement_m": {
+    "max": 11.08816376576982,
+    "median": 0.6610717354263352,
+    "min": 0.0,
+    "q25": 0.3850252160198765,
+    "q75": 1.1449828299244698
+  },
+  "displacement_path_ratio": {
+    "max": 1.0,
+    "median": 0.999462714954214,
+    "min": 0.01860266139152094,
+    "q25": 0.9975181648528467,
+    "q75": 0.9998786434913097
+  },
+  "duration_s": {
+    "max": 95.4,
+    "median": 0.4,
+    "min": 0.4,
+    "q25": 0.4,
+    "q75": 0.4
+  },
+  "eligible_players": 26,
+  "eligible_segmented_blocks": 45,
+  "fragmentation": {
+    "denominator": 247175,
+    "frozen_limit": 0.33776,
+    "historical_baseline": 0.4222,
+    "numerator": 246679,
+    "pass": false,
+    "rate": 0.997993324567614
+  },
+  "frequency_sensitivity": {
+    "absolute_segment_count_difference_rate": 0.20837463335693335,
+    "boundaries_10hz": 195625,
+    "boundaries_25hz": 247130,
+    "f1": 0.8761323982789578,
+    "matched_boundaries": 193956,
+    "max_matched_offset_s": 0.2000000000007276,
+    "median_matched_offset_s": 0.04000000000007731,
+    "precision": 0.9914683706070287,
+    "recall": 0.7848338930927042,
+    "segment_count_10hz": 195670,
+    "segment_count_25hz": 247175,
+    "unmatched_10hz": 1669,
+    "unmatched_25hz": 53174
+  },
+  "gates": {
+    "fragmentation": false,
+    "frequency_f1": false,
+    "frequency_precision": true,
+    "frequency_recall": false,
+    "frequency_segment_count": false,
+    "hard_qc": true,
+    "merging_direction": true
+  },
+  "low_motion_regimes": 30024,
+  "lower_speed_peak_below_5_5_count": 240306,
+  "lower_speed_peak_below_5_5_displacement_ge_3_count": 592,
+  "mean_speed_mps": {
+    "max": 19.038242586553242,
+    "median": 1.493178435859854,
+    "min": 0.0,
+    "q25": 0.903992151972429,
+    "q75": 2.7008477068248102
+  },
+  "merging_direction": {
+    "denominator": 247175,
+    "frozen_limit": 0.0397,
+    "historical_denominator": 38651,
+    "historical_numerator": 763,
+    "historical_rate": 0.019740757030865953,
+    "numerator": 547,
+    "pass": true,
+    "rate": 0.0022130069788611306
+  },
+  "moving_direction_resultant_le_0_5_count": 44,
+  "noise_scale_10hz_mps": 0.03801565494682698,
+  "noise_scale_25hz_mps": 0.016098810493510585,
+  "noise_scale_source_pairs_10hz": 1116111,
+  "noise_scale_source_pairs_25hz": 2790392,
+  "path_m": {
+    "max": 11.088176039147639,
+    "median": 0.6622847744719023,
+    "min": 0.0,
+    "q25": 0.386772448821992,
+    "q75": 1.1461473509874094
+  },
+  "regimes_per_supported_minute": 132.86897356937283,
+  "supported_duration_s": 111617.48,
+  "total_regimes": 247175
+}

@@ -88,7 +88,7 @@ Second, the project tested whether an attacker’s own trajectory could be broke
 - only 1.97% met a merging/direction-change diagnostic;
 - a retained 56.30 m/s maximum was subsequently traced to an identity/trajectory-continuity failure rather than ordinary movement or smoothing alone.
 
-The basic attacker-only approach survives, but the current valley rule must not be carried unchanged into later response sampling. A frozen prominence refinement reduced fragmentation sharply but produced 35.88%–69.03% merging/direction failures against a 3.97% safety cap. The result is **B**, no prominence was selected, and Game 2 remains unopened.
+The basic attacker-only approach survives, but the current valley rule must not be carried unchanged into later response sampling. A frozen prominence refinement reduced fragmentation sharply but produced 35.88%–69.03% merging/direction failures against a 3.97% safety cap. A subsequent frozen two-dimensional velocity change-point representation failed in the opposite direction: **99.80%** of its 247,175 Game 1 regimes met the fragmentation diagnostic, and its 10 Hz recall, F1, and count-stability gates failed. Both results are **B**; neither method was selected, and Game 2 remains unopened.
 
 ## Current frontier
 

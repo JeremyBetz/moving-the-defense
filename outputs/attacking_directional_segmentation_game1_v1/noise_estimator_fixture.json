@@ -1,0 +1,9 @@
+{
+  "absolute_error_mps": 0.0,
+  "absolute_tolerance_mps": 1e-12,
+  "estimated_sigma_mps": 0.25,
+  "fixture": "radial_noise_estimator",
+  "generating_sigma_mps": 0.25,
+  "pass": true,
+  "source_pairs": 100
+}
