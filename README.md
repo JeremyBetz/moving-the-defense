@@ -1,6 +1,8 @@
-# Asking Questions
+# Moving the Defense
 
-**Asking Questions** is an association-football tracking research project about a familiar football idea:
+**Measuring Defensive Responses to Attacking Movement in Football**
+
+**Moving the Defense** is a tracking-data research project about a familiar football idea:
 
 > When an attacker does not receive the ball, can we measure what they made the defence do?
 

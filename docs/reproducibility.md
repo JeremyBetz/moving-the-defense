@@ -1,4 +1,8 @@
-# Reproducibility Guide
+# Moving the Defense — Reproducibility Guide
+
+**Repository:** [`moving-the-defense`](https://github.com/JeremyBetz/moving-the-defense)
+
+**Project:** *Measuring Defensive Responses to Attacking Movement in Football*
 
 ## Environment
 

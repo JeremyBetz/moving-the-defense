@@ -1,4 +1,6 @@
-# Research Roadmap
+# Moving the Defense — Research Roadmap
+
+**Measuring Defensive Responses to Attacking Movement in Football**
 
 This roadmap is a dependency map, not a promise that the project will reach tactical attribution or value.
 

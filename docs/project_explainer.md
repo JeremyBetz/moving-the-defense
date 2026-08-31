@@ -1,4 +1,6 @@
-# Explaining the Project
+# Moving the Defense — Project Explainer
+
+**Measuring Defensive Responses to Attacking Movement in Football**
 
 This is the football-first guide to the repository. Technical definitions follow the intuition; historical terminology is retained only where it explains how the research changed.
 

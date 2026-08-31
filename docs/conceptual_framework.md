@@ -1,4 +1,6 @@
-# Conceptual Framework
+# Moving the Defense — Conceptual Framework
+
+**Measuring Defensive Responses to Attacking Movement in Football**
 
 > **Current status (post–Phase 5B audits):** focal-relative path has passed held-out Metrica validation and external geometric replication across seven IDSSE matches from one independent provider environment. Phase 5A establishes contextual-prediction feasibility, driven primarily by recent focal movement. Phase 5B finds only a small, mixed opponent-information increment. Signed displacement is retained descriptively; continuation innovation is not a validated onset measure; and attacker-only speed-valley segmentation is B — mixed because fragmentation is common. Tactical defensive response and relational reconfiguration remain unvalidated. Historical sections preserve ideas later weakened or rejected and should be read with the [claim-status ledger](claim_status.md).
 
@@ -36,7 +38,7 @@ This is a behavioral framework. Tracking data observes player locations and move
 
 **Defensive relational reallocation** is historical provisional language for substantial change in which observable relationships best explain movement. The preferred empirical term remains **relational reconfiguration**: a possible intermediate defensive response in which defender-team, defender-opponent, ball, and local relationships change coherently over time. It is not the project's umbrella and remains unvalidated.
 
-## 2. Broader Theory: Asking Questions
+## 2. Broader football theory: posing problems for the defense
 
 Football can be viewed partly as a competition over which team determines the problems both teams must solve. Positioning, rotations, runs, and threatened actions can pose tactical questions. Physical and technical qualities can make a threat more credible or cheaper for the attacker to pose.
 
@@ -182,7 +184,7 @@ Phase 2G aligns five preserved views within each fixed sequence: collective tran
 
 The result is **B — partially supported**. Collective-dominant movement at 1888–1896s remains distinguishable from focal-dominant movement at 590–598s without thresholds. At 1230.12s, small team-centroid movement, substantial focal deviation, mixed prospective local deformation, changing opponent geometry, and substantial ball-relative motion support only a weak/provisional multi-scale description; the prospective representation does not restore the original compression coherence. The 3682.88s case is only partly local-within-collective because large translation coexists with expanding spans/area and mixed pair changes. The 1232.28s start trio expands while its anchor trio contracts strongly, so an appealing cross-scale sequence depends on reference time and is not robust. The tackle and 4197.04s cases remain unresolved/heterogeneous.
 
-Cross-scale correspondence adds information primarily by making **disagreement among scales** auditable. It does not yet operationalize defensive relational reallocation or show ordered spread across scales. Ball motion and shared collective movement remain major alternative explanations, and prospective membership weakens several apparently compelling cases. A future “asking questions” hypothesis may test whether attacking actions are consequential when defensive geometry changes across multiple scales, but no observed correspondence is attributed to a specific attacker here.
+Cross-scale correspondence adds information primarily by making **disagreement among scales** auditable. It does not yet operationalize defensive relational reallocation or show ordered spread across scales. Ball motion and shared collective movement remain major alternative explanations, and prospective membership weakens several apparently compelling cases. A future hypothesis may test whether attacking actions are consequential when defensive geometry changes across multiple scales, but no observed correspondence is attributed to a specific attacker here.
 
 ### Phase 2H construct synthesis
 

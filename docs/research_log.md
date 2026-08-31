@@ -1,5 +1,9 @@
 # Research Log
 
+## 2026-08-30 — Project identity rename
+
+The current-facing project identity changed from **Asking Questions** / repository `soccer-defensive-adjustment` to **Moving the Defense: Measuring Defensive Responses to Attacking Movement in Football** / repository `moving-the-defense`. The rename changes presentation and repository navigation only; historical records, frozen protocols, empirical artifacts, results, and scientific conclusions remain unchanged. Historical names survive where required for provenance.
+
 ## 2026-08-30 — Prominence-refinement Game 1 execution
 
 After the visual-role clarification was saved and absence of prior results verified, protocol v1.0 executed exactly once on Game 1. The 0.00 branch reproduced all 38,651 historical episodes and diagnostic identities to maximum numerical difference $7.11\times10^{-15}$. The 0.25/0.50/1.00 m/s candidates reduced fragmentation from 42.224% to 7.781%/2.840%/1.170% and passed the frozen lower-speed coverage rule, but merging/direction rose from 1.974% to 35.878%/52.136%/69.032%, far beyond the 3.97% cap.

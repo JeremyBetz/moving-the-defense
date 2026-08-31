@@ -1,4 +1,6 @@
-# Documentation Guide
+# Moving the Defense — Documentation Guide
+
+**Measuring Defensive Responses to Attacking Movement in Football**
 
 Use current-facing summaries before historical notebooks. The [claim-status ledger](claim_status.md) governs whenever older language conflicts with later evidence.
 
