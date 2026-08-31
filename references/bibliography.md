@@ -88,6 +88,10 @@ Lee, Jae-Gil, Jiawei Han, and Kyu-Young Whang. 2007. “Trajectory Clustering: A
 
 Yin, Shuhui, Nancy Song, and Haw Yang. 2018. “Detection of Velocity and Diffusion Coefficient Change Points in Single-Particle Trajectories.” *Biophysical Journal* 115 (2): 217–229. <https://doi.org/10.1016/j.bpj.2017.11.008>
 
+Yao, Yi-Ching. 1988. “Estimating the Number of Change-Points via Schwarz' Criterion.” *Statistics & Probability Letters* 6 (3): 181–189. <https://doi.org/10.1016/0167-7152(88)90118-6>
+
+Killick, Rebecca, Paul Fearnhead, and Idris A. Eckley. 2012. “Optimal Detection of Changepoints with a Linear Computational Cost.” *Journal of the American Statistical Association* 107 (500): 1590–1598. <https://doi.org/10.1080/01621459.2012.737745>
+
 Gradient Sports. 2026. “Measuring Off-Ball Movement Using Broadcast Tracking & Event Data.” May 6. <https://www.gradientsports.com/blog/measuring-off-ball-movement-using-broadcast-tracking-event-data>
 
 SkillCorner. 2023. “Game Intelligence: Off-Ball Run Types.” September 25. <https://skillcorner.com/articles/game-intelligence-off-ball-run-types>

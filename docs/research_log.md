@@ -1,5 +1,11 @@
 # Research Log
 
+## 2026-08-31 — Directional-segmentation protocol v1.0 frozen
+
+Before any new segmentation output, the selected directional movement construct was frozen as a two-dimensional Gaussian mean-change approximation on the attacker's smoothed $[v_x,v_y]$. The primary objective uses one rotation-preserving common radial scale, normalized squared Euclidean segment cost, a $3\log n$ Schwarz/BIC penalty per change, exact PELT, and a 0.40 s minimum. There is no penalty ladder. Low-motion regimes remain explicit partition intervals and do not affect boundaries or A/B/C.
+
+The preliminary 31.665%, 5%, and 95% gates were audited rather than inherited: fragmentation and merging/direction revert to the previously frozen 33.776% and 3.97% historical anchors, while lower-speed retention becomes descriptive plus a hard prohibition on speed-based exclusion. Exact fixtures, tracking-support order/registry, native-to-10 Hz matching, decision rules, and the A-only held-out condition are frozen in [`protocols/attacking_directional_segmentation_v1.md`](protocols/attacking_directional_segmentation_v1.md). No Game 1 segmentation was generated; Games 2 and 3 and defensive outcomes remained untouched.
+
 ## 2026-08-31 — Attacking-movement representation audit
 
 Following the frozen prominence-refinement B result, a targeted outcome-blind prior-art audit separated locomotor efforts, generic movement episodes, directional movement segments, tactical runs, and off-ball actions. Football change-of-direction measurement, team-sport velocity change points, general movement-path segmentation, trajectory simplification, and current commercial off-ball-run definitions were compared without inspecting attacker-segmentation outcomes from Metrica Games 2 or 3 or any defensive outcome.

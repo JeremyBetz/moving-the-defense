@@ -85,19 +85,16 @@ The next task should freeze a versioned Game 1 protocol before generating candid
 3. **Frequency sensitivity.** Compare the identical physical-time rule on native Game 1 and a deterministic 10 Hz representation. Report boundary matching within 0.20 s, segment-count change, and geometry differences. This is sensitivity, not a substitute dataset.
 4. **Visual audit.** Select cases deterministically before plotting. Visuals can expose a coordinate, support, or boundary implementation defect; subjective football appearance cannot change classification or parameters.
 
-### Prospectively proposed gates
+### Superseded proposed gates
 
-These gates must be copied literally into the next frozen protocol or revised prospectively before any output is inspected:
+The preliminary audit proposed gates before the mathematical model and penalty were fixed. The later [frozen v1.0 protocol](protocols/attacking_directional_segmentation_v1.md) audited rather than mechanically copied them:
 
-- all deterministic fixtures meet their frozen boundary/count expectations and repeat bit-for-bit from the same inputs;
-- 100% of accepted segment frames satisfy the governed tracking-support policy and no segment crosses a period or unsupported block;
-- the historical fragmentation-composite rate falls by at least 25% relative to 42.22% (at most 31.665%), while each constituent rate is reported separately;
-- the historical merging/direction composite is at most 5%. This is a deliberately wider construct-relevant safety bound than the failed prominence protocol, not a reused selection threshold;
-- at least 95% of support underlying historical low-speed ($<5.5$ m/s peak) episodes with at least 3 m displacement remains represented in accepted directional segments; this is coverage, not tactical value;
-- at least 90% of native boundaries have a 10 Hz match within 0.20 s and the segment-count difference is at most 10%; and
-- results and all diagnostics reproduce deterministically from the frozen manifest.
+- deterministic fixtures, governed support, deterministic reproduction, and frequency checks were retained and specified exactly;
+- the arbitrary 31.665% fragmentation and 5% merging gates were replaced by the previously frozen historical anchors of 33.776% and 3.97%;
+- the 95% lower-speed gate was demoted because its historical-episode denominator is not invariant to a new construct; no speed-based exclusion is permitted instead; and
+- the 0.20 s, 90%, and 10% frequency rules remain explicit engineering/development conventions, now expressed through one-to-one precision, recall, F1, and count agreement.
 
-**A — promising** requires every gate. **B — mixed** means validity/reproducibility pass but one or more balance, coverage, or frequency gates fail. **C — not useful** means the construct cannot be implemented reproducibly/support-validly or fails to improve the fragmentation/merging trade-off. Diagnostics such as old tortuosity and duration flags remain useful, but they no longer define the construct by themselves.
+The protocol freezes one BIC-derived penalty rather than a development ladder. No result informed these revisions; no segmentation was executed.
 
 ## Held-out plan
 
@@ -115,4 +112,4 @@ Speed-based efforts, change-of-direction measurement, change-point segmentation,
 
 ## Exact next-step recommendation
 
-Write—but do not yet execute—a frozen Game 1 protocol for **penalized multivariate change-point segmentation of the attacker's 2D velocity state**, with PELT/squared-error as the primary implementation, the inherited smoothing/support contract, deterministic fixtures, and the gates above. Do not reopen scalar-prominence tuning or add a post-hoc heading threshold.
+The [Game 1 protocol](protocols/attacking_directional_segmentation_v1.md) is now frozen. The next step, only after explicit authorization, is to implement and execute it exactly. Do not reopen scalar-prominence tuning or add a post-hoc heading threshold.
