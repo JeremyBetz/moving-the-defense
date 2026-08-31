@@ -1,5 +1,11 @@
 # Research Log
 
+## 2026-08-31 — First attacker-to-defender bridge protocol frozen
+
+After continuous attacker geometry replicated on held-out Game 2, protocol v1.0 froze the first observational bridge without calculating an association. The primary question is whether attacker path over $[t-2,t]$ is associated with subsequent mean focal-relative path among the three nearest defenders over $[t,t+2]$, conditional on local focal-relative and collective movement during the strictly earlier $[t-4,t-2]$ interval.
+
+The protocol fixes a period-anchored four-second cadence, endpoint-only $K=3$ linkage, matched farthest-three control, reverse-time placebo, sparse raw-metre model, 60-second blocked bootstrap, extreme-exposure diagnostic, and mechanical A/B/C interpretation. Possession team is identified at $t$, but possession continuity through the outcome is deliberately not required because it would condition on a post-exposure variable. Game 1 is development; Game 2 is conditionally held out for this new relationship but not pristine generally; Game 3 remains untouched. No defender response, association, coefficient, plot, or bridge result was computed. See [`protocols/attacker_defender_bridge_v1.md`](protocols/attacker_defender_bridge_v1.md).
+
 ## 2026-08-31 — Continuous attacker movement replicates on held-out Game 2
 
 The first authorized Game 2 feature execution consumed the separately committed Stage-A registry unchanged: 2,093,028 valid raw outfield rows in 134 support segments, with no support rediscovery, revision, or added exclusion. The frozen centred seven-frame mean and 1/2/4 s continuous geometry produced 417,872, 417,309, and 416,199 eligible observations respectively across 24 outfield players and 44 contributing player-periods.

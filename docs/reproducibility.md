@@ -120,6 +120,8 @@ MPLCONFIGDIR=/tmp/moving-the-defense-game2-v1 .venv/bin/python src/attacking_con
 
 For the independent check, rerun with `--output` to a separate directory and call the governed output with `--verify-against`. The 19 governed outputs must match byte-for-byte. Feature, support-linkage, 25/10 Hz comparison, mathematical-QC, fixture, invariance, provenance, hash, reproduction, and final-classification artifacts are under `outputs/attacking_continuous_movement_game2_v1/`.
 
+- First attacker-to-defender bridge: [`docs/protocols/attacker_defender_bridge_v1.md`](protocols/attacker_defender_bridge_v1.md), frozen before any bridge observation or association was computed. There is no implementation or result yet. Reproduction must begin by verifying the frozen attacker and defender component artifacts, then implement synthetic fixtures before Game 1 access. Game 2 is conditionally held out for the bridge relationship—not pristine generally—and may be opened only after a protocol-conformant Game 1 execution. Game 3 and external-provider bridge data are unauthorized.
+
 Where a machine-readable config is listed, documentation explains the rules and the config governs execution. The continuous attacker-movement v1 freeze is currently governed directly by its protocol document; an implementation may transcribe it to config only through a pre-execution exact-consistency check. If prose and config conflict, stop and resolve the literal inconsistency before outcomes.
 
 ## Development/test separation
