@@ -15,6 +15,17 @@ MPLCONFIGDIR=/tmp/moving-the-defense-mpl .venv/bin/python src/kloppy_metrica_equ
 
 The experiment writes only to `outputs/kloppy_metrica_equivalence/`. Its [B result and adapter rules](kloppy_metrica_equivalence.md) do not replace the current Metrica loader or authorize scientific reruns through Kloppy.
 
+## Governed canonical tracking architecture
+
+[Canonical tracking contract v1.0.0](canonical_tracking_contract.md) governs new analyses using Kloppy 3.19.0 and Polars 1.44.1. It does not replace historical loaders. With Metrica Game 1 and IDSSE `J03WMX` raw files already present, reproduce the cross-provider contract gate with:
+
+```bash
+MPLCONFIGDIR=/tmp/moving-the-defense-mpl .venv/bin/python src/canonical_tracking_contract_audit.py
+.venv/bin/python -m unittest tests.test_canonical_tracking_contract
+```
+
+The full logical tables are validated in consecutive Polars chunks. Only bounded schema samples, provenance sidecars, invariant summaries, and downstream equivalence results are committed under `outputs/canonical_tracking_contract/`.
+
 ## Environment
 
 The current local checkpoint was audited under Python 3.13.15. The bounded requirements are intentionally lightweight rather than a platform-specific lockfile; exact package versions used by governed executions are recorded in their manifests where applicable.
@@ -34,7 +45,7 @@ uv venv .venv
 uv pip install --python .venv/bin/python -r requirements-phase0.txt
 ```
 
-Python, pandas, NumPy, Matplotlib, Jupyter, nbclient, and ipykernel cover the tracked source implementations and documentation figures. XML parsing uses the Python standard library. The local environment is ignored by Git.
+Python, pandas, NumPy, Polars, Kloppy, Matplotlib, Jupyter, nbclient, and ipykernel cover the tracked source implementations and documentation figures. XML parsing uses the Python standard library. The local environment is ignored by Git.
 
 ## Raw data
 

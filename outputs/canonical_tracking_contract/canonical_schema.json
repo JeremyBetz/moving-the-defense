@@ -1,0 +1,21 @@
+{
+  "match_id": "String",
+  "period": "UInt8",
+  "frame_id_provider": "String",
+  "time_period_s": "Float64",
+  "time_match_s": "Float64",
+  "entity_type": "String",
+  "team_key": "String",
+  "player_key": "String",
+  "is_goalkeeper": "Boolean",
+  "x_m": "Float64",
+  "y_m": "Float64",
+  "z_m": "Float64",
+  "is_present": "Boolean",
+  "coordinate_valid": "Boolean",
+  "support_state": "String",
+  "ball_state": "String",
+  "possession_team_key": "String",
+  "pitch_length_m": "Float64",
+  "pitch_width_m": "Float64"
+}

@@ -1,0 +1,9 @@
+provider,quantity,max_absolute_difference,tolerance,pass
+metrica,leave_one_out_centroid_components_m,7.105427357601002e-15,0.0001,True
+metrica,focal_relative_components_m,1.0658141036401503e-14,0.0001,True
+metrica,focal_relative_path_m,4.884981308350689e-15,0.001,True
+metrica,frozen_misaligned_control_path_m,2.6645352591003757e-15,0.001,True
+idsse,leave_one_out_centroid_components_m,2.84739904543585e-07,0.0001,True
+idsse,focal_relative_components_m,3.864651603180391e-07,0.0001,True
+idsse,focal_relative_path_m,4.5759026612302023e-07,0.001,True
+idsse,frozen_misaligned_control_path_m,1.7669063367975468e-07,0.001,True

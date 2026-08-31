@@ -22,6 +22,8 @@ The first implementation gate is now recorded in the [Kloppy–Metrica Game 1 eq
 
 The second gate, [Kloppy–IDSSE/Sportec match J03WMX](kloppy_idsse_equivalence.md), also produced B. All frames, presence masks, identities, 695 eligible intervals, 6,949 focal outcomes, activity relationships, and controls reproduced within the expected float32/float64 precision difference. However, absolute UTC time and the provider ball ID require a raw sidecar, while cross-provider clock and coordinate-origin semantics still need a governed canonical contract. The proposed default Kloppy→adapter→canonical Polars architecture therefore remains **NOT READY**.
 
+Those blockers are now resolved prospectively by [canonical tracking contract v1.0.0](canonical_tracking_contract.md). Complete Metrica Game 1 and IDSSE `J03WMX` logical tables passed one explicit Polars schema and provider-independent invariants, while bounded historical focal-relative/control quantities remained equivalent. The Kloppy→governed adapter→canonical Polars architecture is therefore **READY for new analyses**. Historical loaders and governed results are not migrated or rewritten.
+
 ## 2. Current architecture
 
 The current pipeline has three main paths:

@@ -1,0 +1,3 @@
+provider,rows,frames,rows_per_frame,last_match_time_s,support_states,coordinate_rows_outside_nominal_pitch,ball_rows,ball_coordinate_valid_rows,schema_exact
+metrica,4205174,145006,29,5800.24,"['ball_absent', 'not_observed_unspecified', 'observed']",32860,145006,88251,True
+idsse_sportec,5984647,145967,41,5838.64,"['observed', 'provider_entity_absent']",89246,145967,145967,True

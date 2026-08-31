@@ -1,0 +1,101 @@
+{
+  "contract_version": "1.0.0",
+  "adapter_version": "1.0.0",
+  "provider": "sportec",
+  "provider_match_id": "DFL-MAT-J03WMX",
+  "canonical_match_id": "sportec:DFL-MAT-J03WMX",
+  "kloppy_version": "3.19.0",
+  "source_files": [
+    {
+      "path": "data/idsse_raw/DFL_02_01_matchinformation_DFL-COM-000001_DFL-MAT-J03WMX.xml",
+      "sha256": "a884728647a564cf8b20e5223a1d04a5da6f6725e1e506c8651505327c197ba9"
+    },
+    {
+      "path": "data/idsse_raw/DFL_03_02_events_raw_DFL-COM-000001_DFL-MAT-J03WMX.xml",
+      "sha256": "6f9741ea62e9dee35b604942e1dad2ac0a4dc3fce14ef2f3858aa12b74dafe00"
+    },
+    {
+      "path": "data/idsse_raw/DFL_04_03_positions_raw_observed_DFL-COM-000001_DFL-MAT-J03WMX.xml",
+      "sha256": "d3dd92e509421a6466acb0a083c009035f1751bc5fd9ef42ffa8f20d01cf7d49"
+    }
+  ],
+  "source_coordinate_system": "Sportec metres, pitch centre origin, +x right, +y top",
+  "canonical_coordinate_system": "metres, pitch centre origin, +x right, +y top, fixed pitch frame",
+  "coordinate_transform": [
+    "identity for x/y"
+  ],
+  "pitch_m": [
+    105.0,
+    68.0
+  ],
+  "provider_raw_timestamp_available": true,
+  "provider_timestamp_unit": "UTC nanoseconds",
+  "provider_timestamp_range_ns": [
+    1685194212600000000,
+    1685201153680000000
+  ],
+  "provider_frame_id_available": true,
+  "time_period_rule": "Kloppy frame-derived period-relative timestamp",
+  "time_match_rule": "period durations accumulated without halftime gaps; strictly increasing",
+  "team_id_map_provider_to_canonical": {
+    "DFL-CLU-000008": "sportec:DFL-CLU-000008",
+    "DFL-CLU-00000G": "sportec:DFL-CLU-00000G"
+  },
+  "player_id_map_provider_to_canonical": {
+    "DFL-OBJ-0027AX": "sportec:DFL-OBJ-0027AX",
+    "DFL-OBJ-0000M0": "sportec:DFL-OBJ-0000M0",
+    "DFL-OBJ-00012X": "sportec:DFL-OBJ-00012X",
+    "DFL-OBJ-000270": "sportec:DFL-OBJ-000270",
+    "DFL-OBJ-0002HE": "sportec:DFL-OBJ-0002HE",
+    "DFL-OBJ-0002BO": "sportec:DFL-OBJ-0002BO",
+    "DFL-OBJ-0027V2": "sportec:DFL-OBJ-0027V2",
+    "DFL-OBJ-0027B6": "sportec:DFL-OBJ-0027B6",
+    "DFL-OBJ-0026ZI": "sportec:DFL-OBJ-0026ZI",
+    "DFL-OBJ-0028BD": "sportec:DFL-OBJ-0028BD",
+    "DFL-OBJ-002GBW": "sportec:DFL-OBJ-002GBW",
+    "DFL-OBJ-002G89": "sportec:DFL-OBJ-002G89",
+    "DFL-OBJ-002G4A": "sportec:DFL-OBJ-002G4A",
+    "DFL-OBJ-002GLJ": "sportec:DFL-OBJ-002GLJ",
+    "DFL-OBJ-J01BGM": "sportec:DFL-OBJ-J01BGM",
+    "DFL-OBJ-002G0R": "sportec:DFL-OBJ-002G0R",
+    "DFL-OBJ-J01D1W": "sportec:DFL-OBJ-J01D1W",
+    "DFL-OBJ-J01DVC": "sportec:DFL-OBJ-J01DVC",
+    "DFL-OBJ-002GKO": "sportec:DFL-OBJ-002GKO",
+    "DFL-OBJ-J01LJ2": "sportec:DFL-OBJ-J01LJ2",
+    "DFL-OBJ-0002DR": "sportec:DFL-OBJ-0002DR",
+    "DFL-OBJ-0000LT": "sportec:DFL-OBJ-0000LT",
+    "DFL-OBJ-0000RP": "sportec:DFL-OBJ-0000RP",
+    "DFL-OBJ-0000IA": "sportec:DFL-OBJ-0000IA",
+    "DFL-OBJ-J00USE": "sportec:DFL-OBJ-J00USE",
+    "DFL-OBJ-000191": "sportec:DFL-OBJ-000191",
+    "DFL-OBJ-J0117H": "sportec:DFL-OBJ-J0117H",
+    "DFL-OBJ-0027G6": "sportec:DFL-OBJ-0027G6",
+    "DFL-OBJ-0002F5": "sportec:DFL-OBJ-0002F5",
+    "DFL-OBJ-0026PM": "sportec:DFL-OBJ-0026PM",
+    "DFL-OBJ-0002AU": "sportec:DFL-OBJ-0002AU",
+    "DFL-OBJ-J015S4": "sportec:DFL-OBJ-J015S4",
+    "DFL-OBJ-0027KL": "sportec:DFL-OBJ-0027KL",
+    "DFL-OBJ-0027G0": "sportec:DFL-OBJ-0027G0",
+    "DFL-OBJ-J017RE": "sportec:DFL-OBJ-J017RE",
+    "DFL-OBJ-J01APO": "sportec:DFL-OBJ-J01APO",
+    "DFL-OBJ-J01B8N": "sportec:DFL-OBJ-J01B8N",
+    "DFL-OBJ-002GIC": "sportec:DFL-OBJ-002GIC",
+    "DFL-OBJ-002GCR": "sportec:DFL-OBJ-002GCR",
+    "DFL-OBJ-J01N65": "sportec:DFL-OBJ-J01N65"
+  },
+  "goalkeeper_source": "Kloppy starting-position metadata, verified against frozen provider metadata",
+  "ball_object_id_provider": [
+    "DFL-OBJ-0000XT"
+  ],
+  "ball_state_available": true,
+  "possession_team_available": true,
+  "support_rule": "Kloppy frame-object presence; absent roster entity retained as provider_entity_absent",
+  "orientation_metadata": "away-home",
+  "coordinates_attacking_direction_normalized": false,
+  "interpolation_used": false,
+  "transformation_log": [
+    "load via Kloppy",
+    "identity fixed-pitch coordinate mapping",
+    "explicit roster null rows"
+  ]
+}

@@ -1,0 +1,72 @@
+{
+  "contract_version": "1.0.0",
+  "architecture_decision": "READY",
+  "scope": [
+    "Metrica Sample Game 1",
+    "IDSSE/Sportec J03WMX"
+  ],
+  "canonical_schema": {
+    "match_id": "String",
+    "period": "UInt8",
+    "frame_id_provider": "String",
+    "time_period_s": "Float64",
+    "time_match_s": "Float64",
+    "entity_type": "String",
+    "team_key": "String",
+    "player_key": "String",
+    "is_goalkeeper": "Boolean",
+    "x_m": "Float64",
+    "y_m": "Float64",
+    "z_m": "Float64",
+    "is_present": "Boolean",
+    "coordinate_valid": "Boolean",
+    "support_state": "String",
+    "ball_state": "String",
+    "possession_team_key": "String",
+    "pitch_length_m": "Float64",
+    "pitch_width_m": "Float64"
+  },
+  "provider_summaries": [
+    {
+      "provider": "metrica",
+      "rows": 4205174,
+      "frames": 145006,
+      "rows_per_frame": 29,
+      "last_match_time_s": 5800.24,
+      "support_states": [
+        "ball_absent",
+        "not_observed_unspecified",
+        "observed"
+      ],
+      "coordinate_rows_outside_nominal_pitch": 32860,
+      "ball_rows": 145006,
+      "ball_coordinate_valid_rows": 88251,
+      "schema_exact": true
+    },
+    {
+      "provider": "idsse_sportec",
+      "rows": 5984647,
+      "frames": 145967,
+      "rows_per_frame": 41,
+      "last_match_time_s": 5838.64,
+      "support_states": [
+        "observed",
+        "provider_entity_absent"
+      ],
+      "coordinate_rows_outside_nominal_pitch": 89246,
+      "ball_rows": 145967,
+      "ball_coordinate_valid_rows": 145967,
+      "schema_exact": true
+    }
+  ],
+  "downstream_pass": true,
+  "provenance_complete": true,
+  "support_semantics_explicit": true,
+  "time_semantics_resolved": true,
+  "coordinate_semantics_resolved": true,
+  "historical_pipelines_migrated": false,
+  "metrica_game3_accessed": false,
+  "unravelsports_used": false,
+  "source_sha256": "6479a8c03c7c892a4a6e3b23d39ca00344c4f932434f34f5076d80a4af76a162",
+  "canonical_module_sha256": "80fe2d45d81d0e65bcc87c2e1e8c343705f02b0649d68aa8edf498498e3a3d7f"
+}

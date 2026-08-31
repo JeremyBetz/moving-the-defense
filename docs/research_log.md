@@ -1,5 +1,11 @@
 # Research Log
 
+## 2026-08-30 — Canonical tracking contract v1.0.0
+
+The two B equivalence experiments were converted into a prospective infrastructure contract rather than a historical migration. Contract v1.0.0 separates raw/provider time, provider frame identity, period time, and strictly increasing match-global time; fixes canonical coordinates to centred metres with +x right/+y top and no attacking-direction normalization; requires reversible namespaced IDs, one roster-player row plus ball per frame, explicit support states, noninferential ball fields, and a complete hashed provenance sidecar. It also freezes future numerical/discrete-boundary policy without altering a historical threshold.
+
+Complete logical Polars tables passed one schema and invariants for all 145,006 Metrica Game 1 frames (4,205,174 rows) and 145,967 IDSSE `J03WMX` frames (5,984,647 rows). Bounded historical centroid, focal-relative, five-second path, and misaligned-control quantities passed at $10^{-15}$–$10^{-14}$ m scale for Metrica and below $4.58\times10^{-7}$ m for IDSSE. The architecture is **READY for new analyses**: Kloppy→governed adapter→canonical Polars table plus provenance. No historical loader, protocol, output, measurement, Metrica Game 3 data, or scientific claim changed. See [`canonical_tracking_contract.md`](canonical_tracking_contract.md).
+
 ## 2026-08-30 — Kloppy–IDSSE/Sportec J03WMX equivalence experiment
 
 The second bounded ecosystem gate loaded the first canonical Phase 4C match, `J03WMX`, independently through Kloppy 3.19.0 and the governed IDSSE cache. All 145,967 frame IDs and UTC timestamps, 40 player/team identities, two goalkeeper identities, player/ball presence masks, provider ball states/possession teams, 695 eligible intervals, 6,949 focal outcomes, nine activity cells, activity relationships, and misaligned controls matched. The maximum coordinate difference was $1.83\times10^{-6}$ m because the historical cache stores float32 while Kloppy parses float64; focal-relative path differed by at most $6.81\times10^{-6}$ m. Fresh current-pipeline outcomes reproduced the committed Phase 4C result to $2.84\times10^{-14}$ m.

@@ -10,6 +10,7 @@ from __future__ import annotations
 
 from dataclasses import asdict, dataclass
 from datetime import datetime, timezone
+import hashlib
 from pathlib import Path
 from typing import Iterator
 import xml.etree.ElementTree as ET
@@ -21,6 +22,11 @@ import numpy as np
 import pandas as pd
 
 from infrastructure.kloppy_metrica_adapter import CANONICAL_COLUMNS
+from infrastructure.canonical_tracking import (
+    ADAPTER_VERSION,
+    CONTRACT_VERSION,
+    canonical_frame,
+)
 
 
 PITCH_LENGTH_M = 105.0
@@ -274,3 +280,155 @@ def to_phase4c_tracking(dataset, sidecar: pd.DataFrame) -> dict:
 
 def provenance_dict(dataset) -> dict:
     return asdict(provenance(dataset))
+
+
+def _sha256(path: Path) -> str:
+    digest = hashlib.sha256()
+    with path.open("rb") as stream:
+        for chunk in iter(lambda: stream.read(1 << 20), b""):
+            digest.update(chunk)
+    return digest.hexdigest()
+
+
+def canonical_team_key(team_id: str) -> str:
+    return f"sportec:{team_id}"
+
+
+def canonical_player_key(player_id: str) -> str:
+    return f"sportec:{player_id}"
+
+
+def _period_time_offsets(dataset) -> dict[int, float]:
+    offsets: dict[int, float] = {}
+    accumulated = 0.0
+    for period in sorted({int(frame.period.id) for frame in dataset.frames}):
+        times = [float(frame.timestamp.total_seconds()) for frame in dataset.frames if int(frame.period.id) == period]
+        offsets[period] = accumulated - min(times)
+        accumulated += max(times) - min(times) + 1.0 / FRAME_RATE_HZ
+    return offsets
+
+
+def iter_canonical_polars_chunks(
+    dataset,
+    sidecar: pd.DataFrame,
+    match_id: str = "sportec:DFL-MAT-J03WMX",
+    frames_per_chunk: int = 1000,
+):
+    """Yield governed canonical chunks in the native fixed Sportec pitch frame."""
+    raw_lookup = _sidecar_lookup(sidecar)
+    players = roster(dataset)
+    offsets = _period_time_offsets(dataset)
+    rows: list[dict] = []
+    for frame_count, frame in enumerate(dataset.frames, start=1):
+        period = int(frame.period.id)
+        period_time = float(frame.timestamp.total_seconds())
+        common = {
+            "match_id": match_id,
+            "period": period,
+            "frame_id_provider": str(int(frame.frame_id)),
+            "time_period_s": period_time,
+            "time_match_s": offsets[period] + period_time,
+            "pitch_length_m": PITCH_LENGTH_M,
+            "pitch_width_m": PITCH_WIDTH_M,
+        }
+        for player, team_id, is_goalkeeper in players:
+            point = frame.players_coordinates.get(player)
+            valid = point is not None and np.isfinite(point.x) and np.isfinite(point.y)
+            rows.append(
+                {
+                    **common,
+                    "entity_type": "player",
+                    "team_key": canonical_team_key(team_id),
+                    "player_key": canonical_player_key(player.player_id),
+                    "is_goalkeeper": is_goalkeeper,
+                    "x_m": float(point.x) if valid else None,
+                    "y_m": float(point.y) if valid else None,
+                    "z_m": None,
+                    "is_present": point is not None,
+                    "coordinate_valid": bool(valid),
+                    "support_state": "observed" if valid else "provider_entity_absent",
+                    "ball_state": None,
+                    "possession_team_key": None,
+                }
+            )
+        ball = frame.ball_coordinates
+        ball_valid = ball is not None and np.isfinite(ball.x) and np.isfinite(ball.y)
+        ball_state = str(frame.ball_state.value) if frame.ball_state is not None else "unknown"
+        possession = (
+            canonical_team_key(frame.ball_owning_team.team_id)
+            if frame.ball_owning_team is not None
+            else None
+        )
+        rows.append(
+            {
+                **common,
+                "entity_type": "ball",
+                "team_key": None,
+                "player_key": None,
+                "is_goalkeeper": False,
+                "x_m": float(ball.x) if ball_valid else None,
+                "y_m": float(ball.y) if ball_valid else None,
+                "z_m": float(ball.z) if ball_valid and ball.z is not None else None,
+                "is_present": ball is not None,
+                "coordinate_valid": bool(ball_valid),
+                "support_state": "observed" if ball_valid else "ball_absent",
+                "ball_state": ball_state,
+                "possession_team_key": possession,
+            }
+        )
+        if frame_count % frames_per_chunk == 0:
+            yield canonical_frame(rows)
+            rows = []
+    if rows:
+        yield canonical_frame(rows)
+
+
+def canonical_provenance(
+    dataset,
+    sidecar: pd.DataFrame,
+    metadata_path: Path,
+    event_path: Path,
+    tracking_path: Path,
+) -> dict:
+    """Return the governed provenance sidecar for canonical IDSSE output."""
+    player_entries = roster(dataset)
+    return {
+        "contract_version": CONTRACT_VERSION,
+        "adapter_version": ADAPTER_VERSION,
+        "provider": "sportec",
+        "provider_match_id": str(dataset.metadata.game_id),
+        "canonical_match_id": f"sportec:{dataset.metadata.game_id}",
+        "kloppy_version": str(kloppy.__version__),
+        "source_files": [
+            {"path": str(path.relative_to(path.parents[2])), "sha256": _sha256(path)}
+            for path in (metadata_path, event_path, tracking_path)
+        ],
+        "source_coordinate_system": "Sportec metres, pitch centre origin, +x right, +y top",
+        "canonical_coordinate_system": "metres, pitch centre origin, +x right, +y top, fixed pitch frame",
+        "coordinate_transform": ["identity for x/y"],
+        "pitch_m": [PITCH_LENGTH_M, PITCH_WIDTH_M],
+        "provider_raw_timestamp_available": True,
+        "provider_timestamp_unit": "UTC nanoseconds",
+        "provider_timestamp_range_ns": [
+            int(sidecar["provider_timestamp_ns"].min()),
+            int(sidecar["provider_timestamp_ns"].max()),
+        ],
+        "provider_frame_id_available": True,
+        "time_period_rule": "Kloppy frame-derived period-relative timestamp",
+        "time_match_rule": "period durations accumulated without halftime gaps; strictly increasing",
+        "team_id_map_provider_to_canonical": {
+            team.team_id: canonical_team_key(team.team_id) for team in dataset.metadata.teams
+        },
+        "player_id_map_provider_to_canonical": {
+            player.player_id: canonical_player_key(player.player_id) for player, _, _ in player_entries
+        },
+        "goalkeeper_source": "Kloppy starting-position metadata, verified against frozen provider metadata",
+        "ball_object_id_provider": sorted(sidecar["provider_ball_object_id"].dropna().unique().tolist()),
+        "ball_state_available": True,
+        "possession_team_available": True,
+        "support_rule": "Kloppy frame-object presence; absent roster entity retained as provider_entity_absent",
+        "orientation_metadata": str(dataset.metadata.orientation.value),
+        "coordinates_attacking_direction_normalized": False,
+        "interpolation_used": False,
+        "transformation_log": ["load via Kloppy", "identity fixed-pitch coordinate mapping", "explicit roster null rows"],
+    }

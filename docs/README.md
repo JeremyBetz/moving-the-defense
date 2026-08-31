@@ -45,6 +45,7 @@ The football concepts are candidate interpretations, not automatic labels or val
 10. [Open football analytics ecosystem alignment](open_source_ecosystem_alignment.md) — infrastructure audit and numerical-equivalence gate for possible Kloppy/Polars/mplsoccer integration; no migration performed.
 11. [Kloppy–Metrica Game 1 equivalence](kloppy_metrica_equivalence.md) — first bounded ingestion experiment; B result, explicit adapter required, no loader migration.
 12. [Kloppy–IDSSE/Sportec equivalence](kloppy_idsse_equivalence.md) — one-match external-provider experiment; B / NOT READY, with Phase 4C geometry preserved but canonical clock/coordinate rules still unresolved.
+13. [Canonical tracking contract](canonical_tracking_contract.md) — governed Polars schema, time/coordinate/support semantics, provenance rules, and READY decision for new analyses; historical pipelines remain unchanged.
 
 ## Reproducing a specific completed analysis
 
@@ -61,6 +62,7 @@ Start with [the reproducibility guide](reproducibility.md), then use the matchin
 | Prominence refinement | `config/post5b_attacking_movement_prominence_refinement_rules.json` | `src/post5b_attacking_movement_prominence_refinement.py` | [report](post5b_attacking_movement_prominence_refinement_results.md) |
 | Kloppy–Metrica equivalence | current loader + experimental adapter | `src/kloppy_metrica_equivalence.py` | [report](kloppy_metrica_equivalence.md) |
 | Kloppy–IDSSE equivalence | current Phase 4C loader + experimental adapter | `src/kloppy_idsse_equivalence.py` | [report](kloppy_idsse_equivalence.md) |
+| Canonical tracking contract | Metrica Game 1 + IDSSE `J03WMX` contract gate | `src/canonical_tracking_contract_audit.py` | [contract/results](canonical_tracking_contract.md) |
 
 ## Potential mentor or collaborator
 

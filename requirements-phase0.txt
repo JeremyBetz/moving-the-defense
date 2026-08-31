@@ -5,3 +5,4 @@ jupyter>=1,<2
 nbclient>=0.10,<1
 ipykernel>=6,<7
 kloppy==3.19.0
+polars==1.44.1
