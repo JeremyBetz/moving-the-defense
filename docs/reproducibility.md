@@ -102,6 +102,8 @@ MPLCONFIGDIR=/tmp/moving-the-defense-mpl .venv/bin/python src/attacking_continuo
 
 For the required independent check, rerun with `--output` to a separate directory, then use `--verify-against` from the governed output directory. Complete support, feature, frequency-comparison, fixture, summary, provenance, and hash artifacts are under `outputs/attacking_continuous_movement_game1_v1/`.
 
+- Held-out continuous attacker movement: [`docs/protocols/attacking_continuous_movement_game2_heldout_v1.md`](protocols/attacking_continuous_movement_game2_heldout_v1.md), frozen before any Game 2 access. Its mandatory first pass is trajectory-support QC and registry freeze only; no Game 2 feature implementation or result artifact exists.
+
 Where a machine-readable config is listed, documentation explains the rules and the config governs execution. The continuous attacker-movement v1 freeze is currently governed directly by its protocol document; an implementation may transcribe it to config only through a pre-execution exact-consistency check. If prose and config conflict, stop and resolve the literal inconsistency before outcomes.
 
 ## Development/test separation

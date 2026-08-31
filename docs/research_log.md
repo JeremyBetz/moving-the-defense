@@ -1,5 +1,11 @@
 # Research Log
 
+## 2026-08-31 — Held-out Game 2 continuous-representation protocol frozen
+
+No Game 2 or Game 3 data was accessed. A strict [within-provider held-out protocol](protocols/attacking_continuous_movement_game2_heldout_v1.md) now inherits the complete Game 1 representation and every frequency gate unchanged. It requires a separately committed Stage-A canonical trajectory-support audit before any Game 2 smoothing or continuous feature is calculated.
+
+The Stage-A registry procedure is deterministic: universal missing/frame/time/period rules, hard raw-jump links above 20 m/s with bounded-segment handling, and same-team exact-coordinate duplication sustained for at least five consecutive frames. Unusual but ungoverned traces cannot be excluded manually; an unresolved credible defect blocks feature execution and requires a prospective pre-feature amendment. Game 2 feature-distribution similarity is explicitly not a replication target. The bridge remains blocked until a later Game 2 A; Game 3 remains untouched.
+
 ## 2026-08-31 — Continuous attacking-movement v1 executed on Game 1
 
 The frozen [continuous protocol](protocols/attacking_continuous_movement_v1.md) executed on Metrica Sample Game 1 and classified **A**. Across 26 outfield identities and 44 eligible player-periods, it produced 557,856 one-second, 557,631 two-second, and 557,181 four-second observations. All synthetic/invariance/support checks passed, all mathematical violations were zero, matched 25/10 Hz eligibility was 100%, and all 15 frequency gates passed. A clean rerun reproduced 17 governed files byte-for-byte.

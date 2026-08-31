@@ -45,12 +45,13 @@ The football concepts are candidate interpretations, not automatic labels or val
 10. [Attacking-movement representation audit](attacking_movement_representation_audit.md) — prior-art and construct-selection pass that selected 2D velocity-state change points; no execution.
 11. [Frozen directional-segmentation protocol v1.0](protocols/attacking_directional_segmentation_v1.md) and [Game 1 result](results/attacking_directional_segmentation_game1_v1.md) — exact 2D velocity objective; B result from overwhelming fragmentation and frequency instability, so Game 2 was not opened.
 12. [Attacking-movement representation fork](attacking_movement_representation_fork.md) — continuous fixed-window attacker geometry selected as the next unvalidated primary family; geometry-first episodes deferred.
-13. [Frozen continuous attacker movement protocol v1.0](protocols/attacking_continuous_movement_v1.md) and [Game 1 result](results/attacking_continuous_movement_game1_v1.md) — signed displacement, path, and straightness classified A on development Game 1; held-out Game 2 protocol not yet frozen.
-14. [Open football analytics ecosystem alignment](open_source_ecosystem_alignment.md) — infrastructure audit and numerical-equivalence gate for possible Kloppy/Polars/mplsoccer integration; no migration performed.
-15. [Kloppy–Metrica Game 1 equivalence](kloppy_metrica_equivalence.md) — first bounded ingestion experiment; B result, explicit adapter required, no loader migration.
-16. [Kloppy–IDSSE/Sportec equivalence](kloppy_idsse_equivalence.md) — one-match external-provider experiment; B / NOT READY, with Phase 4C geometry preserved but canonical clock/coordinate rules still unresolved.
-17. [Canonical tracking contract](canonical_tracking_contract.md) — governed Polars schema, time/coordinate/support semantics, provenance rules, and READY decision for new analyses; historical pipelines remain unchanged.
-18. [UnravelSports interoperability](unravelsports_interoperability.md) — bounded B audit: useful reference layer and thin canonical compatibility view, but no governed pipeline integration.
+13. [Frozen continuous attacker movement protocol v1.0](protocols/attacking_continuous_movement_v1.md) and [Game 1 result](results/attacking_continuous_movement_game1_v1.md) — signed displacement, path, and straightness classified A on development Game 1.
+14. [Frozen held-out Game 2 continuous-representation protocol](protocols/attacking_continuous_movement_game2_heldout_v1.md) — mandatory raw trajectory-QC/registry checkpoint before any held-out feature execution.
+15. [Open football analytics ecosystem alignment](open_source_ecosystem_alignment.md) — infrastructure audit and numerical-equivalence gate for possible Kloppy/Polars/mplsoccer integration; no migration performed.
+16. [Kloppy–Metrica Game 1 equivalence](kloppy_metrica_equivalence.md) — first bounded ingestion experiment; B result, explicit adapter required, no loader migration.
+17. [Kloppy–IDSSE/Sportec equivalence](kloppy_idsse_equivalence.md) — one-match external-provider experiment; B / NOT READY, with Phase 4C geometry preserved but canonical clock/coordinate rules still unresolved.
+18. [Canonical tracking contract](canonical_tracking_contract.md) — governed Polars schema, time/coordinate/support semantics, provenance rules, and READY decision for new analyses; historical pipelines remain unchanged.
+19. [UnravelSports interoperability](unravelsports_interoperability.md) — bounded B audit: useful reference layer and thin canonical compatibility view, but no governed pipeline integration.
 
 ## Reproducing a specific completed analysis
 
