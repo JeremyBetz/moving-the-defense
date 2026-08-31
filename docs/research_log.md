@@ -1,5 +1,11 @@
 # Research Log
 
+## 2026-08-30 — Kloppy–Metrica Game 1 equivalence experiment
+
+The first bounded implementation gate from the ecosystem audit loaded Metrica Sample Game 1 independently through Kloppy 3.19.0 and the existing project pipeline. An experimental adapter restored the raw Metrica y-axis, preserved provider global frame/time alongside Kloppy period time, mapped native and project identities reversibly, supplied the frozen goalkeeper identities, and emitted explicit null player/ball rows without interpolation.
+
+All 145,006 frames, period membership, provider timestamps, roster identities, ball support, coordinate missingness masks, 422 eligible Phase 4 windows, attrition categories, and 4,220 focal outcomes matched. Continuous Phase 4 geometry differed only at approximately $10^{-14}$ m scale and passed every tolerance. Independently regenerating the misaligned-control selection changed four interval-level pair assignments because those same tiny differences crossed a frozen activity cut; reusing the frozen control identities restored full downstream equivalence. The result is **B — mostly compatible, explicit adapter required**. No loader, frozen protocol, validated result, existing output, other match, or scientific claim changed. See [`kloppy_metrica_equivalence.md`](kloppy_metrica_equivalence.md).
+
 ## 2026-08-30 — Open football analytics ecosystem audit
 
 A non-empirical infrastructure audit mapped the repository against Kloppy, UnravelSports, Polars, mplsoccer, socceraction, and floodlight. It recommends Kloppy as a future provider-normalization layer, direct Kloppy-to-Polars conversion behind a project-owned provenance/compatibility adapter, and mplsoccer for new football-facing pitch figures. Community tooling stops before the project-owned measurement and frozen research-design layers.

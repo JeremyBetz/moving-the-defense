@@ -1,0 +1,9 @@
+quantity,missingness_mask_exact,both_missing,n,max_absolute_difference,median_absolute_difference,p99_absolute_difference,tolerance,mismatches_above_tolerance,mismatch_share
+loo_centroid,True,0,1004360,2.1316282072803006e-14,0.0,7.105427357601002e-15,1e-09,0,0.0
+focal_relative,True,0,1004360,2.842170943040401e-14,0.0,1.0658141036401503e-14,1e-09,0,0.0
+focal_relative_path_m,True,0,4220,3.419486915845482e-14,1.7763568394002505e-15,1.4210854715202004e-14,1e-08,0,0.0
+focal_relative_net_x_change_m,True,0,4220,0.0,0.0,0.0,1e-08,0,0.0
+focal_relative_net_y_change_m,True,0,4220,2.1316282072803006e-14,0.0,1.4210854715202004e-14,1e-08,0,0.0
+focal_relative_net_displacement_m,True,0,4220,1.9761969838327786e-14,0.0,1.1546319456101628e-14,1e-08,0,0.0
+leave_one_out_centroid_path_m,True,0,4220,2.6201263381153694e-14,1.7763568394002505e-15,1.2434497875801753e-14,1e-08,0,0.0
+misaligned_relative_path_m,True,440,3780,2.90878432451791e-14,1.7763568394002505e-15,1.5987211554602254e-14,1e-08,0,0.0

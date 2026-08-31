@@ -1,0 +1,5 @@
+source,Period,frame_count,first_frame,last_frame,first_time_s,last_time_s
+current,1,71268,1,71268,0.04,2850.72
+current,2,73738,71269,145006,2850.76,5800.24
+kloppy_adapter,1,71268,1,71268,0.04,2850.72
+kloppy_adapter,2,73738,71269,145006,2850.76,5800.24

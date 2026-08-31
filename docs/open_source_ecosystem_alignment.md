@@ -1,6 +1,6 @@
 # Moving the Defense — Open Football Analytics Ecosystem Alignment
 
-**Status:** infrastructure audit only; no migration, dependency change, notebook rewrite, or scientific re-analysis
+**Status:** architecture audit complete; the first bounded Kloppy/Metrica equivalence experiment subsequently produced B — explicit adapter required, with no loader migration
 
 **Repository checkpoint:** naming checkpoint `5d05cf6`
 
@@ -16,7 +16,9 @@ The governing boundary is:
 
 Provider parsing, coordinate metadata, standard pitch drawing, and dataframe interchange are not research contributions. Conversely, a library function with a similar name is not a scientific substitute for a construct that has already been prospectively defined and validated. In particular, no ecosystem component reviewed here replaces focal-relative defensive movement, the attacking-movement segmentation audit trail, tracking-support QC, frozen thresholds, held-out logic, negative controls, or the claim-status ladder.
 
-The current six-package environment is deliberately small: NumPy, Pandas, Matplotlib, Jupyter, nbclient, and ipykernel. The repository has no package metadata beyond [`requirements-phase0.txt`](../requirements-phase0.txt), no lockfile, and no shared internal ingestion package. Later governed scripts import earlier scripts directly, which preserves provenance but also couples provider parsing, canonical representation, measurement, and analysis.
+The original six-package environment was deliberately small: NumPy, Pandas, Matplotlib, Jupyter, nbclient, and ipykernel. Kloppy 3.19.0 is now the sole ecosystem dependency added for the isolated equivalence gate. The repository has no package metadata beyond [`requirements-phase0.txt`](../requirements-phase0.txt) and no lockfile. Later governed scripts import earlier scripts directly, which preserves provenance but also couples provider parsing, canonical representation, measurement, and analysis.
+
+The first implementation gate is now recorded in the [Kloppy–Metrica Game 1 equivalence report](kloppy_metrica_equivalence.md). Kloppy 3.19.0 reproduced Game 1 support and continuous Phase 4 geometry within numerical precision only after explicit y-axis, timestamp, identity, goalkeeper, and null-row adaptation. Independently regenerated negative-control pairing also exposed sensitivity at a frozen activity cut. The result does not authorize migration.
 
 ## 2. Current architecture
 

@@ -4,6 +4,17 @@
 
 **Project:** *Measuring Defensive Responses to Attacking Movement in Football*
 
+## Experimental Kloppy equivalence gate
+
+Kloppy is pinned at 3.19.0 for the isolated Metrica Game 1 equivalence experiment. With the existing raw Sample Game 1 files in `data/metrica_sample_game_1/`, reproduce it with:
+
+```bash
+MPLCONFIGDIR=/tmp/moving-the-defense-mpl .venv/bin/python src/kloppy_metrica_equivalence.py
+.venv/bin/python -m unittest tests.test_kloppy_metrica_adapter
+```
+
+The experiment writes only to `outputs/kloppy_metrica_equivalence/`. Its [B result and adapter rules](kloppy_metrica_equivalence.md) do not replace the current Metrica loader or authorize scientific reruns through Kloppy.
+
 ## Environment
 
 The current local checkpoint was audited under Python 3.13.15. The bounded requirements are intentionally lightweight rather than a platform-specific lockfile; exact package versions used by governed executions are recorded in their manifests where applicable.

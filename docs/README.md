@@ -43,6 +43,7 @@ The football concepts are candidate interpretations, not automatic labels or val
 8. [Frozen prominence-refinement protocol](post5b_attacking_movement_prominence_refinement_protocol.md) — governing Game 1 design and conditional Game 2 plan.
 9. [Prominence-refinement results](post5b_attacking_movement_prominence_refinement_results.md) — Game 1 B result; no candidate selected and Game 2 not opened.
 10. [Open football analytics ecosystem alignment](open_source_ecosystem_alignment.md) — infrastructure audit and numerical-equivalence gate for possible Kloppy/Polars/mplsoccer integration; no migration performed.
+11. [Kloppy–Metrica Game 1 equivalence](kloppy_metrica_equivalence.md) — first bounded ingestion experiment; B result, explicit adapter required, no loader migration.
 
 ## Reproducing a specific completed analysis
 
@@ -57,6 +58,7 @@ Start with [the reproducibility guide](reproducibility.md), then use the matchin
 | Post-5B direction/onset | fixed audit implementation | `src/post5b_measurement_audit_direction_onset.py` | [report](post5b_measurement_audit_direction_onset.md) |
 | Attacking movement segmentation | `config/post5b_movement_segmentation_audit_rules.json` | `src/post5b_attacking_movement_segmentation_audit.py` | [report](post5b_attacking_movement_segmentation_audit.md) |
 | Prominence refinement | `config/post5b_attacking_movement_prominence_refinement_rules.json` | `src/post5b_attacking_movement_prominence_refinement.py` | [report](post5b_attacking_movement_prominence_refinement_results.md) |
+| Kloppy–Metrica equivalence | current loader + experimental adapter | `src/kloppy_metrica_equivalence.py` | [report](kloppy_metrica_equivalence.md) |
 
 ## Potential mentor or collaborator
 
