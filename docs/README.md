@@ -42,6 +42,7 @@ The football concepts are candidate interpretations, not automatic labels or val
 7. [Post-5B tracking-support QC audit](post5b_tracking_support_qc_audit.md) — diagnosis of the retained extreme-speed observation before segmentation refinement.
 8. [Frozen prominence-refinement protocol](post5b_attacking_movement_prominence_refinement_protocol.md) — governing Game 1 design and conditional Game 2 plan.
 9. [Prominence-refinement results](post5b_attacking_movement_prominence_refinement_results.md) — Game 1 B result; no candidate selected and Game 2 not opened.
+10. [Open football analytics ecosystem alignment](open_source_ecosystem_alignment.md) — infrastructure audit and numerical-equivalence gate for possible Kloppy/Polars/mplsoccer integration; no migration performed.
 
 ## Reproducing a specific completed analysis
 

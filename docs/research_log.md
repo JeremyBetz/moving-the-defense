@@ -1,5 +1,11 @@
 # Research Log
 
+## 2026-08-30 — Open football analytics ecosystem audit
+
+A non-empirical infrastructure audit mapped the repository against Kloppy, UnravelSports, Polars, mplsoccer, socceraction, and floodlight. It recommends Kloppy as a future provider-normalization layer, direct Kloppy-to-Polars conversion behind a project-owned provenance/compatibility adapter, and mplsoccer for new football-facing pitch figures. Community tooling stops before the project-owned measurement and frozen research-design layers.
+
+No dependency, loader, notebook, result, figure, protocol, threshold, sample, or claim changed. Any migration requires a versioned numerical-equivalence gate on one already-used Metrica match and one already-used IDSSE/Sportec match, including exact IDs/masks/sample keys and downstream focal-relative position/path tolerances. See [`open_source_ecosystem_alignment.md`](open_source_ecosystem_alignment.md).
+
 ## 2026-08-30 — Project identity rename
 
 The current-facing project identity changed from **Asking Questions** / repository `soccer-defensive-adjustment` to **Moving the Defense: Measuring Defensive Responses to Attacking Movement in Football** / repository `moving-the-defense`. The rename changes presentation and repository navigation only; historical records, frozen protocols, empirical artifacts, results, and scientific conclusions remain unchanged. Historical names survive where required for provenance.
