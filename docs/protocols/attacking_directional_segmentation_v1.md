@@ -9,6 +9,18 @@
 
 An attempted implementation stopped before code or results when it found that the direction-change bullet below omitted the historical minimum-path condition even though this protocol explicitly intended to retain the historical diagnostic. No Game 1 directional segmentation, fixture result, or aggregate was generated or inspected; Games 2 and 3 and defensive outcomes remained untouched. Before execution, the definition was restored to the exact historical conjunction—path at least 3.0 m **and** absolute heading change at least 180°—including its original geometry, denominator, and numerical comparisons. This is a provenance-restoring protocol clarification, not empirical tuning. The 3.97% safety limit was derived from that historical definition and would not apply to a heading-only replacement.
 
+### Pre-execution fixture-scale clarification — 2026-08-31
+
+The first fixture implementation exposed an unstated convention before any Game 1 regime partition or aggregate result existed. Applying the empirical Game 1 velocity-noise estimate to the controlled synthetic traces caused the synthetic residual-to-penalty relationship—and therefore the asserted fixture outcomes—to depend on Game 1. Game 1 aggregate outcomes were not inspected, and Games 2 and 3 and defensive outcomes remained untouched.
+
+The two fixture purposes are therefore separated prospectively:
+
+- **Algorithm/segmentation fixtures use a fixed** $\sigma_{v,\mathrm{fixture}}=1.0$ **m/s.** This applies at both 25 Hz and 10 Hz to the constant, low-speed/low-motion, brief-slowdown, sustained speed-change, sharp-turn, stop/restart, invalid-gap, stress, oracle, minimum-duration, and tie-handling tests. The fixed positive normalization makes their controlled residual-to-penalty relationship explicit. It is not estimated from Game 1 or independently from each synthetic trace.
+- **The noise-estimator fixture is separate.** It uses a predeclared generating scale $\sigma_{v,\mathrm{known}}=0.25$ m/s and a deterministic alternating velocity sequence whose consecutive radial differences are exactly $2\sigma_{v,\mathrm{known}}\sqrt{\log 2}$. The frozen estimator must recover 0.25 m/s within absolute Float64 tolerance $10^{-12}$. This fixture validates the estimator formula only; its estimate is not supplied to the algorithm fixtures.
+- **Production Game 1 remains empirical.** Game 1 execution must estimate $\widehat\sigma_v$ from all eligible Game 1 velocity pairs exactly as specified in Section 4 and must use that estimate for Game 1 segmentation. The synthetic value 1.0 m/s must never replace the production estimate.
+
+This clarification separates controlled algorithm validation from empirical noise estimation. It changes no production objective, penalty, estimator, smoothing, support rule, duration, low-motion threshold, diagnostic, frequency-sensitivity rule, or decision criterion.
+
 ## 1. Question and construct
 
 This protocol asks whether an attacker-only partition into **directional movement segments** can reduce the fragmentation/merging trade-off left by scalar speed valleys.
@@ -160,7 +172,7 @@ and otherwise as `directional_movement_segment`. The 0.50 m/s boundary is a froz
 
 ## 9. Deterministic fixtures
 
-Before Game 1 segmentation, run a source-controlled fixture suite at 25 Hz and 10 Hz through the full smoothing/velocity/segmentation path. Fixtures use six seconds of integrated piecewise velocity, start at (0,0), and add deterministic positional perturbation
+Before Game 1 segmentation, run a source-controlled fixture suite at 25 Hz and 10 Hz through the full smoothing/velocity/segmentation path using the fixed algorithm-fixture scale $\sigma_{v,\mathrm{fixture}}=1.0$ m/s specified in the pre-execution clarification. Fixtures use six seconds of integrated piecewise velocity, start at (0,0), and add deterministic positional perturbation
 
 $$
 \boldsymbol\epsilon(t)=0.005[\sin(2\pi\,1.7t),\cos(2\pi\,1.3t)]\ \text{m}.
@@ -172,6 +184,7 @@ The suite and required primary outcomes are:
 |---|---|---|
 | Constant | (3,0) m/s | no change point |
 | Low speed | (0.8,0.3) m/s | no change point |
+| Low motion | (0.2,0.1) m/s | no change point; fitted regime tagged `low_motion_regime` |
 | Brief slowdown | (3,0), then (1,0) only from 2.9–3.1 s, then (3,0) | no change point; the excursion is shorter than two legal segments |
 | Sustained speed change | (2,0) before 3 s; (4,0) after | exactly one point within one native frame of 3 s |
 | Sharp turn | (3,0) before 3 s; (0,3) after | exactly one point within one native frame of 3 s |
@@ -181,6 +194,8 @@ The suite and required primary outcomes are:
 A smooth 90-degree six-second arc and a multi-leg wandering path are required descriptive stress fixtures, but have no asserted true segment count. Their counts and geometry must reproduce exactly between repeated runs.
 
 Failure of a required fixture is hard implementation/model QC failure. Fixtures do not tune the penalty.
+
+The independent noise-estimator fixture uses $\sigma_{v,\mathrm{known}}=0.25$ m/s and the exact deterministic radial-difference construction defined in the clarification. It passes only when the frozen estimator returns that value within absolute tolerance $10^{-12}$. This is an algebraic implementation check, not a stochastic calibration experiment and not an input to synthetic or empirical segmentation.
 
 ## 10. Independent development diagnostics
 
