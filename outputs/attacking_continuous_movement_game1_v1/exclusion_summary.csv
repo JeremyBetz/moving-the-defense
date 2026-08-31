@@ -1,0 +1,16 @@
+window_s,eligible,exclusion_reason,len
+1.0,false,raw_support_invalid,166337
+1.0,false,smoothing_edge,104
+1.0,false,trajectory_registry,29495
+1.0,false,window_before_period_start,260
+1.0,true,eligible,557856
+2.0,false,raw_support_invalid,166307
+2.0,false,smoothing_edge,104
+2.0,false,trajectory_registry,29490
+2.0,false,window_before_period_start,520
+2.0,true,eligible,557631
+4.0,false,raw_support_invalid,166247
+4.0,false,smoothing_edge,104
+4.0,false,trajectory_registry,29480
+4.0,false,window_before_period_start,1040
+4.0,true,eligible,557181

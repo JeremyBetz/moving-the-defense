@@ -120,7 +120,7 @@ Every arrow is conditional. The current methodological frontier is approximately
 
 > **Can attacking movement and defensive geometric change be represented as defensible finite units before testing their relationship?**
 
-After three discrete boundary specifications produced complementary fragmentation/merging failures, [continuous attacker movement protocol v1.0](docs/protocols/attacking_continuous_movement_v1.md) prospectively freezes the next Game 1 candidate: signed displacement, path length, and straightness over fixed trailing windows. Heading change and speed variation are deferred because their incremental geometry did not justify their sampling and threshold burden. The protocol has not executed, and no attacker-to-defender bridge has begun.
+After three discrete boundary specifications produced complementary fragmentation/merging failures, [continuous attacker movement v1.0](docs/results/attacking_continuous_movement_game1_v1.md) classified **A on development Game 1**. Signed displacement, path length, and straightness were deterministic, support-valid, and passed every frozen 25/10 Hz gate over 1/2/4-second windows. This qualifies the representation for a separately frozen held-out Game 2 evaluation; it is not external validation, and no attacker-to-defender bridge has begun.
 
 The project has not reached tactical interpretation, attacker attribution, causal influence, gravity, or off-ball value.
 

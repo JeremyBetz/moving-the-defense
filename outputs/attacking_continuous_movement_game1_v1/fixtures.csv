@@ -1,0 +1,15 @@
+fixture,delta_x_m,delta_y_m,displacement_m,path_length_m,straightness,straightness_valid,expected_delta_x_m,expected_delta_y_m,expected_path_length_m,expected_straightness,tolerance,pass
+stationary,0,0,0,0,,false,0,0,0,,0.000000000001,true
+straight_constant,4,0,4,4,1,true,4,0,4,1,0.000000000001,true
+straight_accelerating,2,0,2,2,1,true,2,0,2,1,0.000000000001,true
+gradual_quarter_circle,2,1.9999999999999998,2.82842712474619,3.141463462364135,0.9003533412474048,true,2,2,3.141463462364135,0.900353341247405,0.0000000001,true
+sharp_cut,1,1,1.4142135623730951,2,0.7071067811865476,true,1,1,2,0.7071067811865476,0.000000000001,true
+out_and_back,0,0,0,2,0,true,0,0,2,0,0.000000000001,true
+low_speed_drift,0,0.2,0.2,0.2,1,true,0,0.2,0.2,1,0.000000000001,true
+stop_restart,1.5,0,1.5,1.5,1,true,1.5,0,1.5,1,0.000000000001,true
+frequency_equivalent_straight,3,-1,3.1622776601683795,3.1622776601683795,1,true,3,-1,3.1622776601683795,1,0.000000000001,true
+seven_frame_smoothing_edges_affine,,,,,,,,,,,0.000000000001,true
+support_break,,,,,,,,,,,0,true
+grid_period_reset,,,,,,,,,,,0.000000001,true
+stable_id,,,,,,,,,,,0,true
+invalid_duplicate_rejected,,,,,,,,,,,0,true

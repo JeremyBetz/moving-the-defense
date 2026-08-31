@@ -1,5 +1,11 @@
 # Research Log
 
+## 2026-08-31 — Continuous attacking-movement v1 executed on Game 1
+
+The frozen [continuous protocol](protocols/attacking_continuous_movement_v1.md) executed on Metrica Sample Game 1 and classified **A**. Across 26 outfield identities and 44 eligible player-periods, it produced 557,856 one-second, 557,631 two-second, and 557,181 four-second observations. All synthetic/invariance/support checks passed, all mathematical violations were zero, matched 25/10 Hz eligibility was 100%, and all 15 frequency gates passed. A clean rerun reproduced 17 governed files byte-for-byte.
+
+A pre-interpretation implementation shortcut initially subtracted long cumulative path totals, conflicting with the frozen direct within-window sum and triggering tiny $10^{-11}$ m invariant failures. The shortcut and preliminary artifacts were replaced without changing the protocol, features, support, tolerances, or gates. The final result supports deterministic development feasibility only. Game 2 and Game 3 were not opened, defenders and defensive outcomes were untouched, and no bridge was executed. See [`results/attacking_continuous_movement_game1_v1.md`](results/attacking_continuous_movement_game1_v1.md).
+
 ## 2026-08-31 — Continuous attacking-movement protocol v1.0 frozen
 
 No scientific output was generated. Before Game 1 execution, the five fork candidates were reduced to three observable families: signed canonical x/y displacement, travelled path length, and straightness as an explicitly derived directness view. Absolute heading change and total speed variation were deferred because their additional thresholds and sampling/derivative sensitivity were not justified for the minimal v1 construct.
