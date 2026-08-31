@@ -1,5 +1,11 @@
 # Research Log
 
+## 2026-08-31 — Bridge execution mechanics clarified before data
+
+The first Game 1 execution attempt stopped before any bridge observation or result because protocol v1.0 did not define a Game-1-only status or terminal bootstrap-block handling. A prospective clarification now freezes COHERENT/MIXED/INVALID development statuses, strict point-estimate comparisons, the retained 50%-magnitude extreme-exposure rule, the horizon-sign rule, two-sided percentile intervals, a 1,900/2,000 valid-replicate floor, period-origin 60 s blocks with retained terminal partial blocks, paired control resampling, and the exact pooled match-indicator model.
+
+The final two-match A/B/C criteria, exposure, outcome, linkage, windows, controls, cadence, and covariates are unchanged. No Game 1 or Game 2 bridge observation, linkage, coefficient, bootstrap, control, placebo, or plot was computed, and Game 3 remains untouched. See [`protocols/attacker_defender_bridge_v1.md`](protocols/attacker_defender_bridge_v1.md#24-pre-execution-clarification-history).
+
 ## 2026-08-31 — First attacker-to-defender bridge protocol frozen
 
 After continuous attacker geometry replicated on held-out Game 2, protocol v1.0 froze the first observational bridge without calculating an association. The primary question is whether attacker path over $[t-2,t]$ is associated with subsequent mean focal-relative path among the three nearest defenders over $[t,t+2]$, conditional on local focal-relative and collective movement during the strictly earlier $[t-4,t-2]$ interval.

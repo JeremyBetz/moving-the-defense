@@ -180,14 +180,20 @@ Global stoppage exclusions provide interpretable open-play support; they do not 
 
 Primary coefficients are ordinary least-squares descriptive association estimates in raw metres. Main uncertainty uses a deterministic **block bootstrap at the match-period-time level**:
 
-- nonoverlapping 60 s blocks anchored at each period origin;
+- within period $p$, nonoverlapping wall-clock blocks $[o_p+60b,o_p+60(b+1))$ for integer $b\geq0$, where $o_p$ is the first canonical period time;
+- retain the terminal block even when less than 60 s, provided it contains at least one eligible observation;
 - retain all simultaneous attackers and all linked defenders within a sampled block;
-- sample blocks with replacement within each match-period until the original block count is reached;
+- sample separately within each match-period, with replacement, exactly as many block labels as that match-period originally retains;
+- concatenate every observation from sampled blocks, including repeated copies when a block is sampled more than once;
 - 2,000 replicates with seed `20260831`;
-- percentile 95% intervals; and
+- two-sided percentile 95% intervals from the empirical 2.5th and 97.5th percentiles of finite estimable coefficient replicates; and
 - no frame-, player-, or row-level independent bootstrap.
 
-Report Game 1 and Game 2 coefficients separately and a pooled descriptive estimate with match indicator. With only two Metrica matches, match-level asymptotics and p-value-heavy claims are prohibited. Bootstrap intervals describe stability under the frozen block scheme; they do not establish causality.
+Do not drop, pad, merge, or observation-count-balance a terminal block. Do not move a boundary. Retain only finite estimable coefficient replicates and report attempted, valid, and failed counts. At least 1,900 of 2,000 replicates must be valid for every governed coefficient or paired coefficient-difference interval; fewer is an execution-validity failure. No BCa adjustment, studentization, or IID model standard error may substitute.
+
+Use NumPy `Generator(PCG64)` through `SeedSequence(20260831).spawn(3)` in fixed scope order: child 0 for Game 1, child 1 for Game 2, and child 2 for the pooled two-match analysis. For each distinct eligible-sample family, initialize a fresh generator from the applicable child sequence. Within each replicate, process `(game, period)` groups in ascending order and draw integer block indices with `rng.integers(0, n_blocks, size=n_blocks)`. Reuse the primary sample's exact resampled blocks across primary, nonlocal, placebo, 1 s, and trimmed fits so their coefficient comparisons are paired. The 4 s sensitivity has its separately governed extended-support sample and therefore initializes a fresh generator from the same scope child and constructs its block inventory from those eligible rows.
+
+Report Game 1 and Game 2 coefficients separately. For each paired replicate, calculate local-minus-nonlocal and primary-minus-placebo directly from coefficients fitted to the same resampled blocks; percentile intervals for these differences use those paired replicate differences. For each pooled bootstrap replicate, independently resample blocks within every Game 1 and Game 2 match-period, concatenate both resampled matches, and fit the exact pooled regression from Section 14. Do not resample the two matches themselves. With only two Metrica matches, match-level asymptotics and p-value-heavy claims are prohibited. Bootstrap intervals describe stability under the frozen block scheme; they do not establish causality.
 
 ## 14. Primary estimand and model
 
@@ -199,7 +205,15 @@ Y_{\mathrm{local}}(a,t;2)=
 +\beta_3C_D(t)+\varepsilon.
 $$
 
-For the pooled descriptive fit, add one binary match indicator and no interactions. No standardization replaces raw units.
+For the pooled descriptive fit, concatenate both matches and add one binary indicator `I_game2` (0 for Game 1, 1 for Game 2) and no interactions:
+
+$$
+Y_{\mathrm{local}}=
+\beta_0+\beta_1X_a+\beta_2B_{\mathrm{local}}
++\beta_3C_D+\beta_4I_{\mathrm{game2}}+\varepsilon.
+$$
+
+No standardization replaces raw units.
 
 The primary estimand is $\beta_1$: the change in expected subsequent mean local focal-relative path, in metres, associated with one additional metre of attacker path during the preceding two seconds, conditional on the frozen strictly prior defensive context. It is an observational association coefficient—not a causal effect, reaction probability, responsibility estimate, or attacker value.
 
@@ -253,7 +267,7 @@ If a real example is shown, select the first fully eligible Game 1 observation i
 
 Hard QC must first pass: exact protocol/support hashes, unique observation IDs, complete eligible geometry, no period/support crossing, valid local/nonlocal disjoint sets, no future-informed linkage, finite model inputs/outputs, geometric invariants, deterministic reproduction, and unchanged frozen component implementations. A hard scientific failure classifies **C**.
 
-Subject to hard QC, classify the initial bridge:
+Only after valid Game 1 and Game 2 executions, and subject to hard QC in both, classify the final two-match bridge:
 
 ### A — supported first geometric bridge
 
@@ -277,6 +291,26 @@ Hard QC passes and the representation remains usable, but one or more A criteria
 Support cannot be consumed faithfully, prerequisite geometry changes, hard QC/invariance/deterministic reproduction fails, future information enters exposure/linkage, or substantial eligible geometry is mathematically unusable. Do not rescue C.
 
 No coefficient-size threshold beyond sign, no p-value, and no Game-1-tuned gate may be introduced.
+
+### 19.1 Game 1 development status before Game 2
+
+Game 1 alone receives no final bridge A/B/C classification. It receives exactly one development status:
+
+- **GAME 1 DEVELOPMENT COHERENT:** hard QC and deterministic reproduction pass; at least 1,900 bootstrap replicates are valid for every governed interval; $\beta_{1,\mathrm{local}}>0$; $\beta_{1,\mathrm{local}}>\beta_{1,\mathrm{nonlocal}}$; $\beta_{1,\mathrm{local}}>\beta_{1,\mathrm{placebo}}$; the top-1% diagnostic coefficient is positive and at least 50% of the full-sample positive coefficient; and the 1 s and 4 s coefficients are not both negative.
+- **GAME 1 DEVELOPMENT MIXED:** implementation, support, QC, bootstrap validity, and deterministic reproduction pass, but one or more scientific-pattern criteria above fail. Null and negative patterns belong here and remain valid evidence.
+- **GAME 1 DEVELOPMENT INVALID:** support leakage, implementation/model/bootstrap failure, fewer than 1,900 valid replicates for any governed interval, deterministic mismatch, or another hard scientific/QC contradiction.
+
+The comparisons in the development rule are strict point-estimate comparisons. Confidence intervals are reported but are not Game 1 development-status gates. The existing final two-match A/B/C criteria above remain unchanged and can be assigned only after Game 2.
+
+For clarity, the exact scientific-pattern rules are:
+
+- primary positive: $\beta_{1,\mathrm{local}}>0$;
+- local stronger than nonlocal: $\beta_{1,\mathrm{local}}>\beta_{1,\mathrm{nonlocal}}$;
+- primary stronger than placebo: $\beta_{1,\mathrm{local}}>\beta_{1,\mathrm{placebo}}$;
+- extreme-exposure robustness: because coherent/final A already requires a positive full coefficient, $\beta_{1,\mathrm{trimmed}}>0$ and $\beta_{1,\mathrm{trimmed}}\geq0.5\beta_{1,\mathrm{full}}$; and
+- horizon sign: failure occurs when $\beta_{1,1s}<0$ **and** $\beta_{1,4s}<0$ while $\beta_{1,2s}>0$.
+
+The 50% extreme-exposure requirement is retained from the original frozen protocol; the weaker same-sign-only clarification option is not adopted.
 
 ## 20. Claim ladder
 
@@ -305,6 +339,13 @@ V1 is a within-provider Metrica bridge. IDSSE has validated the defensive primit
 | Repeated observations | **FROZEN** | Four-second period-anchored cadence; dense grid inferential use prohibited. |
 | Shared defenders/context | **FROZEN** | Preserved within 60 s match-period bootstrap blocks. |
 | Primary regression | **FROZEN** | Raw-metre OLS with attacker path, strict-prior local path, and strict-prior centroid path. |
+| Game 1 development status | **FROZEN** | COHERENT/MIXED/INVALID under Section 19.1; no Game-1-only final A/B/C. |
+| Final two-match status | **FROZEN** | Original A/B/C criteria apply only after valid Game 1 and Game 2 executions. |
+| Scientific comparisons | **FROZEN** | Strict point-estimate inequalities by match; paired pooled percentile intervals where the final A rule requires them. |
+| Bootstrap interval | **FROZEN** | Two-sided empirical 2.5th/97.5th percentiles; at least 1,900/2,000 finite fits. |
+| Block boundaries | **FROZEN** | Period-origin 60 s wall-clock blocks; retain nonempty terminal partial block unchanged. |
+| Within-period resampling | **FROZEN** | Same number of blocks with replacement; preserve and repeat all member observations. |
+| Pooled resampling/model | **FROZEN** | Resample inside each match-period, concatenate matches, add `I_game2`, no interactions or match resampling. |
 | Nonlocal control | **FROZEN** | Three farthest defenders at $t$, matched aggregation and baseline. |
 | Placebo timing | **FROZEN** | Future attacker $[t,t+2]$ versus earlier defender $[t-2,t]$; no offset search. |
 | Dataset role | **FROZEN** | Game 1 development; Game 2 conditionally bridge-held-out; Game 3 untouched. |
@@ -317,3 +358,20 @@ No item is blocking.
 ## 23. Execution authorization
 
 The design is **A — BRIDGE PROTOCOL READY**. A later pass may implement synthetic fixtures and then execute Game 1 under this exact protocol. It may proceed to Game 2 only under the sequence in Section 5. This document authorizes no bridge computation in the protocol-design pass and does not authorize Game 3 or external-provider bridge access.
+
+## 24. Pre-execution clarification history
+
+**Clarification date:** 2026-08-31
+
+An attempted Game 1 execution stopped before any observation, linkage, coefficient, control, placebo, plot, or bootstrap result was computed. The protocol had not distinguished a Game-1-only development status from the final two-match A/B/C classification and had not specified terminal 60 s bootstrap-block treatment.
+
+This pre-result amendment freezes the development vocabulary, exact point-estimate comparisons, percentile interval mechanics, valid-replicate requirement, fixed/terminal block handling, paired resampling, pooled resampling, and pooled model formula. It does not change attacker exposure, defensive outcome, $K=3$ linkage, windows, controls, cadence, regression covariates, top-1% rule, or final two-match scientific criteria.
+
+The execution sequence is frozen:
+
+1. execute Game 1;
+2. record **DEVELOPMENT COHERENT**, **MIXED**, or **INVALID**;
+3. commit and push that result;
+4. if COHERENT or MIXED, do not amend the scientific protocol from Game 1 and execute Game 2 unchanged;
+5. if INVALID, block Game 2 pending scientific review; and
+6. assign final bridge A/B/C only after a valid Game 2 execution.
