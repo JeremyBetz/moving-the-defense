@@ -1,5 +1,11 @@
 # Research Log
 
+## 2026-09-01 — Response-form pooled execution clarified before Game 2
+
+Before any Game 2 response-form outcome was computed or inspected, a [prospective addendum](protocols/local_defensive_response_form_v1_pooled_execution_clarification.md) froze the pooled implementation omitted from v1. It inherits the closed footprint architecture: rank-specific response-form terms plus one common Game 2 indicator, observation weighting, no interactions, and independent 60-second block resampling within each match-period. It additionally freezes an exact primary/control common-sample intersection and paired-replicate construction. The original Final A/B/C criteria and every scientific rule remain unchanged.
+
+Original protocol/configuration hashes remain `958c8aa8...9ee80428` and `b120f19c...998b8053`. Clarification/configuration hashes are `1ba4e198e286f1c6ae664b807be9de02e976ca0d86cbf46432e0d130e23cf794` and `70f0d6ad1b3b459f094e98f0a985cf88a0d582f94a41ddb210206cf4b8a9c813`. Five synthetic tests cover the 41-column design, common-sample identity, unequal sample sizes, regional/paired reconstruction, and deterministic match-stratified bootstrap. Game 2 response form and Game 3 remained untouched.
+
 ## 2026-09-01 — Tiered research execution policy adopted
 
 A prospective [execution policy](execution_policy.md) now separates cheap development execution (Tier 1), milestone promotion/closure (Tier 2), and maximum-rigor heldout/final execution (Tier 3). The tier governs operational closure cost, never the scientific estimand or frozen rule. Heldout evidence cannot use Tier 1, and any stronger protocol requirement wins. A read-only helper and checkpoint manifest centralize hash, artifact-ledger, forbidden-output, and repository-state checks. No empirical analysis ran; response-form, footprint, and Game 1 result hashes remained unchanged; Game 2 response form and Game 3 were not accessed.

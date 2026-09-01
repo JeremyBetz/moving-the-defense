@@ -1,0 +1,42 @@
+{
+  "bootstrap": {
+    "block_seconds": 60,
+    "interval_percent": 97.5,
+    "invalid_replicate_policy": "discard_nonfinite_or_unestimable_and_require_at_least_1900_valid",
+    "master_seed": 20260831,
+    "original_row_count_preserved_per_replicate": false,
+    "pooled_child_index": 8,
+    "replicates": 2000,
+    "resampling": "independent_within_each_game_period_using_period_origin_blocks",
+    "row_count_note": "n_blocks draws preserve each stratum block-inventory size and expected row count; realized rows vary when block sizes differ",
+    "sample_family_reinitialization": true,
+    "terminal_partial_blocks_retained": true
+  },
+  "common_sample": {
+    "requires": [
+      "primary_attacker_axis_valid",
+      "temporal_control_attacker_axis_valid",
+      "primary_defender_support_complete",
+      "temporal_control_defender_support_complete",
+      "complete_D1_D10_vector",
+      "same_observation_ids_for_primary_and_control"
+    ],
+    "scope": "intersection_computed_within_each_match_then_concatenated",
+    "trimming": "primary_robustness_uses_frozen_full_primary_sample_not_the_control_common_sample"
+  },
+  "freeze_date": "2026-09-01",
+  "model": {
+    "coefficient_count": 41,
+    "exposure": "attacker_path_length_m",
+    "game2_indicator": "one_common_additive_main_effect",
+    "interactions": "none",
+    "outcome": "attacker_direction_parallel_focal_relative_displacement_m",
+    "rank_terms": "rank_specific_intercept_exposure_prior_parallel_and_prior_centroid_path",
+    "weighting": "observation_weighted_no_match_balance_weights"
+  },
+  "original_config_sha256": "b120f19c13b86f47f5b73311a4509cbd5de5f95fbaa1369f95dc061c998b8053",
+  "original_protocol_sha256": "958c8aa80fe9ea43358c32a42a6be2eea7a41e7f727e23ff137eb3079ee80428",
+  "schema_version": "1.0.0",
+  "starting_commit": "ab082c7c4d6dbb47e4edeb737e06fb1d28d72da7",
+  "status": "FROZEN_BEFORE_ANY_GAME2_RESPONSE_FORM_RESULT"
+}
