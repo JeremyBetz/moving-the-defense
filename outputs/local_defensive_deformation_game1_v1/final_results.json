@@ -1,0 +1,205 @@
+{
+  "bootstrap_valid": [
+    2000,
+    2000,
+    2000,
+    2000,
+    2000,
+    2000
+  ],
+  "classification": "GAME 1 DEFORMATION DEVELOPMENT COHERENT",
+  "criteria": {
+    "four_second_positive": true,
+    "no_strictly_negative_secondary_path_contrast": true,
+    "paired_excess_interval_strictly_positive": true,
+    "paired_excess_positive": true,
+    "primary_interval_strictly_positive": true,
+    "primary_positive": true,
+    "trim_positive": true,
+    "trim_retains_at_least_half_magnitude": true,
+    "valid_execution": true
+  },
+  "environment": {
+    "numpy": "2.5.2",
+    "pandas": "2.3.3",
+    "python": "3.13.15"
+  },
+  "four_second_near_minus_middle": {
+    "attempted": 2000,
+    "ci_high": 0.04331508511131008,
+    "ci_low": 0.009942843838971484,
+    "estimand": "near_minus_middle",
+    "estimate": 0.02653147728246069,
+    "interval_percent": 97.5,
+    "valid": 2000
+  },
+  "frozen_hashes": {
+    "config/local_defensive_deformation_v1.json": "3cfff444be301192723bc88aca73ed6071e7112ef47b147949e0ec1f2ae88058",
+    "docs/protocols/local_defensive_deformation_v1.md": "1d39741a24596663daaadca02bd0143429a02605884310ff522703b86d4b4b59",
+    "outputs/spatial_defensive_response_footprint_game1_v1/anchor_defender_linkage.parquet": "8ee6c6f42485d3481adfce1071a3d7d391af99d7fed3c846a02b46942def6d58",
+    "outputs/spatial_defensive_response_footprint_game1_v1/eligible_attacker_anchors.parquet": "b1f6257fcf8d054abe592a9c7f9b8ac2818852e49cd8ec4337e09825d3ebb505"
+  },
+  "hard_qc": {
+    "bootstrap_valid": true,
+    "complete_rank_vectors": true,
+    "complete_support_no_interpolation": true,
+    "complete_ten_rows": true,
+    "finite_four_second_subset": true,
+    "finite_primary_geometry_and_design": true,
+    "frozen_hashes": true,
+    "game2_not_accessed": true,
+    "game3_not_accessed": true,
+    "goalkeeper_exclusion_inherited": true,
+    "positive_controls": true,
+    "translation_rotation_reflection_invariance": true,
+    "unique_defenders": true,
+    "unique_observation_ids": true
+  },
+  "paired_primary_minus_control": {
+    "attempted": 2000,
+    "ci_high": 0.0204726389703696,
+    "ci_low": 0.002310927274740588,
+    "estimand": "primary_minus_temporal_control_near_minus_middle",
+    "estimate": 0.011624643832641335,
+    "interval_percent": 97.5,
+    "valid": 2000
+  },
+  "primary_near_minus_middle": {
+    "attempted": 2000,
+    "ci_high": 0.032353462974472016,
+    "ci_low": 0.014340947706860476,
+    "estimand": "near_minus_middle",
+    "estimate": 0.022972701554518443,
+    "interval_percent": 97.5,
+    "valid": 2000
+  },
+  "provenance": {
+    "adapter_version": "1.0.0",
+    "ball_object_id_provider": null,
+    "ball_state_available": false,
+    "canonical_coordinate_system": "metres, pitch centre origin, +x right, +y top, fixed pitch frame",
+    "canonical_match_id": "metrica:sample-game-1",
+    "contract_version": "1.0.0",
+    "coordinate_transform": [
+      "Kloppy 3.19.0 parses Metrica y bottom-to-top",
+      "x_m = kloppy_x * 105 - 52.5",
+      "y_m = kloppy_y * 68 - 34"
+    ],
+    "coordinates_attacking_direction_normalized": false,
+    "goalkeeper_source": "frozen project metadata: Home 11, Away 25",
+    "interpolation_used": false,
+    "kloppy_version": "3.19.0",
+    "orientation_metadata": "home-away",
+    "pitch_m": [
+      105.0,
+      68.0
+    ],
+    "player_id_map_provider_to_canonical": {
+      "away_15": "metrica:Away:15",
+      "away_16": "metrica:Away:16",
+      "away_17": "metrica:Away:17",
+      "away_18": "metrica:Away:18",
+      "away_19": "metrica:Away:19",
+      "away_20": "metrica:Away:20",
+      "away_21": "metrica:Away:21",
+      "away_22": "metrica:Away:22",
+      "away_23": "metrica:Away:23",
+      "away_24": "metrica:Away:24",
+      "away_25": "metrica:Away:25",
+      "away_26": "metrica:Away:26",
+      "away_27": "metrica:Away:27",
+      "away_28": "metrica:Away:28",
+      "home_1": "metrica:Home:1",
+      "home_10": "metrica:Home:10",
+      "home_11": "metrica:Home:11",
+      "home_12": "metrica:Home:12",
+      "home_13": "metrica:Home:13",
+      "home_14": "metrica:Home:14",
+      "home_2": "metrica:Home:2",
+      "home_3": "metrica:Home:3",
+      "home_4": "metrica:Home:4",
+      "home_5": "metrica:Home:5",
+      "home_6": "metrica:Home:6",
+      "home_7": "metrica:Home:7",
+      "home_8": "metrica:Home:8",
+      "home_9": "metrica:Home:9"
+    },
+    "possession_team_available": false,
+    "provider": "metrica",
+    "provider_frame_id_available": true,
+    "provider_match_id": "Sample Game 1",
+    "provider_raw_timestamp_available": false,
+    "source_coordinate_system": "normalized x left-to-right, y top-to-bottom",
+    "source_files": [
+      {
+        "path": "data/metrica_sample_game_1/Sample_Game_1_RawTrackingData_Home_Team.csv",
+        "sha256": "0a3d0eff7785950379c587d3597b86a2d91c2492281b4652e1abb97c99b6b364"
+      },
+      {
+        "path": "data/metrica_sample_game_1/Sample_Game_1_RawTrackingData_Away_Team.csv",
+        "sha256": "0a3df68a92af0290ede472e62de3b6489ddee29223da09bdf0cf76c8e0ab0618"
+      }
+    ],
+    "support_rule": "Kloppy coordinate-object presence; unavailable reason retained as not_observed_unspecified",
+    "team_id_map_provider_to_canonical": {
+      "away": "metrica:Away",
+      "home": "metrica:Home"
+    },
+    "time_match_rule": "raw Metrica Time [s] preserved from provider frame-index sidecar",
+    "time_period_rule": "Kloppy period-relative timestamp",
+    "transformation_log": [
+      "load via Kloppy",
+      "canonical fixed-pitch coordinate transform",
+      "explicit roster null rows"
+    ]
+  },
+  "sample": {
+    "attacking_team_counts": {
+      "metrica:Away": 3340,
+      "metrica:Home": 4483
+    },
+    "defender_rows": 78230,
+    "eligible_anchors": 7823,
+    "four_second_anchors": 7328,
+    "period_counts": {
+      "1": 5936,
+      "2": 1887
+    },
+    "simultaneous_attackers": {
+      "25%": 9.0,
+      "50%": 10.0,
+      "75%": 10.0,
+      "count": 804.0,
+      "max": 10.0,
+      "mean": 9.730099502487562,
+      "min": 8.0,
+      "std": 0.45251695721004903
+    },
+    "trim_excluded": 79,
+    "trimmed_anchors": 7744,
+    "unique_anchor_times": 804
+  },
+  "secondary_path_near_minus_middle": {
+    "attempted": 2000,
+    "ci_high": 0.0347541381064497,
+    "ci_low": 0.016934216009665687,
+    "estimand": "near_minus_middle",
+    "estimate": 0.025397962894185153,
+    "interval_percent": 97.5,
+    "valid": 2000
+  },
+  "temporal_control_near_minus_middle": {
+    "attempted": 2000,
+    "ci_high": 0.018689063114381396,
+    "ci_low": 0.004430146772401165,
+    "estimand": "near_minus_middle",
+    "estimate": 0.011348057721877108,
+    "interval_percent": 97.5,
+    "valid": 2000
+  },
+  "trim": {
+    "estimate": 0.01994234747144863,
+    "magnitude_fraction": 0.8680889108371418,
+    "threshold_m": 12.198443079831405
+  }
+}

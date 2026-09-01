@@ -1,0 +1,10 @@
+criterion,pass
+valid_execution,True
+primary_positive,True
+primary_interval_strictly_positive,True
+paired_excess_positive,True
+paired_excess_interval_strictly_positive,True
+four_second_positive,True
+trim_positive,True
+trim_retains_at_least_half_magnitude,True
+no_strictly_negative_secondary_path_contrast,True

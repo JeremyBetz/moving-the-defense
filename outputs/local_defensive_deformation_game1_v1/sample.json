@@ -1,0 +1,26 @@
+{
+  "attacking_team_counts": {
+    "metrica:Away": 3340,
+    "metrica:Home": 4483
+  },
+  "defender_rows": 78230,
+  "eligible_anchors": 7823,
+  "four_second_anchors": 7328,
+  "period_counts": {
+    "1": 5936,
+    "2": 1887
+  },
+  "simultaneous_attackers": {
+    "25%": 9.0,
+    "50%": 10.0,
+    "75%": 10.0,
+    "count": 804.0,
+    "max": 10.0,
+    "mean": 9.730099502487562,
+    "min": 8.0,
+    "std": 0.45251695721004903
+  },
+  "trim_excluded": 79,
+  "trimmed_anchors": 7744,
+  "unique_anchor_times": 804
+}
