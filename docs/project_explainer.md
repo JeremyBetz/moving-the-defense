@@ -97,7 +97,7 @@ A later bridge test must not choose attacking actions because the defence reacte
 
 Its speed-valley implementation produced 38,651 candidate episodes and retained substantial lower-speed movement: 15,845 episodes peaked below 5.5 m/s while displacing at least 3 m. But 42.22% met a fragmentation diagnostic, compared with 1.97% meeting a merging/direction diagnostic. The result is **B — mixed**.
 
-The attacker-only approach remains promising, but the current rule is not ready for formal validation. A 56.30 m/s maximum also requires a separate prospective tracking-QC investigation.
+The attacker-only episode approach remains promising, but the speed-valley rule is not ready for formal validation. A later tracking-support audit identified the 56.30 m/s maximum as an identity/trajectory-continuity failure, and two further discrete segmentation attempts failed complementary fragmentation/merging gates. The project therefore retained continuous fixed 1/2/4-second attacker geometry instead; that representation subsequently replicated across both Metrica sample matches.
 
 ## 13. Where does the evidence stop?
 
@@ -114,13 +114,13 @@ football question
 → value
 ```
 
-Every arrow is conditional. Current evidence reaches externally replicated defender-relative geometry, contextual-prediction feasibility, and a small mixed opponent-information association. Tactical interpretation and everything after it remain unsupported.
+Every arrow is conditional. Current evidence reaches externally replicated defender-relative geometry, contextual-prediction feasibility, a small mixed opponent-information association, and a frozen within-provider bridge between preceding attacker path and subsequent local defender-relative movement. Tactical interpretation and everything after it remain unsupported.
 
 ## 14. What is the current methodological frontier?
 
-> **Can attacking movement and defensive geometric change be represented as defensible finite units before testing their relationship?**
+> **How far can the replicated attacker-to-defender geometric association be interpreted without exceeding its observational, within-provider evidence?**
 
-This is a representation problem, not yet an attacker-response experiment. The bounded prominence refinement produced B: it traded fragmentation for pervasive merging, selected no threshold, and did not open Game 2. No attacker-to-defender bridge protocol has been designed.
+The first frozen relationship test is now **FINAL BRIDGE A**. Using unchanged two-second attacker path and subsequent focal-relative movement among the nearest three defenders, the positive local association replicated across both Metrica sample matches and exceeded farthest-three and reverse-time controls under the frozen criteria. This is the first empirical bridge, but it remains observational geometry—not a validated tactical response, attacker effect, or value measure.
 
 ## 15. What could the work eventually support?
 

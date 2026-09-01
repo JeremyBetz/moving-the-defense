@@ -127,7 +127,16 @@ MPLCONFIGDIR=/tmp/moving-the-defense-bridge .venv/bin/python src/attacker_defend
 .venv/bin/python -m unittest tests.test_attacker_defender_bridge_game1_v1 tests.test_attacking_continuous_movement_v1 tests.test_canonical_tracking_contract
 ```
 
-For the required independent check, rerun with `--output` and `--figures` pointing to temporary locations, then call the governed output with `--verify-against`. Fifteen governed pre-reproduction files must match byte-for-byte. The saved `hard_qc.csv` records 24 execution-contract checks; final results, linkage, observations, bootstrap summaries, inheritance, manifests, and hashes are under `outputs/attacker_defender_bridge_game1_v1/`. Game 2 is conditionally held out for the bridge relationship—not pristine generally—and its later execution must inherit `game2_inheritance.json` unchanged. Game 3 and external-provider bridge data remain unauthorized.
+For the required independent check, rerun with `--output` and `--figures` pointing to temporary locations, then call the governed output with `--verify-against`. Fifteen governed pre-reproduction files must match byte-for-byte. The saved `hard_qc.csv` records 24 execution-contract checks; final results, linkage, observations, bootstrap summaries, inheritance, manifests, and hashes are under `outputs/attacker_defender_bridge_game1_v1/`. That execution froze `game2_inheritance.json` before Game 2 bridge access. Game 3 and external-provider bridge data remained unauthorized.
+
+The unchanged held-out Game 2 and pooled execution has now completed as [FINAL BRIDGE A](results/attacker_defender_bridge_game2_v1.md). With the frozen Game 2 Stage-A support and attacker outputs present, reproduce it with:
+
+```bash
+MPLCONFIGDIR=/tmp/moving-defense-bridge-game2 .venv/bin/python src/attacker_defender_bridge_game2_v1.py
+.venv/bin/python -m unittest tests.test_attacker_defender_bridge_game2_v1 tests.test_attacker_defender_bridge_game1_v1
+```
+
+For deterministic verification, rerun to temporary output/figure paths and use `--verify-against`. Sixteen governed pre-reproduction files must match byte-for-byte. `outputs/attacker_defender_bridge_game2_v1/` contains the Game 2 sample/linkage, model and bootstrap tables, pooled models/comparisons, 32-row hard audit, final criteria, provenance, reproduction record, and hash ledgers. The inherited threshold is exactly 12.198443079831405 m. Game 3 and external-provider bridge execution remain unauthorized.
 
 Where a machine-readable config is listed, documentation explains the rules and the config governs execution. The continuous attacker-movement v1 freeze is currently governed directly by its protocol document; an implementation may transcribe it to config only through a pre-execution exact-consistency check. If prose and config conflict, stop and resolve the literal inconsistency before outcomes.
 

@@ -1,6 +1,6 @@
 # Research Questions
 
-> **Current status (post–Phase 5B audits):** focal-relative path passed held-out Metrica validation and external IDSSE geometric replication. Contextual prediction is feasible; opponent information adds only a small mixed increment; direction is retained descriptively; onset innovation is unvalidated; and outcome-blind attacking movement segmentation is promising but mixed. The current frontier is finite representation of attacking movement and defensive geometric change before their relationship is tested. Historical questions remain for auditability.
+> **Current status:** focal-relative path passed held-out Metrica validation and external IDSSE geometric replication. Contextual prediction is feasible; opponent information adds only a small mixed increment; direction is retained descriptively; onset innovation is unvalidated; and discrete attacker segmentation remains mixed. Continuous attacker geometry replicated across both Metrica sample matches, and the frozen attacker-to-defender bridge classified Final A across those matches. The current frontier is interpretation and transport of that observational association without exceeding its evidence. Historical questions remain for auditability.
 
 ## Primary Research Question
 
@@ -32,9 +32,9 @@ The result does not establish an activity-free effect, tactical response, reconf
 
 ## Current Methodological Frontier
 
-> **Can attacking movement and defensive geometric change be represented as defensible finite units before testing their relationship?**
+> **How far can the replicated attacker-to-defender geometric association be interpreted or transported without exceeding its observational evidence?**
 
-This is not a second primary research question. It is the present prerequisite within the broader program. The attacker-only speed-valley audit provides B — mixed evidence for finite movement efforts. Its frozen prominence refinement also classified B: fragmentation fell sharply, but merging/direction exceeded the safety cap at every tested threshold, so none was selected. A targeted prior-art audit selects an attacker-only **directional movement segment**, provisionally defined by sustained changes in the full two-dimensional velocity state, as the next construct to test. Its [Game 1 protocol](protocols/attacking_directional_segmentation_v1.md) is frozen but unexecuted; selection and protocol governance are not validation. Signed focal-relative displacement complements the validated scalar defensive path, while response-onset timing remains unresolved.
+This is not a second primary research question. The attacker-only speed-valley, prominence, and directional-change-point attempts remain important mixed/failed historical tests of universal episode boundaries. Continuous signed displacement, path, and straightness subsequently replicated across both Metrica sample matches. Under the separately frozen bridge, preceding attacker path was positively associated with subsequent local focal-relative defensive movement in both matches; pooled primary and paired-control intervals were positive, producing Final A. That result is observational and within-provider. Signed focal-relative displacement remains complementary, response-onset timing remains unresolved, and tactical semantics, causation, and cross-provider bridge portability remain unsupported.
 
 ## Historical Relational-Reconfiguration Question
 

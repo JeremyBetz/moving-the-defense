@@ -1,5 +1,13 @@
 # Research Log
 
+## 2026-08-31 — Attacker-to-defender bridge replicates on held-out Game 2
+
+The unchanged frozen bridge executed for the first time on conditionally bridge-held-out Metrica Sample Game 2, using the previously frozen Stage-A trajectory-support registry and held-out continuous attacker representation. The Game 2 sample retained 1,087 observations at 115 anchor times. Its local attacker-path coefficient was 0.134222 m/m, interval [0.081738, 0.183570], versus 0.064756 nonlocal and 0.100264 reverse-time. The paired local-minus-nonlocal and primary-minus-placebo intervals were [0.016845, 0.123824] and [0.006189, 0.066336]. One-/four-second coefficients were positive. The inherited 12.198443079831405 m Game 1 threshold excluded four observations and produced a trimmed/full ratio of 1.02645.
+
+The pooled 8,910-observation coefficient was 0.100592 m/m, interval [0.082406, 0.119233]. Pooled local-minus-nonlocal was 0.038738, interval [0.018392, 0.062082]; primary-minus-placebo was 0.042994, interval [0.027143, 0.058787]. All 2,000 replicates were valid for every governed interval, all 32 hard checks passed, and an independent rerun matched 16/16 governed files byte-for-byte. Every frozen final criterion passed, yielding **FINAL BRIDGE A**.
+
+The supported claim is an observational within-provider two-match association between preceding attacker path and subsequent local focal-relative defensive movement beyond strictly earlier defensive-motion context. It does not establish causation, marking/assignment, tactical intent or response labels, defensive disruption, gravity, or value. No protocol item changed after Game 2, Game 1 artifacts remained unchanged, and Game 3 was untouched. See [`results/attacker_defender_bridge_game2_v1.md`](results/attacker_defender_bridge_game2_v1.md).
+
 ## 2026-08-31 — Game 1 attacker-to-defender bridge is development-coherent
 
 The first authorized bridge execution applied the frozen protocol to Metrica Sample Game 1 only. It retained 7,823 observations at 804 evaluation times. The primary attacker-path coefficient was 0.095957 m/m with a 95% 60-second-block percentile interval of [0.075594, 0.114331], based on 2,000/2,000 valid replicates. It exceeded the farthest-three coefficient (0.061782) and reverse-time placebo (0.051661); their paired differences were 0.034175 and 0.044296 m/m. One- and four-second coefficients were positive, and excluding 79 observations above the frozen 12.198443 m p99 exposure threshold retained a positive coefficient at 97.32% of the full estimate.

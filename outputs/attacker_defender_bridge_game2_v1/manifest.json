@@ -1,0 +1,161 @@
+{
+  "events_sha256": "edf31a18599265b77a8baf150f2ce6d89456fb0324b62ea7a391229657a619ba",
+  "game1_final_ledger_sha256": "e1bb33e52eb65a45b02fefd85eb6ea1d1da148bb6327e52c5a8ba0de42ea9ae7",
+  "game2_attacker_final_ledger_sha256": "665bb256f1746c02744801b7f17a89faf26116838ff10ea491b6c54bf92b7e36",
+  "game3_accessed": false,
+  "governed_output_files": [
+    "game2_observations.parquet",
+    "game2_defender_linkage.parquet",
+    "game2_eligibility_exclusions.csv",
+    "game2_eligibility_waterfall.csv",
+    "game2_model_coefficients.csv",
+    "pooled_model_coefficients.csv",
+    "game2_bootstrap_summaries.csv",
+    "game2_paired_bootstrap_differences.csv",
+    "pooled_bootstrap_summaries.csv",
+    "pooled_paired_bootstrap_differences.csv",
+    "hard_qc.csv",
+    "final_criteria.csv",
+    "game2_descriptive_summaries.json",
+    "final_results.json"
+  ],
+  "inherited_game1_p99_threshold_m": 12.198443079831405,
+  "numpy": "2.5.2",
+  "pandas": "2.3.3",
+  "polars": "1.44.1",
+  "protocol": "docs/protocols/attacker_defender_bridge_v1.md",
+  "protocol_sha256": "62321620a3007bf0c9686d99595caa0f9e39e2ac7ea2ba78b935ddfefd308bbb",
+  "protocol_tuned_after_game2": false,
+  "provenance": {
+    "canonical": {
+      "adapter_version": "1.0.0",
+      "ball_object_id_provider": null,
+      "ball_state_available": false,
+      "canonical_coordinate_system": "metres, pitch centre origin, +x right, +y top, fixed pitch frame",
+      "canonical_match_id": "metrica:sample-game-2",
+      "contract_version": "1.0.0",
+      "coordinate_transform": [
+        "Kloppy 3.19.0 parses Metrica y bottom-to-top",
+        "x_m = kloppy_x * 105 - 52.5",
+        "y_m = kloppy_y * 68 - 34"
+      ],
+      "coordinates_attacking_direction_normalized": false,
+      "goalkeeper_source": "frozen project metadata: Home 11, Away 25",
+      "interpolation_used": false,
+      "kloppy_version": "3.19.0",
+      "orientation_metadata": "away-home",
+      "pitch_m": [
+        105.0,
+        68.0
+      ],
+      "player_id_map_provider_to_canonical": {
+        "away_15": "metrica:Away:15",
+        "away_16": "metrica:Away:16",
+        "away_17": "metrica:Away:17",
+        "away_18": "metrica:Away:18",
+        "away_19": "metrica:Away:19",
+        "away_20": "metrica:Away:20",
+        "away_21": "metrica:Away:21",
+        "away_22": "metrica:Away:22",
+        "away_23": "metrica:Away:23",
+        "away_24": "metrica:Away:24",
+        "away_25": "metrica:Away:25",
+        "away_26": "metrica:Away:26",
+        "home_1": "metrica:Home:1",
+        "home_10": "metrica:Home:10",
+        "home_11": "metrica:Home:11",
+        "home_12": "metrica:Home:12",
+        "home_13": "metrica:Home:13",
+        "home_14": "metrica:Home:14",
+        "home_2": "metrica:Home:2",
+        "home_3": "metrica:Home:3",
+        "home_4": "metrica:Home:4",
+        "home_5": "metrica:Home:5",
+        "home_6": "metrica:Home:6",
+        "home_7": "metrica:Home:7",
+        "home_8": "metrica:Home:8",
+        "home_9": "metrica:Home:9"
+      },
+      "possession_team_available": false,
+      "provider": "metrica",
+      "provider_frame_id_available": true,
+      "provider_match_id": "Sample Game 2",
+      "provider_raw_timestamp_available": false,
+      "source_coordinate_system": "normalized x left-to-right, y top-to-bottom",
+      "source_files": [
+        {
+          "path": "data/metrica_sample_game_2/Sample_Game_2_RawTrackingData_Home_Team.csv",
+          "sha256": "3f9990ac204b07133e4202441d6fcbb386897c7c7f81e1bc3ce4d35bc8644694"
+        },
+        {
+          "path": "data/metrica_sample_game_2/Sample_Game_2_RawTrackingData_Away_Team.csv",
+          "sha256": "aa639f40762eade46c389020fe4458266b5ba14027b1e96e22e75db62803718b"
+        }
+      ],
+      "support_rule": "Kloppy coordinate-object presence; unavailable reason retained as not_observed_unspecified",
+      "team_id_map_provider_to_canonical": {
+        "away": "metrica:Away",
+        "home": "metrica:Home"
+      },
+      "time_match_rule": "raw Metrica Time [s] preserved from provider frame-index sidecar",
+      "time_period_rule": "Kloppy period-relative timestamp",
+      "transformation_log": [
+        "load via Kloppy",
+        "canonical fixed-pitch coordinate transform",
+        "explicit roster null rows"
+      ]
+    },
+    "endpoint_counts": {
+      "candidate_endpoints": 1409,
+      "no_possession_endpoints": 0
+    },
+    "prerequisites": {
+      "checks": {
+        "game1_final_ledger_file_hash": true,
+        "game1_final_ledger_valid": true,
+        "game1_inherited_threshold_exact": true,
+        "game1_status_coherent": true,
+        "game2_attacker_classification_a": true,
+        "game2_attacker_ledger_file_hash": true,
+        "game2_attacker_ledger_valid": true,
+        "protocol_hash": true,
+        "stage_a_ready": true,
+        "stage_a_rows_exact": true,
+        "stage_a_segments_exact": true
+      },
+      "stage_a": {
+        "classification": "READY",
+        "governed_hash_files": 10,
+        "governed_hashes_valid": true,
+        "independent_reproduction_valid": true,
+        "registry_sha256": "22c202c83c564e4b0c6fb3aa0ceb8729f7bdb2b6651b980bd1024fd4002d98b5",
+        "support_segments": 134,
+        "support_segments_sha256": "d618232b7363d0311560e935e23dd3ad77def8f1af26319df90c4c536f43460b",
+        "valid_raw_rows": 2093028
+      }
+    },
+    "support_consumption": {
+      "classification": "READY",
+      "consumed_raw_row_count": 2093028,
+      "consumed_segment_id_count": 134,
+      "governed_hash_files": 10,
+      "governed_hashes_valid": true,
+      "independent_reproduction_valid": true,
+      "no_registry_revision": true,
+      "no_support_rediscovery": true,
+      "registry_sha256": "22c202c83c564e4b0c6fb3aa0ceb8729f7bdb2b6651b980bd1024fd4002d98b5",
+      "support_segments": 134,
+      "support_segments_sha256": "d618232b7363d0311560e935e23dd3ad77def8f1af26319df90c4c536f43460b",
+      "valid_raw_rows": 2093028
+    }
+  },
+  "python": "3.13.15",
+  "rng": {
+    "game2_child": 1,
+    "master_seed": 20260831,
+    "pooled_child": 2
+  },
+  "source": "src/attacker_defender_bridge_game2_v1.py",
+  "source_sha256": "56c17e087f64babf30374630874f24e5c9332065b1e29bf37ab034d0b0bd2729",
+  "stage_a_governed_ledger_sha256": "5a7ca94a898a5b606a15eb83a855cba5b1d6a8444ea2fd0b934ffc49b3c2c397"
+}

@@ -57,9 +57,9 @@ Every arrow can fail. Football language does not become a tracking construct mer
 
 ## Current methodological frontier
 
-> **Can attacking movement and defensive geometric change be represented as defensible finite units before testing their relationship?**
+> **How far can the replicated attacker-to-defender geometric association be interpreted or transported without exceeding its observational evidence?**
 
-The immediate open problem is representation integrity. The attacker’s interval must be defined without defensive outcomes, and the defensive change must remain geometric rather than tactical. The current movement-segmentation implementation is historical evidence, not an accepted next protocol. No “Phase 5C” exists unless a separate design is prospectively specified and frozen.
+The completed bridge resolves the first within-provider association test, not its tactical or causal meaning. Continuous attacker intervals remain defined without defensive outcomes, and defensive change remains geometric rather than tactical. Historical segmentation failures still constrain any future episode-based extension. No next phase exists unless a separate design is prospectively specified and frozen.
 
 The first bounded refinement executed under its frozen rules and classified **B**. Prominence sharply reduced fragmentation but drove merging/direction to 35.88%–69.03% against a 3.97% cap. No candidate was selected, so the protocol forbids Game 2 execution and further threshold repair.
 
@@ -67,7 +67,7 @@ The completed [representation audit](attacking_movement_representation_audit.md)
 
 The subsequent [representation fork](attacking_movement_representation_fork.md) selected **continuous fixed-window attacker geometry**. [Protocol v1.0](protocols/attacking_continuous_movement_v1.md) retained signed displacement, path length, and derived straightness over a 2 s primary window with 1/4 s sensitivities; heading change and speed variation were deferred. The representation classified **A** on [Game 1](results/attacking_continuous_movement_game1_v1.md) and, under a separately frozen protocol and Stage-A registry, **A** on [held-out Game 2](results/attacking_continuous_movement_game2_v1.md). Hard QC and every frozen 25/10 Hz gate passed at both matches with byte-identical reproduction. That within-provider prerequisite enabled the separately frozen bridge without reinterpreting or tuning the attacker representation.
 
-That design was frozen in [attacker-to-defender bridge protocol v1.0](protocols/attacker_defender_bridge_v1.md). Its [Game 1 development execution](results/attacker_defender_bridge_game1_v1.md) is **COHERENT**: the positive local coefficient exceeds both the farthest-three control and reverse-time placebo, and every frozen sensitivity, robustness, hard-QC, and deterministic-reproduction criterion passes. This is one-match observational development evidence, not tactical response or causation. The next legitimate bridge task is the unchanged conditionally held-out Game 2 execution and frozen two-match A/B/C decision—not protocol tuning, Game 1 reinterpretation, or Game 3 access.
+That design was frozen in [attacker-to-defender bridge protocol v1.0](protocols/attacker_defender_bridge_v1.md). Game 1 was development-coherent, and the unchanged [held-out Game 2 plus pooled execution](results/attacker_defender_bridge_game2_v1.md) is **FINAL BRIDGE A**. Local coefficients were positive and exceeded nonlocal/placebo controls in both matches; pooled primary and paired-control intervals were positive; every frozen robustness, hard-QC, and reproduction gate passed. This is a replicated observational association across two within-provider sample matches, not tactical response or causation.
 
 ## October 1, 2026 constraint
 
@@ -76,8 +76,8 @@ The [2027 MIT Sloan Sports Analytics Conference Research Paper Competition](http
 ### Pre-October 1 priorities
 
 1. Finish a defensible, outcome-blind temporal representation of attacking movement.
-2. Complete the frozen conditionally held-out Game 2 bridge test after the coherent Game 1 development result.
-3. Apply the frozen two-match decision and preserve its local, nonlocal, temporal, activity/context, tracking-quality, and influence limits.
+2. Preserve the completed Final A bridge and its local, nonlocal, temporal, activity/context, tracking-quality, and influence limits.
+3. Decide prospectively whether the next priority is cross-provider attacker compatibility, semantic football interpretation, or a legitimate stopping point; do not infer any extension from Final A.
 4. Preserve a conservative result even if it is mixed or negative.
 5. Produce an abstract-ready evidence story, clear football figures, and a reproducible public repository.
 6. Complete literature positioning around movement segmentation, expected defence, opponent relationships, and off-ball action—without novelty inflation.

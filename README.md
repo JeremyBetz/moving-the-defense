@@ -116,13 +116,15 @@ attacker attribution
 attacking value
 ```
 
-Every arrow is conditional. The current methodological frontier is approximately:
+Every arrow is conditional. The current methodological frontier is now approximately:
 
-> **Can attacking movement and defensive geometric change be represented as defensible finite units before testing their relationship?**
+> **How far can the replicated attacker-to-defender geometric association be interpreted or transported without exceeding its observational evidence?**
 
 After three discrete boundary specifications produced complementary fragmentation/merging failures, continuous attacker movement v1.0 retained signed displacement, path length, and straightness without imposing universal episode boundaries. It classified **A** on [development Game 1](docs/results/attacking_continuous_movement_game1_v1.md), then **A** on [held-out Game 2](docs/results/attacking_continuous_movement_game2_v1.md) after a separately frozen [raw trajectory-support checkpoint](docs/results/attacking_continuous_movement_game2_stage_a.md). All hard checks and all 15 frozen 25/10 Hz gates passed at 1/2/4-second windows, with byte-identical reproduction.
 
-The first prospectively frozen attacker-to-defender bridge has now executed on development Game 1 and is **GAME 1 DEVELOPMENT COHERENT**. Greater preceding attacker path was associated with greater subsequent focal-relative movement among the nearest three defenders ($\beta_1=0.09596$ m/m, 95% blocked-bootstrap interval [0.07559, 0.11433]). The coefficient exceeded the farthest-three control and reverse-time placebo; 1/4-second and extreme-exposure diagnostics were coherent. This is an observational one-match development result—not causation, assignment, tactical response, or a final bridge classification. Game 2 remains uncomputed for the bridge.
+The first prospectively frozen attacker-to-defender bridge is now **FINAL BRIDGE A** after unchanged execution on development Game 1 and conditionally bridge-held-out Game 2. The local attacker-path coefficient was 0.09596 m/m in Game 1 and 0.13422 m/m in Game 2; the pooled estimate was 0.10059 m/m with a 95% blocked-bootstrap interval of [0.08241, 0.11923]. Local coefficients exceeded farthest-three and reverse-time controls in both matches, their pooled paired intervals were positive, and all frozen horizon, extreme-exposure, support, hard-QC, and reproduction gates passed.
+
+The supported result remains observational: greater preceding attacker movement was associated with greater subsequent nearby-defender movement relative to the defensive unit, beyond strictly earlier defensive-motion context. It does not establish that the attacker caused the movement, a marking assignment, a tactical response label, defensive disruption, or attacker value. The bridge has replicated only across the two Metrica sample matches under this within-provider protocol.
 
 The project has not reached tactical interpretation, attacker attribution, causal influence, gravity, or off-ball value.
 

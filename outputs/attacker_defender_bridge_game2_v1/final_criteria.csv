@@ -1,0 +1,12 @@
+criterion,pass
+bootstrap_valid_all,True
+deterministic_reproduction,True
+hard_qc,True
+horizon_no_joint_reversal_both_matches,True
+local_minus_nonlocal_positive_both_matches,True
+pooled_local_minus_nonlocal_interval_positive,True
+pooled_primary_interval_positive,True
+pooled_primary_minus_placebo_interval_positive,True
+primary_minus_placebo_positive_both_matches,True
+primary_positive_both_matches,True
+trimmed_robust_both_matches,True

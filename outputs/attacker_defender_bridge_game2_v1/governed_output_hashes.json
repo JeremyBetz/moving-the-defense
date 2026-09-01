@@ -1,0 +1,16 @@
+{
+  "final_criteria.csv": "54742897d88c72569f9d0b14ad0088b7a60847ade9c2119979702b25e66485f8",
+  "final_results.json": "982c3e114fbd0bce2e622c83e9f2cb43d1465720f297767665045a259f733fda",
+  "game2_bootstrap_summaries.csv": "d8c1227870494b1db8662978d8a87b288f2cf1f152b19da3bec39565ab777bc4",
+  "game2_defender_linkage.parquet": "6ff8dbe80b662b5069ffc86932e3fd0b6e4c7cc1fba0e3170b8dd55f88c7e670",
+  "game2_descriptive_summaries.json": "3a8e2980882c397ca698629129b585c39d9d235407bf9b469d66753cfbf677c3",
+  "game2_eligibility_exclusions.csv": "616da8f04ba52a1fa1ea2556b7c9b54ca8a5bb04772fa40aff5d4403cc139ab0",
+  "game2_eligibility_waterfall.csv": "83b4c34732c5a27d848e228d4129767a3bdc3602f534a60c2b1687098c47520c",
+  "game2_model_coefficients.csv": "5cefdec241ed0538e99a0e96a6df867d152e75f606e38d70a407bd19f9feeff7",
+  "game2_observations.parquet": "210c2f34ce94cd92a9b9347b919dd849f2d51c298897438fb45b88ca1f58c5a6",
+  "game2_paired_bootstrap_differences.csv": "fec737b3b6dcb164406d73c3491a566f5920a629a315f2754024929a58ddd59f",
+  "hard_qc.csv": "bba382e676bce5abae6874a5f954b71f45adc6c3bde4c2c6c2fb336c4a6fcba8",
+  "pooled_bootstrap_summaries.csv": "2acffad477600dd1d8e5b837ed46f4e039dcf98a71be0365a395253db10aca83",
+  "pooled_model_coefficients.csv": "9cd42a22f1b0b3abe86f937faa3be15760b12de7922e774307514f0eec3174b7",
+  "pooled_paired_bootstrap_differences.csv": "3cfd5c0985dffe410910ede0deb5394d4c563a74c4850df8ec19f16c1c1a2d9f"
+}
