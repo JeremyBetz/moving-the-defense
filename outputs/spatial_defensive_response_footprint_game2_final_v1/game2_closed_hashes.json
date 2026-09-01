@@ -1,0 +1,18 @@
+{
+  "game2_anchors.parquet": "210c2f34ce94cd92a9b9347b919dd849f2d51c298897438fb45b88ca1f58c5a6",
+  "game2_exclusions.csv": "616da8f04ba52a1fa1ea2556b7c9b54ca8a5bb04772fa40aff5d4403cc139ab0",
+  "game2_hard_qc.csv": "010933e15c411012e4a8b99d9c54e30559610924a01a0839d8c09a56ce165f54",
+  "game2_horizons.csv": "4b3f91c69b46997e9249a6789a359fb545317cc1d596c07dc8c2e4a6196ecbc6",
+  "game2_linkage.parquet": "87b8cb39a7661151b7fbe9ec9946abbb43524980e0ad407b761d6cabc6dfaeec",
+  "game2_metric.csv": "86398ef2cac3d6be63d2428ca8e1bd05aa7505c94e04f92cfdb6ea7201d75433",
+  "game2_nearfar_consistency.csv": "0f850661c2cbf44f4dc3739454e2c1283f2216b6702d7cdab7af7ac2d885ce55",
+  "game2_placebo.csv": "214bb1dc0571fc2a2c35765cb360622aaf9598ae39ab5ca8a9f49bde15c0b549",
+  "game2_placebo_rank.csv": "d851714e8ddafcc7a1e575e56676e66948dbdc437e1e7a2b5192595eb0ed0798",
+  "game2_primary_placebo_paired.csv": "e7bf27e5adb21f297c96a6c475b9759236ffb4f4ef39ef836f84f0121c0b2df8",
+  "game2_rank_coefficients.csv": "121d625b194d9549e5655e324898b1ef02bc40a41a862256965262e16abf145b",
+  "game2_rank_distances.csv": "9e66b3f821e77bc59475345d5a87e0eec9c5c724b8c204e4bd6f4892bc81e75c",
+  "game2_regional.csv": "52af7a16ae4ca081b5de025561bc4c68e97b84c05e5d91f0f664528e557f9c31",
+  "game2_robustness.csv": "c17f4bc5a7f25a7db1b30d96d3b2122dd4cba02039127ff0df8860fa05dbfa61",
+  "game2_sample.json": "b668eac25fa5a0b2aef2a0c289e707949dde52616f935bb7dfff268f33a10818",
+  "game2_trimmed.csv": "2b8c571e306203f3a29aaa14adc696a96a71102dacff9f4795dd5b552769d101"
+}

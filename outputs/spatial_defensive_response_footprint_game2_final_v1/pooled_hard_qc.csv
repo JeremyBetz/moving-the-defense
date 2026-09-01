@@ -1,0 +1,29 @@
+check,pass,detail
+protocol_and_inherited_hashes,True,all four frozen hashes
+game2_game3_footprints_not_accessed,True,no Game 2 or Game 3 footprint path in implementation
+no_prior_footprint_artifact_at_freeze,True,prospective firewall verified at 9d18d2b
+unique_observation_ids,True,8910
+exactly_ten_rows_and_complete_ranks,True,ten rows with ranks 1...10
+unique_defenders,True,ten unique
+complete_outfield_set_goalkeeper_excluded,True,inherited complete ten-outfielder bridge roster
+distance_order_nondecreasing,True,canonical metres
+exact_tie_player_key_order,True,distance then player_key
+rank_and_band_fixed_at_t,True,stored once in linkage
+focal_excluded_from_nine_player_centroid,True,inherited bridge defensive_geometry
+complete_raw_smoothed_support,True,inherited bridge exact segment support
+no_interpolation_or_partial_support,True,inherited bridge construction
+strict_temporal_order,True,"[t-4,t-2], [t-2,t], [t,t+2]"
+restart_and_cadence_inherited,True,closed bridge observation IDs reproduced
+complete_vectors_and_simultaneous_attackers_grouped,True,all rows sampled by 60s period block
+terminal_partial_blocks_retained,True,inherited bridge sampled_indices
+models_finite_estimable,True,all governed tables
+minimum_valid_bootstraps,True,minimum=2000; required=1900
+region_contrast_identities,True,computed from one beta vector
+delta_nf_identity,True,Delta_NF=Delta_NM+Delta_MF by construction
+inherited_near_far_reproduction,True,0.0
+translation_invariance,True,"{'translation': True, 'rotation': True, 'mirror': True, 'player_id_relabel_non_ties': True}"
+rotation_mirror_invariance,True,"{'translation': True, 'rotation': True, 'mirror': True, 'player_id_relabel_non_ties': True}"
+player_id_relabeling,True,"{'translation': True, 'rotation': True, 'mirror': True, 'player_id_relabel_non_ties': True}"
+canonical_units,True,metres and seconds
+no_tactical_or_outcome_label,True,geometric inputs only
+deterministic_reproduction,True,31 files compared

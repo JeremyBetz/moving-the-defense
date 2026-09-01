@@ -1,0 +1,28 @@
+{
+  "clarification_sha256": "60678b0f90128c5905ed2535a81aab37b562fe8a6b8aa6a9c9ff1f7642dcf37e",
+  "config_sha256": "b784b3839146a424acd427a0f1d99959f3ef547039743d30ce90e39f9e557c9c",
+  "game1_result_sha256": "a17ed8b68be79d05992202de88b08a78baf72989352153a135e3ce23863383e6",
+  "game2_closed_files": [
+    "game2_anchors.parquet",
+    "game2_exclusions.csv",
+    "game2_hard_qc.csv",
+    "game2_horizons.csv",
+    "game2_linkage.parquet",
+    "game2_metric.csv",
+    "game2_nearfar_consistency.csv",
+    "game2_placebo.csv",
+    "game2_placebo_rank.csv",
+    "game2_primary_placebo_paired.csv",
+    "game2_rank_coefficients.csv",
+    "game2_rank_distances.csv",
+    "game2_regional.csv",
+    "game2_robustness.csv",
+    "game2_sample.json",
+    "game2_trimmed.csv",
+    "game2_closed_hashes.json"
+  ],
+  "protocol_sha256": "649c40c551d880f5204f6ccca7e37cf219660c4a5fdea590e0b73b6377534458",
+  "python": "3.13.15",
+  "source": "src/spatial_defensive_response_footprint_game2_final_v1.py",
+  "source_sha256": "6e3b78847264bc90fabb533f9c9fbb9cab8459924c7fb4dabc8bca43e5d1c6c5"
+}

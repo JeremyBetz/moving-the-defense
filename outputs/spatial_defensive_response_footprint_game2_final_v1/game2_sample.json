@@ -1,0 +1,37 @@
+{
+  "complete_rows": 10870,
+  "eligible_anchors": 1087,
+  "endpoint_counts": {
+    "candidate_endpoints": 1409,
+    "no_possession_endpoints": 0
+  },
+  "exclusion_counts": {
+    "attacker_exposure_unavailable": 5635,
+    "attacker_full_support_unavailable": 39,
+    "complete_ten_defenders_unavailable": 7643,
+    "restart_or_ball_out_primary_span": 2563
+  },
+  "four_second_eligible": 1070,
+  "period_counts": {
+    "1": 849,
+    "2": 238
+  },
+  "simultaneous": {
+    "iqr": 1.0,
+    "max": 10.0,
+    "mean": 9.452173913043477,
+    "median": 10.0,
+    "min": 7.0,
+    "n": 115,
+    "p95": 10.0,
+    "p99": 10.0,
+    "q25": 9.0,
+    "q75": 10.0,
+    "sd_ddof1": 0.900715877675062
+  },
+  "team_counts": {
+    "metrica:Away": 390,
+    "metrica:Home": 697
+  },
+  "unique_times": 115
+}

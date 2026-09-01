@@ -1,0 +1,27 @@
+{
+  "classification": "FINAL FOOTPRINT A",
+  "criteria": [
+    {
+      "contrast": "Delta_NM",
+      "game1_excludes_zero": true,
+      "game2_excludes_zero": true,
+      "pooled_excludes_zero": true,
+      "pooled_robustness": true,
+      "qualifies_final_A": true,
+      "same_strict_sign": true
+    },
+    {
+      "contrast": "Delta_MF",
+      "game1_excludes_zero": false,
+      "game2_excludes_zero": false,
+      "pooled_excludes_zero": false,
+      "pooled_robustness": true,
+      "qualifies_final_A": false,
+      "same_strict_sign": true
+    }
+  ],
+  "game2_descriptively_unclassified": true,
+  "game2_sample": 1087,
+  "game3_accessed": false,
+  "pooled_sample": 8910
+}

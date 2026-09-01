@@ -1,0 +1,130 @@
+{
+  "all_byte_identical": true,
+  "comparisons": [
+    {
+      "byte_identical": true,
+      "file": "final_classification_criteria.csv"
+    },
+    {
+      "byte_identical": true,
+      "file": "final_results.json"
+    },
+    {
+      "byte_identical": true,
+      "file": "game2_anchors.parquet"
+    },
+    {
+      "byte_identical": true,
+      "file": "game2_closed_hashes.json"
+    },
+    {
+      "byte_identical": true,
+      "file": "game2_exclusions.csv"
+    },
+    {
+      "byte_identical": true,
+      "file": "game2_hard_qc.csv"
+    },
+    {
+      "byte_identical": true,
+      "file": "game2_horizons.csv"
+    },
+    {
+      "byte_identical": true,
+      "file": "game2_linkage.parquet"
+    },
+    {
+      "byte_identical": true,
+      "file": "game2_metric.csv"
+    },
+    {
+      "byte_identical": true,
+      "file": "game2_nearfar_consistency.csv"
+    },
+    {
+      "byte_identical": true,
+      "file": "game2_placebo.csv"
+    },
+    {
+      "byte_identical": true,
+      "file": "game2_placebo_rank.csv"
+    },
+    {
+      "byte_identical": true,
+      "file": "game2_primary_placebo_paired.csv"
+    },
+    {
+      "byte_identical": true,
+      "file": "game2_rank_coefficients.csv"
+    },
+    {
+      "byte_identical": true,
+      "file": "game2_rank_distances.csv"
+    },
+    {
+      "byte_identical": true,
+      "file": "game2_regional.csv"
+    },
+    {
+      "byte_identical": true,
+      "file": "game2_robustness.csv"
+    },
+    {
+      "byte_identical": true,
+      "file": "game2_sample.json"
+    },
+    {
+      "byte_identical": true,
+      "file": "game2_trimmed.csv"
+    },
+    {
+      "byte_identical": true,
+      "file": "hard_qc.json"
+    },
+    {
+      "byte_identical": true,
+      "file": "manifest.json"
+    },
+    {
+      "byte_identical": true,
+      "file": "pooled_hard_qc.csv"
+    },
+    {
+      "byte_identical": true,
+      "file": "pooled_horizons.csv"
+    },
+    {
+      "byte_identical": true,
+      "file": "pooled_metric.csv"
+    },
+    {
+      "byte_identical": true,
+      "file": "pooled_placebo.csv"
+    },
+    {
+      "byte_identical": true,
+      "file": "pooled_placebo_rank.csv"
+    },
+    {
+      "byte_identical": true,
+      "file": "pooled_primary_placebo_paired.csv"
+    },
+    {
+      "byte_identical": true,
+      "file": "pooled_rank_coefficients.csv"
+    },
+    {
+      "byte_identical": true,
+      "file": "pooled_regional.csv"
+    },
+    {
+      "byte_identical": true,
+      "file": "pooled_robustness.csv"
+    },
+    {
+      "byte_identical": true,
+      "file": "pooled_trimmed.csv"
+    }
+  ],
+  "files_compared": 31
+}

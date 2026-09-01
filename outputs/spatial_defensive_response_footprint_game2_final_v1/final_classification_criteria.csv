@@ -1,0 +1,3 @@
+contrast,game1_excludes_zero,game2_excludes_zero,pooled_excludes_zero,same_strict_sign,pooled_robustness,qualifies_final_A
+Delta_NM,True,True,True,True,True,True
+Delta_MF,False,False,False,True,True,False
