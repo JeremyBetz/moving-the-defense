@@ -57,7 +57,7 @@ Every arrow can fail. Football language does not become a tracking construct mer
 
 ## Current methodological frontier
 
-> **How far can the replicated attacker-to-defender geometric association be interpreted or transported without exceeding its observational evidence?**
+> **How is the subsequent defensive response spatially distributed across the defensive block relative to the moving attacker?**
 
 The completed bridge resolves the first within-provider association test, not its tactical or causal meaning. Continuous attacker intervals remain defined without defensive outcomes, and defensive change remains geometric rather than tactical. Historical segmentation failures still constrain any future episode-based extension. No next phase exists unless a separate design is prospectively specified and frozen.
 
@@ -69,6 +69,8 @@ The subsequent [representation fork](attacking_movement_representation_fork.md) 
 
 That design was frozen in [attacker-to-defender bridge protocol v1.0](protocols/attacker_defender_bridge_v1.md). Game 1 was development-coherent, and the unchanged [held-out Game 2 plus pooled execution](results/attacker_defender_bridge_game2_v1.md) is **FINAL BRIDGE A**. Local coefficients were positive and exceeded nonlocal/placebo controls in both matches; pooled primary and paired-control intervals were positive; every frozen robustness, hard-QC, and reproduction gate passed. This is a replicated observational association across two within-provider sample matches, not tactical response or causation.
 
+The next design is now frozen in [spatial defensive-response footprint v1.0](protocols/spatial_defensive_response_footprint_v1.md), with **results unobserved**. It decomposes the bridge across prospectively fixed defender ranks D1–D10 and adds a secondary fixed-metre view. A new adjacent-region contrast—not merely the already established nearest-three versus farthest-three difference—must replicate unchanged across Game 1, conditionally footprint-held-out Game 2, and pooled analysis for Final Footprint A. Flat, non-monotonic, or mixed shapes remain admissible.
+
 ## October 1, 2026 constraint
 
 The [2027 MIT Sloan Sports Analytics Conference Research Paper Competition](https://www.sloansportsconference.com/research-paper-competition) lists **October 1, 2026, 11:59 p.m. Eastern** as the round-one abstract deadline. The abstract is limited to actual evidence; the deadline is a communication constraint, not a reason to relax scientific gates.
@@ -77,7 +79,7 @@ The [2027 MIT Sloan Sports Analytics Conference Research Paper Competition](http
 
 1. Finish a defensible, outcome-blind temporal representation of attacking movement.
 2. Preserve the completed Final A bridge and its local, nonlocal, temporal, activity/context, tracking-quality, and influence limits.
-3. Decide prospectively whether the next priority is cross-provider attacker compatibility, semantic football interpretation, or a legitimate stopping point; do not infer any extension from Final A.
+3. Execute the frozen spatial-footprint protocol without tuning, then decide whether response geometry, cross-provider attacker compatibility, or a legitimate stopping point is justified.
 4. Preserve a conservative result even if it is mixed or negative.
 5. Produce an abstract-ready evidence story, clear football figures, and a reproducible public repository.
 6. Complete literature positioning around movement segmentation, expected defence, opponent relationships, and off-ball action—without novelty inflation.

@@ -1,0 +1,63 @@
+{
+  "protocol": "spatial_defensive_response_footprint_v1",
+  "version": "1.0",
+  "status": "FROZEN_RESULTS_UNOBSERVED",
+  "freeze_date": "2026-09-01",
+  "datasets": {
+    "game1": "development",
+    "game2": "conditionally_held_out_for_footprint",
+    "game3": "untouched_undesignated_prohibited"
+  },
+  "timing_s": {
+    "prior_context": [-4.0, -2.0],
+    "attacker_exposure": [-2.0, 0.0],
+    "primary_response": [0.0, 2.0],
+    "response_sensitivities": [1.0, 4.0],
+    "cadence": 4.0
+  },
+  "rank": {
+    "count": 10,
+    "distance": "euclidean_canonical_metres_at_anchor",
+    "ordering": ["distance_ascending", "canonical_player_key_ascending_exact_tie"],
+    "fixed_after_anchor": true
+  },
+  "regions": {
+    "near": [1, 2, 3],
+    "middle": [4, 5, 6, 7],
+    "far": [8, 9, 10],
+    "new_primary_contrasts": ["near_minus_middle", "middle_minus_far"],
+    "inherited_nonclassifying_contrast": "near_minus_far"
+  },
+  "metric_distance_bands_m": [[0.0, 10.0], [10.0, 20.0], [20.0, 30.0], [30.0, 40.0], [40.0, 50.0], [50.0, null]],
+  "model": {
+    "estimator": "ols_raw_metres",
+    "match_specific": "rank_specific_intercept_exposure_baseline_and_centroid_context",
+    "pooled_addition": "game2_main_effect_only",
+    "primary_coefficients": "attacker_path_by_rank"
+  },
+  "bootstrap": {
+    "replicates": 2000,
+    "minimum_valid": 1900,
+    "block_seconds": 60.0,
+    "retain_nonempty_terminal_partial": true,
+    "master_seed": 20260831,
+    "seedsequence_spawn_count": 6,
+    "scope_child_indices": {"game1": 3, "game2": 4, "pooled": 5},
+    "group_complete_anchor_rank_vector": true,
+    "group_simultaneous_attackers": true,
+    "interval": "percentile",
+    "rank_coefficient_interval_percent": 95.0,
+    "two_contrast_family_interval_percent": 97.5
+  },
+  "robustness": {
+    "extreme_attacker_path_threshold_m": 12.198443079831405,
+    "trimmed_minimum_absolute_fraction": 0.5,
+    "horizons_may_not_both_reverse_primary_sign": true
+  },
+  "classification": {
+    "final_A": "same adjacent-region contrast has same strict sign and 97.5_percent_interval_excludes_zero in game1_game2_pooled and passes_trimmed_and_horizon_rules",
+    "final_B": "valid_reproducible_execution_without_all_final_A_spatial_replication_conditions",
+    "final_C": "hard_scientific_or_execution_validity_failure"
+  },
+  "real_data_results_observed_at_freeze": false
+}

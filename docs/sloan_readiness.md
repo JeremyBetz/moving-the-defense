@@ -30,7 +30,7 @@ attacking movement episode
 defensive geometric change
 ```
 
-It uses continuous two-second attacker path rather than the rejected discrete episode rules, and subsequent focal-relative path supplies amount of nearby-defender movement rather than tactical meaning. The remaining gap is interpretation and transport: whether the association survives an independently governed provider/frequency environment and whether football semantics can be added without turning proximity or timing into causation.
+It uses continuous two-second attacker path rather than the rejected discrete episode rules, and subsequent focal-relative path supplies amount of nearby-defender movement rather than tactical meaning. The immediate remaining gap is spatial structure: whether the association varies reproducibly across the defensive block rather than appearing only in an aggregate nearest-three/farthest-three comparison. Spatial-footprint v1 is frozen with results unobserved. External/native-frequency transport and football semantics remain later questions; proximity or timing must not become causation.
 
 The gap is **not** the absence of a gravity score. Gravity, attacker attribution, tactical classification, causal influence, and final off-ball value are later possibilities, not abstract prerequisites.
 

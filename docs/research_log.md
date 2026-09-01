@@ -1,5 +1,13 @@
 # Research Log
 
+## 2026-09-01 — Spatial defensive-response footprint v1.0 frozen
+
+No real-data footprint outcome was computed. The [frozen protocol](protocols/spatial_defensive_response_footprint_v1.md) asks how the completed attacker-path association is distributed across all ten defending outfield players. It fixes D1–D10 by Euclidean distance at the bridge anchor with canonical-player-ID tie-breaking, holds rank through every window, and retains each defender's leave-one-out focal-relative response and strictly prior baseline.
+
+The primary stacked OLS model is equivalent to ten rank-specific raw-metre regressions but preserves a jointly bootstrapped coefficient vector. New spatial evidence is defined through near-minus-middle and middle-minus-far slope contrasts; nearest-three minus farthest-three is inherited bridge consistency and cannot classify the footprint. Two simultaneous 97.5% percentile intervals control the two-contrast family. Final A requires the same new contrast to replicate in Game 1, conditionally footprint-held-out Game 2, and pooled analysis, plus frozen trimming and horizon robustness. Fixed ten-metre distance bands are secondary and nonclassifying.
+
+The protocol reserves SeedSequence children 3–5, carries every ten-defender anchor vector and simultaneous attackers inside 60-second match-period bootstrap blocks, and freezes hard invariance/QC and figure plans. A flat, non-monotonic, or mixed footprint remains admissible. No assignment, causation, tactical response label, value, Game 3 access, or response-geometry phase was introduced. Status: **FROZEN / RESULTS UNOBSERVED**.
+
 ## 2026-08-31 — Attacker-to-defender bridge replicates on held-out Game 2
 
 The unchanged frozen bridge executed for the first time on conditionally bridge-held-out Metrica Sample Game 2, using the previously frozen Stage-A trajectory-support registry and held-out continuous attacker representation. The Game 2 sample retained 1,087 observations at 115 anchor times. Its local attacker-path coefficient was 0.134222 m/m, interval [0.081738, 0.183570], versus 0.064756 nonlocal and 0.100264 reverse-time. The paired local-minus-nonlocal and primary-minus-placebo intervals were [0.016845, 0.123824] and [0.006189, 0.066336]. One-/four-second coefficients were positive. The inherited 12.198443079831405 m Game 1 threshold excluded four observations and produced a trimmed/full ratio of 1.02645.

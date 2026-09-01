@@ -20,6 +20,8 @@ Zhang, Guangze, Matthias Kempe, Allistair McRobert, Hugo Folgado, and Sigrid B. 
 
 ## Synchronization and Interpersonal Coordination
 
+Laakso, Timo, Keith Davids, Jarmo Liukkonen, and Bruno Travassos. 2019. “Interpersonal Dynamics in 2-vs-1 Contexts of Football: The Effects of Field Location and Player Roles.” *Frontiers in Psychology* 10: 1407. <https://doi.org/10.3389/fpsyg.2019.01407>
+
 Duarte, Ricardo, Duarte Araújo, and Vanda Correia. 2013. “Competing Together: Assessing the Dynamics of Team-Team and Player-Team Synchrony in Professional Association Football.” *Human Movement Science* 32 (4): 555–566. <https://doi.org/10.1016/j.humov.2013.01.011>
 
 Araújo, Duarte, and Keith Davids. 2016. “Team Synergies in Sport: Theory and Measures.” *Frontiers in Psychology* 7: 1449. <https://doi.org/10.3389/fpsyg.2016.01449>
@@ -39,6 +41,12 @@ Calero-Sanz, Jorge, Roberto López del Campo, Ricardo Resta, and Javier M. Buld�
 Buldú, Javier M., David Garrido, Daniel R. Antequera, Javier Busquets, Ernesto Estrada, Ricardo Resta, and Roberto López del Campo. 2020. “Football Tracking Networks: Beyond Event-Based Connectivity.” arXiv:2011.06014. <https://arxiv.org/abs/2011.06014>
 
 Franks, Alexander, Andrew Miller, Luke Bornn, and Kirk Goldsberry. 2015. “Characterizing the Spatial Structure of Defensive Skill in Professional Basketball.” *The Annals of Applied Statistics* 9 (1): 94–121. <https://doi.org/10.1214/14-AOAS799>
+
+Link, Daniel, Steffen Lang, and Philipp Seidenschwarz. 2016. “Real Time Quantification of Dangerousity in Football Using Spatiotemporal Tracking Data.” *PLOS ONE* 11 (12): e0168768. <https://doi.org/10.1371/journal.pone.0168768>
+
+Fernández, Javier, and Luke Bornn. 2018. “Wide Open Spaces: A Statistical Technique for Measuring Space Creation in Professional Soccer.” *MIT Sloan Sports Analytics Conference*. <https://www.sloansportsconference.com/research-papers/wide-open-spaces-a-statistical-technique-for-measuring-space-creation-in-professional-soccer>
+
+Forcher, Leander, Leon Forcher, Stefan Altmann, Darko Jekauc, and Matthias Kempe. 2024. “The Keys of Pressing to Gain the Ball—Characteristics of Defensive Pressure in Elite Soccer Using Tracking Data.” *Science and Medicine in Football* 8 (2): 161–169. <https://doi.org/10.1080/24733938.2022.2158213>
 
 ## Relative Movement and Tracking-Method Reviews
 

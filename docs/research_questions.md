@@ -1,6 +1,6 @@
 # Research Questions
 
-> **Current status:** focal-relative path passed held-out Metrica validation and external IDSSE geometric replication. Contextual prediction is feasible; opponent information adds only a small mixed increment; direction is retained descriptively; onset innovation is unvalidated; and discrete attacker segmentation remains mixed. Continuous attacker geometry replicated across both Metrica sample matches, and the frozen attacker-to-defender bridge classified Final A across those matches. The current frontier is interpretation and transport of that observational association without exceeding its evidence. Historical questions remain for auditability.
+> **Current status:** focal-relative path passed held-out Metrica validation and external IDSSE geometric replication. Contextual prediction is feasible; opponent information adds only a small mixed increment; direction is retained descriptively; onset innovation is unvalidated; and discrete attacker segmentation remains mixed. Continuous attacker geometry replicated across both Metrica sample matches, and the frozen attacker-to-defender bridge classified Final A across those matches. Spatial defensive-response footprint v1 is now frozen with results unobserved. Historical questions remain for auditability.
 
 ## Primary Research Question
 
@@ -32,9 +32,9 @@ The result does not establish an activity-free effect, tactical response, reconf
 
 ## Current Methodological Frontier
 
-> **How far can the replicated attacker-to-defender geometric association be interpreted or transported without exceeding its observational evidence?**
+> **How is the subsequent defensive response spatially distributed across the defensive block relative to the moving attacker?**
 
-This is not a second primary research question. The attacker-only speed-valley, prominence, and directional-change-point attempts remain important mixed/failed historical tests of universal episode boundaries. Continuous signed displacement, path, and straightness subsequently replicated across both Metrica sample matches. Under the separately frozen bridge, preceding attacker path was positively associated with subsequent local focal-relative defensive movement in both matches; pooled primary and paired-control intervals were positive, producing Final A. That result is observational and within-provider. Signed focal-relative displacement remains complementary, response-onset timing remains unresolved, and tactical semantics, causation, and cross-provider bridge portability remain unsupported.
+This is the immediate nested methodological question, not a second project-level primary question. The completed bridge established a local-versus-nonlocal association but did not describe the full defensive block. [Spatial footprint v1](protocols/spatial_defensive_response_footprint_v1.md) prospectively freezes defender ranks D1–D10, two new adjacent-region contrasts, and a complementary fixed-metre view. It assumes neither monotonic decay nor nearest-defender responsibility. Results remain unobserved; tactical semantics, causation, and cross-provider bridge portability remain unsupported.
 
 ## Historical Relational-Reconfiguration Question
 

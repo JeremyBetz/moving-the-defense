@@ -1,6 +1,6 @@
 # Literature Review
 
-> **Current scope (audited 2026-08-30):** targeted positioning for the Phase 4 focal-relative primitive, Phase 5 contextual/opponent representations, and the post-5B movement-segmentation audit. This is not a systematic review of all football tracking research. It does not strengthen any empirical claim merely by identifying precedent.
+> **Current scope (extended 2026-09-01):** targeted positioning for the Phase 4 focal-relative primitive, Phase 5 contextual/opponent representations, post-5B attacking movement work, and the frozen spatial-footprint protocol. This is not a systematic review of all football tracking research. It does not strengthen any empirical claim merely by identifying precedent.
 
 ## 1. Collective Organization and Team Geometry
 
@@ -163,3 +163,15 @@ After that protocol produced a B result dominated by minimum-duration fragmentat
 These precedents do not validate the project's proposed individual attacker windows or their later defensive bridge. They do establish that universal movement boundaries are not methodologically required before tracking movement can be represented. The [representation fork](attacking_movement_representation_fork.md) therefore selects a minimal continuous, attacker-only fixed-window geometry as the next candidate and defers—not rejects—geometry-first discrete episodes.
 
 Commercial comparators answer a later question. Gradient Sports (2026) publishes speed/acceleration and contextual termination rules for high-speed forward off-ball runs. SkillCorner publicly describes ten context-rich run types using speed, distance, and threat, but does not publish a complete boundary algorithm. Neither supplies an outcome-blind, lower-speed temporal unit. The [representation audit](attacking_movement_representation_audit.md) records the full borrow/defer map and explicitly avoids a novelty claim.
+
+## Spatial Defensive-Response Footprint Prior Art
+
+The [frozen spatial-footprint protocol](protocols/spatial_defensive_response_footprint_v1.md) extends the completed bridge across all ten defending outfield players. Its prior-art position is deliberately narrow.
+
+Interpersonal distance and angle are established dyadic football variables. Laakso et al. (2019) show that attacker-defender distances and angles vary with field location and player role in controlled 2-vs-1 contexts. Rico-González et al. (2020) catalogue player-opponent distance, relative velocity, nearest-opponent dyads, and team-scale distance variables across invasion-sport positional research. These sources support physical distance as an interpretable relational coordinate, not nearest-defender responsibility.
+
+Football pressure and spatial-control approaches commonly encode proximity through thresholds, distance zones, arrival times, or smooth influence surfaces. Link, Lang, and Seidenschwarz (2016) use angular pressure zones with distance-dependent pressure; Forcher et al. (2024) distinguish pressure on the ball carrier, a nearby attacking group, and the whole team; Fernández and Bornn (2018) construct smooth motion-aware pitch-control surfaces. These are precedents for spatially varying defensive context, but their targets include pressure, control, outcomes, or space creation rather than subsequent focal-relative movement.
+
+Franks et al. (2015) demonstrate a richer cross-sport alternative: infer latent defensive matchups and model spatial defensive effects hierarchically. Groom et al. (2026) and Calero-Sanz et al. (2026) likewise infer or construct football assignment/marking relationships. The footprint protocol explicitly does not import those semantics or models. It orders defenders only by Euclidean distance at a fixed anchor and keeps the whole anchor vector jointly resampled.
+
+The targeted audit did not identify a standard D1–D10 curve of attacker-path association coefficients across a complete defensive block. That is a bounded search result, not a claim that rank-based spatial response has never been studied. The protocol uses rank primarily because it decomposes the already-validated nearest-three/farthest-three bridge without empirical bin tuning; fixed ten-metre bands remain a secondary absolute-distance view.
