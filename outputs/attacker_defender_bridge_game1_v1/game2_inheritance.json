@@ -1,0 +1,38 @@
+{
+  "K": 3,
+  "aggregation": "arithmetic mean of individual focal-relative paths",
+  "anchor": "first canonical time_period_s per period plus 4s",
+  "baseline_window_relative_s": [
+    -4.0,
+    -2.0
+  ],
+  "bootstrap": {
+    "block_s": 60.0,
+    "game2_seedsequence_child_index": 1,
+    "interval": "percentile 2.5/97.5",
+    "master_seed": 20260831,
+    "min_valid": 1900,
+    "replicates": 2000
+  },
+  "cadence_s": 4.0,
+  "comparison_rules": {
+    "extreme": "beta_trimmed > 0 and beta_trimmed >= 0.5*beta_full",
+    "horizon": "not (beta_2s > 0 and beta_1s < 0 and beta_4s < 0)",
+    "local_nonlocal": "beta_local > beta_nonlocal",
+    "primary_placebo": "beta_local > beta_placebo",
+    "primary_positive": "beta_local > 0"
+  },
+  "exposure": "path_length_m",
+  "exposure_window_s": 2.0,
+  "final_two_match_classification": "unchanged Section 19 of authoritative protocol",
+  "game1_p99_exposure_threshold_m": 12.198443079831405,
+  "game2_bridge_computed": false,
+  "linkage": "three nearest and three farthest defending outfield players at t; distance then canonical player_key",
+  "model": "Y = beta0 + beta1*attacker_path + beta2*prior_set_relative_path + beta3*prior_defending_centroid_path",
+  "primary_response_s": 2.0,
+  "protocol_sha256": "62321620a3007bf0c9686d99595caa0f9e39e2ac7ea2ba78b935ddfefd308bbb",
+  "sensitivity_response_s": [
+    1.0,
+    4.0
+  ]
+}

@@ -1,0 +1,25 @@
+check,pass,detail
+frozen_protocol_hash,True,62321620a3007bf0c9686d99595caa0f9e39e2ac7ea2ba78b935ddfefd308bbb
+unique_observation_id,True,n=7823
+finite_model_columns,True,all governed 1s/2s model fields
+exact_model_specifications,True,"{'primary_local_2s': ('local_response_2s_m', 'attacker_path_length_m', 'prior_local_relative_path_m'), 'nonlocal_2s': ('nonlocal_response_2s_m', 'attacker_path_length_m', 'prior_nonlocal_relative_path_m'), 'reverse_time_placebo': ('earlier_local_relative_path_m', 'future_attacker_path_length_m', 'prior_local_relative_path_m'), 'local_1s': ('local_response_1s_m', 'attacker_path_length_m', 'prior_local_relative_path_m')}"
+frozen_windows,True,"baseline=(-4.0, -2.0); exposure=2.0; responses=(1.0, 2.0, 4.0)"
+frozen_linkage_rule,True,K=3; distance at t then canonical player ID
+frozen_bootstrap_rule,True,block=60.0; replicates=2000; seed=20260831
+period_origin_four_second_cadence,True,each period inferred origin = first evaluation - 4 s
+period_origin_block_assignment,True,floor((t-period_origin)/60 s)
+terminal_partial_blocks_retained,True,maximum nonempty block present per period
+ten_defenders_per_observation,True,10 linkage rows each
+three_local_three_nonlocal,True,fixed membership at t
+complete_unique_distance_ranks,True,ranks 1..10
+local_is_three_nearest,True,"ranks 1,2,3"
+nonlocal_is_three_farthest,True,"ranks 8,9,10"
+simultaneous_observations_share_blocks,True,one period block per evaluation time
+all_governed_coefficients_finite,True,models=6
+bootstrap_valid_replicates,True,minimum=2000
+no_response_possession_continuity_requirement,True,eligibility uses possession at t only
+no_future_outcome_conditioning,True,implementation contains no outcome-event eligibility field
+strictly_earlier_baseline,True,"prior geometry is constructed only on [t-4,t-2]"
+focal_excluded_from_centroid,True,other-centroid denominator is ten minus one
+same_period_contiguous_support,True,segment requires one supported block and exact endpoints
+open_play_exclusion,True,restart/ball-out events checked on the governed span

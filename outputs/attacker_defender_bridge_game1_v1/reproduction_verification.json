@@ -1,0 +1,97 @@
+{
+  "all_byte_identical": true,
+  "comparisons": [
+    {
+      "byte_identical": true,
+      "file": "primary_observations.parquet",
+      "primary_sha256": "b1f6257fcf8d054abe592a9c7f9b8ac2818852e49cd8ec4337e09825d3ebb505",
+      "rerun_sha256": "b1f6257fcf8d054abe592a9c7f9b8ac2818852e49cd8ec4337e09825d3ebb505"
+    },
+    {
+      "byte_identical": true,
+      "file": "defender_linkage.parquet",
+      "primary_sha256": "4861b0f1bf1bd28d2b6a5bedc1ac8c017f3e5c2c390518b831cfb5cb57ccfc30",
+      "rerun_sha256": "4861b0f1bf1bd28d2b6a5bedc1ac8c017f3e5c2c390518b831cfb5cb57ccfc30"
+    },
+    {
+      "byte_identical": true,
+      "file": "eligibility_exclusions.csv",
+      "primary_sha256": "3a14161cc975defaaf6d9899efa07b2cd81ece5a68102a7336e0be2dc6265c04",
+      "rerun_sha256": "3a14161cc975defaaf6d9899efa07b2cd81ece5a68102a7336e0be2dc6265c04"
+    },
+    {
+      "byte_identical": true,
+      "file": "bootstrap_summaries.csv",
+      "primary_sha256": "262f50465a91ecf0a5519c58b4d5633308e6db26ee2e4a721c6cfe75dfe9b4d7",
+      "rerun_sha256": "262f50465a91ecf0a5519c58b4d5633308e6db26ee2e4a721c6cfe75dfe9b4d7"
+    },
+    {
+      "byte_identical": true,
+      "file": "paired_bootstrap_differences.csv",
+      "primary_sha256": "df3806d67f3c57de2cd4a9de0d9ff5065117203dadea73845cef106f44c46973",
+      "rerun_sha256": "df3806d67f3c57de2cd4a9de0d9ff5065117203dadea73845cef106f44c46973"
+    },
+    {
+      "byte_identical": true,
+      "file": "hard_qc.csv",
+      "primary_sha256": "6f76493a7961ee2f85d3ae006687497328cad5db7063782cc321cdb717f63be2",
+      "rerun_sha256": "6f76493a7961ee2f85d3ae006687497328cad5db7063782cc321cdb717f63be2"
+    },
+    {
+      "byte_identical": true,
+      "file": "model_coefficients.csv",
+      "primary_sha256": "579061891476f535e293f03456af024efad0ab2b4f5e15a753e8cf825d2bcb0f",
+      "rerun_sha256": "579061891476f535e293f03456af024efad0ab2b4f5e15a753e8cf825d2bcb0f"
+    },
+    {
+      "byte_identical": true,
+      "file": "development_criteria.csv",
+      "primary_sha256": "44a33d2c869a44efa535baefbad740004189e38917703048a19aa347e2e675cf",
+      "rerun_sha256": "44a33d2c869a44efa535baefbad740004189e38917703048a19aa347e2e675cf"
+    },
+    {
+      "byte_identical": true,
+      "file": "model_variable_correlations.csv",
+      "primary_sha256": "9142e328904e7a215c7a8a088963a2a4fb79d838fe6c230ab494c88061283ccf",
+      "rerun_sha256": "9142e328904e7a215c7a8a088963a2a4fb79d838fe6c230ab494c88061283ccf"
+    },
+    {
+      "byte_identical": true,
+      "file": "eligibility_waterfall.csv",
+      "primary_sha256": "d3151edb88a57b8ec860e84238b2f08e16df86a7502554c766fba817e4306172",
+      "rerun_sha256": "d3151edb88a57b8ec860e84238b2f08e16df86a7502554c766fba817e4306172"
+    },
+    {
+      "byte_identical": true,
+      "file": "descriptive_summaries.json",
+      "primary_sha256": "02c3a3979f4b86ecb7863fdb4596e7dd64422ade3c1495f5f83a53a5275fd033",
+      "rerun_sha256": "02c3a3979f4b86ecb7863fdb4596e7dd64422ade3c1495f5f83a53a5275fd033"
+    },
+    {
+      "byte_identical": true,
+      "file": "game2_inheritance.json",
+      "primary_sha256": "fac1cfb5070878ff4e5275baff0da83d210e0206f9023b16c08efb5bd57d7104",
+      "rerun_sha256": "fac1cfb5070878ff4e5275baff0da83d210e0206f9023b16c08efb5bd57d7104"
+    },
+    {
+      "byte_identical": true,
+      "file": "pre_reproduction_results.json",
+      "primary_sha256": "b6618f48a77d3cac1a7ba2a545a0b8e8d231f0e0b58f1038fda45e934e9c35a3",
+      "rerun_sha256": "b6618f48a77d3cac1a7ba2a545a0b8e8d231f0e0b58f1038fda45e934e9c35a3"
+    },
+    {
+      "byte_identical": true,
+      "file": "manifest.json",
+      "primary_sha256": "cd41365b7b4efb4a24bca7ff5413aad3dea7fd2f15dddcad5304fa117818fc39",
+      "rerun_sha256": "cd41365b7b4efb4a24bca7ff5413aad3dea7fd2f15dddcad5304fa117818fc39"
+    },
+    {
+      "byte_identical": true,
+      "file": "scientific_output_hashes.json",
+      "primary_sha256": "c5a6e80ddfae822e5705bf1b888a1736efd22191b711abf59e72f8aad0ad6985",
+      "rerun_sha256": "c5a6e80ddfae822e5705bf1b888a1736efd22191b711abf59e72f8aad0ad6985"
+    }
+  ],
+  "files_compared": 15,
+  "same_governed_file_list": true
+}

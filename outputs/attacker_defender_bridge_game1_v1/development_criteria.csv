@@ -1,0 +1,10 @@
+criterion,pass
+bootstrap_valid,True
+deterministic_reproduction,True
+hard_qc,True
+horizon_not_joint_negative,True
+local_stronger_nonlocal,True
+primary_positive,True
+primary_stronger_placebo,True
+trimmed_at_least_half_full,True
+trimmed_positive,True

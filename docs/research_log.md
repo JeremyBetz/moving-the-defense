@@ -1,5 +1,13 @@
 # Research Log
 
+## 2026-08-31 — Game 1 attacker-to-defender bridge is development-coherent
+
+The first authorized bridge execution applied the frozen protocol to Metrica Sample Game 1 only. It retained 7,823 observations at 804 evaluation times. The primary attacker-path coefficient was 0.095957 m/m with a 95% 60-second-block percentile interval of [0.075594, 0.114331], based on 2,000/2,000 valid replicates. It exceeded the farthest-three coefficient (0.061782) and reverse-time placebo (0.051661); their paired differences were 0.034175 and 0.044296 m/m. One- and four-second coefficients were positive, and excluding 79 observations above the frozen 12.198443 m p99 exposure threshold retained a positive coefficient at 97.32% of the full estimate.
+
+All frozen development criteria and 24 explicit hard-QC checks passed. An independent complete rerun matched all 15 governed pre-reproduction files byte-for-byte. The status is **GAME 1 DEVELOPMENT COHERENT**, not final bridge A/B/C. The result supports a development-stage observational association only; it does not establish causation, assignment, tactical response, dragging, pinning, tracking, covering, handoff, gravity, or value. Game 2 bridge quantities were not computed, its inheritance artifact is frozen, and Game 3 remained untouched. See [`results/attacker_defender_bridge_game1_v1.md`](results/attacker_defender_bridge_game1_v1.md).
+
+The first implementation attempt stopped before observation construction because optional PyArrow plumbing was absent; native Polars serialization replaced that dependency without changing the scientific design. After the first complete execution, hard-QC assertions were emitted as an explicit 24-row governed table and the unchanged pipeline was rerun twice. These were implementation/QC clarifications only.
+
 ## 2026-08-31 — Bridge execution mechanics clarified before data
 
 The first Game 1 execution attempt stopped before any bridge observation or result because protocol v1.0 did not define a Game-1-only status or terminal bootstrap-block handling. A prospective clarification now freezes COHERENT/MIXED/INVALID development statuses, strict point-estimate comparisons, the retained 50%-magnitude extreme-exposure rule, the horizon-sign rule, two-sided percentile intervals, a 1,900/2,000 valid-replicate floor, period-origin 60 s blocks with retained terminal partial blocks, paired control resampling, and the exact pooled match-indicator model.

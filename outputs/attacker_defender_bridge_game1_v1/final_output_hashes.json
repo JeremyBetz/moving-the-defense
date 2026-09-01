@@ -1,0 +1,19 @@
+{
+  "bootstrap_summaries.csv": "262f50465a91ecf0a5519c58b4d5633308e6db26ee2e4a721c6cfe75dfe9b4d7",
+  "defender_linkage.parquet": "4861b0f1bf1bd28d2b6a5bedc1ac8c017f3e5c2c390518b831cfb5cb57ccfc30",
+  "descriptive_summaries.json": "02c3a3979f4b86ecb7863fdb4596e7dd64422ade3c1495f5f83a53a5275fd033",
+  "development_criteria.csv": "cfbdafe3628a9c9908392e55ba53bef50eb12dfd09973202c3afa3746399bb9c",
+  "eligibility_exclusions.csv": "3a14161cc975defaaf6d9899efa07b2cd81ece5a68102a7336e0be2dc6265c04",
+  "eligibility_waterfall.csv": "d3151edb88a57b8ec860e84238b2f08e16df86a7502554c766fba817e4306172",
+  "final_results.json": "1d1c2ee6c25c0bed9dbeda0365fc42307a0dc1e3a169b2182dfbc65a880be58a",
+  "game2_inheritance.json": "fac1cfb5070878ff4e5275baff0da83d210e0206f9023b16c08efb5bd57d7104",
+  "hard_qc.csv": "6f76493a7961ee2f85d3ae006687497328cad5db7063782cc321cdb717f63be2",
+  "manifest.json": "cd41365b7b4efb4a24bca7ff5413aad3dea7fd2f15dddcad5304fa117818fc39",
+  "model_coefficients.csv": "579061891476f535e293f03456af024efad0ab2b4f5e15a753e8cf825d2bcb0f",
+  "model_variable_correlations.csv": "9142e328904e7a215c7a8a088963a2a4fb79d838fe6c230ab494c88061283ccf",
+  "paired_bootstrap_differences.csv": "df3806d67f3c57de2cd4a9de0d9ff5065117203dadea73845cef106f44c46973",
+  "pre_reproduction_results.json": "b6618f48a77d3cac1a7ba2a545a0b8e8d231f0e0b58f1038fda45e934e9c35a3",
+  "primary_observations.parquet": "b1f6257fcf8d054abe592a9c7f9b8ac2818852e49cd8ec4337e09825d3ebb505",
+  "reproduction_verification.json": "c9ed07325a22a00601266707219a674874fa40b8b61f37bc954af909955b5446",
+  "scientific_output_hashes.json": "c5a6e80ddfae822e5705bf1b888a1736efd22191b711abf59e72f8aad0ad6985"
+}

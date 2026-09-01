@@ -1,0 +1,15 @@
+{
+  "bootstrap_summaries.csv": "262f50465a91ecf0a5519c58b4d5633308e6db26ee2e4a721c6cfe75dfe9b4d7",
+  "defender_linkage.parquet": "4861b0f1bf1bd28d2b6a5bedc1ac8c017f3e5c2c390518b831cfb5cb57ccfc30",
+  "descriptive_summaries.json": "02c3a3979f4b86ecb7863fdb4596e7dd64422ade3c1495f5f83a53a5275fd033",
+  "development_criteria.csv": "44a33d2c869a44efa535baefbad740004189e38917703048a19aa347e2e675cf",
+  "eligibility_exclusions.csv": "3a14161cc975defaaf6d9899efa07b2cd81ece5a68102a7336e0be2dc6265c04",
+  "eligibility_waterfall.csv": "d3151edb88a57b8ec860e84238b2f08e16df86a7502554c766fba817e4306172",
+  "game2_inheritance.json": "fac1cfb5070878ff4e5275baff0da83d210e0206f9023b16c08efb5bd57d7104",
+  "hard_qc.csv": "6f76493a7961ee2f85d3ae006687497328cad5db7063782cc321cdb717f63be2",
+  "model_coefficients.csv": "579061891476f535e293f03456af024efad0ab2b4f5e15a753e8cf825d2bcb0f",
+  "model_variable_correlations.csv": "9142e328904e7a215c7a8a088963a2a4fb79d838fe6c230ab494c88061283ccf",
+  "paired_bootstrap_differences.csv": "df3806d67f3c57de2cd4a9de0d9ff5065117203dadea73845cef106f44c46973",
+  "pre_reproduction_results.json": "b6618f48a77d3cac1a7ba2a545a0b8e8d231f0e0b58f1038fda45e934e9c35a3",
+  "primary_observations.parquet": "b1f6257fcf8d054abe592a9c7f9b8ac2818852e49cd8ec4337e09825d3ebb505"
+}
