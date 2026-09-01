@@ -166,6 +166,15 @@ MPLCONFIGDIR=/tmp/moving-defense-response-form .venv/bin/python src/local_defens
 
 The command reads Sample Game 1 and the closed footprint registry, writes `outputs/local_defensive_response_form_game1_v1/`, and does not access Game 2 response-form quantities or Game 3.
 
+The Tier-3 Game 2 and pooled execution is closed at [FINAL RESPONSE FORM B](results/local_defensive_response_form_final_v1.md). Reproduce its stages with:
+
+```bash
+MPLCONFIGDIR=/tmp/moving-defense-response-form-final .venv/bin/python src/local_defensive_response_form_game2_final_v1.py --stage game2
+MPLCONFIGDIR=/tmp/moving-defense-response-form-final .venv/bin/python src/local_defensive_response_form_game2_final_v1.py --stage pooled
+```
+
+Game 2 must be serialized, hashed, and independently reproduced before the pooled stage. The closed execution reproduced 12/12 Game 2 and 10/10 pooled governed files byte-for-byte. The pooled addendum hashes are `1ba4e198...e23cf794` and `70f0d6ad...b8a9c813`. Game 3 remains unauthorized and untouched.
+
 Where a machine-readable config is listed, documentation explains the rules and the config governs execution. The continuous attacker-movement v1 freeze is currently governed directly by its protocol document; an implementation may transcribe it to config only through a pre-execution exact-consistency check. If prose and config conflict, stop and resolve the literal inconsistency before outcomes.
 
 ## Development/test separation

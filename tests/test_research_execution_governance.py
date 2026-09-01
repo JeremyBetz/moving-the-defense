@@ -16,7 +16,7 @@ class ExecutionGovernanceTest(unittest.TestCase):
     def test_current_checkpoint(self):
         result = governance.verify_checkpoint()
         self.assertTrue(result["pass"])
-        self.assertEqual(result["scientific_state"], "GAME 1 RESPONSE FORM DEVELOPMENT COHERENT")
+        self.assertEqual(result["scientific_state"], "FINAL RESPONSE FORM B")
 
     def test_checkpoint_detects_hash_and_forbidden_output(self):
         with tempfile.TemporaryDirectory() as temp:

@@ -16,7 +16,7 @@ The governing distinction is:
 
 > **Football concept ≠ tracking measurement ≠ theoretical mechanism.**
 
-**Current status — FINAL BRIDGE A; FINAL FOOTPRINT A:** across both Metrica sample matches, greater attacker movement was associated with greater subsequent defender movement relative to the defensive unit. Under the frozen spatial-footprint protocol, that association was reproducibly stronger across the nearest three defender ranks than across the middle four. These are observational geometric associations, not causal estimates or tactical labels.
+**Current status — FINAL BRIDGE A; FINAL FOOTPRINT A; FINAL RESPONSE FORM B:** across both Metrica sample matches, greater attacker movement was associated with greater subsequent defender movement relative to the defensive unit, localized more strongly among near than middle defender ranks. Signed movement in the attacker's preceding direction showed the same positive near-minus-middle pattern in both matches, but the held-out paired excess over the temporal control did not exclude zero. These are observational geometric associations, not causal estimates or tactical labels.
 
 ## Why this is hard
 
@@ -90,6 +90,7 @@ The bridge rests on several narrower results, each with its own claim boundary:
 - **Contextual expectation:** future defender-relative path was predictably structured, but nearly 90% of the tested gain came from the defender’s own recent movement.
 - **Opponent information:** prospectively selected opponent geometry added only a small, mixed predictive increment; nearest-opponent primacy was not established.
 - **Final bridge:** the attacker-path association passed every frozen primary, local-versus-control, temporal-placebo, horizon, extreme-exposure, hard-QC, and deterministic-reproduction criterion. All **32/32 hard-QC checks passed**, and all **16/16 governed scientific files reproduced byte-identically**.
+- **Response form:** attacker-direction near-minus-middle structure was positive in both matches and pooled data, but Game 2's paired excess over the temporal control crossed zero; the frozen final classification is **B**.
 
 ## What failed—and changed the project
 
@@ -137,7 +138,7 @@ football question
 The next legitimate question is not whether this coefficient is a value metric. The unchanged spatial footprint has now replicated within the two Metrica sample matches. Current steps are:
 
 1. preserve the completed observational footprint and its inference limits;
-2. only if justified, separately design response-geometry and direction tests;
+2. preserve the completed mixed directional response-form result and its temporal-control caveat;
 3. seek external/native-frequency attacker-to-defender and footprint replication;
 4. only later revisit football concepts and off-ball influence.
 
@@ -152,6 +153,7 @@ Potential later applications include defensive-style profiling, opponent-specifi
 - [Final bridge result](docs/results/attacker_defender_bridge_game2_v1.md) — full held-out and pooled result.
 - [Frozen bridge protocol](docs/protocols/attacker_defender_bridge_v1.md) — prespecified design and criteria.
 - [Spatial-footprint protocol](docs/protocols/spatial_defensive_response_footprint_v1.md), [Game 1 development result](docs/results/spatial_defensive_response_footprint_game1_v1.md), [unclassified Game 2 result](docs/results/spatial_defensive_response_footprint_game2_v1.md), and [pooled/final result](docs/results/spatial_defensive_response_footprint_final_v1.md).
+- [Local response-form protocol](docs/protocols/local_defensive_response_form_v1.md), [Game 2 result](docs/results/local_defensive_response_form_game2_v1.md), and [pooled/final B result](docs/results/local_defensive_response_form_final_v1.md).
 - [Research log](docs/research_log.md) — complete chronology, including rejected ideas.
 - [Research roadmap](docs/research_roadmap.md) and [Sloan-readiness assessment](docs/sloan_readiness.md).
 - [Reproducibility guide](docs/reproducibility.md) — environments, data layout, and execution paths.

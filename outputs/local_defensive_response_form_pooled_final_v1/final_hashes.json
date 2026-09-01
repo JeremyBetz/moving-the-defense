@@ -1,0 +1,12 @@
+{
+  "final_classification_criteria.csv": "6c8d243286ea69a9ba8bdd63baff159f674a427481017cd63709e99ea4c36926",
+  "final_results.json": "782b471ea9e8b7063da834b3ea958b3ce962e202b2c2e05971d3e7e3c34045cd",
+  "hard_qc.csv": "0f856f1cf3acf529dd88b8a12291e68fd9fe38823b4e9f2f63827df398bf7718",
+  "pooled_horizons.csv": "841296c8ecce33f88fdc12a2a80db49647cf40eb69890fc1deb55f22ff2404ec",
+  "pooled_paired_temporal_control.csv": "bc42afde95ec7e4002612f6cd9e4a80165d0b2ae7d99010dbf8c92b2a521e11a",
+  "pooled_rank_coefficients.csv": "5a7705641ba51998b2b67a0c8c78bbe5765bff352842041cd1bf84bb9dd56a0e",
+  "pooled_regional_estimates.csv": "d8f19d85fcfaa796b4c0556bd3f43df693febb4f17cf6ef667f5d2462e7c7b87",
+  "pooled_sample.json": "65a9ceb1bda6f699aa81352712e022b41efd00ee431885fc782ab3a3487a7909",
+  "pooled_temporal_control.csv": "7c1973cdba22fb22f718d8f0d1eeee3da7f5e1702b4e16c78448de496c1db7ca",
+  "pooled_trimmed.csv": "2b94bb32e81f7cc9841f1e35b03b7ca9f4902bb73f2aec916046e6223130c290"
+}

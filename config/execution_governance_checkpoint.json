@@ -1,8 +1,7 @@
 {
-  "checkpoint_commit": "a3f11712cf9e8323cee3f275b5e402cf168cd6d9",
+  "checkpoint_commit": "a89c9b72b5e58d281c168b489d1255cf338f6b03",
   "created_date": "2026-09-01",
   "forbidden_output_globs": [
-    "outputs/*response_form*game2*",
     "outputs/*response_form*game3*"
   ],
   "required_sha256": {
@@ -10,9 +9,13 @@
     "docs/protocols/local_defensive_response_form_v1.md": "958c8aa80fe9ea43358c32a42a6be2eea7a41e7f727e23ff137eb3079ee80428",
     "outputs/local_defensive_response_form_game1_v1/final_hashes.json": "750c706c94ed12a0650de17a9417472c04d79e8b9e9bd303bd6a3c647a521e9c",
     "outputs/local_defensive_response_form_game1_v1/final_results.json": "fa0cf2fd53ea591d7e1266286bdb2d85603606de7df985d055f4ad92516bfcf6",
+    "outputs/local_defensive_response_form_game2_final_v1/final_hashes.json": "10e4bd658dd1d993db6d9e9be3601ec28c4f08076cce04b853d0ee01bedb937e",
+    "outputs/local_defensive_response_form_game2_final_v1/final_results.json": "047a8caaae018dabd70c9a0e30ef37e7fd1c1c5d5c04740ad5aca59ffc3e9222",
+    "outputs/local_defensive_response_form_pooled_final_v1/final_hashes.json": "f1aa8ef5dfab98a542f6fb5da04690965ac40c7489190ef9e7d3709a48b9b548",
+    "outputs/local_defensive_response_form_pooled_final_v1/final_results.json": "782b471ea9e8b7063da834b3ea958b3ce962e202b2c2e05971d3e7e3c34045cd",
     "outputs/spatial_defensive_response_footprint_game2_final_v1/final_hashes.json": "e5e21cc4e9b44f02322027c0db7c385cf3e757ccacb7d5aaa876e594f757b688",
     "outputs/spatial_defensive_response_footprint_game2_final_v1/final_results.json": "239b0cad626b156bc0a91c6f8e1fb673e28330ad56f00deb8c3a9ecd4c169b85"
   },
   "schema_version": "1.0.0",
-  "scientific_state": "GAME 1 RESPONSE FORM DEVELOPMENT COHERENT"
+  "scientific_state": "FINAL RESPONSE FORM B"
 }

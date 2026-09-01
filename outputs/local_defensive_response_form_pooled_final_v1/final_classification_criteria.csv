@@ -1,0 +1,7 @@
+criterion,pass
+all_valid_reproducible,True
+all_axis_retention_at_least_80pct,True
+primary_intervals_exclude_zero_same_sign,True
+paired_intervals_exclude_zero_same_sign,False
+pooled_trim_sign_and_magnitude,True
+pooled_horizon_sign,True

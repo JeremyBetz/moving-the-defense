@@ -1,0 +1,113 @@
+{
+  "attacking_team_counts": {
+    "metrica:Away": 390,
+    "metrica:Home": 676
+  },
+  "axis_exclusions": [
+    {
+      "observation_id": "G2|P2|T2904.04|metrica:Home:7",
+      "reason": "near_zero_or_invalid_attacker_axis"
+    },
+    {
+      "observation_id": "G2|P2|T2908.04|metrica:Home:5",
+      "reason": "near_zero_or_invalid_attacker_axis"
+    },
+    {
+      "observation_id": "G2|P2|T2908.04|metrica:Home:7",
+      "reason": "near_zero_or_invalid_attacker_axis"
+    },
+    {
+      "observation_id": "G2|P2|T2912.04|metrica:Home:12",
+      "reason": "near_zero_or_invalid_attacker_axis"
+    },
+    {
+      "observation_id": "G2|P2|T2912.04|metrica:Home:5",
+      "reason": "near_zero_or_invalid_attacker_axis"
+    },
+    {
+      "observation_id": "G2|P2|T2912.04|metrica:Home:7",
+      "reason": "near_zero_or_invalid_attacker_axis"
+    },
+    {
+      "observation_id": "G2|P2|T2916.04|metrica:Home:12",
+      "reason": "near_zero_or_invalid_attacker_axis"
+    },
+    {
+      "observation_id": "G2|P2|T2916.04|metrica:Home:3",
+      "reason": "near_zero_or_invalid_attacker_axis"
+    },
+    {
+      "observation_id": "G2|P2|T2916.04|metrica:Home:5",
+      "reason": "near_zero_or_invalid_attacker_axis"
+    },
+    {
+      "observation_id": "G2|P2|T2916.04|metrica:Home:7",
+      "reason": "near_zero_or_invalid_attacker_axis"
+    },
+    {
+      "observation_id": "G2|P2|T2920.04|metrica:Home:1",
+      "reason": "near_zero_or_invalid_attacker_axis"
+    },
+    {
+      "observation_id": "G2|P2|T2920.04|metrica:Home:12",
+      "reason": "near_zero_or_invalid_attacker_axis"
+    },
+    {
+      "observation_id": "G2|P2|T2920.04|metrica:Home:3",
+      "reason": "near_zero_or_invalid_attacker_axis"
+    },
+    {
+      "observation_id": "G2|P2|T2920.04|metrica:Home:5",
+      "reason": "near_zero_or_invalid_attacker_axis"
+    },
+    {
+      "observation_id": "G2|P2|T2920.04|metrica:Home:7",
+      "reason": "near_zero_or_invalid_attacker_axis"
+    },
+    {
+      "observation_id": "G2|P2|T2924.04|metrica:Home:1",
+      "reason": "near_zero_or_invalid_attacker_axis"
+    },
+    {
+      "observation_id": "G2|P2|T2924.04|metrica:Home:12",
+      "reason": "near_zero_or_invalid_attacker_axis"
+    },
+    {
+      "observation_id": "G2|P2|T2924.04|metrica:Home:2",
+      "reason": "near_zero_or_invalid_attacker_axis"
+    },
+    {
+      "observation_id": "G2|P2|T2924.04|metrica:Home:3",
+      "reason": "near_zero_or_invalid_attacker_axis"
+    },
+    {
+      "observation_id": "G2|P2|T2924.04|metrica:Home:5",
+      "reason": "near_zero_or_invalid_attacker_axis"
+    },
+    {
+      "observation_id": "G2|P2|T2924.04|metrica:Home:7",
+      "reason": "near_zero_or_invalid_attacker_axis"
+    }
+  ],
+  "axis_retention_fraction": 0.9806807727690893,
+  "common_placebo_anchors": 1063,
+  "defender_rows": 10660,
+  "four_second_anchors": 1049,
+  "inherited_eligible_anchors": 1087,
+  "period_counts": {
+    "1": 849,
+    "2": 217
+  },
+  "primary_axis_anchors": 1066,
+  "simultaneous_attackers": {
+    "25%": 9.0,
+    "50%": 10.0,
+    "75%": 10.0,
+    "count": 115.0,
+    "max": 10.0,
+    "mean": 9.269565217391305,
+    "min": 4.0,
+    "std": 1.216276595464327
+  },
+  "unique_anchor_times": 115
+}

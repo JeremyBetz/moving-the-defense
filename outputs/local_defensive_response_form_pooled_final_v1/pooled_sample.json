@@ -1,0 +1,14 @@
+{
+  "anchors": 8885,
+  "by_game": {
+    "G1": 7819,
+    "G2": 1066
+  },
+  "common_anchors": 8881,
+  "defender_rows": 88850,
+  "four_second_anchors": 8376,
+  "retention_by_game": {
+    "G1": 0.9994886872043973,
+    "G2": 0.9806807727690893
+  }
+}

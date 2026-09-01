@@ -1,0 +1,10 @@
+check,pass
+frozen_hashes,True
+pooled_41_column_design,True
+no_interactions,True
+observation_weighting,True
+common_primary_control_sample,True
+independent_game_period_block_resampling,True
+paired_identical_draws,True
+bootstrap_valid,True
+game3_not_accessed,True

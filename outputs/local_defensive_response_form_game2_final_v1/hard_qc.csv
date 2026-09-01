@@ -1,0 +1,8 @@
+check,pass
+frozen_hashes,True
+unique_ids,True
+ten_rows_complete,True
+rank_vectors_complete,True
+bootstrap_valid,True
+game3_not_accessed,True
+no_tactical_labels,True

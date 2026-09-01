@@ -1,0 +1,14 @@
+{
+  "condition_evaluation.csv": "30b9baa73ad4ebf873a3d0e7d2f7ebb03945bc500fce44128712404972d20c10",
+  "final_results.json": "047a8caaae018dabd70c9a0e30ef37e7fd1c1c5d5c04740ad5aca59ffc3e9222",
+  "hard_qc.csv": "a2f141f67576813844a70d3ab0e408e05f1f469e1677d8be98f02f92804fc22c",
+  "horizon_estimates.csv": "74a492377a395ecb9d379234a9f59f8c9aac621dd929b1d6ac1b8b22b437d66b",
+  "paired_temporal_control.csv": "edba24dcc465a9a154d4fbdc7e3c75344799fe59a2eb46c8150290317481b804",
+  "primary_rank_coefficients.csv": "3e570c836d8ec3f0e3dbcffe978960acb5d9634b57d4d3300f8df5fc3e499319",
+  "primary_regional_estimates.csv": "49fd7c752fe60003d2ecf29ee1f51e5393fa0edad0b7feed9aa5f436864a9daa",
+  "response_form_rows.parquet": "00d7dc2bf31173de5949b0cfb5f0d6fa7c860bf05576c97358cdaee7a01b153d",
+  "sample.json": "2eaedc1c7ad02d35e41bd303be78cfe5268dd762f7fb11ded9e9d6e8900834ed",
+  "secondary_geometry_by_rank.csv": "3296396cf34accdd2038529c2ad4b7f013f5a83bcfcdce2e66d1ef17e46b779a",
+  "temporal_control_regional_estimates.csv": "364fd00f8054c5daa2a05287ef3791795a5dad211aa04546700ab9edfe82f47e",
+  "trimmed_regional_estimates.csv": "068e5d66253127d8a495274eea4e26519925118e365fad9124cd91e98030e4d8"
+}

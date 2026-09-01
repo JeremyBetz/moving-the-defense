@@ -23,7 +23,7 @@ Together these results show disciplined narrowing, prospective falsification, cr
 
 ## Current scientific gap
 
-After Final Footprint A, the response-form protocol's Game 1 development stage found coherent signed near-versus-middle structure in the preceding attacker's direction beyond its paired temporal control. Internal replication remains pending, and perpendicular/radial descriptions supply no tactical semantics.
+After Final Footprint A, response-form v1 found positive signed near-versus-middle structure in the preceding attacker's direction in both Metrica matches and pooled data. It closed at **Final B** because Game 2's paired primary-minus-temporal-control interval crossed zero, although the pooled paired excess excluded zero. Perpendicular/radial descriptions supply no tactical semantics.
 
 The first version of this bridge now exists:
 

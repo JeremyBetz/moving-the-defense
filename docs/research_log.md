@@ -1,5 +1,11 @@
 # Research Log
 
+## 2026-09-01 — Local defensive response form closes at Final B
+
+Under Tier 3, unchanged response-form v1 retained 1,066/1,087 Game 2 anchors (98.0681%). Game 2's primary near-minus-middle estimate was 0.08932 m/m with frozen 97.5% interval [0.02490, 0.15094]; its paired primary-minus-temporal-control estimate was 0.04980 [-0.03936, 0.15903]. Game 2 remained standalone-descriptive and was saved, hashed, and independently reproduced (12/12 governed files byte-identical) before Game 1 comparison or pooled execution.
+
+The frozen pooled 41-column model used 8,885 anchors. Pooled primary near-minus-middle was 0.09550 [0.07199, 0.12048], temporal control was 0.05348 [0.03180, 0.07783], and paired excess was 0.04192 [0.01783, 0.06581]. Trimming retained 89.12% magnitude and all 1/2/4-second signs were positive. Pooled outputs reproduced 10/10 byte-identically. The Game 2 paired interval crossed zero, so one Final A condition failed while execution remained valid: **FINAL RESPONSE FORM B**. The result is observational geometry, not reaction, influence, tactics, causation, gravity, or value. See the [Game 2 report](results/local_defensive_response_form_game2_v1.md) and [final report](results/local_defensive_response_form_final_v1.md).
+
 ## 2026-09-01 — Response-form pooled execution clarified before Game 2
 
 Before any Game 2 response-form outcome was computed or inspected, a [prospective addendum](protocols/local_defensive_response_form_v1_pooled_execution_clarification.md) froze the pooled implementation omitted from v1. It inherits the closed footprint architecture: rank-specific response-form terms plus one common Game 2 indicator, observation weighting, no interactions, and independent 60-second block resampling within each match-period. It additionally freezes an exact primary/control common-sample intersection and paired-replicate construction. The original Final A/B/C criteria and every scientific rule remain unchanged.
