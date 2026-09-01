@@ -10,6 +10,7 @@ import pandas as pd
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "src"))
 import local_defensive_response_form_pooled_v1 as pooled  # noqa: E402
+import local_defensive_response_form_game2_final_v1 as execution  # noqa: E402
 
 
 class ResponseFormPooledMechanicsTest(unittest.TestCase):
@@ -62,6 +63,26 @@ class ResponseFormPooledMechanicsTest(unittest.TestCase):
         sampled = anchors.loc[a]
         self.assertEqual(set(sampled["game"]), {"G1", "G2"})
         self.assertEqual(set(zip(sampled["game"], sampled["period"])), {("G1", 1), ("G1", 2), ("G2", 1), ("G2", 2)})
+
+    def test_pooled_fit_is_byte_identical_to_legacy_rank_check_path(self):
+        rows = []
+        for rank in range(1, 11):
+            for game in [0.0, 1.0]:
+                for i in range(6):
+                    x = float(i + rank / 10)
+                    prior = float((i * i + rank) / 20)
+                    centroid = float(np.sin(i + rank))
+                    rows.append({"distance_rank": rank, "game2_indicator": game,
+                                 "x": x, "prior": prior,
+                                 "prior_centroid_path_m": centroid,
+                                 "y": rank / 10 + 0.3 * x - 0.1 * prior + 0.05 * centroid + 0.2 * game})
+        data = pd.DataFrame(rows)
+        matrix = pooled.pooled_design(data.x, data.prior, data.prior_centroid_path_m,
+                                      data.distance_rank, data.game2_indicator)
+        self.assertEqual(np.linalg.matrix_rank(matrix), 41)
+        legacy = pooled.exposure_coefficients(np.linalg.lstsq(matrix, data.y.to_numpy(float), rcond=None)[0])
+        optimized = execution.pooled_fit(data, "y", "x", "prior")
+        np.testing.assert_array_equal(optimized, legacy)
 
 
 if __name__ == "__main__":

@@ -144,8 +144,10 @@ def fit_ranks(data: pd.DataFrame, outcome: str, exposure: str, baseline: str) ->
         q=data[data.distance_rank==rank]
         X=design(q[exposure].to_numpy(float),q[baseline].to_numpy(float),q.prior_centroid_path_m.to_numpy(float))
         y=q[outcome].to_numpy(float)
-        if len(y)<5 or not np.isfinite(X).all() or not np.isfinite(y).all() or np.linalg.matrix_rank(X)<4: raise RuntimeError(f"Unestimable {outcome} D{rank}")
-        betas.append(float(np.linalg.lstsq(X,y,rcond=None)[0][1]))
+        if len(y)<5 or not np.isfinite(X).all() or not np.isfinite(y).all(): raise RuntimeError(f"Unestimable {outcome} D{rank}")
+        coefficients, _, fitted_rank, _ = np.linalg.lstsq(X,y,rcond=None)
+        if fitted_rank < 4: raise RuntimeError(f"Unestimable {outcome} D{rank}")
+        betas.append(float(coefficients[1]))
     return np.asarray(betas)
 
 

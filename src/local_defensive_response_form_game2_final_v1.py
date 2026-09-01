@@ -134,8 +134,9 @@ def run_game2(output: Path) -> dict[str,Any]:
 
 def pooled_fit(data: pd.DataFrame,outcome: str,exposure: str,baseline: str) -> np.ndarray:
     X=pool.pooled_design(data[exposure],data[baseline],data.prior_centroid_path_m,data.distance_rank,data.game2_indicator); y=data[outcome].to_numpy(float)
-    if np.linalg.matrix_rank(X)<41: raise RuntimeError("Pooled design unestimable")
-    return pool.exposure_coefficients(np.linalg.lstsq(X,y,rcond=None)[0])
+    coefficients, _, fitted_rank, _ = np.linalg.lstsq(X,y,rcond=None)
+    if fitted_rank<41: raise RuntimeError("Pooled design unestimable")
+    return pool.exposure_coefficients(coefficients)
 
 
 def ordered_pooled(anchors: pd.DataFrame,data: pd.DataFrame) -> pd.DataFrame:

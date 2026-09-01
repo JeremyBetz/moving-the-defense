@@ -39,8 +39,16 @@ class ResponseFormGame1ExecutionTest(unittest.TestCase):
                     "y": 1 + rank / 100 + 0.4 * x + 0.2 * baseline - 0.1 * centroid,
                 })
         import pandas as pd
-        beta = execution.fit_ranks(pd.DataFrame(rows), "y", "x", "baseline")
+        data = pd.DataFrame(rows)
+        beta = execution.fit_ranks(data, "y", "x", "baseline")
         np.testing.assert_allclose(beta, np.repeat(0.4, 10), atol=1e-12)
+        legacy = []
+        for rank in range(1, 11):
+            q = data[data.distance_rank == rank]
+            matrix = execution.design(q.x.to_numpy(float), q.baseline.to_numpy(float), q.prior_centroid_path_m.to_numpy(float))
+            self.assertEqual(np.linalg.matrix_rank(matrix), 4)
+            legacy.append(np.linalg.lstsq(matrix, q.y.to_numpy(float), rcond=None)[0][1])
+        np.testing.assert_array_equal(beta, legacy)
 
 
 if __name__ == "__main__":
