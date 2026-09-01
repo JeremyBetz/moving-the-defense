@@ -1,0 +1,39 @@
+{
+  "bootstrap": {
+    "block_seconds": 60,
+    "child_index": 7,
+    "master_seed": 20260831,
+    "minimum_valid": 1900,
+    "replicates": 2000,
+    "spawn_count": 9
+  },
+  "closure": {
+    "game1_comparison_only_after_game2_hash_and_reproduction": true,
+    "independent_reproduction": true,
+    "output_identity": "byte_identical_governed_files",
+    "pooled_execution": "prohibited_in_this_pass",
+    "tier": 3
+  },
+  "freeze_date": "2026-09-01",
+  "frozen_hashes": {
+    "game1_final_hashes": "6d5ef1b9a91bdecd8102356e201bff2d5d7b4e436f1ad408e3c9177729d695dd",
+    "game1_final_results": "f99f5740446951d338ec9def9d32c335da207fabfe706021c22246ae9fe01d60",
+    "game2_anchors": "210c2f34ce94cd92a9b9347b919dd849f2d51c298897438fb45b88ca1f58c5a6",
+    "game2_linkage": "87b8cb39a7661151b7fbe9ec9946abbb43524980e0ad407b761d6cabc6dfaeec",
+    "original_config": "3cfff444be301192723bc88aca73ed6071e7112ef47b147949e0ec1f2ae88058",
+    "original_protocol": "1d39741a24596663daaadca02bd0143429a02605884310ff522703b86d4b4b59"
+  },
+  "game2_status": "standalone_descriptive_unclassified",
+  "prohibitions": [
+    "game3_access",
+    "idsse_execution",
+    "scientific_rule_change",
+    "new_metric",
+    "new_robustness",
+    "pooled_analysis",
+    "final_deformation_classification"
+  ],
+  "schema_version": "1.0.0",
+  "starting_commit": "c923775",
+  "status": "FROZEN_BEFORE_ANY_GAME2_DEFORMATION_RESULT"
+}
