@@ -17,6 +17,7 @@ The repository now supports a prospectively tested attacker-movement-to-defensiv
 - **Timing failure:** constant-velocity continuation innovation is not a validated response-onset measure.
 - **Attacking-interval groundwork:** outcome-blind attacker-only movement segmentation is promising but mixed; fragmentation is the dominant failure.
 - **Within-provider bridge:** the frozen continuous-window attacker-to-defender test classified Final A across both Metrica sample matches, with positive pooled primary and paired-control intervals and every frozen robustness/QC gate passing.
+- **Spatial-footprint development:** the frozen Game 1 footprint was coherent: near ranks had a stronger association than middle ranks, while middle and far regions were similar. Held-out footprint replication remains unobserved.
 
 Together these results show disciplined narrowing, prospective falsification, cross-environment defensive-geometry replication, and a within-provider observational bridge. They do not establish that the attacker caused the defensive change or identify its football meaning.
 
@@ -30,7 +31,7 @@ attacking movement episode
 defensive geometric change
 ```
 
-It uses continuous two-second attacker path rather than the rejected discrete episode rules, and subsequent focal-relative path supplies amount of nearby-defender movement rather than tactical meaning. The immediate remaining gap is spatial structure: whether the association varies reproducibly across the defensive block rather than appearing only in an aggregate nearest-three/farthest-three comparison. Spatial-footprint v1 is frozen with results unobserved. External/native-frequency transport and football semantics remain later questions; proximity or timing must not become causation.
+It uses continuous two-second attacker path rather than the rejected discrete episode rules, and subsequent focal-relative path supplies amount of nearby-defender movement rather than tactical meaning. Game 1 now supplies coherent development evidence for a stepped spatial footprint, but the immediate gap is unchanged held-out Game 2 and pooled replication. External/native-frequency transport and football semantics remain later questions; proximity or timing must not become causation.
 
 The gap is **not** the absence of a gravity score. Gravity, attacker attribution, tactical classification, causal influence, and final off-ball value are later possibilities, not abstract prerequisites.
 

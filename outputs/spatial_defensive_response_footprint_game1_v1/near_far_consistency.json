@@ -1,0 +1,12 @@
+{
+  "classifying": false,
+  "governed_bridge_far_beta": 0.06178225235033675,
+  "governed_bridge_local_beta": 0.0959574524304469,
+  "governed_bridge_local_minus_far": 0.03417520008011015,
+  "maximum_absolute_difference": 0.0,
+  "pass": true,
+  "reconstructed_far_beta": 0.06178225235033675,
+  "reconstructed_local_beta": 0.0959574524304469,
+  "reconstructed_local_minus_far": 0.03417520008011015,
+  "tolerance": 1e-12
+}

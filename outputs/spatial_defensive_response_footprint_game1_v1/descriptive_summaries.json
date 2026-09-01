@@ -1,0 +1,31 @@
+{
+  "by_attacking_team": {
+    "metrica:Away": 3340,
+    "metrica:Home": 4483
+  },
+  "by_period": {
+    "1": 5936,
+    "2": 1887
+  },
+  "complete_rank_rows": 78230,
+  "eligible_attacker_anchor_observations": 7823,
+  "endpoint_counts": {
+    "candidate_endpoints": 1448,
+    "no_possession_endpoints": 8
+  },
+  "four_second_eligible_anchors": 7328,
+  "simultaneous_attacker_multiplicity": {
+    "iqr": 1.0,
+    "max": 10.0,
+    "mean": 9.730099502487562,
+    "median": 10.0,
+    "min": 8.0,
+    "n": 804,
+    "p95": 10.0,
+    "p99": 10.0,
+    "q25": 9.0,
+    "q75": 10.0,
+    "sd_ddof1": 0.45251695721004903
+  },
+  "unique_anchor_times": 804
+}

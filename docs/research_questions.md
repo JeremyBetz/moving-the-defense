@@ -1,6 +1,6 @@
 # Research Questions
 
-> **Current status:** focal-relative path passed held-out Metrica validation and external IDSSE geometric replication. Contextual prediction is feasible; opponent information adds only a small mixed increment; direction is retained descriptively; onset innovation is unvalidated; and discrete attacker segmentation remains mixed. Continuous attacker geometry replicated across both Metrica sample matches, and the frozen attacker-to-defender bridge classified Final A across those matches. Spatial defensive-response footprint v1 is now frozen with results unobserved. Historical questions remain for auditability.
+> **Current status:** focal-relative path passed held-out Metrica validation and external IDSSE geometric replication. Contextual prediction is feasible; opponent information adds only a small mixed increment; direction is retained descriptively; onset innovation is unvalidated; and discrete attacker segmentation remains mixed. Continuous attacker geometry replicated across both Metrica sample matches, and the frozen attacker-to-defender bridge classified Final A across those matches. Spatial defensive-response footprint v1 classified Game 1 development coherent; held-out footprint replication remains unobserved. Historical questions remain for auditability.
 
 ## Primary Research Question
 
@@ -34,7 +34,7 @@ The result does not establish an activity-free effect, tactical response, reconf
 
 > **How is the subsequent defensive response spatially distributed across the defensive block relative to the moving attacker?**
 
-This is the immediate nested methodological question, not a second project-level primary question. The completed bridge established a local-versus-nonlocal association but did not describe the full defensive block. [Spatial footprint v1](protocols/spatial_defensive_response_footprint_v1.md) prospectively freezes defender ranks D1–D10, two new adjacent-region contrasts, and a complementary fixed-metre view. It assumes neither monotonic decay nor nearest-defender responsibility. Results remain unobserved; tactical semantics, causation, and cross-provider bridge portability remain unsupported.
+This is the immediate nested methodological question, not a second project-level primary question. The completed bridge established a local-versus-nonlocal association but did not describe the full defensive block. [Spatial footprint v1](protocols/spatial_defensive_response_footprint_v1.md) prospectively froze defender ranks D1–D10, two new adjacent-region contrasts, and a complementary fixed-metre view. Its [Game 1 result](results/spatial_defensive_response_footprint_game1_v1.md) is development coherent: near-minus-middle passed, while middle-minus-far was null. Held-out Game 2 and pooled replication remain unobserved; tactical semantics, causation, and cross-provider bridge portability remain unsupported.
 
 ## Historical Relational-Reconfiguration Question
 

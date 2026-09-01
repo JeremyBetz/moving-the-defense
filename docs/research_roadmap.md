@@ -69,7 +69,7 @@ The subsequent [representation fork](attacking_movement_representation_fork.md) 
 
 That design was frozen in [attacker-to-defender bridge protocol v1.0](protocols/attacker_defender_bridge_v1.md). Game 1 was development-coherent, and the unchanged [held-out Game 2 plus pooled execution](results/attacker_defender_bridge_game2_v1.md) is **FINAL BRIDGE A**. Local coefficients were positive and exceeded nonlocal/placebo controls in both matches; pooled primary and paired-control intervals were positive; every frozen robustness, hard-QC, and reproduction gate passed. This is a replicated observational association across two within-provider sample matches, not tactical response or causation.
 
-The next design is now frozen in [spatial defensive-response footprint v1.0](protocols/spatial_defensive_response_footprint_v1.md), with **results unobserved**. It decomposes the bridge across prospectively fixed defender ranks D1–D10 and adds a secondary fixed-metre view. A new adjacent-region contrast—not merely the already established nearest-three versus farthest-three difference—must replicate unchanged across Game 1, conditionally footprint-held-out Game 2, and pooled analysis for Final Footprint A. Flat, non-monotonic, or mixed shapes remain admissible.
+The [spatial defensive-response footprint v1.0](protocols/spatial_defensive_response_footprint_v1.md) now has a [valid Game 1 development result](results/spatial_defensive_response_footprint_game1_v1.md): **GAME 1 FOOTPRINT DEVELOPMENT COHERENT**. Near-minus-middle was positive under its frozen 97.5% interval and passed trimming/horizon robustness; middle-minus-far was null, producing a stepped, non-monotonic footprint rather than universal distance decay. This is development evidence only. The unchanged conditionally footprint-held-out Game 2 and pooled analyses remain required before Final A/B/C.
 
 ## October 1, 2026 constraint
 
@@ -79,7 +79,7 @@ The [2027 MIT Sloan Sports Analytics Conference Research Paper Competition](http
 
 1. Finish a defensible, outcome-blind temporal representation of attacking movement.
 2. Preserve the completed Final A bridge and its local, nonlocal, temporal, activity/context, tracking-quality, and influence limits.
-3. Execute the frozen spatial-footprint protocol without tuning, then decide whether response geometry, cross-provider attacker compatibility, or a legitimate stopping point is justified.
+3. Execute the unchanged spatial-footprint protocol on conditionally footprint-held-out Game 2 and pooled analysis; accept A, B, or C without tuning.
 4. Preserve a conservative result even if it is mixed or negative.
 5. Produce an abstract-ready evidence story, clear football figures, and a reproducible public repository.
 6. Complete literature positioning around movement segmentation, expected defence, opponent relationships, and off-ball action—without novelty inflation.

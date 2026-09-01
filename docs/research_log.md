@@ -1,5 +1,11 @@
 # Research Log
 
+## 2026-09-01 — Game 1 spatial defensive-response footprint development coherent
+
+The first governed execution of [spatial defensive-response footprint v1.0](protocols/spatial_defensive_response_footprint_v1.md) classified **GAME 1 FOOTPRINT DEVELOPMENT COHERENT**. The [result report](results/spatial_defensive_response_footprint_game1_v1.md) covers 7,823 eligible attacker-anchor observations and complete D1–D10 vectors. The rank slopes were non-monotonic: D1 was 0.15518 m/m, D2–D4 were approximately 0.081–0.089, and D5–D10 varied around a lower level.
+
+The new near-minus-middle contrast was 0.04559 with frozen 97.5% interval [0.02979, 0.06428]; middle-minus-far was 0.00025, interval [-0.02084, 0.02216]. The qualifying contrast retained 84.23% of its magnitude after the inherited extreme-exposure trim and kept its sign at 1/2/4-second horizons. The exact closed-bridge aggregate coefficient reproduced with zero difference. All metric bands were estimable, all 28 hard checks passed, all bootstrap quantities had 2,000 valid replicates, and an independent execution reproduced 24 governed files byte-for-byte. Game 2 remains unobserved for the footprint; Game 3 was not accessed. No protocol term, threshold, interpretation, or model changed after results.
+
 ## 2026-09-01 — Spatial defensive-response footprint v1.0 frozen
 
 No real-data footprint outcome was computed. The [frozen protocol](protocols/spatial_defensive_response_footprint_v1.md) asks how the completed attacker-path association is distributed across all ten defending outfield players. It fixes D1–D10 by Euclidean distance at the bridge anchor with canonical-player-ID tie-breaking, holds rank through every window, and retains each defender's leave-one-out focal-relative response and strictly prior baseline.

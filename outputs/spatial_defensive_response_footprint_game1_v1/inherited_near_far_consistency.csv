@@ -1,0 +1,2 @@
+reconstructed_local_beta,governed_bridge_local_beta,reconstructed_far_beta,governed_bridge_far_beta,reconstructed_local_minus_far,governed_bridge_local_minus_far,maximum_absolute_difference,tolerance,pass,classifying
+0.095957452430446899,0.095957452430446899,0.061782252350336749,0.061782252350336749,0.03417520008011015,0.03417520008011015,0,9.9999999999999998e-13,True,False

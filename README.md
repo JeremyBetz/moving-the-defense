@@ -16,7 +16,7 @@ The governing distinction is:
 
 > **Football concept ≠ tracking measurement ≠ theoretical mechanism.**
 
-**Current status — FINAL BRIDGE A:** across both Metrica sample matches, greater attacker movement was associated with greater subsequent local defender movement relative to the defensive unit. This is an observational association, not a causal estimate.
+**Current status — FINAL BRIDGE A; spatial-footprint Game 1 development coherent:** across both Metrica sample matches, greater attacker movement was associated with greater subsequent local defender movement relative to the defensive unit. The first governed footprint execution found a stronger Game 1 association across the nearest three defender ranks than across the middle four; held-out footprint replication remains unobserved. These are observational associations, not causal estimates.
 
 ## Why this is hard
 
@@ -134,10 +134,10 @@ football question
   → attacking value
 ```
 
-The next legitimate question is not whether this coefficient is a value metric. It is whether the same association has an interpretable **spatial footprint**. The next research steps, none yet executed, are:
+The next legitimate question is not whether this coefficient is a value metric. It is whether the Game 1 **spatial footprint** replicates unchanged. Current steps are:
 
-1. describe the spatial defensive-response footprint;
-2. test the geometry and direction of that response;
+1. execute the frozen footprint on conditionally held-out Game 2 and pooled analysis;
+2. only if justified, separately design response-geometry and direction tests;
 3. seek external/native-frequency attacker-to-defender replication;
 4. only later revisit football concepts and off-ball influence.
 
@@ -151,6 +151,7 @@ Potential later applications include defensive-style profiling, opponent-specifi
 - [Game 1 bridge development result](docs/results/attacker_defender_bridge_game1_v1.md).
 - [Final bridge result](docs/results/attacker_defender_bridge_game2_v1.md) — full held-out and pooled result.
 - [Frozen bridge protocol](docs/protocols/attacker_defender_bridge_v1.md) — prespecified design and criteria.
+- [Spatial-footprint protocol](docs/protocols/spatial_defensive_response_footprint_v1.md) and [Game 1 development result](docs/results/spatial_defensive_response_footprint_game1_v1.md).
 - [Research log](docs/research_log.md) — complete chronology, including rejected ideas.
 - [Research roadmap](docs/research_roadmap.md) and [Sloan-readiness assessment](docs/sloan_readiness.md).
 - [Reproducibility guide](docs/reproducibility.md) — environments, data layout, and execution paths.

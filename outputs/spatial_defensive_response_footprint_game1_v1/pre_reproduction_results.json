@@ -1,0 +1,69 @@
+{
+  "classifying_contrasts": [
+    {
+      "analysis": "primary_2s",
+      "attempted": 2000,
+      "ci_high": 0.06427927552430612,
+      "ci_low": 0.029789807200049413,
+      "estimand": "Delta_NM",
+      "estimate": 0.04558546467789262,
+      "excludes_zero": true,
+      "interval_percent": 97.5,
+      "strict_sign": 1.0,
+      "valid": 2000
+    },
+    {
+      "analysis": "primary_2s",
+      "attempted": 2000,
+      "ci_high": 0.022160434444635176,
+      "ci_low": -0.02084395956354347,
+      "estimand": "Delta_MF",
+      "estimate": 0.0002499734543669821,
+      "excludes_zero": false,
+      "interval_percent": 97.5,
+      "strict_sign": 1.0,
+      "valid": 2000
+    }
+  ],
+  "development_status": "PENDING_DETERMINISTIC_REPRODUCTION",
+  "game2_footprint_computed": false,
+  "game3_accessed": false,
+  "hard_qc_pre_reproduction": true,
+  "pre_reproduction_status": "GAME 1 FOOTPRINT DEVELOPMENT COHERENT",
+  "primary_rank_beta": {
+    "D1": 0.1551846880634029,
+    "D10": 0.06756608049354963,
+    "D2": 0.08885018316462022,
+    "D3": 0.0808883201837002,
+    "D4": 0.08541110185798387,
+    "D5": 0.04700121153023244,
+    "D6": 0.060102659460580916,
+    "D7": 0.05837409032193006,
+    "D8": 0.04707419462848252,
+    "D9": 0.07277660189291235
+  },
+  "primary_regions": {
+    "Delta_MF": 0.0002499734543669821,
+    "Delta_NF": 0.045835438132259605,
+    "Delta_NM": 0.04558546467789262,
+    "F": 0.06247229233831484,
+    "M": 0.06272226579268182,
+    "N": 0.10830773047057445
+  },
+  "qualification": [
+    {
+      "contrast": "Delta_NM",
+      "game1_interval_excludes_zero": true,
+      "horizon_robustness": true,
+      "qualifies": true,
+      "trim_robustness": true
+    },
+    {
+      "contrast": "Delta_MF",
+      "game1_interval_excludes_zero": false,
+      "horizon_robustness": true,
+      "qualifies": false,
+      "trim_robustness": true
+    }
+  ]
+}

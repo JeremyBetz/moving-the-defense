@@ -138,6 +138,15 @@ MPLCONFIGDIR=/tmp/moving-defense-bridge-game2 .venv/bin/python src/attacker_defe
 
 For deterministic verification, rerun to temporary output/figure paths and use `--verify-against`. Sixteen governed pre-reproduction files must match byte-for-byte. `outputs/attacker_defender_bridge_game2_v1/` contains the Game 2 sample/linkage, model and bootstrap tables, pooled models/comparisons, 32-row hard audit, final criteria, provenance, reproduction record, and hash ledgers. The inherited threshold is exactly 12.198443079831405 m. Game 3 and external-provider bridge execution remain unauthorized.
 
+- Spatial defensive-response footprint Game 1: [`docs/protocols/spatial_defensive_response_footprint_v1.md`](protocols/spatial_defensive_response_footprint_v1.md), frozen before any footprint coefficient was computed. The [Game 1 result](results/spatial_defensive_response_footprint_game1_v1.md) is DEVELOPMENT COHERENT. Reproduce it with:
+
+```bash
+MPLCONFIGDIR=/tmp/moving-defense-footprint .venv/bin/python src/spatial_defensive_response_footprint_game1_v1.py
+.venv/bin/python -m unittest tests.test_spatial_defensive_response_footprint_game1_v1 tests.test_attacker_defender_bridge_game1_v1
+```
+
+For deterministic verification, rerun with `--output` and `--figures` pointing to temporary locations, then call the governed output with `--verify-against`. All 24 governed pre-reproduction files must match byte-for-byte. Outputs include the complete anchor/rank linkage, coefficient and contrast tables, rank-distance diagnostics, fixed metric bands, temporal placebo, inherited consistency check, trimming/horizon sensitivities, 28-row hard-QC ledger, provenance, reproduction record, and hashes. Game 2 and Game 3 footprint analyses remain unauthorized in this execution.
+
 Where a machine-readable config is listed, documentation explains the rules and the config governs execution. The continuous attacker-movement v1 freeze is currently governed directly by its protocol document; an implementation may transcribe it to config only through a pre-execution exact-consistency check. If prose and config conflict, stop and resolve the literal inconsistency before outcomes.
 
 ## Development/test separation
