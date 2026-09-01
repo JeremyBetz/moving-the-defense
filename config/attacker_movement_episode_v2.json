@@ -1,0 +1,120 @@
+{
+  "version": "1.0.0",
+  "status": "frozen_before_game1_v2_execution",
+  "starting_commit": "515b1a95c8fd5a4d0b5aadc9978597d71e023d52",
+  "tier": 1,
+  "data": "Metrica Sample Game 1 only",
+  "construct": "finite interval describing a coherent portion of one player's own observed 2D movement trajectory",
+  "inheritance": {
+    "pitch_m": [105.0, 68.0],
+    "frame_rate_hz": 25.0,
+    "position_smoothing": "centered seven-frame mean requiring complete support",
+    "velocity": "consecutive smoothed-position difference divided by observed time difference",
+    "interpolation": false,
+    "open_play_boundaries": "historical period, unsupported-coordinate, BALL OUT, and SET PIECE rules",
+    "players": "all supported outfield identities; no possession filter",
+    "minimum_episode_duration_s": 1.0,
+    "minimum_boundary_separation_s": 1.0
+  },
+  "frozen_hashes": {
+    "baseline_rules": "c0c8d6eb7d35eae4e2d1a34b58234c3360ad85d351e725f50714f026b8052862",
+    "baseline_episodes": "680b39cedacf595a9dce77a4b1fc3ef77d0430319700dbca50a5683906ea5033",
+    "prominence_rules": "b20292ccc12ac1b93127926910fd71b08413bdf4133c4613489148fba40582ce",
+    "prominence_result": "22de73456991997f10d7406934e0129605ea6dd1c66c0e1086ebc4b772939479",
+    "tracking_qc_doc": "5cf45bd839ab69e8f5bfe067d8deb2dce48b965b9483f1a78cb0140da347820e",
+    "tracking_qc_result": "322b09962c90aaea66859e71f4a32f8784d69cd3ad7ca8023b44f524ddef4aed",
+    "final_footprint_a": "239b0cad626b156bc0a91c6f8e1fb673e28330ad56f00deb8c3a9ecd4c169b85",
+    "final_response_form_b": "047a8caaae018dabd70c9a0e30ef37e7fd1c1c5d5c04740ad5aca59ffc3e9222",
+    "deformation_game1": "f99f5740446951d338ec9def9d32c335da207fabfe706021c22246ae9fe01d60",
+    "deformation_game2": "a1438217d3db0e120bee2df3fa14d8ad4f320841bd20f8f29e2645ec43d71991"
+  },
+  "heading": {
+    "division_floor_mps": 1e-9,
+    "reliable_vector_floor_mps": 0.5,
+    "formula": "acos(clip(dot(v_k,v_k+1)/(norm(v_k)*norm(v_k+1)),-1,1))"
+  },
+  "candidate_a": {
+    "definition": "exact historical speed-valley baseline",
+    "expected_episodes": 38651,
+    "numeric_tolerance": 1e-9
+  },
+  "candidate_b": {
+    "direction_window_steps_each_side": 12,
+    "direction_window_s_each_side": 0.48,
+    "direction_angle_deg_min": 45.0,
+    "direction_mean_velocity_mps_min": 0.5,
+    "direction_run_resolution": "maximum angle, earlier exact tie",
+    "direction_candidate_separation_s": 1.0,
+    "combined_candidate_resolution": "direction over valley; greater angle between direction candidates; lower speed between valleys; earlier exact ties",
+    "protected_direction_boundaries": true,
+    "redundant_valley_union_directness_min": 0.95,
+    "redundant_valley_union_turning_deg_max_exclusive": 45.0,
+    "pruning_order": "chronological repeated scans to fixed point",
+    "coverage": "between first and last retained baseline valley within each eligible block",
+    "minimum_episode_duration_s": 1.0
+  },
+  "candidate_c": {
+    "executed": false,
+    "reason": "closed 2D velocity PELT is the relevant standard comparator and failed severe fragmentation/frequency stability; a new penalty would be arbitrary"
+  },
+  "support_breaks": [
+    {
+      "team": "Home",
+      "player": "10",
+      "period": 1,
+      "raw_frame_start": 2911,
+      "raw_frame_end": 2945,
+      "policy": "Candidate B episode may not cross or include this accepted unresolved discontinuity"
+    }
+  ],
+  "diagnostics": {
+    "short_duration_s_max": 1.5,
+    "tiny_path_m_max": 1.0,
+    "tiny_displacement_m_max": 0.5,
+    "long_duration_s_min": 8.0,
+    "low_directness_max": 0.5,
+    "direction_path_m_min": 3.0,
+    "direction_turning_deg_min": 180.0,
+    "lower_speed_peak_mps_max": 5.5,
+    "meaningful_displacement_m_min": 3.0
+  },
+  "development_gates": {
+    "fragmentation_pct_max": 33.776,
+    "merging_direction_pct_max": 3.97,
+    "lower_speed_coverage_share_min": 0.368955525083439,
+    "baseline_reproduction_required": true,
+    "fixed_case_checks_required_for_coherent": true
+  },
+  "visual_audit": {
+    "required": [
+      {"label": "coherent", "team": "Away", "player": "24", "period": 1, "start_s": 380.20, "end_s": 385.04},
+      {"label": "merged", "team": "Home", "player": "6", "period": 1, "start_s": 95.32, "end_s": 146.48},
+      {"label": "tracking_discontinuity", "team": "Home", "player": "10", "period": 1, "start_s": 116.44, "end_s": 117.68}
+    ],
+    "chronological": [
+      {"episode_id": "A019450", "team": "Away", "player": "15", "period": 1, "start_s": 0.40, "end_s": 2.60},
+      {"episode_id": "A025527", "team": "Away", "player": "18", "period": 1, "start_s": 1076.96, "end_s": 1085.40},
+      {"episode_id": "A020027", "team": "Away", "player": "15", "period": 1, "start_s": 1830.12, "end_s": 1831.64},
+      {"episode_id": "A017501", "team": "Home", "player": "12", "period": 1, "start_s": 2723.32, "end_s": 2725.80},
+      {"episode_id": "A017784", "team": "Home", "player": "12", "period": 2, "start_s": 3601.92, "end_s": 3604.20},
+      {"episode_id": "A005898", "team": "Home", "player": "4", "period": 2, "start_s": 4300.28, "end_s": 4302.88},
+      {"episode_id": "A018819", "team": "Home", "player": "13", "period": 2, "start_s": 5063.20, "end_s": 5064.68},
+      {"episode_id": "A035889", "team": "Away", "player": "23", "period": 2, "start_s": 5798.64, "end_s": 5799.68}
+    ]
+  },
+  "classification": {
+    "COHERENT": "valid; all numerical gates and three required fixed-case checks pass; no tuning",
+    "MIXED": "valid and fragmentation improves materially, but direction/merging, coverage, or fixed-case requirement fails, or another material directional failure appears",
+    "NEGATIVE": "valid but fragmentation does not improve materially or the trade-off is materially worse than baseline",
+    "INVALID": "support, continuity, implementation, or construct failure only"
+  },
+  "firewall": {
+    "defender_variables": false,
+    "ball_variables": false,
+    "outcome_events": false,
+    "game2": false,
+    "game3": false,
+    "idsse": false,
+    "post_result_tuning": false
+  }
+}

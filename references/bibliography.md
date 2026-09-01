@@ -88,6 +88,8 @@ Llana et al. provide direct precedent for rolling-smoothed player speed, valley-
 
 Kai, Tomohiro, Shin Hirai, Yuhei Anbe, and Yohei Takai. 2021. “A New Approach to Quantify Angles and Time of Changes-of-Direction during Soccer Matches.” *PLOS ONE* 16 (5): e0251292. <https://doi.org/10.1371/journal.pone.0251292>
 
+Reilly, Brian, Oliver Morgan, Gabriela Czanner, and Mark A. Robinson. 2021. “Automated Classification of Changes of Direction in Soccer Using Inertial Measurement Units.” *Sensors* 21 (14): 4625. <https://doi.org/10.3390/s21144625>
+
 Corbett, David, Alice J. Sweeting, and Sam Robertson. 2019. “A Change Point Approach to Analysing the Match Activity Profiles of Team-Sport Athletes.” *Journal of Sports Sciences* 37 (14): 1600–1608. <https://doi.org/10.1080/02640414.2019.1577941>
 
 Edelhoff, Hendrik, Johannes Signer, and Niko Balkenhol. 2016. “Path Segmentation for Beginners: An Overview of Current Methods for Detecting Changes in Animal Movement Patterns.” *Movement Ecology* 4: 21. <https://doi.org/10.1186/s40462-016-0086-5>
