@@ -1,0 +1,53 @@
+{
+  "attacking_team_counts": {
+    "metrica:Away": 3340,
+    "metrica:Home": 4479
+  },
+  "axis_exclusions": [
+    {
+      "observation_id": "G1|P1|T2844.04|metrica:Home:2",
+      "reason": "near_zero_or_invalid_attacker_axis"
+    },
+    {
+      "observation_id": "G1|P1|T2848.04|metrica:Home:12",
+      "reason": "near_zero_or_invalid_attacker_axis"
+    },
+    {
+      "observation_id": "G1|P1|T2848.04|metrica:Home:2",
+      "reason": "near_zero_or_invalid_attacker_axis"
+    },
+    {
+      "observation_id": "G1|P1|T2848.04|metrica:Home:9",
+      "reason": "near_zero_or_invalid_attacker_axis"
+    }
+  ],
+  "axis_retention_fraction": 0.9994886872043973,
+  "candidate_anchor_times": 1448,
+  "common_placebo_anchors": 7818,
+  "defender_rows": 78190,
+  "eligible_attacker_anchors": 7823,
+  "four_second_anchors": 7327,
+  "inherited_exclusion_ledger": {
+    "attacker_exposure_unavailable": 4198,
+    "attacker_full_support_unavailable": 8,
+    "complete_ten_defenders_unavailable": 3974,
+    "no_possession_team": 8,
+    "restart_or_ball_out_primary_span": 2717
+  },
+  "period_counts": {
+    "1": 5932,
+    "2": 1887
+  },
+  "primary_axis_anchors": 7819,
+  "simultaneous_attackers": {
+    "25%": 9.0,
+    "50%": 10.0,
+    "75%": 10.0,
+    "count": 804.0,
+    "max": 10.0,
+    "mean": 9.725124378109452,
+    "min": 7.0,
+    "std": 0.4631535301397722
+  },
+  "unique_anchor_times": 804
+}

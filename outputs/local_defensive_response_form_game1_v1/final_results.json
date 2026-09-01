@@ -1,0 +1,148 @@
+{
+  "classification": "GAME 1 RESPONSE FORM DEVELOPMENT COHERENT",
+  "criteria": {
+    "axis_retention": true,
+    "horizon_sign": true,
+    "paired_interval_excludes_zero_same_direction": true,
+    "primary_interval_excludes_zero": true,
+    "trim_sign_and_magnitude": true,
+    "valid_execution": true
+  },
+  "environment": {
+    "numpy": "2.5.2",
+    "pandas": "2.3.3",
+    "python": "3.13.15"
+  },
+  "frozen_hashes": {
+    "config/local_defensive_response_form_v1.json": "b120f19c13b86f47f5b73311a4509cbd5de5f95fbaa1369f95dc061c998b8053",
+    "config/spatial_defensive_response_footprint_v1.json": "b784b3839146a424acd427a0f1d99959f3ef547039743d30ce90e39f9e557c9c",
+    "docs/protocols/local_defensive_response_form_v1.md": "958c8aa80fe9ea43358c32a42a6be2eea7a41e7f727e23ff137eb3079ee80428",
+    "docs/protocols/spatial_defensive_response_footprint_v1.md": "649c40c551d880f5204f6ccca7e37cf219660c4a5fdea590e0b73b6377534458",
+    "outputs/spatial_defensive_response_footprint_game2_final_v1/final_hashes.json": "e5e21cc4e9b44f02322027c0db7c385cf3e757ccacb7d5aaa876e594f757b688",
+    "outputs/spatial_defensive_response_footprint_game2_final_v1/final_results.json": "239b0cad626b156bc0a91c6f8e1fb673e28330ad56f00deb8c3a9ecd4c169b85"
+  },
+  "hard_qc": {
+    "bootstrap_valid": true,
+    "canonical_units": true,
+    "complete_support_no_interpolation_inherited": true,
+    "frozen_hashes": true,
+    "game2_response_form_not_accessed": true,
+    "game3_not_accessed": true,
+    "goalkeeper_and_focal_exclusion_inherited": true,
+    "model_estimable": true,
+    "no_tactical_labels": true,
+    "rank_vectors_complete": true,
+    "temporal_order": true,
+    "ten_rows_complete": true,
+    "translation_rotation_mirror_relabeling": true,
+    "unique_ids": true
+  },
+  "horizons": [
+    {
+      "attempted": 2000,
+      "ci_high": 0.07558983855211193,
+      "ci_low": 0.04685948109650912,
+      "estimand": "1s",
+      "estimate": 0.06064498898723268,
+      "interval_percent": 97.5,
+      "valid": 2000
+    },
+    {
+      "attempted": 2000,
+      "ci_high": 0.12295385322754722,
+      "ci_low": 0.07219576708068795,
+      "estimand": "2s",
+      "estimate": 0.0960619631448963,
+      "interval_percent": 97.5,
+      "valid": 2000
+    },
+    {
+      "attempted": 2000,
+      "ci_high": 0.13082662154246058,
+      "ci_low": 0.04859357315381777,
+      "estimand": "4s",
+      "estimate": 0.08679944582365137,
+      "interval_percent": 97.5,
+      "valid": 2000
+    }
+  ],
+  "paired_primary_minus_control": {
+    "attempted": 2000,
+    "ci_high": 0.0643606942645921,
+    "ci_low": 0.017844406471902066,
+    "estimand": "primary_minus_temporal_control_near_minus_middle",
+    "estimate": 0.0408485355954915,
+    "interval_percent": 97.5,
+    "valid": 2000
+  },
+  "primary_near_minus_middle": {
+    "attempted": 2000,
+    "ci_high": 0.12295385322754722,
+    "ci_low": 0.07219576708068795,
+    "estimand": "near_minus_middle",
+    "estimate": 0.0960619631448963,
+    "interval_percent": 97.5,
+    "valid": 2000
+  },
+  "sample": {
+    "attacking_team_counts": {
+      "metrica:Away": 3340,
+      "metrica:Home": 4479
+    },
+    "axis_exclusions": [
+      {
+        "observation_id": "G1|P1|T2844.04|metrica:Home:2",
+        "reason": "near_zero_or_invalid_attacker_axis"
+      },
+      {
+        "observation_id": "G1|P1|T2848.04|metrica:Home:12",
+        "reason": "near_zero_or_invalid_attacker_axis"
+      },
+      {
+        "observation_id": "G1|P1|T2848.04|metrica:Home:2",
+        "reason": "near_zero_or_invalid_attacker_axis"
+      },
+      {
+        "observation_id": "G1|P1|T2848.04|metrica:Home:9",
+        "reason": "near_zero_or_invalid_attacker_axis"
+      }
+    ],
+    "axis_retention_fraction": 0.9994886872043973,
+    "candidate_anchor_times": 1448,
+    "common_placebo_anchors": 7818,
+    "defender_rows": 78190,
+    "eligible_attacker_anchors": 7823,
+    "four_second_anchors": 7327,
+    "inherited_exclusion_ledger": {
+      "attacker_exposure_unavailable": 4198,
+      "attacker_full_support_unavailable": 8,
+      "complete_ten_defenders_unavailable": 3974,
+      "no_possession_team": 8,
+      "restart_or_ball_out_primary_span": 2717
+    },
+    "period_counts": {
+      "1": 5932,
+      "2": 1887
+    },
+    "primary_axis_anchors": 7819,
+    "simultaneous_attackers": {
+      "25%": 9.0,
+      "50%": 10.0,
+      "75%": 10.0,
+      "count": 804.0,
+      "max": 10.0,
+      "mean": 9.725124378109452,
+      "min": 7.0,
+      "std": 0.4631535301397722
+    },
+    "unique_anchor_times": 804
+  },
+  "trim": {
+    "excluded_anchors": 79,
+    "full": 0.0960619631448963,
+    "magnitude_fraction": 0.8924690336054563,
+    "retained_anchors": 7740,
+    "threshold_m": 12.198443079831405,
+    "trimmed": 0.08573232741416856
+  }
+}

@@ -157,6 +157,15 @@ MPLCONFIGDIR=/tmp/moving-defense-footprint-final .venv/bin/python src/spatial_de
 
 For independent verification, run the same source with temporary `--output` and `--figures` paths, then invoke the governed primary output with `--verify-against <temporary-output>`. The closed execution reproduced 31/31 governed files byte-for-byte. Game 3 remains unauthorized and untouched.
 
+Local defensive response form v1 is frozen at protocol SHA-256 `958c8aa80fe9ea43358c32a42a6be2eea7a41e7f727e23ff137eb3079ee80428` and configuration SHA-256 `b120f19c13b86f47f5b73311a4509cbd5de5f95fbaa1369f95dc061c998b8053`. Its [Game 1 development result](results/local_defensive_response_form_game1_v1.md) is coherent. Reproduce it with:
+
+```bash
+MPLCONFIGDIR=/tmp/moving-defense-response-form .venv/bin/python src/local_defensive_response_form_game1_v1.py
+.venv/bin/python -m unittest tests.test_local_defensive_response_form_v1 tests.test_local_defensive_response_form_game1_v1
+```
+
+The command reads Sample Game 1 and the closed footprint registry, writes `outputs/local_defensive_response_form_game1_v1/`, and does not access Game 2 response-form quantities or Game 3.
+
 Where a machine-readable config is listed, documentation explains the rules and the config governs execution. The continuous attacker-movement v1 freeze is currently governed directly by its protocol document; an implementation may transcribe it to config only through a pre-execution exact-consistency check. If prose and config conflict, stop and resolve the literal inconsistency before outcomes.
 
 ## Development/test separation

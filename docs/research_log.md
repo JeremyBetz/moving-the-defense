@@ -1,5 +1,11 @@
 # Research Log
 
+## 2026-09-01 — Game 1 local defensive response form development coherent
+
+The first authorized execution of the frozen response-form protocol retained 7,819/7,823 attacker anchors (99.9489%) after the numerical attacker-axis rule. The primary attacker-direction near-minus-middle estimate was 0.09606 m/m with frozen 97.5% interval [0.07220, 0.12295]. The paired primary-minus-temporal-control estimate was 0.04085 [0.01784, 0.06436]. Trimming retained the sign and 89.25% magnitude; one- and four-second estimates preserved the positive sign; all 2,000 bootstrap replicates were valid.
+
+Every frozen criterion passed, yielding **GAME 1 RESPONSE FORM DEVELOPMENT COHERENT**. An independent execution reproduced 13/13 governed files byte-for-byte. The result concerns attacker-direction-aligned defender-relative movement only; it does not establish tracking, marking, reaction, intent, influence, causation, gravity, or value. Game 2 is now eligible under the protocol but was not executed; Game 3 remains untouched. See the [result report](results/local_defensive_response_form_game1_v1.md).
+
 ## 2026-09-01 — Local defensive response form v1 frozen before results
 
 After **FINAL FOOTPRINT A** closed the spatial-localization question, a new protocol was frozen to ask what geometric form the observed local defender-relative movement takes. It preserves focal-relative path and separately defines signed endpoint displacement parallel to the preceding attacker movement, orthogonal to it, and radially toward/away from the attacker at response start. Magnitude and direction remain separate; none of these measurements is called tracking, marking, reaction, influence, or intent.

@@ -1,0 +1,7 @@
+criterion,pass
+valid_execution,True
+axis_retention,True
+primary_interval_excludes_zero,True
+paired_interval_excludes_zero_same_direction,True
+trim_sign_and_magnitude,True
+horizon_sign,True

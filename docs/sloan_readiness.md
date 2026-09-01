@@ -23,7 +23,7 @@ Together these results show disciplined narrowing, prospective falsification, cr
 
 ## Current scientific gap
 
-After Final Footprint A, the immediate gap is the **form** of the localized geometric response: whether nearby defender-relative movement has reproducible signed structure in the preceding attacker's direction, perpendicular to it, or toward/away from the attacker. A protocol is frozen before results; this is not yet evidence and does not supply tactical semantics.
+After Final Footprint A, the response-form protocol's Game 1 development stage found coherent signed near-versus-middle structure in the preceding attacker's direction beyond its paired temporal control. Internal replication remains pending, and perpendicular/radial descriptions supply no tactical semantics.
 
 The first version of this bridge now exists:
 

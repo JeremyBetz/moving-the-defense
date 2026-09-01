@@ -1,0 +1,8 @@
+{
+  "classification_equal": true,
+  "first_output_file_count": 13,
+  "governed_hash_ledgers_equal": true,
+  "governed_outputs_byte_identical": true,
+  "independent_output_directory": "/tmp/mtd-response-form-rerun.qChgcZ/outputs",
+  "rerun_output_file_count": 13
+}

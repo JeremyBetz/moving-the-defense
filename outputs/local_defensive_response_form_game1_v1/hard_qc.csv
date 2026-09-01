@@ -1,0 +1,15 @@
+check,pass
+frozen_hashes,True
+unique_ids,True
+ten_rows_complete,True
+rank_vectors_complete,True
+goalkeeper_and_focal_exclusion_inherited,True
+complete_support_no_interpolation_inherited,True
+temporal_order,True
+model_estimable,True
+bootstrap_valid,True
+translation_rotation_mirror_relabeling,True
+canonical_units,True
+no_tactical_labels,True
+game2_response_form_not_accessed,True
+game3_not_accessed,True
