@@ -1,5 +1,11 @@
 # Research Log
 
+## 2026-09-01 — Local defensive response form v1 frozen before results
+
+After **FINAL FOOTPRINT A** closed the spatial-localization question, a new protocol was frozen to ask what geometric form the observed local defender-relative movement takes. It preserves focal-relative path and separately defines signed endpoint displacement parallel to the preceding attacker movement, orthogonal to it, and radially toward/away from the attacker at response start. Magnitude and direction remain separate; none of these measurements is called tracking, marking, reaction, influence, or intent.
+
+The primary test is the near (D1–D3) minus middle (D4–D7) difference in the attacker-direction projection, with a paired temporal control and inherited two-second timing. Game 1 is development; only a coherent result may open Game 2 for this estimand. Game 2 will remain standalone-unclassified before the pooled Final A/B/C decision, and Game 3 remains reserved. Only synthetic geometry code and tests were run; no match-level response-form sample, coefficient, distribution, or figure exists. See the [frozen protocol](protocols/local_defensive_response_form_v1.md) (SHA-256 `958c8aa80fe9ea43358c32a42a6be2eea7a41e7f727e23ff137eb3079ee80428`), [configuration](../config/local_defensive_response_form_v1.json) (SHA-256 `b120f19c13b86f47f5b73311a4509cbd5de5f95fbaa1369f95dc061c998b8053`), and [prior-art note](local_defensive_response_form_methodology.md).
+
 ## 2026-09-01 — Spatial defensive-response footprint reaches Final A
 
 The first authorized footprint computation on untouched Metrica Sample Game 2 used the frozen protocol, configuration, and prospective execution clarification unchanged. Game 2 retained 1,087 attacker-anchor observations and complete D1–D10 vectors. Its near-minus-middle contrast was 0.08553 m/m with frozen 97.5% interval [0.02917, 0.15786]; middle-minus-far was 0.00562, interval [-0.03782, 0.03612]. Game 2 received no standalone scientific status. Its governed files were saved and hashed before any Game 1 comparison or pooled construction.

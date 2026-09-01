@@ -57,9 +57,9 @@ Every arrow can fail. Football language does not become a tracking construct mer
 
 ## Current methodological frontier
 
-> **How is the subsequent defensive response spatially distributed across the defensive block relative to the moving attacker?**
+> **What geometric form does the localized defender-relative response take?**
 
-The completed bridge resolves the first within-provider association test, not its tactical or causal meaning. Continuous attacker intervals remain defined without defensive outcomes, and defensive change remains geometric rather than tactical. Historical segmentation failures still constrain any future episode-based extension. No next phase exists unless a separate design is prospectively specified and frozen.
+The completed bridge resolves the first within-provider association test, not its tactical or causal meaning. Continuous attacker intervals remain defined without defensive outcomes, and defensive change remains geometric rather than tactical. Historical segmentation failures still constrain any future episode-based extension. No new empirical phase may begin unless its design is prospectively specified and frozen.
 
 The first bounded refinement executed under its frozen rules and classified **B**. Prominence sharply reduced fragmentation but drove merging/direction to 35.88%–69.03% against a 3.97% cap. No candidate was selected, so the protocol forbids Game 2 execution and further threshold repair.
 
@@ -70,6 +70,8 @@ The subsequent [representation fork](attacking_movement_representation_fork.md) 
 That design was frozen in [attacker-to-defender bridge protocol v1.0](protocols/attacker_defender_bridge_v1.md). Game 1 was development-coherent, and the unchanged [held-out Game 2 plus pooled execution](results/attacker_defender_bridge_game2_v1.md) is **FINAL BRIDGE A**. Local coefficients were positive and exceeded nonlocal/placebo controls in both matches; pooled primary and paired-control intervals were positive; every frozen robustness, hard-QC, and reproduction gate passed. This is a replicated observational association across two within-provider sample matches, not tactical response or causation.
 
 The [spatial defensive-response footprint v1.0](protocols/spatial_defensive_response_footprint_v1.md) is complete at **FINAL FOOTPRINT A**. The [Game 1 development result](results/spatial_defensive_response_footprint_game1_v1.md) was coherent; untouched [Game 2 measurements](results/spatial_defensive_response_footprint_game2_v1.md) remained descriptively unclassified and were closed before comparison; the [pooled/final result](results/spatial_defensive_response_footprint_final_v1.md) reproduced the positive near-minus-middle distinction while middle-minus-far remained null. This is a stepped observational spatial association across two within-provider sample matches, not assignment, tactics, or causation.
+
+The next phase is prospectively frozen but unexecuted in the [local defensive response form v1 protocol](protocols/local_defensive_response_form_v1.md). It preserves the validated movement magnitude and asks whether the endpoint displacement contains reproducible attacker-direction, orthogonal, or radial geometry. These are separate measurements, not tactical labels. Game 1 is development, Game 2 is conditionally available for this previously unobserved estimand, and Game 3 remains reserved.
 
 ## October 1, 2026 constraint
 

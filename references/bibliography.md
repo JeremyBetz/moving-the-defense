@@ -114,6 +114,22 @@ Rodríguez-Sánchez, Paula, Roberto López del Campo, Ricardo Resta, José J. Ra
 
 This preprint reconstructs continuous spatial velocity fields and potentials from football tracking at a collective scale. It is a representation precedent, not evidence for the validity, tactical meaning, or novelty of Moving the Defense's proposed individual fixed-window attacker geometry.
 
+## Local Defensive Response Form
+
+Vilar, Luís, Duarte Araújo, Bruno Travassos, and Keith Davids. 2014. “Coordination Tendencies Are Shaped by Attacker and Defender Interactions with the Goal and the Ball in Futsal.” *Human Movement Science* 33: 14–24. <https://doi.org/10.1016/j.humov.2013.08.012>
+
+Caetano, Fabio Giuliano, Paulo Roberto Pereira Santiago, Ricardo da Silva Torres, Sérgio Augusto Cunha, and Felipe Arruda Moura. 2023. “Interpersonal Coordination of Opposing Player Dyads during Attacks Performed in Official Football Matches.” *Sports Biomechanics* 24 (4): 1048–1063. <https://doi.org/10.1080/14763141.2023.2212664>
+
+Narizuka, Takuma, and Yoshihiro Yamazaki. 2016. “Statistical Properties for Directional Alignment and Chasing of Players in Football Games.” *EPL* 116 (6): 68001. <https://doi.org/10.1209/0295-5075/116/68001>
+
+Chacoma, Andrés, Nicolás Almeira, Juan I. Perotti, and Omar V. Billoni. 2022. “Complexity Emerges in Measures of the Marking Dynamics in Football Games.” *Physical Review E* 106: 044308. <https://doi.org/10.1103/PhysRevE.106.044308>
+
+Calero-Sanz, Jorge, Roberto López del Campo, Ricardo Resta, and Javier M. Buldú. 2026. “Beyond Marking Networks in Soccer: Coordination, Similarity and Entropy.” *Chaos, Solitons & Fractals* 211: 118819. <https://doi.org/10.1016/j.chaos.2026.118819>
+
+Yamazaki, Issei, Hirotaka Goto, Kojiro Otoguro, Hiraku Nishimori, Masashi Shiraishi, and Takuma Narizuka. 2026. “A Behavioral Principle Underlying Attacker-Defender Interactions in Soccer.” arXiv:2607.05845. <https://doi.org/10.48550/arXiv.2607.05845>
+
+The [local response-form methodology note](../docs/local_defensive_response_form_methodology.md) provides the complete source-transfer audit, including already-listed pressure, collective-relative, and defensive-velocity precedents. These sources establish related geometric methods; they do not validate this project's estimands or tactical semantics.
+
 ## Coverage Limits
 
 This bibliography is substantially stronger for collective geometry, synchronization, defensive tracking, contextual trajectory references, and the main movement-representation families considered after the failed prominence refinement. Remaining gaps include proprietary club/vendor boundary algorithms, formation-normalization details, complete football off-ball valuation coverage, and peer-reviewed expected-versus-observed gravity models. These gaps prohibit claims that no operational equivalent exists.

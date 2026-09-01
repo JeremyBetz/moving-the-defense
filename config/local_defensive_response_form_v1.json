@@ -1,0 +1,120 @@
+{
+  "protocol_version": "1.0.0",
+  "status": "FROZEN_RESULTS_UNOBSERVED",
+  "freeze_date": "2026-09-01",
+  "starting_commit": "945f5921d6609f4246127419bba08c3bacd863a8",
+  "inherited_artifacts": {
+    "footprint_protocol_sha256": "649c40c551d880f5204f6ccca7e37cf219660c4a5fdea590e0b73b6377534458",
+    "footprint_config_sha256": "b784b3839146a424acd427a0f1d99959f3ef547039743d30ce90e39f9e557c9c",
+    "footprint_clarification_sha256": "60678b0f90128c5905ed2535a81aab37b562fe8a6b8aa6a9c9ff1f7642dcf37e",
+    "final_footprint_results_sha256": "239b0cad626b156bc0a91c6f8e1fb673e28330ad56f00deb8c3a9ecd4c169b85",
+    "final_footprint_hash_ledger_sha256": "e5e21cc4e9b44f02322027c0db7c385cf3e757ccacb7d5aaa876e594f757b688"
+  },
+  "data_governance": {
+    "development": "Metrica Sample Game 1",
+    "conditional_internal_replication": "Metrica Sample Game 2",
+    "game2_scope": "previously observed generally but unobserved for response-form estimands",
+    "game2_open_condition": "GAME 1 RESPONSE FORM DEVELOPMENT COHERENT",
+    "game3": "untouched_and_prohibited"
+  },
+  "timing_seconds": {
+    "prior_context": [-4.0, -2.0],
+    "attacker_exposure": [-2.0, 0.0],
+    "defender_response_primary": [0.0, 2.0],
+    "defender_response_sensitivities": [[0.0, 1.0], [0.0, 4.0]],
+    "gap": 0.0,
+    "radial_axis_reference": "response_start_t"
+  },
+  "rank_regions": {
+    "near": [1, 2, 3],
+    "middle": [4, 5, 6, 7],
+    "far_descriptive": [8, 9, 10]
+  },
+  "numerics": {
+    "dtype": "float64",
+    "pitch_length_m": 105.0,
+    "pitch_width_m": 68.0,
+    "vector_norm_epsilon_m": 1.7777205579859071e-12,
+    "epsilon_derivation": "64 * float64_machine_epsilon * hypot(105, 68)",
+    "identity_tolerance": 1e-12,
+    "endpoint_time_tolerance_s": 1e-9
+  },
+  "primary": {
+    "outcome": "attacker_direction_parallel_focal_relative_displacement_m",
+    "exposure": "attacker_path_length_m",
+    "contrast": "Delta_NM_parallel",
+    "interval_percent": 97.5,
+    "model": "rank_specific_raw_metre_OLS_with_prior_parallel_baseline_and_prior_centroid_path"
+  },
+  "temporal_placebo": {
+    "attacker_vector_interval": [0.0, 2.0],
+    "defender_interval": [-2.0, 0.0],
+    "common_sample_required": true,
+    "paired_contrast": "primary_minus_placebo_Delta_NM_parallel",
+    "classifying": true
+  },
+  "secondary": [
+    "focal_relative_path_m",
+    "focal_relative_net_displacement_m",
+    "attacker_direction_parallel_projection_m",
+    "attacker_direction_orthogonal_projection_m",
+    "attacker_radial_projection_m",
+    "attacker_direction_cosine",
+    "defender_absolute_displacement_xy_m",
+    "centroid_displacement_xy_m",
+    "focal_relative_displacement_xy_m"
+  ],
+  "bootstrap": {
+    "replicates": 2000,
+    "minimum_valid": 1900,
+    "block_seconds": 60,
+    "master_seed": 20260831,
+    "spawn_count": 9,
+    "game1_child": 6,
+    "game2_child": 7,
+    "pooled_child": 8
+  },
+  "robustness": {
+    "extreme_attacker_path_threshold_m": 12.198443079831405,
+    "minimum_retained_magnitude_fraction": 0.5,
+    "minimum_primary_axis_retention_fraction": 0.8,
+    "horizon_sign_rule": "one_and_four_second_estimates_may_not_both_reverse_the_two_second_sign"
+  },
+  "classification": {
+    "game1_statuses": [
+      "GAME 1 RESPONSE FORM DEVELOPMENT COHERENT",
+      "GAME 1 RESPONSE FORM DEVELOPMENT MIXED",
+      "GAME 1 RESPONSE FORM DEVELOPMENT INVALID"
+    ],
+    "game1_coherent_requires": [
+      "hard_qc_reproduction_and_bootstrap_validity_pass",
+      "primary_axis_retention_at_least_0.8",
+      "Delta_NM_parallel_97.5pct_interval_strictly_excludes_zero",
+      "paired_primary_minus_placebo_97.5pct_interval_strictly_excludes_zero_in_same_direction",
+      "trim_retains_sign_and_at_least_0.5_magnitude",
+      "one_and_four_second_estimates_not_both_opposite_two_second_sign"
+    ],
+    "game2_standalone_status": "none",
+    "final_statuses": ["FINAL RESPONSE FORM A", "FINAL RESPONSE FORM B", "FINAL RESPONSE FORM C"],
+    "final_a_requires": [
+      "game1_game2_pooled_valid_reproducible_and_primary_axis_retention_at_least_0.8",
+      "Delta_NM_parallel_97.5pct_intervals_strictly_exclude_zero_with_same_sign_in_game1_game2_pooled",
+      "paired_primary_minus_placebo_97.5pct_intervals_strictly_exclude_zero_with_that_sign_in_game1_game2_pooled",
+      "pooled_trim_and_horizon_robustness_pass"
+    ],
+    "final_b": "all_authorized_executions_valid_but_one_or_more_final_a_scientific_conditions_fail",
+    "final_c": "game2_or_pooled_execution_scientifically_invalid"
+  },
+  "prohibitions": [
+    "empirical_execution_during_protocol_freeze",
+    "game3_access",
+    "onset_detection",
+    "lag_optimization",
+    "local_compensation_in_v1",
+    "clustering",
+    "HMM",
+    "machine_learning",
+    "tactical_labels",
+    "causal_interpretation"
+  ]
+}
