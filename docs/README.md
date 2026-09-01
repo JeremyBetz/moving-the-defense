@@ -7,9 +7,10 @@ Use current-facing summaries before historical notebooks. The [claim-status ledg
 ## First-time visitor — five minutes
 
 1. [Project README](../README.md) — football problem, strongest evidence, failures, and current frontier.
-2. [Project explainer](project_explainer.md) — intuitive questions and answers before technical detail.
-3. [Claim-status ledger](claim_status.md) — exactly what is validated, descriptive, mixed, rejected, or unsupported.
-4. [Research roadmap](research_roadmap.md) — current frontier and October 1, 2026 submission constraint.
+2. [Final attacker-to-defender bridge result](results/attacker_defender_bridge_game2_v1.md) — replicated two-match association, controls, and limits.
+3. [Project explainer](project_explainer.md) — intuitive questions and answers before technical detail.
+4. [Claim-status ledger](claim_status.md) — exactly what is validated, descriptive, mixed, rejected, or unsupported.
+5. [Research roadmap](research_roadmap.md) — current frontier and October 1, 2026 submission constraint.
 
 ## Football practitioner
 
