@@ -147,6 +147,8 @@ MPLCONFIGDIR=/tmp/moving-defense-footprint .venv/bin/python src/spatial_defensiv
 
 For deterministic verification, rerun with `--output` and `--figures` pointing to temporary locations, then call the governed output with `--verify-against`. All 24 governed pre-reproduction files must match byte-for-byte. Outputs include the complete anchor/rank linkage, coefficient and contrast tables, rank-distance diagnostics, fixed metric bands, temporal placebo, inherited consistency check, trimming/horizon sensitivities, 28-row hard-QC ledger, provenance, reproduction record, and hashes. Game 2 and Game 3 footprint analyses remain unauthorized in this execution.
 
+Before Game 2 footprint execution, the [prospective held-out execution clarification](protocols/spatial_defensive_response_footprint_v1_execution_clarification.md) resolved a reporting gap without changing either frozen scientific artifact. Game 2 receives no standalone coherent/mixed/invalid status: its complete governed outputs must first be saved, hashed, and reproduced, followed by the already-authorized pooled execution, before the original Final Footprint A/B/C rules are applied. The clarification SHA-256 is `60678b0f90128c5905ed2535a81aab37b562fe8a6b8aa6a9c9ff1f7642dcf37e`.
+
 Where a machine-readable config is listed, documentation explains the rules and the config governs execution. The continuous attacker-movement v1 freeze is currently governed directly by its protocol document; an implementation may transcribe it to config only through a pre-execution exact-consistency check. If prose and config conflict, stop and resolve the literal inconsistency before outcomes.
 
 ## Development/test separation

@@ -1,5 +1,9 @@
 # Research Log
 
+## 2026-09-01 — Held-out footprint execution sequence clarified prospectively
+
+Before any Game 2 footprint computation or inspection, a [separate execution clarification](protocols/spatial_defensive_response_footprint_v1_execution_clarification.md) froze the reporting sequence omitted from the scientific protocol. The protocol defines Game 1 development statuses and Final Footprint A/B/C, but no standalone Game 2 coherent/mixed/invalid status. Game 2 will therefore execute unchanged and remain descriptively unclassified until its outputs are saved, hashed, and reproduced; the already-authorized pooled execution then precedes the original Final A/B/C decision. No scientific rule changed. Protocol/config hashes remain `649c40c...34458` and `b784b383...7c9c`; clarification SHA-256 is `60678b0f90128c5905ed2535a81aab37b562fe8a6b8aa6a9c9ff1f7642dcf37e`. Game 2 footprint results remained unobserved and Game 3 untouched at freeze.
+
 ## 2026-09-01 — Game 1 spatial defensive-response footprint development coherent
 
 The first governed execution of [spatial defensive-response footprint v1.0](protocols/spatial_defensive_response_footprint_v1.md) classified **GAME 1 FOOTPRINT DEVELOPMENT COHERENT**. The [result report](results/spatial_defensive_response_footprint_game1_v1.md) covers 7,823 eligible attacker-anchor observations and complete D1–D10 vectors. The rank slopes were non-monotonic: D1 was 0.15518 m/m, D2–D4 were approximately 0.081–0.089, and D5–D10 varied around a lower level.
