@@ -1,5 +1,9 @@
 # Research Log
 
+## 2026-09-01 — Tiered research execution policy adopted
+
+A prospective [execution policy](execution_policy.md) now separates cheap development execution (Tier 1), milestone promotion/closure (Tier 2), and maximum-rigor heldout/final execution (Tier 3). The tier governs operational closure cost, never the scientific estimand or frozen rule. Heldout evidence cannot use Tier 1, and any stronger protocol requirement wins. A read-only helper and checkpoint manifest centralize hash, artifact-ledger, forbidden-output, and repository-state checks. No empirical analysis ran; response-form, footprint, and Game 1 result hashes remained unchanged; Game 2 response form and Game 3 were not accessed.
+
 ## 2026-09-01 — Game 1 local defensive response form development coherent
 
 The first authorized execution of the frozen response-form protocol retained 7,819/7,823 attacker anchors (99.9489%) after the numerical attacker-axis rule. The primary attacker-direction near-minus-middle estimate was 0.09606 m/m with frozen 97.5% interval [0.07220, 0.12295]. The paired primary-minus-temporal-control estimate was 0.04085 [0.01784, 0.06436]. Trimming retained the sign and 89.25% magnitude; one- and four-second estimates preserved the positive sign; all 2,000 bootstrap replicates were valid.
