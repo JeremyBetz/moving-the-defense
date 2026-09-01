@@ -1,0 +1,15 @@
+{
+  "deformation_rows.parquet": "709c049920caca1d099b20879cf7ee2fda9d824741e4461aac396729e0cc2ddf",
+  "final_results.json": "a1438217d3db0e120bee2df3fa14d8ad4f320841bd20f8f29e2645ec43d71991",
+  "four_second_regional_estimates.csv": "3c2e9e92d3f1644d0870ba2703cc083a488a5d9f4128e2005715ff1c8cfd1bd8",
+  "hard_qc.csv": "73da54686630a2254389c93ded69759a3025a330791aa75b1afa434e2913c4f4",
+  "paired_temporal_control.csv": "fcb2ea9d5f4bb1dbd81db831233e8bfb21a602495edfd693ecc5f150d22f0803",
+  "primary_rank_coefficients.csv": "7046c82006d1b54bb2fd7dfff179d5653e3617322afc0fab7db19a1fc26a2102",
+  "primary_regional_estimates.csv": "3c57da54058b5962d42744b4daec8655609779301ee0095b4654a787a21ab753",
+  "replication_conditions.csv": "8edaad72824c7874f016439176898623fa6fde9ae27f37b4167c1f16f8870317",
+  "sample.json": "5f7f427127830b898c05cf62e0daacea873d8da9c8d3e34f348725a3b3a2df0b",
+  "secondary_geometry_by_rank.csv": "204f3f21aaa9238d169ae345def92b5efcc0b681445779656b46b84b90810b57",
+  "secondary_path_regional_estimates.csv": "64475210be0e0be4741640f94b4c56830891981141d0a9c175ce42eef6f2d5ce",
+  "temporal_control_regional_estimates.csv": "fd93c63a32fb98d2c84da56098998e81fdafcf3734b9a96d7d813d86016fcd62",
+  "trimmed_regional_estimates.csv": "b70dc69663532388c2ec82e9ce8054b00bbaf07228e25b959fe958288f2e2ccf"
+}

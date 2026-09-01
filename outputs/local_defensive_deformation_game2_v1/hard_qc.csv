@@ -1,0 +1,14 @@
+check,pass
+frozen_hashes,True
+unique_observation_ids,True
+complete_ten_rows,True
+complete_rank_vectors,True
+unique_defenders,True
+goalkeeper_exclusion_inherited,True
+complete_support_no_interpolation,True
+finite_primary_geometry_and_design,True
+finite_four_second_subset,True
+bootstrap_valid,True
+construct_validity_inherited,True
+game3_not_accessed,True
+pooled_not_executed,True

@@ -1,5 +1,11 @@
 # Research Log
 
+## 2026-09-01 — Game 2 local defensive deformation closes unclassified
+
+After the Game 1 deformation result was closed and a separate held-out addendum was frozen, the unchanged construct executed on Metrica Sample Game 2 under Tier 3. The sample contained 1,087 attacker anchors and complete D1–D10 vectors. The primary near-minus-middle estimate was 0.03095 m/m with frozen 97.5% interval [0.01148, 0.05483], preserving the positive Game 1 localization. The temporal-control estimate was 0.03837 [0.02628, 0.05152], so paired primary minus control was -0.00742 [-0.02143, 0.00777]. Thus the primary localization replicated descriptively but the Game 1 timing-specific paired excess did not.
+
+The four-second and trimmed point estimates remained positive; the descriptive relational-path contrast was positive. All hard checks passed, all six bootstrap families had 2,000 valid replicates, and an independent execution reproduced 13/13 governed files byte-for-byte. Per prospective governance, Game 2 remains **standalone-unclassified**. No pooled deformation model or final deformation A/B/C was run, and Game 3 remained untouched. See the [held-out report](results/local_defensive_deformation_game2_v1.md).
+
 ## 2026-09-01 — Local defensive response form closes at Final B
 
 Under Tier 3, unchanged response-form v1 retained 1,066/1,087 Game 2 anchors (98.0681%). Game 2's primary near-minus-middle estimate was 0.08932 m/m with frozen 97.5% interval [0.02490, 0.15094]; its paired primary-minus-temporal-control estimate was 0.04980 [-0.03936, 0.15903]. Game 2 remained standalone-descriptive and was saved, hashed, and independently reproduced (12/12 governed files byte-identical) before Game 1 comparison or pooled execution.

@@ -266,6 +266,19 @@ MPLCONFIGDIR=/tmp/post5b-mpl .venv/bin/python src/post5b_attacking_movement_segm
 
 Their reports, executed notebooks, figures, and machine-readable outputs are under matching `post5b_*` paths. The segmentation audit manifest hashes its source, rules, and Game 1 inputs. Reproducing it requires Game 1 only and must not introduce defender coordinates or defensive outcomes.
 
+## Local defensive deformation v1
+
+The frozen construct is governed by [`docs/protocols/local_defensive_deformation_v1.md`](protocols/local_defensive_deformation_v1.md) and `config/local_defensive_deformation_v1.json`. Game 2 additionally requires the prospectively frozen [held-out addendum](protocols/local_defensive_deformation_v1_game2_replication.md) and `config/local_defensive_deformation_v1_game2_replication.json`.
+
+Reproduce the closed executions separately:
+
+```bash
+.venv/bin/python src/local_defensive_deformation_game1_v1.py
+.venv/bin/python src/local_defensive_deformation_game2_v1.py
+```
+
+The [Game 1 report](results/local_defensive_deformation_game1_v1.md) records development coherence. The [Game 2 report](results/local_defensive_deformation_game2_v1.md) records a standalone-unclassified held-out result. Its governed outputs are under `outputs/local_defensive_deformation_game2_v1/`; an independent run reproduced all 13 governed files byte-for-byte. No pooled deformation analysis is authorized by the held-out addendum.
+
 ## Known reproducibility limitations
 
 - There is no one-command end-to-end workflow or continuous integration check.
