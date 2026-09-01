@@ -1,0 +1,105 @@
+{
+  "bootstrap": {
+    "block_seconds": 60,
+    "game1_child_index": 6,
+    "interval_percent": 97.5,
+    "master_seed": 20260831,
+    "minimum_valid": 1900,
+    "replicates": 2000,
+    "spawn_count": 9
+  },
+  "classification": {
+    "coherent": [
+      "valid_execution",
+      "primary_estimate_positive_and_interval_strictly_above_zero",
+      "paired_excess_positive_and_interval_strictly_above_zero",
+      "four_second_estimate_positive",
+      "trim_positive_and_retains_at_least_0.5_magnitude",
+      "no_strictly_negative_secondary_path_contrast"
+    ],
+    "invalid": "hard_scientific_or_execution_failure",
+    "mixed": "valid_nonnegative_primary_not_meeting_all_coherent_conditions",
+    "negative": "valid_primary_point_estimate_nonpositive",
+    "statuses": [
+      "GAME 1 DEFORMATION DEVELOPMENT COHERENT",
+      "GAME 1 DEFORMATION DEVELOPMENT MIXED",
+      "GAME 1 DEFORMATION DEVELOPMENT NEGATIVE",
+      "GAME 1 DEFORMATION DEVELOPMENT INVALID"
+    ]
+  },
+  "construct": {
+    "global_prior": "rms_endpoint_change_across_45_unique_defender_pairs",
+    "primary": "focal_rms_endpoint_change_across_9_teammate_distances_m",
+    "secondary": [
+      "focal_relational_deformation_path_m",
+      "focal_signed_mean_spacing_change_m",
+      "whole_unit_endpoint_deformation_m"
+    ]
+  },
+  "data": {
+    "development": "Metrica Sample Game 1",
+    "game2": "prohibited_for_this_execution",
+    "game3": "untouched_and_prohibited",
+    "goalkeeper": "excluded_using_inherited_governed_metadata",
+    "required_defenders": 10
+  },
+  "design_matrix": {
+    "columns_in_order": [
+      "intercept",
+      "attacker_path_length_m",
+      "focal_prior_endpoint_rms_m",
+      "global_prior_endpoint_rms_m"
+    ],
+    "dtype": "float64",
+    "estimator": "numpy.linalg.lstsq_rcond_none",
+    "fit": "separate_D1_D10_raw_metre_OLS",
+    "required_rank": 4
+  },
+  "freeze_date": "2026-09-01",
+  "inherited_hashes": {
+    "footprint_config": "b784b3839146a424acd427a0f1d99959f3ef547039743d30ce90e39f9e557c9c",
+    "footprint_game1_anchors": "b1f6257fcf8d054abe592a9c7f9b8ac2818852e49cd8ec4337e09825d3ebb505",
+    "footprint_game1_linkage": "8ee6c6f42485d3481adfce1071a3d7d391af99d7fed3c846a02b46942def6d58",
+    "footprint_protocol": "649c40c551d880f5204f6ccca7e37cf219660c4a5fdea590e0b73b6377534458",
+    "final_response_form_results": "782b471ea9e8b7063da834b3ea958b3ce962e202b2c2e05971d3e7e3c34045cd"
+  },
+  "model": {
+    "control_exposure": "future_attacker_path_length_m",
+    "control_outcome": "focal_endpoint_rms_m_minus2_to_0",
+    "exposure": "attacker_path_length_m_minus2_to_0",
+    "primary_contrast": "mean_D1_D3_beta_minus_mean_D4_D7_beta",
+    "primary_outcome": "focal_endpoint_rms_m_0_to_2",
+    "prior_covariates": [
+      "focal_endpoint_rms_m_minus4_to_minus2",
+      "global_endpoint_rms_m_minus4_to_minus2"
+    ]
+  },
+  "numerics": {
+    "construct_tolerance_m": 1e-12,
+    "dtype": "float64",
+    "interpolation": "none",
+    "pitch_length_m": 105.0,
+    "pitch_width_m": 68.0,
+    "smoothing": "inherited_centered_7_frame_positions"
+  },
+  "protocol_version": "1.0.0",
+  "robustness": {
+    "extreme_attacker_path_threshold_m": 12.198443079831405,
+    "minimum_retained_magnitude_fraction": 0.5,
+    "response_horizon_sensitivity_seconds": 4
+  },
+  "starting_commit": "7226a4ac2b59e38b92d2565034e32e2150fdde3a",
+  "status": "FROZEN_RESULTS_UNOBSERVED",
+  "temporal_control": {
+    "common_sample_required": true,
+    "control_attacker_exposure_seconds": [0, 2],
+    "control_defender_outcome_seconds": [-2, 0],
+    "paired_primary_minus_control": true
+  },
+  "timing_seconds": {
+    "attacker_exposure": [-2, 0],
+    "context": [-4, -2],
+    "primary_response": [0, 2],
+    "sensitivity_response": [0, 4]
+  }
+}
