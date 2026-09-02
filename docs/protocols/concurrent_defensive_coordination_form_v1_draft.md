@@ -6,7 +6,7 @@
 
 Does the replicated scalar localization have a concurrent component aligned with the attacker's local path after collective defensive movement is removed? The estimand is observable geometry only.
 
-The exact measurement definitions, units, zero-path rule, absolute comparator, cross-trajectory secondary, preprocessing comparison, and synthetic validation are in the [measurement-validation note](../concurrent_defensive_coordination_form_measurement_validation.md) and draft configuration.
+The exact velocity-based measurement definitions, units, zero-path rule, absolute comparator, cross-trajectory secondary, preprocessing comparison, and synthetic validation are in the [measurement-validation note](../concurrent_defensive_coordination_form_measurement_validation.md) and draft configuration. The original displacement-increment candidate was shown analytically and numerically to scale with the sampling interval and is superseded.
 
 ## Proposed preprocessing
 
@@ -14,14 +14,16 @@ The exact measurement definitions, units, zero-path rule, absolute comparator, c
 - Primary: fourth-order zero-phase Butterworth, 1.0 Hz cutoff, on complete continuous x/y support blocks before window extraction.
 - One filtering sensitivity: same filter at 1.5 Hz.
 - Historical comparator: complete-support centred seven-frame mean.
-- Before freeze, specify continuous-block boundaries, minimum supported block length, and whether edge-transient exclusion is required. These choices may not be informed by defender-rank outcomes.
+- Filter each continuously valid support block independently; never cross halftime, invalid tracking gaps, unsupported-player blocks, or other discontinuities.
+- The fourth-order SOS implementation uses 15 reflected-padding samples and requires more than 15 samples. Candidate windows must remain within one block and anchors must exclude at least those 15 samples at each edge.
+- Before freeze, choose whether the final exclusion uses that sample minimum or a common physical-time edge margin across providers. This choice may not be informed by defender-rank outcomes.
 
 ## Proposed primary contrasts
 
 Preserve the established start-rank and modelling architecture unless formal pre-execution review identifies an incompatibility. Two co-primary geometric contrasts are proposed:
 
-1. **A:** D1 minus mean D4–D7 attacker-aligned relative response.
-2. **B:** mean D2–D3 minus mean D4–D7 attacker-aligned relative response.
+1. **A:** D1 minus mean D4–D7 attacker-aligned relative velocity.
+2. **B:** mean D2–D3 minus mean D4–D7 attacker-aligned relative velocity.
 
 The final protocol must specify multiplicity/interval handling and classification conditions prospectively. No such conditions are frozen by this draft.
 

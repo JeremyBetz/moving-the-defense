@@ -14,9 +14,11 @@
     "cutoff_hz": 1.5
   },
   "historical_comparator": "centered_seven_frame_complete_support_arithmetic_mean",
-  "primary_measure": "sum(dot(delta_focal_relative,delta_attacker))/sum(norm(delta_attacker))",
-  "absolute_comparator": "sum(dot(delta_defender_absolute,delta_attacker))/sum(norm(delta_attacker))",
-  "secondary_cross_measure": "sum(abs(cross(delta_focal_relative,delta_attacker)))/sum(norm(delta_attacker))",
+  "superseded_measurement_audit": "displacement_form_scales_with_sample_interval_and_is_not_the_future_primary",
+  "primary_measure": "sum(dot(v_focal_relative,v_attacker)*delta_t)/sum(norm(v_attacker)*delta_t)",
+  "absolute_comparator": "sum(dot(v_defender_absolute,v_attacker)*delta_t)/sum(norm(v_attacker)*delta_t)",
+  "secondary_cross_measure": "sum(abs(cross(v_focal_relative,v_attacker))*delta_t)/sum(norm(v_attacker)*delta_t)",
+  "measurement_units": "metres_per_second",
   "numerical_zero_policy": "if_attacker_path_at_or_below_64_float64_eps_times_pitch_diagonal_all_three_measures_undefined",
   "future_primary_contrasts": {
     "A": "D1_minus_mean_D4_D7",
@@ -29,6 +31,15 @@
     "other": "report observed signs and intervals directly without rescue"
   },
   "secondary_can_rescue_primary": false,
+  "synthetic_cross_frequency_equivalence": {
+    "rates_hz": [10, 25, 100],
+    "comparison": "10_vs_25",
+    "pass_if": "absolute_difference_at_most_0.005_mps_OR_relative_difference_at_most_0.01",
+    "raw": "pass_all",
+    "centered_7_frames": "failed_stop_fixture",
+    "butterworth_1_hz": "pass_all",
+    "butterworth_1_5_hz": "pass_all"
+  },
   "future_execution_order": [
     "human_review_and_freeze",
     "Metrica_Sample_Game_1_development",

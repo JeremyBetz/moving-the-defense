@@ -4,6 +4,7 @@ import unittest
 from src.concurrent_defensive_coordination_form_v1 import (
     centered_rolling_mean,
     coordination_form,
+    displacement_audit_form,
     zero_phase_butterworth,
 )
 
@@ -24,47 +25,68 @@ class CoordinationFormTests(unittest.TestCase):
 
     def test_a_collective_translation_removed(self):
         a, d, o = fixture(np.tile([1.0, 0.0], (4, 1)), np.zeros((4, 2)), np.tile([0.5, 0.0], (4, 1)))
-        result = coordination_form(a, d, o)
-        self.assert_close(result.absolute_aligned_m, 0.5)
-        self.assert_close(result.relative_aligned_m, 0.0)
+        result = coordination_form(a, d, o, np.arange(len(a), dtype=float))
+        self.assert_close(result.absolute_aligned_mps, 0.5)
+        self.assert_close(result.relative_aligned_mps, 0.0)
 
     def test_b_focal_relative_following_positive(self):
         a, d, o = fixture(np.tile([1.0, 0.0], (4, 1)), np.tile([0.4, 0.0], (4, 1)))
-        self.assert_close(coordination_form(a, d, o).relative_aligned_m, 0.4)
+        self.assert_close(coordination_form(a, d, o, np.arange(len(a), dtype=float)).relative_aligned_mps, 0.4)
 
     def test_c_opposite_motion_negative(self):
         a, d, o = fixture(np.tile([1.0, 0.0], (4, 1)), np.tile([-0.25, 0.0], (4, 1)))
-        self.assert_close(coordination_form(a, d, o).relative_aligned_m, -0.25)
+        self.assert_close(coordination_form(a, d, o, np.arange(len(a), dtype=float)).relative_aligned_mps, -0.25)
 
     def test_d_perpendicular_motion_is_cross_only(self):
         a, d, o = fixture(np.tile([1.0, 0.0], (4, 1)), np.tile([0.0, 0.3], (4, 1)))
-        result = coordination_form(a, d, o)
-        self.assert_close(result.relative_aligned_m, 0.0)
-        self.assert_close(result.relative_cross_m, 0.3)
+        result = coordination_form(a, d, o, np.arange(len(a), dtype=float))
+        self.assert_close(result.relative_aligned_mps, 0.0)
+        self.assert_close(result.relative_cross_mps, 0.3)
 
     def test_e_stops_and_all_stop(self):
         a, d, o = fixture(np.array([[1, 0], [0, 0], [1, 0]], float), np.array([[0.2, 0], [9, 7], [0.2, 0]], float))
-        self.assert_close(coordination_form(a, d, o).relative_aligned_m, 0.2)
+        self.assert_close(coordination_form(a, d, o, np.arange(len(a), dtype=float)).relative_aligned_mps, 0.2)
         z, d, o = fixture(np.zeros((3, 2)), np.ones((3, 2)))
-        result = coordination_form(z, d, o)
+        result = coordination_form(z, d, o, np.arange(len(z), dtype=float))
         self.assertEqual(result.attacker_path_m, 0)
-        self.assertIsNone(result.relative_aligned_m)
+        self.assertIsNone(result.relative_aligned_mps)
 
     def test_f_turn_and_endpoint_cancellation(self):
         steps = np.array([[1, 0], [0, 1], [-1, 0], [0, -1]], float)
         a, d, o = fixture(steps, 0.5 * steps)
-        result = coordination_form(a, d, o)
+        result = coordination_form(a, d, o, np.arange(len(a), dtype=float))
         self.assertTrue(np.allclose(a[-1] - a[0], 0))
-        self.assert_close(result.relative_aligned_m, 0.5)
+        self.assert_close(result.relative_aligned_mps, 0.5)
 
     def test_g_common_translation_invariance(self):
         steps = np.array([[1, 0], [0, 1], [-1, 0], [0, -1]], float)
         a, d, o = fixture(steps, 0.3 * steps)
-        base = coordination_form(a, d, o)
+        time = np.arange(len(a), dtype=float)
+        base = coordination_form(a, d, o, time)
         common = np.column_stack((np.linspace(0, 9, len(a)), np.linspace(0, -4, len(a))))
-        shifted = coordination_form(a, d + common, o + common[:, None, :])
-        self.assert_close(shifted.relative_aligned_m, base.relative_aligned_m)
-        self.assert_close(shifted.relative_cross_m, base.relative_cross_m)
+        shifted = coordination_form(a, d + common, o + common[:, None, :], time)
+        self.assert_close(shifted.relative_aligned_mps, base.relative_aligned_mps)
+        self.assert_close(shifted.relative_cross_mps, base.relative_cross_mps)
+
+    def test_displacement_form_scales_with_sample_interval(self):
+        values=[]
+        for hz in (10.0,25.0):
+            t=np.arange(0,4+0.5/hz,1/hz)
+            a=np.column_stack((t,np.zeros_like(t)))
+            r=0.4*a
+            o=np.zeros((len(t),9,2))
+            values.append(displacement_audit_form(a,r,o).relative_aligned_m)
+        self.assert_close(values[0]/values[1],2.5,places=10)
+
+    def test_velocity_form_constant_motion_frequency_invariant(self):
+        values=[]
+        for hz in (10.0,25.0,100.0):
+            t=np.arange(0,4+0.5/hz,1/hz)
+            a=np.column_stack((t,np.zeros_like(t)))
+            r=0.4*a
+            o=np.zeros((len(t),9,2))
+            values.append(coordination_form(a,r,o,t).relative_aligned_mps)
+        np.testing.assert_allclose(values,0.4,atol=1e-12)
 
     def test_lowpass_preserves_slow_signal(self):
         for sample_hz in (10.0, 25.0):

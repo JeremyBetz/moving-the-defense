@@ -18,8 +18,17 @@ EPSILON_M = 64 * np.finfo(np.float64).eps * np.hypot(105.0, 68.0)
 @dataclass(frozen=True)
 class CoordinationForm:
     attacker_path_m: float
+    relative_aligned_mps: float | None
+    absolute_aligned_mps: float | None
+    relative_cross_mps: float | None
+
+
+@dataclass(frozen=True)
+class DisplacementAudit:
+    """Superseded displacement-form values retained only for frequency audit."""
+
+    attacker_path_m: float
     relative_aligned_m: float | None
-    absolute_aligned_m: float | None
     relative_cross_m: float | None
 
 
@@ -46,7 +55,7 @@ def leave_one_out_relative(
     return focal - centroid, centroid
 
 
-def _path_weighted_components(
+def _displacement_components(
     attacker: np.ndarray, response: np.ndarray
 ) -> tuple[float, float | None, float | None]:
     da = np.diff(attacker, axis=0)
@@ -64,12 +73,28 @@ def _path_weighted_components(
     return denominator, aligned, perpendicular
 
 
+def displacement_audit_form(
+    attacker_xy: np.ndarray,
+    focal_xy: np.ndarray,
+    other_defenders_xy: np.ndarray,
+) -> DisplacementAudit:
+    """Compute the superseded, sampling-dependent displacement formulation."""
+    attacker = _trajectory(attacker_xy)
+    focal = _trajectory(focal_xy)
+    if len(attacker) != len(focal):
+        raise ValueError("Trajectories must share exact temporal support")
+    relative, _ = leave_one_out_relative(focal, other_defenders_xy)
+    result = _displacement_components(attacker, relative)
+    return DisplacementAudit(result[0], result[1], result[2])
+
+
 def coordination_form(
     attacker_xy: np.ndarray,
     focal_xy: np.ndarray,
     other_defenders_xy: np.ndarray,
+    time_s: np.ndarray,
 ) -> CoordinationForm:
-    """Compute path-weighted concurrent geometry in metres.
+    """Compute path-weighted concurrent velocity geometry in metres/second.
 
     Stationary attacker steps add zero to numerator and denominator.  A whole
     interval with numerical-zero attacker path has undefined aligned/cross
@@ -79,12 +104,30 @@ def coordination_form(
     focal = _trajectory(focal_xy)
     if len(attacker) != len(focal):
         raise ValueError("Trajectories must share exact temporal support")
+    time = np.asarray(time_s, dtype=np.float64)
+    if time.shape != (len(attacker),) or not np.isfinite(time).all():
+        raise ValueError("One finite timestamp is required per trajectory sample")
+    dt = np.diff(time)
+    if not np.all(dt > 0):
+        raise ValueError("Timestamps must be strictly increasing")
     relative, _ = leave_one_out_relative(focal, other_defenders_xy)
-    rel = _path_weighted_components(attacker, relative)
-    absolute = _path_weighted_components(attacker, focal)
-    if rel[1] is None:
-        return CoordinationForm(rel[0], None, None, None)
-    return CoordinationForm(rel[0], rel[1], absolute[1], rel[2])
+    da = np.diff(attacker, axis=0)
+    va = da / dt[:, None]
+    step = np.linalg.norm(da, axis=1)
+    path = float(step.sum(dtype=np.float64))
+    if path <= EPSILON_M:
+        return CoordinationForm(path, None, None, None)
+
+    def components(response: np.ndarray) -> tuple[float, float]:
+        vr = np.diff(response, axis=0) / dt[:, None]
+        aligned = float((np.einsum("ij,ij->i", vr, va) * dt).sum(dtype=np.float64) / path)
+        cross = np.abs(vr[:, 0] * va[:, 1] - vr[:, 1] * va[:, 0])
+        perpendicular = float((cross * dt).sum(dtype=np.float64) / path)
+        return aligned, perpendicular
+
+    relative_aligned, relative_cross = components(relative)
+    absolute_aligned, _ = components(focal)
+    return CoordinationForm(path, relative_aligned, absolute_aligned, relative_cross)
 
 
 def centered_rolling_mean(xy: np.ndarray, frames: int = 7) -> np.ndarray:

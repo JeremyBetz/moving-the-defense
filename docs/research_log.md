@@ -1,5 +1,11 @@
 # Research Log
 
+## 2026-09-02 — Coordination-form displacement candidate superseded after frequency audit
+
+The initial path-weighted displacement formula was found analytically and synthetically to scale with sampling interval: the identical constant-motion trajectory differed by exactly 2.5× at 10 versus 25 Hz. It is therefore not the future primary. A continuous-time velocity formulation in m/s replaced it, with a separately retained absolute-motion comparator and unsigned perpendicular velocity magnitude.
+
+Straight, opposite, perpendicular, smoothly varying, stopped, curved, and collective-plus-local synthetic trajectories were sampled at 10, 25, and 100 Hz. Raw and physical-time-filtered velocity measurements passed the predeclared 0.005 m/s-or-1% 10/25 Hz equivalence rule; the historical centred-seven-frame comparison failed the stop fixture because its physical support differs by provider frequency. No defender-rank contrast or match-level coordination outcome was computed. The protocol remains an unfrozen draft pending a common edge-margin choice and final inference/classification rules.
+
 ## 2026-09-02 — Concurrent defensive coordination form validated synthetically, not executed
 
 After the IDSSE concurrent-geometry replication, a design-only pass defined a path-weighted local-increment measure of focal-relative defender movement aligned with the attacker's concurrent trajectory. An absolute-defender comparator and an unsigned perpendicular component remain separate. Seven synthetic identities passed, including collective-translation removal, opposite/perpendicular motion, stops, turns with endpoint cancellation, and common-translation invariance.
