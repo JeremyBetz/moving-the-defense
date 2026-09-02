@@ -1,5 +1,11 @@
 # Research Log
 
+## 2026-09-02 — IDSSE concurrent-geometry replication frozen before outcomes
+
+The unchanged Concurrent Attacker–Defensive Geometry v1 construct was prospectively governed across the seven existing IDSSE matches as seven external match-level replications plus a secondary observation-weighted pooled precision summary. The freeze preserves the two-second pre/concurrent windows, 72-column model, D1–D10 start ranks, near-minus-middle estimand, 60-second grouped bootstrap, Metrica trim threshold, and secondary deformation role. A mandatory seven-match provider-equivalence gate separates canonical IDSSE adapter mechanics from the scientific construct. Exact, exhaustive external `SUPPORTED` / `MIXED` / `NOT SUPPORTED` / `INVALID` rules were fixed before results.
+
+No IDSSE concurrent-geometry sample, coefficient, interval, robustness result, or deformation outcome was computed or inspected. Opportunity Redistribution v1 remains excluded and negative; Game 3 remains untouched. See the [frozen protocol](protocols/concurrent_attacker_defensive_geometry_v1_idsse_replication.md) and [provider-equivalence note](concurrent_attacker_defensive_geometry_v1_idsse_equivalence.md).
+
 ## 2026-09-02 — Post-opportunity scientific synthesis
 
 Current evidence supports measurable localized defensive geometric reorganization associated with attacker movement: the concurrent near-minus-middle focal-relative movement contrast replicated across Metrica Games 1 and 2, while local deformation provides additional but less timing-stable geometric evidence. Opportunity Redistribution v1 supplies a genuine boundary result rather than a tunable near miss. Its negative primary coefficient, negative three-nearest interval, negative trimmed estimate, and only weakly positive fixed-start alternative do not support translating the defensive geometry into teammate separation, space creation, gravity, value, tactical success, or causal influence.

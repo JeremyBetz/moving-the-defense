@@ -1,0 +1,97 @@
+{
+  "schema_version": "1.0.0",
+  "status": "FROZEN_BEFORE_ANY_IDSSE_CONCURRENT_GEOMETRY_RESULT",
+  "freeze_date": "2026-09-02",
+  "starting_commit": "1f4786277592fea2cf2c5e15465e29bf7f92dbf3",
+  "execution_tier": 3,
+  "research_question": "Across seven IDSSE matches, does the unchanged Concurrent Attacker-Defensive Geometry v1 design reproduce a positive near-minus-middle association between concurrent attacker path and focal-relative defender path under the same pre-interval movement context?",
+  "matches": ["J03WMX", "J03WN1", "J03WOH", "J03WOY", "J03WPY", "J03WQQ", "J03WR9"],
+  "inheritance": {
+    "protocol": "docs/protocols/concurrent_attacker_defensive_geometry_v1.md",
+    "config": "config/concurrent_attacker_defensive_geometry_v1.json",
+    "model": "unchanged_72_column_float64_stacked_rank_specific_OLS",
+    "solver": "numpy.linalg.lstsq_rcond_none_for_every_governed_fit"
+  },
+  "adapter": {
+    "path": "src/infrastructure/kloppy_idsse_adapter.py",
+    "canonical_contract": "docs/canonical_tracking_contract.md",
+    "coordinates": "native_centered_105x68_metres_fixed_pitch_x_right_y_up",
+    "attacking_direction_normalization": false,
+    "frame_rate_hz": 25,
+    "time": "raw_UTC_nanoseconds_and_period_opening_KickOff_origin",
+    "goalkeeper": "Player.PlayingPosition_equals_TW_verified_against_provider_metadata",
+    "interpolation": "none",
+    "open_play": "established_IDSSE_event_clock_state_mapping",
+    "possession_after_anchor_required": false
+  },
+  "sampling": {
+    "pre_context_seconds": 2,
+    "concurrent_seconds": 2,
+    "anchor_grid": "period_origin_plus_2_plus_4k",
+    "position_smoothing": "centered_7_frame_rolling_mean_full_support",
+    "smoothed_samples_across_t_minus_2_to_t_plus_2_inclusive": 101,
+    "increments_across_full_four_seconds": 100,
+    "raw_edge_support_frames_each_side": 3,
+    "required_defending_outfield_players": 10,
+    "complete_support": true
+  },
+  "equivalence_gate": {
+    "required_for_every_match_before_outcomes": true,
+    "exact": ["period", "frame_id", "provider_timestamp_ns", "player_id", "team_id", "goalkeeper", "observed_mask", "possession_open_play_state", "anchor_id", "focal_id", "D1_D10_membership"],
+    "coordinate_tolerance_m": 0.00001,
+    "derived_component_tolerance_m": 0.0001,
+    "path_tolerance_m": 0.001,
+    "failure_policy": "IDSSE_EXTERNAL_REPLICATION_INVALID_no_match_dropped"
+  },
+  "primary_estimand": "mean_D1_D3_concurrent_attacker_path_beta_minus_mean_D4_D7_beta",
+  "match_level": {
+    "fit_each_match_independently": true,
+    "report": ["eligible_attacker_anchor_observations", "unique_time_anchors", "contrast", "95_percent_interval", "trim_result", "sign"]
+  },
+  "bootstrap": {
+    "replicates": 2000,
+    "minimum_valid": 1900,
+    "interval_percent": 95.0,
+    "block_seconds": 60,
+    "block_origin": "period_origin",
+    "terminal_partial_blocks": "retained",
+    "grouping": "complete_D1_D10_vector_and_all_simultaneous_attackers",
+    "generator": "PCG64",
+    "master_seed": 20260902,
+    "spawn_count": 8,
+    "match_child_indices": {"J03WMX": 0, "J03WN1": 1, "J03WOH": 2, "J03WOY": 3, "J03WPY": 4, "J03WQQ": 5, "J03WR9": 6},
+    "pooled_child_index": 7,
+    "paired_draws_across_primary_secondary_trim": true
+  },
+  "pooled": {
+    "role": "secondary_to_match_level_replications_primary_external_precision_summary",
+    "model": "same_unweighted_72_column_stacked_model",
+    "match_indicators": false,
+    "match_interactions": false,
+    "weighting": "observation_weighted",
+    "bootstrap": "independent_60_second_period_blocks_within_each_match_then_concatenate",
+    "retain_match_identity_for": ["reporting", "resampling"]
+  },
+  "robustness": {
+    "extreme_attacker_path_threshold_m": 12.198443079831405,
+    "threshold_provenance": "frozen_Metrica_Game_1_threshold_transported_unchanged",
+    "minimum_retained_absolute_magnitude_fraction": 0.5
+  },
+  "secondary_deformation": {
+    "outcome": "concurrent_endpoint_RMS_focal_to_other_nine_defender_distance_change",
+    "model": "same_72_column_architecture_match_level_and_pooled",
+    "supportive": "point_positive_and_95_percent_interval_strictly_above_zero",
+    "directionally_supportive": "point_positive_and_interval_includes_zero",
+    "non_supportive": "point_nonpositive",
+    "classification_effect": "none"
+  },
+  "classification": {
+    "evaluation_order": ["INVALID", "NOT_SUPPORTED", "SUPPORTED", "MIXED"],
+    "invalid": "any_governed_match_or_pooled_provider_equivalence_scientific_validity_rank_solver_bootstrap_support_governance_or_reproduction_failure",
+    "not_supported": "valid_and_pooled_point_nonpositive_or_positive_match_count_at_most_3",
+    "supported": ["valid_execution", "pooled_point_positive", "pooled_95_percent_interval_strictly_above_zero", "positive_match_count_at_least_5", "pooled_trim_point_positive", "pooled_trim_retains_at_least_0.5_absolute_magnitude"],
+    "mixed": "every_other_valid_case_with_pooled_point_positive_and_positive_match_count_at_least_4",
+    "statuses": ["IDSSE EXTERNAL REPLICATION SUPPORTED", "IDSSE EXTERNAL REPLICATION MIXED", "IDSSE EXTERNAL REPLICATION NOT SUPPORTED", "IDSSE EXTERNAL REPLICATION INVALID"]
+  },
+  "prohibitions": ["new_predictors", "new_context_variables", "new_smoothing", "new_thresholds", "new_rank_definitions", "model_tuning", "D1_specific_gate", "monotonicity_gate", "far_rank_gate", "opportunity_outcome", "game3_access", "idsse_result_execution_during_design_freeze"]
+}
