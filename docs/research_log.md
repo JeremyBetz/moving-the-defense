@@ -1,5 +1,11 @@
 # Research Log
 
+## 2026-09-02 — Post-opportunity scientific synthesis
+
+Current evidence supports measurable localized defensive geometric reorganization associated with attacker movement: the concurrent near-minus-middle focal-relative movement contrast replicated across Metrica Games 1 and 2, while local deformation provides additional but less timing-stable geometric evidence. Opportunity Redistribution v1 supplies a genuine boundary result rather than a tunable near miss. Its negative primary coefficient, negative three-nearest interval, negative trimmed estimate, and only weakly positive fixed-start alternative do not support translating the defensive geometry into teammate separation, space creation, gravity, value, tactical success, or causal influence.
+
+Three paths remain explicit without selecting among them: center a measurement paper on the replicated geometry and negative interpretation boundary; pursue another downstream consequence only if independently motivated by football theory and literature; or prioritize IDSSE external validation of the established defensive geometry. No Opportunity Redistribution v2, replacement opportunity metric, Game 2 opportunity analysis, or new external experiment was designed.
+
 ## 2026-09-02 — Opportunity Redistribution v1 Game 1 negative
 
 The frozen Game 1 development protocol executed without tuning. Complete support retained 5,750 focal-attacker rows at 575 period/time anchors, all in period 1. The six-column within-anchor design had rank 6 and all 2,000 grouped bootstrap replicates were valid. The primary defensive coefficient was −0.02407 [−0.09392, 0.04776], so the prospectively ordered decision tree classified **GAME 1 OPPORTUNITY REDISTRIBUTION DEVELOPMENT NEGATIVE**. Fixed-start defender separation was weakly positive, while the three-nearest and frozen-trim estimates were negative. Secondary deformation was positive but uncertain and nonclassifying.

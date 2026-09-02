@@ -65,6 +65,14 @@ The completed bridge resolves the first within-provider association test, not it
 
 The [Opportunity Redistribution v1 protocol](protocols/opportunity_redistribution_v1.md) tested whether the replicated focal-local defensive contrast was associated with differential nearest-defender separation gain for other attackers initially local rather than remote to the focal attacker. The [Game 1 result](results/opportunity_redistribution_game1_v1.md) is **NEGATIVE**: the primary $\beta_D$ was −0.02407 [−0.09392, 0.04776], and two of three robustness signs were negative. This narrow geometric bridge did not survive development. Game 2 was not opened; Game 3 remains reserved.
 
+### Research decision point after Opportunity Redistribution v1
+
+- **A — Measurement-paper path:** make the replicated defender-relative and localized concurrent geometry the primary contribution, with the negative opportunity result defining a substantive interpretation boundary.
+- **B — Downstream-consequence path:** pursue a different consequence only if independent football theory and literature motivate a substantively different construct. Do not select another metric merely because nearest-defender separation was negative.
+- **C — External-validation path:** consider external replication of the established defensive geometry on IDSSE as potentially higher-value evidence than another Metrica opportunity experiment.
+
+This is a decision point, not authorization for a new protocol. No Opportunity Redistribution v2, alternative opportunity metric, Game 2 opportunity execution, or IDSSE concurrent-geometry execution has been selected.
+
 The first bounded refinement executed under its frozen rules and classified **B**. Prominence sharply reduced fragmentation but drove merging/direction to 35.88%–69.03% against a 3.97% cap. No candidate was selected, so the protocol forbids Game 2 execution and further threshold repair.
 
 The completed [representation audit](attacking_movement_representation_audit.md) selected penalized change points in the attacker's two-dimensional velocity state. [Protocol v1.0](protocols/attacking_directional_segmentation_v1.md) froze its BIC-derived penalty, fixtures, support treatment, diagnostics, and decision tree before execution. The [Game 1 result](results/attacking_directional_segmentation_game1_v1.md) is **B**: hard QC and merging control passed, but 99.80% fragmentation and unstable 10 Hz recall/F1/counts reject the representation for held-out use. Game 2 remains unopened for attacker segmentation, and the A-only prerequisite was not met.
