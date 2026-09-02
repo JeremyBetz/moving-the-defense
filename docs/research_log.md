@@ -1,5 +1,11 @@
 # Research Log
 
+## 2026-09-01 — Attacker Movement Episode v2 passes frozen Game 1 development gates
+
+The direction-aware v2 protocol was committed before execution. It reproduced all 38,651 historical speed-valley episodes to $7.11\times10^{-15}$ maximum difference, then applied one frozen rule using player-own speed and turning only. Candidate B produced 31,965 episodes. Fragmentation fell from 42.2240% to 28.7596% (31.8881% relative reduction); merging/direction rose from 1.9741% to 2.6498% but remained below the frozen 3.97% cap; lower-speed/≥3 m coverage increased from 40.9951% to 48.6501%. Every frozen gate passed: **GAME 1 ATTACKER EPISODE v2 DEVELOPMENT COHERENT**.
+
+Important counterevidence remains prominent. Long episodes increased from 141 to 288, and the frozen Home 6 pathology still contained a 51.12 s episode after a direction boundary moved its start by only 0.04 s. The accepted Home 10 support break was excluded from v2. An independent complete rerun reproduced all eight governed outputs and the figure byte-for-byte. Game 2, Game 3, IDSSE, defenders, and defensive outcomes remained unopened. This is a development-stage movement-description result, not solved segmentation or tactical-run validation. See the [result report](results/attacker_movement_episode_v2_game1.md).
+
 ## 2026-09-01 — Game 2 local defensive deformation closes unclassified
 
 After the Game 1 deformation result was closed and a separate held-out addendum was frozen, the unchanged construct executed on Metrica Sample Game 2 under Tier 3. The sample contained 1,087 attacker anchors and complete D1–D10 vectors. The primary near-minus-middle estimate was 0.03095 m/m with frozen 97.5% interval [0.01148, 0.05483], preserving the positive Game 1 localization. The temporal-control estimate was 0.03837 [0.02628, 0.05152], so paired primary minus control was -0.00742 [-0.02143, 0.00777]. Thus the primary localization replicated descriptively but the Game 1 timing-specific paired excess did not.

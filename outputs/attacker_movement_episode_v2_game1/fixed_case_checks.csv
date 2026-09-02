@@ -1,0 +1,4 @@
+case,pass,detail
+Away24_coherent,True,contained=True; no_internal_direction_boundary=True
+Home6_merged,True,direction_boundary=True; complete_span=False
+Home10_tracking_discontinuity,True,candidate_overlap=False

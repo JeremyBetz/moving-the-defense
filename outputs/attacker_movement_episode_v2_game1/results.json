@@ -1,0 +1,205 @@
+{
+  "baseline_reproduction": {
+    "actual_episodes": 38651,
+    "expected_episodes": 38651,
+    "maximum_numeric_difference": 7.105427357601002e-15,
+    "passed": true,
+    "same_diagnostics": true,
+    "same_episode_keys": true
+  },
+  "candidate_a": {
+    "candidate": "A_closed_baseline",
+    "direction_complex_n": 424,
+    "episodes": 38651,
+    "fragmentation_n": 16320,
+    "fragmentation_pct": 42.22400455356912,
+    "long_n": 141,
+    "low_directness_n": 268,
+    "lower_speed_coverage_share": 0.4099505834260433,
+    "lower_speed_displacement_ge3_n": 15845,
+    "merging_direction_n": 763,
+    "merging_direction_pct": 1.9740757030865954,
+    "no_high_speed_overlap_n": 37383,
+    "no_high_speed_overlap_pct": 96.71936043051926,
+    "short_n": 13693,
+    "tiny_displacement_n": 3698,
+    "tiny_path_n": 6694
+  },
+  "candidate_b": {
+    "candidate": "B_direction_aware",
+    "direction_complex_n": 380,
+    "episodes": 31965,
+    "fragmentation_n": 9193,
+    "fragmentation_pct": 28.75958079149069,
+    "fragmentation_relative_reduction_pct": 31.888078604662574,
+    "long_n": 288,
+    "low_directness_n": 235,
+    "lower_speed_coverage_share": 0.4865008603159706,
+    "lower_speed_displacement_ge3_n": 15551,
+    "lower_speed_relative_change_pct": 18.67304987107972,
+    "merging_direction_n": 847,
+    "merging_direction_pct": 2.6497731894259346,
+    "no_high_speed_overlap_n": 30776,
+    "no_high_speed_overlap_pct": 96.28030658532771,
+    "short_n": 6982,
+    "tiny_displacement_n": 2557,
+    "tiny_path_n": 4616
+  },
+  "candidate_c": {
+    "executed": false,
+    "reason": "closed 2D velocity PELT is the relevant standard comparator and failed severe fragmentation/frequency stability; a new penalty would be arbitrary"
+  },
+  "config_sha256": "f42142f0cf25dcdf62bfe353cf080124e8dd9f79a6335de407cc68f40a13a19a",
+  "distributions": {
+    "A": [
+      {
+        "max": 51.16,
+        "median": 1.8800000000001091,
+        "min": 0.9999999999999964,
+        "n": 38651,
+        "q1": 1.319999999999709,
+        "q3": 2.7599999999997635,
+        "quantity": "duration_s"
+      },
+      {
+        "max": 63.29229286803714,
+        "median": 2.649950429211799,
+        "min": 0.007601584885203605,
+        "n": 38651,
+        "q1": 1.3244118730167624,
+        "q3": 5.647292141260893,
+        "quantity": "path_m"
+      },
+      {
+        "max": 61.53374424638628,
+        "median": 2.5755875524625527,
+        "min": 0.001311064375197049,
+        "n": 38651,
+        "q1": 1.2966575503318283,
+        "q3": 5.467873331818957,
+        "quantity": "displacement_m"
+      },
+      {
+        "max": 56.29511723942216,
+        "median": 1.6643552116079825,
+        "min": 0.008935425940630093,
+        "n": 38651,
+        "q1": 1.0854538067899133,
+        "q3": 3.20160802178419,
+        "quantity": "peak_speed_mps"
+      },
+      {
+        "max": 1.0,
+        "median": 0.9872112421553164,
+        "min": 0.014701573034571853,
+        "n": 38651,
+        "q1": 0.962202278350584,
+        "q3": 0.9972457402361647,
+        "quantity": "displacement_path_ratio"
+      },
+      {
+        "max": 953.7612602435272,
+        "median": 31.160811191953496,
+        "min": 0.0,
+        "n": 38651,
+        "q1": 13.052292583039108,
+        "q3": 61.82420653077797,
+        "quantity": "absolute_heading_change_deg"
+      }
+    ],
+    "B": [
+      {
+        "max": 51.11999999999999,
+        "median": 2.3200000000001637,
+        "min": 0.9999999999999964,
+        "n": 31965,
+        "q1": 1.5999999999994543,
+        "q3": 3.3200000000006185,
+        "quantity": "duration_s"
+      },
+      {
+        "max": 63.29229286803714,
+        "median": 3.39440491051473,
+        "min": 0.007976864871608811,
+        "n": 31965,
+        "q1": 1.569286769909852,
+        "q3": 6.9511153212353225,
+        "quantity": "path_m"
+      },
+      {
+        "max": 61.53374424638628,
+        "median": 3.2943078836972375,
+        "min": 0.001311064375197049,
+        "n": 31965,
+        "q1": 1.518342387248781,
+        "q3": 6.711737176814255,
+        "quantity": "displacement_m"
+      },
+      {
+        "max": 27.88704836435546,
+        "median": 1.779620746115565,
+        "min": 0.010456176770323962,
+        "n": 31965,
+        "q1": 1.1254642041164071,
+        "q3": 3.3254152119174516,
+        "quantity": "peak_speed_mps"
+      },
+      {
+        "max": 1.0,
+        "median": 0.9810443665359495,
+        "min": 0.024333709107064023,
+        "n": 31965,
+        "q1": 0.9556935223558658,
+        "q3": 0.9931887941221418,
+        "quantity": "displacement_path_ratio"
+      },
+      {
+        "max": 825.4391310883258,
+        "median": 42.208578423738054,
+        "min": 0.0,
+        "n": 31965,
+        "q1": 26.79744889020798,
+        "q3": 70.18681225499641,
+        "quantity": "absolute_heading_change_deg"
+      }
+    ]
+  },
+  "firewall": {
+    "defensive_outcomes_accessed": false,
+    "game2_accessed": false,
+    "game3_accessed": false,
+    "idsse_accessed": false
+  },
+  "fixed_case_checks": {
+    "Away24_coherent": true,
+    "Home10_tracking_discontinuity": true,
+    "Home6_merged": true
+  },
+  "frozen_hashes": {
+    "config/post5b_attacking_movement_prominence_refinement_rules.json": "b20292ccc12ac1b93127926910fd71b08413bdf4133c4613489148fba40582ce",
+    "config/post5b_movement_segmentation_audit_rules.json": "c0c8d6eb7d35eae4e2d1a34b58234c3360ad85d351e725f50714f026b8052862",
+    "docs/post5b_tracking_support_qc_audit.md": "5cf45bd839ab69e8f5bfe067d8deb2dce48b965b9483f1a78cb0140da347820e",
+    "outputs/local_defensive_deformation_game1_v1/final_results.json": "f99f5740446951d338ec9def9d32c335da207fabfe706021c22246ae9fe01d60",
+    "outputs/local_defensive_deformation_game2_v1/final_results.json": "a1438217d3db0e120bee2df3fa14d8ad4f320841bd20f8f29e2645ec43d71991",
+    "outputs/local_defensive_response_form_game2_final_v1/final_results.json": "047a8caaae018dabd70c9a0e30ef37e7fd1c1c5d5c04740ad5aca59ffc3e9222",
+    "outputs/post5b_attacking_movement_prominence_refinement/results.json": "22de73456991997f10d7406934e0129605ea6dd1c66c0e1086ebc4b772939479",
+    "outputs/post5b_movement_segmentation_audit/method_a_episodes.csv": "680b39cedacf595a9dce77a4b1fc3ef77d0430319700dbca50a5683906ea5033",
+    "outputs/post5b_tracking_support_qc_audit/audit_result.json": "322b09962c90aaea66859e71f4a32f8784d69cd3ad7ca8023b44f524ddef4aed",
+    "outputs/spatial_defensive_response_footprint_game2_final_v1/final_results.json": "239b0cad626b156bc0a91c6f8e1fb673e28330ad56f00deb8c3a9ecd4c169b85"
+  },
+  "gates": {
+    "baseline_reproduced": true,
+    "defensive_outcomes_not_accessed": true,
+    "finite_geometry": true,
+    "fixed_cases": true,
+    "fragmentation": true,
+    "game2_not_accessed": true,
+    "game3_not_accessed": true,
+    "lower_speed_coverage": true,
+    "merging_direction": true,
+    "minimum_duration": true,
+    "support_break": true
+  },
+  "protocol_sha256": "5d3b1863b0aab8e12a43db7ecba4500d8e64a85a52bd0808188e2056259a7b24",
+  "status": "GAME 1 ATTACKER EPISODE v2 DEVELOPMENT COHERENT"
+}

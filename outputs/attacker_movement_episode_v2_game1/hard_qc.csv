@@ -1,0 +1,12 @@
+check,pass
+baseline_reproduced,True
+fragmentation,True
+merging_direction,True
+lower_speed_coverage,True
+fixed_cases,True
+support_break,True
+minimum_duration,True
+finite_geometry,True
+game2_not_accessed,True
+game3_not_accessed,True
+defensive_outcomes_not_accessed,True

@@ -53,7 +53,7 @@ Every arrow can fail. Football language does not become a tracking construct mer
 
 - Signed focal-relative displacement is retained descriptively because scalar path loses direction.
 - Constant-velocity continuation innovation is not validated as response onset.
-- Outcome-blind attacker-only speed-valley segmentation is **B — mixed**: it retains substantial lower-speed movement, but 42.22% of episodes meet a fragmentation diagnostic. The current rule is not ready for later response sampling.
+- Historical outcome-blind speed-valley segmentation is **B — mixed**: 42.22% of episodes meet a fragmentation diagnostic. The prospectively frozen [Attacker Movement Episode v2](results/attacker_movement_episode_v2_game1.md) direction-aware consolidation passed its Game 1 development gates, reducing fragmentation to 28.76% while keeping merging/direction below 3.97%. It remains development-only: long episodes increased from 141 to 288 and an approximately 51-second pathology persisted. Game 2 remains unopened for v2.
 
 ## Current methodological frontier
 
