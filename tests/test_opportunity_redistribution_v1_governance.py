@@ -26,14 +26,18 @@ def test_primary_construct_and_model_are_single_and_explicit():
     assert config["model"]["solver"] == "numpy.linalg.lstsq_rcond_none"
 
 
-def test_development_heldout_and_claim_firewalls_are_closed():
+def test_frozen_development_firewall_and_current_heldout_boundaries():
     config = json.loads(CONFIG.read_text(encoding="utf-8"))
     ledger = json.loads(LEDGER.read_text(encoding="utf-8"))
     assert config["data"]["game2"] == "heldout_unobserved_requires_separate_addendum"
     assert config["data"]["game3"] == "reserved_untouched"
     assert config["data"]["idsse"] == "not_executed"
     assert ledger["firewall"]["opportunity_metric_selected_from_results"] is False
-    assert not (ROOT / "outputs/opportunity_redistribution_game1_v1").exists()
+    assert ledger["firewall"]["game1_opportunity_result"] == "not_created_or_inspected"
+    result = ROOT / "outputs/opportunity_redistribution_game1_v1/final_results.json"
+    metadata = json.loads((ROOT / "outputs/opportunity_redistribution_game1_v1/execution_metadata.json").read_text(encoding="utf-8"))
+    assert result.exists()
+    assert metadata["results_observed_only_after_design_freeze"] is True
     assert not (ROOT / "outputs/opportunity_redistribution_game2_v1").exists()
 
 

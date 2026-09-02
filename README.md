@@ -16,7 +16,7 @@ The governing distinction is:
 
 > **Football concept ≠ tracking measurement ≠ theoretical mechanism.**
 
-**Current status — FINAL BRIDGE A; FINAL FOOTPRINT A; FINAL RESPONSE FORM B; CONCURRENT GEOMETRY HELDOUT SUPPORTED:** across both Metrica sample matches, attacker movement was associated with spatially localized defender movement relative to the defensive unit both subsequently and within the same fixed interval. Signed movement in the attacker's preceding direction showed the same positive near-minus-middle pattern in both matches, but the held-out paired excess over the temporal control did not exclude zero. These are observational geometric associations, not causal estimates or tactical labels. Opportunity Redistribution v1 is frozen but unexecuted.
+**Current status — FINAL BRIDGE A; FINAL FOOTPRINT A; FINAL RESPONSE FORM B; CONCURRENT GEOMETRY HELDOUT SUPPORTED; OPPORTUNITY REDISTRIBUTION GAME 1 NEGATIVE:** across both Metrica sample matches, attacker movement was associated with spatially localized defender movement relative to the defensive unit both subsequently and within the same fixed interval. The frozen Game 1 test did not support the next proposed link from that defensive geometry to differential nearest-defender separation for other attackers. These are observational geometric results, not causal estimates or tactical labels.
 
 ## Why this is hard
 
@@ -135,12 +135,12 @@ football question
   → attacking value
 ```
 
-The next legitimate question is not whether these coefficients are value metrics. Concurrent defensive geometry has now replicated within the two Metrica sample matches. The next governed question is whether that measured defensive change corresponds to differential nearest-defender separation for other attackers. Current steps are:
+The next legitimate question is not whether these coefficients are value metrics. Concurrent defensive geometry replicated within the two Metrica sample matches, but the frozen Game 1 nearest-defender-separation bridge classified negative. Current steps are:
 
 1. preserve the completed observational footprint and its inference limits;
 2. preserve the completed mixed directional response-form result and its temporal-control caveat;
-3. execute the frozen Opportunity Redistribution v1 Game 1 development design without tuning;
-4. govern any Game 2 opportunity replication separately, then consider external validation only if the complete chain warrants it;
+3. preserve the negative Opportunity Redistribution v1 result rather than tuning or opening Game 2 automatically;
+4. decide any alternative opportunity representation only through a separate prospective design;
 5. only later revisit football concepts, attribution, and off-ball value.
 
 Potential later applications include defensive-style profiling, opponent-specific analysis, scouting descriptions, analyst-facing clip surfacing, and video indexing. These are research directions, not current products or validated claims.
@@ -155,7 +155,7 @@ Potential later applications include defensive-style profiling, opponent-specifi
 - [Frozen bridge protocol](docs/protocols/attacker_defender_bridge_v1.md) — prespecified design and criteria.
 - [Spatial-footprint protocol](docs/protocols/spatial_defensive_response_footprint_v1.md), [Game 1 development result](docs/results/spatial_defensive_response_footprint_game1_v1.md), [unclassified Game 2 result](docs/results/spatial_defensive_response_footprint_game2_v1.md), and [pooled/final result](docs/results/spatial_defensive_response_footprint_final_v1.md).
 - [Local response-form protocol](docs/protocols/local_defensive_response_form_v1.md), [Game 2 result](docs/results/local_defensive_response_form_game2_v1.md), and [pooled/final B result](docs/results/local_defensive_response_form_final_v1.md).
-- [Concurrent-geometry Game 1 result](docs/results/concurrent_attacker_defensive_geometry_game1_v1.md), [Game 2 heldout result](docs/results/concurrent_attacker_defensive_geometry_game2_v1.md), and [frozen Opportunity Redistribution v1 design](docs/protocols/opportunity_redistribution_v1.md).
+- [Concurrent-geometry Game 1 result](docs/results/concurrent_attacker_defensive_geometry_game1_v1.md), [Game 2 heldout result](docs/results/concurrent_attacker_defensive_geometry_game2_v1.md), [frozen Opportunity Redistribution v1 design](docs/protocols/opportunity_redistribution_v1.md), and [negative Game 1 result](docs/results/opportunity_redistribution_game1_v1.md).
 - [Research log](docs/research_log.md) — complete chronology, including rejected ideas.
 - [Research roadmap](docs/research_roadmap.md) and [Sloan-readiness assessment](docs/sloan_readiness.md).
 - [Reproducibility guide](docs/reproducibility.md) — environments, data layout, and execution paths.

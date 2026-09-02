@@ -290,6 +290,17 @@ Reproduce the closed executions separately:
 
 The [Game 1 report](results/local_defensive_deformation_game1_v1.md) records development coherence. The [Game 2 report](results/local_defensive_deformation_game2_v1.md) records a standalone-unclassified held-out result. Its governed outputs are under `outputs/local_defensive_deformation_game2_v1/`; an independent run reproduced all 13 governed files byte-for-byte. No pooled deformation analysis is authorized by the held-out addendum.
 
+## Opportunity Redistribution v1 — Game 1 development
+
+The scientific design is frozen in [`protocols/opportunity_redistribution_v1.md`](protocols/opportunity_redistribution_v1.md) and `config/opportunity_redistribution_v1.json`. Reproduce the closed negative result with:
+
+```bash
+MPLCONFIGDIR=/tmp/mtd-opportunity .venv/bin/python src/opportunity_redistribution_game1_v1.py
+MPLCONFIGDIR=/tmp/mtd-opportunity .venv/bin/python src/opportunity_redistribution_game1_v1.py --reproduce
+```
+
+The [result report](results/opportunity_redistribution_game1_v1.md) and `outputs/opportunity_redistribution_game1_v1/` record the six-column rank-6 fit, all 2,000 bootstrap replicates, exclusions, frozen robustness checks, and byte-identical reproduction. The script reads Metrica Sample Game 1 only. Game 2, Game 3, and IDSSE are outside this execution.
+
 ## Known reproducibility limitations
 
 - There is no one-command end-to-end workflow or continuous integration check.

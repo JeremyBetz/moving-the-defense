@@ -1,0 +1,486 @@
+{
+  "bootstrap": {
+    "fixed_start": {
+      "attempted": 2000,
+      "valid": 2000
+    },
+    "primary": {
+      "attempted": 2000,
+      "valid": 2000
+    },
+    "secondary_deformation": {
+      "attempted": 2000,
+      "valid": 2000
+    },
+    "three_nearest": {
+      "attempted": 2000,
+      "valid": 2000
+    },
+    "trimmed": {
+      "attempted": 2000,
+      "valid": 2000
+    }
+  },
+  "coefficients": {
+    "fixed_start": [
+      {
+        "attempted_bootstrap": 2000,
+        "ci_high": -0.0027101741678301834,
+        "ci_low": -0.0918594256518747,
+        "estimate": -0.04776042622495763,
+        "predictor": "A",
+        "valid_bootstrap": 2000
+      },
+      {
+        "attempted_bootstrap": 2000,
+        "ci_high": 0.08426573582943171,
+        "ci_low": -0.0641122704162272,
+        "estimate": 0.00914446241441045,
+        "predictor": "D",
+        "valid_bootstrap": 2000
+      },
+      {
+        "attempted_bootstrap": 2000,
+        "ci_high": -0.0755420925386272,
+        "ci_low": -0.12167084337708334,
+        "estimate": -0.09733026496779539,
+        "predictor": "S0",
+        "valid_bootstrap": 2000
+      },
+      {
+        "attempted_bootstrap": 2000,
+        "ci_high": 0.10482061525496421,
+        "ci_low": -0.05096789769929766,
+        "estimate": 0.02905349488583782,
+        "predictor": "MR",
+        "valid_bootstrap": 2000
+      },
+      {
+        "attempted_bootstrap": 2000,
+        "ci_high": 0.06678138324409698,
+        "ci_low": -0.03612621286712237,
+        "estimate": 0.015944526496522143,
+        "predictor": "Apre",
+        "valid_bootstrap": 2000
+      },
+      {
+        "attempted_bootstrap": 2000,
+        "ci_high": 0.09753678250347006,
+        "ci_low": -0.05252442963887143,
+        "estimate": 0.019062100053879396,
+        "predictor": "Dpre",
+        "valid_bootstrap": 2000
+      }
+    ],
+    "primary": [
+      {
+        "attempted_bootstrap": 2000,
+        "ci_high": -0.0003794695806635187,
+        "ci_low": -0.08377998589121333,
+        "estimate": -0.042346596304979944,
+        "predictor": "A",
+        "valid_bootstrap": 2000
+      },
+      {
+        "attempted_bootstrap": 2000,
+        "ci_high": 0.04775547628240976,
+        "ci_low": -0.09391508349840921,
+        "estimate": -0.024068120793194883,
+        "predictor": "D",
+        "valid_bootstrap": 2000
+      },
+      {
+        "attempted_bootstrap": 2000,
+        "ci_high": -0.06919941100591248,
+        "ci_low": -0.11033068138694509,
+        "estimate": -0.08714758511557413,
+        "predictor": "S0",
+        "valid_bootstrap": 2000
+      },
+      {
+        "attempted_bootstrap": 2000,
+        "ci_high": -0.07144641874545829,
+        "ci_low": -0.18673308826549143,
+        "estimate": -0.1284067332792511,
+        "predictor": "MR",
+        "valid_bootstrap": 2000
+      },
+      {
+        "attempted_bootstrap": 2000,
+        "ci_high": 0.04145055232112099,
+        "ci_low": -0.0507460413063328,
+        "estimate": -0.004830178297783362,
+        "predictor": "Apre",
+        "valid_bootstrap": 2000
+      },
+      {
+        "attempted_bootstrap": 2000,
+        "ci_high": 0.11305615046871433,
+        "ci_low": -0.026769617103603503,
+        "estimate": 0.03968337307847683,
+        "predictor": "Dpre",
+        "valid_bootstrap": 2000
+      }
+    ],
+    "secondary_deformation": [
+      {
+        "attempted_bootstrap": 2000,
+        "ci_high": -0.0024612689138343072,
+        "ci_low": -0.0852548102040106,
+        "estimate": -0.044032417991791965,
+        "predictor": "A",
+        "valid_bootstrap": 2000
+      },
+      {
+        "attempted_bootstrap": 2000,
+        "ci_high": 0.1513915717100263,
+        "ci_low": -0.04476687594314139,
+        "estimate": 0.051219576281725285,
+        "predictor": "D",
+        "valid_bootstrap": 2000
+      },
+      {
+        "attempted_bootstrap": 2000,
+        "ci_high": -0.0693813532635074,
+        "ci_low": -0.11040491742597855,
+        "estimate": -0.08728405278163355,
+        "predictor": "S0",
+        "valid_bootstrap": 2000
+      },
+      {
+        "attempted_bootstrap": 2000,
+        "ci_high": -0.072367975114348,
+        "ci_low": -0.1874207880910599,
+        "estimate": -0.12953759866319717,
+        "predictor": "MR",
+        "valid_bootstrap": 2000
+      },
+      {
+        "attempted_bootstrap": 2000,
+        "ci_high": 0.04102859535886265,
+        "ci_low": -0.05102392756950129,
+        "estimate": -0.005065067299450656,
+        "predictor": "Apre",
+        "valid_bootstrap": 2000
+      },
+      {
+        "attempted_bootstrap": 2000,
+        "ci_high": 0.07218480920814047,
+        "ci_low": -0.041250101897764756,
+        "estimate": 0.013403958622146677,
+        "predictor": "Dpre",
+        "valid_bootstrap": 2000
+      }
+    ],
+    "three_nearest": [
+      {
+        "attempted_bootstrap": 2000,
+        "ci_high": 0.011871977395585072,
+        "ci_low": -0.06183646668734529,
+        "estimate": -0.025944661379187346,
+        "predictor": "A",
+        "valid_bootstrap": 2000
+      },
+      {
+        "attempted_bootstrap": 2000,
+        "ci_high": -0.0028198363797103825,
+        "ci_low": -0.1525139633574253,
+        "estimate": -0.08116998421324036,
+        "predictor": "D",
+        "valid_bootstrap": 2000
+      },
+      {
+        "attempted_bootstrap": 2000,
+        "ci_high": -0.038270763288731864,
+        "ci_low": -0.083673339697377,
+        "estimate": -0.05910183401429299,
+        "predictor": "S0",
+        "valid_bootstrap": 2000
+      },
+      {
+        "attempted_bootstrap": 2000,
+        "ci_high": -0.1288475735256602,
+        "ci_low": -0.2291758588023161,
+        "estimate": -0.17964573758074276,
+        "predictor": "MR",
+        "valid_bootstrap": 2000
+      },
+      {
+        "attempted_bootstrap": 2000,
+        "ci_high": 0.012816994012325127,
+        "ci_low": -0.08240060459294805,
+        "estimate": -0.03528632368833426,
+        "predictor": "Apre",
+        "valid_bootstrap": 2000
+      },
+      {
+        "attempted_bootstrap": 2000,
+        "ci_high": 0.09178683874824493,
+        "ci_low": -0.03120534990142673,
+        "estimate": 0.029607758997371288,
+        "predictor": "Dpre",
+        "valid_bootstrap": 2000
+      }
+    ],
+    "trimmed": [
+      {
+        "attempted_bootstrap": 2000,
+        "ci_high": -0.004590338346964905,
+        "ci_low": -0.09074332675178168,
+        "estimate": -0.049402450943340774,
+        "predictor": "A",
+        "valid_bootstrap": 2000
+      },
+      {
+        "attempted_bootstrap": 2000,
+        "ci_high": 0.045783619776274175,
+        "ci_low": -0.10268150698197057,
+        "estimate": -0.028523626500487512,
+        "predictor": "D",
+        "valid_bootstrap": 2000
+      },
+      {
+        "attempted_bootstrap": 2000,
+        "ci_high": -0.0682206686977233,
+        "ci_low": -0.10916154194236787,
+        "estimate": -0.08608557716940998,
+        "predictor": "S0",
+        "valid_bootstrap": 2000
+      },
+      {
+        "attempted_bootstrap": 2000,
+        "ci_high": -0.06656280552035344,
+        "ci_low": -0.18790325900568866,
+        "estimate": -0.12653242414786375,
+        "predictor": "MR",
+        "valid_bootstrap": 2000
+      },
+      {
+        "attempted_bootstrap": 2000,
+        "ci_high": 0.046696034696782046,
+        "ci_low": -0.046952857811847964,
+        "estimate": -0.0005223621892024627,
+        "predictor": "Apre",
+        "valid_bootstrap": 2000
+      },
+      {
+        "attempted_bootstrap": 2000,
+        "ci_high": 0.11797755566368186,
+        "ci_low": -0.02971093757514376,
+        "estimate": 0.040809137874244734,
+        "predictor": "Dpre",
+        "valid_bootstrap": 2000
+      }
+    ]
+  },
+  "defensive_predictor_distribution": {
+    "count": 5750,
+    "max": 7.113318147074695,
+    "mean": 0.0736470252512484,
+    "median": 0.013230435088589898,
+    "min": -5.515009250669469,
+    "q25": -0.5764535143354257,
+    "q75": 0.6274731874070761,
+    "sd": 1.1387930451833008
+  },
+  "descriptives": {
+    "local_separation_change": {
+      "count": 5750,
+      "max": 5.191675513733093,
+      "mean": 0.0266829438201845,
+      "median": 0.037843368144492594,
+      "min": -7.446337213809779,
+      "q25": -0.6457197791114611,
+      "q75": 0.7232468698829743,
+      "sd": 1.1916740033598427
+    },
+    "recipient_nearest_identity_churn": {
+      "count": 5750,
+      "max": 8.0,
+      "mean": 1.7561739130434784,
+      "median": 2.0,
+      "min": 0.0,
+      "q25": 1.0,
+      "q75": 3.0,
+      "sd": 1.3661851568501728
+    },
+    "remote_separation_change": {
+      "count": 5750,
+      "max": 5.503861751535947,
+      "mean": -0.019083638695593215,
+      "median": -0.0020754362528846806,
+      "min": -7.407284905912525,
+      "q25": -0.7662215902658582,
+      "q75": 0.7773531148364449,
+      "sd": 1.3573711202152843
+    }
+  },
+  "design_rank": {
+    "fixed_start": 6,
+    "primary": 6,
+    "secondary_deformation": 6,
+    "three_nearest": 6,
+    "trimmed": 6
+  },
+  "environment": {
+    "numpy": "2.5.2",
+    "pandas": "2.3.3",
+    "python": "3.13.15"
+  },
+  "frozen_hashes": {
+    "config/opportunity_redistribution_v1.json": "45c418a9b52565298da184f32250dab190df2e62030d4f42fde7408c3523e431",
+    "config/opportunity_redistribution_v1_hashes.json": "aa5cba169e330bcea2b280b269e0bd075af7c0eca3e6f7eac879317587259c49",
+    "docs/protocols/opportunity_redistribution_v1.md": "15825647a23c4cfcb24317e773d07a8c17cbb5d705b8c7eafd07493f728625fa"
+  },
+  "hard_qc": {
+    "bootstrap_minimum_valid": true,
+    "complete_ten_attackers_and_defenders": true,
+    "defender_rank_membership_fixed_at_start": true,
+    "finite_geometry": true,
+    "frozen_hashes": true,
+    "goalkeepers_excluded": true,
+    "no_game2_game3_or_idsse_access": true,
+    "no_interpolation_complete_support": true,
+    "recipient_membership_fixed_at_start": true,
+    "six_column_full_rank_all_families": true,
+    "unique_observation_ids": true,
+    "within_anchor_centered": true
+  },
+  "outcome_distribution": {
+    "count": 5750,
+    "max": 7.319765274251,
+    "mean": 0.04576658251577774,
+    "median": 0.0226077166401263,
+    "min": -7.646275450755228,
+    "q25": -1.0723593872510213,
+    "q75": 1.1317584631134117,
+    "sd": 1.874538201279837
+  },
+  "provenance": {
+    "adapter_version": "1.0.0",
+    "ball_object_id_provider": null,
+    "ball_state_available": false,
+    "canonical_coordinate_system": "metres, pitch centre origin, +x right, +y top, fixed pitch frame",
+    "canonical_match_id": "metrica:sample-game-1",
+    "contract_version": "1.0.0",
+    "coordinate_transform": [
+      "Kloppy 3.19.0 parses Metrica y bottom-to-top",
+      "x_m = kloppy_x * 105 - 52.5",
+      "y_m = kloppy_y * 68 - 34"
+    ],
+    "coordinates_attacking_direction_normalized": false,
+    "goalkeeper_source": "frozen project metadata: Home 11, Away 25",
+    "interpolation_used": false,
+    "kloppy_version": "3.19.0",
+    "orientation_metadata": "home-away",
+    "pitch_m": [
+      105.0,
+      68.0
+    ],
+    "player_id_map_provider_to_canonical": {
+      "away_15": "metrica:Away:15",
+      "away_16": "metrica:Away:16",
+      "away_17": "metrica:Away:17",
+      "away_18": "metrica:Away:18",
+      "away_19": "metrica:Away:19",
+      "away_20": "metrica:Away:20",
+      "away_21": "metrica:Away:21",
+      "away_22": "metrica:Away:22",
+      "away_23": "metrica:Away:23",
+      "away_24": "metrica:Away:24",
+      "away_25": "metrica:Away:25",
+      "away_26": "metrica:Away:26",
+      "away_27": "metrica:Away:27",
+      "away_28": "metrica:Away:28",
+      "home_1": "metrica:Home:1",
+      "home_10": "metrica:Home:10",
+      "home_11": "metrica:Home:11",
+      "home_12": "metrica:Home:12",
+      "home_13": "metrica:Home:13",
+      "home_14": "metrica:Home:14",
+      "home_2": "metrica:Home:2",
+      "home_3": "metrica:Home:3",
+      "home_4": "metrica:Home:4",
+      "home_5": "metrica:Home:5",
+      "home_6": "metrica:Home:6",
+      "home_7": "metrica:Home:7",
+      "home_8": "metrica:Home:8",
+      "home_9": "metrica:Home:9"
+    },
+    "possession_team_available": false,
+    "provider": "metrica",
+    "provider_frame_id_available": true,
+    "provider_match_id": "Sample Game 1",
+    "provider_raw_timestamp_available": false,
+    "source_coordinate_system": "normalized x left-to-right, y top-to-bottom",
+    "source_files": [
+      {
+        "path": "data/metrica_sample_game_1/Sample_Game_1_RawTrackingData_Home_Team.csv",
+        "sha256": "0a3d0eff7785950379c587d3597b86a2d91c2492281b4652e1abb97c99b6b364"
+      },
+      {
+        "path": "data/metrica_sample_game_1/Sample_Game_1_RawTrackingData_Away_Team.csv",
+        "sha256": "0a3df68a92af0290ede472e62de3b6489ddee29223da09bdf0cf76c8e0ab0618"
+      }
+    ],
+    "support_rule": "Kloppy coordinate-object presence; unavailable reason retained as not_observed_unspecified",
+    "team_id_map_provider_to_canonical": {
+      "away": "metrica:Away",
+      "home": "metrica:Home"
+    },
+    "time_match_rule": "raw Metrica Time [s] preserved from provider frame-index sidecar",
+    "time_period_rule": "Kloppy period-relative timestamp",
+    "transformation_log": [
+      "load via Kloppy",
+      "canonical fixed-pitch coordinate transform",
+      "explicit roster null rows"
+    ]
+  },
+  "robustness_positive_signs": {
+    "fixed_start": true,
+    "three_nearest": false,
+    "trimmed": false
+  },
+  "sample": {
+    "attacking_team_counts": {
+      "metrica:Away": 3240,
+      "metrica:Home": 2510
+    },
+    "eligible_focal_attacker_observations": 5750,
+    "exclusion_counts": {
+      "complete_ten_attackers_unavailable": 503,
+      "complete_ten_defenders_unavailable": 118,
+      "no_possession_team": 9,
+      "opponent_possession_event_after_anchor": 102,
+      "restart_or_ball_out_span": 142
+    },
+    "period2_support_diagnosis": {
+      "classification": "PERIOD-2 EXCLUSION CORRECT UNDER FROZEN RULES",
+      "inherited_registry_exclusions": [
+        "metrica:Home:3",
+        "metrica:Away:22"
+      ],
+      "maximum_supported_outfield_players_per_team": 9,
+      "reason": "opportunity_v1_requires_ten_supported_attackers_and_ten_supported_defenders_simultaneously",
+      "registry_scope": "entire_period_2"
+    },
+    "period_counts": {
+      "1": 5750
+    },
+    "simultaneous_focal_attackers": {
+      "count": 575,
+      "max": 10.0,
+      "mean": 10.0,
+      "median": 10.0,
+      "min": 10.0,
+      "q25": 10.0,
+      "q75": 10.0,
+      "sd": 0.0
+    },
+    "trim_excluded": 57,
+    "trim_retained": 5693,
+    "trim_threshold_m": 12.198443079831405,
+    "unique_anchor_times": 575
+  },
+  "status": "GAME 1 OPPORTUNITY REDISTRIBUTION DEVELOPMENT NEGATIVE"
+}

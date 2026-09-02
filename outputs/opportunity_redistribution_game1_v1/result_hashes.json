@@ -1,0 +1,11 @@
+{
+  "exclusion_ledger.csv": "502e6efc7f2041ba7e0bb43f6a6ba2f155b750012e9f018ac8a00a63ad425f1e",
+  "final_results.json": "215cea1c83efb5d542c9ffc8a0c59c227a07b695c118b97cc05bbf14dc340656",
+  "first_anchor_geometry.json": "6ad1a0232bba17f2f5ae500e2271bdcb553daed1258a10ab1f7608f696e57bb6",
+  "fixed_start_coefficients.csv": "802da2ea61d921a6a9887bd54d3eec61698721dab11bf03d09880921b129c3d9",
+  "observation_rows.csv": "8c33e4697a3029fb1b3924efc1d1f5a99da2e0b1c0287058828af4fbf8b73a57",
+  "primary_coefficients.csv": "1bc5b7f961ffa303c5b327f264f96330a3a239067441711eeb5c78a61bfaf349",
+  "secondary_deformation_coefficients.csv": "a5b63af4ee341d92eb47f7009a9614a92497403c053035113835917149b41300",
+  "three_nearest_coefficients.csv": "e52dc93a01ddf65a919dc43445583fc9ec0b4b6f3f6c3a455f45daa8c73d1d71",
+  "trimmed_coefficients.csv": "63f4582561eb64742be3262bf6e906b700a73c48ccdf04bda054cf0706106e44"
+}

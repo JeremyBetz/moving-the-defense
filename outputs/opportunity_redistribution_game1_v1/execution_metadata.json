@@ -1,0 +1,11 @@
+{
+  "development_match": "metrica:sample-game-1",
+  "frozen_configuration_sha256": "45c418a9b52565298da184f32250dab190df2e62030d4f42fde7408c3523e431",
+  "frozen_hash_ledger_sha256": "aa5cba169e330bcea2b280b269e0bd075af7c0eca3e6f7eac879317587259c49",
+  "frozen_protocol_sha256": "15825647a23c4cfcb24317e773d07a8c17cbb5d705b8c7eafd07493f728625fa",
+  "game2_game3_idsse_untouched": true,
+  "governed_output_count": 9,
+  "results_observed_only_after_design_freeze": true,
+  "source_sha256": "0e2afed1994f2b7defef64851646fa626eed54b32c913dde0109ad0771f71fbc",
+  "starting_commit": "8444ff41a04b78dcd2fcd4a74267af67492de48e"
+}

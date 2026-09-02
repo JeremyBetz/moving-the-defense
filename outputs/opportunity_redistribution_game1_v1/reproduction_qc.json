@@ -1,0 +1,16 @@
+{
+  "all_pass": true,
+  "byte_identical": 9,
+  "files": {
+    "exclusion_ledger.csv": true,
+    "final_results.json": true,
+    "first_anchor_geometry.json": true,
+    "fixed_start_coefficients.csv": true,
+    "observation_rows.csv": true,
+    "primary_coefficients.csv": true,
+    "secondary_deformation_coefficients.csv": true,
+    "three_nearest_coefficients.csv": true,
+    "trimmed_coefficients.csv": true
+  },
+  "governed_outputs": 9
+}

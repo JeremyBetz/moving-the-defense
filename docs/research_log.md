@@ -1,5 +1,11 @@
 # Research Log
 
+## 2026-09-02 — Opportunity Redistribution v1 Game 1 negative
+
+The frozen Game 1 development protocol executed without tuning. Complete support retained 5,750 focal-attacker rows at 575 period/time anchors, all in period 1. The six-column within-anchor design had rank 6 and all 2,000 grouped bootstrap replicates were valid. The primary defensive coefficient was −0.02407 [−0.09392, 0.04776], so the prospectively ordered decision tree classified **GAME 1 OPPORTUNITY REDISTRIBUTION DEVELOPMENT NEGATIVE**. Fixed-start defender separation was weakly positive, while the three-nearest and frozen-trim estimates were negative. Secondary deformation was positive but uncertain and nonclassifying.
+
+All nine governed outputs reproduced byte-for-byte. No Game 2 opportunity outcome, Game 3, or IDSSE data were accessed. This result rejects the predicted positive association for the tested nearest-defender-separation representation in this development sample; it does not establish a universal absence of attacking opportunity change and does not authorize post-result tuning.
+
 ## 2026-09-02 — Opportunity Redistribution v1 frozen before outcomes
 
 Following supported heldout concurrent geometry, a focused literature/construct audit compared other-attacker separation, density, passing-lane geometry, Voronoi/control space, passing availability, numerical superiority, and valued off-ball opportunity. The frozen Game 1 protocol selects a deliberately narrower primitive: local-minus-remote change in nearest-defender separation among all nine non-focal attacking outfield players, with recipient groups fixed by focal distance at interval start. This is separation geometry, not pass availability, pitch control, tactical success, or value.
