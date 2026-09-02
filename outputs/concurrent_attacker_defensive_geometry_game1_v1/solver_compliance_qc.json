@@ -1,0 +1,26 @@
+{
+  "governed_solver": "numpy.linalg.lstsq_rcond_none_on_equivalent_Cholesky_sufficient_statistic_design",
+  "governed_status": "GAME 1 CONCURRENT GEOMETRY DEVELOPMENT COHERENT",
+  "material_interval_change": false,
+  "maximum_absolute_bootstrap_coefficient_difference": 1.033895191682177e-14,
+  "maximum_absolute_interval_endpoint_difference": 5.009881398621019e-15,
+  "per_family": {
+    "primary": {
+      "maximum_absolute_bootstrap_coefficient_difference": 7.875644580934704e-15,
+      "maximum_absolute_interval_endpoint_difference": 1.6237011735142914e-15
+    },
+    "secondary": {
+      "maximum_absolute_bootstrap_coefficient_difference": 7.643191635153812e-15,
+      "maximum_absolute_interval_endpoint_difference": 2.1094237467877974e-15
+    },
+    "trimmed": {
+      "maximum_absolute_bootstrap_coefficient_difference": 1.033895191682177e-14,
+      "maximum_absolute_interval_endpoint_difference": 5.009881398621019e-15
+    }
+  },
+  "preliminary_solver": "numpy.linalg.solve_on_block_sufficient_normal_equations",
+  "preliminary_status": "GAME 1 CONCURRENT GEOMETRY DEVELOPMENT COHERENT",
+  "purpose": "implementation_compliance_only",
+  "same_sample_design_weights_and_draws": true,
+  "status_changed": false
+}

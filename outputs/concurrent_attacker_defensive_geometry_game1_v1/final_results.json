@@ -1,0 +1,274 @@
+{
+  "bootstrap": {
+    "primary": {
+      "attempted": 2000,
+      "valid": 2000
+    },
+    "secondary": {
+      "attempted": 2000,
+      "valid": 2000
+    },
+    "trimmed": {
+      "attempted": 2000,
+      "valid": 2000
+    }
+  },
+  "controls": {
+    "prior_attacker_path_m": {
+      "iqr": 3.1873744615439277,
+      "median": 2.815557557648779
+    },
+    "prior_defensive_centroid_path_m": {
+      "iqr": 3.1528653121639523,
+      "median": 2.3230586082126488
+    },
+    "prior_focal_relative_path_m": {
+      "iqr": 1.9481237458337013,
+      "median": 2.0062207743896576
+    },
+    "prior_other_nine_mean_absolute_path_m": {
+      "iqr": 2.9113410311516383,
+      "median": 3.2293706536002387
+    }
+  },
+  "criteria": {
+    "primary_95_percent_interval_strictly_above_zero": true,
+    "primary_near_minus_middle_positive": true,
+    "trim_retains_at_least_0.5_magnitude": true,
+    "trimmed_primary_positive": true,
+    "valid_execution_and_construct_qc": true
+  },
+  "environment": {
+    "numpy": "2.5.2",
+    "pandas": "2.3.3",
+    "polars": "1.44.1",
+    "python": "3.13.15"
+  },
+  "exposure": {
+    "concurrent_attacker_path_m": {
+      "max": 17.716630058889223,
+      "median": 2.7875877871038104,
+      "min": 0.0,
+      "q25": 1.6800117513393324,
+      "q75": 4.963653354631235
+    },
+    "prior_attacker_path_m": {
+      "max": 16.879655717788715,
+      "median": 2.815557557648779,
+      "min": 0.0,
+      "q25": 1.726861054805067,
+      "q75": 4.914235516348994
+    }
+  },
+  "frozen_hashes": {
+    "config/concurrent_attacker_defensive_geometry_v1.json": "5b37211295297fe4350c394500da27e72040aefcc7f4806b1c779a390a9c692d",
+    "config/concurrent_attacker_defensive_geometry_v1_hashes.json": "7fb68191ec74278c7734a889c0452feb3398932579db6c4af67687143a38873d",
+    "docs/protocols/concurrent_attacker_defensive_geometry_v1.md": "1382e97f401eafc2101f2d77ef2b7158e48500ce7df6b01d4db450f2ba1b8f32"
+  },
+  "hard_qc": {
+    "bootstrap_minimum_valid": true,
+    "complete_D1_D10": true,
+    "distance_order": true,
+    "finite_geometry": true,
+    "fixed_rank_no_future_reranking": true,
+    "focal_exclusion": true,
+    "frozen_hashes": true,
+    "full_design_rank": true,
+    "goalkeeper_excluded": true,
+    "no_game2_game3_idsse_or_opportunity_access": true,
+    "no_interpolation_complete_support": true,
+    "ten_unique_defenders": true,
+    "translation_rotation_reflection_synthetic_tests": true,
+    "unique_observation_rank_rows": true
+  },
+  "primary": {
+    "D1_D10": [
+      0.13396824269690305,
+      0.0490880475923191,
+      0.03697355526799845,
+      0.049299894543605505,
+      0.043852459001060495,
+      0.03958340141370828,
+      0.05396907611114752,
+      0.050136421529791225,
+      0.06835858534663329,
+      0.08274238067813998
+    ],
+    "far": 0.06707912918485483,
+    "middle": 0.04667620776738045,
+    "near": 0.07334328185240686,
+    "near_minus_middle": 0.026667074085026415
+  },
+  "provenance": {
+    "adapter_version": "1.0.0",
+    "ball_object_id_provider": null,
+    "ball_state_available": false,
+    "canonical_coordinate_system": "metres, pitch centre origin, +x right, +y top, fixed pitch frame",
+    "canonical_match_id": "metrica:sample-game-1",
+    "contract_version": "1.0.0",
+    "coordinate_transform": [
+      "Kloppy 3.19.0 parses Metrica y bottom-to-top",
+      "x_m = kloppy_x * 105 - 52.5",
+      "y_m = kloppy_y * 68 - 34"
+    ],
+    "coordinates_attacking_direction_normalized": false,
+    "goalkeeper_source": "frozen project metadata: Home 11, Away 25",
+    "interpolation_used": false,
+    "kloppy_version": "3.19.0",
+    "orientation_metadata": "home-away",
+    "pitch_m": [
+      105.0,
+      68.0
+    ],
+    "player_id_map_provider_to_canonical": {
+      "away_15": "metrica:Away:15",
+      "away_16": "metrica:Away:16",
+      "away_17": "metrica:Away:17",
+      "away_18": "metrica:Away:18",
+      "away_19": "metrica:Away:19",
+      "away_20": "metrica:Away:20",
+      "away_21": "metrica:Away:21",
+      "away_22": "metrica:Away:22",
+      "away_23": "metrica:Away:23",
+      "away_24": "metrica:Away:24",
+      "away_25": "metrica:Away:25",
+      "away_26": "metrica:Away:26",
+      "away_27": "metrica:Away:27",
+      "away_28": "metrica:Away:28",
+      "home_1": "metrica:Home:1",
+      "home_10": "metrica:Home:10",
+      "home_11": "metrica:Home:11",
+      "home_12": "metrica:Home:12",
+      "home_13": "metrica:Home:13",
+      "home_14": "metrica:Home:14",
+      "home_2": "metrica:Home:2",
+      "home_3": "metrica:Home:3",
+      "home_4": "metrica:Home:4",
+      "home_5": "metrica:Home:5",
+      "home_6": "metrica:Home:6",
+      "home_7": "metrica:Home:7",
+      "home_8": "metrica:Home:8",
+      "home_9": "metrica:Home:9"
+    },
+    "possession_team_available": false,
+    "provider": "metrica",
+    "provider_frame_id_available": true,
+    "provider_match_id": "Sample Game 1",
+    "provider_raw_timestamp_available": false,
+    "source_coordinate_system": "normalized x left-to-right, y top-to-bottom",
+    "source_files": [
+      {
+        "path": "data/metrica_sample_game_1/Sample_Game_1_RawTrackingData_Home_Team.csv",
+        "sha256": "0a3d0eff7785950379c587d3597b86a2d91c2492281b4652e1abb97c99b6b364"
+      },
+      {
+        "path": "data/metrica_sample_game_1/Sample_Game_1_RawTrackingData_Away_Team.csv",
+        "sha256": "0a3df68a92af0290ede472e62de3b6489ddee29223da09bdf0cf76c8e0ab0618"
+      }
+    ],
+    "support_rule": "Kloppy coordinate-object presence; unavailable reason retained as not_observed_unspecified",
+    "team_id_map_provider_to_canonical": {
+      "away": "metrica:Away",
+      "home": "metrica:Home"
+    },
+    "time_match_rule": "raw Metrica Time [s] preserved from provider frame-index sidecar",
+    "time_period_rule": "Kloppy period-relative timestamp",
+    "transformation_log": [
+      "load via Kloppy",
+      "canonical fixed-pitch coordinate transform",
+      "explicit roster null rows"
+    ]
+  },
+  "sample": {
+    "attacker_identities": [
+      "metrica:Away:15",
+      "metrica:Away:16",
+      "metrica:Away:17",
+      "metrica:Away:18",
+      "metrica:Away:19",
+      "metrica:Away:20",
+      "metrica:Away:21",
+      "metrica:Away:22",
+      "metrica:Away:23",
+      "metrica:Away:24",
+      "metrica:Home:1",
+      "metrica:Home:10",
+      "metrica:Home:12",
+      "metrica:Home:13",
+      "metrica:Home:14",
+      "metrica:Home:2",
+      "metrica:Home:3",
+      "metrica:Home:4",
+      "metrica:Home:5",
+      "metrica:Home:6",
+      "metrica:Home:7",
+      "metrica:Home:8",
+      "metrica:Home:9"
+    ],
+    "attacking_team_counts": {
+      "metrica:Away": 3480,
+      "metrica:Home": 4785
+    },
+    "defender_rows": 82650,
+    "eligible_attacker_anchor_observations": 8265,
+    "period_counts": {
+      "1": 6278,
+      "2": 1987
+    },
+    "simultaneous_attackers": {
+      "max": 10,
+      "median": 10.0,
+      "min": 8,
+      "q25": 9.0,
+      "q75": 10.0
+    },
+    "support_exclusion_counts": {
+      "attacker_complete_support_unavailable": 4436,
+      "complete_ten_defenders_unavailable": 4173,
+      "no_possession_team": 9,
+      "restart_or_ball_out_span": 1846
+    },
+    "trim_excluded_anchors": 89,
+    "trim_excluded_share": 0.010768300060496068,
+    "unique_anchor_times": 849
+  },
+  "secondary_deformation": {
+    "D1_D10": [
+      0.09700571057192423,
+      0.05082738415063097,
+      0.0460715809047581,
+      0.051563360459115276,
+      0.050923204646297834,
+      0.0482202102767471,
+      0.05369110640835573,
+      0.04577303607509793,
+      0.057858486986535805,
+      0.05680686713339814
+    ],
+    "far": 0.05347946339834395,
+    "middle": 0.051099470447628983,
+    "near": 0.0646348918757711,
+    "near_minus_middle": 0.013535421428142111
+  },
+  "status": "GAME 1 CONCURRENT GEOMETRY DEVELOPMENT COHERENT",
+  "trimmed_primary": {
+    "D1_D10": [
+      0.1299619183559273,
+      0.051262924247080954,
+      0.03389378105850796,
+      0.05072393505163547,
+      0.042163874117337435,
+      0.04018525771777359,
+      0.055931584334645526,
+      0.04870123340522298,
+      0.06636539269405001,
+      0.08130073508538715
+    ],
+    "far": 0.06545578706155337,
+    "middle": 0.04725116280534801,
+    "near": 0.07170620788717207,
+    "near_minus_middle": 0.024455045081824056,
+    "retained_magnitude_fraction": 0.9170501797029013,
+    "threshold_m": 12.198443079831405
+  }
+}
