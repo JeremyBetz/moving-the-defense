@@ -1,0 +1,66 @@
+{
+  "version": "1.0.0",
+  "status": "frozen_before_game2_v2_execution",
+  "freeze_date": "2026-09-01",
+  "starting_commit": "35e22081c2697be2b3773986c7745815bf2ce317",
+  "tier": 3,
+  "data": "Metrica Sample Game 2 only",
+  "inheritance": {
+    "protocol_sha256": "5d3b1863b0aab8e12a43db7ecba4500d8e64a85a52bd0808188e2056259a7b24",
+    "configuration_sha256": "f42142f0cf25dcdf62bfe353cf080124e8dd9f79a6335de407cc68f40a13a19a",
+    "game1_result_sha256": "261e092fcf55348cf9532c4bbaaa57b7985922e2e707e2e744ccfd2976fbebd7",
+    "game1_ledger_sha256": "d10d54150a2c0840f6208c9040cee447b6a32ec85b7fc713e46a3360826a4adc"
+  },
+  "support": {
+    "authority": "closed Game 2 attacker-only Stage A registry",
+    "valid_support_segments_sha256": "d618232b7363d0311560e935e23dd3ad77def8f1af26319df90c4c536f43460b",
+    "trajectory_validity_registry_sha256": "22c202c83c564e4b0c6fb3aa0ceb8729f7bdb2b6651b980bd1024fd4002d98b5",
+    "stage_a_result_sha256": "c63eaa6601ad6605c108efd82fa92d0d7e53e75df7414ccc91d7991187d1599f",
+    "stage_a_governed_hashes_sha256": "5a7ca94a898a5b606a15eb83a855cba5b1d6a8444ea2fd0b934ffc49b3c2c397",
+    "pitch_m": [105.0, 68.0],
+    "frame_rate_hz": 25.0,
+    "position_smoothing": "centered seven-frame mean requiring complete observed support",
+    "velocity": "consecutive smoothed-position difference divided by observed time difference",
+    "interpolation": false,
+    "players": "all canonical non-goalkeeper identities",
+    "boundaries": "period, frozen Stage A support segment, BALL OUT, and SET PIECE"
+  },
+  "replication_gates": {
+    "fragmentation_relative_reduction_pct_min": 20.0,
+    "merging_direction_pct_max": 3.97,
+    "lower_speed_coverage_share_min": 0.368955525083439,
+    "objective_audit_checks_required": true,
+    "deterministic_reproduction_required": true,
+    "no_post_result_tuning_required": true
+  },
+  "classification": {
+    "SUPPORTED": "valid; all three numerical gates and objective audit checks pass; no scientific rule changed",
+    "MIXED": "valid; fragmentation reduction is at least 20%, but a safety, coverage, or objective audit requirement fails without implementation invalidity",
+    "NOT_SUPPORTED": "valid; fragmentation improves by less than 20%, does not improve, or merging/direction exceeds 3.97%",
+    "INVALID": "support, implementation, governance, or construct validity failure only"
+  },
+  "visual_audit": {
+    "chronological_count": 8,
+    "chronological_rule": "equally spaced quantiles of sorted frozen valid-support-segment midpoints; six-second support-complete display where available",
+    "direct_rule": "first chronological support-complete four-second own-trajectory window with path >=3 m and Q >=0.95",
+    "direction_rule": "first chronological support-complete four-second own-trajectory window with path >=3 m and reliable cumulative turning >=90 degrees",
+    "low_speed_rule": "first chronological support-complete four-second own-trajectory window with peak speed <2 m/s and path >=1 m",
+    "discontinuity_rule": "first chronological frozen Stage A invalid interval with adjacent valid support",
+    "window_step_s": 0.2,
+    "direct_window_s": 4.0,
+    "direction_window_s": 4.0,
+    "low_speed_window_s": 4.0,
+    "display_window_s": 6.0
+  },
+  "firewall": {
+    "defender_coordinates": false,
+    "defensive_outcomes": false,
+    "footprint": false,
+    "response_form": false,
+    "deformation": false,
+    "game3": false,
+    "idsse": false,
+    "pooling": false,
+    "post_result_tuning": false
+  }
+}

@@ -670,3 +670,6 @@ Final implementation-precision review approved and froze the Phase 5B protocol b
 The exact Phase 5A B4 specification must be refitted and re-evaluated on the Phase 5B $K=3$/B7-complete common sample inside the same nested match folds; Phase 5A aggregate B4 MAE values cannot be copied into a changed sample. The $K=1$ comparison uses those same primary observations. A4–A6 completeness remains confined to the secondary locality-control subset.
 
 Version 1.0 is frozen and unexecuted. Any substantive change requires a versioned pre-outcome amendment. No Game 3 data were accessed.
+# 2026-09-01 — Attacker Movement Episode v2 Game 2 replication governance frozen
+
+Before any Game 2 v2 episode result was generated or inspected, the Tier-3 replication handling was frozen in [`protocols/attacker_movement_episode_v2_game2_replication.md`](protocols/attacker_movement_episode_v2_game2_replication.md) and its machine-readable configuration. The addendum preserves the exact Game 1 v2 algorithm, uses the closed attacker-only Game 2 Stage A support registry, predeclares deterministic visual-audit selection, and fixes heldout `SUPPORTED` / `MIXED` / `NOT SUPPORTED` / `INVALID` criteria. It introduces no segmentation tuning, defender data, outcome data, pooling, Game 3 access, or IDSSE execution.
