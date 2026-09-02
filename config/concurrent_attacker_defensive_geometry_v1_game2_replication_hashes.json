@@ -1,0 +1,26 @@
+{
+  "freeze_date": "2026-09-02",
+  "starting_commit": "cf411c6171362ac59c523f372b388aea4b7841a3",
+  "status": "PROSPECTIVE_GAME2_RESULTS_UNOBSERVED",
+  "frozen_replication_artifacts_sha256": {
+    "config/concurrent_attacker_defensive_geometry_v1_game2_replication.json": "2382e7f759c49f3c3cc8826dbc15c529ac48a30e1ebc791f18123e22120430ca",
+    "docs/protocols/concurrent_attacker_defensive_geometry_v1_game2_replication.md": "ae22d4894e73eafe23ba8947dd54a0d3e2d5cd51dab19ae24c6e0117824c903b"
+  },
+  "closed_and_inherited_artifacts_sha256": {
+    "config/concurrent_attacker_defensive_geometry_v1.json": "5b37211295297fe4350c394500da27e72040aefcc7f4806b1c779a390a9c692d",
+    "docs/protocols/concurrent_attacker_defensive_geometry_v1.md": "1382e97f401eafc2101f2d77ef2b7158e48500ce7df6b01d4db450f2ba1b8f32",
+    "outputs/attacking_continuous_movement_game2_stage_a/canonical_provenance.json": "57f3a8a9d4f356717e503c57f4f1de259fae01027d46ee1fa44dce453d7dc258",
+    "outputs/attacking_continuous_movement_game2_stage_a/governed_output_hashes.json": "5a7ca94a898a5b606a15eb83a855cba5b1d6a8444ea2fd0b934ffc49b3c2c397",
+    "outputs/attacking_continuous_movement_game2_stage_a/stage_a_result.json": "c63eaa6601ad6605c108efd82fa92d0d7e53e75df7414ccc91d7991187d1599f",
+    "outputs/attacking_continuous_movement_game2_stage_a/trajectory_validity_registry.csv": "22c202c83c564e4b0c6fb3aa0ceb8729f7bdb2b6651b980bd1024fd4002d98b5",
+    "outputs/attacking_continuous_movement_game2_stage_a/valid_support_segments.csv": "d618232b7363d0311560e935e23dd3ad77def8f1af26319df90c4c536f43460b",
+    "outputs/concurrent_attacker_defensive_geometry_game1_v1/final_results.json": "cd782fcf31b1822e397297278f43b82dcb9ce270318786c1db8c3d57d52e0da0"
+  },
+  "firewall": {
+    "game2_concurrent_result": "not_created_or_inspected",
+    "game3": "untouched",
+    "idsse": "not_accessed_for_this_construct",
+    "opportunity_redistribution": "not_defined_or_tested",
+    "pooled_analysis": "not_defined_or_executed"
+  }
+}

@@ -1,0 +1,103 @@
+{
+  "bootstrap": {
+    "block_seconds": 60,
+    "child_index": 1,
+    "grouping": "complete_D1_D10_vector_and_all_simultaneous_attackers",
+    "interval_percent": 95.0,
+    "master_seed": 20260831,
+    "minimum_valid": 1900,
+    "replicates": 2000,
+    "spawn_count": 2,
+    "terminal_partial_blocks": "retained"
+  },
+  "classification": {
+    "evaluation_order": ["INVALID", "NOT_SUPPORTED", "SUPPORTED", "MIXED"],
+    "invalid": "hard_governance_implementation_data_support_solver_or_construct_validity_failure",
+    "not_supported": "valid_execution_and_primary_near_minus_middle_point_estimate_nonpositive",
+    "supported": [
+      "valid_execution_and_all_hard_qc",
+      "primary_near_minus_middle_positive",
+      "primary_95_percent_interval_strictly_above_zero",
+      "trimmed_primary_near_minus_middle_positive",
+      "trim_retains_at_least_0.5_absolute_magnitude"
+    ],
+    "mixed": "every_other_valid_positive_primary_estimate",
+    "statuses": [
+      "GAME 2 CONCURRENT GEOMETRY REPLICATION SUPPORTED",
+      "GAME 2 CONCURRENT GEOMETRY REPLICATION MIXED",
+      "GAME 2 CONCURRENT GEOMETRY REPLICATION NOT SUPPORTED",
+      "GAME 2 CONCURRENT GEOMETRY REPLICATION INVALID"
+    ]
+  },
+  "closure": {
+    "game1_comparison_only_after_game2_serialization_hashing_and_reproduction": true,
+    "independent_complete_reproduction": true,
+    "output_identity": "byte_identical_governed_outputs",
+    "pooled_analysis": "prohibited",
+    "tier": 3
+  },
+  "data": {
+    "canonical_match_id": "metrica:sample-game-2",
+    "canonical_orientation": "fixed_pitch_center_origin_x_right_y_up_no_attacking_direction_normalization",
+    "frame_rate_hz": 25,
+    "game3": "reserved_untouched",
+    "goalkeepers": {"metrica:Away": "25", "metrica:Home": "11"},
+    "idsse": "prohibited",
+    "interpolation": "none",
+    "opportunity_outcomes": "prohibited",
+    "possession_types": ["PASS", "RECOVERY", "SET PIECE", "SHOT"],
+    "restart_subtypes": ["CORNER KICK", "FREE KICK", "GOAL KICK", "KICK OFF", "THROW IN", "OFFSIDE", "END HALF"],
+    "restart_types": ["SET PIECE", "BALL OUT"],
+    "support": "closed_game2_stage_a_registry_and_segments"
+  },
+  "descriptive_only": [
+    "D1_is_largest",
+    "near_elevation_concentrated_at_D1",
+    "far_exceeds_middle",
+    "monotonic_rank_shape",
+    "parallel_orthogonal_and_radial_focal_relative_displacement"
+  ],
+  "freeze_date": "2026-09-02",
+  "frozen_hashes": {
+    "game1_config": "5b37211295297fe4350c394500da27e72040aefcc7f4806b1c779a390a9c692d",
+    "game1_protocol": "1382e97f401eafc2101f2d77ef2b7158e48500ce7df6b01d4db450f2ba1b8f32",
+    "game1_result": "cd782fcf31b1822e397297278f43b82dcb9ce270318786c1db8c3d57d52e0da0",
+    "game2_canonical_provenance": "57f3a8a9d4f356717e503c57f4f1de259fae01027d46ee1fa44dce453d7dc258",
+    "game2_events": "edf31a18599265b77a8baf150f2ce6d89456fb0324b62ea7a391229657a619ba",
+    "game2_stage_a_governed_hashes": "5a7ca94a898a5b606a15eb83a855cba5b1d6a8444ea2fd0b934ffc49b3c2c397",
+    "game2_stage_a_result": "c63eaa6601ad6605c108efd82fa92d0d7e53e75df7414ccc91d7991187d1599f",
+    "game2_support_registry": "22c202c83c564e4b0c6fb3aa0ceb8729f7bdb2b6651b980bd1024fd4002d98b5",
+    "game2_support_segments": "d618232b7363d0311560e935e23dd3ad77def8f1af26319df90c4c536f43460b"
+  },
+  "inheritance": {
+    "config": "config/concurrent_attacker_defensive_geometry_v1.json",
+    "model": "unchanged_72_column_float64_stacked_rank_specific_OLS",
+    "protocol": "docs/protocols/concurrent_attacker_defensive_geometry_v1.md",
+    "solver": "numpy.linalg.lstsq_rcond_none_for_every_governed_fit"
+  },
+  "primary_estimand": "mean_D1_D3_concurrent_attacker_path_beta_minus_mean_D4_D7_beta",
+  "prohibitions": [
+    "D1_specific_gate",
+    "near_far_gate",
+    "monotonicity_gate",
+    "temporal_control",
+    "scientific_rule_change",
+    "pooling",
+    "game3_access",
+    "idsse_execution",
+    "opportunity_redistribution"
+  ],
+  "robustness": {
+    "extreme_attacker_path_threshold_m": 12.198443079831405,
+    "minimum_retained_absolute_magnitude_fraction": 0.5
+  },
+  "schema_version": "1.0.0",
+  "secondary_deformation": {
+    "directionally_supportive": "point_positive_but_95_percent_interval_not_strictly_above_zero",
+    "non_supportive": "point_nonpositive",
+    "primary_status_effect": "none",
+    "supportive": "point_positive_and_95_percent_interval_strictly_above_zero"
+  },
+  "starting_commit": "cf411c6171362ac59c523f372b388aea4b7841a3",
+  "status": "FROZEN_BEFORE_ANY_GAME2_CONCURRENT_GEOMETRY_RESULT"
+}

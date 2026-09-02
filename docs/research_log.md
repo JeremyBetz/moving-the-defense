@@ -1,5 +1,9 @@
 # Research Log
 
+## 2026-09-02 — Concurrent-geometry Game 2 replication frozen before results
+
+After Game 1 closed development-coherent, a separate [Game 2 addendum](protocols/concurrent_attacker_defensive_geometry_v1_game2_replication.md) froze the untouched heldout question without changing the construct. It preserves the two-second concurrent interval, strictly prior context, exact 72-column model, D1–D10 start ranks, sole near-minus-middle primary contrast, inherited trimming threshold, and reserved bootstrap child 1. D1 elevation, far-versus-middle, and monotonicity remain descriptive and cannot classify replication. Game 2 statuses and the post-result decision rule are fixed prospectively; Tier 3 requires serialization, hashing, and independent reproduction before comparison with Game 1. No Game 2 concurrent result, pooled analysis, Game 3, IDSSE, or opportunity outcome was accessed.
+
 ## 2026-09-01 — Concurrent Attacker–Defensive Geometry v1 frozen before results
 
 The project pivoted from discrete attacker episodes and attacker-before/defender-after timing to a fixed concurrent question. The frozen protocol measures attacker path and focal-relative defender path over the same two-second interval, with strictly prior two-second attacker and defensive activity context. Defender ranks are fixed at interval start; near-minus-middle is the sole primary contrast; closed endpoint deformation is secondary; directional geometry is descriptive; and no shifted temporal control or horizon search is defined. Literature review confirmed established dyadic coordination, vector-coding, team-shape, and expected-defence precedents, so novelty is claimed only for the governed combination and validation plan.
