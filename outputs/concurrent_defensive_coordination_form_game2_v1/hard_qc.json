@@ -1,0 +1,17 @@
+{
+  "complete_rank_vectors": true,
+  "edge_margin_seconds": true,
+  "exact_ten_unique_defenders": true,
+  "finite_model_rows": true,
+  "finite_outcomes": true,
+  "fixed_rank_across_methods": true,
+  "frozen_hashes": true,
+  "game2_authorized_execution": true,
+  "game3_not_accessed": true,
+  "heldout_clarification_frozen_before_result": true,
+  "idsse_not_accessed": true,
+  "no_interpolation": true,
+  "nonempty_sample": true,
+  "paired_valid_bootstrap_minimum": true,
+  "unique_rows": true
+}

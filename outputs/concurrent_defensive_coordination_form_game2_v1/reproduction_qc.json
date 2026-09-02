@@ -1,0 +1,7 @@
+{
+  "all_governed_outputs_byte_identical": true,
+  "files_compared": 8,
+  "governed_hash_ledger_valid": true,
+  "independent_rerun": true,
+  "status": "PASS"
+}

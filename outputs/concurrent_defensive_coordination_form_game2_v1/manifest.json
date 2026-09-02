@@ -1,0 +1,115 @@
+{
+  "canonical_provenance": {
+    "adapter_version": "1.0.0",
+    "ball_object_id_provider": null,
+    "ball_state_available": false,
+    "canonical_coordinate_system": "metres, pitch centre origin, +x right, +y top, fixed pitch frame",
+    "canonical_match_id": "metrica:sample-game-2",
+    "contract_version": "1.0.0",
+    "coordinate_transform": [
+      "Kloppy 3.19.0 parses Metrica y bottom-to-top",
+      "x_m = kloppy_x * 105 - 52.5",
+      "y_m = kloppy_y * 68 - 34"
+    ],
+    "coordinates_attacking_direction_normalized": false,
+    "frozen_support_consumption": {
+      "classification": "READY",
+      "consumed_raw_row_count": 2093028,
+      "consumed_segment_id_count": 134,
+      "governed_hash_files": 10,
+      "governed_hashes_valid": true,
+      "independent_reproduction_valid": true,
+      "no_registry_revision": true,
+      "no_support_rediscovery": true,
+      "registry_sha256": "22c202c83c564e4b0c6fb3aa0ceb8729f7bdb2b6651b980bd1024fd4002d98b5",
+      "support_segments": 134,
+      "support_segments_sha256": "d618232b7363d0311560e935e23dd3ad77def8f1af26319df90c4c536f43460b",
+      "valid_raw_rows": 2093028
+    },
+    "goalkeeper_source": "frozen project metadata: Home 11, Away 25",
+    "interpolation_used": false,
+    "kloppy_version": "3.19.0",
+    "orientation_metadata": "away-home",
+    "pitch_m": [
+      105.0,
+      68.0
+    ],
+    "player_id_map_provider_to_canonical": {
+      "away_15": "metrica:Away:15",
+      "away_16": "metrica:Away:16",
+      "away_17": "metrica:Away:17",
+      "away_18": "metrica:Away:18",
+      "away_19": "metrica:Away:19",
+      "away_20": "metrica:Away:20",
+      "away_21": "metrica:Away:21",
+      "away_22": "metrica:Away:22",
+      "away_23": "metrica:Away:23",
+      "away_24": "metrica:Away:24",
+      "away_25": "metrica:Away:25",
+      "away_26": "metrica:Away:26",
+      "home_1": "metrica:Home:1",
+      "home_10": "metrica:Home:10",
+      "home_11": "metrica:Home:11",
+      "home_12": "metrica:Home:12",
+      "home_13": "metrica:Home:13",
+      "home_14": "metrica:Home:14",
+      "home_2": "metrica:Home:2",
+      "home_3": "metrica:Home:3",
+      "home_4": "metrica:Home:4",
+      "home_5": "metrica:Home:5",
+      "home_6": "metrica:Home:6",
+      "home_7": "metrica:Home:7",
+      "home_8": "metrica:Home:8",
+      "home_9": "metrica:Home:9"
+    },
+    "possession_team_available": false,
+    "provider": "metrica",
+    "provider_frame_id_available": true,
+    "provider_match_id": "Sample Game 2",
+    "provider_raw_timestamp_available": false,
+    "source_coordinate_system": "normalized x left-to-right, y top-to-bottom",
+    "source_files": [
+      {
+        "path": "data/metrica_sample_game_2/Sample_Game_2_RawTrackingData_Home_Team.csv",
+        "sha256": "3f9990ac204b07133e4202441d6fcbb386897c7c7f81e1bc3ce4d35bc8644694"
+      },
+      {
+        "path": "data/metrica_sample_game_2/Sample_Game_2_RawTrackingData_Away_Team.csv",
+        "sha256": "aa639f40762eade46c389020fe4458266b5ba14027b1e96e22e75db62803718b"
+      }
+    ],
+    "support_rule": "Kloppy coordinate-object presence; unavailable reason retained as not_observed_unspecified",
+    "team_id_map_provider_to_canonical": {
+      "away": "metrica:Away",
+      "home": "metrica:Home"
+    },
+    "time_match_rule": "raw Metrica Time [s] preserved from provider frame-index sidecar",
+    "time_period_rule": "Kloppy period-relative timestamp",
+    "transformation_log": [
+      "load via Kloppy",
+      "canonical fixed-pitch coordinate transform",
+      "explicit roster null rows"
+    ]
+  },
+  "clarification": "docs/protocols/concurrent_defensive_coordination_form_v1_game2_replication.md",
+  "clarification_sha256": "b5cec238d04649217a39549587ebfb292278829fb8c9c434ff5ef40b8a2786e9",
+  "config": "config/concurrent_defensive_coordination_form_v1.json",
+  "config_sha256": "d3b8be7306ffb850aa246ffed2a2f69b71b5593e32a8578b28734a4a438bb3e3",
+  "ledger_sha256": "13d8c388849a60dc010e045f95bccae5531d62024e1fe6dc4da6b20d4a070926",
+  "numpy": "2.5.2",
+  "pandas": "2.3.3",
+  "polars": "1.44.1",
+  "protected": {
+    "game2": "authorized_executed",
+    "game3": false,
+    "idsse": false
+  },
+  "protocol": "docs/protocols/concurrent_defensive_coordination_form_v1.md",
+  "protocol_sha256": "3172592f0890ea5c8030f4691b24d5a66fc0614d72c4cd60a6f7475934381032",
+  "python": "3.13.15",
+  "scientific_rules_changed_after_result": false,
+  "scipy": "1.18.1",
+  "source": "src/concurrent_defensive_coordination_form_game2_v1.py",
+  "source_sha256": "d00a16397c409f43263dae589683bdb39440458c8eaab40d860db5ef792a620f",
+  "starting_commit": "55c3b27fcc1cead8595ec7e2d8e2ae43bca0ee76"
+}

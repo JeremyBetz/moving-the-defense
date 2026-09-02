@@ -1,0 +1,8 @@
+{
+  "clarification": "docs/protocols/concurrent_defensive_coordination_form_v1_game2_replication.md",
+  "clarification_sha256": "b5cec238d04649217a39549587ebfb292278829fb8c9c434ff5ef40b8a2786e9",
+  "configuration_sha256": "d3b8be7306ffb850aa246ffed2a2f69b71b5593e32a8578b28734a4a438bb3e3",
+  "frozen_before_game2_result": true,
+  "protocol_sha256": "3172592f0890ea5c8030f4691b24d5a66fc0614d72c4cd60a6f7475934381032",
+  "starting_commit": "55c3b27fcc1cead8595ec7e2d8e2ae43bca0ee76"
+}

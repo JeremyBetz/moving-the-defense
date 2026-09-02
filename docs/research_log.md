@@ -1,5 +1,15 @@
 # Research Log
 
+## 2026-09-02 — Concurrent Defensive Coordination Form v1 Game 2 replication mixed
+
+After the heldout status mapping was frozen and hashed, the unchanged coordination-form protocol was executed on Metrica Sample Game 2. The sample contained 1,143 observations, 11,430 rank rows, and 123 unique anchors. The primary D2–D3-minus-D4–D7 estimate was 0.04587 with 95% paired block-bootstrap interval [-0.01056, 0.09260]; its 1.5 Hz sensitivity was 0.04643. All 2,000 bootstraps were valid, all 15 hard-QC assertions passed, and eight governed outputs reproduced byte-for-byte.
+
+The positive point direction and sensitivity replicated Game 1, but the primary interval crossed zero. The prospectively frozen classification is **GAME 2 COORDINATION FORM REPLICATION MIXED**. Only after classification was the Game 1 comparison opened: the Game 2 point estimate was similar in magnitude, but D2 rather than D1 was largest, D3 was negative, and the rank profile was irregular. No descriptive comparator altered the classification. IDSSE coordination-form outcomes and Game 3 remained unopened.
+
+## 2026-09-02 — Coordination Form v1 Game 2 replication status frozen before execution
+
+Before any Game 2 coordination-form sample or coefficient was computed, the heldout status mapping was frozen in [a separate replication clarification](protocols/concurrent_defensive_coordination_form_v1_game2_replication.md), SHA-256 `b5cec238d04649217a39549587ebfb292278829fb8c9c434ff5ef40b8a2786e9`. It preserves the original primary estimand and every scientific setting. Game 2 will be supported only if its 1.0 Hz contrast is positive with a strictly positive 95% interval and its 1.5 Hz sensitivity is positive; other valid positive cases are mixed, a nonpositive primary is not supported, and execution/QC failure or fewer than 1,900 valid bootstraps is invalid. IDSSE coordination-form results and Game 3 remained unopened.
+
 ## 2026-09-02 — Concurrent Defensive Coordination Form v1 Game 1 development executed
 
 The prospectively frozen protocol was executed on Metrica Sample Game 1. The governed sample contained 8,261 focal observations and 82,610 defender-rank rows. The 1.0 Hz D2–D3-minus-D4–D7 attacker-aligned defender-relative velocity contrast was 0.04045 with 95% paired block-bootstrap interval [0.02366, 0.05538]; the 1.5 Hz sensitivity was 0.04021. All 2,000 paired bootstrap replicates were valid, all 14 hard-QC assertions passed, and an independent execution reproduced all eight governed outputs byte-for-byte.
