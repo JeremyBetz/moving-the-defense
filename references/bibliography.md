@@ -120,7 +120,11 @@ This preprint reconstructs continuous spatial velocity fields and potentials fro
 
 Vilar, Luís, Duarte Araújo, Bruno Travassos, and Keith Davids. 2014. “Coordination Tendencies Are Shaped by Attacker and Defender Interactions with the Goal and the Ball in Futsal.” *Human Movement Science* 33: 14–24. <https://doi.org/10.1016/j.humov.2013.08.012>
 
+Vilar, Luís, Duarte Araújo, Keith Davids, Bruno Travassos, Ricardo Duarte, and João Parreira. 2014. “Interpersonal Coordination Tendencies Supporting the Creation/Prevention of Goal Scoring Opportunities in Futsal.” *European Journal of Sport Science* 14 (1): 28–35. <https://doi.org/10.1080/17461391.2012.725103>
+
 Caetano, Fabio Giuliano, Paulo Roberto Pereira Santiago, Ricardo da Silva Torres, Sérgio Augusto Cunha, and Felipe Arruda Moura. 2023. “Interpersonal Coordination of Opposing Player Dyads during Attacks Performed in Official Football Matches.” *Sports Biomechanics* 24 (4): 1048–1063. <https://doi.org/10.1080/14763141.2023.2212664>
+
+Moura, Felipe Arruda, Richard E. A. van Emmerik, Juliana Exel Santana, Luiz Eduardo Barreto Martins, Ricardo Machado Leite de Barros, and Sérgio Augusto Cunha. 2016. “Coordination Analysis of Players’ Distribution in Football Using Cross-Correlation and Vector Coding Techniques.” *Journal of Sports Sciences* 34 (24): 2224–2232. <https://doi.org/10.1080/02640414.2016.1173222>
 
 Narizuka, Takuma, and Yoshihiro Yamazaki. 2016. “Statistical Properties for Directional Alignment and Chasing of Players in Football Games.” *EPL* 116 (6): 68001. <https://doi.org/10.1209/0295-5075/116/68001>
 

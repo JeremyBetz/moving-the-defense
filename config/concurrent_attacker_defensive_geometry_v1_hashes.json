@@ -1,0 +1,31 @@
+{
+  "freeze_date": "2026-09-01",
+  "starting_commit": "619bcbb4af482e345d720ce7e0744a0623b3bded",
+  "status": "PROSPECTIVE_RESULTS_UNOBSERVED",
+  "frozen_artifacts_sha256": {
+    "config/concurrent_attacker_defensive_geometry_v1.json": "5b37211295297fe4350c394500da27e72040aefcc7f4806b1c779a390a9c692d",
+    "docs/concurrent_attacker_defensive_geometry_v1_provenance.md": "02ee74c9e96d3610df02b943ff105773c0898bb92907deb5bfff7a86715c9e45",
+    "docs/protocols/concurrent_attacker_defensive_geometry_v1.md": "1382e97f401eafc2101f2d77ef2b7158e48500ce7df6b01d4db450f2ba1b8f32"
+  },
+  "closed_artifacts_verified_unchanged_sha256": {
+    "docs/protocols/attacker_defender_bridge_v1.md": "62321620a3007bf0c9686d99595caa0f9e39e2ac7ea2ba78b935ddfefd308bbb",
+    "docs/protocols/attacker_movement_episode_v2.md": "5d3b1863b0aab8e12a43db7ecba4500d8e64a85a52bd0808188e2056259a7b24",
+    "docs/protocols/local_defensive_deformation_v1.md": "1d39741a24596663daaadca02bd0143429a02605884310ff522703b86d4b4b59",
+    "docs/protocols/local_defensive_response_form_v1.md": "958c8aa80fe9ea43358c32a42a6be2eea7a41e7f727e23ff137eb3079ee80428",
+    "docs/protocols/spatial_defensive_response_footprint_v1.md": "649c40c551d880f5204f6ccca7e37cf219660c4a5fdea590e0b73b6377534458",
+    "outputs/attacker_defender_bridge_game2_v1/final_results.json": "9479d30224dcfa8845cb99fa039527ea727cac32a9a61587625c63a70286950e",
+    "outputs/attacker_movement_episode_v2_game1/results.json": "261e092fcf55348cf9532c4bbaaa57b7985922e2e707e2e744ccfd2976fbebd7",
+    "outputs/attacker_movement_episode_v2_game2/results.json": "37ef7dde32b1b1bc8305994b75265143dbeda91349d35c32e74e773ae7d69ad3",
+    "outputs/local_defensive_deformation_game1_v1/final_results.json": "f99f5740446951d338ec9def9d32c335da207fabfe706021c22246ae9fe01d60",
+    "outputs/local_defensive_deformation_game2_v1/final_results.json": "a1438217d3db0e120bee2df3fa14d8ad4f320841bd20f8f29e2645ec43d71991",
+    "outputs/local_defensive_response_form_pooled_final_v1/final_results.json": "782b471ea9e8b7063da834b3ea958b3ce962e202b2c2e05971d3e7e3c34045cd",
+    "outputs/spatial_defensive_response_footprint_game2_final_v1/final_results.json": "239b0cad626b156bc0a91c6f8e1fb673e28330ad56f00deb8c3a9ecd4c169b85"
+  },
+  "firewall": {
+    "concurrent_game1_results": "not_created_or_inspected",
+    "game2": "not_accessed_for_this_design",
+    "game3": "untouched",
+    "idsse": "not_accessed_for_this_design",
+    "opportunity_redistribution": "not_defined_or_tested"
+  }
+}

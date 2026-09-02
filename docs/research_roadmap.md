@@ -57,7 +57,9 @@ Every arrow can fail. Football language does not become a tracking construct mer
 
 ## Current methodological frontier
 
-> **What geometric form does the localized defender-relative response take?**
+> **During the same fixed interval, is attacker movement associated with spatially localized defensive geometric change beyond strictly prior movement context?**
+
+The [Concurrent Attacker–Defensive Geometry v1 protocol](protocols/concurrent_attacker_defensive_geometry_v1.md) is frozen with results unobserved. It abandons neither continuous movement nor spatial localization, but removes the artificial attacker-before/defender-after requirement and does not use unresolved episode boundaries. It measures attacker path and defender-relative path concurrently over one two-second interval, retains internal deformation as secondary, and requires a near-minus-middle association rather than a generic activity slope. Game 1 has not executed; Game 2 and Game 3 remain reserved.
 
 The completed bridge resolves the first within-provider association test, not its tactical or causal meaning. Continuous attacker intervals remain defined without defensive outcomes, and defensive change remains geometric rather than tactical. Historical segmentation failures still constrain any future episode-based extension. No new empirical phase may begin unless its design is prospectively specified and frozen.
 
@@ -79,7 +81,7 @@ The [2027 MIT Sloan Sports Analytics Conference Research Paper Competition](http
 
 ### Pre-October 1 priorities
 
-1. Finish a defensible, outcome-blind temporal representation of attacking movement.
+1. Execute the frozen concurrent-geometry development design without tuning, then govern any held-out step separately.
 2. Preserve the completed Final A bridge and its local, nonlocal, temporal, activity/context, tracking-quality, and influence limits.
 3. Preserve the completed Final A spatial footprint and seek external/native-frequency replication only under a separately frozen design.
 4. Preserve a conservative result even if it is mixed or negative.

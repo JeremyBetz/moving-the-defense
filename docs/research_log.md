@@ -1,5 +1,11 @@
 # Research Log
 
+## 2026-09-01 — Concurrent Attacker–Defensive Geometry v1 frozen before results
+
+The project pivoted from discrete attacker episodes and attacker-before/defender-after timing to a fixed concurrent question. The frozen protocol measures attacker path and focal-relative defender path over the same two-second interval, with strictly prior two-second attacker and defensive activity context. Defender ranks are fixed at interval start; near-minus-middle is the sole primary contrast; closed endpoint deformation is secondary; directional geometry is descriptive; and no shifted temporal control or horizon search is defined. Literature review confirmed established dyadic coordination, vector-coding, team-shape, and expected-defence precedents, so novelty is claimed only for the governed combination and validation plan.
+
+No Game 1 concurrent observation, coefficient, bootstrap, result, or figure was produced. Game 2 requires a separate held-out addendum after Game 1 closes; Game 3 and IDSSE remain untouched. This design cannot establish reaction, timing, causation, assignment, tactical meaning, influence, gravity, or value. See the [frozen protocol](protocols/concurrent_attacker_defensive_geometry_v1.md) and [provenance note](concurrent_attacker_defensive_geometry_v1_provenance.md).
+
 ## 2026-09-01 — Attacker Movement Episode v2 heldout Game 2 replication mixed
 
 After the governance-only checkpoint `06e8d26`, the immutable direction-aware rule was executed once on the closed attacker-only Game 2 Stage A support. All three numerical gates passed: fragmentation fell from 42.4442% to 31.0802% (26.7739% relative), merging/direction was 2.4708%, and lower-speed coverage was 46.9565%. The separately frozen direction-change audit window contained no protected direction boundary, so the exact heldout status is **GAME 2 ATTACKER EPISODE v2 REPLICATION MIXED**. All 10 governed outputs reproduced byte-for-byte. No defender data, defensive outcome, Game 3, IDSSE, pooling, or post-result tuning entered.

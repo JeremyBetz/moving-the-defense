@@ -1,0 +1,104 @@
+{
+  "bootstrap": {
+    "block_seconds": 60,
+    "game1_child_index": 0,
+    "game2_reserved_child_index": 1,
+    "interval_percent": 95.0,
+    "master_seed": 20260831,
+    "minimum_valid": 1900,
+    "replicates": 2000,
+    "spawn_count": 2,
+    "unit": "period_origin_60_second_blocks_with_terminal_partial_retained",
+    "grouping": "complete_D1_D10_vector_and_all_simultaneous_attackers"
+  },
+  "classification": {
+    "coherent": [
+      "valid_execution_and_construct_qc",
+      "primary_near_minus_middle_positive",
+      "primary_95_percent_interval_strictly_above_zero",
+      "trimmed_primary_positive_and_retains_at_least_0.5_magnitude"
+    ],
+    "invalid": "hard_scientific_or_execution_failure",
+    "mixed": "valid_positive_primary_not_meeting_all_coherent_conditions",
+    "negative": "valid_primary_point_estimate_nonpositive",
+    "statuses": [
+      "GAME 1 CONCURRENT GEOMETRY DEVELOPMENT COHERENT",
+      "GAME 1 CONCURRENT GEOMETRY DEVELOPMENT MIXED",
+      "GAME 1 CONCURRENT GEOMETRY DEVELOPMENT NEGATIVE",
+      "GAME 1 CONCURRENT GEOMETRY DEVELOPMENT INVALID"
+    ]
+  },
+  "data": {
+    "development": "Metrica Sample Game 1",
+    "game2": "heldout_reserved_no_execution_before_separate_addendum",
+    "game3": "reserved_untouched",
+    "required_defending_outfield_players": 10,
+    "goalkeeper": "excluded_using_governed_metadata"
+  },
+  "design": {
+    "attacking_team_at_anchor": "governed_event_established_possession",
+    "attacker_set": "all_supported_attacking_outfield_players",
+    "anchor_grid": "period_origin_every_4_seconds",
+    "cadence_seconds": 4,
+    "open_play_restart_rules": "inherit_attacker_defender_bridge_v1",
+    "possession_continuity_after_anchor_required": false,
+    "simultaneous_attackers": "retain_and_group",
+    "support": "complete_attacker_and_ten_defending_outfield_players_over_full_span",
+    "interpolation": "none"
+  },
+  "freeze_date": "2026-09-01",
+  "model": {
+    "dtype": "float64",
+    "estimator": "stacked_rank_specific_ols_numpy_lstsq_rcond_none",
+    "rank_specific_columns_in_order": [
+      "intercept",
+      "concurrent_attacker_path_m",
+      "prior_focal_relative_path_m",
+      "prior_defensive_centroid_path_m",
+      "prior_other_nine_defender_mean_absolute_path_m",
+      "prior_attacker_path_m",
+      "anchor_attacker_defender_distance_m"
+    ],
+    "common_fixed_design_columns_in_order": [
+      "period_2_indicator",
+      "home_attacking_team_indicator"
+    ],
+    "primary_exposure": "concurrent_attacker_path_m",
+    "primary_outcome": "concurrent_focal_relative_path_m",
+    "secondary_outcome": "concurrent_endpoint_deformation_rms_m",
+    "primary_contrast": "mean_D1_D3_exposure_beta_minus_mean_D4_D7_exposure_beta",
+    "far": "D8_D10_descriptive",
+    "standardization": "none"
+  },
+  "numerics": {
+    "canonical_pitch_m": [105.0, 68.0],
+    "construct_tolerance_m": 1e-12,
+    "dtype": "float64",
+    "smoothing": "inherited_centered_7_frame_positions",
+    "attacker_axis_epsilon_m": 1e-9
+  },
+  "protocol_version": "1.0.0",
+  "ranking": {
+    "reference_time": "t",
+    "distance": "euclidean_metres",
+    "tie_break": "canonical_player_id_ascending",
+    "membership": "fixed_through_context_and_concurrent_interval",
+    "near": [1, 2, 3],
+    "middle": [4, 5, 6, 7],
+    "far": [8, 9, 10]
+  },
+  "robustness": {
+    "extreme_attacker_path_threshold_m": 12.198443079831405,
+    "minimum_retained_magnitude_fraction": 0.5,
+    "temporal_control": "omitted",
+    "horizon_sensitivity": "none"
+  },
+  "starting_commit": "619bcbb4af482e345d720ce7e0744a0623b3bded",
+  "status": "FROZEN_RESULTS_UNOBSERVED",
+  "timing_seconds_relative_to_t": {
+    "required_support": [-2, 2],
+    "pre_context": [-2, 0],
+    "concurrent": [0, 2],
+    "endpoint_convention": "positions at -2,0,2; path increments ending in (-2,0] and (0,2] respectively"
+  }
+}
