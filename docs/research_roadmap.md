@@ -59,7 +59,7 @@ Every arrow can fail. Football language does not become a tracking construct mer
 
 > **During the same fixed interval, is attacker movement associated with spatially localized defensive geometric change beyond strictly prior movement context?**
 
-The [Concurrent Attacker–Defensive Geometry v1 protocol](protocols/concurrent_attacker_defensive_geometry_v1.md) removed the artificial attacker-before/defender-after requirement and did not use unresolved episode boundaries. [Game 1 development](results/concurrent_attacker_defensive_geometry_game1_v1.md) was coherent: near-minus-middle was positive with a strictly positive interval and robust trimming, while all-rank positivity, elevated D1, and far-above-middle geometry remained important caveats. A [separate heldout addendum](protocols/concurrent_attacker_defensive_geometry_v1_game2_replication.md) now freezes unchanged Game 2 replication rules before results. Game 2 has not executed; Game 3 remains reserved.
+The [Concurrent Attacker–Defensive Geometry v1 protocol](protocols/concurrent_attacker_defensive_geometry_v1.md) removed the artificial attacker-before/defender-after requirement and did not use unresolved episode boundaries. [Game 1 development](results/concurrent_attacker_defensive_geometry_game1_v1.md) was coherent, and the prospectively governed [Game 2 heldout replication](results/concurrent_attacker_defensive_geometry_game2_v1.md) was **SUPPORTED**: near-minus-middle was positive with an interval above zero and robust trimming in both matches. All-rank positivity, nonmonotonic shapes, far-above-middle geometry, and possible concurrent common motion remain important caveats. Under the frozen decision rule, stop refining concurrent defensive geometry. Game 3 remains reserved.
 
 The completed bridge resolves the first within-provider association test, not its tactical or causal meaning. Continuous attacker intervals remain defined without defensive outcomes, and defensive change remains geometric rather than tactical. Historical segmentation failures still constrain any future episode-based extension. No new empirical phase may begin unless its design is prospectively specified and frozen.
 
@@ -81,7 +81,7 @@ The [2027 MIT Sloan Sports Analytics Conference Research Paper Competition](http
 
 ### Pre-October 1 priorities
 
-1. Execute the frozen concurrent-geometry development design without tuning, then govern any held-out step separately.
+1. Design Opportunity Redistribution separately and prospectively, without changing the now-closed concurrent defensive geometry or giving it tactical/value meaning.
 2. Preserve the completed Final A bridge and its local, nonlocal, temporal, activity/context, tracking-quality, and influence limits.
 3. Preserve the completed Final A spatial footprint and seek external/native-frequency replication only under a separately frozen design.
 4. Preserve a conservative result even if it is mixed or negative.

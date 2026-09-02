@@ -57,5 +57,8 @@ def test_heldout_bootstrap_and_closure_are_tier3():
     assert config["closure"]["pooled_analysis"] == "prohibited"
 
 
-def test_no_game2_result_exists_at_freeze():
-    assert not (ROOT / "outputs/concurrent_attacker_defensive_geometry_game2_v1").exists()
+def test_game2_result_was_governed_by_pre_result_freeze():
+    output = ROOT / "outputs/concurrent_attacker_defensive_geometry_game2_v1"
+    metadata = json.loads((output / "execution_metadata.json").read_text(encoding="utf-8"))
+    assert metadata["starting_commit"] == "ddfb93804b5e2cf42b94c5c1011322224a1b74e8"
+    assert metadata["game2_result_observed_only_after_replication_freeze"] is True

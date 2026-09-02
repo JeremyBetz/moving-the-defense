@@ -1,0 +1,293 @@
+{
+  "bootstrap": {
+    "primary": {
+      "attempted": 2000,
+      "valid": 2000
+    },
+    "secondary": {
+      "attempted": 2000,
+      "valid": 2000
+    },
+    "trimmed": {
+      "attempted": 2000,
+      "valid": 2000
+    }
+  },
+  "controls": {
+    "prior_attacker_path_m": {
+      "iqr": 2.819951144358647,
+      "median": 2.8094090905565907
+    },
+    "prior_defensive_centroid_path_m": {
+      "iqr": 2.5639318778190776,
+      "median": 2.673891742888401
+    },
+    "prior_focal_relative_path_m": {
+      "iqr": 2.0331011222965647,
+      "median": 1.9823288380433757
+    },
+    "prior_other_nine_mean_absolute_path_m": {
+      "iqr": 2.6388810413130797,
+      "median": 3.385091847979282
+    }
+  },
+  "criteria": {
+    "no_construct_validity_failure": true,
+    "primary_95_percent_interval_strictly_above_zero": true,
+    "primary_near_minus_middle_positive": true,
+    "trim_retains_at_least_0.5_absolute_magnitude": true,
+    "trimmed_primary_near_minus_middle_positive": true,
+    "valid_execution_and_all_hard_qc": true
+  },
+  "environment": {
+    "numpy": "2.5.2",
+    "pandas": "2.3.3",
+    "polars": "1.44.1",
+    "python": "3.13.15"
+  },
+  "exposure": {
+    "concurrent_attacker_path_m": {
+      "max": 15.229825456865658,
+      "median": 2.7999157941530552,
+      "min": 0.0,
+      "q25": 1.913824435520946,
+      "q75": 4.420247116597082
+    },
+    "prior_attacker_path_m": {
+      "max": 15.120639823159143,
+      "median": 2.8094090905565907,
+      "min": 0.0,
+      "q25": 1.88422752825725,
+      "q75": 4.704178672615897
+    }
+  },
+  "frozen_hashes": {
+    "config/concurrent_attacker_defensive_geometry_v1.json": "5b37211295297fe4350c394500da27e72040aefcc7f4806b1c779a390a9c692d",
+    "config/concurrent_attacker_defensive_geometry_v1_game2_replication.json": "2382e7f759c49f3c3cc8826dbc15c529ac48a30e1ebc791f18123e22120430ca",
+    "config/concurrent_attacker_defensive_geometry_v1_game2_replication_hashes.json": "ad24bdaceba8dfdbb05c13d4f22691ecb387fa86385756090fcf8a9cad4a5fe1",
+    "docs/protocols/concurrent_attacker_defensive_geometry_v1.md": "1382e97f401eafc2101f2d77ef2b7158e48500ce7df6b01d4db450f2ba1b8f32",
+    "docs/protocols/concurrent_attacker_defensive_geometry_v1_game2_replication.md": "ae22d4894e73eafe23ba8947dd54a0d3e2d5cd51dab19ae24c6e0117824c903b",
+    "outputs/concurrent_attacker_defensive_geometry_game1_v1/final_results.json": "cd782fcf31b1822e397297278f43b82dcb9ce270318786c1db8c3d57d52e0da0"
+  },
+  "hard_qc": {
+    "bootstrap_minimum_valid": true,
+    "complete_D1_D10": true,
+    "distance_order": true,
+    "finite_geometry": true,
+    "fixed_rank_no_future_reranking": true,
+    "focal_exclusion": true,
+    "frozen_hashes": true,
+    "full_design_rank": true,
+    "game2_only_no_pooling": true,
+    "goalkeeper_excluded": true,
+    "governed_lstsq_solver": true,
+    "no_game3_idsse_or_opportunity_access": true,
+    "no_interpolation_complete_support": true,
+    "reserved_bootstrap_child_1": true,
+    "ten_unique_defenders": true,
+    "translation_rotation_reflection_synthetic_tests": true,
+    "unique_observation_rank_rows": true
+  },
+  "primary": {
+    "D1_D10": [
+      0.11129297964429993,
+      0.12531919407182515,
+      0.04622663553085071,
+      0.04628873416340734,
+      0.041644938607743764,
+      0.04262005427946121,
+      0.068047544861025,
+      0.07374132306504377,
+      0.06610105843650703,
+      0.07410630562119219
+    ],
+    "far": 0.07131622904091434,
+    "middle": 0.04965031797790932,
+    "near": 0.09427960308232526,
+    "near_minus_middle": 0.04462928510441594
+  },
+  "provenance": {
+    "adapter_version": "1.0.0",
+    "ball_object_id_provider": null,
+    "ball_state_available": false,
+    "canonical_coordinate_system": "metres, pitch centre origin, +x right, +y top, fixed pitch frame",
+    "canonical_match_id": "metrica:sample-game-2",
+    "contract_version": "1.0.0",
+    "coordinate_transform": [
+      "Kloppy 3.19.0 parses Metrica y bottom-to-top",
+      "x_m = kloppy_x * 105 - 52.5",
+      "y_m = kloppy_y * 68 - 34"
+    ],
+    "coordinates_attacking_direction_normalized": false,
+    "frozen_support_consumption": {
+      "classification": "READY",
+      "consumed_raw_row_count": 2093028,
+      "consumed_segment_id_count": 134,
+      "governed_hash_files": 10,
+      "governed_hashes_valid": true,
+      "independent_reproduction_valid": true,
+      "no_registry_revision": true,
+      "no_support_rediscovery": true,
+      "registry_sha256": "22c202c83c564e4b0c6fb3aa0ceb8729f7bdb2b6651b980bd1024fd4002d98b5",
+      "support_segments": 134,
+      "support_segments_sha256": "d618232b7363d0311560e935e23dd3ad77def8f1af26319df90c4c536f43460b",
+      "valid_raw_rows": 2093028
+    },
+    "goalkeeper_source": "frozen project metadata: Home 11, Away 25",
+    "interpolation_used": false,
+    "kloppy_version": "3.19.0",
+    "orientation_metadata": "away-home",
+    "pitch_m": [
+      105.0,
+      68.0
+    ],
+    "player_id_map_provider_to_canonical": {
+      "away_15": "metrica:Away:15",
+      "away_16": "metrica:Away:16",
+      "away_17": "metrica:Away:17",
+      "away_18": "metrica:Away:18",
+      "away_19": "metrica:Away:19",
+      "away_20": "metrica:Away:20",
+      "away_21": "metrica:Away:21",
+      "away_22": "metrica:Away:22",
+      "away_23": "metrica:Away:23",
+      "away_24": "metrica:Away:24",
+      "away_25": "metrica:Away:25",
+      "away_26": "metrica:Away:26",
+      "home_1": "metrica:Home:1",
+      "home_10": "metrica:Home:10",
+      "home_11": "metrica:Home:11",
+      "home_12": "metrica:Home:12",
+      "home_13": "metrica:Home:13",
+      "home_14": "metrica:Home:14",
+      "home_2": "metrica:Home:2",
+      "home_3": "metrica:Home:3",
+      "home_4": "metrica:Home:4",
+      "home_5": "metrica:Home:5",
+      "home_6": "metrica:Home:6",
+      "home_7": "metrica:Home:7",
+      "home_8": "metrica:Home:8",
+      "home_9": "metrica:Home:9"
+    },
+    "possession_team_available": false,
+    "provider": "metrica",
+    "provider_frame_id_available": true,
+    "provider_match_id": "Sample Game 2",
+    "provider_raw_timestamp_available": false,
+    "source_coordinate_system": "normalized x left-to-right, y top-to-bottom",
+    "source_files": [
+      {
+        "path": "data/metrica_sample_game_2/Sample_Game_2_RawTrackingData_Home_Team.csv",
+        "sha256": "3f9990ac204b07133e4202441d6fcbb386897c7c7f81e1bc3ce4d35bc8644694"
+      },
+      {
+        "path": "data/metrica_sample_game_2/Sample_Game_2_RawTrackingData_Away_Team.csv",
+        "sha256": "aa639f40762eade46c389020fe4458266b5ba14027b1e96e22e75db62803718b"
+      }
+    ],
+    "support_rule": "Kloppy coordinate-object presence; unavailable reason retained as not_observed_unspecified",
+    "team_id_map_provider_to_canonical": {
+      "away": "metrica:Away",
+      "home": "metrica:Home"
+    },
+    "time_match_rule": "raw Metrica Time [s] preserved from provider frame-index sidecar",
+    "time_period_rule": "Kloppy period-relative timestamp",
+    "transformation_log": [
+      "load via Kloppy",
+      "canonical fixed-pitch coordinate transform",
+      "explicit roster null rows"
+    ]
+  },
+  "sample": {
+    "attacker_identities": [
+      "metrica:Away:15",
+      "metrica:Away:16",
+      "metrica:Away:17",
+      "metrica:Away:18",
+      "metrica:Away:19",
+      "metrica:Away:20",
+      "metrica:Away:21",
+      "metrica:Away:22",
+      "metrica:Away:23",
+      "metrica:Away:24",
+      "metrica:Home:1",
+      "metrica:Home:10",
+      "metrica:Home:12",
+      "metrica:Home:13",
+      "metrica:Home:14",
+      "metrica:Home:2",
+      "metrica:Home:3",
+      "metrica:Home:4",
+      "metrica:Home:5",
+      "metrica:Home:6",
+      "metrica:Home:7",
+      "metrica:Home:8",
+      "metrica:Home:9"
+    ],
+    "attacking_team_counts": {
+      "metrica:Away": 420,
+      "metrica:Home": 762
+    },
+    "defender_rows": 11820,
+    "eligible_attacker_anchor_observations": 1182,
+    "period_counts": {
+      "1": 898,
+      "2": 284
+    },
+    "simultaneous_attackers": {
+      "max": 10,
+      "median": 10.0,
+      "min": 7,
+      "q25": 9.0,
+      "q75": 10.0
+    },
+    "support_exclusion_counts": {
+      "attacker_complete_support_unavailable": 6025,
+      "complete_ten_defenders_unavailable": 8123,
+      "restart_or_ball_out_span": 1711
+    },
+    "trim_excluded_anchors": 4,
+    "trim_excluded_share": 0.00338409475465313,
+    "unique_anchor_times": 125
+  },
+  "secondary_deformation": {
+    "D1_D10": [
+      0.1184545337829574,
+      0.10889979918516471,
+      0.04717837018183357,
+      0.05993076951113985,
+      0.03893112527226639,
+      0.04239757839811592,
+      0.07494489631030751,
+      0.07401343790599466,
+      0.07964223544739356,
+      0.08872977642374635
+    ],
+    "far": 0.08079514992571152,
+    "middle": 0.05405109237295742,
+    "near": 0.09151090104998523,
+    "near_minus_middle": 0.03745980867702781
+  },
+  "secondary_deformation_classification": "SUPPORTIVE",
+  "status": "GAME 2 CONCURRENT GEOMETRY REPLICATION SUPPORTED",
+  "trimmed_primary": {
+    "D1_D10": [
+      0.11350075467406764,
+      0.12724823546057545,
+      0.05445176101779925,
+      0.05342266265355791,
+      0.044176815551365545,
+      0.045870487648214914,
+      0.07578028181642313,
+      0.05607560876645573,
+      0.06645757801764646,
+      0.06589602479328746
+    ],
+    "far": 0.06280973719246322,
+    "middle": 0.054812561917390375,
+    "near": 0.09840025038414746,
+    "near_minus_middle": 0.043587688466757084,
+    "retained_magnitude_fraction": 0.9766611399841627,
+    "threshold_m": 12.198443079831405
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "execution_source": "src/concurrent_attacker_defensive_geometry_game2_v1.py",
+  "execution_source_sha256": "4368302dcbd9c938d6ce0dd1ebe5a935426bdb82425ec4ae1050729537c7fdd0",
+  "game2_result_observed_only_after_replication_freeze": true,
+  "python": "3.13.15",
+  "starting_commit": "ddfb93804b5e2cf42b94c5c1011322224a1b74e8",
+  "status": "GAME 2 CONCURRENT GEOMETRY REPLICATION SUPPORTED",
+  "tier": 3
+}

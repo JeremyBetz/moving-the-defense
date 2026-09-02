@@ -1,5 +1,11 @@
 # Research Log
 
+## 2026-09-02 — Concurrent Geometry v1 Game 2 Heldout Replication
+
+The prospectively frozen Tier-3 replication executed on untouched Metrica Sample Game 2 without changing the concurrent interval, sample rules, 72-column model, near-minus-middle estimand, bootstrap, trimming threshold, or classification logic. The primary contrast was 0.044629 [0.021508, 0.078480]; the trimmed estimate was 0.043588 [0.011459, 0.086031] with 97.67% magnitude retention. Secondary deformation was separately SUPPORTIVE at 0.037460 [0.023252, 0.054935]. All 2,000 replicates were valid, hard QC passed, and an independent execution reproduced all 10 governed artifacts byte-for-byte. The exact status is **GAME 2 CONCURRENT GEOMETRY REPLICATION SUPPORTED**.
+
+Game 2 was serialized, hashed, and reproduced before comparison with closed Game 1. Both matches support the frozen near-minus-middle association and show nonmonotonic, all-positive rank profiles with far above middle descriptively. This is within-provider observational replication, not evidence of causation, tactical response, opportunity creation, gravity, or value. Under the frozen decision rule, concurrent defensive-geometry refinement stops; any Opportunity Redistribution work requires a separate prospective design. Game 3 and IDSSE remained untouched, and no pooled analysis was run.
+
 ## 2026-09-02 — Concurrent-geometry Game 2 replication frozen before results
 
 After Game 1 closed development-coherent, a separate [Game 2 addendum](protocols/concurrent_attacker_defensive_geometry_v1_game2_replication.md) froze the untouched heldout question without changing the construct. It preserves the two-second concurrent interval, strictly prior context, exact 72-column model, D1–D10 start ranks, sole near-minus-middle primary contrast, inherited trimming threshold, and reserved bootstrap child 1. D1 elevation, far-versus-middle, and monotonicity remain descriptive and cannot classify replication. Game 2 statuses and the post-result decision rule are fixed prospectively; Tier 3 requires serialization, hashing, and independent reproduction before comparison with Game 1. No Game 2 concurrent result, pooled analysis, Game 3, IDSSE, or opportunity outcome was accessed.

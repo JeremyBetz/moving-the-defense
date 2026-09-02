@@ -1,0 +1,14 @@
+{
+  "directional_descriptives.csv": "7a3d13a2c04124aa6941e3933295a58cd2a159c4304cadda52f444cfbfe42dbd",
+  "exclusion_ledger.csv": "74281af3507ece0a09c1f61a90db42e852b9d87a9fe44671f862da4ae7e5749d",
+  "execution_metadata.json": "8a9d2178a2dbf2a45366d95e5bc9d80ca4ac11c5f7404d46b0f0f343f89cdcbe",
+  "final_results.json": "41b59e0365ac8bdc3f7631289c60f3d9975a00d7ee15b29938401712de9cef5c",
+  "governed_hashes.json": "acd1c039f1dcd0e818ffc63178e56c8abfb464a608bcb34560c3d462ae6ebb41",
+  "observation_rows.parquet": "0d63f206558e2336fdc7e55040df420f87825dc66e392ff9f4a3793ed4f60173",
+  "primary_coefficients.csv": "60034bd4e9388a83da4df998294332f71c6bb02a2878f72660bfe582a0d6f938",
+  "rank_distance_distributions.csv": "e27bf970d11ecf27dc4c4cff90005375074fce4283bd1f6930a43abe59543d9c",
+  "reproduction.json": "0fa11e691b6527fc2f5113337161986c45ea522a821e6e1a6eae40754e5f15ad",
+  "result_hash.json": "0a2241eef8a842acf6a52023691946dfe08d7d4051e95585818d9cd1ffa967b0",
+  "secondary_deformation_coefficients.csv": "8c5fbd3aae15da7d1babd118de9e6b697c39444f52f9f672bf3da71b771bd923",
+  "trimmed_primary_coefficients.csv": "92c05135ee3ff07e3cfd82be7ea9809ae3437f581e54097124c18afb7004a666"
+}

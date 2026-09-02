@@ -1,0 +1,46 @@
+{
+  "all_governed_outputs_byte_identical": true,
+  "comparisons": [
+    {
+      "byte_identical": true,
+      "file": "directional_descriptives.csv"
+    },
+    {
+      "byte_identical": true,
+      "file": "exclusion_ledger.csv"
+    },
+    {
+      "byte_identical": true,
+      "file": "execution_metadata.json"
+    },
+    {
+      "byte_identical": true,
+      "file": "final_results.json"
+    },
+    {
+      "byte_identical": true,
+      "file": "observation_rows.parquet"
+    },
+    {
+      "byte_identical": true,
+      "file": "primary_coefficients.csv"
+    },
+    {
+      "byte_identical": true,
+      "file": "rank_distance_distributions.csv"
+    },
+    {
+      "byte_identical": true,
+      "file": "result_hash.json"
+    },
+    {
+      "byte_identical": true,
+      "file": "secondary_deformation_coefficients.csv"
+    },
+    {
+      "byte_identical": true,
+      "file": "trimmed_primary_coefficients.csv"
+    }
+  ],
+  "files_compared": 10
+}
