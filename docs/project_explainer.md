@@ -97,7 +97,7 @@ A later bridge test must not choose attacking actions because the defence reacte
 
 Its speed-valley implementation produced 38,651 candidate episodes and retained substantial lower-speed movement: 15,845 episodes peaked below 5.5 m/s while displacing at least 3 m. But 42.22% met a fragmentation diagnostic, compared with 1.97% meeting a merging/direction diagnostic. The result is **B — mixed**.
 
-The attacker-only episode approach remains promising, but the speed-valley rule is not ready for formal validation. A later tracking-support audit identified the 56.30 m/s maximum as an identity/trajectory-continuity failure, and two further discrete segmentation attempts failed complementary fragmentation/merging gates. The project therefore retained continuous fixed 1/2/4-second attacker geometry instead; that representation subsequently replicated across both Metrica sample matches.
+The attacker-only episode approach remains promising, but no tested boundary rule is fully validated. A later tracking-support audit identified the 56.30 m/s maximum as an identity/trajectory-continuity failure, and two discrete refinements failed complementary fragmentation/merging gates. A subsequent direction-aware rule passed Game 1 development and reproduced its numerical trade-off on heldout Game 2, but a prospectively selected direction-boundary check failed, so replication is **MIXED**. The project separately retained continuous fixed 1/2/4-second attacker geometry; that representation replicated across both Metrica sample matches.
 
 ## 13. Where does the evidence stop?
 

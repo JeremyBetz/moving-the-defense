@@ -110,3 +110,7 @@ No additional visual should be created merely to make the project look complete.
 ## Post-5B movement-segmentation figures
 
 [`figures/post5b_movement_segmentation_audit/`](../figures/post5b_movement_segmentation_audit/) contains ten attacker-only figures: deterministic trajectory and speed samples, distributions, signed geometry, Method A/B/C comparisons, and predeclared fragmentation, direction/merging, and lower-speed edge cases. No defender is shown. The figures diagnose the fixed exploratory rule; they are not validation or tactical evidence.
+
+## Attacker Movement Episode v2 heldout audit
+
+[`attacker_only_frozen_visual_audit.png`](../figures/attacker_movement_episode_v2_game2/attacker_only_frozen_visual_audit.png) shows the prospectively selected Game 2 attacker-only paths, speeds, headings, and frozen v2 boundaries. It documents the **MIXED** heldout result: the numerical trade-off passed, but the selected direction-change case contained no protected direction boundary. No defender or outcome is shown, and the figure is not tactical evidence.

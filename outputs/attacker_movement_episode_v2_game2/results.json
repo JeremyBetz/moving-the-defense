@@ -1,0 +1,311 @@
+{
+  "audit_checks": [
+    {
+      "case_id": "direction_change",
+      "check": "protected_direction_boundary_present",
+      "detail": "direction_boundaries=0",
+      "pass": false
+    },
+    {
+      "case_id": "low_speed",
+      "check": "candidate_episode_overlap",
+      "detail": "episodes=1",
+      "pass": true
+    },
+    {
+      "case_id": "discontinuity",
+      "check": "no_episode_crosses_invalid_support",
+      "detail": "overlap_n=0",
+      "pass": true
+    },
+    {
+      "case_id": "all",
+      "check": "serialized_boundaries_unique",
+      "detail": "boundaries=26801",
+      "pass": true
+    }
+  ],
+  "candidate_a": {
+    "candidate": "A_game2_baseline",
+    "direction_complex_n": 338,
+    "episodes": 29679,
+    "fragmentation_n": 12597,
+    "fragmentation_pct": 42.44415243101183,
+    "long_n": 87,
+    "low_directness_n": 237,
+    "lower_speed_coverage_share": 0.411402001415142,
+    "lower_speed_displacement_ge3_n": 12210,
+    "merging_direction_n": 619,
+    "merging_direction_pct": 2.085649786044004,
+    "no_high_speed_overlap_n": 28904,
+    "no_high_speed_overlap_pct": 97.38872603524378,
+    "short_n": 10894,
+    "tiny_displacement_n": 2389,
+    "tiny_path_n": 4688
+  },
+  "candidate_b": {
+    "candidate": "B_game2_direction_aware",
+    "direction_complex_n": 305,
+    "episodes": 25579,
+    "fragmentation_n": 7950,
+    "fragmentation_pct": 31.080182962586495,
+    "fragmentation_relative_reduction_pct": 26.77393425842625,
+    "long_n": 134,
+    "low_directness_n": 222,
+    "lower_speed_coverage_share": 0.46956487743852376,
+    "lower_speed_displacement_ge3_n": 12011,
+    "merging_direction_n": 632,
+    "merging_direction_pct": 2.4707768091012157,
+    "no_high_speed_overlap_n": 24863,
+    "no_high_speed_overlap_pct": 97.20082880487901,
+    "short_n": 6390,
+    "tiny_displacement_n": 1831,
+    "tiny_path_n": 3604
+  },
+  "canonical_provenance": {
+    "adapter_version": "1.0.0",
+    "ball_object_id_provider": null,
+    "ball_state_available": false,
+    "canonical_coordinate_system": "metres, pitch centre origin, +x right, +y top, fixed pitch frame",
+    "canonical_match_id": "metrica:sample-game-2",
+    "contract_version": "1.0.0",
+    "coordinate_transform": [
+      "Kloppy 3.19.0 parses Metrica y bottom-to-top",
+      "x_m = kloppy_x * 105 - 52.5",
+      "y_m = kloppy_y * 68 - 34"
+    ],
+    "coordinates_attacking_direction_normalized": false,
+    "goalkeeper_source": "frozen project metadata: Home 11, Away 25",
+    "interpolation_used": false,
+    "kloppy_version": "3.19.0",
+    "orientation_metadata": "away-home",
+    "pitch_m": [
+      105.0,
+      68.0
+    ],
+    "player_id_map_provider_to_canonical": {
+      "away_15": "metrica:Away:15",
+      "away_16": "metrica:Away:16",
+      "away_17": "metrica:Away:17",
+      "away_18": "metrica:Away:18",
+      "away_19": "metrica:Away:19",
+      "away_20": "metrica:Away:20",
+      "away_21": "metrica:Away:21",
+      "away_22": "metrica:Away:22",
+      "away_23": "metrica:Away:23",
+      "away_24": "metrica:Away:24",
+      "away_25": "metrica:Away:25",
+      "away_26": "metrica:Away:26",
+      "home_1": "metrica:Home:1",
+      "home_10": "metrica:Home:10",
+      "home_11": "metrica:Home:11",
+      "home_12": "metrica:Home:12",
+      "home_13": "metrica:Home:13",
+      "home_14": "metrica:Home:14",
+      "home_2": "metrica:Home:2",
+      "home_3": "metrica:Home:3",
+      "home_4": "metrica:Home:4",
+      "home_5": "metrica:Home:5",
+      "home_6": "metrica:Home:6",
+      "home_7": "metrica:Home:7",
+      "home_8": "metrica:Home:8",
+      "home_9": "metrica:Home:9"
+    },
+    "possession_team_available": false,
+    "provider": "metrica",
+    "provider_frame_id_available": true,
+    "provider_match_id": "Sample Game 2",
+    "provider_raw_timestamp_available": false,
+    "source_coordinate_system": "normalized x left-to-right, y top-to-bottom",
+    "source_files": [
+      {
+        "path": "data/metrica_sample_game_2/Sample_Game_2_RawTrackingData_Home_Team.csv",
+        "sha256": "3f9990ac204b07133e4202441d6fcbb386897c7c7f81e1bc3ce4d35bc8644694"
+      },
+      {
+        "path": "data/metrica_sample_game_2/Sample_Game_2_RawTrackingData_Away_Team.csv",
+        "sha256": "aa639f40762eade46c389020fe4458266b5ba14027b1e96e22e75db62803718b"
+      }
+    ],
+    "support_rule": "Kloppy coordinate-object presence; unavailable reason retained as not_observed_unspecified",
+    "team_id_map_provider_to_canonical": {
+      "away": "metrica:Away",
+      "home": "metrica:Home"
+    },
+    "time_match_rule": "raw Metrica Time [s] preserved from provider frame-index sidecar",
+    "time_period_rule": "Kloppy period-relative timestamp",
+    "transformation_log": [
+      "load via Kloppy",
+      "canonical fixed-pitch coordinate transform",
+      "explicit roster null rows"
+    ]
+  },
+  "distributions": {
+    "A": [
+      {
+        "max": 33.59999999999991,
+        "median": 1.8400000000000034,
+        "min": 0.9999999999999982,
+        "n": 29679,
+        "q1": 1.2800000000002,
+        "q3": 2.6799999999998363,
+        "quantity": "duration_s"
+      },
+      {
+        "max": 58.549686706288156,
+        "median": 2.6554231084899453,
+        "min": 0.005051428571427152,
+        "n": 29679,
+        "q1": 1.384121940959099,
+        "q3": 5.2834885500187205,
+        "quantity": "path_m"
+      },
+      {
+        "max": 55.05754286270742,
+        "median": 2.5861379271900833,
+        "min": 0.0047335399015959855,
+        "n": 29679,
+        "q1": 1.3473637774887304,
+        "q3": 5.138934034952934,
+        "quantity": "displacement_m"
+      },
+      {
+        "max": 18.158793128102648,
+        "median": 1.6911523981222791,
+        "min": 0.00728571428574961,
+        "n": 29679,
+        "q1": 1.148294615312146,
+        "q3": 3.1397006677709474,
+        "quantity": "peak_speed_mps"
+      },
+      {
+        "max": 1.0,
+        "median": 0.9868530479745609,
+        "min": 0.05786874691610471,
+        "n": 29679,
+        "q1": 0.9621646795895877,
+        "q3": 0.9969272125519993,
+        "quantity": "displacement_path_ratio"
+      },
+      {
+        "max": 921.002307939069,
+        "median": 34.32667273593283,
+        "min": 0.0,
+        "n": 29679,
+        "q1": 16.050409195798217,
+        "q3": 64.1154317939754,
+        "quantity": "absolute_heading_change_deg"
+      }
+    ],
+    "B": [
+      {
+        "max": 33.59999999999991,
+        "median": 2.199999999999818,
+        "min": 1.0,
+        "n": 25579,
+        "q1": 1.519999999999527,
+        "q3": 3.119999999999891,
+        "quantity": "duration_s"
+      },
+      {
+        "max": 65.25196022327573,
+        "median": 3.167761211063313,
+        "min": 0.008132745082464789,
+        "n": 25579,
+        "q1": 1.5296788802355628,
+        "q3": 6.243339260307975,
+        "quantity": "path_m"
+      },
+      {
+        "max": 65.25025048922434,
+        "median": 3.081836244846733,
+        "min": 0.006449079826779558,
+        "n": 25579,
+        "q1": 1.4854062520694298,
+        "q3": 6.039916142998413,
+        "quantity": "displacement_m"
+      },
+      {
+        "max": 18.158793128102648,
+        "median": 1.7523118839924994,
+        "min": 0.00728571428574961,
+        "n": 25579,
+        "q1": 1.157904577627984,
+        "q3": 3.2098234999994775,
+        "quantity": "peak_speed_mps"
+      },
+      {
+        "max": 1.0,
+        "median": 0.9820460733580503,
+        "min": 0.024007977673857428,
+        "n": 25579,
+        "q1": 0.9567787301401389,
+        "q3": 0.9936867587022807,
+        "quantity": "displacement_path_ratio"
+      },
+      {
+        "max": 757.0899802646107,
+        "median": 42.84406916532671,
+        "min": 0.0,
+        "n": 25579,
+        "q1": 27.63731241181365,
+        "q3": 70.74443784874481,
+        "quantity": "absolute_heading_change_deg"
+      }
+    ]
+  },
+  "firewall": {
+    "defender_coordinates_accessed": false,
+    "defensive_outcomes_accessed": false,
+    "game3_accessed": false,
+    "idsse_accessed": false,
+    "pooled": false
+  },
+  "frozen_hashes": {
+    "config/attacker_movement_episode_v2.json": "f42142f0cf25dcdf62bfe353cf080124e8dd9f79a6335de407cc68f40a13a19a",
+    "docs/protocols/attacker_movement_episode_v2.md": "5d3b1863b0aab8e12a43db7ecba4500d8e64a85a52bd0808188e2056259a7b24",
+    "outputs/attacker_movement_episode_v2_game1/hashes.json": "d10d54150a2c0840f6208c9040cee447b6a32ec85b7fc713e46a3360826a4adc",
+    "outputs/attacker_movement_episode_v2_game1/results.json": "261e092fcf55348cf9532c4bbaaa57b7985922e2e707e2e744ccfd2976fbebd7",
+    "outputs/attacking_continuous_movement_game2_stage_a/governed_output_hashes.json": "5a7ca94a898a5b606a15eb83a855cba5b1d6a8444ea2fd0b934ffc49b3c2c397",
+    "outputs/attacking_continuous_movement_game2_stage_a/stage_a_result.json": "c63eaa6601ad6605c108efd82fa92d0d7e53e75df7414ccc91d7991187d1599f",
+    "outputs/attacking_continuous_movement_game2_stage_a/trajectory_validity_registry.csv": "22c202c83c564e4b0c6fb3aa0ceb8729f7bdb2b6651b980bd1024fd4002d98b5",
+    "outputs/attacking_continuous_movement_game2_stage_a/valid_support_segments.csv": "d618232b7363d0311560e935e23dd3ad77def8f1af26319df90c4c536f43460b"
+  },
+  "gates": {
+    "finite_geometry": true,
+    "fragmentation_relative_reduction": true,
+    "lower_speed_coverage": true,
+    "merging_direction": true,
+    "minimum_duration": true,
+    "no_post_result_tuning": true,
+    "no_support_crossing": true,
+    "objective_audit": false,
+    "support_rows_consumed": true,
+    "support_segments_consumed": true
+  },
+  "protocol_sha256": "5d3b1863b0aab8e12a43db7ecba4500d8e64a85a52bd0808188e2056259a7b24",
+  "replication_config_sha256": "f823c6958068515ea693ed3fe9fc71e800f0112dbfb914ad144f016897ca2aa5",
+  "replication_protocol_sha256": "7c0c185e3f373233da520b7a4ea3f0950e1db945640c8ed3e3afbdd4da41188d",
+  "sample": {
+    "open_play_support_blocks": 1290,
+    "player_periods": 44,
+    "players": 24,
+    "support_frames_after_smoothing_and_velocity": 1688267
+  },
+  "status": "GAME 2 ATTACKER EPISODE v2 REPLICATION MIXED",
+  "support": {
+    "classification": "READY",
+    "consumed_raw_row_count": 2093028,
+    "consumed_segment_id_count": 134,
+    "governed_hash_files": 10,
+    "governed_hashes_valid": true,
+    "independent_reproduction_valid": true,
+    "no_registry_revision": true,
+    "no_support_rediscovery": true,
+    "registry_sha256": "22c202c83c564e4b0c6fb3aa0ceb8729f7bdb2b6651b980bd1024fd4002d98b5",
+    "support_segments": 134,
+    "support_segments_sha256": "d618232b7363d0311560e935e23dd3ad77def8f1af26319df90c4c536f43460b",
+    "valid_raw_rows": 2093028
+  },
+  "v2_config_sha256": "f42142f0cf25dcdf62bfe353cf080124e8dd9f79a6335de407cc68f40a13a19a"
+}

@@ -1,0 +1,57 @@
+{
+  "all_governed_outputs_byte_identical": true,
+  "byte_identical_outputs": 10,
+  "comparisons": {
+    "audit_cases.csv": {
+      "byte_identical": true,
+      "original_sha256": "afcaedd6b4e34e4fb0afb2e1316d299ea1dafdd9ddecaaecdd50bccdba33d907",
+      "rerun_sha256": "afcaedd6b4e34e4fb0afb2e1316d299ea1dafdd9ddecaaecdd50bccdba33d907"
+    },
+    "audit_checks.csv": {
+      "byte_identical": true,
+      "original_sha256": "a699c8662a486376d028b1b2e987629d6406959ded46936119b8753ea814ceda",
+      "rerun_sha256": "a699c8662a486376d028b1b2e987629d6406959ded46936119b8753ea814ceda"
+    },
+    "candidate_a_episodes.csv": {
+      "byte_identical": true,
+      "original_sha256": "0b489736d9e690b490dd9d8fa1c956ddb1ef387581a10e8383cf0c472a9634d2",
+      "rerun_sha256": "0b489736d9e690b490dd9d8fa1c956ddb1ef387581a10e8383cf0c472a9634d2"
+    },
+    "candidate_b_boundaries.csv": {
+      "byte_identical": true,
+      "original_sha256": "12dc2f4481ab40240322e262b838cf051bbebe1781c8aa81cccc3c7fd36dacf6",
+      "rerun_sha256": "12dc2f4481ab40240322e262b838cf051bbebe1781c8aa81cccc3c7fd36dacf6"
+    },
+    "candidate_b_episodes.csv": {
+      "byte_identical": true,
+      "original_sha256": "812db88d2b198af9eb3383511f632e2820d896d6227a0b86cecbd61fd00bd0e3",
+      "rerun_sha256": "812db88d2b198af9eb3383511f632e2820d896d6227a0b86cecbd61fd00bd0e3"
+    },
+    "candidate_summary.csv": {
+      "byte_identical": true,
+      "original_sha256": "88739980116a3292858f681fad499bed9eab5c41d024108681f87baf1817a7ba",
+      "rerun_sha256": "88739980116a3292858f681fad499bed9eab5c41d024108681f87baf1817a7ba"
+    },
+    "distribution_summary.csv": {
+      "byte_identical": true,
+      "original_sha256": "32d05f4d16240f5a288f769b83aabe1eab753b256c738e77ac6bf7bc5261e953",
+      "rerun_sha256": "32d05f4d16240f5a288f769b83aabe1eab753b256c738e77ac6bf7bc5261e953"
+    },
+    "hard_qc.csv": {
+      "byte_identical": true,
+      "original_sha256": "0a53e53d6e603afc8d6b8e8875e231e4afe32dbd9271fd77a7a3ce59346c0bfe",
+      "rerun_sha256": "0a53e53d6e603afc8d6b8e8875e231e4afe32dbd9271fd77a7a3ce59346c0bfe"
+    },
+    "results.json": {
+      "byte_identical": true,
+      "original_sha256": "37ef7dde32b1b1bc8305994b75265143dbeda91349d35c32e74e773ae7d69ad3",
+      "rerun_sha256": "37ef7dde32b1b1bc8305994b75265143dbeda91349d35c32e74e773ae7d69ad3"
+    },
+    "support_blocks.csv": {
+      "byte_identical": true,
+      "original_sha256": "178e45f9e164899286e8fe70412785b52e17bed906c65414cb100aa8daeb9914",
+      "rerun_sha256": "178e45f9e164899286e8fe70412785b52e17bed906c65414cb100aa8daeb9914"
+    }
+  },
+  "governed_outputs": 10
+}

@@ -266,6 +266,17 @@ MPLCONFIGDIR=/tmp/post5b-mpl .venv/bin/python src/post5b_attacking_movement_segm
 
 Their reports, executed notebooks, figures, and machine-readable outputs are under matching `post5b_*` paths. The segmentation audit manifest hashes its source, rules, and Game 1 inputs. Reproducing it requires Game 1 only and must not introduce defender coordinates or defensive outcomes.
 
+### Attacker Movement Episode v2
+
+The immutable Game 1 rule is governed by [`protocols/attacker_movement_episode_v2.md`](protocols/attacker_movement_episode_v2.md) and `config/attacker_movement_episode_v2.json`. Heldout Game 2 additionally requires the prospectively frozen [`protocols/attacker_movement_episode_v2_game2_replication.md`](protocols/attacker_movement_episode_v2_game2_replication.md), its matching configuration, and the closed attacker-only Stage A support registry.
+
+```bash
+MPLCONFIGDIR=/tmp/attacker-episode-v2 .venv/bin/python src/attacker_movement_episode_v2_game2.py
+MPLCONFIGDIR=/tmp/attacker-episode-v2 .venv/bin/python src/attacker_movement_episode_v2_game2.py --reproduce
+```
+
+The [Game 2 report](results/attacker_movement_episode_v2_game2.md) records a **MIXED** heldout replication. All 10 governed outputs reproduced byte-for-byte. The command reads Game 2 attacker trajectories, global stoppage clocks, and frozen Stage A support only; it does not read defenders or defensive outcomes.
+
 ## Local defensive deformation v1
 
 The frozen construct is governed by [`docs/protocols/local_defensive_deformation_v1.md`](protocols/local_defensive_deformation_v1.md) and `config/local_defensive_deformation_v1.json`. Game 2 additionally requires the prospectively frozen [held-out addendum](protocols/local_defensive_deformation_v1_game2_replication.md) and `config/local_defensive_deformation_v1_game2_replication.json`.

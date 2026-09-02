@@ -1,0 +1,3 @@
+candidate,episodes,fragmentation_n,fragmentation_pct,merging_direction_n,merging_direction_pct,short_n,tiny_path_n,tiny_displacement_n,long_n,low_directness_n,direction_complex_n,lower_speed_displacement_ge3_n,lower_speed_coverage_share,no_high_speed_overlap_n,no_high_speed_overlap_pct,fragmentation_relative_reduction_pct
+A_game2_baseline,29679,12597,42.44415243101183,619,2.085649786044004,10894,4688,2389,87,237,338,12210,0.411402001415142,28904,97.38872603524378,
+B_game2_direction_aware,25579,7950,31.080182962586495,632,2.4707768091012157,6390,3604,1831,134,222,305,12011,0.46956487743852376,24863,97.20082880487901,26.77393425842625

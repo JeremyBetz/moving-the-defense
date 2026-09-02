@@ -15,7 +15,7 @@ The repository now supports a prospectively tested attacker-movement-to-defensiv
 - **Opponent-information constraint:** simple nearest-opponent geometry adds only a small, mixed increment and does not establish local opponent primacy.
 - **Directional insight:** signed displacement preserves geometry that scalar path magnitude loses.
 - **Timing failure:** constant-velocity continuation innovation is not a validated response-onset measure.
-- **Attacking-interval groundwork:** outcome-blind attacker-only movement segmentation is promising but mixed; fragmentation is the dominant failure.
+- **Attacking-interval groundwork:** the frozen direction-aware rule reproduced its numerical fragmentation/merging/coverage trade-off on heldout Game 2, but a prospectively selected direction-boundary audit failed; the exact replication status is **MIXED**, not validation.
 - **Within-provider bridge:** the frozen continuous-window attacker-to-defender test classified Final A across both Metrica sample matches, with positive pooled primary and paired-control intervals and every frozen robustness/QC gate passing.
 - **Spatial-footprint replication:** the frozen footprint classified Final A across the two Metrica sample matches: near ranks had a stronger association than middle ranks, while middle and far regions remained similar.
 

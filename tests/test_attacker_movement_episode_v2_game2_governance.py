@@ -46,6 +46,19 @@ def test_replication_rules_are_prospective_and_immutable() -> None:
     assert cfg["support"]["interpolation"] is False
 
 
-def test_no_game2_v2_result_exists_at_freeze() -> None:
-    assert not (ROOT / "outputs/attacker_movement_episode_v2_game2").exists()
-    assert not (ROOT / "docs/results/attacker_movement_episode_v2_game2.md").exists()
+def test_governance_records_pre_result_freeze() -> None:
+    cfg = json.loads(CONFIG.read_text(encoding="utf-8"))
+    protocol = (ROOT / "docs/protocols/attacker_movement_episode_v2_game2_replication.md").read_text(encoding="utf-8")
+    assert cfg["starting_commit"] == "35e22081c2697be2b3773986c7745815bf2ce317"
+    assert "No Game 2 v2 result existed or had been inspected" in protocol
+
+
+def test_closed_result_matches_frozen_decision_tree() -> None:
+    result = json.loads((ROOT / "outputs/attacker_movement_episode_v2_game2/results.json").read_text(encoding="utf-8"))
+    reproduction = json.loads((ROOT / "outputs/attacker_movement_episode_v2_game2/reproduction_verification.json").read_text(encoding="utf-8"))
+    assert result["status"] == "GAME 2 ATTACKER EPISODE v2 REPLICATION MIXED"
+    assert result["gates"]["fragmentation_relative_reduction"] is True
+    assert result["gates"]["merging_direction"] is True
+    assert result["gates"]["lower_speed_coverage"] is True
+    assert result["gates"]["objective_audit"] is False
+    assert reproduction["all_governed_outputs_byte_identical"] is True

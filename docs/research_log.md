@@ -1,5 +1,13 @@
 # Research Log
 
+## 2026-09-01 — Attacker Movement Episode v2 heldout Game 2 replication mixed
+
+After the governance-only checkpoint `06e8d26`, the immutable direction-aware rule was executed once on the closed attacker-only Game 2 Stage A support. All three numerical gates passed: fragmentation fell from 42.4442% to 31.0802% (26.7739% relative), merging/direction was 2.4708%, and lower-speed coverage was 46.9565%. The separately frozen direction-change audit window contained no protected direction boundary, so the exact heldout status is **GAME 2 ATTACKER EPISODE v2 REPLICATION MIXED**. All 10 governed outputs reproduced byte-for-byte. No defender data, defensive outcome, Game 3, IDSSE, pooling, or post-result tuning entered.
+
+## 2026-09-01 — Attacker Movement Episode v2 Game 2 replication governance frozen
+
+Before any Game 2 v2 episode result was generated or inspected, the Tier-3 replication handling was frozen in [`protocols/attacker_movement_episode_v2_game2_replication.md`](protocols/attacker_movement_episode_v2_game2_replication.md) and its machine-readable configuration. The addendum preserves the exact Game 1 v2 algorithm, uses the closed attacker-only Game 2 Stage A support registry, predeclares deterministic visual-audit selection, and fixes heldout `SUPPORTED` / `MIXED` / `NOT SUPPORTED` / `INVALID` criteria. It introduces no segmentation tuning, defender data, outcome data, pooling, Game 3 access, or IDSSE execution.
+
 ## 2026-09-01 — Attacker Movement Episode v2 passes frozen Game 1 development gates
 
 The direction-aware v2 protocol was committed before execution. It reproduced all 38,651 historical speed-valley episodes to $7.11\times10^{-15}$ maximum difference, then applied one frozen rule using player-own speed and turning only. Candidate B produced 31,965 episodes. Fragmentation fell from 42.2240% to 28.7596% (31.8881% relative reduction); merging/direction rose from 1.9741% to 2.6498% but remained below the frozen 3.97% cap; lower-speed/≥3 m coverage increased from 40.9951% to 48.6501%. Every frozen gate passed: **GAME 1 ATTACKER EPISODE v2 DEVELOPMENT COHERENT**.
@@ -670,6 +678,3 @@ Final implementation-precision review approved and froze the Phase 5B protocol b
 The exact Phase 5A B4 specification must be refitted and re-evaluated on the Phase 5B $K=3$/B7-complete common sample inside the same nested match folds; Phase 5A aggregate B4 MAE values cannot be copied into a changed sample. The $K=1$ comparison uses those same primary observations. A4–A6 completeness remains confined to the secondary locality-control subset.
 
 Version 1.0 is frozen and unexecuted. Any substantive change requires a versioned pre-outcome amendment. No Game 3 data were accessed.
-# 2026-09-01 — Attacker Movement Episode v2 Game 2 replication governance frozen
-
-Before any Game 2 v2 episode result was generated or inspected, the Tier-3 replication handling was frozen in [`protocols/attacker_movement_episode_v2_game2_replication.md`](protocols/attacker_movement_episode_v2_game2_replication.md) and its machine-readable configuration. The addendum preserves the exact Game 1 v2 algorithm, uses the closed attacker-only Game 2 Stage A support registry, predeclares deterministic visual-audit selection, and fixes heldout `SUPPORTED` / `MIXED` / `NOT SUPPORTED` / `INVALID` criteria. It introduces no segmentation tuning, defender data, outcome data, pooling, Game 3 access, or IDSSE execution.

@@ -1,0 +1,5 @@
+case_id,check,pass,detail
+direction_change,protected_direction_boundary_present,False,direction_boundaries=0
+low_speed,candidate_episode_overlap,True,episodes=1
+discontinuity,no_episode_crosses_invalid_support,True,overlap_n=0
+all,serialized_boundaries_unique,True,boundaries=26801

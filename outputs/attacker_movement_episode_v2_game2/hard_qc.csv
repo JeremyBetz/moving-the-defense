@@ -1,0 +1,11 @@
+check,pass
+fragmentation_relative_reduction,True
+merging_direction,True
+lower_speed_coverage,True
+objective_audit,False
+support_segments_consumed,True
+support_rows_consumed,True
+minimum_duration,True
+finite_geometry,True
+no_support_crossing,True
+no_post_result_tuning,True
