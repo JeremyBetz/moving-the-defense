@@ -1,5 +1,11 @@
 # Research Log
 
+## 2026-09-02 — Concurrent defensive coordination form validated synthetically, not executed
+
+After the IDSSE concurrent-geometry replication, a design-only pass defined a path-weighted local-increment measure of focal-relative defender movement aligned with the attacker's concurrent trajectory. An absolute-defender comparator and an unsigned perpendicular component remain separate. Seven synthetic identities passed, including collective-translation removal, opposite/perpendicular motion, stops, turns with endpoint cancellation, and common-translation invariance.
+
+A fourth-order zero-phase 1.0 Hz Butterworth is the draft physical-time preprocessing candidate, with 1.5 Hz as the sole proposed sensitivity and the historical centred seven-frame mean retained as a comparison. Synthetic 10/25 Hz checks supported sampling-rate comparability; no real defender-rank coefficient or response outcome was computed. The prospective experiment document remains explicitly **draft and unexecuted** pending human review of block-edge/support, inference, and classification rules. Game 2 directional outcomes, IDSSE directional outcomes, and Game 3 remain unopened.
+
 ## 2026-09-02 — IDSSE concurrent-geometry external replication supported
 
 The unchanged frozen construct executed across all seven governed IDSSE matches after every provider-equivalence gate passed. Near-minus-middle was positive in 7/7 matches. The observation-weighted pooled estimate was 0.05115 [0.04595, 0.05642]; the frozen trim removed 1.095% of anchors and retained 91.71% magnitude. Pooled and all match-level secondary deformation estimates were supportive but remained nonclassifying. The ordered criteria therefore returned **IDSSE EXTERNAL REPLICATION SUPPORTED**.
