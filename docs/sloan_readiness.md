@@ -18,9 +18,9 @@ The repository now supports a prospectively tested attacker-movement-to-defensiv
 - **Attacking-interval groundwork:** the frozen direction-aware rule reproduced its numerical fragmentation/merging/coverage trade-off on heldout Game 2, but a prospectively selected direction-boundary audit failed; the exact replication status is **MIXED**, not validation.
 - **Within-provider bridge:** the frozen continuous-window attacker-to-defender test classified Final A across both Metrica sample matches, with positive pooled primary and paired-control intervals and every frozen robustness/QC gate passing.
 - **Spatial-footprint replication:** the frozen footprint classified Final A across the two Metrica sample matches: near ranks had a stronger association than middle ranks, while middle and far regions remained similar.
-- **Concurrent localization and interpretation boundary:** the near-minus-middle concurrent focal-relative movement association replicated across both Metrica matches, but frozen Opportunity Redistribution v1 was negative on Game 1 ($\beta_D=-0.02407$ [−0.09392, 0.04776]). Localized defensive reorganization therefore cannot be presented as teammate separation, space creation, gravity, or value.
+- **Concurrent localization and interpretation boundary:** the near-minus-middle concurrent focal-relative movement association replicated across both Metrica matches and all seven governed IDSSE matches (pooled 0.05115 [0.04595, 0.05642]), but frozen Opportunity Redistribution v1 was negative on Game 1 ($\beta_D=-0.02407$ [−0.09392, 0.04776]). Cross-provider observational geometry therefore cannot be presented as teammate separation, space creation, gravity, or value.
 
-Together these results show disciplined narrowing, prospective falsification, cross-environment defensive-geometry replication, and a within-provider observational bridge. The negative opportunity test strengthens the measurement-paper case by locating an empirical interpretation boundary. It does not establish that the attacker caused the defensive change or identify its football meaning.
+Together these results show disciplined narrowing, prospective falsification, cross-environment defensive-geometry replication, and a concurrent attacker-to-defender association that now transports beyond Metrica. The negative opportunity test strengthens the measurement-paper case by locating an empirical interpretation boundary. It does not establish that the attacker caused the defensive change or identify its football meaning.
 
 ## Current scientific gap
 
@@ -45,7 +45,7 @@ The gap is **not** the absence of a gravity score. Gravity, attacker attribution
 | Football problem | Clear | Keep the attacker-movement-to-defensive-change question central. |
 | Reproducible defensive primitive | Externally replicated geometry | Preserve activity and semantic limitations. |
 | Attacking temporal unit | B — mixed exploratory audit | Outcome-blind refinement, then a frozen validation test. |
-| Bridge evidence | Final A across two Metrica sample matches | Preserve its observational, within-provider scope; do not infer causation or tactics. |
+| Bridge evidence | Final A across two Metrica matches; concurrent localization supported across seven IDSSE matches | Preserve observational scope, shared-motion caveats, and provider-timescale differences; do not infer causation or tactics. |
 | Tactical interpretation | Unsupported | Not required if the contribution is framed as geometry/methodology. |
 | Development/validation discipline | Strong through the frozen two-match bridge | Apply the same discipline to any semantic or cross-provider extension. |
 | Reproducibility | Substantial but incomplete | Resolve environment drift, document large artifacts, and add lightweight automated integrity checks. |

@@ -1,5 +1,11 @@
 # Research Log
 
+## 2026-09-02 — IDSSE concurrent-geometry external replication supported
+
+The unchanged frozen construct executed across all seven governed IDSSE matches after every provider-equivalence gate passed. Near-minus-middle was positive in 7/7 matches. The observation-weighted pooled estimate was 0.05115 [0.04595, 0.05642]; the frozen trim removed 1.095% of anchors and retained 91.71% magnitude. Pooled and all match-level secondary deformation estimates were supportive but remained nonclassifying. The ordered criteria therefore returned **IDSSE EXTERNAL REPLICATION SUPPORTED**.
+
+All six governed outputs reproduced byte-for-byte. The result extends the fixed-interval concurrent association to one independent provider environment; it does not establish reaction, causation, assignment, space creation, tactics, gravity, quality, or value. All-rank positivity, nonmonotonic rank shape, far-above-middle coefficients, concurrent shared movement, and the shorter physical timescale of seven frames at IDSSE's 25 Hz remain explicit limitations. Game 3 and opportunity outcomes were untouched.
+
 ## 2026-09-02 — IDSSE concurrent-geometry replication frozen before outcomes
 
 The unchanged Concurrent Attacker–Defensive Geometry v1 construct was prospectively governed across the seven existing IDSSE matches as seven external match-level replications plus a secondary observation-weighted pooled precision summary. The freeze preserves the two-second pre/concurrent windows, 72-column model, D1–D10 start ranks, near-minus-middle estimand, 60-second grouped bootstrap, Metrica trim threshold, and secondary deformation role. A mandatory seven-match provider-equivalence gate separates canonical IDSSE adapter mechanics from the scientific construct. Exact, exhaustive external `SUPPORTED` / `MIXED` / `NOT SUPPORTED` / `INVALID` rules were fixed before results.

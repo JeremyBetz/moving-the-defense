@@ -1,0 +1,8 @@
+match_id,frames_exact,provider_timestamps_exact,player_team_goalkeeper_roster_exact,observed_null_masks_exact,ball_observed_null_masks_exact_descriptive,maximum_coordinate_difference_m,coordinate_tolerance_m,event_context_layer_shared_exactly,passed
+J03WMX,True,True,True,True,False,1.8310546892053024e-06,1e-05,True,True
+J03WN1,True,True,True,True,False,1.8310546892053024e-06,1e-05,True,True
+J03WOH,True,True,True,True,False,1.8310546892053024e-06,1e-05,True,True
+J03WOY,True,True,True,True,False,1.8310546892053024e-06,1e-05,True,True
+J03WPY,True,True,True,True,False,1.8310546892053024e-06,1e-05,True,True
+J03WQQ,True,True,True,True,False,1.8310546892053024e-06,1e-05,True,True
+J03WR9,True,True,True,True,False,1.8310546892053024e-06,1e-05,True,True

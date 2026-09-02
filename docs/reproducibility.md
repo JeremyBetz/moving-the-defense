@@ -301,6 +301,17 @@ MPLCONFIGDIR=/tmp/mtd-opportunity .venv/bin/python src/opportunity_redistributio
 
 The [result report](results/opportunity_redistribution_game1_v1.md) and `outputs/opportunity_redistribution_game1_v1/` record the six-column rank-6 fit, all 2,000 bootstrap replicates, exclusions, frozen robustness checks, and byte-identical reproduction. The script reads Metrica Sample Game 1 only. Game 2, Game 3, and IDSSE are outside this execution.
 
+## Concurrent geometry v1 — IDSSE external replication
+
+The [external protocol](protocols/concurrent_attacker_defensive_geometry_v1_idsse_replication.md), configuration, and provider-equivalence note govern the seven-match Tier 3 execution. Raw IDSSE files and the established cache/adapter structure are required. Reproduce the complete execution and compare it with the authoritative outputs using:
+
+```bash
+MPLCONFIGDIR=/tmp/mtd-mpl .venv/bin/python src/concurrent_attacker_defensive_geometry_idsse_v1.py --output outputs/.concurrent_attacker_defensive_geometry_idsse_v1_rerun
+MPLCONFIGDIR=/tmp/mtd-mpl .venv/bin/python src/concurrent_attacker_defensive_geometry_idsse_v1.py --output outputs/concurrent_attacker_defensive_geometry_idsse_v1 --verify-against outputs/.concurrent_attacker_defensive_geometry_idsse_v1_rerun
+```
+
+The first command reruns the full provider-equivalence gate and scientific execution. The second records byte identity against the closed result. The [result report](results/concurrent_attacker_defensive_geometry_idsse_v1.md) and `outputs/concurrent_attacker_defensive_geometry_idsse_v1/` contain the governed evidence. Game 3 and opportunity outcomes are outside this execution.
+
 ## Known reproducibility limitations
 
 - There is no one-command end-to-end workflow or continuous integration check.

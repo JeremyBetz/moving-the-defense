@@ -1,0 +1,10 @@
+{
+  "coefficient_intervals.csv": "f1151e134214fea12b72c73704338e9db096888e02c3fff7956fdc0fcf518c75",
+  "exclusion_ledger.csv": "90c02760dc3653b0168033b45d36564cccef0d08a0e27a092ac2d32633a7f2e4",
+  "execution_manifest.json": "bc4ddb365603d372a20ac9fc56582111b0d583780bc0532cf0d4f25b76fc7255",
+  "final_results.json": "ad4de4a99a50d142e1379e9ef4e7cd7ba4f8c77a15e75008ca755f3dea44209f",
+  "governed_hashes.json": "d5ee732de7bb59298ac117a888420038a9e5ece559bb4bd4544d7cebf77c4c09",
+  "observation_rows.parquet": "76c79236392ed5bf57e7543092e1f53887b067237b7ca7d895d6bb9c8f672527",
+  "provider_equivalence.csv": "0a45ea87cd5172bf91fd32016b955bf644817fc3034f9dbde149cc241f0045b0",
+  "reproduction.json": "103401ded33beab0248f6a14ceaf0feea6220e722c39831fcae0ad66f48a04ef"
+}

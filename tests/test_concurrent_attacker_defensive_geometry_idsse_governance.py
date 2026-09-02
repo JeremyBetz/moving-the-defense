@@ -70,8 +70,14 @@ class IDSSEConcurrentGeometryGovernanceTest(unittest.TestCase):
         self.assertEqual(bootstrap["pooled_child_index"], 7)
         self.assertEqual(config["secondary_deformation"]["classification_effect"], "none")
 
-    def test_no_empirical_idsse_result_directory_exists(self) -> None:
-        self.assertFalse((ROOT / "outputs/concurrent_attacker_defensive_geometry_idsse_v1").exists())
+    def test_any_empirical_result_is_post_freeze_and_governed(self) -> None:
+        output = ROOT / "outputs/concurrent_attacker_defensive_geometry_idsse_v1"
+        if not output.exists():
+            return
+        manifest = json.loads((output / "execution_manifest.json").read_text(encoding="utf-8"))
+        self.assertEqual(manifest["starting_commit"], "887e1adcd37aa9f53ce0a101dc94f08d3680c7d5")
+        self.assertTrue(manifest["results_observed_after_freeze"])
+        self.assertTrue(manifest["game3_untouched"])
 
 
 if __name__ == "__main__":

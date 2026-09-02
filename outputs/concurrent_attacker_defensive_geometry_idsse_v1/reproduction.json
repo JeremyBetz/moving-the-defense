@@ -1,0 +1,30 @@
+{
+  "all_governed_outputs_byte_identical": true,
+  "comparisons": [
+    {
+      "byte_identical": true,
+      "file": "coefficient_intervals.csv"
+    },
+    {
+      "byte_identical": true,
+      "file": "exclusion_ledger.csv"
+    },
+    {
+      "byte_identical": true,
+      "file": "execution_manifest.json"
+    },
+    {
+      "byte_identical": true,
+      "file": "final_results.json"
+    },
+    {
+      "byte_identical": true,
+      "file": "observation_rows.parquet"
+    },
+    {
+      "byte_identical": true,
+      "file": "provider_equivalence.csv"
+    }
+  ],
+  "files_compared": 6
+}
