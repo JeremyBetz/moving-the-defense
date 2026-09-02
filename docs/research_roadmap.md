@@ -63,6 +63,8 @@ The [Concurrent Attacker–Defensive Geometry v1 protocol](protocols/concurrent_
 
 The completed bridge resolves the first within-provider association test, not its tactical or causal meaning. Continuous attacker intervals remain defined without defensive outcomes, and defensive change remains geometric rather than tactical. Historical segmentation failures still constrain any future episode-based extension. No new empirical phase may begin unless its design is prospectively specified and frozen.
 
+The next-stage [Opportunity Redistribution v1 protocol](protocols/opportunity_redistribution_v1.md) is now frozen but unexecuted. It asks whether the replicated focal-local defensive contrast is associated with differential nearest-defender separation gain for other attackers initially local rather than remote to the focal attacker. This tests a minimal geometric consequence before pass availability, pitch control, attribution, gravity, or value. Game 1 remains development; Game 2 remains held out behind a future addendum; Game 3 remains reserved.
+
 The first bounded refinement executed under its frozen rules and classified **B**. Prominence sharply reduced fragmentation but drove merging/direction to 35.88%–69.03% against a 3.97% cap. No candidate was selected, so the protocol forbids Game 2 execution and further threshold repair.
 
 The completed [representation audit](attacking_movement_representation_audit.md) selected penalized change points in the attacker's two-dimensional velocity state. [Protocol v1.0](protocols/attacking_directional_segmentation_v1.md) froze its BIC-derived penalty, fixtures, support treatment, diagnostics, and decision tree before execution. The [Game 1 result](results/attacking_directional_segmentation_game1_v1.md) is **B**: hard QC and merging control passed, but 99.80% fragmentation and unstable 10 Hz recall/F1/counts reject the representation for held-out use. Game 2 remains unopened for attacker segmentation, and the A-only prerequisite was not met.
@@ -81,7 +83,7 @@ The [2027 MIT Sloan Sports Analytics Conference Research Paper Competition](http
 
 ### Pre-October 1 priorities
 
-1. Design Opportunity Redistribution separately and prospectively, without changing the now-closed concurrent defensive geometry or giving it tactical/value meaning.
+1. Execute the frozen Opportunity Redistribution v1 Game 1 development question without tuning; govern any Game 2 replication separately only after Game 1 closes.
 2. Preserve the completed Final A bridge and its local, nonlocal, temporal, activity/context, tracking-quality, and influence limits.
 3. Preserve the completed Final A spatial footprint and seek external/native-frequency replication only under a separately frozen design.
 4. Preserve a conservative result even if it is mixed or negative.

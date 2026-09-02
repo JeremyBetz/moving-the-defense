@@ -1,0 +1,91 @@
+{
+  "bootstrap": {
+    "block_seconds": 60,
+    "game1_child_index": 0,
+    "game2_reserved_child_index": 1,
+    "grouping": "period_time_anchor_all_simultaneous_focals_all_recipients",
+    "interval_percent": 95.0,
+    "master_seed": 20260902,
+    "minimum_valid": 1900,
+    "replicates": 2000,
+    "spawn_count": 2,
+    "terminal_partial_blocks": "retained"
+  },
+  "classification": {
+    "coherent": [
+      "valid_execution_and_all_hard_qc",
+      "primary_beta_D_positive",
+      "primary_95_percent_interval_strictly_above_zero",
+      "fixed_start_defender_robustness_beta_D_positive",
+      "three_nearest_defender_robustness_beta_D_positive",
+      "extreme_focal_movement_trim_beta_D_positive"
+    ],
+    "evaluation_order": ["INVALID", "NEGATIVE", "COHERENT", "MIXED"],
+    "invalid": "hard_governance_implementation_data_support_geometry_design_solver_bootstrap_or_serialization_failure",
+    "mixed": "every_other_valid_positive_primary_beta_D",
+    "negative": "valid_execution_and_primary_beta_D_nonpositive",
+    "statuses": [
+      "GAME 1 OPPORTUNITY REDISTRIBUTION DEVELOPMENT COHERENT",
+      "GAME 1 OPPORTUNITY REDISTRIBUTION DEVELOPMENT MIXED",
+      "GAME 1 OPPORTUNITY REDISTRIBUTION DEVELOPMENT NEGATIVE",
+      "GAME 1 OPPORTUNITY REDISTRIBUTION DEVELOPMENT INVALID"
+    ]
+  },
+  "data": {
+    "development_match": "metrica:sample-game-1",
+    "frame_rate_hz": 25,
+    "game2": "heldout_unobserved_requires_separate_addendum",
+    "game3": "reserved_untouched",
+    "goalkeepers": {"metrica:Away": "25", "metrica:Home": "11"},
+    "idsse": "not_executed",
+    "interpolation": "none",
+    "smoothing": "centered_7_frame_position_mean",
+    "support": "complete_focal_nine_other_attackers_ten_defenders_t_minus_2_through_t_plus_2"
+  },
+  "defensive_predictor": "mean_D1_D3_concurrent_focal_relative_path_minus_mean_D4_D7",
+  "model": {
+    "columns_in_order": [
+      "within_anchor_concurrent_focal_attacker_path",
+      "within_anchor_concurrent_defensive_near_minus_middle",
+      "within_anchor_initial_local_minus_remote_separation",
+      "within_anchor_local_minus_remote_recipient_path",
+      "within_anchor_prior_focal_attacker_path",
+      "within_anchor_prior_defensive_near_minus_middle"
+    ],
+    "dtype": "float64",
+    "intercept": false,
+    "primary_estimand": "beta_D_column_2",
+    "solver": "numpy.linalg.lstsq_rcond_none",
+    "transformation": "demean_within_period_time_anchor_after_complete_group_resampling"
+  },
+  "opportunity": {
+    "endpoint_separation": "minimum_Euclidean_distance_to_any_of_ten_defending_outfield_players",
+    "local_recipients": [1, 2, 3],
+    "middle_recipients_descriptive": [4, 5, 6],
+    "outcome": "mean_local_change_in_nearest_defender_separation_minus_mean_remote_change",
+    "recipient_rank_basis": "distance_to_focal_attacker_at_t",
+    "recipient_tie_break": "ascending_canonical_player_id",
+    "remote_recipients": [7, 8, 9]
+  },
+  "possession": {
+    "ball_coordinates_required": false,
+    "ball_movement_role": "absorbed_when_shared_by_period_time_anchor_not_an_opportunity_definition",
+    "event_types": ["PASS", "RECOVERY", "SET PIECE", "SHOT"],
+    "focal_or_recipient_ball_carrier_allowed": true,
+    "opponent_possession_defining_event_after_t_through_t_plus_2": "exclude",
+    "same_team_event": "retain"
+  },
+  "primary_temporal_architecture": {
+    "concurrent": "t_through_t_plus_2_endpoints_and_increments_ending_in_t_to_t_plus_2",
+    "grid": "period_origin_plus_2_plus_4k",
+    "pre_context": "t_minus_2_through_t_endpoints_and_increments_ending_in_t_minus_2_to_t"
+  },
+  "robustness": {
+    "extreme_focal_attacker_path_threshold_m": 12.198443079831405,
+    "fixed_start_nearest_defender": "positive_beta_D_required",
+    "secondary_deformation": "descriptive_nonclassifying",
+    "three_nearest_defenders": "positive_beta_D_required"
+  },
+  "schema_version": "1.0.0",
+  "status": "FROZEN_BEFORE_ANY_OPPORTUNITY_OUTCOME"
+}

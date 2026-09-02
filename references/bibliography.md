@@ -46,6 +46,12 @@ Link, Daniel, Steffen Lang, and Philipp Seidenschwarz. 2016. “Real Time Quanti
 
 Fernández, Javier, and Luke Bornn. 2018. “Wide Open Spaces: A Statistical Technique for Measuring Space Creation in Professional Soccer.” *MIT Sloan Sports Analytics Conference*. <https://www.sloansportsconference.com/research-papers/wide-open-spaces-a-statistical-technique-for-measuring-space-creation-in-professional-soccer>
 
+Dick, Uwe, Daniel Link, and Ulf Brefeld. 2022. “Who Can Receive the Pass? A Computational Model for Quantifying Availability in Soccer.” *Data Mining and Knowledge Discovery* 36: 987–1014. <https://doi.org/10.1007/s10618-022-00827-2>
+
+Spearman, William. 2018. “Beyond Expected Goals.” *MIT Sloan Sports Analytics Conference*. <https://static.hudl.com/craft/downloads/SSAC2018_Beyond_Expected_Goals.pdf>
+
+Bischofberger, Jonas, and Arnold Baca. 2026. “Dangerous Accessible Space: A Unified Model of Space and Value in Team Sports.” *Journal of Big Data* 13. <https://doi.org/10.1186/s40537-026-01387-8>
+
 Forcher, Leander, Leon Forcher, Stefan Altmann, Darko Jekauc, and Matthias Kempe. 2024. “The Keys of Pressing to Gain the Ball—Characteristics of Defensive Pressure in Elite Soccer Using Tracking Data.” *Science and Medicine in Football* 8 (2): 161–169. <https://doi.org/10.1080/24733938.2022.2158213>
 
 ## Relative Movement and Tracking-Method Reviews

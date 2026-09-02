@@ -1,0 +1,20 @@
+{
+  "closed_concurrent_geometry_sha256": {
+    "outputs/concurrent_attacker_defensive_geometry_game1_v1/final_results.json": "cd782fcf31b1822e397297278f43b82dcb9ce270318786c1db8c3d57d52e0da0",
+    "outputs/concurrent_attacker_defensive_geometry_game2_v1/final_results.json": "41b59e0365ac8bdc3f7631289c60f3d9975a00d7ee15b29938401712de9cef5c"
+  },
+  "freeze_date": "2026-09-02",
+  "frozen_design_sha256": {
+    "config/opportunity_redistribution_v1.json": "45c418a9b52565298da184f32250dab190df2e62030d4f42fde7408c3523e431",
+    "docs/protocols/opportunity_redistribution_v1.md": "15825647a23c4cfcb24317e773d07a8c17cbb5d705b8c7eafd07493f728625fa"
+  },
+  "firewall": {
+    "game1_opportunity_result": "not_created_or_inspected",
+    "game2_opportunity_result": "not_created_or_inspected",
+    "game3": "untouched",
+    "idsse": "not_executed",
+    "opportunity_metric_selected_from_results": false
+  },
+  "starting_commit": "858b0caa0d99cdb17be0a6cad2e6f8cb0ae21604",
+  "status": "FROZEN_BEFORE_ANY_OPPORTUNITY_OUTCOME"
+}

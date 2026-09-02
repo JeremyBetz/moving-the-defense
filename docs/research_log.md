@@ -1,5 +1,11 @@
 # Research Log
 
+## 2026-09-02 — Opportunity Redistribution v1 frozen before outcomes
+
+Following supported heldout concurrent geometry, a focused literature/construct audit compared other-attacker separation, density, passing-lane geometry, Voronoi/control space, passing availability, numerical superiority, and valued off-ball opportunity. The frozen Game 1 protocol selects a deliberately narrower primitive: local-minus-remote change in nearest-defender separation among all nine non-focal attacking outfield players, with recipient groups fixed by focal distance at interval start. This is separation geometry, not pass availability, pitch control, tactical success, or value.
+
+The per-focal defensive predictor is the closed D1–D3 minus D4–D7 focal-relative-path realization. A compact six-column within-period/time-anchor model tests its conditional association beyond focal path, initial separation, recipient movement, and prior focal/defensive movement. The same concurrent two-second architecture avoids reintroducing an unsupported response lag. Game 1 statuses, three primary robustness checks, grouped 60-second bootstrap, and heldout Game 2 stream were frozen before any opportunity sample or outcome was computed. Game 2, Game 3, IDSSE, and empirical opportunity results remained untouched.
+
 ## 2026-09-02 — Concurrent Geometry v1 Game 2 Heldout Replication
 
 The prospectively frozen Tier-3 replication executed on untouched Metrica Sample Game 2 without changing the concurrent interval, sample rules, 72-column model, near-minus-middle estimand, bootstrap, trimming threshold, or classification logic. The primary contrast was 0.044629 [0.021508, 0.078480]; the trimmed estimate was 0.043588 [0.011459, 0.086031] with 97.67% magnitude retention. Secondary deformation was separately SUPPORTIVE at 0.037460 [0.023252, 0.054935]. All 2,000 replicates were valid, hard QC passed, and an independent execution reproduced all 10 governed artifacts byte-for-byte. The exact status is **GAME 2 CONCURRENT GEOMETRY REPLICATION SUPPORTED**.
