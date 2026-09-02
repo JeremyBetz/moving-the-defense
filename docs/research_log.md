@@ -1,5 +1,11 @@
 # Research Log
 
+## 2026-09-02 — Concurrent Defensive Coordination Form v1 Game 1 development executed
+
+The prospectively frozen protocol was executed on Metrica Sample Game 1. The governed sample contained 8,261 focal observations and 82,610 defender-rank rows. The 1.0 Hz D2–D3-minus-D4–D7 attacker-aligned defender-relative velocity contrast was 0.04045 with 95% paired block-bootstrap interval [0.02366, 0.05538]; the 1.5 Hz sensitivity was 0.04021. All 2,000 paired bootstrap replicates were valid, all 14 hard-QC assertions passed, and an independent execution reproduced all eight governed outputs byte-for-byte.
+
+The frozen classification is **GAME 1 COORDINATION FORM DEVELOPMENT COHERENT**. The nonclassifying D1 benchmark was larger (0.10765 [0.08352, 0.13219]), preserving a strong nearest-defender component. Four zero-path observations were omitted only from nonclassifying raw/seven-frame comparator fits; the primary common sample was untouched. A positive-form access-firewall assertion naming correction changed reporting logic only. No scientific rule changed, and no Game 2, Game 3, or IDSSE coordination-form outcome was inspected.
+
 ## 2026-09-02 — Concurrent Defensive Coordination Form v1 frozen before results
 
 The velocity-based coordination form is frozen prospectively after its outcome-blind frequency audit. Primary preprocessing is a fourth-order zero-phase 1.0 Hz Butterworth with a required 1.5 Hz sensitivity. Each player is filtered only within maximal finite, registry-valid, frame/time-consecutive native blocks. Every datum in $[t-2,t+2]$ must remain at least 2.0 physical seconds inside every required player's block, equivalently requiring block support through $[t-4,t+4]$.

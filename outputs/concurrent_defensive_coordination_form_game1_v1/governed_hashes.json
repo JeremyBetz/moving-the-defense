@@ -1,0 +1,10 @@
+{
+  "exclusions.csv": "814b40826a91718a48db8bd9563055a9c46458f254280673a65eb3a6d3b6d616",
+  "final_results.json": "8c9bc473826966ee2999adf14fda9a30fe630a5a7c5830da261d5020737b985e",
+  "hard_qc.json": "e49e5de29e7c785cec958aa169e04b0149ea8f50d061e580cff96507d97ac16e",
+  "manifest.json": "335627395602ac1527fafa1a6e11bcb4ecb28301880dea9b6b2e1359bc2fcd5d",
+  "observation_rows.parquet": "193f61ff74b392a919c8470a09081079c8cc3e2f6c20700e5cad1cd44b844be0",
+  "paired_bootstrap.npz": "8e7368dcb934bd5cd3fab2ba8f31657fcf08cc54cb5dca1df0945fa07619ba0e",
+  "rank_coefficients.csv": "cf3c74f433d8fbc3b9e15bef0b9841863c4907f5c4c8b0934e006596398c4763",
+  "secondary_coefficients.csv": "86364cb021b2b411556235d8c861d04eaf7f3f4bd432567cbdc19962c5a007ac"
+}

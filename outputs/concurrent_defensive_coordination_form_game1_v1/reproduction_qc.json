@@ -1,0 +1,8 @@
+{
+  "governed_files_byte_identical": 8,
+  "governed_files_total": 8,
+  "governed_hash_ledger_byte_identical": true,
+  "independent_rerun": true,
+  "result_sha256": "8c9bc473826966ee2999adf14fda9a30fe630a5a7c5830da261d5020737b985e",
+  "status": "PASS"
+}

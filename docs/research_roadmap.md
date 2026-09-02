@@ -87,6 +87,8 @@ The [spatial defensive-response footprint v1.0](protocols/spatial_defensive_resp
 
 The [local defensive response form v1 protocol](protocols/local_defensive_response_form_v1.md) preserves the validated movement magnitude and separately tests signed endpoint geometry. Game 1 development was coherent; [Game 2](results/local_defensive_response_form_game2_v1.md) reproduced the positive primary near-minus-middle distinction, but its paired primary-minus-control interval crossed zero. The [pooled/final execution](results/local_defensive_response_form_final_v1.md) therefore closed at **FINAL RESPONSE FORM B**. Directional localization is supported descriptively across both matches, but the beyond-control distinction did not fully replicate. Radial, orthogonal, and absolute-versus-unit views remain descriptive rather than tactical labels; Game 3 remains reserved.
 
+The [Concurrent Defensive Coordination Form v1 Game 1 execution](results/concurrent_defensive_coordination_form_game1_v1.md) classified **COHERENT** under its frozen development criteria: attacker-aligned defender-relative velocity was stronger for D2–D3 than D4–D7, with a strictly positive interval and matching 1.5 Hz direction. This is a development result only; the larger D1 benchmark and lack of held-out replication keep the interpretation geometric and observational.
+
 ## October 1, 2026 constraint
 
 The [2027 MIT Sloan Sports Analytics Conference Research Paper Competition](https://www.sloansportsconference.com/research-paper-competition) lists **October 1, 2026, 11:59 p.m. Eastern** as the round-one abstract deadline. The abstract is limited to actual evidence; the deadline is a communication constraint, not a reason to relax scientific gates.
