@@ -1,6 +1,6 @@
 # Concurrent Defensive Coordination Form v1 — measurement validation
 
-**Status: design-stage measurement validation; no match-level defensive-response result computed.**
+**Status: completed outcome-blind measurement validation; the prospective v1 protocol is frozen, but no match-level coordination-form result has been computed.**
 
 ## Football question
 
@@ -90,4 +90,4 @@ Twelve focused tests passed, including these seven identities, explicit displace
 
 ## Conclusion
 
-The velocity candidate is **measurement-ready for final protocol design, not scientifically executed**. It removes the displacement form's deterministic $\Delta t$ scaling, and the physical-time filters meet the synthetic 10/25 Hz equivalence rule. Before freeze, the protocol still must choose a provider-comparable edge margin, complete continuous-block construction, exact inference/multiplicity rules, and classification conditions. No Game 1 coordination-form result has been computed.
+The velocity candidate is **measurement-validated and prospectively frozen, not scientifically executed**. It removes the displacement form's deterministic $\Delta t$ scaling, and the physical-time filters meet the synthetic 10/25 Hz equivalence rule. The [v1 protocol](protocols/concurrent_defensive_coordination_form_v1.md) freezes a common 2.0-second physical block margin, exact continuous-block construction, inference, and classification conditions. No Game 1 coordination-form result has been computed.

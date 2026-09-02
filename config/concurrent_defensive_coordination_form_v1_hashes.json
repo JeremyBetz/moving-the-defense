@@ -1,0 +1,18 @@
+{
+  "freeze_date": "2026-09-02",
+  "starting_commit": "1f034a2224dc2a0470e10910719109223c3d4c43",
+  "status": "PROSPECTIVE_RESULTS_UNOBSERVED",
+  "frozen_artifacts_sha256": {
+    "config/concurrent_defensive_coordination_form_v1.json": "d3b8be7306ffb850aa246ffed2a2f69b71b5593e32a8578b28734a4a438bb3e3",
+    "docs/protocols/concurrent_defensive_coordination_form_v1.md": "3172592f0890ea5c8030f4691b24d5a66fc0614d72c4cd60a6f7475934381032",
+    "src/concurrent_defensive_coordination_form_v1.py": "08d3f5b0ec38e3602e2aa0b3620fde8186663a14a8478b80245931fbd9c124a5"
+  },
+  "measurement_audit_sha256": "dba3655323e416ebd0d8183e5dda368dbdb85e97cc912486762ab64facb07fad",
+  "protected_outcomes_observed": false,
+  "firewall": {
+    "game1_coordination_form": "not_computed_or_inspected",
+    "game2_coordination_form": "not_computed_or_inspected",
+    "idsse_coordination_form": "not_computed_or_inspected",
+    "metrica_game3": "untouched"
+  }
+}

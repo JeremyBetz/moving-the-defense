@@ -152,3 +152,65 @@ def zero_phase_butterworth(
         raise ValueError("Invalid sample rate, cutoff, or order")
     sos = butter(order, cutoff_hz, btype="lowpass", fs=sample_hz, output="sos")
     return sosfiltfilt(sos, values, axis=0, padtype="odd")
+
+
+def butterworth_padlen(sample_hz: float, cutoff_hz: float, order: int = 4) -> int:
+    """Return SciPy's default SOS forward/backward padding length."""
+    sos = butter(order, cutoff_hz, btype="lowpass", fs=sample_hz, output="sos")
+    ntaps = 2 * len(sos) + 1 - min(
+        int((sos[:, 2] == 0).sum()), int((sos[:, 5] == 0).sum())
+    )
+    return 3 * ntaps
+
+
+def continuous_valid_blocks(
+    frame_ids: np.ndarray,
+    time_s: np.ndarray,
+    valid: np.ndarray,
+    native_dt_s: float,
+    tolerance_s: float = 1e-9,
+) -> list[tuple[int, int]]:
+    """Return inclusive maximal runs of valid, consecutive native samples."""
+    frame = np.asarray(frame_ids)
+    time = np.asarray(time_s, dtype=np.float64)
+    support = np.asarray(valid, dtype=bool)
+    if frame.ndim != 1 or time.shape != frame.shape or support.shape != frame.shape:
+        raise ValueError("frame, time, and validity arrays must be one-dimensional and aligned")
+    if not (native_dt_s > 0 and np.isfinite(time).all()):
+        raise ValueError("finite timestamps and positive native cadence are required")
+    links = np.zeros(len(frame), dtype=bool)
+    if len(frame) > 1:
+        links[1:] = (np.diff(frame) == 1) & (
+            np.abs(np.diff(time) - native_dt_s) <= tolerance_s
+        )
+    blocks: list[tuple[int, int]] = []
+    start: int | None = None
+    for i, ok in enumerate(support):
+        if ok and (start is None or links[i]):
+            if start is None:
+                start = i
+        else:
+            if start is not None:
+                blocks.append((start, i - 1))
+                start = None
+            if ok:
+                start = i
+    if start is not None:
+        blocks.append((start, len(frame) - 1))
+    return blocks
+
+
+def window_has_physical_edge_support(
+    block_start_s: float,
+    block_end_s: float,
+    anchor_s: float,
+    history_s: float = 2.0,
+    window_s: float = 2.0,
+    edge_margin_s: float = 2.0,
+    tolerance_s: float = 1e-9,
+) -> bool:
+    """Test whether [anchor-history, anchor+window] has physical edge margin."""
+    return bool(
+        anchor_s - history_s >= block_start_s + edge_margin_s - tolerance_s
+        and anchor_s + window_s <= block_end_s - edge_margin_s + tolerance_s
+    )

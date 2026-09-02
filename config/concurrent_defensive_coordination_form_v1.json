@@ -1,0 +1,105 @@
+{
+  "status": "FROZEN_RESULTS_UNOBSERVED",
+  "version": "1.0.0",
+  "freeze_date": "2026-09-02",
+  "starting_commit": "1f034a2224dc2a0470e10910719109223c3d4c43",
+  "data": {
+    "development": "Metrica Sample Game 1",
+    "game2": "heldout_requires_closed_game1_and_separate_governance",
+    "idsse": "external_requires_closed_game2_and_separate_governance",
+    "game3": "outside_phase_reserved_untouched"
+  },
+  "measurement": {
+    "primary": "sum(dot(v_focal_relative,v_attacker)*delta_t)/sum(norm(v_attacker)*delta_t)",
+    "secondary_cross": "sum(abs(cross(v_focal_relative,v_attacker))*delta_t)/sum(norm(v_attacker)*delta_t)",
+    "absolute_comparator": "replace_v_focal_relative_with_v_defender_absolute",
+    "units": "metres_per_second",
+    "velocity": "consecutive_filtered_native_sample_secants",
+    "relative_reference": "focal_minus_centroid_of_other_nine_defending_outfield_players",
+    "zero_path_epsilon_m": "64_float64_epsilon_times_105x68_pitch_diagonal",
+    "zero_path_action": "exclude_attacker_observation_no_imputation"
+  },
+  "preprocessing": {
+    "primary": {"family": "Butterworth", "order": 4, "phase": "zero", "cutoff_hz": 1.0, "implementation": "scipy_butter_sos_then_sosfiltfilt_odd"},
+    "required_sensitivity": {"family": "Butterworth", "order": 4, "phase": "zero", "cutoff_hz": 1.5, "same_primary_observation_ids_and_ranks": true},
+    "descriptive_raw_secant": true,
+    "historical_centered_7_frame": "descriptive_only_never_classifying"
+  },
+  "support": {
+    "maximal_player_native_block": "finite_provider_supported_not_registry_invalid_and_consecutive_frame_plus_native_timestamp",
+    "split_on": ["period_boundary", "missing_or_invalid_coordinate", "nonconsecutive_provider_frame", "native_timestamp_gap", "registry_invalidity", "documented_discontinuity"],
+    "time_tolerance_s": 1e-9,
+    "edge_margin_s": 2.0,
+    "required_scientific_span_relative_to_anchor_s": [-2.0, 2.0],
+    "equivalent_required_block_span_relative_to_anchor_s": [-4.0, 4.0],
+    "edge_inequalities": ["t-2>=block_start+2-1e-9", "t+2<=block_end-2+1e-9"],
+    "filter_padlen_samples": 15,
+    "filter_minimum_block_samples": 16,
+    "eligibility": "intersection_of_attacker_and_exactly_ten_defender_filtered_interiors_before_window_extraction",
+    "interpolation": "none",
+    "fragment_joining": false,
+    "order": ["native_blocks", "filter_each_player_block", "physical_interiors", "required_player_intersection", "window_extraction", "filtered_loo_centroid", "secant_velocities"]
+  },
+  "timing_and_sample": {
+    "pre_context_s": [-2.0, 0.0],
+    "concurrent_s": [0.0, 2.0],
+    "anchor_grid": "period_origin_every_4_seconds_starting_origin_plus_2_seconds",
+    "inherited_from": "concurrent_attacker_defensive_geometry_v1",
+    "attacking_team": "governed_event_established_possession_at_anchor",
+    "attacker_set": "all_supported_attacking_outfield_players",
+    "simultaneous_attackers": "retain_and_group",
+    "required_defending_outfield_players": 10,
+    "goalkeeper": "excluded_governed_metadata",
+    "open_play_restart_possession_cadence_terminal_rules": "unchanged_inheritance"
+  },
+  "ranking": {
+    "reference_time": "anchor_t",
+    "coordinates": "primary_1_hz_filtered",
+    "distance": "euclidean_metres",
+    "tie_break": "canonical_player_id_ascending",
+    "fixed_for": ["pre_context", "concurrent", "bootstrap", "1_5_hz_sensitivity", "all_secondary_outputs"]
+  },
+  "model": {
+    "estimator": "stacked_rank_specific_ols_numpy_lstsq_rcond_none",
+    "dtype": "float64",
+    "columns": 72,
+    "rank_specific_columns_in_order": ["intercept", "concurrent_attacker_path_m", "prior_focal_relative_path_m", "prior_defensive_centroid_path_m", "prior_other_nine_defender_mean_absolute_path_m", "prior_attacker_path_m", "anchor_attacker_defender_distance_m"],
+    "common_columns_in_order": ["period_2_indicator", "home_attacking_team_indicator"],
+    "outcome": "concurrent_AARD_vel_mps",
+    "primary_exposure": "concurrent_attacker_path_m",
+    "standardization": "none",
+    "weighting": "observation"
+  },
+  "estimands": {
+    "primary": "mean_beta_D2_D3_minus_mean_beta_D4_D7",
+    "D1_benchmark": "beta_D1_minus_mean_beta_D4_D7_nonclassifying",
+    "far_D8_D10": "descriptive_only"
+  },
+  "bootstrap": {
+    "replicates": 2000,
+    "minimum_paired_valid": 1900,
+    "master_seed": 20260831,
+    "spawn_count": 2,
+    "game1_child_index": 0,
+    "block_seconds": 60,
+    "unit": "period_origin_blocks_terminal_partial_retained_resampled_within_period",
+    "grouping": "complete_D1_D10_vector_and_all_simultaneous_attackers",
+    "paired_draws": "identical_for_primary_1_hz_and_required_1_5_hz_sensitivity",
+    "valid_replicate": "both_required_designs_full_rank_and_finite",
+    "interval": "two_sided_empirical_95_percent_numpy_linear_quantiles_0.025_0.975"
+  },
+  "classification": {
+    "order": ["INVALID", "NOT_SUPPORTED", "COHERENT", "MIXED"],
+    "INVALID": "execution_or_hard_scientific_qc_failure_or_fewer_than_1900_paired_valid_bootstraps",
+    "NOT_SUPPORTED": "valid_and_primary_1_hz_point_estimate_at_or_below_zero",
+    "COHERENT": "valid_and_primary_1_hz_point_positive_and_95_percent_interval_strictly_above_zero_and_1_5_hz_primary_point_positive",
+    "MIXED": "every_other_valid_positive_primary_1_hz_point_estimate",
+    "material_sensitivity_instability": "1_5_hz_primary_point_estimate_nonpositive",
+    "D1_can_change_status": false,
+    "secondary_can_change_status": false,
+    "statuses": ["GAME 1 COORDINATION FORM DEVELOPMENT COHERENT", "GAME 1 COORDINATION FORM DEVELOPMENT MIXED", "GAME 1 COORDINATION FORM DEVELOPMENT NOT SUPPORTED", "GAME 1 COORDINATION FORM DEVELOPMENT INVALID"]
+  },
+  "secondary_nonclassifying": ["D1_benchmark", "D1_D10_AARD_vel_profile", "D1_D10_CROSS_vel_profile", "absolute_coordinate_aligned_velocity", "raw_secant_robustness", "historical_centered_7_frame_comparator", "unchanged_endpoint_deformation_if_reused"],
+  "execution_order": ["Game1_development_stop_classify", "Game2_only_after_closed_Game1_and_separate_governance", "IDSSE_only_after_closed_Game2_and_separate_governance"],
+  "protected": ["Game1_coordination_result_before_freeze", "Game2_coordination_result", "IDSSE_coordination_result", "Metrica_Game3", "previously_frozen_artifacts"]
+}

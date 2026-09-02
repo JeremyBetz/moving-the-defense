@@ -1,5 +1,11 @@
 # Research Log
 
+## 2026-09-02 — Concurrent Defensive Coordination Form v1 frozen before results
+
+The velocity-based coordination form is frozen prospectively after its outcome-blind frequency audit. Primary preprocessing is a fourth-order zero-phase 1.0 Hz Butterworth with a required 1.5 Hz sensitivity. Each player is filtered only within maximal finite, registry-valid, frame/time-consecutive native blocks. Every datum in $[t-2,t+2]$ must remain at least 2.0 physical seconds inside every required player's block, equivalently requiring block support through $[t-4,t+4]$.
+
+The unchanged 72-column concurrent-context model now uses AARD velocity in m/s. D2–D3 minus D4–D7 is the sole classification-driving contrast; D1 minus D4–D7 is a nonclassifying benchmark. A paired 2,000-replicate within-period 60-second block bootstrap and exact coherent/mixed/not-supported/invalid rules are frozen. No Game 1, Game 2, IDSSE, or Game 3 coordination-form outcome was computed or inspected.
+
 ## 2026-09-02 — Coordination-form displacement candidate superseded after frequency audit
 
 The initial path-weighted displacement formula was found analytically and synthetically to scale with sampling interval: the identical constant-motion trajectory differed by exactly 2.5× at 10 versus 25 Hz. It is therefore not the future primary. A continuous-time velocity formulation in m/s replaced it, with a separately retained absolute-motion comparator and unsigned perpendicular velocity magnitude.
