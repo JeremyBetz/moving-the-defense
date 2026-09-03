@@ -1,0 +1,28 @@
+{
+  "freeze_date": "2026-09-03",
+  "starting_commit": "d8a1f42a5915b42a9fa8f79c292f79c25361f393",
+  "status": "FROZEN_BEFORE_PROTECTED_COVERAGE_OUTCOMES",
+  "frozen_design_sha256": {
+    "docs/protocols/defensive_coverage_redistribution_v1.md": "35b146f16f5c3d867bc3eeddc3476ed326e8b366dae12d5782ba8e9f7ffc65e6",
+    "config/defensive_coverage_redistribution_v1.json": "d4206b044509f281cfb19fad64e7907357a6948cf72b20df72a2981af0a52f8e"
+  },
+  "design_support_sha256": {
+    "src/defensive_coverage_redistribution_v1.py": "7f8a1ba225fe08400b6cddd9452a72c505ed391d6a0f3458bf794219b00493da",
+    "src/generate_defensive_coverage_redistribution_v1_figure.py": "3b24a843c5adacf1b4a8305a576e7d2ce59815af0c19a10cb4034bded3490362",
+    "tests/test_defensive_coverage_redistribution_v1.py": "311f514762d83a3bef2731e956b04b670944620c9820cba7458c5799c6aa585b",
+    "figures/defensive_coverage_redistribution_v1/synthetic_compensation_vs_loss.png": "b0008a29119f6fb70b03db922306fa271a45f9f265ee5636de2dcf4e3bcb7c93"
+  },
+  "closed_result_sha256": {
+    "outputs/concurrent_attacker_defensive_geometry_game1_v1/final_results.json": "cd782fcf31b1822e397297278f43b82dcb9ce270318786c1db8c3d57d52e0da0",
+    "outputs/concurrent_attacker_defensive_geometry_game2_v1/final_results.json": "41b59e0365ac8bdc3f7631289c60f3d9975a00d7ee15b29938401712de9cef5c",
+    "outputs/opportunity_redistribution_game1_v1/final_results.json": "215cea1c83efb5d542c9ffc8a0c59c227a07b695c118b97cc05bbf14dc340656",
+    "outputs/defensive_response_expectation_v1/model_comparisons.json": "67b170f531f0aaec716e0036daf83bbd9903c9fd1ac5f2503902861be94e9426"
+  },
+  "firewall": {
+    "game1_coverage_result": "not_created_or_inspected",
+    "game2_coverage_result": "not_created_or_inspected",
+    "game3": "untouched",
+    "idsse_coverage": "not_executed",
+    "construct_selected_from_empirical_outcome": false
+  }
+}

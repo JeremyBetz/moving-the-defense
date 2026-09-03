@@ -1,5 +1,11 @@
 # Research Log
 
+## 2026-09-03 — Defensive Coverage Redistribution v1 frozen before outcomes
+
+After the negative nearest-defender-separation result, a focused design audit compared nearest-$k$ depth, bipartite coverage load, passing corridors, local density, numerical superiority, Voronoi/dominant regions, pitch control, receiver availability, and joint attacker–defender matching. The selected primary consequence is the change in minimum mean distance required to pair all nine non-focal attacking outfield players with nine distinct defenders. This allows perfect defender compensation to remain neutral and distinguishes the construct from the failed independent nearest-defender outcome. Optimized links are mathematical geometry, not inferred marking assignments.
+
+The sole predictor is the observed concurrent D1–D3 minus D4–D7 focal-relative path contrast. Coverage and response share the same two-second interval, so the design is associational rather than causal or downstream. A compact within-anchor model, grouped bootstrap, focal-identity permutation, remote-defender comparator, frozen focal-movement trim, and exact COHERENT/MIXED/NOT SUPPORTED/INVALID rules are frozen. Six synthetic football geometries passed, including perfect compensation, no compensation, collective translation, independent other-attacker movement, focal movement ignored, and multi-defender collapse. No empirical coverage outcome was computed; Games 2 and 3 and IDSSE coverage remain untouched.
+
 ## 2026-09-03 — Defensive Response Expectation v1 not supported
 
 The frozen seven-match IDSSE prediction ladder executed without scientific changes. E0, E1, E2a, and E2b macro heldout MAEs were 0.729262, 0.725360, 0.725647, and 0.725807 m/s. E1's compact spatial context improved E0 by 0.5350% in all seven matches, but the primary match-side E2b increment worsened E1 by 0.000447 m/s (−0.0616%) and improved zero matches. The paired 95% improvement interval was [−0.000785, −0.000122] m/s, and the observed −0.0616% change did not exceed the shifted-label 95th percentile of −0.0163%. The exact frozen status is **NOT SUPPORTED**.

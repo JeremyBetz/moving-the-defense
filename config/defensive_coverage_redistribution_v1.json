@@ -1,0 +1,141 @@
+{
+  "name": "Defensive Coverage Redistribution v1",
+  "status": "FROZEN_BEFORE_PROTECTED_COVERAGE_OUTCOMES",
+  "freeze_date": "2026-09-03",
+  "starting_commit": "d8a1f42a5915b42a9fa8f79c292f79c25361f393",
+  "data": {
+    "development_match": "Metrica Sample Game 1",
+    "game2": "prohibited_until_separate_post-Game-1_addendum",
+    "game3": "prohibited",
+    "idsse": "prohibited_in_development"
+  },
+  "inherit": {
+    "protocol": "concurrent_attacker_defensive_geometry_v1",
+    "pitch_metres": [105.0, 68.0],
+    "tracking_hz": 25.0,
+    "position_smoothing": "centered 7-frame rolling mean",
+    "anchor_grid": "period_origin + 2 + 4*k seconds",
+    "pre_interval": "[t-2,t]",
+    "concurrent_interval": "[t,t+2]",
+    "no_interpolation": true,
+    "goalkeepers": ["Home11", "Away25"],
+    "fixed_defender_ranks": "D1-D10 by focal distance at t; canonical-ID tie break"
+  },
+  "eligibility": {
+    "require_focal_attacker": 1,
+    "require_other_attacking_outfield_players": 9,
+    "require_defending_outfield_players": 10,
+    "require_ball_support": false,
+    "support_span": "[t-2,t+2]",
+    "opponent_events_prohibited_after_t_through_t_plus_2": ["PASS", "RECOVERY", "SET PIECE", "SHOT"],
+    "minimum_simultaneous_focal_rows_per_anchor": 2,
+    "future_reranking": false,
+    "outcome_based_selection": false
+  },
+  "coverage_consequence": {
+    "name": "mean distinct-defender geometric coverage cost",
+    "attacker_set": "all nine non-focal attacking outfield players fixed at t",
+    "defender_set": "all ten defending outfield players fixed at t",
+    "cost_matrix": "9x10 Euclidean distance in metres",
+    "optimization": "minimum-cost injective matching; one defender unused",
+    "solver": "scipy.optimize.linear_sum_assignment float64",
+    "matching_identity": "descriptive only; no marking or responsibility semantics",
+    "endpoint_quantity": "G_a(u)=mean matched distance across nine attackers",
+    "outcome": "Y_a=G_a(t+2)-G_a(t)",
+    "units": "metres",
+    "predicted_direction": "positive means increased minimum distinct-defender matching distance",
+    "missing_geometry": "invalidate row; never interpolate"
+  },
+  "response_predictor": {
+    "name": "concurrent focal-local versus middle defender-relative path contrast",
+    "formula": "mean(P_rel_D1:D3)-mean(P_rel_D4:D7)",
+    "units": "metres",
+    "observed_geometry_not_fitted_coefficient": true,
+    "primary_predictor_count": 1
+  },
+  "ball_role": {
+    "coverage_construct": "none",
+    "model": "none; observed ball path may be reported descriptively but does not determine eligibility",
+    "excluded": ["ball-carrier inference", "passing corridor", "ball flight", "xThreat", "EPV", "value"]
+  },
+  "model": {
+    "unit": "one focal-attacker perspective at one period/time anchor",
+    "columns": [
+      "concurrent_focal_attacker_path_m",
+      "concurrent_D1_D3_minus_D4_D7_focal_relative_path_m",
+      "initial_mean_distinct_defender_coverage_cost_m",
+      "mean_other_attacker_concurrent_path_m",
+      "prior_focal_attacker_path_m",
+      "prior_D1_D3_minus_D4_D7_focal_relative_path_m"
+    ],
+    "transformation": "demean outcome and all columns within simultaneous-focal period/time anchor",
+    "intercept": false,
+    "estimator": "numpy.linalg.lstsq(..., rcond=None)",
+    "dtype": "float64",
+    "full_column_rank_required": true,
+    "primary_estimand": "beta_D",
+    "estimand_units": "metres coverage-cost change per metre response contrast"
+  },
+  "uncertainty": {
+    "replicates": 2000,
+    "master_seed": 20260905,
+    "game1_child": "SeedSequence.spawn(2)[0]",
+    "reserved_game2_child": "SeedSequence.spawn(2)[1]",
+    "block_seconds": 60,
+    "resampling": "independent blocks within period; retain terminal partial blocks and complete anchor groups",
+    "interval": "two-sided percentile 95%",
+    "minimum_valid_replicates": 1900
+  },
+  "controls": {
+    "focal_identity_permutation": {
+      "replicates": 200,
+      "seed": 20260906,
+      "method": "nonzero cyclic shift of paired D and D_pre within canonical-ID-sorted focal rows at every anchor",
+      "pass": "observed beta_D exceeds 95th percentile of permuted beta_D"
+    },
+    "remote_defender_comparator": {
+      "response": "mean(P_rel_D8:D10)-mean(P_rel_D4:D7)",
+      "pass": "primary beta_D point estimate is greater than remote-comparator point estimate"
+    },
+    "focal_movement_trim": {
+      "exclude_if_concurrent_path_m_gt": 12.198443079831405,
+      "provenance": "closed Opportunity Redistribution v1 threshold",
+      "pass": "trimmed beta_D positive and at least 50% absolute primary magnitude retained"
+    },
+    "fixed_start_matching": "descriptive nonclassifying",
+    "mean_two_nearest_defender_distance": "descriptive nonclassifying",
+    "rigid_transform_and_player_relabeling": "hard QC"
+  },
+  "synthetic_gates": [
+    "perfect_compensation: high response and neutral coverage change",
+    "no_compensation: high response and positive coverage change",
+    "collective_translation: neutral response and coverage change",
+    "independent_other_attacker: coverage change without focal response",
+    "focal_ignored: neutral response and coverage change",
+    "multi_defender_collapse: high response and larger positive coverage change"
+  ],
+  "classification": {
+    "INVALID": "frozen hash, sample/support, complete-set, geometry, full-rank, solver, bootstrap-minimum, synthetic-gate, or deterministic-serialization failure",
+    "NOT_SUPPORTED": "valid primary beta_D at or below zero",
+    "COHERENT": "valid beta_D above zero; 95% interval strictly above zero; focal permutation passes; primary exceeds remote comparator; frozen trim passes",
+    "MIXED": "every other valid execution with primary beta_D above zero"
+  },
+  "validation_sequence": [
+    "freeze design",
+    "Metrica Sample Game 1 development under separate authorization",
+    "stop",
+    "consider separately frozen Game 2 heldout addendum only after Game 1 closure",
+    "consider IDSSE only after coherent within-provider evidence and provider-equivalent support"
+  ],
+  "nonclaims": [
+    "attacker causation", "attacker influence", "attention", "marking", "assignment", "responsibility",
+    "pinning", "dragging", "tracking", "covering", "handoff", "passing availability", "pitch control",
+    "space creation", "tactical success", "tactical failure", "player quality", "gravity", "off-ball value"
+  ],
+  "planned_outputs": [
+    "manifest.json", "eligibility_ledger.csv", "exclusion_ledger.json", "model_results.json",
+    "bootstrap_results.csv", "permutation_control.csv", "remote_comparator.json", "trim_result.json",
+    "descriptive_alternatives.json", "synthetic_gates.json", "hard_qc.json", "governed_hashes.json",
+    "reproduction.json", "result_report.md"
+  ]
+}

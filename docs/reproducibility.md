@@ -92,6 +92,13 @@ data/metrica_sample_game_2/
 - Phase 4C: [`config/phase4c_external_replication_protocol.json`](../config/phase4c_external_replication_protocol.json) plus provider mapping in [`config/phase4c_idsse_implementation.json`](../config/phase4c_idsse_implementation.json).
 - Phase 5A: [`config/phase5a_contextual_expectation_protocol.json`](../config/phase5a_contextual_expectation_protocol.json).
 - Phase 5B: [`config/phase5b_opponent_relational_increment_protocol.json`](../config/phase5b_opponent_relational_increment_protocol.json).
+- Defensive Coverage Redistribution v1: [frozen protocol](protocols/defensive_coverage_redistribution_v1.md), [`config/defensive_coverage_redistribution_v1.json`](../config/defensive_coverage_redistribution_v1.json), and [method audit](defensive_coverage_redistribution_v1_methodology.md). This is a design-only freeze; no empirical result exists. Reproduce the pure synthetic gates with:
+
+```bash
+MPLCONFIGDIR=/tmp/moving-the-defense-coverage .venv/bin/python -m pytest -q tests/test_defensive_coverage_redistribution_v1.py
+MPLCONFIGDIR=/tmp/moving-the-defense-coverage .venv/bin/python src/generate_defensive_coverage_redistribution_v1_figure.py
+```
+
 - Outcome-blind movement-segmentation audit: [`config/post5b_movement_segmentation_audit_rules.json`](../config/post5b_movement_segmentation_audit_rules.json), exploratory predeclared rules rather than a frozen validation protocol.
 - Continuous attacker movement: [`docs/protocols/attacking_continuous_movement_v1.md`](protocols/attacking_continuous_movement_v1.md), version 1.0; [Game 1 result](results/attacking_continuous_movement_game1_v1.md). Reproduce the governed development execution with:
 

@@ -143,3 +143,7 @@ No additional visual should be created merely to make the project look complete.
 ## Opportunity Redistribution v1 Game 1
 
 [`first_eligible_anchor.png`](../figures/opportunity_redistribution_game1_v1/first_eligible_anchor.png) shows the deterministic first eligible focal perspective, start-fixed recipient/defender groups, focal path, and nearest-defender links. It is a sample-construction audit figure, not a selected tactical example. [`coefficient_robustness.png`](../figures/opportunity_redistribution_game1_v1/coefficient_robustness.png) shows the negative primary coefficient and frozen alternatives. Together they document the **NEGATIVE** Game 1 result without implying space creation, pass availability, or value.
+
+## Defensive Coverage Redistribution v1 design
+
+[`synthetic_compensation_vs_loss.png`](../figures/defensive_coverage_redistribution_v1/synthetic_compensation_vs_loss.png) contrasts perfect defender compensation with no compensation under the frozen minimum distinct-defender matching representation. It is synthetic design evidence only. Grey links are optimized geometric pairings, not marking assignments, and the figure contains no empirical match outcome.
