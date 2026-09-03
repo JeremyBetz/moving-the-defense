@@ -2,132 +2,110 @@
 
 **Measuring Defensive Responses to Attacking Movement in Football**
 
-In football we often say an attacker pulled a defender away, pinned a full-back, or forced a line to adjust. Tracking data records where players moved, but not why. **Moving the Defense** builds the measurement foundation needed to test those claims without treating movement as proof of tactical intent.
+> **When an attacker moves without receiving the ball, can tracking data identify the defensive reorganization associated with that movement?**
 
-The formal research question is:
+Football language is full of claims that a run pinned a defender, pulled a line apart, or created space. Tracking data records where everyone moved, but it does not tell us why they moved. **Moving the Defense** is building the measurement foundation needed to test those ideas without treating movement as proof of tactical intent.
 
-> **How can tracking data measure defensive responses to attacking movement in open-play football?**
+## The football problem
 
-The motivating football question is:
+Ordinary defender displacement mixes together two different things:
 
-> **When an attacker does not receive the ball, can we measure what they made the defence do?**
+- a **collective shift**, when the defensive unit moves together; and
+- **movement within the defensive structure**, when one or more defenders move differently from the unit.
 
-The governing distinction is:
+If a back line slides five metres left, every defender moves even if its internal organization barely changes. If one defender steps while the others hold or drop, that local adjustment can be hidden inside the shared shift.
 
-> **Football concept ≠ tracking measurement ≠ theoretical mechanism.**
+![Synthetic comparison of a collective defensive shift and movement within the unit](docs/figures/readme/measurement_schematic.svg)
 
-**Current status — FINAL BRIDGE A; FINAL FOOTPRINT A; FINAL RESPONSE FORM B; CONCURRENT GEOMETRY HELDOUT SUPPORTED; OPPORTUNITY REDISTRIBUTION GAME 1 NEGATIVE:** across both Metrica sample matches, attacker movement was associated with spatially localized defender movement relative to the defensive unit both subsequently and within the same fixed interval. The frozen Game 1 test did not support the next proposed link from that defensive geometry to differential nearest-defender separation for other attackers. These are observational geometric results, not causal estimates or tactical labels.
+*Synthetic illustration—not a match example or validation result. The project subtracts the contemporaneous movement of the other defending outfield players to describe how one defender moved differently from the unit.*
 
-## Why this is hard
+This geometric measurement is deliberately narrower than a football interpretation. It observes movement within the defensive unit; it does not identify marking responsibility, attention, tactical intent, or causation.
 
-If a whole back line shifts five metres left, every defender moves substantially without necessarily changing their relationship to the unit. If one defender steps while the others hold or drop, that individual change can be hidden inside the shared shift. Nearby defenders may also be moving before the attacker acts, and movement is serially dependent through time. A temporal association still does not establish causation, marking responsibility, or tactical success.
+## What has been demonstrated
 
-The project separates three observable pieces:
+The strongest current result is a replicated observational association between attacker movement and localized concurrent defensive geometry.
 
-1. **Attacking movement:** how far an attacker travels during a fixed interval, without using the later defensive outcome to define it.
-2. **Collective defensive movement:** how the other defending outfield players move as a unit.
-3. **Local defensive movement relative to the unit:** how much a nearby defender moves differently from that collective reference in the following interval.
+> **Greater attacker movement was associated with a stronger concurrent defender-relative movement coefficient among the nearest three defenders than among the middle four defenders, conditional on the frozen model.**
 
-For focal defender $d$,
+The result was supported in Metrica Sample Game 1, heldout Metrica Sample Game 2, and all seven matches in an independent IDSSE provider environment.
 
-$$
-\mathbf r_d(t)=\mathbf x_d(t)-\mathbf c_{-d}(t),
-$$
+![Near-minus-middle concurrent-geometry estimates across Metrica and IDSSE matches](docs/figures/readme/concurrent_geometry_replication.svg)
 
-where $\mathbf c_{-d}(t)$ is the centroid of the other available defending outfield players, excluding the goalkeeper. The accumulated path of $\mathbf r_d(t)$ is a replicated geometric primitive. It measures **how much a defender moved differently from the rest of the defensive unit**; it does not say why.
+The governed pooled IDSSE near-minus-middle estimate was **0.05115 metres per metre**, with 95% interval **[0.04595, 0.05642]**. An intuitive—but still observational—translation is that each additional metre of attacker movement was associated with about **5.1 centimetres more concurrent defender-relative movement among the three nearest defenders than the middle group**, conditional on the specified model.
 
-![A shared defensive shift and an individual departure](figures/concepts/collective_translation_vs_focal_departure.png)
+The pattern is not a simple decline with distance. Nearby ranks were elevated relative to the middle group, but the pooled rank profile was non-monotonic and the far ranks rebounded.
 
-The bridge test uses non-overlapping windows:
+![Governed pooled IDSSE D1-D10 concurrent-geometry coefficient profile](docs/figures/readme/idsse_pooled_rank_profile.svg)
 
-```text
-strictly prior defensive context      attacker movement       subsequent defender movement
-            [-4 s, -2 s]                  [-2 s, 0 s]                    [0 s, +2 s]
-```
+This matters because two off-ball movements of similar length can coincide with very different defensive behavior. One may be handled mainly by one defender, another may coincide with broader movement within the unit, and another may be largely ignored. Measuring those differences is a prerequisite for studying when and how off-ball movement relates to defensive structure.
 
-This ordering keeps the adjustment context strictly before the attacker exposure and measures the defensive geometry only afterward.
+## Important boundary: reorganization is not opportunity
 
-## Main result: a replicated observational bridge
+The first prospectively defined downstream test was negative. In Metrica Game 1, greater focal-local defensive geometric change was **not** associated with relatively improved nearest-defender separation for other initially local attackers:
 
-The frozen two-match test classified **FINAL BRIDGE A**.
+- Opportunity Redistribution v1: $\beta_D=-0.02407$
+- 95% interval: **[-0.09392, 0.04776]**
 
-> **Greater observed attacker movement was associated with greater subsequent local defensive movement relative to the defensive unit, beyond prespecified strictly prior defensive-motion context.**
+The robustness results did not rescue the hypothesis. This is an important scientific boundary: measurable defensive reorganization has **not** been shown to imply teammate separation, space creation, tactical success, gravity, or attacking value.
 
-The association replicated across the two Metrica sample matches under the frozen within-provider bridge protocol.
+## Current directional evidence
 
-Game 2 was conditionally held out for this bridge relationship and was executed unchanged after the Game 1 development result; it was not pristine or untouched for all earlier project work.
+A newer experiment asks whether nearby movement within the defensive unit is specifically aligned with the attacker's concurrent direction of travel.
 
-The pooled coefficient was **0.100592 metres of additional local defender-relative path per metre of attacker path** (95% blocked-bootstrap interval **[0.082406, 0.119233]**). In plain language, the model estimated roughly **10 centimetres more subsequent local defensive movement for each additional metre the attacker travelled**, conditional on the specified earlier defensive-motion context.
+| Match | D2–D3 minus D4–D7 | 95% interval | Frozen status |
+|---|---:|---:|---|
+| Metrica Game 1 | 0.04045 m/s | [0.02366, 0.05538] | Development coherent |
+| Metrica Game 2 | 0.04587 m/s | [-0.01056, 0.09260] | Replication mixed |
 
-That is an observational geometric association—not evidence that the attacker caused the movement or that the defender made a particular tactical decision.
+![Metrica Game 1 and Game 2 directional coordination-form rank profiles](docs/figures/readme/coordination_form_game1_game2.svg)
 
-![Replicated primary association and frozen controls](figures/bridge/bridge_replication_and_controls.png)
+Game 2 had a similar group-level point estimate, but substantially greater uncertainty and a less orderly individual-rank profile. The point direction replicated; the prospectively required interval support did not. This is **not full directional replication**.
 
-| Estimate | Coefficient or contrast | 95% blocked-bootstrap interval |
-|---|---:|---:|
-| Game 1 local attacker path | 0.095957 m/m | [0.075594, 0.114331] |
-| Game 2 local attacker path | 0.134222 m/m | [0.081738, 0.183570] |
-| Pooled local attacker path | 0.100592 m/m | [0.082406, 0.119233] |
-| Pooled local minus nonlocal control | 0.038738 | [0.018392, 0.062082] |
-| Pooled primary minus reverse-time placebo | 0.042994 | [0.027143, 0.058787] |
-| Pooled top-1%-trimmed local estimate | 0.099103 m/m | [0.079920, 0.118125] |
+## What the evidence does not mean
 
-The primary estimate was positive in both matches. The local relationship exceeded both a farthest-three-attacker control and a reverse-time placebo in pooled paired comparisons. Removing the most extreme 1% of attacker-path observations barely changed the pooled estimate.
-
-- **Local versus nonlocal:** the local coefficient was larger than the farthest-three-attacker control, arguing against the result being only shared match activity.
-- **Forward versus reverse time:** the primary coefficient was larger than the reverse-time placebo, supporting the prespecified temporal ordering rather than a symmetric association.
-
-![A deterministic empirical example of the bridge geometry](figures/attacker_defender_bridge_game1_v1/geometry_example.png)
-
-*The geometry panel is the first eligible Game 1 observation under the deterministic protocol—not a hand-selected tactical example or validation label.*
-
-## Validation stack
-
-The bridge rests on several narrower results, each with its own claim boundary:
-
-- **Defender-relative movement:** focal-relative path replicated from Metrica Game 1 to held-out Game 2 and then across seven professional IDSSE matches from one independent provider environment. It is a movement primitive, not tactical response.
-- **Attacker movement:** fixed-window signed displacement, path length, and straightness classified A on Game 1 and held-out Game 2, including all frozen 25/10 Hz frequency checks.
-- **Contextual expectation:** future defender-relative path was predictably structured, but nearly 90% of the tested gain came from the defender’s own recent movement.
-- **Opponent information:** prospectively selected opponent geometry added only a small, mixed predictive increment; nearest-opponent primacy was not established.
-- **Final bridge:** the attacker-path association passed every frozen primary, local-versus-control, temporal-placebo, horizon, extreme-exposure, hard-QC, and deterministic-reproduction criterion. All **32/32 hard-QC checks passed**, and all **16/16 governed scientific files reproduced byte-identically**.
-- **Response form:** attacker-direction near-minus-middle structure was positive in both matches and pooled data, but Game 2's paired excess over the temporal control crossed zero; the frozen final classification is **B**.
-
-## What failed—and changed the project
-
-Negative results changed the research direction rather than being hidden:
-
-- a reception-anchored relational-validation route classified **C** because shifted controls and ordinary active-play movement reproduced the apparent effects;
-- speed-valley segmentation retained useful lower-speed geometry but fragmented too often;
-- a prominence filter reduced fragmentation but created unacceptable merging;
-- a two-dimensional change-point method fragmented almost everything at its frozen minimum duration;
-- continuation innovation did not validate a universal defensive-response onset.
-
-These failures argued against forcing football into universal states or post-hoc episode boundaries. The successful bridge instead uses continuous fixed-window geometry and prespecified controls.
-
-## What this result does not show
-
-The current evidence does **not** establish:
+The current results do **not** establish:
 
 - attacker causation or influence;
-- marking, assignment, responsibility, or attention;
+- defender attention, reaction latency, marking, assignment, or responsibility;
 - pinning, dragging, tracking, covering, handoffs, or another tactical label;
-- whether the defender’s movement was correct, successful, or valuable;
-- relational reconfiguration as a validated construct;
-- gravity or off-ball player value;
-- space creation, positional-versus-functional play, or energy expenditure;
-- general validity in professional football;
-- bridge portability beyond the two Metrica sample matches.
+- space creation, tactical success, defensive quality, gravity, or off-ball value;
+- one universal response that every defense should produce; or
+- coordination-form validity beyond the two Metrica sample matches.
 
-Metrica Sample Game 3 remains untouched.
+Defensive behavior is tactical and team-dependent. More defensive movement is not automatically better attacking play, and less movement is not automatically successful defending.
 
-## Current frontier
+## How the research reached this point
 
-The evidence ladder is conditional:
+The project has retained negative and mixed findings rather than optimizing them away:
+
+- A reception-anchored relational-validation route classified **C** because ordinary active-play movement and shifted controls reproduced its apparent effects.
+- Attacker-only speed-valley segmentation retained lower-speed movement but fragmented too often.
+- A prominence filter reduced fragmentation but caused unacceptable merging.
+- A two-dimensional change-point method fragmented almost every trajectory at its frozen minimum duration.
+- Constant-velocity continuation innovation did not validate a universal response-onset instant.
+- Opponent information added only a small, mixed predictive increment beyond the non-opponent baseline.
+- Opportunity Redistribution v1 was negative.
+- Game 2 directional coordination-form replication was mixed.
+
+Those results moved the project away from universal state labels and post-hoc episode selection toward continuous, fixed-window geometry with prospective controls and explicit inference limits.
+
+## Current scientific frontier
+
+The project is moving from:
+
+> **Can defensive reorganization associated with attacking movement be measured reproducibly?**
+
+toward:
+
+> **How does the form of that reorganization vary across defensive structures, teams, and contexts?**
+
+A longer-term possibility is to judge observed reorganization relative to what a particular defense normally does in comparable situations. That contextual opponent model has not been built or validated.
+
+The evidence ladder remains conditional:
 
 ```text
-football question
-  → measurable attacker movement
-  → measurable defender movement relative to the unit
+attacker movement
+  → defender movement relative to the unit
   → contextual expectation
   → opponent association
   → tactical interpretation
@@ -135,39 +113,39 @@ football question
   → attacking value
 ```
 
-The next legitimate question is not whether these coefficients are value metrics. Concurrent defensive geometry replicated within the two Metrica sample matches, but the frozen Game 1 nearest-defender-separation bridge classified negative. Current steps are:
+Every arrow can fail. The next question is not simply whether nearby defenders move again, and the current coefficients are not player-value metrics.
 
-1. preserve the completed observational footprint and its inference limits;
-2. preserve the completed mixed directional response-form result and its temporal-control caveat;
-3. preserve the negative Opportunity Redistribution v1 result rather than tuning or opening Game 2 automatically;
-4. decide any alternative opportunity representation only through a separate prospective design;
-5. only later revisit football concepts, attribution, and off-ball value.
+## Reproducibility and data
 
-Potential later applications include defensive-style profiling, opponent-specific analysis, scouting descriptions, analyst-facing clip surfacing, and video indexing. These are research directions, not current products or validated claims.
-
-## Read and reproduce
-
-- [Project explainer](docs/project_explainer.md) — football-first account of the problem and research path.
-- [Claim-status ledger](docs/claim_status.md) — authoritative current claim boundaries.
-- [Attacker representation protocol](docs/protocols/attacking_continuous_movement_v1.md), [Game 1 result](docs/results/attacking_continuous_movement_game1_v1.md), and [held-out Game 2 result](docs/results/attacking_continuous_movement_game2_v1.md).
-- [Game 1 bridge development result](docs/results/attacker_defender_bridge_game1_v1.md).
-- [Final bridge result](docs/results/attacker_defender_bridge_game2_v1.md) — full held-out and pooled result.
-- [Frozen bridge protocol](docs/protocols/attacker_defender_bridge_v1.md) — prespecified design and criteria.
-- [Spatial-footprint protocol](docs/protocols/spatial_defensive_response_footprint_v1.md), [Game 1 development result](docs/results/spatial_defensive_response_footprint_game1_v1.md), [unclassified Game 2 result](docs/results/spatial_defensive_response_footprint_game2_v1.md), and [pooled/final result](docs/results/spatial_defensive_response_footprint_final_v1.md).
-- [Local response-form protocol](docs/protocols/local_defensive_response_form_v1.md), [Game 2 result](docs/results/local_defensive_response_form_game2_v1.md), and [pooled/final B result](docs/results/local_defensive_response_form_final_v1.md).
-- [Concurrent-geometry Game 1 result](docs/results/concurrent_attacker_defensive_geometry_game1_v1.md), [Game 2 heldout result](docs/results/concurrent_attacker_defensive_geometry_game2_v1.md), [frozen Opportunity Redistribution v1 design](docs/protocols/opportunity_redistribution_v1.md), and [negative Game 1 result](docs/results/opportunity_redistribution_game1_v1.md).
-- [Research log](docs/research_log.md) — complete chronology, including rejected ideas.
-- [Research roadmap](docs/research_roadmap.md) and [Sloan-readiness assessment](docs/sloan_readiness.md).
-- [Reproducibility guide](docs/reproducibility.md) — environments, data layout, and execution paths.
-- [Documentation guide](docs/README.md) — routes for practitioners, technical reviewers, and collaborators.
-
-Protocols were frozen before governed results; the Game 2 bridge ran unchanged; 60-second block bootstrap resampling preserved temporal dependence; all 32 final hard checks passed; and all 16 governed scientific files reproduced byte-identically. Code, tests, reports, and derived results are version-controlled, while provider data remain subject to their source licences.
+Scientific protocols were frozen before governed results. Implementations, focused tests, machine-readable derived outputs, provenance ledgers, and result reports are version-controlled. Block bootstrap procedures preserve temporal grouping, and governed executions are independently reproduced byte-for-byte where specified.
 
 Data roles:
 
-- Metrica Sample Game 1 — development;
-- Metrica Sample Game 2 — conditionally bridge-held-out replication;
-- seven IDSSE matches — external validation of defender-relative movement and earlier predictive work, not the final bridge;
-- Metrica Sample Game 3 — untouched.
+- **Metrica Sample Game 1:** development;
+- **Metrica Sample Game 2:** heldout replication for governed constructs;
+- **seven IDSSE matches:** external replication of established geometric measurements in one independent provider environment;
+- **Metrica Sample Game 3:** untouched.
 
-Code and documentation are released under the [MIT License](LICENSE). Provider data remain subject to their source terms.
+Provider data remain subject to their original licences and are not redistributed here.
+
+## Repository guide
+
+Start here:
+
+- [Project explainer](docs/project_explainer.md) — football-first account of the question and research path.
+- [Claim-status ledger](docs/claim_status.md) — authoritative current claim boundaries.
+- [Research roadmap](docs/research_roadmap.md) — completed evidence and current priorities.
+- [Research log](docs/research_log.md) — chronological freezes, executions, negative results, and reinterpretations.
+- [Reproducibility guide](docs/reproducibility.md) — environment, data layout, and execution paths.
+- [Documentation guide](docs/README.md) — reading paths for practitioners, technical reviewers, and collaborators.
+
+Key result trails:
+
+- [Concurrent geometry: Game 1](docs/results/concurrent_attacker_defensive_geometry_game1_v1.md), [heldout Game 2](docs/results/concurrent_attacker_defensive_geometry_game2_v1.md), and [seven-match IDSSE replication](docs/results/concurrent_attacker_defensive_geometry_idsse_v1.md)
+- [Opportunity Redistribution v1 negative result](docs/results/opportunity_redistribution_game1_v1.md)
+- [Coordination Form v1: Game 1](docs/results/concurrent_defensive_coordination_form_game1_v1.md) and [Game 2 mixed replication](docs/results/concurrent_defensive_coordination_form_game2_v1.md)
+- [Final attacker-to-defender bridge result](docs/results/attacker_defender_bridge_game2_v1.md)
+- [Final spatial footprint result](docs/results/spatial_defensive_response_footprint_final_v1.md)
+- [Final directional response-form result](docs/results/local_defensive_response_form_final_v1.md)
+
+The figure source is [reproducible](src/generate_readme_research_visuals.py) and reads only closed governed artifacts for empirical plots. Code and documentation are released under the [MIT License](LICENSE).
