@@ -105,6 +105,13 @@ The [2027 MIT Sloan Sports Analytics Conference Research Paper Competition](http
 
 ### Pre-October 1 priorities
 
+The bounded priorities and stopping rules are consolidated in the
+[Sloan submission strategy](sloan_submission_strategy.md). The preferred paper
+is a hybrid measurement-and-validation contribution. At most two additional
+empirical investments are defensible before submission: external IDSSE
+replication of the frozen time-ordered bridge, and one narrowly frozen context
+hypothesis with Game 3 used only as its holdout.
+
 1. Preserve the negative Opportunity Redistribution v1 result; do not tune it or open Game 2 without a separately justified prospective decision.
 2. Preserve the completed Final A bridge and its local, nonlocal, temporal, activity/context, tracking-quality, and influence limits.
 3. Preserve the completed Final A spatial footprint and seek external/native-frequency replication only under a separately frozen design.

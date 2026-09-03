@@ -1,5 +1,9 @@
 # Sloan Readiness
 
+The current paper choice, reviewer-risk assessment, pre-deadline priorities,
+and stop list are consolidated in the
+[September 2026 Sloan submission strategy](sloan_submission_strategy.md).
+
 ## Submission constraint
 
 The [2027 MIT Sloan Sports Analytics Conference Research Paper Competition](https://www.sloansportsconference.com/research-paper-competition) lists the abstract deadline as **October 1, 2026, 11:59 p.m. Eastern**. Round one requires a concise account of actual methods, results, and industry relevance. It does not require completion of the project’s ultimate research vision.
@@ -15,7 +19,7 @@ The repository now supports a prospectively tested attacker-movement-to-defensiv
 - **Opponent-information constraint:** simple nearest-opponent geometry adds only a small, mixed increment and does not establish local opponent primacy.
 - **Directional insight:** signed displacement preserves geometry that scalar path magnitude loses.
 - **Timing failure:** constant-velocity continuation innovation is not a validated response-onset measure.
-- **Attacking-interval groundwork:** the frozen direction-aware rule reproduced its numerical fragmentation/merging/coverage trade-off on heldout Game 2, but a prospectively selected direction-boundary audit failed; the exact replication status is **MIXED**, not validation.
+- **Attacking-interval groundwork:** discrete direction-aware episode boundaries remain **MIXED**, but continuous fixed 1/2/4-second attacker geometry subsequently replicated under the frozen two-match Metrica protocol and supplied the bridge's temporal unit.
 - **Within-provider bridge:** the frozen continuous-window attacker-to-defender test classified Final A across both Metrica sample matches, with positive pooled primary and paired-control intervals and every frozen robustness/QC gate passing.
 - **Spatial-footprint replication:** the frozen footprint classified Final A across the two Metrica sample matches: near ranks had a stronger association than middle ranks, while middle and far regions remained similar.
 - **Concurrent localization and interpretation boundary:** the near-minus-middle concurrent focal-relative movement association replicated across both Metrica matches and all seven governed IDSSE matches (pooled 0.05115 [0.04595, 0.05642]), but frozen Opportunity Redistribution v1 was negative on Game 1 ($\beta_D=-0.02407$ [−0.09392, 0.04776]). Cross-provider observational geometry therefore cannot be presented as teammate separation, space creation, gravity, or value.
@@ -30,7 +34,7 @@ After Final Footprint A, response-form v1 found positive signed near-versus-midd
 The first version of this bridge now exists:
 
 ```text
-attacking movement episode
+attacking movement interval
         ↓
 defensive geometric change
 ```
@@ -45,7 +49,7 @@ The gap is **not** the absence of a gravity score. Gravity, attacker attribution
 |---|---|---|
 | Football problem | Clear | Keep the attacker-movement-to-defensive-change question central. |
 | Reproducible defensive primitive | Externally replicated geometry | Preserve activity and semantic limitations. |
-| Attacking temporal unit | B — mixed exploratory audit | Outcome-blind refinement, then a frozen validation test. |
+| Attacking temporal unit | Continuous fixed-window geometry replicated across both Metrica sample matches; discrete episode rules remain mixed | Use the validated continuous interval in the paper; do not reopen segmentation before submission. |
 | Bridge evidence | Final A across two Metrica matches; concurrent localization supported across seven IDSSE matches | Preserve observational scope, shared-motion caveats, and provider-timescale differences; do not infer causation or tactics. |
 | Tactical interpretation | Unsupported | Not required if the contribution is framed as geometry/methodology. |
 | Development/validation discipline | Strong through the frozen two-match bridge | Apply the same discipline to any semantic or cross-provider extension. |
