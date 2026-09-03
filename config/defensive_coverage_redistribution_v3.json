@@ -1,0 +1,78 @@
+{
+  "name": "Defensive Coverage Redistribution v3",
+  "status": "FROZEN_BEFORE_V3_EMPIRICAL_COVERAGE_OUTCOMES",
+  "freeze_date": "2026-09-03",
+  "starting_commit": "a4b4a9ab301651c97aab5c024e6254b89a406f57",
+  "supersedes": {
+    "design": "Defensive Coverage Redistribution v2",
+    "closed_status": "GAME 1 COVERAGE REDISTRIBUTION v2 DEVELOPMENT INVALID",
+    "reason": "the sole period-2 nuisance indicator was constant over 281 period-1-only eligible anchors, leaving the nominal design rank 11/12 before coefficient estimation"
+  },
+  "base_scientific_design": {
+    "protocol": "docs/protocols/defensive_coverage_redistribution_v2.md",
+    "protocol_sha256": "4acf8f5c6a375c1303e7ab5d0f2ea35b3b4a035e9223d7d1b16468d2d42cf278",
+    "configuration": "config/defensive_coverage_redistribution_v2.json",
+    "configuration_sha256": "24a36a75fe84afd78222b11f0351bac60820057ddac9b76951d8f29c2da2038c",
+    "inherit_every_scientific_rule_except": "constant_nuisance_estimability_handling"
+  },
+  "known_outcome_blind_sample_fact": {
+    "eligible_anchors": 281,
+    "period_counts": {"1": 281, "2": 0},
+    "v2_nominal_rank": 11,
+    "v2_nominal_columns": 12,
+    "beta_D_observed": false,
+    "interval_observed": false,
+    "direction_null_observed": false,
+    "robustness_result_observed": false
+  },
+  "nominal_model_columns_in_order": [
+    "intercept",
+    "concurrent_reference_attacker_path_m",
+    "concurrent_D1_D3_minus_D4_D7_focal_relative_path_m",
+    "initial_elsewhere_matching_cost_m",
+    "mean_other_attacker_concurrent_path_m",
+    "concurrent_ball_path_m",
+    "concurrent_defending_outfield_centroid_path_m",
+    "mean_concurrent_D1_D10_focal_relative_path_m",
+    "prior_reference_attacker_path_m",
+    "prior_D1_D3_minus_D4_D7_focal_relative_path_m",
+    "prior_ball_path_m",
+    "period_2_indicator"
+  ],
+  "constant_nuisance_rule": {
+    "designated_non_scientific_nuisance_columns": ["period_2_indicator"],
+    "decision_sample": "complete realized eligible primary sample",
+    "constant_definition": "all constructed binary values exactly identical",
+    "action": "omit a designated nuisance column if and only if constant",
+    "decision_timing": "once before all model, bootstrap, null, comparator, trim, and descriptive fits",
+    "reuse_active_columns_everywhere": true,
+    "never_omit": [
+      "intercept",
+      "response",
+      "primary predictor",
+      "scientific covariate",
+      "classifying contrast"
+    ],
+    "remaining_estimator_rank_deficiency": "INVALID",
+    "near_collinearity": "retain columns and report the inherited singular values and condition number; no omission authority"
+  },
+  "unchanged": [
+    "development data and Game 1-only stopping rule",
+    "support registry and every eligibility rule",
+    "attacker reference and fixed other-nine set",
+    "coverage outcome and primary predictor",
+    "all scientific covariates and nominal column order",
+    "timing, smoothing, units, and estimator",
+    "bootstrap, seeds, blocks, and interval",
+    "direction null, remote comparator, trim, and descriptive alternatives",
+    "synthetic gates, hard QC, and deterministic reproduction",
+    "classification order and thresholds",
+    "claim boundary and nonclaims"
+  ],
+  "data_firewall": {
+    "game1_v3_execution": "prohibited_until_separate_authorization",
+    "game2_coverage": "prohibited",
+    "game3": "untouched_and_prohibited",
+    "idsse_coverage": "prohibited"
+  }
+}

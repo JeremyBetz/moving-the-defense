@@ -1,5 +1,23 @@
 # Research Log
 
+## 2026-09-03 — Defensive Coverage Redistribution v3 frozen before outcomes
+
+A read-only estimability audit traced v2's absent period 2 to the unchanged
+outcome-blind trajectory registry: Home 3 and Away 22 are invalid for the
+entire second period, so strict complete-ten-versus-ten support cannot be met.
+This is a legitimate frozen-support result, not a coding defect. No v2
+$\beta_D$, interval, null, or robustness result existed.
+
+The [v3 estimability audit](defensive_coverage_redistribution_v3_estimability_audit.md)
+established that an explicitly designated constant nuisance dummy adds no
+column-space information when the intercept is retained. The [v3 protocol](protocols/defensive_coverage_redistribution_v3.md)
+therefore changes only one rule: `period_2_indicator`, the sole designated
+non-scientific nuisance, is omitted iff exactly constant in the complete
+eligible primary sample. The active mask is then reused everywhere. Scientific
+columns can never be omitted; any remaining exact rank deficiency stays
+INVALID. V1's rejection and v2's INVALID closure remain unchanged. No v3
+outcome was computed, and Games 2 and 3 and IDSSE coverage remain unopened.
+
 ## 2026-09-03 — Defensive Coverage Redistribution v2 Game 1 invalid before estimation
 
 The frozen single-row, ball-nearest-reference V2 eligibility pipeline retained

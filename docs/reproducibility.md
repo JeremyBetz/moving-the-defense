@@ -105,6 +105,14 @@ The governed V2 closure can be reproduced without changing any scientific rule:
 MPLCONFIGDIR=/tmp/moving-the-defense-coverage .venv/bin/python src/defensive_coverage_redistribution_game1_v2.py --reproduce
 ```
 
+V2 remains INVALID before estimation. The [prospective v3 protocol](protocols/defensive_coverage_redistribution_v3.md)
+changes only exact omission of its explicitly designated constant nuisance
+indicator. Its data-free estimability and governance checks are:
+
+```bash
+.venv/bin/python -m pytest -q tests/test_defensive_coverage_redistribution_v3_estimability.py tests/test_defensive_coverage_redistribution_v3_governance.py
+```
+
 - Outcome-blind movement-segmentation audit: [`config/post5b_movement_segmentation_audit_rules.json`](../config/post5b_movement_segmentation_audit_rules.json), exploratory predeclared rules rather than a frozen validation protocol.
 - Continuous attacker movement: [`docs/protocols/attacking_continuous_movement_v1.md`](protocols/attacking_continuous_movement_v1.md), version 1.0; [Game 1 result](results/attacking_continuous_movement_game1_v1.md). Reproduce the governed development execution with:
 

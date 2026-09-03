@@ -1,0 +1,39 @@
+{
+  "freeze_date": "2026-09-03",
+  "starting_commit": "a4b4a9ab301651c97aab5c024e6254b89a406f57",
+  "status": "FROZEN_BEFORE_V3_EMPIRICAL_COVERAGE_OUTCOMES",
+  "preserved_v1_v2": {
+    "docs/protocols/defensive_coverage_redistribution_v1.md": "35b146f16f5c3d867bc3eeddc3476ed326e8b366dae12d5782ba8e9f7ffc65e6",
+    "config/defensive_coverage_redistribution_v1.json": "d4206b044509f281cfb19fad64e7907357a6948cf72b20df72a2981af0a52f8e",
+    "docs/protocols/defensive_coverage_redistribution_v1_rejection.md": "6c2c8822ad4c8a6931feed7fdadfd309f24001ade3499a605e4a72953fb0a2f7",
+    "docs/protocols/defensive_coverage_redistribution_v2.md": "4acf8f5c6a375c1303e7ab5d0f2ea35b3b4a035e9223d7d1b16468d2d42cf278",
+    "config/defensive_coverage_redistribution_v2.json": "24a36a75fe84afd78222b11f0351bac60820057ddac9b76951d8f29c2da2038c",
+    "config/defensive_coverage_redistribution_v2_hashes.json": "e48c9c7b53b9d6844ef29c69c31706907131df1df536387049b7916b627b4113"
+  },
+  "v2_invalid_closure": {
+    "outputs/defensive_coverage_redistribution_game1_v2/model_results.json": "29ff64e7e09fb53fa879838527b430042f459d1eb39c129350a1f19d081b26f6",
+    "outputs/defensive_coverage_redistribution_game1_v2/governed_hashes.json": "1c7e339c903e934ad39e40aa191b07b425176718dac849d77772015ea5abe918",
+    "outputs/defensive_coverage_redistribution_game1_v2/reproduction.json": "9c70d93c2f164a440f4a850259c0fa3ee043509454e095d351a41bd072b0cc88",
+    "outputs/defensive_coverage_redistribution_game1_v2/result_report.md": "06c047d9ba61ac837a0726f1f340447b57f4ff1e5b3710d6f0254f8a1ec4e2a4",
+    "src/defensive_coverage_redistribution_game1_v2.py": "dbfda5e493557f5bc4bf9b83152a5200bcf9771eec7c57a0cb339c15dc1a85c4",
+    "docs/results/defensive_coverage_redistribution_game1_v2.md": "4ee4ac8d22b180ac460cfad0f6dc3d5a0b9d2fec9568c5e7992c8a4ffac39bca"
+  },
+  "v3_frozen_design": {
+    "docs/protocols/defensive_coverage_redistribution_v3.md": "5bf577758202aed13b47fce54fd40c88b1a443d675d832f93f69c62570303988",
+    "config/defensive_coverage_redistribution_v3.json": "54a01d0aeba846b1e245a0c0552234b2390cfc3ec10ec0a187dc94c0b10fed42",
+    "docs/protocols/defensive_coverage_redistribution_v2_supersession.md": "34c516b29af47a9ce25d9f200fe5fb3c2f18bc2b8079f29238cb1232eb363f12",
+    "docs/defensive_coverage_redistribution_v3_estimability_audit.md": "236f622e644632607ce1fa4f601093ed2b5dcc66b08bb47063f7931bcff02719",
+    "src/defensive_coverage_redistribution_v3.py": "aaed62d7c15a703e1fae400607bb113bdbb0797d7f61826428772182c5e100ea",
+    "tests/test_defensive_coverage_redistribution_v3_estimability.py": "f2b06001ad59e9f88bce56714cb5ac09e44a026cf56561f2bb3ba26b6e3f239d",
+    "tests/test_defensive_coverage_redistribution_v3_governance.py": "afbec9155c88064284260644337fce0b761bb0ff79cab866360bc25273af93b0"
+  },
+  "firewall": {
+    "v1_status": "REJECTED_PRE_EXECUTION",
+    "v2_status": "GAME_1_COVERAGE_REDISTRIBUTION_V2_DEVELOPMENT_INVALID_BEFORE_ESTIMATION",
+    "v2_beta_D_observed": false,
+    "v3_game1_result": "not_created_or_inspected",
+    "game2_coverage": "not_created_or_inspected",
+    "idsse_coverage": "not_created_or_inspected",
+    "game3": "untouched"
+  }
+}
