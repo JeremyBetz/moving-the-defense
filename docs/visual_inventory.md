@@ -146,4 +146,4 @@ No additional visual should be created merely to make the project look complete.
 
 ## Defensive Coverage Redistribution v1 design
 
-[`synthetic_compensation_vs_loss.png`](../figures/defensive_coverage_redistribution_v1/synthetic_compensation_vs_loss.png) contrasts perfect defender compensation with no compensation under the frozen minimum distinct-defender matching representation. It is synthetic design evidence only. Grey links are optimized geometric pairings, not marking assignments, and the figure contains no empirical match outcome.
+[`synthetic_compensation_vs_loss.png`](../figures/defensive_coverage_redistribution_v1/synthetic_compensation_vs_loss.png) contrasts perfect defender compensation with no compensation under the historical v1 minimum distinct-defender matching representation. It is synthetic design evidence only, and v1 was rejected prospectively for an identification defect before empirical execution. Grey links are optimized geometric pairings, not marking assignments, and the figure contains no match outcome. The narrower v2 design has no empirical figure.

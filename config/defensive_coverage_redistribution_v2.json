@@ -1,0 +1,148 @@
+{
+  "name": "Defensive Coverage Redistribution v2",
+  "status": "FROZEN_BEFORE_EMPIRICAL_COVERAGE_OUTCOMES",
+  "freeze_date": "2026-09-03",
+  "starting_commit": "c3346602f706dedab237a0b2c4148485e5f31ade",
+  "supersedes": {
+    "design": "Defensive Coverage Redistribution v1",
+    "status": "REJECTED_PRE_EXECUTION",
+    "reason": "repeated focal exclusion plus within-anchor demeaning can collapse the other-nine outcome into the negative excluded-focal matching-cost change"
+  },
+  "data": {
+    "development_match": "Metrica Sample Game 1",
+    "game2": "prohibited_until_separate_post-Game-1_governance",
+    "game3": "prohibited",
+    "idsse": "prohibited_in_development"
+  },
+  "inherit": {
+    "protocol": "concurrent_attacker_defensive_geometry_v1",
+    "pitch_metres": [105.0, 68.0],
+    "tracking_hz": 25.0,
+    "position_smoothing": "centered 7-frame rolling mean",
+    "anchor_grid": "period_origin + 2 + 4*k seconds",
+    "pre_interval": "[t-2,t]",
+    "concurrent_interval": "[t,t+2]",
+    "no_interpolation": true,
+    "goalkeepers": ["Home11", "Away25"],
+    "fixed_defender_ranks": "D1-D10 by reference-attacker distance at t; canonical-ID tie break"
+  },
+  "unit": {
+    "name": "one period/time anchor",
+    "rows_per_anchor": 1,
+    "reference_attacker": "unique attacking outfield player nearest observed ball at t",
+    "reference_tie_tolerance_m": 1e-9,
+    "reference_tie_action": "exclude anchor; never use player ID",
+    "reference_semantics": "geometric reference, not inferred ball carrier or tactical role",
+    "within_anchor_demeaning": false
+  },
+  "eligibility": {
+    "require_attacking_outfield_players": 10,
+    "require_defending_outfield_players": 10,
+    "require_ball_support": true,
+    "support_span": "[t-2,t+2]",
+    "opponent_events_prohibited_after_t_through_t_plus_2": ["PASS", "RECOVERY", "SET PIECE", "SHOT"],
+    "future_reranking": false,
+    "outcome_based_selection": false
+  },
+  "coverage_outcome": {
+    "attacker_set": "fixed nine non-reference attacking outfield players selected at t",
+    "defender_set": "all ten defending outfield players fixed at t",
+    "cost_matrix": "9x10 Euclidean distance in metres",
+    "optimization": "minimum-cost injective matching; one defender unused",
+    "solver": "scipy.optimize.linear_sum_assignment float64",
+    "endpoint_quantity": "G_else(u)=mean matched distance across the fixed other nine attackers",
+    "outcome": "Y=G_else(t+2)-G_else(t)",
+    "units": "metres",
+    "missing_geometry": "invalidate anchor; never interpolate",
+    "matching_identity": "descriptive only"
+  },
+  "response_predictor": {
+    "name": "concurrent focal-local versus middle defender-relative path contrast",
+    "formula": "mean(P_rel_D1:D3)-mean(P_rel_D4:D7)",
+    "units": "metres",
+    "primary_predictor_count": 1
+  },
+  "model": {
+    "intercept": true,
+    "columns": [
+      "concurrent_reference_attacker_path_m",
+      "concurrent_D1_D3_minus_D4_D7_focal_relative_path_m",
+      "initial_elsewhere_matching_cost_m",
+      "mean_other_attacker_concurrent_path_m",
+      "concurrent_ball_path_m",
+      "concurrent_defending_outfield_centroid_path_m",
+      "mean_concurrent_D1_D10_focal_relative_path_m",
+      "prior_reference_attacker_path_m",
+      "prior_D1_D3_minus_D4_D7_focal_relative_path_m",
+      "prior_ball_path_m",
+      "period_2_indicator"
+    ],
+    "transformation": "none; one physical row per anchor",
+    "estimator": "numpy.linalg.lstsq(..., rcond=None)",
+    "dtype": "float64",
+    "full_column_rank_required": true,
+    "report_singular_values_and_condition_number": true,
+    "primary_estimand": "beta_D"
+  },
+  "uncertainty": {
+    "replicates": 2000,
+    "master_seed": 20260909,
+    "generator": "Generator(PCG64(SeedSequence(20260909).spawn(2)[0]))",
+    "game1_child": 0,
+    "reserved_game2_child": 1,
+    "block_seconds": 60,
+    "resampling": "independent anchor blocks within period; retain terminal partial blocks",
+    "interval": "two-sided percentile 95%",
+    "minimum_valid_replicates": 1900
+  },
+  "controls": {
+    "shared_geometry_direction_null": {
+      "replicates": 200,
+      "seed": 20260910,
+      "generator": "Generator(PCG64(SeedSequence(20260910)))",
+      "transformation": "rotate each anchor's complete internal defender displacement field by one common random angle while preserving start formation, centroid trajectory, ranks, D, and all leave-one-out-relative path lengths",
+      "pass": "observed beta_D exceeds 95th percentile of valid null beta_D estimates"
+    },
+    "remote_response_comparator": {
+      "formula": "mean(P_rel_D8:D10)-mean(P_rel_D4:D7)",
+      "pass": "primary beta_D point estimate exceeds remote-comparator point estimate"
+    },
+    "focal_movement_trim": {
+      "exclude_if_concurrent_path_m_gt": 12.198443079831405,
+      "provenance": "closed Opportunity Redistribution v1 threshold",
+      "pass": "trimmed beta_D positive and at least 50% absolute primary magnitude retained"
+    },
+    "fixed_start_matching": "descriptive nonclassifying",
+    "full_ten_to_ten_matching": "descriptive direct-pathway comparator; nonclassifying",
+    "mean_two_nearest_defender_distance": "descriptive nonclassifying",
+    "rigid_transform_and_player_relabeling": "hard QC"
+  },
+  "synthetic_gates": [
+    "perfect_compensation: neutral fixed-elsewhere cost",
+    "no_compensation: worse fixed-elsewhere cost",
+    "shared_collective_translation: neutral response and cost",
+    "symmetric_defensive_expansion: global cost may change while local contrast is neutral",
+    "independent_other_attacker: cost change with neutral response",
+    "smooth_defender_swap: stable scalar cost",
+    "near_tie_assignment_switch: no artificial large scalar jump",
+    "reference_relationship_only: neutral elsewhere cost while full matching changes",
+    "direction_null: exact centroid and leave-one-out path preservation"
+  ],
+  "classification": {
+    "INVALID": "frozen hash, sample/support, unique-reference, complete-set, full-rank, solver, bootstrap-minimum, synthetic-gate, null-preservation, hard-QC, or deterministic-serialization failure",
+    "NOT_SUPPORTED": "valid primary beta_D at or below zero",
+    "COHERENT": "valid beta_D above zero; 95% interval strictly above zero; direction null passes; primary exceeds remote comparator; frozen trim passes",
+    "MIXED": "every other valid execution with primary beta_D above zero"
+  },
+  "nonclaims": [
+    "attacker causation", "attacker influence", "attention", "marking", "assignment", "responsibility",
+    "pinning", "dragging", "tracking", "covering", "handoff", "passing availability", "pitch control",
+    "space creation", "tactical success", "tactical failure", "player quality", "gravity", "off-ball value"
+  ],
+  "planned_outputs": [
+    "manifest.json", "eligibility_ledger.csv", "anchor_reference_ledger.csv", "model_results.json",
+    "bootstrap_results.csv", "direction_null.csv", "remote_comparator.json", "trim_result.json",
+    "descriptive_alternatives.json", "synthetic_gates.json", "hard_qc.json", "governed_hashes.json",
+    "reproduction.json", "result_report.md"
+  ]
+}

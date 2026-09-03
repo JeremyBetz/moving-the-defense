@@ -92,10 +92,10 @@ data/metrica_sample_game_2/
 - Phase 4C: [`config/phase4c_external_replication_protocol.json`](../config/phase4c_external_replication_protocol.json) plus provider mapping in [`config/phase4c_idsse_implementation.json`](../config/phase4c_idsse_implementation.json).
 - Phase 5A: [`config/phase5a_contextual_expectation_protocol.json`](../config/phase5a_contextual_expectation_protocol.json).
 - Phase 5B: [`config/phase5b_opponent_relational_increment_protocol.json`](../config/phase5b_opponent_relational_increment_protocol.json).
-- Defensive Coverage Redistribution v1: [frozen protocol](protocols/defensive_coverage_redistribution_v1.md), [`config/defensive_coverage_redistribution_v1.json`](../config/defensive_coverage_redistribution_v1.json), and [method audit](defensive_coverage_redistribution_v1_methodology.md). This is a design-only freeze; no empirical result exists. Reproduce the pure synthetic gates with:
+- Defensive Coverage Redistribution v1 is preserved as a [rejected pre-execution design](protocols/defensive_coverage_redistribution_v1_rejection.md); its frozen protocol/configuration remain unchanged and no empirical result exists. V2 is governed by its [protocol](protocols/defensive_coverage_redistribution_v2.md), [`config/defensive_coverage_redistribution_v2.json`](../config/defensive_coverage_redistribution_v2.json), and [supersession audit](defensive_coverage_redistribution_v2_methodology.md). Reproduce the v1 algebra check and v2 pure synthetic gates with:
 
 ```bash
-MPLCONFIGDIR=/tmp/moving-the-defense-coverage .venv/bin/python -m pytest -q tests/test_defensive_coverage_redistribution_v1.py
+MPLCONFIGDIR=/tmp/moving-the-defense-coverage .venv/bin/python -m pytest -q tests/test_defensive_coverage_redistribution_v1.py tests/test_defensive_coverage_redistribution_v2.py
 MPLCONFIGDIR=/tmp/moving-the-defense-coverage .venv/bin/python src/generate_defensive_coverage_redistribution_v1_figure.py
 ```
 
