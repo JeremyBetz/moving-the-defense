@@ -1,0 +1,7 @@
+{
+  "closure": "invalid_before_outcome_model",
+  "configuration": "config/defensive_coverage_redistribution_v2.json",
+  "match": "Metrica Sample Game 1",
+  "protocol": "docs/protocols/defensive_coverage_redistribution_v2.md",
+  "source_hash": "dbfda5e493557f5bc4bf9b83152a5200bcf9771eec7c57a0cb339c15dc1a85c4"
+}

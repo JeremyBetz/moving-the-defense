@@ -1,0 +1,12 @@
+{
+  "all_byte_identical": true,
+  "outputs": {
+    "anchor_reference_ledger.csv": true,
+    "eligibility_ledger.csv": true,
+    "manifest.json": true,
+    "model_results.json": true,
+    "observation_rows.csv": true,
+    "result_report.md": true
+  },
+  "rerun_classification": "INVALID"
+}

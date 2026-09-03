@@ -8,6 +8,11 @@ outputs/defensive_response_expectation_v1/prediction_source_rows.parquet
 outputs/defensive_response_expectation_v1/prediction_rows.parquet
 outputs/.defensive_response_expectation_v1_rerun/
 
+# Licensed-provider anchor-level derivatives (compact governed summaries are tracked)
+outputs/defensive_coverage_redistribution_game1_v2/observation_rows.csv
+outputs/defensive_coverage_redistribution_game1_v2/eligibility_ledger.csv
+outputs/defensive_coverage_redistribution_game1_v2/anchor_reference_ledger.csv
+
 # Python
 __pycache__/
 *.py[cod]

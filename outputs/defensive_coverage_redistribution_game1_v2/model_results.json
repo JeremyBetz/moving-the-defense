@@ -1,0 +1,55 @@
+{
+  "classification": "INVALID",
+  "configuration_hash": "24a36a75fe84afd78222b11f0351bac60820057ddac9b76951d8f29c2da2038c",
+  "hard_qc": {
+    "full_rank": false,
+    "valid": false
+  },
+  "invalid_reason": "frozen design rank failure 11/12",
+  "protocol_hash": "4acf8f5c6a375c1303e7ab5d0f2ea35b3b4a035e9223d7d1b16468d2d42cf278",
+  "sample": {
+    "all_complete_ten_by_ten": true,
+    "all_one_row_per_anchor": true,
+    "attacking_team_counts": {
+      "metrica:Away": 166,
+      "metrica:Home": 115
+    },
+    "eligible_anchors": 281,
+    "exclusion_counts": {
+      "complete_ball_support_unavailable": 294,
+      "complete_ten_attackers_unavailable": 503,
+      "complete_ten_defenders_unavailable": 118,
+      "no_possession_team": 9,
+      "opponent_possession_event_after_anchor": 102,
+      "restart_or_ball_out_span": 142
+    },
+    "period_counts": {
+      "1": 281
+    },
+    "reference_attacker_counts": {
+      "metrica:Away:15": 13,
+      "metrica:Away:16": 25,
+      "metrica:Away:17": 18,
+      "metrica:Away:18": 18,
+      "metrica:Away:19": 14,
+      "metrica:Away:20": 18,
+      "metrica:Away:21": 28,
+      "metrica:Away:22": 18,
+      "metrica:Away:23": 9,
+      "metrica:Away:24": 5,
+      "metrica:Home:1": 4,
+      "metrica:Home:10": 17,
+      "metrica:Home:12": 7,
+      "metrica:Home:2": 12,
+      "metrica:Home:3": 4,
+      "metrica:Home:4": 21,
+      "metrica:Home:5": 4,
+      "metrica:Home:6": 19,
+      "metrica:Home:7": 9,
+      "metrica:Home:8": 12,
+      "metrica:Home:9": 6
+    }
+  },
+  "source_hash": "dbfda5e493557f5bc4bf9b83152a5200bcf9771eec7c57a0cb339c15dc1a85c4",
+  "v1_rejection_hash": "6c2c8822ad4c8a6931feed7fdadfd309f24001ade3499a605e4a72953fb0a2f7"
+}

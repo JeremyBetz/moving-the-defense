@@ -1,5 +1,19 @@
 # Research Log
 
+## 2026-09-03 — Defensive Coverage Redistribution v2 Game 1 invalid before estimation
+
+The frozen single-row, ball-nearest-reference V2 eligibility pipeline retained
+281 anchors on Metrica Sample Game 1. All retained anchors were in period 1;
+the unchanged complete-ten-outfield support rule retained no period-2 anchors.
+The protocol's mandatory raw-unit model includes a period-2 indicator and
+requires full rank. That column was consequently constant and the 12-column
+design had rank 11. Execution stopped before estimating a primary coefficient
+or any bootstrap, direction-null, remote-comparator, or trim result. The
+independent eligibility rerun was byte-identical. This is **INVALID** under
+the frozen protocol, not evidence for or against matching geometry. No column
+was removed and no support rule was weakened. Game 2, Game 3, and IDSSE
+coverage outcomes remain unopened. See the [closure](results/defensive_coverage_redistribution_game1_v2.md).
+
 ## 2026-09-03 — Defensive Coverage Redistribution v1 rejected; v2 frozen before outcomes
 
 An adversarial pre-execution review found that v1 did not identify its intended other-attacker construct. Under stable pairings, demeaning the focal-specific leave-one-out matching outcome across all ten focal perspectives gives $\widetilde Y_a=-(\Delta c_a-\overline{\Delta c})/9$. A positive response coefficient could therefore arise from the excluded focal's own matching change even when that focal perspective's raw other-nine outcome was unchanged. No v1 empirical sample or coverage outcome existed or was inspected. The frozen v1 protocol and configuration remain unchanged and are now recorded as a rejected pre-execution design.
