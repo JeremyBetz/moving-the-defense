@@ -312,6 +312,18 @@ MPLCONFIGDIR=/tmp/mtd-mpl .venv/bin/python src/concurrent_attacker_defensive_geo
 
 The first command reruns the full provider-equivalence gate and scientific execution. The second records byte identity against the closed result. The [result report](results/concurrent_attacker_defensive_geometry_idsse_v1.md) and `outputs/concurrent_attacker_defensive_geometry_idsse_v1/` contain the governed evidence. Game 3 and opportunity outcomes are outside this execution.
 
+## Concurrent Defensive Coordination Form v1 — IDSSE external replication
+
+The original [protocol](protocols/concurrent_defensive_coordination_form_v1.md), configuration, and [prospective IDSSE status clarification](protocols/concurrent_defensive_coordination_form_v1_idsse_replication.md) govern the seven-match execution. Reproduce two independent complete executions with:
+
+```bash
+MPLCONFIGDIR=/tmp/mtd-mpl .venv/bin/python src/concurrent_defensive_coordination_form_idsse_v1.py --output /tmp/mtd-coordination-idsse-run1
+MPLCONFIGDIR=/tmp/mtd-mpl .venv/bin/python src/concurrent_defensive_coordination_form_idsse_v1.py --output /tmp/mtd-coordination-idsse-run2
+MPLCONFIGDIR=/tmp/mtd-mpl .venv/bin/python src/concurrent_defensive_coordination_form_idsse_v1.py --output /tmp/mtd-coordination-idsse-run1 --verify-against /tmp/mtd-coordination-idsse-run2
+```
+
+The [result report](results/concurrent_defensive_coordination_form_idsse_v1.md) and `outputs/concurrent_defensive_coordination_form_idsse_v1/` record the supported external result, provider-equivalence gates, exclusions, rank coefficients, manifest, hashes, and reproduction comparison. The 89,719,630-byte observation-level Parquet is intentionally not redistributed: it contains provider-linked identifiers, anchor times, distances, and derived movement measurements. A licensed-data holder can regenerate it deterministically; its authoritative SHA-256, `8a580a2d079fa248a1e8e64578b975b52e9fe790c595a6d16e37811c4a43e8d0`, remains in `governed_hashes.json`. Compact aggregate outputs are sufficient to inspect the reported result. The execution uses only the seven governed IDSSE matches and does not inspect Metrica Sample Game 3.
+
 ## Known reproducibility limitations
 
 - There is no one-command end-to-end workflow or continuous integration check.

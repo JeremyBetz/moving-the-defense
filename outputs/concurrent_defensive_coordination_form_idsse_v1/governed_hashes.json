@@ -1,0 +1,8 @@
+{
+  "exclusions.csv": "cb76707a9f7906127a1e8ddf524aaab278a9b7b389fe3abfea78b2d4f5289d43",
+  "final_results.json": "9fbbfe7f298a372b482fd5480ea661e0188c85c72c39d0f2f8900e0db088586f",
+  "manifest.json": "f14f1103ee7a584aea55eabbc5e6219ce4ac045b03afb167f02c5a91fa5f288d",
+  "observation_rows.parquet": "8a580a2d079fa248a1e8e64578b975b52e9fe790c595a6d16e37811c4a43e8d0",
+  "provider_equivalence.csv": "dd790838339e405f88e8cb94e9c529d726a755e9c88e87a7854b7da4744a695e",
+  "rank_coefficients.csv": "93c0abbf974cb15a19e493dc84fd30d319e84cf2dbb26f58e6f3d62c7ca25ea1"
+}

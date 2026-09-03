@@ -1,0 +1,9 @@
+{
+  "protected": {
+    "game3": false,
+    "idsse": "authorized_executed"
+  },
+  "source": "src/concurrent_defensive_coordination_form_idsse_v1.py",
+  "source_sha256": "7c66edc33ecfd4625182bf766f41c655cf6ad24ccf59e453c64dd22ffc17b267",
+  "starting_commit": "c22a9c2e6a8117dc3528e45207cddba5073ad1ef"
+}

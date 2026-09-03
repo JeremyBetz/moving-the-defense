@@ -1,5 +1,15 @@
 # Research Log
 
+## 2026-09-02 — Concurrent Defensive Coordination Form externally supported across IDSSE
+
+Before any protected IDSSE coefficient was computed, a prospective clarification froze match-level and seven-match status rules because no exact external rule existed. The unchanged construct then passed every provider-equivalence gate and executed on the seven governed IDSSE matches. All seven primary D2–D3-minus-D4–D7 estimates were positive, ranged from 0.03317 to 0.05165 m/s, had 95% intervals strictly above zero, and retained positive 1.5 Hz sensitivity directions. Every match was therefore `SUPPORTED`, producing **IDSSE COORDINATION FORM EXTERNAL REPLICATION SUPPORTED** without a pooled estimator.
+
+The D1–D10 profiles were descriptively consistent at IDSSE—D1 was largest, D2 and D3 were positive, and many middle/far coefficients were negative—but these profile observations did not classify results and do not define tactics or team-response types. All governed files reproduced byte-for-byte, all hard QC passed, and Metrica Sample Game 3 remained untouched.
+
+## 2026-09-02 — IDSSE coordination-form status frozen before outcomes
+
+No exact external classification rule existed in the original coordination-form protocol. A separate [prospective clarification](protocols/concurrent_defensive_coordination_form_v1_idsse_replication.md) therefore froze the seven governed matches, unchanged match-level Metrica logic, and an exhaustive seven-match status mapping before any protected coefficient. Because no pooled estimator was defined prospectively, none was introduced. The original protocol and configuration remained byte-identical.
+
 ## 2026-09-02 — Concurrent Defensive Coordination Form v1 Game 2 replication mixed
 
 After the heldout status mapping was frozen and hashed, the unchanged coordination-form protocol was executed on Metrica Sample Game 2. The sample contained 1,143 observations, 11,430 rank rows, and 123 unique anchors. The primary D2–D3-minus-D4–D7 estimate was 0.04587 with 95% paired block-bootstrap interval [-0.01056, 0.09260]; its 1.5 Hz sensitivity was 0.04643. All 2,000 bootstraps were valid, all 15 hard-QC assertions passed, and eight governed outputs reproduced byte-for-byte.

@@ -2,6 +2,9 @@
 data/*
 !data/.gitkeep
 
+# Licensed-provider observation-level derivatives (regenerate locally)
+outputs/concurrent_defensive_coordination_form_idsse_v1/observation_rows.parquet
+
 # Python
 __pycache__/
 *.py[cod]

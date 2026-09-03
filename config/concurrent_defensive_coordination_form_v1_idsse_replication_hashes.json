@@ -1,0 +1,8 @@
+{
+  "clarification": "docs/protocols/concurrent_defensive_coordination_form_v1_idsse_replication.md",
+  "clarification_sha256": "1d14f5c3e2a6436307aaca2dd7cb9c51f728de04235162cd0da8c309919ba510",
+  "configuration_sha256": "d3b8be7306ffb850aa246ffed2a2f69b71b5593e32a8578b28734a4a438bb3e3",
+  "frozen_before_idsse_result": true,
+  "protocol_sha256": "3172592f0890ea5c8030f4691b24d5a66fc0614d72c4cd60a6f7475934381032",
+  "starting_commit": "c22a9c2e6a8117dc3528e45207cddba5073ad1ef"
+}

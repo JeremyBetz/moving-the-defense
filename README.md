@@ -59,7 +59,11 @@ A newer experiment asks whether nearby movement within the defensive unit is spe
 
 ![Metrica Game 1 and Game 2 directional coordination-form rank profiles](docs/figures/readme/coordination_form_game1_game2.svg)
 
-Game 2 had a similar group-level point estimate, but substantially greater uncertainty and a less orderly individual-rank profile. The point direction replicated; the prospectively required interval support did not. This is **not full directional replication**.
+Game 2 had a similar group-level point estimate, but substantially greater uncertainty and a less orderly individual-rank profile. The point direction replicated; the prospectively required interval support did not within Metrica.
+
+The unchanged construct then passed its prospective external test across all seven governed IDSSE matches: every primary estimate was positive with an interval strictly above zero, and every 1.5 Hz sensitivity remained positive. The seven primary contrasts ranged from **0.03317 to 0.05165 m/s**. This is external support for the observational directional geometry—not for tactics, reaction, or attacker influence.
+
+![IDSSE external-replication primary contrasts and rank profiles](figures/concurrent_defensive_coordination_form_idsse_v1/external_replication.png)
 
 ## What the evidence does not mean
 
@@ -70,7 +74,7 @@ The current results do **not** establish:
 - pinning, dragging, tracking, covering, handoffs, or another tactical label;
 - space creation, tactical success, defensive quality, gravity, or off-ball value;
 - one universal response that every defense should produce; or
-- coordination-form validity beyond the two Metrica sample matches.
+- tactical or causal validity of the externally replicated coordination form.
 
 Defensive behavior is tactical and team-dependent. More defensive movement is not automatically better attacking play, and less movement is not automatically successful defending.
 
@@ -85,7 +89,7 @@ The project has retained negative and mixed findings rather than optimizing them
 - Constant-velocity continuation innovation did not validate a universal response-onset instant.
 - Opponent information added only a small, mixed predictive increment beyond the non-opponent baseline.
 - Opportunity Redistribution v1 was negative.
-- Game 2 directional coordination-form replication was mixed.
+- Game 2 directional coordination-form replication was mixed before the unchanged construct was supported in all seven governed IDSSE matches.
 
 Those results moved the project away from universal state labels and post-hoc episode selection toward continuous, fixed-window geometry with prospective controls and explicit inference limits.
 
@@ -143,7 +147,7 @@ Key result trails:
 
 - [Concurrent geometry: Game 1](docs/results/concurrent_attacker_defensive_geometry_game1_v1.md), [heldout Game 2](docs/results/concurrent_attacker_defensive_geometry_game2_v1.md), and [seven-match IDSSE replication](docs/results/concurrent_attacker_defensive_geometry_idsse_v1.md)
 - [Opportunity Redistribution v1 negative result](docs/results/opportunity_redistribution_game1_v1.md)
-- [Coordination Form v1: Game 1](docs/results/concurrent_defensive_coordination_form_game1_v1.md) and [Game 2 mixed replication](docs/results/concurrent_defensive_coordination_form_game2_v1.md)
+- [Coordination Form v1: Game 1](docs/results/concurrent_defensive_coordination_form_game1_v1.md), [Game 2 mixed replication](docs/results/concurrent_defensive_coordination_form_game2_v1.md), and [seven-match IDSSE external replication](docs/results/concurrent_defensive_coordination_form_idsse_v1.md)
 - [Final attacker-to-defender bridge result](docs/results/attacker_defender_bridge_game2_v1.md)
 - [Final spatial footprint result](docs/results/spatial_defensive_response_footprint_final_v1.md)
 - [Final directional response-form result](docs/results/local_defensive_response_form_final_v1.md)

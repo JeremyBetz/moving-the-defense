@@ -1,0 +1,13 @@
+{
+  "all_governed_outputs_byte_identical": true,
+  "comparisons": {
+    "exclusions.csv": true,
+    "final_results.json": true,
+    "manifest.json": true,
+    "observation_rows.parquet": true,
+    "provider_equivalence.csv": true,
+    "rank_coefficients.csv": true
+  },
+  "files_compared": 6,
+  "independent_output": "/tmp/concurrent_defensive_coordination_form_idsse_v1_rerun"
+}
