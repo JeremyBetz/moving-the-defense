@@ -65,6 +65,8 @@ The unchanged construct then passed its prospective external test across all sev
 
 ![IDSSE external-replication primary contrasts and rank profiles](figures/concurrent_defensive_coordination_form_idsse_v1/external_replication.png)
 
+A subsequent frozen expectation test asked whether defending-side identity within each match improved heldout prediction beyond attacker movement and compact spatial context. It did **not**: E2b worsened E1 macro MAE by 0.0616%, improved 0/7 matches, and failed both the paired interval and shifted-label gates. The formal result is **NOT SUPPORTED**. Spatial context itself produced a small 0.535% improvement over the movement baseline in all seven matches, but this does not establish a stable team signature or tactical style.
+
 ## What the evidence does not mean
 
 The current results do **not** establish:
@@ -90,6 +92,7 @@ The project has retained negative and mixed findings rather than optimizing them
 - Opponent information added only a small, mixed predictive increment beyond the non-opponent baseline.
 - Opportunity Redistribution v1 was negative.
 - Game 2 directional coordination-form replication was mixed before the unchanged construct was supported in all seven governed IDSSE matches.
+- The frozen match-side expectation increment was not supported: it worsened heldout prediction in all seven IDSSE matches.
 
 Those results moved the project away from universal state labels and post-hoc episode selection toward continuous, fixed-window geometry with prospective controls and explicit inference limits.
 
@@ -101,7 +104,7 @@ The project is moving from:
 
 toward:
 
-> **How does the form of that reorganization vary across defensive structures, teams, and contexts?**
+> **Which observable context explains variation in that geometry without prematurely treating match-side identity as stable tactical style?**
 
 A longer-term possibility is to judge observed reorganization relative to what a particular defense normally does in comparable situations. That contextual opponent model has not been built or validated.
 

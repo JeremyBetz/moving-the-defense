@@ -324,6 +324,18 @@ MPLCONFIGDIR=/tmp/mtd-mpl .venv/bin/python src/concurrent_defensive_coordination
 
 The [result report](results/concurrent_defensive_coordination_form_idsse_v1.md) and `outputs/concurrent_defensive_coordination_form_idsse_v1/` record the supported external result, provider-equivalence gates, exclusions, rank coefficients, manifest, hashes, and reproduction comparison. The 89,719,630-byte observation-level Parquet is intentionally not redistributed: it contains provider-linked identifiers, anchor times, distances, and derived movement measurements. A licensed-data holder can regenerate it deterministically; its authoritative SHA-256, `8a580a2d079fa248a1e8e64578b975b52e9fe790c595a6d16e37811c4a43e8d0`, remains in `governed_hashes.json`. Compact aggregate outputs are sufficient to inspect the reported result. The execution uses only the seven governed IDSSE matches and does not inspect Metrica Sample Game 3.
 
+## Defensive Response Expectation v1
+
+The [frozen protocol](protocols/defensive_response_expectation_v1.md), configuration, and [result report](results/defensive_response_expectation_v1.md) govern the seven-match execution. It requires the closed local IDSSE coordination-form observation ledger; that provider-linked input remains ignored. Reproduce the complete execution and independent comparison with:
+
+```bash
+MPLCONFIGDIR=/tmp/mtd-mpl OPENBLAS_NUM_THREADS=1 .venv/bin/python src/defensive_response_expectation_v1.py --output outputs/defensive_response_expectation_v1
+MPLCONFIGDIR=/tmp/mtd-mpl OPENBLAS_NUM_THREADS=1 .venv/bin/python src/defensive_response_expectation_v1.py --output outputs/.defensive_response_expectation_v1_rerun --clean-output
+.venv/bin/python src/defensive_response_expectation_v1.py --output outputs/defensive_response_expectation_v1 --verify-against outputs/.defensive_response_expectation_v1_rerun
+```
+
+The ten compact governed outputs reproduce byte-for-byte. `prediction_source_rows.parquet` and `prediction_rows.parquet` remain local-only; compact errors, bootstrap/control results, provenance, and hashes are publishable. The execution does not access Metrica Sample Game 3.
+
 ## Known reproducibility limitations
 
 - There is no one-command end-to-end workflow or continuous integration check.

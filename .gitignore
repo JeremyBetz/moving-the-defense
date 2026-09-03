@@ -4,6 +4,9 @@ data/*
 
 # Licensed-provider observation-level derivatives (regenerate locally)
 outputs/concurrent_defensive_coordination_form_idsse_v1/observation_rows.parquet
+outputs/defensive_response_expectation_v1/prediction_source_rows.parquet
+outputs/defensive_response_expectation_v1/prediction_rows.parquet
+outputs/.defensive_response_expectation_v1_rerun/
 
 # Python
 __pycache__/

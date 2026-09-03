@@ -1,0 +1,10 @@
+{
+  "bootstrap_valid": true,
+  "common_prediction_rows": true,
+  "complete_features": true,
+  "each_row_predicted_once_per_model": true,
+  "five_folds_each_match": true,
+  "no_game3_access": true,
+  "no_interpolation": true,
+  "protocol_unchanged": true
+}

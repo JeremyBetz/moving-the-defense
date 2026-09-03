@@ -1,0 +1,317 @@
+{
+  "bootstrap": {
+    "absolute_improvement_mps": {
+      "ci_high": -0.00012248156911340345,
+      "ci_low": -0.0007849205550792243
+    },
+    "relative_improvement_percent": {
+      "ci_high": -0.0167046527478524,
+      "ci_low": -0.1093788769888583
+    },
+    "valid_replicates": 2000
+  },
+  "classification_gates": {
+    "at_least_four_matches": false,
+    "at_least_six_matches": false,
+    "bootstrap_valid": true,
+    "material_3_percent": false,
+    "paired_ci_strictly_positive": false,
+    "positive_macro_improvement": false,
+    "shuffle_control_pass": false
+  },
+  "comparisons": {
+    "E1_vs_E0": {
+      "absolute_improvement_mps": 0.003901715664951455,
+      "baseline": "E0",
+      "matches_improved": 7,
+      "model": "E1",
+      "per_match_improvement_mps": {
+        "J03WMX": 0.0028298613943751327,
+        "J03WN1": 0.003300992334381303,
+        "J03WOH": 0.0052213256218159865,
+        "J03WOY": 0.003333729132998786,
+        "J03WPY": 0.004340177348250429,
+        "J03WQQ": 0.005202927150728565,
+        "J03WR9": 0.0030829966721106494
+      },
+      "relative_improvement_percent": 0.5350224909990807
+    },
+    "E2a_vs_E1": {
+      "absolute_improvement_mps": -0.0002870780227621772,
+      "baseline": "E1",
+      "matches_improved": 1,
+      "model": "E2a",
+      "per_match_improvement_mps": {
+        "J03WMX": 5.827448774864408e-06,
+        "J03WN1": -0.0006420862938083527,
+        "J03WOH": -0.00018641507795857937,
+        "J03WOY": -0.00010446937081665109,
+        "J03WPY": -0.0005009435837035614,
+        "J03WQQ": -0.00038221600191246097,
+        "J03WR9": -0.0001992432799106103
+      },
+      "relative_improvement_percent": -0.0395773015023046
+    },
+    "E2b_vs_E1": {
+      "absolute_improvement_mps": -0.0004467569405467442,
+      "baseline": "E1",
+      "matches_improved": 0,
+      "model": "E2b",
+      "per_match_improvement_mps": {
+        "J03WMX": -0.00014733160859381478,
+        "J03WN1": -0.0008779196076504903,
+        "J03WOH": -0.00019028532124498732,
+        "J03WOY": -8.423026598647354e-06,
+        "J03WPY": -0.0005720330217022784,
+        "J03WQQ": -0.0007971317038008019,
+        "J03WR9": -0.0005341742942372996
+      },
+      "relative_improvement_percent": -0.06159104052668435
+    }
+  },
+  "direction_registry": {
+    "J03WMX": {
+      "P1|DFL-CLU-000008": -1.0,
+      "P1|DFL-CLU-00000G": 1.0,
+      "P2|DFL-CLU-000008": 1.0,
+      "P2|DFL-CLU-00000G": -1.0
+    },
+    "J03WN1": {
+      "P1|DFL-CLU-00000B": 1.0,
+      "P1|DFL-CLU-00000S": -1.0,
+      "P2|DFL-CLU-00000B": -1.0,
+      "P2|DFL-CLU-00000S": 1.0
+    },
+    "J03WOH": {
+      "P1|DFL-CLU-00000P": -1.0,
+      "P1|DFL-CLU-000011": 1.0,
+      "P2|DFL-CLU-00000P": 1.0,
+      "P2|DFL-CLU-000011": -1.0
+    },
+    "J03WOY": {
+      "P1|DFL-CLU-00000P": -1.0,
+      "P1|DFL-CLU-00000Q": 1.0,
+      "P2|DFL-CLU-00000P": 1.0,
+      "P2|DFL-CLU-00000Q": -1.0
+    },
+    "J03WPY": {
+      "P1|DFL-CLU-000005": 1.0,
+      "P1|DFL-CLU-00000P": -1.0,
+      "P2|DFL-CLU-000005": -1.0,
+      "P2|DFL-CLU-00000P": 1.0
+    },
+    "J03WQQ": {
+      "P1|DFL-CLU-00000H": 1.0,
+      "P1|DFL-CLU-00000P": -1.0,
+      "P2|DFL-CLU-00000H": -1.0,
+      "P2|DFL-CLU-00000P": 1.0
+    },
+    "J03WR9": {
+      "P1|DFL-CLU-00000I": -1.0,
+      "P1|DFL-CLU-00000P": 1.0,
+      "P2|DFL-CLU-00000I": 1.0,
+      "P2|DFL-CLU-00000P": -1.0
+    }
+  },
+  "environment": {
+    "numpy": "2.5.2",
+    "pandas": "2.3.3",
+    "polars": "1.44.1",
+    "python": "3.13.15"
+  },
+  "frozen_hashes": {
+    "config/defensive_response_expectation_v1.json": "089bb247af30d8a76751163cb8f7d83e6a5fba9dd0af478d6368a6275f67f7d3",
+    "docs/protocols/defensive_response_expectation_v1.md": "dd4d9bec9309a6679230ba7f90a693091c221ea3585e3c1ec04112f3f65ac06f"
+  },
+  "hard_qc": {
+    "bootstrap_valid": true,
+    "common_prediction_rows": true,
+    "complete_features": true,
+    "each_row_predicted_once_per_model": true,
+    "five_folds_each_match": true,
+    "no_game3_access": true,
+    "no_interpolation": true,
+    "protocol_unchanged": true
+  },
+  "input": {
+    "path": "outputs/concurrent_defensive_coordination_form_idsse_v1/observation_rows.parquet",
+    "publication": "local_only",
+    "sha256": "8a580a2d079fa248a1e8e64578b975b52e9fe790c595a6d16e37811c4a43e8d0"
+  },
+  "performance": {
+    "E0": {
+      "macro_mae_mps": 0.7292619900269125,
+      "rmse_mps": 0.9879635912783812,
+      "rows": 73552,
+      "weighted_mae_mps": 0.7292228867383701
+    },
+    "E1": {
+      "macro_mae_mps": 0.725360274361961,
+      "rmse_mps": 0.9811559757320197,
+      "rows": 73552,
+      "weighted_mae_mps": 0.7253035199323238
+    },
+    "E2a": {
+      "macro_mae_mps": 0.7256473523847232,
+      "rmse_mps": 0.9812940655025894,
+      "rows": 73552,
+      "weighted_mae_mps": 0.7255547372466973
+    },
+    "E2b": {
+      "macro_mae_mps": 0.7258070313025078,
+      "rmse_mps": 0.9814279311773685,
+      "rows": 73552,
+      "weighted_mae_mps": 0.7257012607905843
+    }
+  },
+  "repeated_team": {
+    "folds": [
+      {
+        "heldout_match": "J03WOH",
+        "mae_mps": 0.7561527646359053,
+        "rows": 5140,
+        "team_intercept": 0.0075370236882457845,
+        "team_path_deviation": 0.012180140958633245
+      },
+      {
+        "heldout_match": "J03WOY",
+        "mae_mps": 0.7166466582993393,
+        "rows": 5908,
+        "team_intercept": 0.008489505345192948,
+        "team_path_deviation": 0.01032870773442769
+      },
+      {
+        "heldout_match": "J03WPY",
+        "mae_mps": 0.7037894639108278,
+        "rows": 4896,
+        "team_intercept": 0.018826112640583977,
+        "team_path_deviation": 0.0188108257274574
+      },
+      {
+        "heldout_match": "J03WQQ",
+        "mae_mps": 0.7676842777591655,
+        "rows": 6391,
+        "team_intercept": 0.009799450224841254,
+        "team_path_deviation": 0.015199716333919039
+      },
+      {
+        "heldout_match": "J03WR9",
+        "mae_mps": 0.7727845775792134,
+        "rows": 4588,
+        "team_intercept": 0.014572815337815265,
+        "team_path_deviation": 0.01662010859178893
+      }
+    ],
+    "interpretation": "directionally consistent",
+    "team_id": "DFL-CLU-00000P"
+  },
+  "sample": [
+    {
+      "defending_side_counts": {
+        "DFL-CLU-000008": 7261,
+        "DFL-CLU-00000G": 5074
+      },
+      "eligible_anchors": 12335,
+      "folds": 5,
+      "heldout_observations": 12335,
+      "match_id": "J03WMX",
+      "period1": 6380,
+      "period2": 5955,
+      "retained_fraction": null
+    },
+    {
+      "defending_side_counts": {
+        "DFL-CLU-00000B": 300,
+        "DFL-CLU-00000S": 4574
+      },
+      "eligible_anchors": 4874,
+      "folds": 5,
+      "heldout_observations": 4574,
+      "match_id": "J03WN1",
+      "period1": 2644,
+      "period2": 2230,
+      "retained_fraction": null
+    },
+    {
+      "defending_side_counts": {
+        "DFL-CLU-00000P": 5140,
+        "DFL-CLU-000011": 6108
+      },
+      "eligible_anchors": 11248,
+      "folds": 5,
+      "heldout_observations": 11248,
+      "match_id": "J03WOH",
+      "period1": 5820,
+      "period2": 5428,
+      "retained_fraction": null
+    },
+    {
+      "defending_side_counts": {
+        "DFL-CLU-00000P": 5908,
+        "DFL-CLU-00000Q": 5611
+      },
+      "eligible_anchors": 11519,
+      "folds": 5,
+      "heldout_observations": 11519,
+      "match_id": "J03WOY",
+      "period1": 5508,
+      "period2": 6011,
+      "retained_fraction": null
+    },
+    {
+      "defending_side_counts": {
+        "DFL-CLU-000005": 7501,
+        "DFL-CLU-00000P": 4896
+      },
+      "eligible_anchors": 12397,
+      "folds": 5,
+      "heldout_observations": 12397,
+      "match_id": "J03WPY",
+      "period1": 6190,
+      "period2": 6207,
+      "retained_fraction": null
+    },
+    {
+      "defending_side_counts": {
+        "DFL-CLU-00000H": 3570,
+        "DFL-CLU-00000P": 6391
+      },
+      "eligible_anchors": 9961,
+      "folds": 5,
+      "heldout_observations": 9961,
+      "match_id": "J03WQQ",
+      "period1": 6130,
+      "period2": 3831,
+      "retained_fraction": null
+    },
+    {
+      "defending_side_counts": {
+        "DFL-CLU-00000I": 6930,
+        "DFL-CLU-00000P": 4588
+      },
+      "eligible_anchors": 11518,
+      "folds": 5,
+      "heldout_observations": 11518,
+      "match_id": "J03WR9",
+      "period1": 5830,
+      "period2": 5688,
+      "retained_fraction": null
+    }
+  ],
+  "secondary_forward": {
+    "E2b_vs_E1_relative_improvement_percent": -0.06618731560022305,
+    "macro_mae_mps": {
+      "E1": 0.7195516800801087,
+      "E2b": 0.72002793202151
+    },
+    "valid": true
+  },
+  "shifted_label_control": {
+    "draw_attempts": 238,
+    "observed_relative_improvement_percent": -0.06159104052668435,
+    "p95_relative_improvement_percent": -0.016280404076670193,
+    "passed": false,
+    "replicates": 200
+  },
+  "status": "NOT SUPPORTED"
+}

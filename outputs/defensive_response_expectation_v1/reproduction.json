@@ -1,0 +1,18 @@
+{
+  "all_governed_outputs_byte_identical": true,
+  "comparisons": {
+    "bootstrap_results.csv": true,
+    "exclusions.csv": true,
+    "fold_ledger.json": true,
+    "hard_qc.json": true,
+    "heldout_errors.csv": true,
+    "manifest.json": true,
+    "model_comparisons.json": true,
+    "sample_ledger.csv": true,
+    "secondary_descriptions.csv": true,
+    "shuffle_control.csv": true
+  },
+  "files_compared": 10,
+  "independent_rerun_directory": "outputs/.defensive_response_expectation_v1_rerun",
+  "rerun_directory_committed": false
+}

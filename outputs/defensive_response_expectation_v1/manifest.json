@@ -1,0 +1,10 @@
+{
+  "frozen_hashes": {
+    "config/defensive_response_expectation_v1.json": "089bb247af30d8a76751163cb8f7d83e6a5fba9dd0af478d6368a6275f67f7d3",
+    "docs/protocols/defensive_response_expectation_v1.md": "dd4d9bec9309a6679230ba7f90a693091c221ea3585e3c1ec04112f3f65ac06f"
+  },
+  "provider_linked_observation_tables": "local_only",
+  "source": "src/defensive_response_expectation_v1.py",
+  "source_sha256": "3a3251c9700625906094b4f6132cf3988c7d806033146dc4b78853b208757454",
+  "starting_commit": "1bc9d499ced4e3e48c54950202fcc60b19ca708a"
+}

@@ -30,6 +30,8 @@ showed reproducible distributional and contextual structure under frozen activit
 
 The result does not establish an activity-free effect, tactical response, reconfiguration, opponent response, defensive error, responsibility transfer, gravity, or value.
 
+The later seven-match Defensive Response Expectation v1 test did not support a material match-specific defending-side increment beyond attacker movement and the frozen compact spatial context. This narrows rather than resolves the contextual-expectation rung: observable context remains predictively useful, but stable team identity and tactical style are not established.
+
 ## Current Methodological Frontier
 
 > **How is the subsequent defensive response spatially distributed across the defensive block relative to the moving attacker?**

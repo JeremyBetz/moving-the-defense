@@ -1,0 +1,377 @@
+{
+  "0": {
+    "embargoed_training_rows": 680,
+    "side_support": {
+      "J03WMX|DFL-CLU-000008": {
+        "supported": true,
+        "test": 1720,
+        "train": 5481
+      },
+      "J03WMX|DFL-CLU-00000G": {
+        "supported": true,
+        "test": 910,
+        "train": 4094
+      },
+      "J03WN1|DFL-CLU-00000B": {
+        "supported": false,
+        "test": 300,
+        "train": 0
+      },
+      "J03WN1|DFL-CLU-00000S": {
+        "supported": true,
+        "test": 1165,
+        "train": 3409
+      },
+      "J03WOH|DFL-CLU-00000P": {
+        "supported": true,
+        "test": 840,
+        "train": 4260
+      },
+      "J03WOH|DFL-CLU-000011": {
+        "supported": true,
+        "test": 1370,
+        "train": 4658
+      },
+      "J03WOY|DFL-CLU-00000P": {
+        "supported": true,
+        "test": 990,
+        "train": 4898
+      },
+      "J03WOY|DFL-CLU-00000Q": {
+        "supported": true,
+        "test": 1360,
+        "train": 4251
+      },
+      "J03WPY|DFL-CLU-000005": {
+        "supported": true,
+        "test": 1510,
+        "train": 5901
+      },
+      "J03WPY|DFL-CLU-00000P": {
+        "supported": true,
+        "test": 1220,
+        "train": 3636
+      },
+      "J03WQQ|DFL-CLU-00000H": {
+        "supported": true,
+        "test": 1230,
+        "train": 2220
+      },
+      "J03WQQ|DFL-CLU-00000P": {
+        "supported": true,
+        "test": 1280,
+        "train": 5081
+      },
+      "J03WR9|DFL-CLU-00000I": {
+        "supported": true,
+        "test": 1150,
+        "train": 5760
+      },
+      "J03WR9|DFL-CLU-00000P": {
+        "supported": true,
+        "test": 1260,
+        "train": 3218
+      }
+    }
+  },
+  "1": {
+    "embargoed_training_rows": 1549,
+    "side_support": {
+      "J03WMX|DFL-CLU-000008": {
+        "supported": true,
+        "test": 1260,
+        "train": 5761
+      },
+      "J03WMX|DFL-CLU-00000G": {
+        "supported": true,
+        "test": 1380,
+        "train": 3644
+      },
+      "J03WN1|DFL-CLU-00000B": {
+        "supported": false,
+        "test": 0,
+        "train": 300
+      },
+      "J03WN1|DFL-CLU-00000S": {
+        "supported": true,
+        "test": 891,
+        "train": 3674
+      },
+      "J03WOH|DFL-CLU-00000P": {
+        "supported": true,
+        "test": 970,
+        "train": 4010
+      },
+      "J03WOH|DFL-CLU-000011": {
+        "supported": true,
+        "test": 1410,
+        "train": 4608
+      },
+      "J03WOY|DFL-CLU-00000P": {
+        "supported": true,
+        "test": 1268,
+        "train": 4590
+      },
+      "J03WOY|DFL-CLU-00000Q": {
+        "supported": true,
+        "test": 970,
+        "train": 4521
+      },
+      "J03WPY|DFL-CLU-000005": {
+        "supported": true,
+        "test": 1550,
+        "train": 5731
+      },
+      "J03WPY|DFL-CLU-00000P": {
+        "supported": true,
+        "test": 960,
+        "train": 3866
+      },
+      "J03WQQ|DFL-CLU-00000H": {
+        "supported": true,
+        "test": 1310,
+        "train": 2110
+      },
+      "J03WQQ|DFL-CLU-00000P": {
+        "supported": true,
+        "test": 1300,
+        "train": 4981
+      },
+      "J03WR9|DFL-CLU-00000I": {
+        "supported": true,
+        "test": 1760,
+        "train": 5000
+      },
+      "J03WR9|DFL-CLU-00000P": {
+        "supported": true,
+        "test": 800,
+        "train": 3678
+      }
+    }
+  },
+  "2": {
+    "embargoed_training_rows": 1633,
+    "side_support": {
+      "J03WMX|DFL-CLU-000008": {
+        "supported": true,
+        "test": 1760,
+        "train": 5431
+      },
+      "J03WMX|DFL-CLU-00000G": {
+        "supported": true,
+        "test": 830,
+        "train": 4024
+      },
+      "J03WN1|DFL-CLU-00000B": {
+        "supported": false,
+        "test": 0,
+        "train": 300
+      },
+      "J03WN1|DFL-CLU-00000S": {
+        "supported": true,
+        "test": 729,
+        "train": 3800
+      },
+      "J03WOH|DFL-CLU-00000P": {
+        "supported": true,
+        "test": 1510,
+        "train": 3510
+      },
+      "J03WOH|DFL-CLU-000011": {
+        "supported": true,
+        "test": 910,
+        "train": 5048
+      },
+      "J03WOY|DFL-CLU-00000P": {
+        "supported": true,
+        "test": 980,
+        "train": 4700
+      },
+      "J03WOY|DFL-CLU-00000Q": {
+        "supported": true,
+        "test": 1300,
+        "train": 4261
+      },
+      "J03WPY|DFL-CLU-000005": {
+        "supported": true,
+        "test": 1400,
+        "train": 6081
+      },
+      "J03WPY|DFL-CLU-00000P": {
+        "supported": true,
+        "test": 1170,
+        "train": 3486
+      },
+      "J03WQQ|DFL-CLU-00000H": {
+        "supported": true,
+        "test": 830,
+        "train": 2570
+      },
+      "J03WQQ|DFL-CLU-00000P": {
+        "supported": true,
+        "test": 1540,
+        "train": 4791
+      },
+      "J03WR9|DFL-CLU-00000I": {
+        "supported": true,
+        "test": 1160,
+        "train": 5580
+      },
+      "J03WR9|DFL-CLU-00000P": {
+        "supported": true,
+        "test": 990,
+        "train": 3528
+      }
+    }
+  },
+  "3": {
+    "embargoed_training_rows": 1602,
+    "side_support": {
+      "J03WMX|DFL-CLU-000008": {
+        "supported": true,
+        "test": 986,
+        "train": 6165
+      },
+      "J03WMX|DFL-CLU-00000G": {
+        "supported": true,
+        "test": 1254,
+        "train": 3680
+      },
+      "J03WN1|DFL-CLU-00000B": {
+        "supported": false,
+        "test": 0,
+        "train": 300
+      },
+      "J03WN1|DFL-CLU-00000S": {
+        "supported": true,
+        "test": 954,
+        "train": 3512
+      },
+      "J03WOH|DFL-CLU-00000P": {
+        "supported": true,
+        "test": 1000,
+        "train": 4070
+      },
+      "J03WOH|DFL-CLU-000011": {
+        "supported": true,
+        "test": 1084,
+        "train": 4814
+      },
+      "J03WOY|DFL-CLU-00000P": {
+        "supported": true,
+        "test": 1310,
+        "train": 4438
+      },
+      "J03WOY|DFL-CLU-00000Q": {
+        "supported": true,
+        "test": 1040,
+        "train": 4461
+      },
+      "J03WPY|DFL-CLU-000005": {
+        "supported": true,
+        "test": 1731,
+        "train": 5580
+      },
+      "J03WPY|DFL-CLU-00000P": {
+        "supported": true,
+        "test": 660,
+        "train": 4156
+      },
+      "J03WQQ|DFL-CLU-00000H": {
+        "supported": true,
+        "test": 200,
+        "train": 3300
+      },
+      "J03WQQ|DFL-CLU-00000P": {
+        "supported": true,
+        "test": 1200,
+        "train": 5077
+      },
+      "J03WR9|DFL-CLU-00000I": {
+        "supported": true,
+        "test": 1530,
+        "train": 5210
+      },
+      "J03WR9|DFL-CLU-00000P": {
+        "supported": true,
+        "test": 760,
+        "train": 3778
+      }
+    }
+  },
+  "4": {
+    "embargoed_training_rows": 615,
+    "side_support": {
+      "J03WMX|DFL-CLU-000008": {
+        "supported": true,
+        "test": 1535,
+        "train": 5656
+      },
+      "J03WMX|DFL-CLU-00000G": {
+        "supported": true,
+        "test": 700,
+        "train": 4344
+      },
+      "J03WN1|DFL-CLU-00000B": {
+        "supported": false,
+        "test": 0,
+        "train": 300
+      },
+      "J03WN1|DFL-CLU-00000S": {
+        "supported": true,
+        "test": 835,
+        "train": 3703
+      },
+      "J03WOH|DFL-CLU-00000P": {
+        "supported": true,
+        "test": 820,
+        "train": 4280
+      },
+      "J03WOH|DFL-CLU-000011": {
+        "supported": true,
+        "test": 1334,
+        "train": 4704
+      },
+      "J03WOY|DFL-CLU-00000P": {
+        "supported": true,
+        "test": 1360,
+        "train": 4398
+      },
+      "J03WOY|DFL-CLU-00000Q": {
+        "supported": true,
+        "test": 941,
+        "train": 4670
+      },
+      "J03WPY|DFL-CLU-000005": {
+        "supported": true,
+        "test": 1310,
+        "train": 6051
+      },
+      "J03WPY|DFL-CLU-00000P": {
+        "supported": true,
+        "test": 886,
+        "train": 4010
+      },
+      "J03WQQ|DFL-CLU-00000H": {
+        "supported": false,
+        "test": 0,
+        "train": 3570
+      },
+      "J03WQQ|DFL-CLU-00000P": {
+        "supported": true,
+        "test": 1071,
+        "train": 5311
+      },
+      "J03WR9|DFL-CLU-00000I": {
+        "supported": true,
+        "test": 1330,
+        "train": 5550
+      },
+      "J03WR9|DFL-CLU-00000P": {
+        "supported": true,
+        "test": 778,
+        "train": 3790
+      }
+    }
+  }
+}

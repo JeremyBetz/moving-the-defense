@@ -1,5 +1,11 @@
 # Research Log
 
+## 2026-09-03 — Defensive Response Expectation v1 not supported
+
+The frozen seven-match IDSSE prediction ladder executed without scientific changes. E0, E1, E2a, and E2b macro heldout MAEs were 0.729262, 0.725360, 0.725647, and 0.725807 m/s. E1's compact spatial context improved E0 by 0.5350% in all seven matches, but the primary match-side E2b increment worsened E1 by 0.000447 m/s (−0.0616%) and improved zero matches. The paired 95% improvement interval was [−0.000785, −0.000122] m/s, and the observed −0.0616% change did not exceed the shifted-label 95th percentile of −0.0163%. The exact frozen status is **NOT SUPPORTED**.
+
+The expanding early-to-later check also favored E1. The sole repeated team had positive secondary slope deviations in five leave-one-match-out folds, but that nonclassifying observation cannot rescue the primary result or establish stable team identity. Ten compact governed outputs reproduced byte-for-byte; provider-linked prediction tables remained local-only. Game 3 remained untouched.
+
 ## 2026-09-03 — Defensive Response Expectation v1 frozen before results
 
 The next prediction design was frozen without reading any protected response outcome. A metadata-only schedule audit found 10 unique defending-team IDs across 14 match-side appearances: `DFL-CLU-00000P` appears in five matches, while the other nine teams appear once. The primary claim is therefore restricted prospectively to a repeatable **match-specific** defensive-response component. A nonclassifying leave-one-match-out check is reserved for the sole repeated team; stable team identity or tactical style cannot be classified.
