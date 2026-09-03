@@ -89,6 +89,8 @@ The [local defensive response form v1 protocol](protocols/local_defensive_respon
 
 The [Concurrent Defensive Coordination Form v1 Game 1 execution](results/concurrent_defensive_coordination_form_game1_v1.md) classified **COHERENT**. In the prospectively governed [Game 2 replication](results/concurrent_defensive_coordination_form_game2_v1.md), the primary and 1.5 Hz point directions remained positive, but the primary interval crossed zero; its heldout status is **MIXED**. The unchanged construct subsequently achieved **SUPPORTED** [external replication across all seven governed IDSSE matches](results/concurrent_defensive_coordination_form_idsse_v1.md): all seven primary intervals were strictly positive and all 1.5 Hz directions were retained. No pooled estimator or team-response taxonomy was introduced. The interpretation remains geometric and observational.
 
+The next design is now frozen, not executed: [Defensive Response Expectation v1](protocols/defensive_response_expectation_v1.md) asks whether compact movement/spatial context predicts the observed local-versus-middle directional response, and whether defending-side identity adds material heldout information. Because only one team repeats across matches, the primary claim is explicitly match-specific; the sole repeated-team check is secondary and cannot establish general team style.
+
 ## October 1, 2026 constraint
 
 The [2027 MIT Sloan Sports Analytics Conference Research Paper Competition](https://www.sloansportsconference.com/research-paper-competition) lists **October 1, 2026, 11:59 p.m. Eastern** as the round-one abstract deadline. The abstract is limited to actual evidence; the deadline is a communication constraint, not a reason to relax scientific gates.

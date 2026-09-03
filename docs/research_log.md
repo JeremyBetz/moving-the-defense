@@ -1,5 +1,11 @@
 # Research Log
 
+## 2026-09-03 — Defensive Response Expectation v1 frozen before results
+
+The next prediction design was frozen without reading any protected response outcome. A metadata-only schedule audit found 10 unique defending-team IDs across 14 match-side appearances: `DFL-CLU-00000P` appears in five matches, while the other nine teams appear once. The primary claim is therefore restricted prospectively to a repeatable **match-specific** defensive-response component. A nonclassifying leave-one-match-out check is reserved for the sole repeated team; stable team identity or tactical style cannot be classified.
+
+The anchor-level target is observed mean D2–D3 minus mean D4–D7 AARD velocity, not a fitted coefficient. E0 contains compact attacker movement; E1 adds prespecified distance, prior defensive motion, unit shape, attacker-to-unit, and ball-to-unit geometry; E2b adds within-match defending-side intercept and attacker-path-slope deviations. Five contiguous temporally blocked folds, a one-block embargo, 3% macro-MAE materiality, 6/7 match-direction requirement, paired hierarchical bootstrap, and shifted-label control are frozen. Synthetic design checks passed 5/5. No E0/E1/E2 prediction, empirical residual, error, coefficient, or status was computed, and Game 3 remained untouched.
+
 ## 2026-09-02 — Concurrent Defensive Coordination Form externally supported across IDSSE
 
 Before any protected IDSSE coefficient was computed, a prospective clarification froze match-level and seven-match status rules because no exact external rule existed. The unchanged construct then passed every provider-equivalence gate and executed on the seven governed IDSSE matches. All seven primary D2–D3-minus-D4–D7 estimates were positive, ranged from 0.03317 to 0.05165 m/s, had 95% intervals strictly above zero, and retained positive 1.5 Hz sensitivity directions. Every match was therefore `SUPPORTED`, producing **IDSSE COORDINATION FORM EXTERNAL REPLICATION SUPPORTED** without a pooled estimator.

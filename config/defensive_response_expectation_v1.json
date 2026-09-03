@@ -1,0 +1,155 @@
+{
+  "name": "Defensive Response Expectation v1",
+  "status": "FROZEN_BEFORE_PROTECTED_RESULTS",
+  "starting_commit": "7cba86a9bb05e513f357761bde149cb19f8dae0b",
+  "data": {
+    "matches": ["J03WMX", "J03WN1", "J03WOH", "J03WOY", "J03WPY", "J03WQQ", "J03WR9"],
+    "provider": "IDSSE/Sportec via validated Kloppy adapter",
+    "game3": "prohibited",
+    "new_datasets": "prohibited"
+  },
+  "outcome": {
+    "unit": "one eligible focal-attacker anchor",
+    "formula": "mean(AARD_vel_D2,D3)-mean(AARD_vel_D4,D5,D6,D7)",
+    "units": "m/s",
+    "filter": "fourth-order zero-phase Butterworth 1.0 Hz",
+    "complete_rank_vector_required": true,
+    "estimated_regression_coefficient_is_not_target": true
+  },
+  "eligibility": {
+    "inherit_coordination_form_v1": true,
+    "require_ball_observed_at_anchor_for_E1": true,
+    "common_rows_for_E0_E1_E2": true,
+    "no_interpolation": true,
+    "minimum_match_rows": 1000,
+    "minimum_team_fold_training_rows": 100,
+    "minimum_team_fold_test_rows": 25,
+    "minimum_retained_fraction_of_outcome_eligible_rows": 0.9
+  },
+  "features": {
+    "common_nuisance": [
+      "six treatment-coded match indicators",
+      "seven match-specific period-2 indicators"
+    ],
+    "E0": [
+      "concurrent_attacker_path_m",
+      "prior_attacker_path_m"
+    ],
+    "E1_additions": [
+      "mean_D2_D3_anchor_distance_m",
+      "mean_D4_D7_anchor_distance_m",
+      "prior_mean_D2_D3_focal_relative_path_m",
+      "prior_mean_D4_D7_focal_relative_path_m",
+      "prior_defensive_centroid_path_m",
+      "prior_all_defenders_mean_absolute_path_m",
+      "attacker_minus_defensive_centroid_longitudinal_m",
+      "attacker_minus_defensive_centroid_absolute_lateral_m",
+      "defensive_unit_depth_span_m",
+      "defensive_unit_width_span_m",
+      "ball_minus_defensive_centroid_longitudinal_m",
+      "ball_minus_defensive_centroid_absolute_lateral_m"
+    ],
+    "E2a_additions": ["seven within-match defending-side intercept indicators"],
+    "E2b_additions": [
+      "E2a additions",
+      "seven within-match defending-side by concurrent_attacker_path_m interactions"
+    ],
+    "primary_team_model": "E2b",
+    "continuous_scaling": "training-fold mean and population SD ddof=0",
+    "categorical_coding": "lexical reference/treatment coding",
+    "zero_variance_training_feature": "drop identically from all models in that fold and record"
+  },
+  "coordinates": {
+    "units": "metres",
+    "longitudinal_sign": "positive in the attacking team's goalward direction using the governed period direction registry",
+    "lateral": "absolute offset; no left/right tactical semantics",
+    "width": "max_y-minus-min_y",
+    "depth": "max_x-minus-min_x"
+  },
+  "estimator": {
+    "family": "ordinary least squares",
+    "solver": "numpy.linalg.lstsq",
+    "regularization": "none",
+    "hyperparameter_tuning": "none",
+    "full_training_design_rank_required": true
+  },
+  "validation": {
+    "primary": {
+      "name": "five-fold leave-contiguous-block-group-out within match",
+      "block_seconds": 60,
+      "fold_assignment": "sort unique period/block keys within match and assign floor(5*i/B), capped at 4",
+      "training": "other four fold groups pooled across matches",
+      "embargo": "exclude training blocks immediately adjacent in the same period to each test interval",
+      "common_prediction_rows": true,
+      "claim_level": "repeatable match-specific defensive-response geometry"
+    },
+    "secondary_forward": {
+      "name": "expanding early-to-later folds",
+      "test_folds": [1, 2, 3, 4],
+      "training": "strictly earlier fold groups",
+      "embargo": "one adjacent 60-second block",
+      "classifying": false
+    },
+    "repeated_team": {
+      "team_id": "DFL-CLU-00000P",
+      "matches": ["J03WOH", "J03WOY", "J03WPY", "J03WQQ", "J03WR9"],
+      "design": "leave one match out; estimate the repeated-team intercept/path deviation on the other four matches and evaluate only that team's rows in the fifth",
+      "classifying": false,
+      "reason": "only one team repeats"
+    }
+  },
+  "metrics": {
+    "primary": "equal-match macro heldout MAE in m/s",
+    "secondary": ["observation-weighted MAE_mps", "match MAE_mps", "RMSE_mps"],
+    "relative_improvement_percent": "100*(MAE_baseline-MAE_model)/MAE_baseline",
+    "primary_comparisons": ["E1_vs_E0", "E2b_vs_E1"],
+    "classification_comparison": "E2b_vs_E1"
+  },
+  "materiality": {
+    "relative_macro_MAE_improvement_percent": 3.0,
+    "minimum_positive_matches": 6,
+    "total_matches": 7,
+    "justification": "matches the project's prior frozen adjacent-step materiality scale and prevents tiny capacity gains from being called substantive"
+  },
+  "uncertainty": {
+    "replicates": 2000,
+    "seed": 20260903,
+    "resampling": "resample matches, then heldout match-period 60-second blocks; preserve all anchor-linked rows",
+    "interval": "two-sided 95% percentile",
+    "minimum_valid": 1900,
+    "paired_errors": true
+  },
+  "controls": {
+    "E2a_team_intercepts_only": "descriptive mechanism comparator",
+    "team_label_control": {
+      "replicates": 200,
+      "seed": 20260904,
+      "method": "within each match-period, circularly shift defending-side labels by nonzero 60-second-block offsets; preserve anchors and simultaneous attackers",
+      "pass": "observed E2b-vs-E1 relative improvement exceeds the 95th percentile of shuffled-label improvements"
+    }
+  },
+  "classification": {
+    "INVALID": "hard QC or fold validity failure, fewer than 1900 valid uncertainty replicates, any match below 1000 common rows, common-row retention below 90%, or rank-deficient frozen design",
+    "NOT_SUPPORTED": "valid E2b macro improvement versus E1 is at or below zero, or no more than three of seven match MAEs improve",
+    "SUPPORTED": "E2b improves at least six of seven matches, macro relative MAE improves at least 3%, the 95% paired absolute-error improvement interval is strictly above zero, and the shuffled-label control passes",
+    "MIXED": "every other valid result with positive macro improvement and at least four of seven improving matches"
+  },
+  "secondary_outputs": [
+    "E1 residual distribution by match and defending side",
+    "absolute residual magnitude by match and defending side",
+    "broad longitudinal thirds",
+    "D1 response minus D2_D3 mean description",
+    "repeated-team leave-one-match-out check"
+  ],
+  "nonclaims": [
+    "tactical intent", "marking assignment", "man-oriented defending", "zonal defending",
+    "attacker causation", "disruption", "attacking value", "defensive quality", "player quality",
+    "gravity", "off-ball value", "team tactical style"
+  ],
+  "planned_outputs": [
+    "manifest.json", "sample_ledger.csv", "fold_ledger.csv", "prediction_rows.parquet",
+    "heldout_errors.csv", "model_comparisons.json", "bootstrap_results.csv",
+    "shuffle_control.csv", "secondary_descriptions.csv", "hard_qc.json",
+    "governed_hashes.json", "reproduction.json", "result_report.md"
+  ]
+}

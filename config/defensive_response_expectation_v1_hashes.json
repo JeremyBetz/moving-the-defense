@@ -1,0 +1,18 @@
+{
+  "status": "FROZEN_BEFORE_PROTECTED_RESULTS",
+  "starting_commit": "7cba86a9bb05e513f357761bde149cb19f8dae0b",
+  "frozen": {
+    "docs/protocols/defensive_response_expectation_v1.md": "dd4d9bec9309a6679230ba7f90a693091c221ea3585e3c1ec04112f3f65ac06f",
+    "config/defensive_response_expectation_v1.json": "089bb247af30d8a76751163cb8f7d83e6a5fba9dd0af478d6368a6275f67f7d3"
+  },
+  "design_checks": {
+    "src/defensive_response_expectation_v1_design.py": "5d1e60020ef5fee365ef6db886c550fe95f3518988e787d6a337a063d333ecd7",
+    "tests/test_defensive_response_expectation_v1_design.py": "31b135e85473bd6ffed76ac9963e3d9c129b9d1dbbf83aa3078565cbaf772631"
+  },
+  "firewall": {
+    "protected_prediction_results_computed": false,
+    "game3_inspected": false,
+    "idsse_access": "team/match identifiers and eligible-observation IDs only",
+    "coordination_response_columns_inspected": false
+  }
+}
