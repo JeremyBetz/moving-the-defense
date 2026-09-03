@@ -1,0 +1,28 @@
+{
+  "actual": {
+    "audit_results.json": "41a54c357cac792f9b97f81873231bdacc8fb131a49fd63d9e14f9b14872a17e",
+    "conditioning_coverage.csv": "f9aa4db92c85761901e7b8261c68b7a75bdf3f6badd767264a2eb86eb6552672",
+    "cross_match_effects.csv": "b7318cc48962cbe969939d3ab5d55b652d2b4c47558cef7af787c5a4b9f0424e",
+    "input_provenance.json": "cef90db6982855b81a6fd5c887ce793d98d7cff38ba209fd5d464d54c3ef7a2d",
+    "near_middle_effects.csv": "7c9e00e0cf9bfb741f5adf19581404dfe810286f5bf9836804abbdea20932df0",
+    "rank_D1_D10_summaries.csv": "177e6514360d5c5771ef629986091cf17fa8172d8afa191ed082f7717b38beb4",
+    "rank_group_summaries.csv": "b1bb03a6cdd0c97f8de25ca808def715b3237d9712787f4827a2a67de2c942c1",
+    "rank_predictability_coefficients.csv": "270023f4bccbad4a5aa5c418b70121cc93af10b1a2d8c8398baa6fb98f64f8f9",
+    "rank_predictability_folds.csv": "52297843020cb61b09dee864dbeab175dab4f051fe4da4622409ad53925ec56c",
+    "sample_counts.csv": "c8515d866b749db3a174b9018ee9eeb96e695420a9a13936d7ee0441bafaf705"
+  },
+  "all_governed_outputs_byte_identical": true,
+  "expected": {
+    "audit_results.json": "41a54c357cac792f9b97f81873231bdacc8fb131a49fd63d9e14f9b14872a17e",
+    "conditioning_coverage.csv": "f9aa4db92c85761901e7b8261c68b7a75bdf3f6badd767264a2eb86eb6552672",
+    "cross_match_effects.csv": "b7318cc48962cbe969939d3ab5d55b652d2b4c47558cef7af787c5a4b9f0424e",
+    "input_provenance.json": "cef90db6982855b81a6fd5c887ce793d98d7cff38ba209fd5d464d54c3ef7a2d",
+    "near_middle_effects.csv": "7c9e00e0cf9bfb741f5adf19581404dfe810286f5bf9836804abbdea20932df0",
+    "rank_D1_D10_summaries.csv": "177e6514360d5c5771ef629986091cf17fa8172d8afa191ed082f7717b38beb4",
+    "rank_group_summaries.csv": "b1bb03a6cdd0c97f8de25ca808def715b3237d9712787f4827a2a67de2c942c1",
+    "rank_predictability_coefficients.csv": "270023f4bccbad4a5aa5c418b70121cc93af10b1a2d8c8398baa6fb98f64f8f9",
+    "rank_predictability_folds.csv": "52297843020cb61b09dee864dbeab175dab4f051fe4da4622409ad53925ec56c",
+    "sample_counts.csv": "c8515d866b749db3a174b9018ee9eeb96e695420a9a13936d7ee0441bafaf705"
+  },
+  "governed_outputs": 10
+}

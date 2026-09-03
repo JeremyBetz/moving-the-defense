@@ -1,0 +1,214 @@
+{
+  "name": "Outcome-blind defender-rank composition audit",
+  "status": "FROZEN_FOR_AUTHORITATIVE_RERUN_AFTER_PRECLOSURE_OUTCOME_BLIND_INTEGRITY_CORRECTION",
+  "freeze_date": "2026-09-03",
+  "starting_commit": "31efbbfe06aae057dba43bc95fd1b650a5b10789",
+  "purpose": "Audit whether frozen D1-D3 versus D4-D7 start-distance ranks encode nondefining baseline geometry or prior activity before authorizing another downstream consequence analysis.",
+  "preclosure_integrity_history": {
+    "initial_freeze": "The feature set, model, validation, thresholds, seeds, and downstream decision rules were fixed before baseline summaries or predictability results.",
+    "review_finding": "Before commit, read-only review found that the implemented goalward sign differed by provider and that full-period IDSSE goalkeeper positions violated the start/prior-only firewall.",
+    "authoritative_correction": "Use the first 2.0 seconds of supported goalkeeper tracking in each period for both providers; bind the reconstructed inputs in an explicit provenance artifact; relabel the classifier accurately as excluding the scalar Euclidean defining distance while retaining a longitudinal component proxy.",
+    "severity_scope_clarification": "A final pre-commit consistency review made explicit the already intended and implemented scope: feature-based severity applies to unresolved nondefining composition, not to the mechanically defining attacker distance or another variable already fully conditioned in the closed core model. This restored agreement with the audit question without changing a threshold, feature, calculation, or verdict.",
+    "non_tuning_guard": "No protected concurrent response, coverage outcome, Game 3 value, decision threshold, classifier feature, or implemented severity decision was changed. The corrected execution replaces the preliminary audit outputs regardless of its result."
+  },
+  "data": {
+    "matches": [
+      "metrica_game_1",
+      "metrica_game_2",
+      "J03WMX",
+      "J03WN1",
+      "J03WOH",
+      "J03WOY",
+      "J03WPY",
+      "J03WQQ",
+      "J03WR9"
+    ],
+    "rank_sources": {
+      "metrica_game_1": "outputs/concurrent_attacker_defensive_geometry_game1_v1/observation_rows.parquet",
+      "metrica_game_2": "outputs/concurrent_attacker_defensive_geometry_game2_v1/observation_rows.parquet",
+      "idsse": "outputs/concurrent_attacker_defensive_geometry_idsse_v1/observation_rows.parquet"
+    },
+    "rank_source_projection_only": [
+      "observation_id",
+      "match_id_if_present",
+      "period",
+      "time_period_s",
+      "time_utc_ns_if_present",
+      "attacker_key",
+      "attacking_team",
+      "defending_team",
+      "block_id",
+      "defender_key",
+      "distance_rank",
+      "distance_m",
+      "prior_attacker_path_m",
+      "prior_focal_relative_path_m",
+      "prior_defensive_centroid_path_m",
+      "prior_other_nine_mean_absolute_path_m"
+    ],
+    "forbidden_columns": [
+      "concurrent_attacker_path_m",
+      "concurrent_focal_relative_path_m",
+      "concurrent_endpoint_deformation_rms_m",
+      "parallel_m",
+      "orthogonal_m",
+      "radial_m",
+      "primary_aard_vel_mps",
+      "coverage_outcome",
+      "future_geometry"
+    ],
+    "tracking_window": "anchor-minus-2.0-seconds through anchor inclusive",
+    "no_game3": true
+  },
+  "rank_groups": {
+    "near": [1, 2, 3],
+    "middle": [4, 5, 6, 7],
+    "far_descriptive": [8, 9, 10]
+  },
+  "coordinate_policy": {
+    "fixed_pitch_coordinates": "canonical centred 105 by 68 metre pitch without attacking-direction normalization",
+    "goalward_sign": "sign of the defending team's goalkeeper median fixed-pitch x over the first 2.0 seconds of supported goalkeeper tracking in the period; positive points from the attacker toward the defending goal",
+    "defender_own_goal_depth_m": "52.5 - goalward_sign * defender_x_m",
+    "prior_support": "same centred-seven-frame coordinates and exact support inherited by the closed concurrent-geometry observation",
+    "missing_ball": "retain the row for non-ball summaries; report ball variables on available anchors only; exclude ball variables from the primary classifier"
+  },
+  "summary_variables": [
+    "attacker_defender_start_distance_m",
+    "defender_fixed_x_m",
+    "defender_fixed_y_m",
+    "defender_own_goal_depth_m",
+    "defender_goalward_offset_from_centroid_m",
+    "defender_lateral_offset_from_centroid_m",
+    "defender_abs_lateral_offset_from_centroid_m",
+    "defender_centroid_distance_m",
+    "ball_defender_distance_m",
+    "prior_absolute_path_m",
+    "prior_focal_relative_path_m",
+    "prior_terminal_speed_mps",
+    "prior_defensive_centroid_path_m",
+    "prior_other_nine_mean_absolute_path_m",
+    "prior_attacker_path_m",
+    "local_two_neighbor_mean_distance_m",
+    "unit_depth_span_m",
+    "unit_width_span_m",
+    "attacker_goalward_offset_from_centroid_m",
+    "attacker_abs_lateral_offset_from_centroid_m",
+    "ball_goalward_offset_from_centroid_m",
+    "ball_abs_lateral_offset_from_centroid_m"
+  ],
+  "summaries": {
+    "location": ["median", "q1", "q3", "mean", "sd", "n"],
+    "standardized_difference": "near mean minus middle mean divided by pooled within-group standard deviation",
+    "cross_match_consistency": "sign count and unweighted median standardized difference across the nine matches",
+    "individual_ranks": "D1-D10 medians and IQRs"
+  },
+  "rank_predictability": {
+    "target": "near=1 versus middle=0; far excluded",
+    "scalar_euclidean_attacker_defender_distance_excluded": true,
+    "distance_component_caveat": "The paired attacker and defender goalward centroid offsets reconstruct signed longitudinal separation. The classifier therefore excludes the rank-defining scalar Euclidean distance but is a conservative upper-bound diagnostic of broader baseline composition, not proof of structure independent of every distance component.",
+    "features": [
+      "defender_own_goal_depth_m",
+      "defender_goalward_offset_from_centroid_m",
+      "defender_abs_lateral_offset_from_centroid_m",
+      "defender_centroid_distance_m",
+      "prior_absolute_path_m",
+      "prior_focal_relative_path_m",
+      "prior_terminal_speed_mps",
+      "prior_defensive_centroid_path_m",
+      "prior_other_nine_mean_absolute_path_m",
+      "prior_attacker_path_m",
+      "local_two_neighbor_mean_distance_m",
+      "unit_depth_span_m",
+      "unit_width_span_m",
+      "attacker_goalward_offset_from_centroid_m",
+      "attacker_abs_lateral_offset_from_centroid_m"
+    ],
+    "model": "linear logistic regression with intercept and fixed L2 coefficient 1e-6 on standardized slopes",
+    "training_weight": "each training match receives equal total weight",
+    "standardization": "training-fold weighted mean and population standard deviation; apply unchanged to heldout match",
+    "validation": "nine leave-one-match-out folds",
+    "metrics": ["AUC", "balanced_accuracy_at_probability_0.5"],
+    "optimization": "deterministic scipy L-BFGS-B; no tuning"
+  },
+  "severity_rules": {
+    "large_stable_unresolved_nondefining_composition": "for any variable other than attacker_defender_start_distance_m whose existing core adjustment is partially or not conditioned, absolute unweighted median match standardized difference at least 0.5 with the same sign in at least 7 of 9 matches",
+    "strong_predictability": "median heldout AUC at least 0.70 and at least 7 of 9 heldout AUC values at least 0.65",
+    "major": "either large_stable_unresolved_nondefining_composition or strong_predictability",
+    "moderate": "median heldout AUC at least 0.60 or any nondefining feature whose existing core adjustment is partially or not conditioned has absolute median match standardized difference at least 0.2 with the same sign in at least 6 of 9 matches",
+    "minor": "neither major nor moderate",
+    "fully_conditioned_rule": "directly conditioned variables, including the mechanically defining attacker distance, remain reported as QC and do not alone trigger severity; residual nonlinearity or effect modification remains an interpretive caveat",
+    "downstream_rule": "MAJOR requires a separately frozen prospective core sensitivity before Defensive Coverage Redistribution v3; MODERATE permits v3 only with a limitation/nonclassifying QC; MINOR permits v3 to proceed"
+  },
+  "synthetic": {
+    "master_seed": 20260903,
+    "rank_only_seed": 2026090301,
+    "prior_activity_seed": 2026090302,
+    "scenes_per_variant": 12000,
+    "defenders_per_scene": 10,
+    "rank_only_null": "concurrent residual movement independent of attacker movement and rank after heterogeneous start geometry and collective translation",
+    "prior_activity_null": "prior activity differs by rank and is rank-dependently correlated with attacker movement; concurrent residual movement depends only on prior activity; compare unconditioned and prior-conditioned attacker-path slopes",
+    "leave_one_out_identity": "x_d - c_minus_d equals 10/9 times x_d - c for ten defenders"
+  },
+  "core_conditioning_reference": {
+    "fully_conditioned": [
+      "attacker_defender_start_distance_m",
+      "prior_focal_relative_path_m",
+      "prior_defensive_centroid_path_m",
+      "prior_other_nine_mean_absolute_path_m",
+      "prior_attacker_path_m"
+    ],
+    "partially_conditioned": [
+      "prior_absolute_path_m",
+      "prior_terminal_speed_mps"
+    ],
+    "not_conditioned": [
+      "defender_fixed_x_m",
+      "defender_fixed_y_m",
+      "defender_own_goal_depth_m",
+      "defender_goalward_offset_from_centroid_m",
+      "defender_lateral_offset_from_centroid_m",
+      "defender_abs_lateral_offset_from_centroid_m",
+      "defender_centroid_distance_m",
+      "ball_defender_distance_m",
+      "local_two_neighbor_mean_distance_m",
+      "unit_depth_span_m",
+      "unit_width_span_m",
+      "attacker_goalward_offset_from_centroid_m",
+      "attacker_abs_lateral_offset_from_centroid_m",
+      "ball_goalward_offset_from_centroid_m",
+      "ball_abs_lateral_offset_from_centroid_m"
+    ]
+  },
+  "frozen_input_hashes": {
+    "docs/protocols/concurrent_attacker_defensive_geometry_v1.md": "1382e97f401eafc2101f2d77ef2b7158e48500ce7df6b01d4db450f2ba1b8f32",
+    "config/concurrent_attacker_defensive_geometry_v1.json": "5b37211295297fe4350c394500da27e72040aefcc7f4806b1c779a390a9c692d",
+    "docs/protocols/concurrent_attacker_defensive_geometry_v1_game2_replication.md": "ae22d4894e73eafe23ba8947dd54a0d3e2d5cd51dab19ae24c6e0117824c903b",
+    "config/concurrent_attacker_defensive_geometry_v1_game2_replication.json": "2382e7f759c49f3c3cc8826dbc15c529ac48a30e1ebc791f18123e22120430ca",
+    "docs/protocols/concurrent_attacker_defensive_geometry_v1_idsse_replication.md": "1022d4a6b49f601970a3f1eb828885d29eab2bb5b2b9031ba0d8e3a7caafcdaa",
+    "config/concurrent_attacker_defensive_geometry_v1_idsse_replication.json": "7af31dde8c70c7e4eba10dd52cf840025e8717d65b8444f93d35594e3d238dc4",
+    "docs/protocols/concurrent_defensive_coordination_form_v1.md": "3172592f0890ea5c8030f4691b24d5a66fc0614d72c4cd60a6f7475934381032",
+    "config/concurrent_defensive_coordination_form_v1.json": "d3b8be7306ffb850aa246ffed2a2f69b71b5593e32a8578b28734a4a438bb3e3",
+    "outputs/concurrent_attacker_defensive_geometry_game1_v1/observation_rows.parquet": "4d51ddaef01b3408cd8dc112e7c6b09808cc45994588274533faec65e4c25b4d",
+    "outputs/concurrent_attacker_defensive_geometry_game2_v1/observation_rows.parquet": "0d63f206558e2336fdc7e55040df420f87825dc66e392ff9f4a3793ed4f60173",
+    "outputs/concurrent_attacker_defensive_geometry_idsse_v1/observation_rows.parquet": "76c79236392ed5bf57e7543092e1f53887b067237b7ca7d895d6bb9c8f672527",
+    "outputs/attacking_continuous_movement_game2_stage_a/trajectory_validity_registry.csv": "22c202c83c564e4b0c6fb3aa0ceb8729f7bdb2b6651b980bd1024fd4002d98b5",
+    "outputs/attacking_continuous_movement_game2_stage_a/valid_support_segments.csv": "d618232b7363d0311560e935e23dd3ad77def8f1af26319df90c4c536f43460b",
+    "src/attacking_continuous_movement_game1_v1.py": "fb640a9e53984e605609fe53535eac914ce9276326db9fcfece044378d7d5004",
+    "src/attacking_continuous_movement_game2_v1.py": "beda5bb36e273735f083669e2921c9b7794321a041f9039ede62a298ca9a4c6d",
+    "src/attacker_defender_bridge_game1_v1.py": "44f5bd1d17b0cfbbc282269b54833d1b18a41c059b140168f2f15b00022b93af",
+    "src/concurrent_attacker_defensive_geometry_idsse_v1.py": "50d76116d39c2698403fb1ec6fe3c93c5b4337e763a41c92b195d6ea73d5dc9f",
+    "src/phase4c_idsse_external_replication.py": "15bdbbcb49b58d253ca4ca7a059ac81cdeeee7d33584c176034c0d32b9f2c4d8",
+    "src/infrastructure/kloppy_metrica_adapter.py": "459fdffea1ec6dd69f6efb381b456ebfaa63bf54c32fb3b4932ee26a544f9d45",
+    "src/infrastructure/canonical_tracking.py": "80fe2d45d81d0e65bcc87c2e1e8c343705f02b0649d68aa8edf498498e3a3d7f",
+    "src/infrastructure/kloppy_idsse_adapter.py": "ed282e7b14d3a551744b3f709cae634d96f8e3b6424cb2c57d9220527d62ac9c",
+    "docs/protocols/defensive_coverage_redistribution_v3.md": "5bf577758202aed13b47fce54fd40c88b1a443d675d832f93f69c62570303988",
+    "config/defensive_coverage_redistribution_v3.json": "54a01d0aeba846b1e245a0c0552234b2390cfc3ec10ec0a187dc94c0b10fed42"
+  },
+  "firewall": {
+    "coverage_v3_execution": "prohibited",
+    "real_concurrent_response_columns": "prohibited",
+    "game2_coverage_outcomes": "prohibited",
+    "idsse_coverage_outcomes": "prohibited",
+    "game3": "untouched_and_prohibited"
+  }
+}

@@ -1,0 +1,194 @@
+{
+  "frozen_reconstruction_dependencies": {
+    "outputs/attacking_continuous_movement_game2_stage_a/trajectory_validity_registry.csv": "22c202c83c564e4b0c6fb3aa0ceb8729f7bdb2b6651b980bd1024fd4002d98b5",
+    "outputs/attacking_continuous_movement_game2_stage_a/valid_support_segments.csv": "d618232b7363d0311560e935e23dd3ad77def8f1af26319df90c4c536f43460b",
+    "src/attacker_defender_bridge_game1_v1.py": "44f5bd1d17b0cfbbc282269b54833d1b18a41c059b140168f2f15b00022b93af",
+    "src/attacking_continuous_movement_game1_v1.py": "fb640a9e53984e605609fe53535eac914ce9276326db9fcfece044378d7d5004",
+    "src/attacking_continuous_movement_game2_v1.py": "beda5bb36e273735f083669e2921c9b7794321a041f9039ede62a298ca9a4c6d",
+    "src/concurrent_attacker_defensive_geometry_idsse_v1.py": "50d76116d39c2698403fb1ec6fe3c93c5b4337e763a41c92b195d6ea73d5dc9f",
+    "src/infrastructure/canonical_tracking.py": "80fe2d45d81d0e65bcc87c2e1e8c343705f02b0649d68aa8edf498498e3a3d7f",
+    "src/infrastructure/kloppy_idsse_adapter.py": "ed282e7b14d3a551744b3f709cae634d96f8e3b6424cb2c57d9220527d62ac9c",
+    "src/infrastructure/kloppy_metrica_adapter.py": "459fdffea1ec6dd69f6efb381b456ebfaa63bf54c32fb3b4932ee26a544f9d45",
+    "src/phase4c_idsse_external_replication.py": "15bdbbcb49b58d253ca4ca7a059ac81cdeeee7d33584c176034c0d32b9f2c4d8"
+  },
+  "game3_inputs": [],
+  "matches": [
+    {
+      "coordinate_contract": "metres, pitch centre origin, +x right, +y top, fixed pitch frame",
+      "goalward_sign_support": "first 2.0 seconds of supported goalkeeper tracking in each period",
+      "goalward_sign_support_precedes_every_anchor": true,
+      "match_id": "metrica_game_1",
+      "provider": "Metrica",
+      "source_files": [
+        {
+          "path": "data/metrica_sample_game_1/Sample_Game_1_RawTrackingData_Home_Team.csv",
+          "sha256": "0a3d0eff7785950379c587d3597b86a2d91c2492281b4652e1abb97c99b6b364"
+        },
+        {
+          "path": "data/metrica_sample_game_1/Sample_Game_1_RawTrackingData_Away_Team.csv",
+          "sha256": "0a3df68a92af0290ede472e62de3b6489ddee29223da09bdf0cf76c8e0ab0618"
+        }
+      ]
+    },
+    {
+      "coordinate_contract": "metres, pitch centre origin, +x right, +y top, fixed pitch frame",
+      "goalward_sign_support": "first 2.0 seconds of supported goalkeeper tracking in each period",
+      "goalward_sign_support_precedes_every_anchor": true,
+      "match_id": "metrica_game_2",
+      "provider": "Metrica",
+      "source_files": [
+        {
+          "path": "data/metrica_sample_game_2/Sample_Game_2_RawTrackingData_Home_Team.csv",
+          "sha256": "3f9990ac204b07133e4202441d6fcbb386897c7c7f81e1bc3ce4d35bc8644694"
+        },
+        {
+          "path": "data/metrica_sample_game_2/Sample_Game_2_RawTrackingData_Away_Team.csv",
+          "sha256": "aa639f40762eade46c389020fe4458266b5ba14027b1e96e22e75db62803718b"
+        }
+      ]
+    },
+    {
+      "coordinate_contract": "metres, pitch centre origin, +x right, +y top, fixed pitch frame",
+      "event_file_opened": false,
+      "goalward_sign_support": "first 2.0 seconds of supported goalkeeper tracking in each period",
+      "goalward_sign_support_precedes_every_anchor": true,
+      "match_id": "J03WMX",
+      "provider": "IDSSE/Sportec",
+      "source_files": [
+        {
+          "path": "data/idsse_raw/DFL_02_01_matchinformation_DFL-COM-000001_DFL-MAT-J03WMX.xml",
+          "role": "provider metadata XML",
+          "sha256": "a884728647a564cf8b20e5223a1d04a5da6f6725e1e506c8651505327c197ba9"
+        },
+        {
+          "path": "data/idsse_cache/J03WMX_raw_tracking.npz",
+          "role": "governed native tracking cache",
+          "sha256": "064850cb2b501d6d3e8e0edc9ac6e3e758a026a1a1541cf4092a0761d949aeb5"
+        }
+      ]
+    },
+    {
+      "coordinate_contract": "metres, pitch centre origin, +x right, +y top, fixed pitch frame",
+      "event_file_opened": false,
+      "goalward_sign_support": "first 2.0 seconds of supported goalkeeper tracking in each period",
+      "goalward_sign_support_precedes_every_anchor": true,
+      "match_id": "J03WN1",
+      "provider": "IDSSE/Sportec",
+      "source_files": [
+        {
+          "path": "data/idsse_raw/DFL_02_01_matchinformation_DFL-COM-000001_DFL-MAT-J03WN1.xml",
+          "role": "provider metadata XML",
+          "sha256": "5490286436c86e6f80a538d2b1b379d0efd016e0defcaf594bc59d9ef5079f4c"
+        },
+        {
+          "path": "data/idsse_cache/J03WN1_raw_tracking.npz",
+          "role": "governed native tracking cache",
+          "sha256": "86608a6ea03b1e967d426cc50760030226632342e727de7ed2dc8ad265f89e5c"
+        }
+      ]
+    },
+    {
+      "coordinate_contract": "metres, pitch centre origin, +x right, +y top, fixed pitch frame",
+      "event_file_opened": false,
+      "goalward_sign_support": "first 2.0 seconds of supported goalkeeper tracking in each period",
+      "goalward_sign_support_precedes_every_anchor": true,
+      "match_id": "J03WOH",
+      "provider": "IDSSE/Sportec",
+      "source_files": [
+        {
+          "path": "data/idsse_raw/DFL_02_01_matchinformation_DFL-COM-000002_DFL-MAT-J03WOH.xml",
+          "role": "provider metadata XML",
+          "sha256": "f23b3ee13b988b1ff9a0bce438c416dac47e71355bbc7ee1dab21aaf3e33c18c"
+        },
+        {
+          "path": "data/idsse_cache/J03WOH_raw_tracking.npz",
+          "role": "governed native tracking cache",
+          "sha256": "4736a68418d9f901b9eb6ddf73203bf4251527e74b4ba5f6276ca47e341f20cf"
+        }
+      ]
+    },
+    {
+      "coordinate_contract": "metres, pitch centre origin, +x right, +y top, fixed pitch frame",
+      "event_file_opened": false,
+      "goalward_sign_support": "first 2.0 seconds of supported goalkeeper tracking in each period",
+      "goalward_sign_support_precedes_every_anchor": true,
+      "match_id": "J03WOY",
+      "provider": "IDSSE/Sportec",
+      "source_files": [
+        {
+          "path": "data/idsse_raw/DFL_02_01_matchinformation_DFL-COM-000002_DFL-MAT-J03WOY.xml",
+          "role": "provider metadata XML",
+          "sha256": "4c497fac683eee8292901c18ca02c0be1d9609d0b9d4bd8aa092c61f9e0b19e9"
+        },
+        {
+          "path": "data/idsse_cache/J03WOY_raw_tracking.npz",
+          "role": "governed native tracking cache",
+          "sha256": "adfbc037f53de8ff6616b759b4332e4bd2129b45aeee90ac496571d3ec98419e"
+        }
+      ]
+    },
+    {
+      "coordinate_contract": "metres, pitch centre origin, +x right, +y top, fixed pitch frame",
+      "event_file_opened": false,
+      "goalward_sign_support": "first 2.0 seconds of supported goalkeeper tracking in each period",
+      "goalward_sign_support_precedes_every_anchor": true,
+      "match_id": "J03WPY",
+      "provider": "IDSSE/Sportec",
+      "source_files": [
+        {
+          "path": "data/idsse_raw/DFL_02_01_matchinformation_DFL-COM-000002_DFL-MAT-J03WPY.xml",
+          "role": "provider metadata XML",
+          "sha256": "566dd5e4c86e124ab90fcdba51100881f0436e22afa71832945a451a2d95a420"
+        },
+        {
+          "path": "data/idsse_cache/J03WPY_raw_tracking.npz",
+          "role": "governed native tracking cache",
+          "sha256": "8e4041a8a15d369368b4328a4f5ebdf040b301e24ab320518fc1f909c699c224"
+        }
+      ]
+    },
+    {
+      "coordinate_contract": "metres, pitch centre origin, +x right, +y top, fixed pitch frame",
+      "event_file_opened": false,
+      "goalward_sign_support": "first 2.0 seconds of supported goalkeeper tracking in each period",
+      "goalward_sign_support_precedes_every_anchor": true,
+      "match_id": "J03WQQ",
+      "provider": "IDSSE/Sportec",
+      "source_files": [
+        {
+          "path": "data/idsse_raw/DFL_02_01_matchinformation_DFL-COM-000002_DFL-MAT-J03WQQ.xml",
+          "role": "provider metadata XML",
+          "sha256": "e976aa0c5dba862cfa898ea57ec226efce9d1bc04b23b8d775908db86aa6fa41"
+        },
+        {
+          "path": "data/idsse_cache/J03WQQ_raw_tracking.npz",
+          "role": "governed native tracking cache",
+          "sha256": "ea22afc5f38b33fe74b312656baea87a52b5db8e8acb4da28ed09130649fd544"
+        }
+      ]
+    },
+    {
+      "coordinate_contract": "metres, pitch centre origin, +x right, +y top, fixed pitch frame",
+      "event_file_opened": false,
+      "goalward_sign_support": "first 2.0 seconds of supported goalkeeper tracking in each period",
+      "goalward_sign_support_precedes_every_anchor": true,
+      "match_id": "J03WR9",
+      "provider": "IDSSE/Sportec",
+      "source_files": [
+        {
+          "path": "data/idsse_raw/DFL_02_01_matchinformation_DFL-COM-000002_DFL-MAT-J03WR9.xml",
+          "role": "provider metadata XML",
+          "sha256": "429b584e89df3e3e8b81f4bd0d004b38bd0b4298bb390b8fb43efccb60963e01"
+        },
+        {
+          "path": "data/idsse_cache/J03WR9_raw_tracking.npz",
+          "role": "governed native tracking cache",
+          "sha256": "fbef173cfc8d8047ee793cde50f291c6ddeb58a75d40ea8669c4a8e07594bafa"
+        }
+      ]
+    }
+  ],
+  "protected_response_or_coverage_inputs": [],
+  "provider_event_files_opened_for_reconstruction": false,
+  "status": "OUTCOME_BLIND_RECONSTRUCTION_INPUTS_BOUND"
+}

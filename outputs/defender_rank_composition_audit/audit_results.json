@@ -1,0 +1,259 @@
+{
+  "attacker_anchor_observations": 83513,
+  "classifier": {
+    "auc_range": [
+      0.6142884582017376,
+      0.6460332678655104
+    ],
+    "complete_rows": 584591,
+    "features": [
+      "defender_own_goal_depth_m",
+      "defender_goalward_offset_from_centroid_m",
+      "defender_abs_lateral_offset_from_centroid_m",
+      "defender_centroid_distance_m",
+      "prior_absolute_path_m",
+      "prior_focal_relative_path_m",
+      "prior_terminal_speed_mps",
+      "prior_defensive_centroid_path_m",
+      "prior_other_nine_mean_absolute_path_m",
+      "prior_attacker_path_m",
+      "local_two_neighbor_mean_distance_m",
+      "unit_depth_span_m",
+      "unit_width_span_m",
+      "attacker_goalward_offset_from_centroid_m",
+      "attacker_abs_lateral_offset_from_centroid_m"
+    ],
+    "folds": [
+      {
+        "auc": 0.6214223475962037,
+        "balanced_accuracy_at_0_5": 0.5272201084756739,
+        "heldout_match": "J03WMX",
+        "test_near_rows": 37059,
+        "test_rows": 86471,
+        "train_rows": 498120
+      },
+      {
+        "auc": 0.6347740935832098,
+        "balanced_accuracy_at_0_5": 0.533651216844408,
+        "heldout_match": "J03WN1",
+        "test_near_rows": 14628,
+        "test_rows": 34132,
+        "train_rows": 550459
+      },
+      {
+        "auc": 0.6192169070637589,
+        "balanced_accuracy_at_0_5": 0.5353171790555507,
+        "heldout_match": "J03WOH",
+        "test_near_rows": 33861,
+        "test_rows": 79009,
+        "train_rows": 505582
+      },
+      {
+        "auc": 0.6142884582017376,
+        "balanced_accuracy_at_0_5": 0.5260960935026053,
+        "heldout_match": "J03WOY",
+        "test_near_rows": 34737,
+        "test_rows": 81053,
+        "train_rows": 503538
+      },
+      {
+        "auc": 0.622337932449326,
+        "balanced_accuracy_at_0_5": 0.531123488565377,
+        "heldout_match": "J03WPY",
+        "test_near_rows": 37299,
+        "test_rows": 87031,
+        "train_rows": 497560
+      },
+      {
+        "auc": 0.6298625841666666,
+        "balanced_accuracy_at_0_5": 0.5291333333333333,
+        "heldout_match": "J03WQQ",
+        "test_near_rows": 30000,
+        "test_rows": 70000,
+        "train_rows": 514591
+      },
+      {
+        "auc": 0.6267372392763625,
+        "balanced_accuracy_at_0_5": 0.5331043797307448,
+        "heldout_match": "J03WR9",
+        "test_near_rows": 34614,
+        "test_rows": 80766,
+        "train_rows": 503825
+      },
+      {
+        "auc": 0.6336616077607709,
+        "balanced_accuracy_at_0_5": 0.5358136721113128,
+        "heldout_match": "metrica_game_1",
+        "test_near_rows": 24795,
+        "test_rows": 57855,
+        "train_rows": 526736
+      },
+      {
+        "auc": 0.6460332678655104,
+        "balanced_accuracy_at_0_5": 0.546778059785674,
+        "heldout_match": "metrica_game_2",
+        "test_near_rows": 3546,
+        "test_rows": 8274,
+        "train_rows": 576317
+      }
+    ],
+    "median_auc": 0.6267372392763625,
+    "median_balanced_accuracy": 0.5331043797307448
+  },
+  "composition": {
+    "largest_nondefining_cross_match_effects": [
+      {
+        "matches": 9,
+        "median_match_standardized_difference": -0.33837393481034717,
+        "negative_matches": 9,
+        "positive_matches": 0,
+        "q1_match_standardized_difference": -0.3679858001462968,
+        "q3_match_standardized_difference": -0.32676036242680606,
+        "same_sign_matches": 9,
+        "variable": "defender_goalward_offset_from_centroid_m"
+      },
+      {
+        "matches": 9,
+        "median_match_standardized_difference": 0.16666489591072187,
+        "negative_matches": 0,
+        "positive_matches": 9,
+        "q1_match_standardized_difference": 0.1494760784598354,
+        "q3_match_standardized_difference": 0.1772011665679376,
+        "same_sign_matches": 9,
+        "variable": "defender_centroid_distance_m"
+      },
+      {
+        "matches": 9,
+        "median_match_standardized_difference": 0.15119960184278114,
+        "negative_matches": 0,
+        "positive_matches": 9,
+        "q1_match_standardized_difference": 0.14722473906954722,
+        "q3_match_standardized_difference": 0.15864586740297135,
+        "same_sign_matches": 9,
+        "variable": "defender_own_goal_depth_m"
+      },
+      {
+        "matches": 9,
+        "median_match_standardized_difference": 0.08408121394963529,
+        "negative_matches": 0,
+        "positive_matches": 9,
+        "q1_match_standardized_difference": 0.03325284357104838,
+        "q3_match_standardized_difference": 0.09774431250803933,
+        "same_sign_matches": 9,
+        "variable": "defender_abs_lateral_offset_from_centroid_m"
+      },
+      {
+        "matches": 9,
+        "median_match_standardized_difference": 0.0637238532167095,
+        "negative_matches": 0,
+        "positive_matches": 9,
+        "q1_match_standardized_difference": 0.04618085732774021,
+        "q3_match_standardized_difference": 0.08588297467885597,
+        "same_sign_matches": 9,
+        "variable": "local_two_neighbor_mean_distance_m"
+      }
+    ]
+  },
+  "config_sha256": "3664d4353390d028221d354b611c6172ebb35acd3fc2f0cfc8b5f24c1c3d49a9",
+  "decision": {
+    "heldout_auc_at_least_0_65": 0,
+    "interpretive_guard": "Rank composition can threaten a rank-specific attacker-path slope only if the baseline feature also covaries with attacker movement and response or modifies that slope; balance alone is not proof of confounding.",
+    "major_variables": [],
+    "median_heldout_auc": 0.6267372392763625,
+    "moderate_variables": [
+      "defender_goalward_offset_from_centroid_m"
+    ],
+    "severity": "MODERATE",
+    "strong_predictability_rule": false,
+    "v3_decision": "V3 MAY PROCEED WITH A PAPER LIMITATION / NONCLASSIFYING QC",
+    "verdict": "CORE RANK LOCALIZATION USABLE WITH MODERATE LIMITATION"
+  },
+  "firewall": {
+    "concurrent_response_columns_selected": [],
+    "coverage_outcomes_selected": [],
+    "coverage_v3_output_absent": true,
+    "frozen_input_hashes_match": true,
+    "game2_or_idsse_coverage_outcomes_inspected": false,
+    "game3_accessed": false,
+    "game3_not_accessed": true,
+    "rank_ledger_columns_selected": [
+      "observation_id",
+      "period",
+      "time_period_s",
+      "attacker_key",
+      "attacking_team",
+      "defending_team",
+      "block_id",
+      "defender_key",
+      "distance_rank",
+      "distance_m",
+      "prior_attacker_path_m",
+      "prior_focal_relative_path_m",
+      "prior_defensive_centroid_path_m",
+      "prior_other_nine_mean_absolute_path_m",
+      "match_id",
+      "time_utc_ns"
+    ],
+    "start_distance_and_prior_geometry_reconstructed_within_1e_6_m": true
+  },
+  "matches": 9,
+  "rows": 835130,
+  "sample": [
+    {
+      "ball_available_rows": 49140,
+      "match_id": "metrica_game_1",
+      "observations": 8265,
+      "rank_rows": 82650
+    },
+    {
+      "ball_available_rows": 7860,
+      "match_id": "metrica_game_2",
+      "observations": 1182,
+      "rank_rows": 11820
+    },
+    {
+      "ball_available_rows": 123530,
+      "match_id": "J03WMX",
+      "observations": 12353,
+      "rank_rows": 123530
+    },
+    {
+      "ball_available_rows": 48760,
+      "match_id": "J03WN1",
+      "observations": 4876,
+      "rank_rows": 48760
+    },
+    {
+      "ball_available_rows": 112870,
+      "match_id": "J03WOH",
+      "observations": 11287,
+      "rank_rows": 112870
+    },
+    {
+      "ball_available_rows": 115790,
+      "match_id": "J03WOY",
+      "observations": 11579,
+      "rank_rows": 115790
+    },
+    {
+      "ball_available_rows": 124330,
+      "match_id": "J03WPY",
+      "observations": 12433,
+      "rank_rows": 124330
+    },
+    {
+      "ball_available_rows": 100000,
+      "match_id": "J03WQQ",
+      "observations": 10000,
+      "rank_rows": 100000
+    },
+    {
+      "ball_available_rows": 115380,
+      "match_id": "J03WR9",
+      "observations": 11538,
+      "rank_rows": 115380
+    }
+  ],
+  "starting_commit": "31efbbfe06aae057dba43bc95fd1b650a5b10789",
+  "status": "OUTCOME_BLIND_RANK_COMPOSITION_AUDIT_COMPLETE"
+}

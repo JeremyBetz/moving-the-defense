@@ -1,0 +1,23 @@
+baseline_difference,median_match_standardized_difference,same_sign_matches,strong_by_rank,existing_core_adjustment,could_plausibly_confound,severity,recommended_action
+attacker_abs_lateral_offset_from_centroid_m,0,3,False,not,yes if associated with attacker movement and response or if it modifies the slope,MINOR,Prospective sensitivity if MAJOR; otherwise limitation/QC.
+attacker_defender_start_distance_m,-1.4805641503,9,True,fully,only through residual nonlinearity/effect modification,MINOR,Existing rank-specific linear control; retain as QC.
+attacker_goalward_offset_from_centroid_m,0,4,False,not,yes if associated with attacker movement and response or if it modifies the slope,MINOR,Prospective sensitivity if MAJOR; otherwise limitation/QC.
+ball_abs_lateral_offset_from_centroid_m,0,3,False,not,yes if associated with attacker movement and response or if it modifies the slope,MINOR,Prospective sensitivity if MAJOR; otherwise limitation/QC.
+ball_defender_distance_m,-0.000855850062246,6,False,not,yes if associated with attacker movement and response or if it modifies the slope,MINOR,Prospective sensitivity if MAJOR; otherwise limitation/QC.
+ball_goalward_offset_from_centroid_m,2.0972275832e-17,6,False,not,yes if associated with attacker movement and response or if it modifies the slope,MINOR,Prospective sensitivity if MAJOR; otherwise limitation/QC.
+defender_abs_lateral_offset_from_centroid_m,0.0840812139496,9,False,not,yes if associated with attacker movement and response or if it modifies the slope,MINOR,Prospective sensitivity if MAJOR; otherwise limitation/QC.
+defender_centroid_distance_m,0.166664895911,9,False,not,yes if associated with attacker movement and response or if it modifies the slope,MINOR,Prospective sensitivity if MAJOR; otherwise limitation/QC.
+defender_fixed_x_m,0.00339160718295,5,False,not,yes if associated with attacker movement and response or if it modifies the slope,MINOR,Prospective sensitivity if MAJOR; otherwise limitation/QC.
+defender_fixed_y_m,0.0128834512765,6,False,not,yes if associated with attacker movement and response or if it modifies the slope,MINOR,Prospective sensitivity if MAJOR; otherwise limitation/QC.
+defender_goalward_offset_from_centroid_m,-0.33837393481,9,False,not,yes if associated with attacker movement and response or if it modifies the slope,MODERATE,Prospective sensitivity if MAJOR; otherwise limitation/QC.
+defender_lateral_offset_from_centroid_m,0.0177194169715,6,False,not,yes if associated with attacker movement and response or if it modifies the slope,MINOR,Prospective sensitivity if MAJOR; otherwise limitation/QC.
+defender_own_goal_depth_m,0.151199601843,9,False,not,yes if associated with attacker movement and response or if it modifies the slope,MINOR,Prospective sensitivity if MAJOR; otherwise limitation/QC.
+local_two_neighbor_mean_distance_m,0.0637238532167,9,False,not,yes if associated with attacker movement and response or if it modifies the slope,MINOR,Prospective sensitivity if MAJOR; otherwise limitation/QC.
+prior_absolute_path_m,-0.00152729016791,5,False,partially,yes if associated with attacker movement and response or if it modifies the slope,MINOR,Prospective sensitivity if imbalance is strong/stable.
+prior_attacker_path_m,0,1,False,fully,only through residual nonlinearity/effect modification,MINOR,Existing rank-specific linear control; retain as QC.
+prior_defensive_centroid_path_m,0,1,False,fully,only through residual nonlinearity/effect modification,MINOR,Existing rank-specific linear control; retain as QC.
+prior_focal_relative_path_m,0.042553620324,9,False,fully,only through residual nonlinearity/effect modification,MINOR,Existing rank-specific linear control; retain as QC.
+prior_other_nine_mean_absolute_path_m,0.00022909975558,5,False,fully,only through residual nonlinearity/effect modification,MINOR,Existing rank-specific linear control; retain as QC.
+prior_terminal_speed_mps,-0.00500566036727,6,False,partially,yes if associated with attacker movement and response or if it modifies the slope,MINOR,Prospective sensitivity if imbalance is strong/stable.
+unit_depth_span_m,0,3,False,not,yes if associated with attacker movement and response or if it modifies the slope,MINOR,Prospective sensitivity if MAJOR; otherwise limitation/QC.
+unit_width_span_m,0,3,False,not,yes if associated with attacker movement and response or if it modifies the slope,MINOR,Prospective sensitivity if MAJOR; otherwise limitation/QC.

@@ -1,5 +1,65 @@
 # Research Log
 
+## 2026-09-03 — Outcome-blind defender-rank composition audit completed with moderate limitation
+
+Before any Defensive Coverage Redistribution v3 execution, the
+[defender-rank composition audit](defender_rank_composition_audit.md) used only
+start-state geometry, strictly prior movement/context, frozen start-distance
+ranks, and support metadata from Metrica Games 1–2 and the seven governed IDSSE
+matches. It covered 83,513 attacker anchors and 835,130 rank rows. No concurrent
+response column or coverage outcome was selected, no v3 result was produced,
+and Game 3 remained untouched.
+
+Before closure, a read-only implementation review found that Metrica and IDSSE
+had used different goalkeeper windows for goalward orientation and that the
+IDSSE full-period window violated the start/prior-only firewall. The
+authoritative rerun therefore used the first 2.0 seconds of supported
+goalkeeper tracking in every period at both providers, opened no IDSSE event
+file, and bound every reconstruction input in a hashed provenance artifact.
+The review also clarified that the classifier excludes the defining scalar
+Euclidean distance but retains a longitudinal-separation proxy through paired
+attacker/defender goalward offsets. No feature set, model, numerical threshold,
+seed, implemented severity decision, protected response, or coverage outcome
+changed; the correction was accepted regardless of its numerical result.
+
+A final pre-commit consistency review also clarified the already implemented
+feature-based severity scope: only unresolved nondefining composition can
+trigger the composition arm. The defining attacker distance and variables
+fully conditioned in the closed core model remain QC-only for this rule. This
+changed no threshold, feature, calculation, numerical finding, or verdict.
+
+The strongest nondefining near-versus-middle difference was defender goalward
+offset from the unit centroid: the unweighted median match standardized
+difference was −0.3384 with the same direction in all 9 matches. No variable
+met the predeclared major threshold. The 15-feature linear logistic diagnostic,
+which excluded the defining scalar Euclidean attacker–defender distance, had
+leave-one-match-out median AUC 0.6267; every held-out fold was below 0.65
+(range 0.6143–0.6460). Because paired goalward offsets retain signed
+longitudinal-separation information, this is a conservative upper-bound
+composition diagnostic rather than proof of structure independent of every
+distance component.
+Prior activity was negligible by rank: the largest median match standardized
+difference was 0.0426 for prior focal-relative path, while prior absolute path,
+terminal speed, other-nine activity, centroid path, and attacker path were near
+zero or identical within anchors.
+
+The focused synthetic rank-only null produced a near-minus-middle attacker
+slope of −0.0000464. In a deliberately activity-confounded null, the unadjusted
+contrast was 0.0562980 and fell to −0.0004372 after conditioning on
+focal-relative and other-nine prior activity, removing 99.22% of the induced
+localization.
+Leave-one-out centering satisfied
+$x_d-c_{-d}=(10/9)(x_d-c)$ to numerical precision at every rank, and collective
+translation cancelled. These checks complement the established core's
+rank-specific attacker-distance and prior-movement controls and its replication
+across both Metrica matches and all seven IDSSE matches; they do not turn the
+association into a causal or tactical result.
+
+The exact verdict is **CORE RANK LOCALIZATION USABLE WITH MODERATE LIMITATION**.
+No prospective core sensitivity is required. The downstream decision is
+**V3 MAY PROCEED WITH A PAPER LIMITATION / NONCLASSIFYING QC**; v3 itself was
+not executed in this audit.
+
 ## 2026-09-03 — Defensive Coverage Redistribution v3 frozen before outcomes
 
 A read-only estimability audit traced v2's absent period 2 to the unchanged
