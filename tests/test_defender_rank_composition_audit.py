@@ -24,7 +24,6 @@ import defender_rank_composition_audit as audit  # noqa: E402
 
 CONFIG = ROOT / "config/defender_rank_composition_audit.json"
 OUTPUT = ROOT / "outputs/defender_rank_composition_audit"
-V3_OUTPUT = ROOT / "outputs/defensive_coverage_redistribution_game1_v3"
 
 
 def _json(path: Path) -> dict:
@@ -233,10 +232,6 @@ def test_all_frozen_inputs_and_generated_outputs_match_their_hashes() -> None:
     assert reproduction["expected"] == reproduction["actual"] == governed
 
 
-def test_v3_has_no_empirical_output_or_result() -> None:
+def test_rank_audit_records_the_preexecution_v3_firewall() -> None:
     config = _json(CONFIG)
     assert config["firewall"]["coverage_v3_execution"] == "prohibited"
-    assert not V3_OUTPUT.exists()
-    assert not list((ROOT / "outputs").glob("defensive_coverage_redistribution*v3*"))
-    for name in ("final_results.json", "model_results.json", "result_hash.json"):
-        assert not (V3_OUTPUT / name).exists()

@@ -1,0 +1,39 @@
+{
+  "active_columns": [
+    "intercept",
+    "concurrent_reference_attacker_path_m",
+    "concurrent_D1_D3_minus_D4_D7_focal_relative_path_m",
+    "initial_elsewhere_matching_cost_m",
+    "mean_other_attacker_concurrent_path_m",
+    "concurrent_ball_path_m",
+    "concurrent_defending_outfield_centroid_path_m",
+    "mean_concurrent_D1_D10_focal_relative_path_m",
+    "prior_reference_attacker_path_m",
+    "prior_D1_D3_minus_D4_D7_focal_relative_path_m",
+    "prior_ball_path_m"
+  ],
+  "designated_nuisance_values": {
+    "period_2_indicator": [
+      0
+    ]
+  },
+  "nominal_columns": [
+    "intercept",
+    "concurrent_reference_attacker_path_m",
+    "concurrent_D1_D3_minus_D4_D7_focal_relative_path_m",
+    "initial_elsewhere_matching_cost_m",
+    "mean_other_attacker_concurrent_path_m",
+    "concurrent_ball_path_m",
+    "concurrent_defending_outfield_centroid_path_m",
+    "mean_concurrent_D1_D10_focal_relative_path_m",
+    "prior_reference_attacker_path_m",
+    "prior_D1_D3_minus_D4_D7_focal_relative_path_m",
+    "prior_ball_path_m",
+    "period_2_indicator"
+  ],
+  "omitted_constant_nuisance_columns": [
+    "period_2_indicator"
+  ],
+  "resolved_once_before_outcome_fit": true,
+  "reused_for_primary_bootstrap_null_remote_trim_and_descriptive": true
+}

@@ -1,0 +1,342 @@
+{
+  "active_column_plan": {
+    "active_columns": [
+      "intercept",
+      "concurrent_reference_attacker_path_m",
+      "concurrent_D1_D3_minus_D4_D7_focal_relative_path_m",
+      "initial_elsewhere_matching_cost_m",
+      "mean_other_attacker_concurrent_path_m",
+      "concurrent_ball_path_m",
+      "concurrent_defending_outfield_centroid_path_m",
+      "mean_concurrent_D1_D10_focal_relative_path_m",
+      "prior_reference_attacker_path_m",
+      "prior_D1_D3_minus_D4_D7_focal_relative_path_m",
+      "prior_ball_path_m"
+    ],
+    "designated_nuisance_values": {
+      "period_2_indicator": [
+        0
+      ]
+    },
+    "nominal_columns": [
+      "intercept",
+      "concurrent_reference_attacker_path_m",
+      "concurrent_D1_D3_minus_D4_D7_focal_relative_path_m",
+      "initial_elsewhere_matching_cost_m",
+      "mean_other_attacker_concurrent_path_m",
+      "concurrent_ball_path_m",
+      "concurrent_defending_outfield_centroid_path_m",
+      "mean_concurrent_D1_D10_focal_relative_path_m",
+      "prior_reference_attacker_path_m",
+      "prior_D1_D3_minus_D4_D7_focal_relative_path_m",
+      "prior_ball_path_m",
+      "period_2_indicator"
+    ],
+    "omitted_constant_nuisance_columns": [
+      "period_2_indicator"
+    ],
+    "resolved_once_before_outcome_fit": true,
+    "reused_for_primary_bootstrap_null_remote_trim_and_descriptive": true
+  },
+  "bootstrap": {
+    "primary_interval": [
+      -0.038401267096047256,
+      0.20500315727099977
+    ],
+    "remote_interval": [
+      -0.12666263810695216,
+      0.08501657164917292
+    ],
+    "replicates": 2000,
+    "trim_interval": [
+      -0.03940115054689448,
+      0.2020331511880358
+    ],
+    "valid_primary": 2000,
+    "valid_remote": 2000,
+    "valid_trim": 2000
+  },
+  "classification": "MIXED",
+  "controls": {
+    "direction_null_95th": 0.10194340136478797,
+    "direction_null_construction": "common-angle internal defender-motion rotation preserving start formation, centroid path, ranks, D, R, and leave-one-out-relative path lengths",
+    "direction_null_pass": false,
+    "remote_coefficient": -0.01871794395102351,
+    "remote_pass": true,
+    "trim_pass": true,
+    "trim_retained_abs_fraction": 0.9715085199587289,
+    "trim_threshold_m": 12.198443079831405,
+    "trimmed_coefficient": 0.09558988938052532
+  },
+  "descriptive_alternatives": {
+    "fixed_start_matching": {
+      "coefficients": {
+        "concurrent_D1_D3_minus_D4_D7_focal_relative_path_m": 0.1331706280419401,
+        "concurrent_ball_path_m": -0.0213894759916901,
+        "concurrent_defending_outfield_centroid_path_m": -0.07056886613720452,
+        "concurrent_reference_attacker_path_m": -0.00824064710214337,
+        "initial_elsewhere_matching_cost_m": -0.08947309960906243,
+        "intercept": 1.1426635359726267,
+        "mean_concurrent_D1_D10_focal_relative_path_m": 0.20220735203319246,
+        "mean_other_attacker_concurrent_path_m": 0.07330939520066294,
+        "prior_D1_D3_minus_D4_D7_focal_relative_path_m": 0.025209745600251722,
+        "prior_ball_path_m": -0.0008605002180932875,
+        "prior_reference_attacker_path_m": -0.0007487560612546664
+      },
+      "condition_number": 189.5223399648156,
+      "n": 281,
+      "rank": 11,
+      "rss": 194.45198204024385,
+      "singular_values": [
+        406.12190571884815,
+        102.09526690393699,
+        91.54233358175615,
+        65.38092131204093,
+        31.718890948871437,
+        27.88100204268905,
+        25.730342510724046,
+        15.542561237377473,
+        14.656831550126226,
+        10.16000772740726,
+        2.1428708921293596
+      ]
+    },
+    "full_ten_matching": {
+      "coefficients": {
+        "concurrent_D1_D3_minus_D4_D7_focal_relative_path_m": 0.054594658758149534,
+        "concurrent_ball_path_m": -0.0016808699541223794,
+        "concurrent_defending_outfield_centroid_path_m": 0.08490453752664072,
+        "concurrent_reference_attacker_path_m": -0.03698431702286505,
+        "initial_elsewhere_matching_cost_m": -0.10272579084064923,
+        "intercept": 1.4523790952581306,
+        "mean_concurrent_D1_D10_focal_relative_path_m": -0.1378174891161216,
+        "mean_other_attacker_concurrent_path_m": -0.057507538774766775,
+        "prior_D1_D3_minus_D4_D7_focal_relative_path_m": -0.008457028094799954,
+        "prior_ball_path_m": -0.011559727024140723,
+        "prior_reference_attacker_path_m": 0.02496227914702286
+      },
+      "condition_number": 189.5223399648156,
+      "n": 281,
+      "rank": 11,
+      "rss": 161.12867134952765,
+      "singular_values": [
+        406.12190571884815,
+        102.09526690393699,
+        91.54233358175615,
+        65.38092131204093,
+        31.718890948871437,
+        27.88100204268905,
+        25.730342510724046,
+        15.542561237377473,
+        14.656831550126226,
+        10.16000772740726,
+        2.1428708921293596
+      ]
+    },
+    "mean_two_nearest": {
+      "coefficients": {
+        "concurrent_D1_D3_minus_D4_D7_focal_relative_path_m": 0.09703144441132908,
+        "concurrent_ball_path_m": -0.0069062701964317805,
+        "concurrent_defending_outfield_centroid_path_m": -0.005309379146158633,
+        "concurrent_reference_attacker_path_m": -0.0140572076890097,
+        "initial_elsewhere_matching_cost_m": -0.0769162552005649,
+        "intercept": 1.0077546399578856,
+        "mean_concurrent_D1_D10_focal_relative_path_m": -0.03227914554250421,
+        "mean_other_attacker_concurrent_path_m": 0.038592705633160806,
+        "prior_D1_D3_minus_D4_D7_focal_relative_path_m": -0.00364330111087911,
+        "prior_ball_path_m": -0.00817629718057101,
+        "prior_reference_attacker_path_m": 0.004698191046303166
+      },
+      "condition_number": 189.5223399648156,
+      "n": 281,
+      "rank": 11,
+      "rss": 99.08575743010672,
+      "singular_values": [
+        406.12190571884815,
+        102.09526690393699,
+        91.54233358175615,
+        65.38092131204093,
+        31.718890948871437,
+        27.88100204268905,
+        25.730342510724046,
+        15.542561237377473,
+        14.656831550126226,
+        10.16000772740726,
+        2.1428708921293596
+      ]
+    }
+  },
+  "descriptive_geometry": {
+    "defending_unit_depth_end_m": {
+      "count": 281,
+      "max": 55.86645,
+      "mean": 30.479056227758004,
+      "median": 29.568749999999998,
+      "min": 11.190600000000003,
+      "q25": 24.6741,
+      "q75": 35.925599999999996,
+      "sd": 8.088737558288933
+    },
+    "defending_unit_depth_start_m": {
+      "count": 281,
+      "max": 55.89884999999999,
+      "mean": 30.5020371886121,
+      "median": 29.504549999999995,
+      "min": 11.839500000000008,
+      "q25": 25.032450000000004,
+      "q75": 36.070800000000006,
+      "sd": 8.115813325655175
+    },
+    "defending_unit_width_end_m": {
+      "count": 281,
+      "max": 68.52243428571428,
+      "mean": 39.09822100660905,
+      "median": 37.64091428571428,
+      "min": 19.58584571428571,
+      "q25": 33.96085142857143,
+      "q75": 42.65688571428572,
+      "sd": 8.123789934069702
+    },
+    "defending_unit_width_start_m": {
+      "count": 281,
+      "max": 68.47055999999999,
+      "mean": 39.58681016776817,
+      "median": 37.99577714285714,
+      "min": 19.75302857142857,
+      "q25": 34.74586285714285,
+      "q75": 42.89993714285714,
+      "sd": 8.047647022343156
+    },
+    "matching_link_churn_count": {
+      "count": 281,
+      "max": 8.0,
+      "mean": 2.0284697508896796,
+      "median": 2.0,
+      "min": 0.0,
+      "q25": 0.0,
+      "q75": 4.0,
+      "sd": 1.9656953366578203
+    },
+    "unused_defender_identity_changed_fraction": 0.3274021352313167
+  },
+  "frozen_hashes": {
+    "configuration_sha256": "54a01d0aeba846b1e245a0c0552234b2390cfc3ec10ec0a187dc94c0b10fed42",
+    "hash_ledger_sha256": "e8b9db4b9ec2f0a367ff3672819e24dc498c565e055a9bd84a9650702ebdf983",
+    "protocol_sha256": "5bf577758202aed13b47fce54fd40c88b1a443d675d832f93f69c62570303988"
+  },
+  "hard_qc": {
+    "active_full_rank": true,
+    "bootstrap_minimum": true,
+    "complete_sets": true,
+    "direction_null_preservation": true,
+    "frozen_hashes": true,
+    "game2_coverage_outcomes_opened": false,
+    "game3_accessed": false,
+    "idsse_coverage_outcomes_opened": false,
+    "period_1_only": true,
+    "unique_reference_rows": true,
+    "valid": true
+  },
+  "null_preservation": {
+    "max_centroid_error": 3.552713678800501e-14,
+    "max_relative_path_error": 5.240252676230739e-14
+  },
+  "predictor_outcome_summaries": {
+    "D_m": {
+      "count": 281,
+      "max": 7.113318147074695,
+      "mean": 0.7770881795751194,
+      "median": 0.6235402576992066,
+      "min": -2.708972088221268,
+      "q25": -0.0810284973754225,
+      "q75": 1.5977505539610117,
+      "sd": 1.2919632274482005
+    },
+    "Y_m": {
+      "count": 281,
+      "max": 2.50024326424872,
+      "mean": 0.11724904090564536,
+      "median": 0.09314952844174407,
+      "min": -2.9714824499506207,
+      "q25": -0.4016646771907375,
+      "q75": 0.6317235378791608,
+      "sd": 0.8268912552309857
+    }
+  },
+  "primary": {
+    "coefficients": {
+      "concurrent_D1_D3_minus_D4_D7_focal_relative_path_m": 0.09839325895421495,
+      "concurrent_ball_path_m": -0.012981453444272031,
+      "concurrent_defending_outfield_centroid_path_m": 0.11292607785029168,
+      "concurrent_reference_attacker_path_m": -0.009021825760775693,
+      "initial_elsewhere_matching_cost_m": -0.12729385886918204,
+      "intercept": 1.6757710104161128,
+      "mean_concurrent_D1_D10_focal_relative_path_m": -0.03276830418330659,
+      "mean_other_attacker_concurrent_path_m": -0.061144648447573516,
+      "prior_D1_D3_minus_D4_D7_focal_relative_path_m": -0.06339635466623499,
+      "prior_ball_path_m": -0.01458718591175303,
+      "prior_reference_attacker_path_m": -0.007966967976235275
+    },
+    "condition_number": 189.5223399648156,
+    "n": 281,
+    "rank": 11,
+    "rss": 170.81906425071037,
+    "singular_values": [
+      406.12190571884815,
+      102.09526690393699,
+      91.54233358175615,
+      65.38092131204093,
+      31.718890948871437,
+      27.88100204268905,
+      25.730342510724046,
+      15.542561237377473,
+      14.656831550126226,
+      10.16000772740726,
+      2.1428708921293596
+    ]
+  },
+  "sample": {
+    "all_complete_ten_by_ten": true,
+    "all_one_row_per_anchor": true,
+    "attacking_team_counts": {
+      "metrica:Away": 166,
+      "metrica:Home": 115
+    },
+    "eligible_anchors": 281,
+    "exclusion_counts": {
+      "complete_ball_support_unavailable": 294,
+      "complete_ten_attackers_unavailable": 503,
+      "complete_ten_defenders_unavailable": 118,
+      "no_possession_team": 9,
+      "opponent_possession_event_after_anchor": 102,
+      "restart_or_ball_out_span": 142
+    },
+    "period_counts": {
+      "1": 281
+    },
+    "reference_attacker_counts": {
+      "metrica:Away:15": 13,
+      "metrica:Away:16": 25,
+      "metrica:Away:17": 18,
+      "metrica:Away:18": 18,
+      "metrica:Away:19": 14,
+      "metrica:Away:20": 18,
+      "metrica:Away:21": 28,
+      "metrica:Away:22": 18,
+      "metrica:Away:23": 9,
+      "metrica:Away:24": 5,
+      "metrica:Home:1": 4,
+      "metrica:Home:10": 17,
+      "metrica:Home:12": 7,
+      "metrica:Home:2": 12,
+      "metrica:Home:3": 4,
+      "metrica:Home:4": 21,
+      "metrica:Home:5": 4,
+      "metrica:Home:6": 19,
+      "metrica:Home:7": 9,
+      "metrica:Home:8": 12,
+      "metrica:Home:9": 6
+    }
+  },
+  "source_sha256": "86d8fc6fb0e6f3c23ea7f518e190bcdaa77287e689201d909c1555102eefc41b"
+}

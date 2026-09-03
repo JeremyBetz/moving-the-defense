@@ -1,0 +1,19 @@
+{
+  "configuration": "config/defensive_coverage_redistribution_v3.json",
+  "execution_tier": "Tier 1 development",
+  "frozen_hashes": {
+    "configuration_sha256": "54a01d0aeba846b1e245a0c0552234b2390cfc3ec10ec0a187dc94c0b10fed42",
+    "hash_ledger_sha256": "e8b9db4b9ec2f0a367ff3672819e24dc498c565e055a9bd84a9650702ebdf983",
+    "protocol_sha256": "5bf577758202aed13b47fce54fd40c88b1a443d675d832f93f69c62570303988"
+  },
+  "match": "Metrica Sample Game 1",
+  "platform": "macOS-26.6.2-arm64-arm-64bit-Mach-O",
+  "protected_scope": {
+    "game2_coverage_outcomes_opened": false,
+    "game3_accessed": false,
+    "idsse_coverage_outcomes_opened": false
+  },
+  "protocol": "docs/protocols/defensive_coverage_redistribution_v3.md",
+  "python": "3.13.15 (main, Aug 25 2026, 13:50:12) [Clang 22.1.3 ]",
+  "source_sha256": "86d8fc6fb0e6f3c23ea7f518e190bcdaa77287e689201d909c1555102eefc41b"
+}

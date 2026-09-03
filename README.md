@@ -91,7 +91,7 @@ The project has retained negative and mixed findings rather than optimizing them
 - Constant-velocity continuation innovation did not validate a universal response-onset instant.
 - Opponent information added only a small, mixed predictive increment beyond the non-opponent baseline.
 - Opportunity Redistribution v1 was negative.
-- Defensive Coverage Redistribution v1 was rejected prospectively; its narrower v2 successor was invalid before estimation because complete support left its mandatory period-2 model column constant. No matching-geometry effect was estimated.
+- Defensive Coverage Redistribution v1 was rejected prospectively; its narrower v2 successor was invalid before estimation because complete support left its mandatory period-2 model column constant. The sole-nuisance remedy in v3 produced a valid period-1-only Game 1 model, but its frozen result was mixed: the positive matching-geometry coefficient had an interval crossing zero and did not exceed its direction-null gate.
 - Game 2 directional coordination-form replication was mixed before the unchanged construct was supported in all seven governed IDSSE matches.
 - The frozen match-side expectation increment was not supported: it worsened heldout prediction in all seven IDSSE matches.
 

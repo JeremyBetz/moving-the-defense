@@ -1,0 +1,5 @@
+{
+  "all_passed_before_empirical_execution": true,
+  "governed_test_file": "tests/test_defensive_coverage_redistribution_v2.py",
+  "required_gate_count": 9
+}

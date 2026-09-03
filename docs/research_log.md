@@ -1,5 +1,24 @@
 # Research Log
 
+## 2026-09-03 — Defensive Coverage Redistribution v3 Game 1 development mixed
+
+The prospectively frozen v3 execution used the same 281 period-1-only Metrica
+Sample Game 1 anchors that rendered v2 non-estimable. The sole permitted
+pre-fit remedy omitted the exactly constant, explicitly designated
+`period_2_indicator`; the remaining 11-column design was full rank and was
+reused for the primary model, 2,000 block bootstrap replicates, direction null,
+remote comparator, frozen trim, and descriptive alternatives. No scientific
+column, row, support rule, or threshold changed.
+
+The primary matching-geometry coefficient was $\hat\beta_D=0.0983933$ m/m with
+a frozen 95% block-bootstrap interval of $[-0.0384013, 0.2050032]$. Although it
+exceeded the remote comparator and the trim retained its direction, it did not
+exceed the shared-geometry direction-null 95th percentile. The exact frozen
+status is **GAME 1 COVERAGE REDISTRIBUTION v3 DEVELOPMENT MIXED**. This is not
+evidence for football coverage, opportunity, causation, tactics, gravity, or
+value. All 11 governed compact artifacts reproduced byte-for-byte in an
+independent rerun; Game 2, Game 3, and IDSSE coverage outcomes remained closed.
+
 ## 2026-09-03 — Outcome-blind defender-rank composition audit completed with moderate limitation
 
 Before any Defensive Coverage Redistribution v3 execution, the

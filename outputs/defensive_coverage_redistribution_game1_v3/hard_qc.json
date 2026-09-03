@@ -1,0 +1,13 @@
+{
+  "active_full_rank": true,
+  "bootstrap_minimum": true,
+  "complete_sets": true,
+  "direction_null_preservation": true,
+  "frozen_hashes": true,
+  "game2_coverage_outcomes_opened": false,
+  "game3_accessed": false,
+  "idsse_coverage_outcomes_opened": false,
+  "period_1_only": true,
+  "unique_reference_rows": true,
+  "valid": true
+}

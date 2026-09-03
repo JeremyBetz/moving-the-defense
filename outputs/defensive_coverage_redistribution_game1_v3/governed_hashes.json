@@ -1,0 +1,13 @@
+{
+  "active_column_plan.json": "dd83a9215baa6260d44abc4412aea07b0437f1c24ceb90283ef7c8f292bd84cc",
+  "bootstrap_results.csv": "78141e242a2131228bab7f9d7ca9a3a1f9402491e1bb4bdf3b486e0f85d8456e",
+  "descriptive_alternatives.json": "91c2129ffc0d9a7ad8a54f3212d504c013fe05132f5a80abbd1eea42c18e5bb8",
+  "direction_null.csv": "c5ac0dbf333001b1320a99463aa5ba0ebe616319ce51694264349666179c5819",
+  "hard_qc.json": "e618949565311253e0073162c2ecef36246c30e03da00cf817e03e58f51e3cef",
+  "manifest.json": "29fedc64f3930edb3ddac4fc365da0559010659889c9df1ab41c161a95b7f584",
+  "model_results.json": "9488a036899a72a60d71a144ac06ba41d66e1ba26c75680eafe448d5f0182e32",
+  "remote_comparator.json": "ffd8576258aa899e8b44b1bc1112d517679a2658f4762120d62dacc5718dccfb",
+  "result_report.md": "a082228b6936ecc19b2888a4941fa538d3c6f8ba85ccc3495f6bf6e40df7972e",
+  "synthetic_gates.json": "9ac861e909f6cb654186ce1912ac7b866eb27638c4be5f720a43802bf0ac83b6",
+  "trim_result.json": "a9e8c1fdc563e7d245ac89b9fba7ff4767a591ba687b84593d7e61afc73c863b"
+}
