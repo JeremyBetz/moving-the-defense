@@ -184,56 +184,60 @@ opened.
 
 ### Sloan working draft (under 500 words)
 
-**Working title:** *Measuring Localized Defensive Reorganization Associated with Off-Ball Movement in Football*
+**Working title:** *Off-Ball Movement Direction and Localized Defensive
+Reorganization in Football*
 
-**Introduction.** Analysts often describe an off-ball run as having shifted a
-defence, but tracking data conflate two different phenomena: collective movement
-of the defensive unit and individual defenders moving differently from that
-unit. We develop a transparent observational method that separates those
-quantities and tests whether preceding attacker movement is followed by
-localized defensive reorganization in defender-relative movement without
-inferring marking assignments, tactical roles, or attacking value.
+**Introduction.** Off-ball movement can coincide either with a whole defensive
+unit shifting or with defenders changing position within that unit; tracking
+analyses need to distinguish them. Outward attacker movement was more strongly
+associated with localized internal defensive reorganization than equivalently
+modelled goalward movement, showing that reorganization is not simply aligned
+with movement toward goal.
 
-**Methods.** Each defender's path is expressed relative to the contemporaneous
-movement of the other defending outfield players. Attacker movement is measured
-over a preceding fixed interval, defender proximity ranks are fixed before the
-subsequent response interval, and the primary estimand compares the
-attacker-movement coefficient for the three nearest defenders with the four
-middle-ranked defenders. Models condition on strictly prior movement and spatial
-context. Protocols were frozen before development, heldout, and external tests.
-A reverse-time comparison assessed whether the attacker-before-defender
-association exceeded background temporal structure.
+**Methods.** Using fixed windows, we measured attacker movement before each
+defender's response path relative to the other defending outfield players,
+separating local reorganization from shared translation. Start-fixed proximity
+ranks compared the three nearest defenders with four middle-ranked defenders
+without inferred marking assignments. We developed and held out the temporal
+design in Metrica, tested it externally across seven IDSSE matches, replicated
+directional form in nine SkillCorner matches, and included a reverse-time
+comparison.
 
-**Results.** In two Metrica sample matches, the pooled near-minus-middle contrast
-was 0.05029 m of defender-relative path per metre of preceding attacker path
-(97.5% interval 0.03433–0.06858), with a paired forward-minus-reverse excess of
-0.02912 (0.01410–0.04526). Under the unchanged design across seven IDSSE
-matches, the pooled primary contrast was 0.06115 (95% interval
-0.05579–0.06681). The reverse-time comparison remained positive at 0.03661
-(0.03224–0.04111), but the paired forward-minus-reverse excess was 0.02455
-(0.01932–0.02985). Primary and paired-excess estimates were positive in all
-seven IDSSE matches and remained positive across frozen 1-, 2-, and 4-second
-sensitivity windows. Across the seven IDSSE matches, reorganization was also
-larger when attackers started less far goalward relative to the defensive unit
-and closer to the ball; both context slopes had consistent signs in all seven
-match and leave-one-match-out fits. The predeclared trim also passed for both
-contexts, which were evaluated separately from the temporal primary model and
-do not identify a tactical mechanism. In separate spatial-form analyses,
-outward displacement was more strongly associated with localized defensive
-reorganization than equivalently modelled goalward displacement in both IDSSE
-and SkillCorner, whereas goalward movement showed a stronger descriptive,
-nonclassifying association with collective defensive translation. A
-prospectively tested inward-width mechanism was mixed.
+**Results.** In pooled Metrica, the pre-specified near-minus-middle association
+was 0.05029 m/m (97.5% interval [0.03433, 0.06858]); its paired
+forward-minus-reverse excess was 0.02912 [0.01410, 0.04526]. The development
+and protected heldout estimates were both positive (0.04559 and 0.08553 m/m).
+Across Metrica, frozen 1-, 2-, and 4-second horizons were positive (0.02916,
+0.05029, and 0.07566 m/m), and the predeclared trim retained 88.74% of primary
+magnitude. Across seven IDSSE matches, the corresponding association was
+0.06115 m/m (95% CI [0.05579, 0.06681]) and the forward-minus-reverse excess
+was 0.02455 [0.01932, 0.02985]. All seven primary and paired-excess estimates
+were positive; 1-, 2-, and 4-second horizons were likewise positive (0.03536,
+0.06115, and 0.09549 m/m), although reverse-time structure itself remained
+positive. The IDSSE trim retained 95.35% of primary magnitude. The directional
+asymmetry replicated across independent tracking environments: conditional on
+equal path magnitude and frozen starting geometry, outward minus goalward
+movement was 0.056856 m/m [0.051358, 0.062430] in IDSSE, positive in all 7/7
+match and leave-one-match-out fits, and 0.048883 m/m [0.042940, 0.054707] in
+SkillCorner, positive in all 9/9 match and leave-one-match-out fits.
+SkillCorner's trim retained 90.19% of rows, and a majority-directly-detected
+sensitivity estimated 0.046780 m/m. All governed bootstrap families had
+2,000 valid replicates each; the two external environments used separate
+frozen models, interval conventions, and checks and were not pooled across providers. In
+IDSSE, 5 m outward rather than goalward displacement corresponded to
+approximately 0.284 m more subsequent localized defender-relative
+reorganization. Thus reorganization was not simply aligned with movement
+toward goal. Goalward movement instead had a secondary, nonclassifying
+2.962709 m [2.870720, 3.048322] collective-translation association, while the
+proposed inward-versus-outward narrowing mechanism was not established.
 
-**Conclusion.** Preceding attacker movement is reproducibly associated with
-stronger subsequent defender-relative movement among nearby than middle-ranked
-defenders across two tracking environments. Because reverse-time structure
-remains positive, the result supports a stronger time-ordered association, not
-reaction time or causation. Separate prospectively specified tests did not
-establish teammate separation or a robust downstream matching-geometry
-consequence. The method therefore provides a reproducible measurement layer for
-surfacing passages where off-ball movement is followed by localized defensive
-reorganization before tactical meaning or value is assigned.
+**Conclusion.** This is not a new centroid or tracking primitive, but a
+prospectively validated temporal measure of internal defensive reorganization
+with replicated directional asymmetry. It can distinguish shared defensive
+shifts from localized internal reorganization and surface passages for video
+analysis. It does not automatically assign tactical labels. These are
+observational geometric associations, not estimates of causal influence or
+attacking value.
 
 ### Concise abstract (175 words)
 
