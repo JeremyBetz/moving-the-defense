@@ -1,0 +1,165 @@
+{
+  "schema_version": "1.0.0",
+  "status": "FROZEN_BEFORE_ANY_SPATIAL_FORM_RESULT",
+  "freeze_date": "2026-09-04",
+  "starting_commit": "a270650e980ed770769cfd7169b10c5e3b26e762",
+  "governing_protocol": "docs/protocols/defensive_reorganization_spatial_value_v1.md",
+  "design_audit": "docs/spatial_movement_value_feasibility.md",
+  "scientific_label": "defensive_reorganization_spatial_form_v1",
+  "value_metric": false,
+  "execution_authorized": false,
+  "data": {
+    "provider_environment": "IDSSE_Sportec",
+    "matches": ["J03WMX", "J03WN1", "J03WOH", "J03WOY", "J03WPY", "J03WQQ", "J03WR9"],
+    "observation_ids": "exact_closed_defensive_reorganization_context_v1_set",
+    "Metrica_Game_3": "prohibited",
+    "SkillCorner": "prohibited"
+  },
+  "timing_seconds": {
+    "prior_attacker_context": [-4.0, -2.0],
+    "attacker_exposure": [-2.0, 0.0],
+    "defender_response": [0.0, 2.0],
+    "anchor_cadence": 4.0,
+    "sampling_hz": 25
+  },
+  "target": {
+    "Y": "mean_D1_D3_subsequent_accumulated_leave_one_out_defender_relative_path_m_minus_mean_D4_D7",
+    "units": "m",
+    "DRD_residual": false,
+    "event_outcome": false,
+    "player_aggregate": false
+  },
+  "coordinates": {
+    "canonical_pitch_m": [105.0, 68.0],
+    "positive_x": "attacking_goalward",
+    "focal_start_side_reflection": "focal_attacker_y_at_t_minus_2_nonnegative",
+    "positive_signed_lateral_movement": "outward_from_centre_line"
+  },
+  "primary": {
+    "question": "outward_versus_goalward_displacement_conditional_on_path_and_start_context",
+    "movement_variables": [
+      "attacker_goalward_displacement_m",
+      "attacker_outward_displacement_m"
+    ],
+    "contrast": "beta_attacker_outward_displacement_m_minus_beta_attacker_goalward_displacement_m",
+    "two_sided": true,
+    "positive_label": "OUTWARD_GREATER",
+    "negative_label": "GOALWARD_GREATER"
+  },
+  "controls": [
+    "attacker_path_exposure_m",
+    "attacker_path_prior_m",
+    "attacker_minus_unit_goalward_m",
+    "attacker_ball_distance_start_m",
+    "defending_unit_width_m",
+    "defending_unit_depth_m",
+    "ball_minus_unit_goalward_m"
+  ],
+  "static_lanes": {
+    "coordinate": "abs_attacker_y_m_at_t_minus_2",
+    "central": "abs_y_less_than_or_equal_9_15",
+    "half_space": "abs_y_greater_than_9_15_and_less_than_or_equal_20_16",
+    "wide": "abs_y_greater_than_20_16",
+    "reference": "central",
+    "directional_hypothesis": false
+  },
+  "dynamic_shape": {
+    "attacker_unit_lateral_position": "attacker_minus_unit_centroid_y_divided_by_half_unit_width",
+    "attacker_beyond_same_side_edge_m": "max_0_attacker_y_minus_max_defender_y",
+    "positive_finite_unit_width_required": true,
+    "clipping": false
+  },
+  "primary_model": {
+    "family": "equal_match_weighted_raw_unit_OLS_with_match_intercepts",
+    "continuous_column_order": [
+      "attacker_path_exposure_m",
+      "attacker_path_prior_m",
+      "attacker_minus_unit_goalward_m",
+      "attacker_ball_distance_start_m",
+      "defending_unit_width_m",
+      "defending_unit_depth_m",
+      "ball_minus_unit_goalward_m",
+      "attacker_goalward_displacement_m",
+      "attacker_outward_displacement_m"
+    ],
+    "observation_weight": "one_divided_by_rows_in_match",
+    "solver": "numpy_linalg_lstsq_rcond_None",
+    "full_rank_required": true,
+    "standardization": false,
+    "regularization": false,
+    "interactions": false,
+    "nonlinear_terms": false,
+    "target_scaling": false,
+    "prediction_clipping": false
+  },
+  "cross_match": {
+    "pooled_equal_match_weighted": true,
+    "per_match_same_model": 7,
+    "leave_one_complete_match_out_same_model": 7,
+    "same_sign_match_min": 6,
+    "same_sign_leave_one_match_out_required": 7
+  },
+  "secondary": {
+    "question": "dynamic_unit_relative_lateral_geometry_versus_static_five_lane_membership",
+    "validation": "fixed_seven_leave_one_match_out_OLS_fits",
+    "static_added_columns": ["half_space", "wide"],
+    "dynamic_added_columns": [
+      "attacker_unit_lateral_position",
+      "attacker_beyond_same_side_edge_m"
+    ],
+    "metric": "equal_match_macro_heldout_MAE_m",
+    "paired_estimand": "MAE_static_minus_MAE_dynamic_m",
+    "materiality_relative_percent": 1.0,
+    "matches_improved_min": 5,
+    "statuses": ["DYNAMIC_PREFERRED", "STATIC_PREFERRED", "NO_CLEAR_REPRESENTATIONAL_ADVANTAGE"]
+  },
+  "uncertainty": {
+    "replicates": 2000,
+    "minimum_valid": 1900,
+    "seed": 20260905,
+    "resampling": "period_origin_60_second_blocks_within_every_match_period",
+    "preserve_all_matches": true,
+    "preserve_simultaneous_attackers_and_shared_anchors": true,
+    "interval": "two_sided_95_percentile",
+    "zero_boundary": "touching_zero_fails"
+  },
+  "robustness": {
+    "primary_trim_quantiles_within_match": [0.025, 0.975],
+    "primary_trim_variables": [
+      "attacker_goalward_displacement_m",
+      "attacker_outward_displacement_m"
+    ],
+    "inclusive": true,
+    "same_strict_sign_required": true,
+    "absolute_magnitude_retention_range_inclusive": [0.5, 1.5],
+    "additional_search": false
+  },
+  "classification": {
+    "order": ["INVALID", "SPATIAL_FORM_SUPPORTED", "SPATIAL_FORM_MIXED", "SPATIAL_FORM_NOT_SUPPORTED"],
+    "SUPPORTED": "primary_95_percent_interval_excludes_zero_and_at_least_6_of_7_match_estimates_same_sign_and_7_of_7_leave_one_match_out_same_sign_and_trim_passes",
+    "MIXED": "no_support_but_interval_excludes_zero_or_match_6_of_7_and_LOMO_7_of_7_same_sign_or_untrimmed_support_gates_pass_but_trim_fails",
+    "NOT_SUPPORTED": "every_other_valid_result",
+    "secondary_cannot_change_primary": true
+  },
+  "effect_size": {
+    "coefficient_units": "m_Y_per_m_displacement",
+    "canonical_direction_m": 5.0,
+    "primary_translation": "5_times_outward_minus_goalward_contrast_m",
+    "canonical_prediction_controls": "within_match_medians_then_equal_match_average",
+    "canonical_directions": ["goalward", "outward", "away_from_goal", "inward"],
+    "canonical_predictions_classifying": false,
+    "report_observed_Y_IQR": true,
+    "also_report_observed_predictor_p10_p90": true
+  },
+  "prohibited": [
+    "DRD_residuals",
+    "SkillCorner_outcomes",
+    "Metrica_Game_3",
+    "player_rankings",
+    "seam_inference",
+    "marking_or_assignment",
+    "xT_or_EPV",
+    "value_or_gravity_claim",
+    "post_result_feature_or_threshold_search"
+  ]
+}
