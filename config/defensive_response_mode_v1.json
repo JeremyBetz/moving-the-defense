@@ -1,0 +1,154 @@
+{
+  "schema_version": "1.0.0",
+  "status": "FROZEN_BEFORE_ANY_RESPONSE_MODE_RESULT",
+  "freeze_date": "2026-09-04",
+  "starting_commit": "a1835f6b73543bffd805d3f64b23d0d7470b119a",
+  "protocol": "docs/protocols/defensive_response_mode_v1.md",
+  "methodology": "docs/defensive_response_mode_v1_methodology.md",
+  "feasibility_audit": "docs/defensive_response_mode_feasibility.md",
+  "execution_authorized": false,
+  "data": {
+    "provider_environment": "IDSSE_Sportec",
+    "matches": ["J03WMX", "J03WN1", "J03WOH", "J03WOY", "J03WPY", "J03WQQ", "J03WR9"],
+    "observation_ids": "exact_closed_defensive_reorganization_context_v1_and_spatial_form_v1_set",
+    "SkillCorner_response_mode_outcomes": "prohibited",
+    "DRD_residuals": "prohibited",
+    "Metrica_Game_3": "prohibited"
+  },
+  "timing_seconds": {
+    "prior": [-4.0, -2.0],
+    "attacker_exposure": [-2.0, 0.0],
+    "defensive_response": [0.0, 2.0],
+    "anchor_cadence": 4.0,
+    "sampling_hz": 25,
+    "position_smoother": "centered_7_frame_complete_support"
+  },
+  "coordinates": {
+    "canonical_pitch_m": [105.0, 68.0],
+    "positive_x": "attacking_goalward",
+    "positive_y": "outward_after_focal_start_side_reflection"
+  },
+  "movement_columns": [
+    "attacker_goalward_displacement_m",
+    "attacker_outward_displacement_m"
+  ],
+  "controls_in_model_order": [
+    "attacker_path_exposure_m",
+    "attacker_path_prior_m",
+    "attacker_minus_unit_goalward_m",
+    "attacker_ball_distance_start_m",
+    "defending_unit_width_m",
+    "defending_unit_depth_m",
+    "ball_minus_unit_goalward_m"
+  ],
+  "response_channels": {
+    "translation_modeled": "defending_centroid_x_t_plus_2_minus_x_t_m",
+    "translation_descriptive": [
+      "centroid_lateral_displacement_m",
+      "centroid_net_displacement_m",
+      "centroid_path_m"
+    ],
+    "global_shape_modeled": [
+      "width_reduction_m_equals_width_t_minus_width_t_plus_2",
+      "depth_reduction_m_equals_depth_t_minus_depth_t_plus_2"
+    ],
+    "localized_modeled": "mean_D1_D3_subsequent_leave_one_out_relative_path_m_minus_mean_D4_D7",
+    "combined_score": false,
+    "exhaustive_decomposition_claim": false
+  },
+  "primary": {
+    "outcome": "width_reduction_m",
+    "contrast": "five_m_inward_minus_five_m_outward_equals_minus_10_times_beta_outward",
+    "expected_sign": "positive",
+    "interval": "two_sided_95_percentile",
+    "zero_touching": "fails_support"
+  },
+  "secondary": {
+    "outcome": "centroid_goalward_displacement_m",
+    "contrast": "five_m_goalward_minus_five_m_outward_equals_5_times_beta_goalward_minus_beta_outward",
+    "expected_sign": "positive",
+    "classifying": false
+  },
+  "descriptive_outcomes": [
+    "depth_reduction_m",
+    "localized_internal_reorganization_m"
+  ],
+  "model": {
+    "family": "separate_equal_match_weighted_raw_unit_OLS_with_match_intercepts_per_outcome",
+    "solver": "numpy_linalg_lstsq_rcond_None",
+    "full_rank_required": true,
+    "standardization": false,
+    "regularization": false,
+    "interactions": false,
+    "nonlinear_terms": false,
+    "outcome_combination": false
+  },
+  "inference": {
+    "replicates": 2000,
+    "minimum_valid": 1900,
+    "generator": "PCG64",
+    "seed": 20260906,
+    "block_seconds": 60.0,
+    "strata": "match_period",
+    "preserve_matches_anchors_and_simultaneous_attackers": true,
+    "interval": "two_sided_95_percentile"
+  },
+  "cross_match": {
+    "match_specific_fits": 7,
+    "leave_one_match_out_fits": 7,
+    "primary_positive_match_minimum": 6,
+    "primary_positive_lomo_required": 7
+  },
+  "robustness": {
+    "trim_variables": [
+      "attacker_goalward_displacement_m",
+      "attacker_outward_displacement_m"
+    ],
+    "within_match_quantiles": [0.025, 0.975],
+    "inclusive": true,
+    "primary_positive_required": true,
+    "absolute_magnitude_retention_inclusive": [0.5, 1.5]
+  },
+  "classification": {
+    "order": [
+      "RESPONSE_MODE_INVALID",
+      "RESPONSE_MODE_WIDTH_HYPOTHESIS_SUPPORTED",
+      "RESPONSE_MODE_WIDTH_HYPOTHESIS_MIXED",
+      "RESPONSE_MODE_WIDTH_HYPOTHESIS_NOT_SUPPORTED"
+    ],
+    "SUPPORTED": "valid_and_primary_positive_and_95CI_strictly_positive_and_at_least_6_of_7_match_positive_and_7_of_7_LOMO_positive_and_trim_passes",
+    "MIXED": "valid_and_primary_point_positive_but_one_or_more_support_gates_fail",
+    "NOT_SUPPORTED": "every_other_valid_result",
+    "secondary_or_descriptive_cannot_change_status": true
+  },
+  "effect_size": {
+    "canonical_distance_m": 5.0,
+    "width_primary": "minus_10_times_beta_outward_m",
+    "translation_secondary": "5_times_beta_goalward_minus_beta_outward_m",
+    "canonical_directions": ["goalward", "outward", "away_from_goal", "inward"],
+    "controls": "within_match_medians_then_equal_match_average",
+    "report_outcome_IQR": true,
+    "cross_outcome_magnitude_comparison": false
+  },
+  "not_selected": [
+    "width_depth_composite",
+    "mean_pairwise_distance_primary",
+    "stretch_index",
+    "convex_hull_area",
+    "principal_axis_rotation",
+    "shear_tensor",
+    "line_specific_geometry"
+  ],
+  "stopping_rule": "if_primary_mixed_or_not_supported_stop_without_alternative_response_mode_search",
+  "prohibited": [
+    "tactical_intent",
+    "defensive_scheme",
+    "marking_or_responsibility",
+    "deliberate_compression",
+    "protecting_the_center",
+    "attacker_influence_or_causation",
+    "player_or_team_rankings",
+    "gravity_or_value",
+    "post_result_metric_or_threshold_search"
+  ]
+}

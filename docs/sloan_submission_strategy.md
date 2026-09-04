@@ -36,6 +36,13 @@ all match and leave-one-match-out directions positive. It strengthens the
 geometric evidence across a third tracking environment, while remaining
 observational and separate from any cross-provider pooled estimate.
 
+A [prospectively frozen response-mode design](protocols/defensive_response_mode_v1.md)
+now asks one narrower unresolved question: whether inward rather than outward
+movement is associated with greater subsequent pitch-axis width reduction in
+IDSSE. It remains unexecuted. Even a supported result would characterize
+different geometric response forms, not prove compression, intent, influence,
+or value; rotation and shear prevent an exhaustive decomposition claim.
+
 ## 1. The paper that exists today
 
 ### Strongest defensible claim

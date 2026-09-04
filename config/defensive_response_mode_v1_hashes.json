@@ -1,0 +1,21 @@
+{
+  "status": "FROZEN_BEFORE_ANY_RESPONSE_MODE_RESULT",
+  "freeze_date": "2026-09-04",
+  "starting_commit": "a1835f6b73543bffd805d3f64b23d0d7470b119a",
+  "frozen_sha256": {
+    "docs/protocols/defensive_response_mode_v1.md": "5ed5158f8ed0f90c39ffedc7deae225b1b21be4155cfba4ae383056d4bf19da2",
+    "config/defensive_response_mode_v1.json": "9f51a6ba488e3de8f6d0251b6f5b836bae965c19d4947046bb885d593269fdf7",
+    "docs/defensive_response_mode_feasibility.md": "789619925614aed0bf76d31326880e560f6c3396770a659c39983e17e5871d09",
+    "docs/defensive_response_mode_v1_methodology.md": "0a07b034d08b0804025c9261c75c68c63752b482785d4488278b9de3d230388a",
+    "src/defensive_response_mode_v1_design.py": "63b2d88c1be756471b69b4d8fb8385dc0141a1a29fcac7a8a9e459dff6adc38f",
+    "tests/test_defensive_response_mode_v1_design.py": "6bff0338f8d74e74e79a983f63a9171697fa1ed51b50b4b1cc9a9d634b97b4cc"
+  },
+  "firewall": {
+    "IDSSE_response_mode_outcome_constructed": false,
+    "IDSSE_response_mode_model_fitted": false,
+    "SkillCorner_response_mode_outcome_inspected": false,
+    "DRD_residuals_inspected": false,
+    "Metrica_Game_3": "untouched",
+    "player_or_team_ranking_created": false
+  }
+}

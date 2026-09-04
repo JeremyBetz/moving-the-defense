@@ -1,5 +1,25 @@
 # Research Log
 
+## 2026-09-04 — Defensive Response Mode v1 frozen before outcome
+
+After the outward-greater Spatial Form association replicated in IDSSE and
+SkillCorner, a prospective design audit asked whether movement directions might
+correspond to different observable defensive response forms. It selected one
+narrow new primary: whether 5 m inward rather than outward displacement is
+associated with greater subsequent pitch-axis width reduction in the exact
+closed seven-match IDSSE sample. One goalward-versus-outward signed-centroid
+translation contrast is secondary and nonclassifying; depth reduction and the
+established near-minus-middle path remain separate descriptive channels.
+
+Synthetic fixtures separated pure translation, narrowing, depth compression,
+and local adjustment, while also showing that the views are nonorthogonal and
+nonexhaustive. Rigid rotation changed pitch-axis spans and localized path while
+preserving pairwise distances; shear could evade the chosen channels. The
+protocol therefore does not call width reduction intrinsic or deliberate
+compression and does not estimate response shares. No IDSSE or SkillCorner
+response-mode outcome, DRD residual, player/team ranking, or Game 3 datum was
+computed or inspected. Empirical execution remains separately unauthorized.
+
 ## 2026-09-04 — SkillCorner Spatial Form external replication executed: SUPPORTED
 
 The first governed SkillCorner outcome construction followed a full nine-match
