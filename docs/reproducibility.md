@@ -4,6 +4,10 @@
 
 **Project:** *Measuring Defensive Responses to Attacking Movement in Football*
 
+For a concise, linear paper-reproduction path, start with
+[REPRODUCE.md](../REPRODUCE.md). This document is the deeper technical,
+protocol, and audit-oriented reference.
+
 ## Experimental Kloppy equivalence gate
 
 Kloppy is pinned at 3.19.0 for the isolated Metrica Game 1 equivalence experiment. With the existing raw Sample Game 1 files in `data/metrica_sample_game_1/`, reproduce it with:

@@ -2,6 +2,10 @@
 
 *Working paper from the `moving-the-defense` repository.*
 
+> **Reproduce the current paper:** start with [REPRODUCE.md](REPRODUCE.md).
+> It is the short human-first path; [the technical reproducibility guide](docs/reproducibility.md)
+> retains the full protocol and audit detail.
+
 > **When an attacker moves without receiving the ball, can tracking data identify the defensive reorganization associated with that movement?**
 
 Football language is full of claims that a run pinned a defender, pulled a line apart, or created space. Tracking data records where everyone moved, but it does not tell us why they moved. This project builds the measurement foundation needed to test those ideas without treating movement as proof of tactical intent.
