@@ -1,0 +1,52 @@
+{
+  "E0": [
+    "attacker_path_exposure_m",
+    "attacker_path_prior_m"
+  ],
+  "E1": [
+    "attacker_path_exposure_m",
+    "attacker_path_prior_m",
+    "attacker_goalward_displacement_m",
+    "attacker_outward_displacement_m",
+    "attacker_minus_unit_goalward_m",
+    "attacker_minus_unit_outward_m",
+    "defending_unit_depth_m",
+    "defending_unit_width_m",
+    "attacker_ball_distance_start_m",
+    "ball_minus_unit_goalward_m",
+    "ball_minus_unit_outward_m",
+    "attacker_ball_distance_change_m"
+  ],
+  "E1_minus_ball_geometry": [
+    "attacker_path_exposure_m",
+    "attacker_path_prior_m",
+    "attacker_goalward_displacement_m",
+    "attacker_outward_displacement_m",
+    "attacker_minus_unit_goalward_m",
+    "attacker_minus_unit_outward_m",
+    "defending_unit_depth_m",
+    "defending_unit_width_m"
+  ],
+  "E1_minus_movement_direction": [
+    "attacker_path_exposure_m",
+    "attacker_path_prior_m",
+    "attacker_minus_unit_goalward_m",
+    "attacker_minus_unit_outward_m",
+    "defending_unit_depth_m",
+    "defending_unit_width_m",
+    "attacker_ball_distance_start_m",
+    "ball_minus_unit_goalward_m",
+    "ball_minus_unit_outward_m",
+    "attacker_ball_distance_change_m"
+  ],
+  "E1_minus_start_position": [
+    "attacker_path_exposure_m",
+    "attacker_path_prior_m",
+    "attacker_goalward_displacement_m",
+    "attacker_outward_displacement_m",
+    "attacker_ball_distance_start_m",
+    "ball_minus_unit_goalward_m",
+    "ball_minus_unit_outward_m",
+    "attacker_ball_distance_change_m"
+  ]
+}

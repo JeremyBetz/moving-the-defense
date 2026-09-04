@@ -95,15 +95,17 @@ holdout.
 
 The [Defensive Reorganization Departure strategy](application_sprint_strategy.md)
 has now been translated into a prospectively [frozen v1 protocol](protocols/defensive_reorganization_departure_v1.md).
-It proposes one bounded application: predict anchor-level near-versus-middle
+It proposed one bounded application: predict anchor-level near-versus-middle
 defender-relative reorganization from movement and pre-response geometry, then
 retrieve heldout passages whose observed geometry differs substantially from
-that statistical expectation. It is a movement/context application, not
-gravity, influence, value, tactical response, or a player ranking. No model,
-prediction error, residual, or DRD result has been computed. Only a SUPPORTED
-IDSSE result can authorize retrieval or the outcome-blind SkillCorner gate; any
-weaker valid status stops the sprint and preserves the existing measurement
-paper as the fallback. Game 3 remains untouched.
+that statistical expectation. The [v1 execution](results/defensive_reorganization_departure_v1.md)
+is **INVALID before model fitting**: J03WN1 retained 782 rows against the
+frozen 1,000-row common-sample minimum because exact 10-outfielder support was
+unavailable at most anchors. No prediction, residual, DRD, retrieval,
+transport, SkillCorner result, or player ranking was generated. The stop rule
+forbids repairing the support rule or reducing the match set. It remains a
+movement/context application—not gravity, influence, value, tactical response,
+or a player ranking—and Game 3 remains untouched.
 
 The [Opportunity Redistribution v1 protocol](protocols/opportunity_redistribution_v1.md) tested whether the replicated focal-local defensive contrast was associated with differential nearest-defender separation gain for other attackers initially local rather than remote to the focal attacker. The [Game 1 result](results/opportunity_redistribution_game1_v1.md) is **NEGATIVE**: the primary $\beta_D$ was −0.02407 [−0.09392, 0.04776], and two of three robustness signs were negative. This narrow geometric bridge did not survive development. Game 2 was not opened; Game 3 remains reserved.
 

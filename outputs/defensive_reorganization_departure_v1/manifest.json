@@ -1,0 +1,16 @@
+{
+  "configuration_sha256": "db6aa141d95fa10adaee1c151f116da06ffb535d6e12a8f67e512b3348090174",
+  "matches": [
+    "J03WMX",
+    "J03WN1",
+    "J03WOH",
+    "J03WOY",
+    "J03WPY",
+    "J03WQQ",
+    "J03WR9"
+  ],
+  "model_fitted": false,
+  "protocol_sha256": "14e504345ca1cdf4f972cde2e751af94593c6fc7ccb7fc283f7328c605113df9",
+  "status": "DRD APPLICATION FOUNDATION INVALID",
+  "target_registry_sha256": "3c8a50cfa07f034b4428e280ecc6fcf7df423ed4dacad86b0862ba1e7d6716d2"
+}

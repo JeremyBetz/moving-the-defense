@@ -1,8 +1,12 @@
 # Application Sprint Strategy — Defensive Reorganization Departure
 
-**Status:** the strategy has been translated into the prospectively frozen
-[Defensive Reorganization Departure v1 protocol](protocols/defensive_reorganization_departure_v1.md).
-No application outcome has been computed, and Metrica Sample Game 3 remains
+**Status:** [Defensive Reorganization Departure v1](protocols/defensive_reorganization_departure_v1.md)
+closed **INVALID before model fitting**. The seven-match common sample failed
+its frozen 1,000-rows-per-match gate because `J03WN1` retained 782
+threshold-free off-ball rows under the exact 10-attacking-outfielder support
+rule. See the [governed result](results/defensive_reorganization_departure_v1.md).
+No E0/E1 prediction, residual, DRD, retrieval, Metrica transport, SkillCorner
+outcome, or player ranking was computed; Metrica Sample Game 3 remains
 untouched.
 
 **Working paper:** *Measuring Localized Defensive Reorganization Associated
@@ -399,7 +403,7 @@ not guarantees.
 
 ## 13. Decisions resolved by the v1 freeze
 
-The [v1 protocol](protocols/defensive_reorganization_departure_v1.md) now
+The [v1 protocol](protocols/defensive_reorganization_departure_v1.md) froze
 freezes a threshold-free ball-nearest-attacker exclusion as the operational
 off-ball rule; direct anchor-level near-minus-middle path as the target; a
 two-feature movement baseline; three compact context families; nested
@@ -408,5 +412,5 @@ heldout retrieval rule. Only a SUPPORTED IDSSE result can authorize retrieval,
 Metrica transport, or the outcome-blind SkillCorner gate. SkillCorner outcome
 access still requires a separately frozen external protocol.
 
-The freeze itself contains no empirical target, model error, residual, DRD,
-retrieval passage, or external-provider outcome.
+The execution stopped at the mandatory common-sample gate before a model error,
+residual, DRD, retrieval passage, or external-provider outcome was computed.

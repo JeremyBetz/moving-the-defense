@@ -1,0 +1,11 @@
+{
+  "eligibility_ledger.csv": "93cb3392c6847712e574b852797343ba46a2931c45ed01a7f10a3c8813c13c64",
+  "feature_dictionary.json": "bbccc83b6370152ae048ff1b44076f72bc4bb67143a25b1b4d834abe6757c44e",
+  "governed_hashes.json": "2cb47e10700648e878120b93815e3bb8e1f160033ae091f64e366f2533f42b86",
+  "hard_qc.json": "96d46051e64feb799726126eb90a8dc046ec111aaf79587fc7e3e52273d51153",
+  "manifest.json": "917115b0bff8462242b7d0117765ac571579bc80721d169f06db44f06f9f71ce",
+  "reproduction.json": "67c4a1fa5da4d064c1054739601372779b1ad35a7fb43d07a624b9024bc5aec9",
+  "result.json": "2684d4d5abe616c918890bc0a0c9cc8a7e0a6c333d6d9bf44a2670ab31cacdd5",
+  "result_report.md": "5ce39b772e64e3a6b87737bce4efffddd75a99d377d75725f03be9943514c56f",
+  "sample_retention.csv": "535d7abc7f1bdad4d38840428e84589f7795abb0ad377db47ec9e63099f9be0c"
+}

@@ -390,6 +390,26 @@ MPLCONFIGDIR=/tmp/mtd-mpl OPENBLAS_NUM_THREADS=1 .venv/bin/python src/defensive_
 
 The ten compact governed outputs reproduce byte-for-byte. `prediction_source_rows.parquet` and `prediction_rows.parquet` remain local-only; compact errors, bootstrap/control results, provenance, and hashes are publishable. The execution does not access Metrica Sample Game 3.
 
+## Defensive Reorganization Departure v1
+
+The [frozen protocol](protocols/defensive_reorganization_departure_v1.md) and
+[result](results/defensive_reorganization_departure_v1.md) govern the compact
+seven-match IDSSE application check. The execution stopped before fitting at
+the frozen common-sample gate because `J03WN1` retained 782 rather than 1,000
+off-ball rows. Reproduce its eligibility ledger and byte-identical compact
+result with:
+
+```bash
+MPLCONFIGDIR=/tmp/mtd-drd OPENBLAS_NUM_THREADS=1 .venv/bin/python src/defensive_reorganization_departure_v1.py --output outputs/defensive_reorganization_departure_v1
+MPLCONFIGDIR=/tmp/mtd-drd OPENBLAS_NUM_THREADS=1 .venv/bin/python src/defensive_reorganization_departure_v1.py --output outputs/.defensive_reorganization_departure_v1_rerun
+.venv/bin/python src/defensive_reorganization_departure_v1.py --output outputs/defensive_reorganization_departure_v1 --verify-against outputs/.defensive_reorganization_departure_v1_rerun
+```
+
+No prediction ledger is created: the frozen support gate stops before model
+fitting. The provider-linked observation-level eligibility ledger remains
+local-only; its governed SHA-256 is retained in the compact final hash ledger.
+The execution does not access Metrica Sample Game 3.
+
 ## Known reproducibility limitations
 
 - There is no one-command end-to-end workflow or continuous integration check.

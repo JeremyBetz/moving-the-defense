@@ -1,5 +1,22 @@
 # Research Log
 
+## 2026-09-04 — Defensive Reorganization Departure v1 invalid before model fitting
+
+The prospective seven-match IDSSE execution deterministically failed its
+mandatory common-sample gate before E0/E1 fitting. `J03WN1` retained 782
+threshold-free off-ball rows, below the frozen 1,000-row minimum. At most of
+its inherited anchors, only nine attacking outfield players had complete
+seven-frame support, so the exact 10-player support rule could not be met
+before the ball-nearest reference exclusion. The other six matches retained
+7,100–10,947 rows.
+
+The frozen target, features, support threshold, off-ball rule, validation,
+and classification were unchanged. A complete independent support rerun
+reproduced all seven compact governed outputs byte-for-byte. No E0/E1 model,
+prediction error, residual, DRD, retrieval example, Metrica transport,
+SkillCorner outcome, player ranking, or Game 3 access occurred. The v1 stop
+rule closes the sprint without reducing the match set or repairing support.
+
 ## 2026-09-04 — Defensive Reorganization Departure v1 frozen before results
 
 The application-sprint strategy was translated into one executable protocol

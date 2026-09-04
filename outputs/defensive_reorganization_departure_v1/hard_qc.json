@@ -1,0 +1,12 @@
+{
+  "common_sample_minimum_rows": false,
+  "common_sample_retention_minimum": true,
+  "frozen_hashes": true,
+  "game3_untouched": true,
+  "model_not_fitted_after_pre_fit_invalidity": true,
+  "no_metrica_transport": true,
+  "no_player_ranking": true,
+  "no_prediction_error_or_residual_inspected": true,
+  "no_skillcorner": true,
+  "seven_governed_matches_only": true
+}

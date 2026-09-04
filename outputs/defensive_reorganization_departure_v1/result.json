@@ -1,0 +1,82 @@
+{
+  "execution": {
+    "DRD_computed": false,
+    "Game3_accessed": false,
+    "Metrica_transport": false,
+    "SkillCorner_outcome": false,
+    "empirical_target_used_for_eligibility": true,
+    "model_fitted": false,
+    "out_of_fold_prediction_computed": false,
+    "prediction_error_or_residual_inspected": false,
+    "retrieval_generated": false
+  },
+  "frozen_hashes": {
+    "config/defensive_reorganization_departure_v1.json": "db6aa141d95fa10adaee1c151f116da06ffb535d6e12a8f67e512b3348090174",
+    "config/spatial_defensive_response_footprint_v1_idsse_external_replication.json": "a3d5ea305c67dd6f65d1314ce4e0a14feffb4078b51f8e01a42dea58ad97dbe2",
+    "docs/canonical_tracking_contract.md": "bdbde97bfe8d69d5938bbccd344a9ef7d915ed2f72857eeace542b6621a6f4f9",
+    "docs/protocols/defensive_reorganization_departure_v1.md": "14e504345ca1cdf4f972cde2e751af94593c6fc7ccb7fc283f7328c605113df9",
+    "docs/protocols/spatial_defensive_response_footprint_v1_idsse_external_replication.md": "0336ad07964b5a133eb0c0e3986accef2c3058144d47e3ab0f20d9ba72497db1",
+    "outputs/spatial_defensive_response_footprint_idsse_v1/final_hashes.json": "a637e7f32c5a46651e9a308c39d92bf80bbdb2292c44973dce481706fba43ef0",
+    "outputs/spatial_defensive_response_footprint_idsse_v1/governed_hashes.json": "b2b82429cf7900df3f1cadeb31f53374a8adbc9b6afdb6c4495171e4fe70d5bb",
+    "outputs/spatial_defensive_response_footprint_idsse_v1/observation_rows.parquet": "3c8a50cfa07f034b4428e280ecc6fcf7df423ed4dacad86b0862ba1e7d6716d2",
+    "src/infrastructure/kloppy_idsse_adapter.py": "ed282e7b14d3a551744b3f709cae634d96f8e3b6424cb2c57d9220527d62ac9c"
+  },
+  "hard_qc": {
+    "common_sample_minimum_rows": false,
+    "common_sample_retention_minimum": true,
+    "frozen_hashes": true,
+    "game3_untouched": true,
+    "model_not_fitted_after_pre_fit_invalidity": true,
+    "no_metrica_transport": true,
+    "no_player_ranking": true,
+    "no_prediction_error_or_residual_inspected": true,
+    "no_skillcorner": true,
+    "seven_governed_matches_only": true
+  },
+  "invalid_reason": "frozen_common_sample_minimum_rows_per_match_failure",
+  "sample_retention": {
+    "J03WMX": {
+      "common_sample_rows": 10863,
+      "inherited_target_rows": 12071,
+      "retention_of_off_ball_base_rows": 1.0,
+      "threshold_free_off_ball_base_rows": 10863
+    },
+    "J03WN1": {
+      "common_sample_rows": 782,
+      "inherited_target_rows": 4791,
+      "retention_of_off_ball_base_rows": 1.0,
+      "threshold_free_off_ball_base_rows": 782
+    },
+    "J03WOH": {
+      "common_sample_rows": 9877,
+      "inherited_target_rows": 10975,
+      "retention_of_off_ball_base_rows": 1.0,
+      "threshold_free_off_ball_base_rows": 9877
+    },
+    "J03WOY": {
+      "common_sample_rows": 10114,
+      "inherited_target_rows": 11238,
+      "retention_of_off_ball_base_rows": 1.0,
+      "threshold_free_off_ball_base_rows": 10114
+    },
+    "J03WPY": {
+      "common_sample_rows": 10947,
+      "inherited_target_rows": 12171,
+      "retention_of_off_ball_base_rows": 1.0,
+      "threshold_free_off_ball_base_rows": 10947
+    },
+    "J03WQQ": {
+      "common_sample_rows": 7100,
+      "inherited_target_rows": 9792,
+      "retention_of_off_ball_base_rows": 1.0,
+      "threshold_free_off_ball_base_rows": 7100
+    },
+    "J03WR9": {
+      "common_sample_rows": 10142,
+      "inherited_target_rows": 11278,
+      "retention_of_off_ball_base_rows": 1.0,
+      "threshold_free_off_ball_base_rows": 10142
+    }
+  },
+  "status": "DRD APPLICATION FOUNDATION INVALID"
+}
