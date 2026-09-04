@@ -25,6 +25,7 @@ The repository now supports a prospectively tested attacker-movement-to-defensiv
 - **Within-provider bridge:** the frozen continuous-window attacker-to-defender test classified Final A across both Metrica sample matches, with positive pooled primary and paired-control intervals and every frozen robustness/QC gate passing.
 - **External temporal bridge:** the unchanged spatial-footprint test was supported across all seven governed IDSSE matches. Its pooled near-minus-middle contrast was 0.06115 [0.05579, 0.06681] and its prospectively paired excess over reverse time was 0.02455 [0.01932, 0.02985]. This is external observational time ordering, not causation or tactical meaning.
 - **Starting spatial context:** the IDSSE-only Context v1 analysis was **SUPPORTED**. Conditional on frozen movement/depth controls, measured near-minus-middle defender-relative movement was smaller when the attacker started farther goalward relative to the defensive unit (`-0.010161 m/m`, 97.5% `[-0.011805, -0.008499]`) or farther from the ball (`-0.007533 m/m`, 97.5% `[-0.008864, -0.006245]`). Both directions held in `7/7` match-specific and `7/7` leave-one-match-out fits, with the frozen trim passing. This characterizes observed geometry; it does not explain why it occurred.
+- **Response-scale boundary:** Spatial Form v1 found an outward-minus-goalward localized-reorganization contrast of `0.056856 m/m` [0.051358, 0.062430] in all `7/7` IDSSE match and leave-one-match-out fits, reproduced in SkillCorner at `0.048883 m/m` [0.042940, 0.054707] in all `9/9` fits. Response Mode v1’s inward-width mechanism was **MIXED**; its stronger goalward collective-translation contrast was secondary and nonclassifying. This supports a bounded scale-of-observable-geometry story, not a mechanism.
 - **Spatial-footprint replication:** the frozen footprint classified Final A across the two Metrica sample matches: near ranks had a stronger association than middle ranks, while middle and far regions remained similar.
 - **Concurrent localization and interpretation boundary:** the near-minus-middle concurrent focal-relative movement association replicated across both Metrica matches and all seven governed IDSSE matches (pooled 0.05115 [0.04595, 0.05642]), but frozen Opportunity Redistribution v1 was negative on Game 1 ($\beta_D=-0.02407$ [−0.09392, 0.04776]). Cross-provider observational geometry therefore cannot be presented as teammate separation, space creation, gravity, or value.
 - **Match-side expectation boundary:** Defensive Response Expectation v1 was **NOT SUPPORTED**. Compact spatial context improved the movement baseline slightly in all seven IDSSE matches, but the frozen match-side increment worsened heldout prediction in every match. Stable team identity and tactical style therefore remain outside the evidence.
@@ -47,11 +48,13 @@ It uses continuous two-second attacker path rather than the rejected discrete ep
 
 The main pre-Sloan task is now presentation rather than another empirical
 branch: explain the externally replicated localized-reorganization result with
-one football-readable figure, a concise results table, and the bounded Context
-v1 finding that starting ball/block geometry characterizes variation in the
-observed near-minus-middle measure. Analysts can use this to contextualize
-passages with strong measured reorganization, not to infer tactics or advice.
-It does not justify opening Metrica Sample Game 3 before the abstract deadline.
+one football-readable figure, a concise results table, the bounded Context v1
+finding, and the response-scale synthesis. The current Response Mode figure is
+best kept supplementary because it is a four-channel diagnostic; a later
+editorial synthesis figure can pair collective translation with localized
+reorganization without inventing a composite score. Analysts can use this to
+contextualize passages, not to infer tactics or advice. It does not justify
+opening Metrica Sample Game 3 before the abstract deadline.
 
 The gap is **not** the absence of a gravity score. Gravity, attacker attribution, tactical classification, causal influence, and final off-ball value are later possibilities, not abstract prerequisites.
 
@@ -67,7 +70,7 @@ The gap is **not** the absence of a gravity score. Gravity, attacker attribution
 | Development/validation discipline | Strong through the frozen two-match bridge | Apply the same discipline to any semantic or cross-provider extension. |
 | Reproducibility | Substantial but incomplete | Resolve environment drift, document large artifacts, and add lightweight automated integrity checks. |
 | Literature positioning | Targeted, not systematic | Extend movement/change-point and elite-tracking coverage; avoid universal novelty claims. |
-| Figures | Flagship Figure 1 plus compact temporal/context table; Context v1 figure recommended for supplement | Build the narrative from existing evidence without tactical overstatement. |
+| Figures | Flagship Figure 1 plus compact temporal/context table; current Response Mode figure supplementary | Later editorial synthesis may contrast collective translation with localized reorganization; build it only from closed compact results. |
 | Practical relevance | Analyst retrieval and context characterization are supported uses | Surface passages with strong measured reorganization and compare starting ball/block geometry; do not claim advice or deployed decision support. |
 
 ## Pre-deadline evidence standard

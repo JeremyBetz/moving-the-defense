@@ -73,10 +73,10 @@ and defensive-unit geometry, not a claim about tactical purpose or mechanism.
 
 ### 1.3 Contributions and boundaries
 
-**[READY]** The contribution is a prospectively validated measurement of
-localized defensive reorganization associated with off-ball movement, together
-with evidence that its magnitude varies systematically with football-readable
-ball and defensive-unit geometry. The study develops the measure in one
+**[READY]** The contribution is a prospectively validated measurement that
+separates collective defensive movement from localized internal reorganization,
+and shows that off-ball movement direction is associated with those different
+geometric scales across tracking environments. The study develops the measure in one
 Metrica sample match, replicates it unchanged in a heldout Metrica match, and
 then externally tests it across seven IDSSE/DFL matches from one independent
 provider environment. It reports the forward association alongside a paired
@@ -291,6 +291,8 @@ supplement.
 | Temporal IDSSE paired forward--reverse | 0.02455 | 95% [0.01932, 0.02985] | Positive in 7/7 matches |
 | Context H1: attacker minus unit, goalward | -0.010161 | 97.5% [-0.011805, -0.008499] | 7/7 match; 7/7 LOMO; trim passed |
 | Context H2: attacker--ball distance | -0.007533 | 97.5% [-0.008864, -0.006245] | 7/7 match; 7/7 LOMO; trim passed |
+| Spatial Form IDSSE: outward minus goalward | 0.056856 | 95% [0.051358, 0.062430] | 7/7 match; 7/7 LOMO |
+| Spatial Form SkillCorner: outward minus goalward | 0.048883 | 95% [0.042940, 0.054707] | 9/9 match; 9/9 LOMO |
 
 ### Figure 1. Measurement and replication overview
 
@@ -317,7 +319,47 @@ The scalar and directional analyses answer complementary measurement questions. 
 
 **[READY] Rank shape.** Neither the scalar nor directional results form a simple monotonic distance-decay curve. Near ranks are elevated relative to the pre-specified middle region, but far ranks can rebound; all pooled IDSSE scalar rank coefficients were positive. The main text therefore reports a localized near-versus-middle contrast and a stepped, nonmonotonic rank structure. Full D1--D10 tables belong in the supplement.
 
-### 6.4 What the measurement does not establish
+### 6.4 Movement direction and scale of defensive response
+
+**[READY]** A separate Spatial Form analysis asks whether the established
+localized near-versus-middle geometry differs by the direction of attacker
+movement, after the frozen path and starting-context adjustment. In IDSSE,
+outward rather than goalward displacement was associated with `0.056856 m/m`
+greater subsequent localized reorganization (95% interval `[0.051358,
+0.062430]`), with the same direction in all `7/7` match-specific and
+leave-one-match-out fits. A separately governed SkillCorner replication found
+the same outward-minus-goalward contrast, `0.048883 m/m` `[0.042940,
+0.054707]`, in all `9/9` match and leave-one-match-out fits. These are
+replicated directional associations in localized geometry, not evidence that
+outward movement drags a defender or is football-superior.
+
+Response Mode v1 then tested a narrower possible explanation: whether inward
+rather than outward movement was associated with greater pitch-axis width
+reduction. The frozen 5 m inward-minus-outward contrast was positive at
+`0.134003 m`, but its 95% interval crossed zero (`[-0.006622, 0.273430]`) and
+only `5/7` match contrasts were positive. Although all leave-one-match-out
+fits were positive and the signed-movement trim passed, the primary width
+hypothesis was therefore **MIXED**. This is suggestive but insufficient
+evidence for a narrowing mechanism, and the protocol’s stop rule precludes
+searching another shape metric to recover one.
+
+Under that same frozen model, goalward movement was descriptively associated
+with substantially greater goalward defensive-centroid displacement than
+outward movement: the 5 m goalward-minus-outward contrast was `2.962709 m`
+`[2.870720, 3.048322]`, with positive directions in all `7/7` match and
+leave-one-match-out fits. This translation result was secondary and
+nonclassifying, so it is not retroactive confirmation of a mechanism.
+Together, the results support a limited response-scale synthesis: different
+movement directions are associated with defensive geometry at different
+observable scales. They do not establish why the block translated, why local
+reorganization differed, how the channels relate mechanically, or whether
+either pattern has tactical or attacking value. In particular, the results do
+not partition a fixed defensive response into mutually exclusive collective and
+local shares: the same passage can translate, narrow, rotate, shear, and
+reorganize internally at once. Separate models keep those observable views
+legible without turning their combination into a new response score.
+
+### 6.5 What the measurement does not establish
 
 **[READY] Boundary results.** The measurement does not show that local defensive reorganization creates a downstream opportunity. Opportunity Redistribution v1 tested the simple hypothesis that a larger focal-local defensive change would be associated with relatively improved nearest-defender separation for other initially local attackers. The Game 1 primary estimate was negative and uncertain, \(\beta_D=-0.02407\) with a 95% bootstrap interval of `[-0.09392, 0.04776]`. The predicted separation consequence was therefore not supported. This is a boundary result for the tested representation, not evidence that attacker movement never changes teammates’ opportunities.
 
@@ -353,7 +395,7 @@ figure.
 
 For a club analyst, the value is in narrowing a large tracking archive to reviewable questions without pre-committing to an answer. A high footprint may prompt review of whether the unit was shifting, whether a defender had to protect another space, whether the ball or another attacker supplied the more plausible context, or whether the apparent pattern is ordinary transition movement. A low footprint can be equally informative when an attacker moved but the unit stayed internally coherent. The measurement supplies comparable geometric evidence; football judgment remains with the analyst.
 
-Because the output is continuous and rank-specific, it can also support side-by-side review rather than a binary event feed. Analysts can compare the same passage under scalar and directional views, then decide whether the extra context warrants a tactical label. The system should preserve uncertainty and raw geometry at that review stage rather than conceal them behind a single score.
+Because the output is continuous and rank-specific, it can also support side-by-side review rather than a binary event feed. Analysts can compare passages where the defensive block largely translates with passages where local defender-relative geometry is more pronounced, then decide whether the extra context warrants a tactical label. The system should preserve uncertainty and raw geometry at that review stage rather than conceal them behind a single score.
 
 ## 8. Limitations
 
@@ -368,6 +410,14 @@ Fourth, Game 1 was used iteratively during development of several constructs. Th
 The required complete-support construction is another scope condition. It produces a consistent leave-one-out reference and fixed rank vector, but excludes intervals with incomplete player support, period crossings, or governed restart/ball-out context. The estimand is consequently about eligible, supported open-play observations, not every possible defensive action. Restricted provider-derived observation rows also limit independent reconstruction without approved data access, although compact outputs, code, and hash-ledger materials make the governed workflow inspectable.
 
 The separate supporting analyses should not be treated as interchangeable replications. Concurrent geometry has the strongest shared-time confounding concern; directional form has a mixed Metrica Game 2 result even though all seven IDSSE matches support it. These differences are informative about scope and measurement, not an invitation to choose whichever representation is most favorable in a particular passage.
+
+The response-scale descriptions are also nonorthogonal and nonexhaustive.
+Translation, pitch-axis width/depth, and localized defender-relative movement
+can change together; rotation and shear were not separately modelled. The
+centroid-translation result in Response Mode v1 was secondary/nonclassifying,
+and its width-collapse mechanism was mixed. The evidence therefore supports
+observable scale differences, not a complete allocation of a defensive
+response or a resolved mechanism.
 
 Finally, the statistical intervals describe uncertainty under fixed grouped resampling and the governed samples. They are not estimates of a universal player-, team-, or league-level distribution. More repeated-team and multi-competition data would be needed before comparing teams or players, estimating heterogeneity, or attaching a stable style interpretation to the measurement.
 

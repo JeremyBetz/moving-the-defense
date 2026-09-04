@@ -41,9 +41,11 @@ tested one narrower explanation: whether inward rather than outward movement
 is associated with greater subsequent pitch-axis width reduction in IDSSE. It
 is **MIXED**: the 0.134003 m inward-minus-outward point estimate had a frozen
 interval crossing zero and only 5/7 positive match contrasts. The stronger
-secondary centroid-translation pattern is nonclassifying. This is a useful
-boundary result, not a reason to search another shape mechanism before Sloan;
-rotation and shear still prevent an exhaustive decomposition claim.
+secondary centroid-translation pattern was `2.962709 m` [2.870720, 3.048322]
+for 5 m goalward versus outward movement and was positive in all 7/7 match and
+leave-one-match-out fits, but remains explicitly nonclassifying. This is a
+useful boundary result, not a reason to search another shape mechanism before
+Sloan; rotation and shear still prevent an exhaustive decomposition claim.
 
 ## 1. The paper that exists today
 
@@ -87,16 +89,15 @@ heldout testing, external replication, and explicit interpretation boundaries.
 
 ### Revised “so what?”
 
-The project now supplies a reproducible way to surface passages with strong
-measured localized reorganization and contextualize them using the attacker’s
-starting relationship to the ball and defensive unit before an analyst assigns
-tactical meaning. A coach can separate a whole-unit shift from one or more
-defenders moving differently within it; a club analyst can compare similar
-attacker movements from different starting ball/block geometry without first
-inventing marking labels; a sports scientist gets a provider-tested
-individual–collective coordination measure with an explicit temporal control;
-and a Sloan reviewer gets a prospectively governed, nine-match result plus
-genuine negative boundaries. This is strong enough as a
+The project now supplies a reproducible way to distinguish a whole-unit shift
+from localized internal reorganization, then surface passages where those
+geometric scales differ before an analyst assigns tactical meaning. Goalward
+attacker movement was descriptively associated with stronger collective
+centroid translation, whereas outward movement was more strongly associated
+with localized reorganization in IDSSE and SkillCorner. A coach or analyst can
+therefore compare movements with similar path magnitude but different
+directional geometry, then inspect the football context rather than accept an
+automatic label. This is strong enough as a
 measurement-and-validation paper without a value model, provided the paper does
 not promise causation, tactics, or a demonstrated downstream benefit.
 
@@ -111,6 +112,7 @@ not promise causation, tactics, or a demonstrated downstream benefit.
 | Directional form | Metrica Game 1 coherent, Game 2 mixed; seven IDSSE matches supported | Secondary evidence about geometric form, with mixed internal replication explicit |
 | Starting spatial context | IDSSE Context v1 supported: goalward attacker--unit offset and attacker--ball distance both have consistent negative slopes in 7/7 match and 7/7 LOMO fits | Characterize where measured reorganization is larger or smaller; do not infer why |
 | Conditional spatial form | IDSSE Spatial Form v1 supported: outward-minus-goalward was 0.056856 m/m [0.051358, 0.062430] in 7/7 match and 7/7 LOMO directions; static versus dynamic lateral representation was inconclusive | Compact geometric characterization; do not call outward movement better or a source of value |
+| Response scale / mechanism boundary | Goalward movement had a secondary, nonclassifying 2.962709 m [2.870720, 3.048322] collective-translation contrast; inward-versus-outward width narrowing was MIXED | Explain different observable scales without claiming a mechanism or response allocation |
 | Falsification and QC | Rank-only null is approximately zero; activity adjustment removed about 99.2% of induced synthetic localization; rank composition remains a moderate limitation | Address simple mechanical alternatives without claiming all confounding is removed |
 | Consequence boundary | Opportunity Redistribution negative; Coverage Redistribution v3 mixed | Show that measured response is not established as separation, coverage, space creation, or value |
 
@@ -216,7 +218,12 @@ larger when attackers started less far goalward relative to the defensive unit
 and closer to the ball; both context slopes had consistent signs in all seven
 match and leave-one-match-out fits. The predeclared trim also passed for both
 contexts, which were evaluated separately from the temporal primary model and
-do not identify a tactical mechanism.
+do not identify a tactical mechanism. In separate spatial-form analyses,
+outward displacement was more strongly associated with localized defensive
+reorganization than equivalently modelled goalward displacement in both IDSSE
+and SkillCorner, whereas goalward movement showed a stronger descriptive,
+nonclassifying association with collective defensive translation. A
+prospectively tested inward-width mechanism was mixed.
 
 **Conclusion.** Preceding attacker movement is reproducibly associated with
 stronger subsequent defender-relative movement among nearby than middle-ranked
@@ -273,7 +280,8 @@ not say that the attacker caused the movement or that the movement created value
 2. Turn the working abstract into the paper's introduction, methods spine, and
    results table, keeping Context v1 and Spatial Form v1 as compact
    “where/what directional form?” characterizations rather than new primary
-   results.
+   results. Preserve Response Mode v1 as a mixed mechanism boundary and the
+   secondary collective-translation result as descriptive/nonclassifying.
 3. Complete a claim-language, reproducibility, and literature-positioning
    audit of the closed evidence.
 4. Preserve the negative consequence results as compact interpretation
@@ -298,6 +306,9 @@ construct has a unique, predeclared representation and estimand.
   the negative/mixed downstream results.
 - [x] Include the supported IDSSE Context v1 result as bounded descriptive
   characterization, not tactical or causal interpretation.
+- [x] Present the response-scale synthesis as observational: localized outward
+  association replicated across IDSSE and SkillCorner; collective translation
+  is secondary/nonclassifying; width narrowing is mixed.
 - [ ] Resolve the existing manuscript decisions on target venue, author list,
   citation style, compact external-match table placement, and data/code
   availability wording before submission.

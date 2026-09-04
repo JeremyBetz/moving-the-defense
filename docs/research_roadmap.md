@@ -92,6 +92,17 @@ ADVANTAGE**. This is an observational spatial-form characterization, not
 evidence that outward movement is tactically better, causes defenders to move,
 creates space, or has attacking value.
 
+Taken together with Response Mode v1, this provides a bounded response-scale
+story for presentation rather than another mechanism branch. Outward movement
+was more strongly associated with localized defender-relative reorganization
+than goalward movement in IDSSE and the separate SkillCorner replication. Under
+the Response Mode model, goalward movement was descriptively associated with
+greater collective centroid translation, while the proposed inward-width
+narrowing mechanism was **MIXED**. The channels are nonorthogonal and
+nonexhaustive; rotation and shear remain unmodelled. The result does not
+establish a tactical mechanism, response allocation, influence, or value, and
+the frozen stop rule forbids searching another shape mechanism before Sloan.
+
 Metrica Sample Game 3 remains untouched. A pre-Sloan contextual holdout was
 considered and rejected because the leading candidates—movement direction
 relative to the unit, block position, ball distance, width, and compactness—do
