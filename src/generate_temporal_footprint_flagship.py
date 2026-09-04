@@ -243,6 +243,8 @@ def panel_a(axes: list[Any]) -> dict[str, Any]:
         if rank <= 3:
             a1.text(*(geometry["defender_start"][key] + np.array([1.2, 1.1])), f"D{rank}", fontsize=7.2, color=NEAR, weight="bold")
     a1.plot(geometry["attacker_path"][:, 0], geometry["attacker_path"][:, 1], color=ORANGE, lw=2.2, zorder=4)
+    a1.annotate("", xy=geometry["attacker_path"][-1], xytext=geometry["attacker_path"][-8],
+                arrowprops=dict(arrowstyle="->", color=ORANGE, lw=2.2))
     a1.scatter(*geometry["attacker_path"][0], s=20, facecolors="white", edgecolors=ORANGE, linewidths=.9, zorder=5)
     a1.scatter(*geometry["attacker_path"][-1], s=52, color=ORANGE, zorder=5)
     if geometry["ball"] is not None:
@@ -262,7 +264,7 @@ def panel_a(axes: list[Any]) -> dict[str, Any]:
     a2.annotate("", xy=geometry["unit_end"], xytext=geometry["unit_start"],
                 arrowprops=dict(arrowstyle="->", color="#344054", lw=2.1, linestyle="--"))
     a2.scatter(*geometry["unit_end"], marker="X", color="#344054", s=36, zorder=6)
-    a2.text(*(geometry["unit_end"] + np.array([1.3, 1.4])), "defensive-unit\nshift", fontsize=6.8, color="#344054")
+    a2.text(*(geometry["unit_end"] + np.array([1.3, 1.4])), "unit shift:\ngoalward + lateral", fontsize=6.8, color="#344054")
     a2.set_title("A2  Next 2 s: absolute defender movement", loc="left", fontsize=10.2, weight="bold")
 
     # A3: exact focal-relative vector construction, using each defender's leave-one-out unit shift.

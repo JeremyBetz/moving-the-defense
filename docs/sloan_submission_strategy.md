@@ -235,7 +235,10 @@ movement only—not defender response magnitude or an outcome. The three frames
 show the preceding attacker path, actual absolute defender paths in the next
 two seconds, and those paths after subtracting each defender's leave-one-out
 defensive-unit shift. Near (D1–D3) and middle (D4–D7) are start-fixed proximity
-ranks; no marking assignment is inferred. **(B)** Governed near-minus-middle
+ranks; no marking assignment is inferred. In this explanatory passage, the
+defensive unit shifts goalward and laterally; D2 and D3 move less goalward than
+their leave-one-out unit shifts, whereas D1 moves more goalward. This is not
+evidence for a common all-near-defender pattern. **(B)** Governed near-minus-middle
 associations between preceding attacker path and subsequent defender-relative
 path across Metrica development, heldout, and seven IDSSE matches.
 Within-environment pools are shown separately and are not a nine-match
