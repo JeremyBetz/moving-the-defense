@@ -192,6 +192,15 @@ Only if the attacking-interval and defensive-change representations survive pros
 - investigate concept-specific observable consequences with independent football interpretation;
 - examine whether candidate moments can support analyst video review.
 
+The [artificial-transition feasibility audit](artificial_transition_feasibility.md)
+identifies one strong but substantial follow-up: test whether defensive
+reorganization during objectively settled, retained possession is associated
+with a subsequent rapid goalward release. The audit assigns **C — strong
+post-Sloan follow-up; do not distract the current paper**. It requires an
+outcome-blind possession/release support sprint and a viable blinded video
+review route before any empirical protocol; it does not reinterpret the
+current context result as press baiting and does not authorize Game 3.
+
 These are conditional directions, not approved experiments.
 
 ## Later interpretive steps
