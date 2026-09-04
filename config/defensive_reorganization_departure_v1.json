@@ -1,0 +1,235 @@
+{
+  "schema_version": "1.0.0",
+  "status": "FROZEN_BEFORE_ANY_DRD_PREDICTION_RESULT",
+  "freeze_date": "2026-09-04",
+  "starting_commit": "00116e83c195cfeb4719261a42f22b25ea7f02b5",
+  "execution_tier": 2,
+  "research_question": "Can a compact set of predeclared movement and starting-geometry features materially improve heldout prediction of anchor-level localized defensive reorganization beyond attacker movement alone?",
+  "matches": ["J03WMX", "J03WN1", "J03WOH", "J03WOY", "J03WPY", "J03WQQ", "J03WR9"],
+  "inheritance": {
+    "target_registry": "outputs/spatial_defensive_response_footprint_idsse_v1/observation_rows.parquet",
+    "target_protocol": "docs/protocols/spatial_defensive_response_footprint_v1_idsse_external_replication.md",
+    "adapter": "src/infrastructure/kloppy_idsse_adapter.py",
+    "canonical_contract": "docs/canonical_tracking_contract.md"
+  },
+  "observation_unit": "one provider-match-period-anchor-attacking_outfield_player with complete start-fixed D1-D10 vector",
+  "timing": {
+    "prior_context_seconds": [-4.0, -2.0],
+    "attacker_movement_seconds": [-2.0, 0.0],
+    "defensive_response_seconds": [0.0, 2.0],
+    "anchor_grid": "period_origin_plus_4_plus_4k",
+    "anchor_cadence_seconds": 4.0,
+    "sampling_hz": 25,
+    "position_smoothing": "centered_7_frame_arithmetic_mean_complete_window",
+    "focal_feature_raw_support": {"start_seconds": -4.12, "end_seconds": 0.12, "frames": 107},
+    "ball_feature_raw_support": {"start_seconds": -2.12, "end_seconds": 0.12, "frames": 57},
+    "complete_attacking_set_anchor_raw_support": {"start_seconds": -0.12, "end_seconds": 0.12, "frames": 7},
+    "interpolation": false
+  },
+  "eligibility": {
+    "attacking_team": "governed_event_clock_possession_at_anchor",
+    "open_play_support": "entire_t_minus_4_to_t_plus_2",
+    "focal": "attacking_outfield_player_with_complete_required_support",
+    "defenders": "exactly_10_defending_outfield_players_complete_over_inherited_target_support",
+    "goalkeepers_excluded": true,
+    "ball": "complete_centered_smoothed_support_for_movement_start_and_anchor_features",
+    "required_attacking_set_at_anchor": "exactly_10_attacking_outfield_players_with_complete_7_frame_support",
+    "period_restart_ball_out_discontinuity_crossing": "exclude",
+    "partial_support_or_imputation": "prohibited"
+  },
+  "off_ball": {
+    "rule": "exclude_the_unique_attacking_outfield_player_nearest_the_centered_smoothed_ball_at_anchor_t",
+    "distance": "Euclidean_canonical_metres",
+    "tie_break": "canonical_player_key_ascending",
+    "distance_threshold": null,
+    "event_carrier_required": false,
+    "semantics": "not_ball_nearest_at_anchor_not_observed_ball_carrier_or_tactical_run"
+  },
+  "target": {
+    "rank_path": "validated_accumulated_leave_one_out_defender_relative_path_t_to_t_plus_2_metres",
+    "rank_fixed": "at_t_by_focal_attacker_defender_Euclidean_distance_then_defender_key",
+    "near_component": "mean_D1_D3_path_m",
+    "middle_component": "mean_D4_D7_path_m",
+    "Y": "near_component_minus_middle_component",
+    "units": "metres",
+    "far_D8_D10_in_target": false,
+    "fitted_coefficient_target": false
+  },
+  "coordinates": {
+    "canonical_pitch_metres": {"x": [-52.5, 52.5], "y": [-34.0, 34.0]},
+    "goalward_axis": "period_attacking_direction_sign_times_canonical_x",
+    "lateral_axis": "first_rotate_with_attack_direction_then_reflect_so_focal_start_y_is_nonnegative",
+    "centreline_tie": "no_lateral_reflection",
+    "positive_lateral_semantics": "outward_from_centreline",
+    "same_transform_for_players_ball_defenders": true
+  },
+  "features": {
+    "E0": [
+      "attacker_path_exposure_m",
+      "attacker_path_prior_m"
+    ],
+    "movement_direction": [
+      "attacker_goalward_displacement_m",
+      "attacker_outward_displacement_m"
+    ],
+    "start_position": [
+      "attacker_minus_unit_goalward_m",
+      "attacker_minus_unit_outward_m",
+      "defending_unit_depth_m",
+      "defending_unit_width_m"
+    ],
+    "ball_geometry": [
+      "attacker_ball_distance_start_m",
+      "ball_minus_unit_goalward_m",
+      "ball_minus_unit_outward_m",
+      "attacker_ball_distance_change_m"
+    ],
+    "E1": "E0_plus_movement_direction_plus_start_position_plus_ball_geometry",
+    "interactions": [],
+    "prohibited": [
+      "match_id_predictor", "team_id_predictor", "player_id_predictor",
+      "defensive_response_derived_predictor", "future_event", "run_label",
+      "formation", "role", "assignment", "value", "automated_feature_search"
+    ]
+  },
+  "common_sample": {
+    "identical_for_all_models": true,
+    "minimum_rows_per_match": 1000,
+    "minimum_retention_of_otherwise_eligible_off_ball_rows": 0.9,
+    "imputation": false
+  },
+  "model": {
+    "family": "ridge_with_unpenalized_intercept",
+    "alpha_grid": [0.01, 0.1, 1.0, 10.0, 100.0],
+    "preprocessing": "training_fold_mean_and_population_SD_ddof_0",
+    "zero_variance": "drop_using_training_mask_and_record",
+    "target_scaling": false,
+    "prediction_clipping": false,
+    "solver": "numpy_linalg_solve",
+    "fallback": "numpy_linalg_pinv_rcond_1e-15_recorded",
+    "outer_validation": "leave_one_complete_match_out_7",
+    "inner_validation": "leave_one_training_match_out_across_6",
+    "inner_objective": "equal_match_macro_MAE",
+    "alpha_tie_tolerance_m": 0.000001,
+    "alpha_tie_rule": "largest_alpha_within_tolerance",
+    "model_specific_alpha_selection": true
+  },
+  "metrics": {
+    "primary": "equal_match_macro_heldout_MAE_m",
+    "primary_definition": "arithmetic_mean_of_7_match_MAEs",
+    "secondary": ["per_match_MAE_m", "observation_weighted_MAE_m", "RMSE_m", "median_match_MAE_m"],
+    "relative_improvement_percent": "100_times_baseline_MAE_minus_model_MAE_divided_by_baseline_MAE"
+  },
+  "ablations": {
+    "models": ["E1_minus_movement_direction", "E1_minus_start_position", "E1_minus_ball_geometry"],
+    "stable_family_macro_worsening_min_percent": 1.0,
+    "stable_family_macro_formula": "100_times_MAE_ablated_minus_MAE_E1_divided_by_MAE_E1",
+    "stable_family_matches_worsened_min": 5,
+    "total_matches": 7,
+    "inclusive_boundaries": true
+  },
+  "uncertainty": {
+    "replicates": 1000,
+    "minimum_valid": 950,
+    "seed": 20260903,
+    "resampling": "matches_then_period_origin_60_second_heldout_prediction_blocks",
+    "grouping": "complete_anchor_including_all_simultaneous_attackers",
+    "paired_across_models_and_ablations": true,
+    "interval": "two_sided_95_percentile",
+    "classifying": false
+  },
+  "classification": {
+    "order": ["INVALID", "NOT_SUPPORTED", "SUPPORTED", "MIXED"],
+    "INVALID": "frozen_hash_eligibility_support_common_sample_leakage_fold_solver_finite_prediction_bootstrap_reproduction_or_hard_QC_failure",
+    "NOT_SUPPORTED": "valid_and_E1_macro_improvement_at_or_below_zero_or_E1_improves_at_most_3_of_7_matches",
+    "SUPPORTED": {
+      "macro_MAE_improvement_min_percent": 3.0,
+      "matches_improved_min": 6,
+      "matches_worsened_10_percent_or_more_max": 0,
+      "stable_context_families_min": 1
+    },
+    "MIXED": "every_other_valid_result",
+    "strong_mixed_continuation": false,
+    "minimum_status_for_DRD_retrieval_Metrica_and_SkillCorner_gate": "SUPPORTED"
+  },
+  "DRD": {
+    "formula": "observed_Y_minus_outer_fold_E1_prediction",
+    "positive": "more_localized_defender_relative_movement_than_fitted_movement_geometry_expectation",
+    "negative": "less_than_fitted_expectation",
+    "in_sample_use": "prohibited",
+    "name_only_if_status": "SUPPORTED"
+  },
+  "reliability": {
+    "match_diagnostics": ["residual_mean", "residual_median", "residual_IQR", "residual_MAD", "calibration_intercept", "calibration_slope"],
+    "training_perturbations_per_outer_fold": 6,
+    "perturbation_alpha": "retain_original_outer_fold_selected_alpha",
+    "high_candidate": "positive_and_within_match_top_20_percent_in_at_least_5_of_6",
+    "near_expected_candidate": "absolute_residual_in_within_match_lowest_50_percent_in_at_least_5_of_6",
+    "temporal_nonmaximum_suppression_seconds": 8.0,
+    "temporal_group": ["match", "period", "focal_attacker"],
+    "minimum_matches_with_complete_pair": 5,
+    "changes_scientific_status": false
+  },
+  "retrieval": {
+    "maximum_pairs_per_match": 1,
+    "strata": {"attacker_path": 5, "start_goalward_offset": 3, "absolute_start_lateral_offset": 3},
+    "rank_bin_tie_break": "observation_id",
+    "high_positive_percentiles_inclusive": [0.9, 0.99],
+    "target_high_percentile": 0.95,
+    "near_expected_absolute_residual_percentile_max": 0.1,
+    "pair_requires_same_stratum": true,
+    "pair_distance": "Euclidean_over_three_matching_fields_scaled_by_within_match_IQR_zero_IQR_omitted",
+    "tie_break": "observation_id",
+    "manual_selection": false,
+    "required_caption": "candidate for analyst review; tactical meaning not inferred"
+  },
+  "conditional_transport": {
+    "minimum_status": "SUPPORTED_and_retrieval_reliability_pass",
+    "Metrica": "Games_1_2_nonclassifying_unchanged_IDSSE_trained_model_only",
+    "Metrica_tuning": false,
+    "Game3": "prohibited",
+    "SkillCorner": "outcome_blind_compatibility_gate_then_separate_preoutcome_protocol"
+  },
+  "SkillCorner_gate": {
+    "all_10_matches_parse": true,
+    "unique_match_team_player_and_on_pitch_identity": true,
+    "goalkeeper_and_ten_outfield_support": true,
+    "detected_extrapolated_flag_retained": true,
+    "ball_and_team_possession_event_alignment": true,
+    "cadence_hz": 10,
+    "cadence_tolerance_seconds": 0.000001,
+    "canonical_coordinate_tolerance_m": 0.00001,
+    "minimum_common_rows_per_match": 1000,
+    "minimum_off_ball_base_retention": 0.8,
+    "maximum_match_retention_gap_below_overall_percentage_points": 20.0,
+    "report_extrapolation_and_attrition_by_match_team": true,
+    "count_repeated_player_team_support": true,
+    "authorizes_outcome_access": false
+  },
+  "player_level": {
+    "rankings": "prohibited",
+    "top_DRD_players": "prohibited",
+    "reason": "132_of_148_IDSSE_attackers_appear_in_one_match_and_only_16_repeat"
+  },
+  "stop_rule": "MIXED_NOT_SUPPORTED_or_INVALID_stops_application_sprint_without_feature_threshold_target_provider_or_example_rescue",
+  "nonclaims": [
+    "causation", "influence", "attention", "marking", "assignment", "responsibility",
+    "tactical_response", "disruption", "tactical_success", "defensive_quality",
+    "player_quality", "gravity", "off_ball_value"
+  ],
+  "planned_outputs": [
+    "manifest.json", "eligibility_ledger.csv", "feature_dictionary.json", "fold_alpha_ledger.csv",
+    "heldout_predictions.parquet", "match_metrics.csv", "model_comparisons.json",
+    "family_ablations.csv", "bootstrap_intervals.csv", "reliability_diagnostics.json",
+    "hard_qc.json", "governed_hashes.json", "reproduction.json", "result_report.md",
+    "retrieval_board_if_authorized"
+  ],
+  "execution": {
+    "empirical_target_computed": false,
+    "model_fitted": false,
+    "prediction_error_inspected": false,
+    "DRD_computed": false,
+    "SkillCorner_outcome_ingested": false,
+    "Game3_accessed": false
+  }
+}

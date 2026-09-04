@@ -1,5 +1,25 @@
 # Research Log
 
+## 2026-09-04 — Defensive Reorganization Departure v1 frozen before results
+
+The application-sprint strategy was translated into one executable protocol
+without computing an empirical target, model error, residual, DRD, or retrieval
+example. The primary IDSSE question is whether three compact, predeclared
+movement/geometry families materially improve equal-match heldout prediction
+of direct anchor-level D1–D3 minus D4–D7 subsequent defender-relative path
+beyond current and prior attacker path alone.
+
+The operational off-ball rule is threshold-free: exclude the unique attacking
+outfield player nearest the centred-smoothed ball at the anchor, with canonical
+player key resolving an exact tie. This is a provider-compatible geometric
+proxy, not observed ball-carrier identity. Nested leave-match-out Ridge,
+training-only scaling, a 3%/6-of-7/no-10%-worsening success gate, a frozen
+1%/5-of-7 family-ablation rule, paired block inference, and deterministic
+reliability/retrieval rules are now fixed. Only SUPPORTED authorizes DRD
+retrieval, Metrica transport, or the outcome-blind SkillCorner gate; MIXED,
+NOT SUPPORTED, and INVALID stop the sprint. Player rankings and Game 3 remain
+prohibited. Thirteen outcome-free synthetic contract tests passed.
+
 ## 2026-09-03 — Sloan paper recentred; Game 3 retained untouched
 
 After the unchanged temporal footprint was supported across all seven IDSSE

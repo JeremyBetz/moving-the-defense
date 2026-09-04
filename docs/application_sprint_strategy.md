@@ -1,7 +1,9 @@
 # Application Sprint Strategy — Defensive Reorganization Departure
 
-**Status:** design only; no application outcome has been computed, no protocol
-or configuration is frozen, and Metrica Sample Game 3 remains untouched.
+**Status:** the strategy has been translated into the prospectively frozen
+[Defensive Reorganization Departure v1 protocol](protocols/defensive_reorganization_departure_v1.md).
+No application outcome has been computed, and Metrica Sample Game 3 remains
+untouched.
 
 **Working paper:** *Measuring Localized Defensive Reorganization Associated
 with Off-Ball Movement in Football*
@@ -77,9 +79,8 @@ row is an independent match-level replication.
 
 Begin with one interpretable nested linear architecture:
 
-1. **Movement/history baseline:** attacker path magnitude; strictly prior
-   near-minus-middle defender-relative activity; strictly prior defending-unit
-   centroid movement; and prior attacker movement.
+1. **Movement-only baseline:** attacker path magnitude over the exposure
+   interval and attacker path over the immediately prior interval.
 2. **Context model:** the same baseline plus three predeclared geometric
    families below.
 
@@ -111,8 +112,7 @@ not label runs as overlaps, checks, decoys, or threats.
 - attacker's signed goalward offset from the defending-outfield centroid at
   movement start;
 - attacker's lateral offset from that centroid, represented continuously; and
-- start distance to the defensive unit, with unit width and depth retained as
-  transparent scale/context variables.
+- defending-unit width and depth as transparent scale/context variables.
 
 This asks whether the same movement amount has a different expected response
 when it begins within different parts of the defensive geometry. It does not
@@ -125,21 +125,16 @@ define “between the lines” or “inside the block” without separate valida
 - change in attacker-to-ball distance during the preceding movement interval.
 
 These are continuous context variables. They do not prove that the attacker is
-off-ball, a passing option, or the cause of the defensive movement. A formal
-protocol must resolve provider-equivalent ball-carrier/off-ball eligibility
-before using the paper's off-ball language as a sample definition.
-
-At most two interactions should be considered before freeze: goalward movement
-by start depth, and lateral movement by start lateral offset. They may enter
-only if an outcome-blind support/collinearity audit establishes that both are
-computable and nondegenerate across the development matches. No all-pairs
-interaction grid is permitted.
+off-ball, a passing option, or the cause of the defensive movement. The frozen
+protocol operationalizes off-ball eligibility by excluding the threshold-free
+ball-nearest attacking outfielder at the anchor; it explicitly does not call
+that player the observed ball carrier. V1 contains no interactions.
 
 ### 3.3 Primary prospective question
 
 > Do the three predeclared movement/geometry families improve heldout
 > prediction of anchor-level localized defender-relative reorganization beyond
-> movement magnitude and strictly prior activity alone?
+> current and prior attacker path alone?
 
 Feature-family claims require heldout ablations on identical rows and folds.
 Coefficient signs may describe the fitted linear model, but no family should be
@@ -213,7 +208,7 @@ separating players from teams and roles.
   vectors grouped. Use an embargo at least as large as overlapping feature and
   response support if anchors are made denser than the existing four-second
   cadence.
-- Compare the full context model with the movement/history baseline on exactly
+- Compare the full context model with the movement-only baseline on exactly
   the same rows and folds.
 - Use Metrica Games 1–2 only as a secondary cross-environment transport check;
   they are already scientifically used and are not a pristine application
@@ -262,12 +257,11 @@ application adds a governed comparison set and retrieval rule.
 
 ## 8. Success, failure, and stopping rules
 
-The exact numeric rules belong in a later frozen protocol. The recommended
-prospective standard is intentionally demanding:
+The frozen v1 standard is intentionally demanding:
 
 ### Include as a Sloan application result only if
 
-1. the full context model improves median leave-match-out MAE by at least the
+1. the full context model improves equal-match macro leave-match-out MAE by at least the
    project's established 3% materiality convention versus the movement/history
    baseline;
 2. it improves at least six of seven IDSSE matches, with no match worsening by
@@ -278,16 +272,18 @@ prospective standard is intentionally demanding:
    missing-support, extrapolation, or extreme-motion artifacts;
 5. deterministic passages are interpretable from raw pitch geometry and remain
    examples of model departure rather than tactical labels; and
-6. if SkillCorner is reached, the unchanged application beats the same baseline
-   in a clear majority of its matches without post-transfer tuning.
+6. deterministic retrieval yields complete stable pairs in at least five of
+   seven matches under the frozen reliability rule.
 
-The 3%, six-of-seven, 10%, external-majority, and any calibration tolerances
-must be reviewed and frozen before execution. They are recommendations here,
-not an active protocol.
+The exact definitions, inclusive boundaries, family-ablation rule, and
+SUPPORTED/MIXED/NOT SUPPORTED/INVALID tree are governed by the
+[v1 protocol](protocols/defensive_reorganization_departure_v1.md). SkillCorner
+remains behind an outcome-blind compatibility gate and a separate future
+external protocol.
 
 ### Stop and retain the existing measurement paper if
 
-- context adds little beyond attacker path and strictly prior movement;
+- context adds little beyond current and prior attacker path;
 - feature-family gains or signs vary materially by heldout match/provider;
 - residual extremes concentrate in identity, missingness, extrapolation, or
   tracking-QC failures;
@@ -362,7 +358,7 @@ application claim.
 | 1–2 | Outcome-blind target/support audit; finalize feature formulas, off-ball language, fold grouping, metrics, and numeric criteria | Freeze only if every feature is provider-computable and no response outcome has been inspected for this question. |
 | 3–5 | Implement the anchor-level target, baseline/full Ridge models, match-grouped folds, ablations, calibration, and synthetic/unit tests | No alternative model family; no Game 3. |
 | 6 | Execute the primary IDSSE development evaluation once and independently reproduce it | Stop if materiality, match stability, or QC fails. |
-| 7–8 | If Stage A passes, freeze deterministic residual diagnostics and the retrieval-board selection rule; produce internal Metrica transport descriptions | No player rankings or tactical labels. |
+| 7–8 | If Stage A passes, apply the already-frozen residual diagnostics and retrieval-board selection rule; produce internal Metrica transport descriptions | No player rankings or tactical labels. |
 | 9–11 | Conduct SkillCorner metadata/support/equivalence work; freeze external transfer before response outcomes | Stop if identities, support, ball, cadence, or detected/extrapolated strata are inadequate. |
 | 12 | Execute unchanged SkillCorner external validation only if authorized gates passed | No external retuning. |
 | 13–14 | Build the retrieval board, update manuscript/abstract only if supported, and close the sprint | Choose application headline or measurement-paper fallback. |
@@ -401,19 +397,16 @@ not guarantees.
 - Stop at the first failed scientific gate rather than spending budget on
   feature search.
 
-## 13. Decisions still required before protocol freeze
+## 13. Decisions resolved by the v1 freeze
 
-1. Resolve a provider-equivalent operational boundary between “attacking
-   movement” and the paper's “off-ball movement” language.
-2. Confirm that anchor-level $R_i$ and every proposed feature can be rebuilt
-   identically from the governed IDSSE registry without using response data in
-   sample construction.
-3. Audit feature support, collinearity, and missingness without inspecting
-   target associations or model performance.
-4. Freeze exact Ridge grid, folds/embargo, ablation order, materiality,
-   calibration, and deterministic example-selection rules.
-5. Decide whether SkillCorner is an in-sprint conditional external test or a
-   post-Sloan extension after its metadata/support gate.
+The [v1 protocol](protocols/defensive_reorganization_departure_v1.md) now
+freezes a threshold-free ball-nearest-attacker exclusion as the operational
+off-ball rule; direct anchor-level near-minus-middle path as the target; a
+two-feature movement baseline; three compact context families; nested
+leave-match-out Ridge; exact materiality and ablation gates; and a deterministic
+heldout retrieval rule. Only a SUPPORTED IDSSE result can authorize retrieval,
+Metrica transport, or the outcome-blind SkillCorner gate. SkillCorner outcome
+access still requires a separately frozen external protocol.
 
-Because these identification and transport decisions remain open, **no v1
-protocol or configuration is frozen in this pass**.
+The freeze itself contains no empirical target, model error, residual, DRD,
+retrieval passage, or external-provider outcome.
