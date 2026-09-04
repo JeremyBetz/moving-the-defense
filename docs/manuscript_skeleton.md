@@ -4,7 +4,7 @@
 
 ## Abstract placeholder
 
-**[NEEDS WRITING]** Start from the football problem: an attacker can move off-ball while the defensive unit shifts, but raw defender displacement alone does not distinguish a shared unit shift from a defender's movement within that unit. State the narrow observational question, the leave-one-out defender-relative representation, and the temporal near-versus-middle result. Report the external IDSSE primary contrast, `0.06115 m/m` (97.5% interval `[0.05579, 0.06681]`), and the paired forward-minus-reverse excess, `0.02455` `[0.01932, 0.02985]`. End with the nonclaim: this is not evidence of marking, causation, tactical success, or attacking value.
+**[NEEDS WRITING]** Start from the football problem: an attacker can move off-ball while the defensive unit shifts, but raw defender displacement alone does not distinguish a shared unit shift from a defender's movement within that unit. State the narrow observational question, the leave-one-out defender-relative representation, and the temporal near-versus-middle result. Report the external IDSSE primary contrast, `0.06115 m/m` (95% interval `[0.05579, 0.06681]`), and the paired forward-minus-reverse excess, `0.02455` `[0.01932, 0.02985]`. End with the nonclaim: this is not evidence of marking, causation, tactical success, or attacking value.
 
 ## 1. Introduction
 
@@ -172,41 +172,77 @@ In practical terms, the coefficient describes how the fitted difference between 
 
 ### 6.2 Supporting concurrent geometry and coordination form
 
-**[READY] Concurrent geometry.** The pooled IDSSE near-minus-middle concurrent contrast was `0.05115` `[0.04595, 0.05642]`; every external match was positive and the trim retained 91.71% of the estimate. This supports localization that is not solely a lagged-design artifact, but it is subordinate to the temporal footprint.
+**[READY] Concurrent localization.** A separately governed concurrent analysis provides supporting evidence that the temporal finding is not solely a consequence of the lagged construction. In Metrica Game 1, the concurrent near-minus-middle contrast was `0.02667 m/m` with a 95% interval of `[0.01134, 0.04487]`; the unchanged Game 2 replication was `0.04463 m/m` `[0.02151, 0.07848]`. Both were positive under their frozen within-provider design.
 
-**[READY] Coordination form.** Directional coordination form was coherent in Metrica Game 1 (D2--D3 minus D4--D7: `0.04045 m/s` `[0.02366, 0.05538]`) and mixed in Game 2 (`0.04587 m/s` `[-0.01056, 0.09260]`). All seven IDSSE matches supported the prespecified directional form; their primary estimates ranged from `0.03317` to `0.05165 m/s`. D1 was strongest, but D2 and D3 were individually positive in each external match. These results describe geometric form; they do not infer tracking or a defensive assignment.
+The external concurrent analysis likewise found a pooled IDSSE near-minus-middle contrast of `0.05115 m/m` `[0.04595, 0.05642]`, with positive estimates in all seven matches and 91.71% of the magnitude retained after the transported trim. Concurrent localization remains supporting rather than the paper’s spine: attacker and defender movement share the same interval, so common movement or phase context is especially difficult to exclude. Together with the temporal result, however, it shows that the near-versus-middle pattern is visible both during and after the governed attacker-path interval.
+
+The within-provider results also show why the result should be expressed as a regional contrast rather than a single-defender story. In Game 1, the nearest rank was especially elevated, while in Game 2 both D1 and D2 contributed to the near-region pattern. Descriptive far ranks exceeded middle ranks in both matches. The concurrent analysis therefore supports a localized comparison, not the claim that one closest defender alone carries the relevant geometry or that the entire defensive block follows a rigid distance gradient.
+
+**[READY] Directional form.** A second supporting analysis asked whether defender-relative motion aligned with attacker direction, rather than only whether its scalar path was larger. In Metrica Game 1, the prespecified D2--D3 minus D4--D7 contrast was `0.04045 m/s` `[0.02366, 0.05538]`, yielding a development-coherent result. The heldout Metrica Game 2 point estimate was similar in direction, `0.04587 m/s`, but its interval `[-0.01056, 0.09260]` crossed zero; that replication is formally mixed and should not be presented as individually decisive.
+
+The external directional-form replication was supported across all seven IDSSE matches: every primary estimate was positive with an interval above zero, D1 was the largest coefficient in every match, and D2 and D3 were individually positive in every match. This matters because the directional signal was not confined to a single nearest defender. It remains geometric evidence, not proof of tracking, marking, tactical coordination, or responsibility.
+
+The scalar and directional analyses answer complementary measurement questions. The temporal footprint asks how much defender-relative movement is associated with preceding attacker path; the directional analysis asks whether a component of local movement aligns with attacker direction. Neither converts that alignment into a behavioral label. Their agreement across the external matches strengthens the case that the primary result is not merely a generic aggregate-movement summary, while their differing Metrica precision cautions against collapsing them into one score.
+
+**[READY] Rank shape.** Neither the scalar nor directional results form a simple monotonic distance-decay curve. Near ranks are elevated relative to the pre-specified middle region, but far ranks can rebound; all pooled IDSSE scalar rank coefficients were positive. The main text therefore reports a localized near-versus-middle contrast and a stepped, nonmonotonic rank structure. Full D1--D10 tables belong in the supplement.
 
 ### 6.3 What the measurement does not establish
 
-**[READY] Opportunity redistribution.** Game 1 Opportunity Redistribution v1 was negative: \(\beta_D=-0.02407\), 95% bootstrap interval `[-0.09392, 0.04776]`. The three-nearest-defender robustness estimate was negative (`-0.08117` `[-0.15251, -0.00282]`), and the frozen movement trim remained negative (`-0.02852` `[-0.10268, 0.04578]`). This does not support equating local defensive reorganization with improved teammate separation.
+**[READY] Boundary results.** The measurement does not show that local defensive reorganization creates a downstream opportunity. Opportunity Redistribution v1 tested the simple hypothesis that a larger focal-local defensive change would be associated with relatively improved nearest-defender separation for other initially local attackers. The Game 1 primary estimate was negative and uncertain, \(\beta_D=-0.02407\) with a 95% bootstrap interval of `[-0.09392, 0.04776]`. The predicted separation consequence was therefore not supported. This is a boundary result for the tested representation, not evidence that attacker movement never changes teammates’ opportunities.
 
-**[READY] Coverage redistribution.** Coverage Redistribution v3 was mixed: the primary estimate was `0.09839` `[-0.03840, 0.20500]`, its remote estimate was `-0.01872`, and the direction-null 95th percentile (`0.10194`) was not exceeded. It does not support a coverage claim.
+A second, more structured geometric consequence was also not robustly established. Defensive Coverage Redistribution v3 produced \(\hat\beta_D=0.0983933\) m/m with a 95% bootstrap interval of `[-0.0384013, 0.2050032]`; its formal status was **MIXED** because the interval crossed zero and the estimate did not exceed the frozen direction-null 95th percentile. Neither result justifies translating measured defensive geometry into coverage, space creation, or attacking value.
 
-**[READY] Defensive response expectation.** A focal-history addition improved the baseline on all seven matches by a median `0.5350%`, but the match-side specific addition worsened performance by `0.0616%` relative to that model (`0/7` matches; bootstrap interval `[-0.1094%, -0.0167%]`). No stable defensive-style conclusion follows.
+Finally, Defensive Response Expectation found no material match-side-specific predictive increment beyond movement and modelled spatial context under its frozen design. The E2b model worsened relative to E1 by `0.0616%` and improved `0/7` matches, yielding **NOT SUPPORTED**. This result does not imply that teams lack defensive styles; it says only that this design did not establish a material match-specific component. Full robustness, expectation-model, and downstream-consequence detail belongs in the supplement.
 
 **[SUPPLEMENT]** Complete negative/mixed branch reports, rank-profile tables, and the defender-rank composition audit. The audit found a moderate composition limitation: goalward centroid-offset separation had a median standardized difference of `-0.3384` across nine checks, while leave-one-match-out AUC was `0.6267` (all below `0.65`), and activity conditioning removed 99.22% of induced localization in a synthetic rank-only null.
 
 ## 7. Football Interpretation / Analyst Use
 
-**[READY]** The measurement can surface passages where defenders moved differently from their collective defensive structure after preceding attacker movement. For an analyst, it is a descriptive way to ask, “which nearby defenders departed from the unit's shift, and by how much?” It does not answer whether that departure was required, correct, caused by the attacker, or good.
+**[READY]** The method is best understood as a measurement and retrieval layer. It can identify passages in which preceding attacker movement is followed by defenders moving differently from their collective defensive structure, then make that geometry available for football review. It does not decide whether the movement was a step, drop, cover, track, hold, recovery, or error. Those are football interpretations that require ball position, teammates, opponents, video, and analyst judgment beyond the representation itself.
 
-**[NEEDS DECISION]** Decide whether the manuscript uses a short analyst-review workflow panel: identify a high association passage, inspect video/context, and retain human interpretation as a separate step. Do not present it as automation or a validated tagging system.
+Figure 1 provides a concrete heldout example. In Metrica Game 2 at 2336.04 s, the defensive unit shifted `+7.498 m` goalward and `+5.672 m` laterally. Within that shared shift, D2 and D3 moved less goalward relative to their leave-one-out unit shifts, whereas D1 moved more goalward. The passage is heterogeneous: its point is not that one defender has been shown to mark, track, or respond correctly to a named attacker. Rather, it demonstrates how the defender-relative representation makes internal unit movement visible when raw absolute trajectories would primarily show the common shift.
+
+A practical analyst workflow is therefore deliberately simple:
+
+1. identify a governed attacker-movement interval;
+2. quantify the subsequent localized defender-relative reorganization;
+3. surface passages with a notable temporal footprint for review;
+4. inspect video and the wider tracking context; and
+5. assign any tactical interpretation only after that contextual review.
+
+This workflow can support retrieval of candidate off-ball passages, comparison of how similar attacker movements coincide with different defensive geometries, and descriptive study of local defensive reorganization. It is a research layer before more assumption-heavy tactical or value models, not a player-ranking system or an automatic tactical-labeling tool. Figure 1 plus this prose is sufficient for the main paper; a second analyst-workflow figure is not recommended unless a venue requires one.
+
+For a club analyst, the value is in narrowing a large tracking archive to reviewable questions without pre-committing to an answer. A high footprint may prompt review of whether the unit was shifting, whether a defender had to protect another space, whether the ball or another attacker supplied the more plausible context, or whether the apparent pattern is ordinary transition movement. A low footprint can be equally informative when an attacker moved but the unit stayed internally coherent. The measurement supplies comparable geometric evidence; football judgment remains with the analyst.
+
+Because the output is continuous and rank-specific, it can also support side-by-side review rather than a binary event feed. Analysts can compare the same passage under scalar and directional views, then decide whether the extra context warrants a tactical label. The system should preserve uncertainty and raw geometry at that review stage rather than conceal them behind a single score.
 
 ## 8. Limitations
 
-**[READY]** The evidence is observational: shared context may explain both attacker and defender movement, and reverse-time structure remains positive. The paired excess is a timing qualification, not a reaction-time or causal claim.
+**[READY]** First, the evidence is observational. Forward associations exceeded their reverse-time comparisons, but reverse-time structure remained positive. Attacker and defender motion can share ball, phase, possession, transition, or other unmeasured context. The paired excess strengthens evidence for correctly ordered temporal association; it does not establish causal influence, reaction time, or a one-way attacker-to-defender mechanism.
 
-**[READY]** Proximity rank can encode some unit-relative geometry. The rank composition audit supports use with a moderate limitation rather than proving rank is a pure distance construct. The observed rank profile is stepped and nonmonotonic, not a simple distance-decay law.
+Second, proximity rank is a representation rather than a direct football role. Near and middle ranks encode attacker proximity together with some unit-relative geometry. The outcome-blind rank-composition audit found only moderate non-distance structure, but residual role, zone, or match-state structure can remain. The rank profile is also stepped and nonmonotonic: near ranks are elevated relative to middle ranks, while far ranks can rebound. The results should therefore not be summarized as a simple law that an effect weakens with distance.
 
-**[READY]** Metrica and IDSSE provide limited provider and match breadth; Metrica Game 1 was used repeatedly for development. Provider filtering and support rules differ. Tactical roles and marking assignments are not inferred, and no downstream opportunity, value, or space-creation consequence was established.
+Third, the empirical breadth remains limited. Two Metrica sample matches and seven IDSSE matches in one independent provider environment provide meaningful heldout and external replication, but not a representative sample of football, teams, tactics, or tracking providers. Metrica and IDSSE differ in provider processing and sampling environment, including the physical span of the fixed seven-frame smoother. The design establishes transfer of this governed measurement, not provider-invariant effect magnitudes.
 
-**[NEEDS DECISION]** Confirm the final venue-appropriate wording for restricted data access, replication claims, and the scope of the external-provider generalization.
+Fourth, Game 1 was used iteratively during development of several constructs. The heldout Game 2 and external IDSSE results are therefore especially important, but they do not erase the distinction between development evidence and preregistered-like confirmation. The full protocol history, equivalence checks, and reproducibility materials remain available so readers can separate those roles.
+
+The required complete-support construction is another scope condition. It produces a consistent leave-one-out reference and fixed rank vector, but excludes intervals with incomplete player support, period crossings, or governed restart/ball-out context. The estimand is consequently about eligible, supported open-play observations, not every possible defensive action. Restricted provider-derived observation rows also limit independent reconstruction without approved data access, although compact outputs, code, and hash-ledger materials make the governed workflow inspectable.
+
+The separate supporting analyses should not be treated as interchangeable replications. Concurrent geometry has the strongest shared-time confounding concern; directional form has a mixed Metrica Game 2 result even though all seven IDSSE matches support it. These differences are informative about scope and measurement, not an invitation to choose whichever representation is most favorable in a particular passage.
+
+Finally, the statistical intervals describe uncertainty under fixed grouped resampling and the governed samples. They are not estimates of a universal player-, team-, or league-level distribution. More repeated-team and multi-competition data would be needed before comparing teams or players, estimating heterogeneity, or attaching a stable style interpretation to the measurement.
+
+Finally, tracking geometry does not reveal marking responsibility, tactical instruction, attention, intent, or whether a movement was correct. The real examples are illustrative and cannot validate the population estimand by themselves. Nor are downstream consequences established: Opportunity Redistribution did not support the tested nearest-defender-separation consequence, Coverage Redistribution was mixed, and the expectation analysis did not identify a material match-specific predictive increment. Localized defensive reorganization is therefore a measured geometric layer, not demonstrated opportunity creation, tactical success, gravity, or off-ball value.
 
 ## 9. Conclusion
 
-**[READY]** This study establishes a reproducible observational measurement layer for localized defensive reorganization associated with preceding off-ball attacker movement: focal defender motion relative to the moving defensive unit was more strongly associated with preceding attacker path for near than middle defender ranks, with a positive paired forward-minus-reverse excess in heldout and external validation.
+**[READY]** This study establishes a reproducible observational measurement layer for localized defensive reorganization associated with preceding off-ball attacker movement. Across Metrica development and heldout matches and seven IDSSE matches in an independent provider environment, preceding attacker path was more strongly associated with subsequent defender-relative movement among near than middle defender ranks. The forward association also exceeded the prospectively paired reverse-time comparison. Concurrent and directional analyses provide supporting evidence that localized internal unit reorganization is visible beyond a single scalar temporal result.
 
-**[READY]** The result is narrower than common football language. It does not show that an attacker caused a response, created space, drew a marker, or added value. Future work should add richer football context, semantic/video validation, repeated-team data, and independently motivated downstream consequences before tactical or value interpretation.
+The conclusion is deliberately narrower than common football language. The measurement does not show that an attacker caused a response, created space, drew a marker, or added value. Reverse-time structure remained positive, rank profiles were stepped rather than monotonic, and the negative or mixed downstream analyses prevented interpretation of observed geometry as demonstrated opportunity, coverage, stable defensive identity, or tactical success.
+
+For analysts and researchers, the method is best viewed as a transparent way to retrieve and describe passages in which nearby defenders moved differently from their defensive unit after attacker movement. Future work should add richer contextual characterization, semantic and video validation, broader match and provider replication, and independently motivated downstream tactical or value consequences. Those steps should extend the measurement only after their own constructs have been validated.
+
+The immediate contribution is thus not an automated verdict on what an attacker “made” the defence do. It is a reproducible geometric starting point for asking that question more carefully: first describe local defensive reorganization, then test its interpretation and consequences with designs capable of supporting them.
 
 ## Supplement plan
 
@@ -217,9 +253,12 @@ In practical terms, the coefficient describes how the fitted difference between 
 - **[SUPPLEMENT] S5 — Boundary results:** opportunity redistribution, coverage redistribution, response expectation, and other mixed/negative outcomes.
 - **[SUPPLEMENT] S6 — Additional visuals:** governed figure set, sample/exclusion ledgers, and analyst-context figures clearly marked illustrative.
 
+### Preliminary main-paper versus supplement recommendation
+
+**[READY]** Keep Figure 1, a concise primary-results table, and one short boundary-results paragraph in the main paper. Place full D1--D10 and match-level coefficient tables, robustness details, provider-equivalence checks, synthetic audits, the rank-composition audit, Opportunity Redistribution detail, Coverage v1/v2/v3 history, expectation-model detail, and hashes/reproducibility mechanics in the supplement. This is a manuscript-organization recommendation, not final venue formatting.
+
 ## Drafting decisions before full prose
 
 - **[NEEDS DECISION]** Confirm target venue, word budget, author list, and citation style.
-- **[NEEDS CITATION]** Complete the concept-organized related-work citations from the existing bibliography; do not turn the section into a novelty claim.
 - **[NEEDS DECISION]** Choose which compact external-match table belongs in the main paper versus the supplement.
 - **[NEEDS DECISION]** Confirm data-access and code-availability wording with provider terms.
