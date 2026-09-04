@@ -50,3 +50,16 @@ def test_external_classification_requires_every_support_gate():
     lomo.loc[0, "outward_minus_goalward_m_per_m"] = -0.01
     status, _ = external.classification(True, matches, 0.1, {"ci_low": 0.01}, per_match, lomo, trim, quality)
     assert status == "SKILLCORNER SPATIAL FORM EXTERNAL REPLICATION MIXED"
+
+
+def test_retained_simultaneous_anchor_group_can_have_row_specific_identity_qc():
+    """Identity-QC row exclusion must not impose an undeclared nine-row gate."""
+    frame = pd.DataFrame({
+        "match_id": ["A", "A", "A", "A"],
+        "period": [1, 1, 1, 1],
+        "anchor_frame": [40, 40, 40, 80],
+        "block_id": [0, 0, 0, 1],
+    })
+    groups_preserved = (frame.groupby(["match_id", "period", "anchor_frame"]).block_id.nunique() == 1)
+    assert groups_preserved.all()
+    assert frame.groupby(["match_id", "period", "anchor_frame"]).size().tolist() == [3, 1]

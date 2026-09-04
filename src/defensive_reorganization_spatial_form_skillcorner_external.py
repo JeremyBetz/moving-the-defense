@@ -850,7 +850,10 @@ def execute(data_dir: Path, output: Path = OUTPUT, preflight_only: bool = False)
         "provider_equivalence_every_valid_match": all(row["pass"] for row in provider_rows),
         "unique_observation_ids": not data.observation_id.duplicated().any(),
         "finite_target_and_model_columns": bool(np.isfinite(data.loc[:, ["Y_m", *BASE]].to_numpy(float)).all()),
-        "complete_anchor_vectors": bool((data.groupby(["match_id", "period", "anchor_frame"]).size() == 9).all()),
+        # Identity QC is row-specific by protocol. A retained anchor may
+        # therefore contain fewer than nine focal candidates, but block draws
+        # must preserve every retained simultaneous candidate together.
+        "simultaneous_retained_anchor_groups_preserved": bool((data.groupby(["match_id", "period", "anchor_frame"]).block_id.nunique() == 1).all()),
         "pooled_full_rank": pooled_rank == len(BASE) + len(valid_matches),
         "per_match_full_rank": bool((per_match.model_rank == len(BASE) + 1).all()),
         "lomo_full_rank": bool((lomo.model_rank == len(BASE) + len(valid_matches) - 1).all()),
