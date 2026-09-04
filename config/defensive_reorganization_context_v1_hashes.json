@@ -1,0 +1,28 @@
+{
+  "status": "FROZEN_BEFORE_ANY_CONTEXT_MODEL_OR_EFFECT_RESULT",
+  "freeze_date": "2026-09-04",
+  "starting_commit": "06a039bf19cda76e27555cc44c1bc75d44e4dec0",
+  "frozen_context_v1_sha256": {
+    "docs/protocols/defensive_reorganization_context_v1.md": "f385b94015041a37089850a077743f38b448ab3e1251c39cdd8d5b918268819d",
+    "config/defensive_reorganization_context_v1.json": "a6aa11319d1d49ff3a599ab61be5ba41ce3a2e4729f05ed45991f92bf725204f",
+    "docs/defensive_reorganization_context_v1_methodology.md": "6139deb95a9639ae7441a515bb173ed579036e9287d93adf6323c88500a2fc59",
+    "src/defensive_reorganization_context_v1_design.py": "152734025aa6bf920ed9836179ac72e61eef58421c66a1ae757d5f889510fe83",
+    "tests/test_defensive_reorganization_context_v1_design.py": "a3cba2ae4448cfa0383051209b9bbe0308d269f8fe39d7c24aa06eb92bc72afe"
+  },
+  "preserved_DRD_v2_sha256": {
+    "docs/protocols/defensive_reorganization_departure_v2.md": "25fb7ad7a08ddbeeced5b63a51894f4b94acd66235131908fb73c38e5cde5c1b",
+    "config/defensive_reorganization_departure_v2.json": "37718dad1e696a1cc0b6717fc9132efe1368dbf3d114b680e63556822670c3af",
+    "outputs/defensive_reorganization_departure_v2/result.json": "a88ad2a070f4f632e6544bcfc10611bfdd1e4f92d910ff0d2aafcdec1eefb74e",
+    "outputs/defensive_reorganization_departure_v2/final_hashes.json": "483c0fd74048bd43fcbacc6b6b769e1fa1dfd80fee3a5d4726c195531b863ccd"
+  },
+  "firewall": {
+    "DRD_v2_status_preserved": "DRD APPLICATION FOUNDATION MIXED",
+    "context_study_sample_constructed": false,
+    "context_model_fitted": false,
+    "context_effect_inspected": false,
+    "DRD_residual_or_passage_inspected": false,
+    "SkillCorner_opened": false,
+    "Metrica_Game_3": "untouched",
+    "player_ranking_created": false
+  }
+}

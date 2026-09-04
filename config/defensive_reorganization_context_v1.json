@@ -1,0 +1,167 @@
+{
+  "schema_version": "1.0.0",
+  "status": "FROZEN_BEFORE_ANY_CONTEXT_MODEL_OR_EFFECT_RESULT",
+  "freeze_date": "2026-09-04",
+  "starting_commit": "06a039bf19cda76e27555cc44c1bc75d44e4dec0",
+  "governing_protocol": "docs/protocols/defensive_reorganization_context_v1.md",
+  "prior_result_preserved": "DRD APPLICATION FOUNDATION MIXED",
+  "question": "which_pre_movement_spatial_situations_are_associated_with_stronger_subsequent_localized_defensive_reorganization",
+  "data": {
+    "provider_environment": "IDSSE_Sportec",
+    "matches": ["J03WMX", "J03WN1", "J03WOH", "J03WOY", "J03WPY", "J03WQQ", "J03WR9"],
+    "development_only": true,
+    "Metrica_Game_3": "prohibited",
+    "SkillCorner": "prohibited"
+  },
+  "inheritance": {
+    "protocol": "docs/protocols/defensive_reorganization_departure_v2.md",
+    "configuration": "config/defensive_reorganization_departure_v2.json",
+    "timing_support_open_play_active_roster_off_ball_rank_target_coordinate_rules": "unchanged",
+    "primary_observation_ids": "exact_set_equality_with_closed_v2_common_sample",
+    "minimum_rows_per_match": 1000,
+    "minimum_v2_off_ball_base_retention": 0.9,
+    "interpolation": false
+  },
+  "timing_seconds": {
+    "prior_attacker_context": [-4.0, -2.0],
+    "attacker_exposure": [-2.0, 0.0],
+    "defender_response": [0.0, 2.0],
+    "anchor_cadence": 4.0,
+    "sampling_hz": 25
+  },
+  "target": {
+    "near": "mean_D1_D3_accumulated_leave_one_out_defender_relative_path_m",
+    "middle": "mean_D4_D7_accumulated_leave_one_out_defender_relative_path_m",
+    "Y": "near_minus_middle_m",
+    "primary": true,
+    "DRD_residual": false,
+    "player_aggregate": false
+  },
+  "context_selection": {
+    "basis": ["football_interpretability", "pre_movement_availability", "continuous_geometry", "provider_portability", "clear_null", "low_multiplicity"],
+    "prohibited_basis": ["DRD_v2_individual_coefficient", "p_value", "residual", "passage", "subgroup_effect", "visual_attractiveness"],
+    "primary": [
+      "attacker_minus_unit_goalward_m",
+      "attacker_ball_distance_start_m"
+    ],
+    "hypothesis_direction": "two_sided_no_predeclared_sign",
+    "not_primary": [
+      "attacker_minus_unit_outward_m",
+      "normalized_attacker_position",
+      "ball_minus_unit_outward_m",
+      "attacker_ball_distance_change_m"
+    ]
+  },
+  "model": {
+    "family": "weighted_ordinary_least_squares_with_match_intercepts",
+    "outcome": "Y_m",
+    "continuous_column_order": [
+      "attacker_path_exposure_m",
+      "attacker_path_prior_m",
+      "attacker_minus_unit_goalward_m",
+      "attacker_ball_distance_start_m",
+      "defending_unit_depth_m",
+      "ball_minus_unit_goalward_m"
+    ],
+    "primary_coefficients": [
+      "attacker_minus_unit_goalward_m",
+      "attacker_ball_distance_start_m"
+    ],
+    "nuisance_controls": [
+      "attacker_path_exposure_m",
+      "attacker_path_prior_m",
+      "defending_unit_depth_m",
+      "ball_minus_unit_goalward_m"
+    ],
+    "match_intercepts": true,
+    "observation_weight": "one_divided_by_rows_in_match",
+    "standardization": false,
+    "regularization": false,
+    "interactions": false,
+    "nonlinear_terms": false,
+    "target_scaling": false,
+    "prediction_clipping": false,
+    "solver": "numpy_linalg_lstsq_rcond_None",
+    "full_rank_required": true
+  },
+  "cross_match": {
+    "pooled_equal_match_weighted": true,
+    "per_match_same_model": 7,
+    "leave_one_complete_match_out_same_model": 7,
+    "same_sign_match_min": 6,
+    "same_sign_leave_one_match_out_required": 7,
+    "zero_has_sign": false
+  },
+  "uncertainty": {
+    "replicates": 2000,
+    "minimum_valid": 1900,
+    "seed": 20260904,
+    "resampling": "period_origin_60_second_blocks_within_every_match_period",
+    "preserve_all_matches": true,
+    "preserve_simultaneous_attackers_and_shared_anchors": true,
+    "paired_context_draws": true,
+    "interval": "two_sided_97_5_percentile",
+    "familywise_alpha": 0.05,
+    "multiplicity": "Bonferroni_two_primary_contexts",
+    "zero_boundary": "touching_zero_fails"
+  },
+  "robustness": {
+    "name": "central_context_support_trim",
+    "quantiles_within_match": [0.025, 0.975],
+    "apply_jointly_to_both_primary_contexts": true,
+    "inclusive": true,
+    "same_strict_sign_required": true,
+    "absolute_magnitude_retention_range_inclusive": [0.5, 1.5],
+    "additional_robustness_search": false
+  },
+  "classification": {
+    "order": ["INVALID", "SUPPORTED", "MIXED", "NOT_SUPPORTED"],
+    "INVALID": "frozen_hash_sample_identity_support_leakage_finite_full_rank_bootstrap_deterministic_or_hard_QC_failure",
+    "context_SUPPORTED": "97_5_percent_interval_excludes_zero_and_at_least_6_of_7_match_estimates_same_sign_and_7_of_7_leave_one_match_out_same_sign_and_trim_passes",
+    "SUPPORTED": "at_least_one_primary_context_SUPPORTED",
+    "MIXED": "no_context_SUPPORTED_but_at_least_one_interval_excludes_zero_or_has_at_least_6_of_7_match_estimates_same_sign",
+    "NOT_SUPPORTED": "every_other_valid_result",
+    "null_stops_context_branch_before_Sloan": true,
+    "authorizes_DRD_or_retrieval": false
+  },
+  "effect_size": {
+    "coefficient_units": "metres_Y_per_metre_context",
+    "headline_increment_m": 10.0,
+    "also_report_predictor_only_p10_to_p90_span": true,
+    "standardized_headline": false
+  },
+  "figure": {
+    "count": 1,
+    "form": "two_panel_pitch_schematic_plus_adjusted_raw_unit_context_curves",
+    "domain": "predictor_only_p10_to_p90",
+    "show_all_seven_match_slopes": true,
+    "machine_learning_performance_plot": false,
+    "response_selected_examples": false
+  },
+  "conditional_future": {
+    "Metrica_Games_1_2": "separately_authorized_nonclassifying_unchanged_transport_only_after_IDSSE_SUPPORTED",
+    "Metrica_Game_3": "prohibited",
+    "SkillCorner": "separate_outcome_blind_support_gate_then_frozen_external_confirmation_only_after_IDSSE_SUPPORTED",
+    "player_ranking": "prohibited"
+  },
+  "execution_policy": {
+    "initial": "Tier_1",
+    "SUPPORTED_closure": "Tier_2_required_before_paper_use",
+    "expected_weekly_allowance_points": [5, 8]
+  },
+  "nonclaims": [
+    "causation", "influence", "attention", "marking", "assignment",
+    "responsibility", "tactical_response", "tactical_success",
+    "defensive_quality", "player_quality", "gravity", "off_ball_value"
+  ],
+  "execution": {
+    "context_study_sample_constructed": false,
+    "context_model_fitted": false,
+    "context_effect_inspected": false,
+    "DRD_residual_inspected": false,
+    "retrieval_generated": false,
+    "SkillCorner_opened": false,
+    "Metrica_Game_3_accessed": false,
+    "player_ranking_created": false
+  }
+}

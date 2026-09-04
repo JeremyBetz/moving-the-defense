@@ -44,12 +44,13 @@ defensive geometric change
 
 It uses continuous two-second attacker path rather than the rejected discrete episode rules, and subsequent focal-relative path supplies amount of defender movement rather than tactical meaning. The stepped spatial footprint now has unchanged held-out Game 2, pooled, and seven-match IDSSE support. Broader population transport and football semantics remain later questions; proximity or timing must not become causation.
 
-The main pre-Sloan gap is now communication rather than another empirical
-coefficient: integrate the externally replicated localized defensive-reorganization result into one
-football-readable figure and a concise methods/results narrative. A contextual
-moderator could be scientifically useful later, but no candidate currently has
-a sufficiently unique representation and estimand to justify opening untouched
-Metrica Sample Game 3 before the abstract deadline.
+The main pre-Sloan gap remains communication: integrate the externally
+replicated localized defensive-reorganization result into one football-readable
+figure and a concise methods/results narrative. A separate IDSSE-only
+[context design](protocols/defensive_reorganization_context_v1.md) is frozen
+but unexecuted; a SUPPORTED result could add bounded application value, while
+MIXED or NOT SUPPORTED closes that branch. It does not justify opening Metrica
+Sample Game 3 before the abstract deadline.
 
 The gap is **not** the absence of a gravity score. Gravity, attacker attribution, tactical classification, causal influence, and final off-ball value are later possibilities, not abstract prerequisites.
 

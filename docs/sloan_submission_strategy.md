@@ -10,9 +10,11 @@ defenders, and the forward association exceeds the frozen reverse-time
 comparison. Do not frame the work as attacker value, gravity, causal influence,
 reaction time, or automatic tactical recognition.
 
-This strategy uses only closed governed evidence. Metrica Sample Game 3 remains
-untouched, no contextual holdout is authorized before the Sloan abstract, and
-no new scientific classification is introduced.
+The paper strategy uses only closed governed evidence. Metrica Sample Game 3
+remains untouched and no Game 3 contextual holdout is authorized before the
+Sloan abstract. A separate IDSSE-only context characterization is now frozen
+but unexecuted; it is not evidence unless it later passes its own governed
+classification.
 
 ## 1. The paper that exists today
 
@@ -126,19 +128,19 @@ the main narrative.
 
 | Candidate | Football rationale | Identification risk | Decision |
 |---|---|---|---|
-| Movement direction relative to the defensive unit | Movement across or through a unit may require different adjustment than parallel movement | Requires an unvalidated unit axis, choice of signed/absolute projection, and interaction estimand | Most promising, but not sufficiently specified for the final pristine holdout |
-| Initial attacker position relative to the block | An attacker inside or near the block may have different local geometry | “Inside/near” requires consequential line, hull, or distance definitions | Reject before Sloan |
-| Initial distance to ball | Simple continuous geometry and interpretable even if null | Ball proximity mixes phase and possible on-ball/off-ball status without resolving why | Reject before Sloan |
+| Movement direction relative to the defensive unit | Movement across or through a unit may require different adjustment than parallel movement | Requires an unvalidated unit axis, choice of signed/absolute projection, and interaction estimand | Do not spend Game 3; not selected for IDSSE Context v1 after its family lacked material DRD v2 contribution |
+| Initial attacker position relative to the block | An attacker inside or near the block may have different local geometry | “Inside/near” requires consequential line, hull, or distance definitions | Do not spend Game 3; later narrowed to raw goalward centroid offset for IDSSE Context v1 |
+| Initial distance to ball | Simple continuous geometry and interpretable even if null | Ball proximity mixes phase and possible on-ball/off-ball status without resolving why | Do not spend Game 3; later selected as a two-sided continuous IDSSE Context v1 hypothesis |
 | Central versus wide start | Familiar football context | Pitch-band thresholds are arbitrary and can become role labels | Reject before Sloan |
 | Defensive depth or compactness | Response may differ in compressed and stretched shapes | Several defensible compactness measures and cut points create multiplicity | Reject before Sloan |
 
-**Final decision: B — KEEP GAME 3 UNTOUCHED BEFORE SLOAN.** None of the
-candidates currently offers enough information gain to justify spending the
-last pristine Metrica holdout. The strongest candidate—movement direction
-relative to the unit—still needs theory and representation work that should not
-be compressed into a pre-deadline confirmatory test. The externally replicated
-temporal footprint already supports the paper's central contribution. No
-context protocol or configuration is frozen, and no Game 3 outcome is opened.
+**Game 3 decision remains B — KEEP GAME 3 UNTOUCHED BEFORE SLOAN.** None of the
+candidates justified spending the last pristine Metrica holdout. After the
+separate DRD v2 family-level result, an IDSSE-only
+[context protocol](protocols/defensive_reorganization_context_v1.md) froze two
+continuous starting relationships without using individual coefficients or
+residuals. That design does not alter this Game 3 decision, is unexecuted, and
+cannot supply paper evidence until classified. No Game 3 outcome is opened.
 
 ## 6. Working abstract drafts
 

@@ -17,6 +17,12 @@ gate. Therefore no residual/DRD inspection, retrieval, Metrica transport,
 SkillCorner outcome, or player ranking was computed; Metrica Sample Game 3
 remains untouched.
 
+A separate [Defensive Reorganization Context v1 protocol](protocols/defensive_reorganization_context_v1.md)
+is now frozen but unexecuted. It does not rescue DRD or use residuals. It asks
+whether observed near-minus-middle geometry varies with two prospectively
+chosen starting relationships: attacker goalward position relative to the
+defensive unit and attacker–ball distance.
+
 **Working paper:** *Measuring Localized Defensive Reorganization Associated
 with Off-Ball Movement in Football*
 

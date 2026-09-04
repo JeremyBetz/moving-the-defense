@@ -1,5 +1,17 @@
 # Research Log
 
+## 2026-09-04 — Defensive Reorganization Context v1 frozen
+
+After DRD v2 closed MIXED, a separate IDSSE-only descriptive context study was
+frozen before any context effect was computed. It retains observed
+near-minus-middle geometry as the target and selects two primary continuous
+starting relationships on football and measurement grounds: attacker goalward
+position relative to the defensive centroid and attacker–ball distance. The
+raw-unit linear model, match consistency, two-hypothesis 97.5% block-bootstrap
+intervals, one central-support trim, exhaustive status tree, and nonclaims are
+prospective. No DRD residual, passage, SkillCorner outcome, Game 3 data, or
+player ranking was inspected.
+
 ## 2026-09-04 — Defensive Reorganization Departure v2 mixed
 
 The superseding active-roster rule passed all unchanged common-sample gates.

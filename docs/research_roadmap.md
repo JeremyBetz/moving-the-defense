@@ -120,6 +120,14 @@ ablation rule, but the 2.130% macro improvement missed the 3.0% SUPPORT gate.
 The application branch therefore stops before residual/retrieval, Metrica,
 SkillCorner, or player-level work.
 
+The stable family-level signal motivated a separate, non-residual
+[Defensive Reorganization Context v1 design](protocols/defensive_reorganization_context_v1.md).
+It freezes two football-readable, continuous starting relationships on the
+existing seven IDSSE matches and leaves the DRD stop rule intact. No context
+effect has been computed. SUPPORTED could add a bounded “where it tends to be
+stronger” characterization to the measurement paper; MIXED or NOT SUPPORTED
+ends this branch before Sloan rather than triggering feature repair.
+
 The [Opportunity Redistribution v1 protocol](protocols/opportunity_redistribution_v1.md) tested whether the replicated focal-local defensive contrast was associated with differential nearest-defender separation gain for other attackers initially local rather than remote to the focal attacker. The [Game 1 result](results/opportunity_redistribution_game1_v1.md) is **NEGATIVE**: the primary $\beta_D$ was −0.02407 [−0.09392, 0.04776], and two of three robustness signs were negative. This narrow geometric bridge did not survive development. Game 2 was not opened; Game 3 remains reserved.
 
 ### Research decision point after Opportunity Redistribution v1
