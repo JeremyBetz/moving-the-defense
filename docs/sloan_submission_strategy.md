@@ -1,7 +1,9 @@
-# Sloan submission strategy — September 2026
+# Measuring Localized Defensive Reorganization Associated with Off-Ball Movement in Football
 
-**Decision:** centre the paper on the externally replicated, time-ordered
-defensive footprint. The contribution is a governed measurement-and-validation
+## Sloan submission strategy — September 2026
+
+**Decision:** centre the paper on externally replicated, time-ordered localized
+defensive reorganization. The contribution is a governed measurement-and-validation
 result: greater attacker movement in a preceding interval is associated with
 stronger subsequent defender-relative movement among nearby than middle-ranked
 defenders, and the forward association exceeds the frozen reverse-time
@@ -77,7 +79,7 @@ not promise causation, tactics, or a demonstrated downstream benefit.
 | Falsification and QC | Rank-only null is approximately zero; activity adjustment removed about 99.2% of induced synthetic localization; rank composition remains a moderate limitation | Address simple mechanical alternatives without claiming all confounding is removed |
 | Consequence boundary | Opportunity Redistribution negative; Coverage Redistribution v3 mixed | Show that measured response is not established as separation, coverage, space creation, or value |
 
-## 3. Paper structure
+## 3. Manuscript skeleton
 
 1. **Football problem:** analysts say that movement shifted or pulled a defence,
    but tracking alone does not say why defenders moved.
@@ -141,6 +143,8 @@ context protocol or configuration is frozen, and no Game 3 outcome is opened.
 ## 6. Working abstract drafts
 
 ### Sloan working draft (under 500 words)
+
+**Working title:** *Measuring Localized Defensive Reorganization Associated with Off-Ball Movement in Football*
 
 Football analysts often say that an off-ball movement shifted a defence, but
 tracking data conflate an individual defender's adjustment with the movement
@@ -227,7 +231,7 @@ construct has a unique, predeclared representation and estimand.
 
 ### Flagship figure caption
 
-**Figure 1. Measuring and validating a temporal defensive footprint.**
+**Figure 1. Measuring localized defensive reorganization associated with off-ball movement.**
 **(A)** A deterministic heldout Metrica Game 2 pitch passage: the earliest
 chronological governed eligible anchor at or above the upper quartile of
 preceding attacker path (period 1, 2336.04 s). This selection uses attacker

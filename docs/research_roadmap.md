@@ -136,7 +136,7 @@ its timing, ranks, or controls.
 4. Keep Game 3 untouched before Sloan; do not manufacture an under-specified
    moderator or use it for generic replication.
 5. Preserve a conservative result even if it is mixed or negative.
-6. Produce an abstract-ready temporal-footprint story, clear football figures,
+6. Produce an abstract-ready localized defensive-reorganization story, clear football figures,
    and a reproducible public repository.
 7. Complete literature positioning around movement segmentation, expected defence, opponent relationships, and off-ball action—without novelty inflation.
 

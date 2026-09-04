@@ -321,7 +321,7 @@ def panel_b(ax) -> None:
     ax.set_yticks(y, [item["label"] for item in rows], fontsize=8.2)
     ax.set_xlabel("Near − middle coefficient (m defender-relative path / m preceding attacker path)", fontsize=8.4)
     ax.set_xlim(-.01, .18)
-    ax.set_title("B  The time-ordered footprint replicates across matches", loc="left", fontsize=11.5, weight="bold")
+    ax.set_title("B  The localized association replicates across matches", loc="left", fontsize=11.5, weight="bold")
     ax.text(.01, .94, "Circles: individual matches   ◆: governed within-environment pooled estimate",
             transform=ax.transAxes, fontsize=7.3, color=GREY, va="top")
     ax.text(.01, -.22, "Metrica intervals: frozen 97.5%; IDSSE intervals: frozen 95%. Pools are shown separately, not as a nine-match meta-analysis.",
@@ -382,13 +382,13 @@ def build() -> None:
     geometry = panel_a([fig.add_subplot(pitch_grid[0, index]) for index in range(3)])
     panel_b(fig.add_subplot(grid[1, 0]))
     panel_c(fig.add_subplot(grid[1, 1]))
-    fig.suptitle("Moving the Defense: a replicated temporal footprint of localized defensive movement", x=.075, y=.992,
-                 ha="left", fontsize=15.5, weight="bold")
+    fig.suptitle("Measuring Localized Defensive Reorganization Associated with Off-Ball Movement in Football", x=.075, y=.992,
+                 ha="left", fontsize=14.2, weight="bold")
     fig.text(.075, .958,
              f"Panel A: deterministic heldout Metrica Game 2 anchor at {float(geometry['selected']['time_period_s']):.2f} s "
              "(earliest eligible anchor at or above the upper quartile of preceding attacker path; selection uses attacker movement only).",
              fontsize=7.7, color=GREY, va="top")
-    fig.text(.075, .018, "Replicated: localized time-ordered defensive footprint.   Not established: causation, tactical meaning, opportunity, or value.",
+    fig.text(.075, .018, "Replicated: localized, time-ordered defensive reorganization.   Not established: causation, tactical meaning, opportunity, or value.",
              fontsize=8.7, color="#344054")
     fig.subplots_adjust(left=.075, right=.985, bottom=.10, top=.90)
     for suffix, kwargs in (("svg", {"metadata": {"Date": None}}), ("png", {"dpi": 240}), ("pdf", {"metadata": {"CreationDate": None, "ModDate": None}})):

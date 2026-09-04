@@ -1,10 +1,10 @@
-# Moving the Defense
+# Measuring Localized Defensive Reorganization Associated with Off-Ball Movement in Football
 
-**Measuring Defensive Responses to Attacking Movement in Football**
+*Working paper from the `moving-the-defense` repository.*
 
 > **When an attacker moves without receiving the ball, can tracking data identify the defensive reorganization associated with that movement?**
 
-Football language is full of claims that a run pinned a defender, pulled a line apart, or created space. Tracking data records where everyone moved, but it does not tell us why they moved. **Moving the Defense** is building the measurement foundation needed to test those ideas without treating movement as proof of tactical intent.
+Football language is full of claims that a run pinned a defender, pulled a line apart, or created space. Tracking data records where everyone moved, but it does not tell us why they moved. This project builds the measurement foundation needed to test those ideas without treating movement as proof of tactical intent.
 
 ## The football problem
 

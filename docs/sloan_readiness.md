@@ -1,5 +1,7 @@
 # Sloan Readiness
 
+**Working paper title:** *Measuring Localized Defensive Reorganization Associated with Off-Ball Movement in Football*
+
 The current paper choice, reviewer-risk assessment, pre-deadline priorities,
 and stop list are consolidated in the
 [September 2026 Sloan submission strategy](sloan_submission_strategy.md).
@@ -43,7 +45,7 @@ defensive geometric change
 It uses continuous two-second attacker path rather than the rejected discrete episode rules, and subsequent focal-relative path supplies amount of defender movement rather than tactical meaning. The stepped spatial footprint now has unchanged held-out Game 2, pooled, and seven-match IDSSE support. Broader population transport and football semantics remain later questions; proximity or timing must not become causation.
 
 The main pre-Sloan gap is now communication rather than another empirical
-coefficient: integrate the externally replicated temporal footprint into one
+coefficient: integrate the externally replicated localized defensive-reorganization result into one
 football-readable figure and a concise methods/results narrative. A contextual
 moderator could be scientifically useful later, but no candidate currently has
 a sufficiently unique representation and estimand to justify opening untouched
@@ -91,4 +93,4 @@ The abstract can center the successful geometric bridge while treating the faile
 
 ## Current readiness conclusion
 
-The project is **bridge-complete at the external observational level, but interpretation-incomplete**. It has validated component geometry, a supported seven-match IDSSE [temporal-footprint replication](results/spatial_defensive_response_footprint_idsse_v1.md), and strong negative evidence. The pre-Sloan priority is writing and visualization from closed results; Game 3 remains untouched. Gravity, tactical classification, causation, and value are neither established nor required for a strong abstract.
+The project is **bridge-complete at the external observational level, but interpretation-incomplete**. It has validated component geometry, a supported seven-match IDSSE replication of localized defensive reorganization through the named [temporal-footprint analysis](results/spatial_defensive_response_footprint_idsse_v1.md), and strong negative evidence. The pre-Sloan priority is writing and visualization from closed results; Game 3 remains untouched. Gravity, tactical classification, causation, and value are neither established nor required for a strong abstract.
