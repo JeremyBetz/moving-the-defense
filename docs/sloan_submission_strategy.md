@@ -173,20 +173,22 @@ become tactical validation.
 
 ### Analysis 1 — external replication of the time-ordered bridge
 
-**Question:** Does the frozen association between preceding attacker movement
-and subsequent localized defender-relative movement transport to the seven
-IDSSE matches at native cadence?
+**Question:** Does the [prospectively frozen external temporal-footprint
+replication](protocols/spatial_defensive_response_footprint_v1_idsse_external_replication.md)
+transport the association between preceding attacker movement and subsequent
+near-versus-middle localized defender-relative movement to the seven IDSSE
+matches at native cadence?
 
 **Why it matters:** The strongest full temporal bridge and footprint are Final
 A only within two Metrica sample matches. IDSSE currently validates concurrent
 localization and directional form, not the complete preceding-to-subsequent
 bridge. This is the clearest external-validity gap in the paper.
 
-**Story-changing result:** Consistent positive local/nonlocal and
-near/middle distinctions under the unchanged design would support an
-externally replicated temporal bridge. A mixed result would narrow the paper
-to concurrent geometry; a negative result would make the measurement paper
-more appropriate than a response paper.
+**Story-changing result:** A positive near-minus-middle pattern and paired
+excess over the frozen reverse-time control under the unchanged design would
+support an externally replicated temporal bridge. A mixed result would narrow
+the paper to concurrent geometry; a negative result would make the measurement
+paper more appropriate than a response paper.
 
 **Meaning of a null:** The defensive-relative primitive may transport while
 the specific temporal bridge does not. That is interpretable and publishable

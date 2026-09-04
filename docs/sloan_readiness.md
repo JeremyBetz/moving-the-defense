@@ -83,4 +83,4 @@ The abstract can center the successful geometric bridge while treating the faile
 
 ## Current readiness conclusion
 
-The project is **bridge-complete at the within-provider observational level, but interpretation-incomplete**. It has validated component geometry, external replication of the defensive primitive, strong negative evidence, and a frozen two-match attacker-to-defender association. A strong abstract can stop at that level; gravity, tactical classification, causation, and value are neither established nor required.
+The project is **bridge-complete at the within-provider observational level, but interpretation-incomplete**. It has validated component geometry, external replication of concurrent geometry, strong negative evidence, and a frozen two-match attacker-to-defender association. The final planned [IDSSE temporal-footprint replication](protocols/spatial_defensive_response_footprint_v1_idsse_external_replication.md) is now prospectively specified. A strong abstract can stop at the existing level if that test is mixed or unsupported; gravity, tactical classification, causation, and value are neither established nor required.

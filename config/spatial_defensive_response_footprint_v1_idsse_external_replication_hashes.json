@@ -1,0 +1,24 @@
+{
+  "freeze_date": "2026-09-03",
+  "starting_commit": "be544395493d01aa35b02031fc0d958d36753afe",
+  "status": "PROSPECTIVE_IDSSE_TEMPORAL_FOOTPRINT_RESULTS_UNOBSERVED",
+  "frozen_replication_artifacts_sha256": {
+    "config/spatial_defensive_response_footprint_v1_idsse_external_replication.json": "a3d5ea305c67dd6f65d1314ce4e0a14feffb4078b51f8e01a42dea58ad97dbe2",
+    "docs/protocols/spatial_defensive_response_footprint_v1_idsse_external_replication.md": "0336ad07964b5a133eb0c0e3986accef2c3058144d47e3ab0f20d9ba72497db1",
+    "docs/spatial_defensive_response_footprint_v1_idsse_equivalence.md": "57e82325fa1e0703ed4d1c25787fe243a3ea11946ed5ddb7401f41baa42569d1"
+  },
+  "closed_and_inherited_artifacts_sha256": {
+    "config/spatial_defensive_response_footprint_v1.json": "b784b3839146a424acd427a0f1d99959f3ef547039743d30ce90e39f9e557c9c",
+    "config/concurrent_attacker_defensive_geometry_v1_idsse_replication.json": "7af31dde8c70c7e4eba10dd52cf840025e8717d65b8444f93d35594e3d238dc4",
+    "docs/canonical_tracking_contract.md": "bdbde97bfe8d69d5938bbccd344a9ef7d915ed2f72857eeace542b6621a6f4f9",
+    "docs/concurrent_attacker_defensive_geometry_v1_idsse_equivalence.md": "3fcc148c9f8e4a4cedaad2844aec435de43c5203a24fb9c57395af0237adbec9",
+    "docs/protocols/spatial_defensive_response_footprint_v1.md": "649c40c551d880f5204f6ccca7e37cf219660c4a5fdea590e0b73b6377534458",
+    "docs/results/spatial_defensive_response_footprint_final_v1.md": "5db335f2dee38c7e9a33d9c173bf37ecd24b0551e855b0d4b95f49bffd16f9cc"
+  },
+  "firewall": {
+    "idsse_temporal_footprint_results": "not_created_or_inspected",
+    "metrica_game3": "untouched",
+    "closed_metrica_footprint_reopened": false,
+    "scientific_construct_changed": false
+  }
+}

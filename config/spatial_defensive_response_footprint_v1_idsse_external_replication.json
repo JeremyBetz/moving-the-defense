@@ -1,0 +1,95 @@
+{
+  "schema_version": "1.0.0",
+  "status": "FROZEN_BEFORE_ANY_IDSSE_TEMPORAL_FOOTPRINT_RESULT",
+  "freeze_date": "2026-09-03",
+  "starting_commit": "be544395493d01aa35b02031fc0d958d36753afe",
+  "execution_tier": 3,
+  "research_question": "Across the seven IDSSE matches, is greater attacker path in the fixed preceding exposure interval associated with greater subsequent defender-relative path among D1-D3 than D4-D7 under unchanged strictly earlier defensive-path and defending-unit-path context?",
+  "matches": ["J03WMX", "J03WN1", "J03WOH", "J03WOY", "J03WPY", "J03WQQ", "J03WR9"],
+  "inheritance": {
+    "protocol": "docs/protocols/spatial_defensive_response_footprint_v1.md",
+    "configuration": "config/spatial_defensive_response_footprint_v1.json",
+    "primary_model": "unchanged_rank_specific_raw_metre_OLS_intercept_attacker_path_rank_prior_focal_relative_path_prior_defending_centroid_path",
+    "primary_estimand": "mean_D1_D3_attacker_path_beta_minus_mean_D4_D7_attacker_path_beta"
+  },
+  "adapter": {
+    "path": "src/infrastructure/kloppy_idsse_adapter.py",
+    "canonical_contract": "docs/canonical_tracking_contract.md",
+    "coordinates": "native_centered_105x68_metres_fixed_pitch_x_right_y_up",
+    "attacking_direction_normalization": false,
+    "required_native_frame_rate_hz": 25,
+    "required_native_cadence_ns": 40000000,
+    "time": "raw_UTC_nanoseconds_with_period_origin_at_first_observed_provider_frame",
+    "goalkeeper": "Player.PlayingPosition_equals_TW_verified_against_provider_metadata",
+    "interpolation": "none",
+    "open_play": "established_IDSSE_event_clock_state_mapping",
+    "possession_after_anchor_required": false
+  },
+  "timing": {
+    "prior_context_seconds": [-4.0, -2.0],
+    "attacker_exposure_seconds": [-2.0, 0.0],
+    "primary_response_seconds": [0.0, 2.0],
+    "response_sensitivities_seconds": [1.0, 4.0],
+    "anchor_grid": "period_origin_plus_4_plus_4k",
+    "cadence_seconds": 4.0
+  },
+  "support_and_ranks": {
+    "position_smoothing": "centered_7_frame_arithmetic_mean_full_support",
+    "smoother_physical_support_seconds_at_required_cadence": 0.28,
+    "raw_edge_support_frames_each_side": 3,
+    "required_defending_outfield_players": 10,
+    "rank_distance": "Euclidean_canonical_metres_at_anchor",
+    "rank_ordering": ["distance_ascending", "canonical_player_key_ascending_exact_tie"],
+    "fixed_after_anchor": true,
+    "regions": {"near": [1, 2, 3], "middle": [4, 5, 6, 7], "far_descriptive": [8, 9, 10]},
+    "complete_support": true
+  },
+  "controls_and_robustness": {
+    "reverse_time_placebo": "future_attacker_path_t_to_t_plus_2_predicts_earlier_focal_relative_path_t_minus_2_to_t_with_same_prior_covariates",
+    "paired_primary_minus_placebo": "near_minus_middle",
+    "extreme_attacker_path_threshold_m": 12.198443079831405,
+    "trimmed_minimum_absolute_magnitude_fraction": 0.5,
+    "horizon_sign_rule": "one_and_four_second_primary_near_minus_middle_may_not_both_reverse_two_second_sign"
+  },
+  "equivalence_gate": {
+    "required_for_every_match_before_outcomes": true,
+    "exact": ["period", "frame_id", "provider_timestamp_ns", "player_id", "team_id", "goalkeeper", "observed_mask", "possession_open_play_state", "anchor_id", "focal_id", "D1_D10_membership"],
+    "coordinate_tolerance_m": 0.00001,
+    "derived_component_tolerance_m": 0.0001,
+    "path_tolerance_m": 0.001,
+    "cadence_required_exact": true,
+    "failure_policy": "IDSSE_TEMPORAL_FOOTPRINT_EXTERNAL_REPLICATION_INVALID_no_match_dropped"
+  },
+  "bootstrap": {
+    "replicates": 2000,
+    "minimum_valid": 1900,
+    "interval": "two_sided_percentile_95_percent",
+    "block_seconds": 60.0,
+    "block_origin": "period_origin",
+    "retain_nonempty_terminal_partial": true,
+    "grouping": "complete_D1_D10_vector_and_all_simultaneous_attackers",
+    "generator": "PCG64",
+    "master_seed": 20260903,
+    "spawn_count": 8,
+    "match_child_indices": {"J03WMX": 0, "J03WN1": 1, "J03WOH": 2, "J03WOY": 3, "J03WPY": 4, "J03WQQ": 5, "J03WR9": 6},
+    "pooled_child_index": 7,
+    "paired_draws_across_primary_placebo_trim_horizons": true
+  },
+  "pooled": {
+    "role": "secondary_to_visible_match_level_replications_primary_precision_summary",
+    "model": "rank_specific_four_term_model_plus_six_common_match_indicators_J03WMX_reference",
+    "match_rank_interactions": false,
+    "match_exposure_interactions": false,
+    "weighting": "observation_weighted",
+    "bootstrap": "independent_60_second_period_blocks_within_every_match_period_then_concatenate"
+  },
+  "classification": {
+    "evaluation_order": ["INVALID", "NOT_SUPPORTED", "SUPPORTED", "MIXED"],
+    "invalid": "any_governed_match_or_pooled_provider_equivalence_scientific_validity_rank_solver_bootstrap_support_governance_or_reproduction_failure",
+    "not_supported": "valid_and_pooled_primary_near_minus_middle_nonpositive_or_primary_positive_match_count_at_most_3_or_pooled_paired_primary_minus_placebo_nonpositive_or_paired_excess_positive_match_count_at_most_3",
+    "supported": ["valid_execution", "pooled_primary_near_minus_middle_positive", "pooled_primary_95_percent_interval_strictly_above_zero", "primary_positive_match_count_at_least_5", "pooled_paired_primary_minus_placebo_positive", "pooled_paired_95_percent_interval_strictly_above_zero", "paired_excess_positive_match_count_at_least_5", "pooled_trim_positive", "pooled_trim_retains_at_least_0.5_absolute_magnitude", "pooled_1s_and_4s_not_both_opposite_two_second_sign"],
+    "mixed": "every_other_valid_case",
+    "statuses": ["IDSSE TEMPORAL FOOTPRINT EXTERNAL REPLICATION SUPPORTED", "IDSSE TEMPORAL FOOTPRINT EXTERNAL REPLICATION MIXED", "IDSSE TEMPORAL FOOTPRINT EXTERNAL REPLICATION NOT SUPPORTED", "IDSSE TEMPORAL FOOTPRINT EXTERNAL REPLICATION INVALID"]
+  },
+  "prohibitions": ["new_windows", "new_lags", "new_rank_groups", "new_predictors", "new_models", "new_placebos", "new_metric_distance_bands", "model_tuning", "Game3_access", "IDSSE_temporal_footprint_result_execution_during_design_freeze"]
+}

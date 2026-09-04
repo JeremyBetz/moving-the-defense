@@ -344,6 +344,10 @@ MPLCONFIGDIR=/tmp/mtd-mpl .venv/bin/python src/concurrent_attacker_defensive_geo
 
 The first command reruns the full provider-equivalence gate and scientific execution. The second records byte identity against the closed result. The [result report](results/concurrent_attacker_defensive_geometry_idsse_v1.md) and `outputs/concurrent_attacker_defensive_geometry_idsse_v1/` contain the governed evidence. Game 3 and opportunity outcomes are outside this execution.
 
+## Temporal spatial footprint v1 — IDSSE external replication
+
+The [frozen external protocol](protocols/spatial_defensive_response_footprint_v1_idsse_external_replication.md), configuration, hash ledger, and [provider-equivalence specification](spatial_defensive_response_footprint_v1_idsse_equivalence.md) govern the final planned time-ordered external bridge test. No IDSSE temporal-footprint output exists at this checkpoint. A future Tier 3 implementation must first pass the seven-match outcome-blind equivalence gate, then serialize and reproduce the governed match-level and pooled results. It may not alter the fixed 2-second preceding exposure, subsequent response, near/middle ranks, reverse-time control, or transported trim threshold. It uses only the seven governed IDSSE matches and does not access Metrica Sample Game 3.
+
 ## Concurrent Defensive Coordination Form v1 — IDSSE external replication
 
 The original [protocol](protocols/concurrent_defensive_coordination_form_v1.md), configuration, and [prospective IDSSE status clarification](protocols/concurrent_defensive_coordination_form_v1_idsse_replication.md) govern the seven-match execution. Reproduce two independent complete executions with:

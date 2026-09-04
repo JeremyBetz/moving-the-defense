@@ -1,5 +1,25 @@
 # Research Log
 
+## 2026-09-03 — IDSSE temporal spatial-footprint replication frozen before outcomes
+
+The project froze one final external time-ordered bridge test before any IDSSE
+temporal-footprint sample, coefficient, interval, or status was computed. It
+selects the closed Spatial Defensive-Response Footprint v1 because it is the
+time-ordered construct with the established D1–D3 versus D4–D7 primary
+contrast. It retains the prior `[t-4,t-2]`, attacker `[t-2,t]`, and subsequent
+defender `[t,t+2]` windows; full-support seven-frame smoothing; fixed ranks;
+strictly prior covariates; the reverse-time placebo; the transported trim; and
+one-/four-second sensitivities. The separate external status requires both the
+primary near-minus-middle contrast and its paired primary-minus-placebo excess
+to pass prospectively fixed pooled and match-sign conditions. This does not
+alter the closed Metrica Final Footprint A, whose placebo was diagnostic.
+
+The seven existing IDSSE matches, Kloppy/canonical adapter, event-clock
+mapping, and 25 Hz cadence gate are reused. A mixed or unsupported result will
+be a terminal interpretation boundary for this bridge: the Sloan paper will
+centre concurrent geometry rather than search alternate temporal windows,
+ranks, or metrics. Game 3 remains untouched.
+
 ## 2026-09-03 — Defensive Coverage Redistribution v3 Game 1 development mixed
 
 The prospectively frozen v3 execution used the same 281 period-1-only Metrica
