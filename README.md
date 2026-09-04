@@ -48,11 +48,12 @@ response. The reverse-time control also retained structure.
 
 ![Flagship temporal-footprint figure](docs/figures/sloan/temporal_footprint_flagship.svg)
 
-*The flagship figure explains the measurement (synthetic Panel A), the
-time-ordered near-versus-middle replication across Metrica and IDSSE (Panel B),
-and the positive paired forward-minus-reverse comparison (Panel C). It does not
-infer marking assignments or establish causation, tactical meaning,
-opportunity, or value.*
+*The flagship figure opens with a deterministic heldout Metrica Game 2 pitch
+passage selected from the governed anchor registry using preceding attacker
+movement only (Panel A), then shows the time-ordered near-versus-middle
+replication across Metrica and IDSSE (Panel B) and the positive paired
+forward-minus-reverse comparison (Panel C). It does not infer marking
+assignments or establish causation, tactical meaning, opportunity, or value.*
 
 The pattern is not a simple decline with distance. Nearby ranks were elevated relative to the middle group, but the pooled rank profile was non-monotonic and the far ranks rebounded.
 

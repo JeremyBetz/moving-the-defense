@@ -209,10 +209,11 @@ movement created value.
 
 ## 7. Pre-Sloan work plan
 
-1. Use the [flagship measurement-to-replication figure](figures/sloan/temporal_footprint_flagship.svg)
-   built exclusively from closed governed results. Its explanatory panel is
-   synthetic rather than a provider-derived passage, so no match episode was
-   selected by attacker or defender outcome.
+1. Use the [flagship measurement-to-replication figure](figures/sloan/temporal_footprint_flagship.svg).
+   Its real-pitch explanatory panel is the earliest chronological heldout
+   Metrica Game 2 eligible anchor at or above the upper quartile of the
+   governed preceding-attacker-path distribution. It is selected before, and
+   without reference to, defender response magnitude or any football outcome.
 2. Turn the working abstract into the paper's introduction, methods spine, and
    results tables.
 3. Complete a claim-language, reproducibility, and literature-positioning
@@ -227,18 +228,21 @@ construct has a unique, predeclared representation and estimand.
 ### Flagship figure caption
 
 **Figure 1. Measuring and validating a temporal defensive footprint.**
-**(A)** Synthetic schematic of the measurement: a defender's absolute path can
-contain a shared defensive-unit shift plus movement relative to that unit.
-Attacker path precedes the response interval, and the near (D1–D3) and middle
-(D4–D7) groups are start-fixed proximity ranks; no marking assignment is
-inferred. **(B)** Governed near-minus-middle associations between preceding
-attacker path and subsequent defender-relative path across Metrica development,
-heldout, and seven IDSSE matches. Within-environment pools are shown separately
-and are not a nine-match meta-analysis. **(C)** The forward association exceeds
-the frozen reverse-time comparison in pooled Metrica and IDSSE results, while
-reverse-time structure remains positive. The figure shows an observational
-time-ordered geometric association, not causation, tactical meaning,
-opportunity, or value.
+**(A)** A deterministic heldout Metrica Game 2 pitch passage: the earliest
+chronological governed eligible anchor at or above the upper quartile of
+preceding attacker path (period 1, 2336.04 s). This selection uses attacker
+movement only—not defender response magnitude or an outcome. The three frames
+show the preceding attacker path, actual absolute defender paths in the next
+two seconds, and those paths after subtracting each defender's leave-one-out
+defensive-unit shift. Near (D1–D3) and middle (D4–D7) are start-fixed proximity
+ranks; no marking assignment is inferred. **(B)** Governed near-minus-middle
+associations between preceding attacker path and subsequent defender-relative
+path across Metrica development, heldout, and seven IDSSE matches.
+Within-environment pools are shown separately and are not a nine-match
+meta-analysis. **(C)** The forward association exceeds the frozen reverse-time
+comparison in pooled Metrica and IDSSE results, while reverse-time structure
+remains positive. The figure shows an observational time-ordered geometric
+association, not causation, tactical meaning, opportunity, or value.
 
 ## 8. Stop researching before submission
 
