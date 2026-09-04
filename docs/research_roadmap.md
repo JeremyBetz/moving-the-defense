@@ -89,6 +89,19 @@ not yet have a uniquely justified representation and estimand. Spending the
 last pristine holdout would add less information than completing the paper and
 flagship figure from the closed evidence. No contextual protocol is frozen.
 
+### Conditional pre-Sloan application sprint
+
+The design-only [Defensive Reorganization Departure strategy](application_sprint_strategy.md)
+proposes one bounded application: predict anchor-level near-versus-middle
+defender-relative reorganization from movement and pre-response geometry, then
+retrieve heldout passages whose observed geometry differs substantially from
+that statistical expectation. It is a movement/context application, not
+gravity, influence, value, tactical response, or a player ranking. No model has
+been fitted and no protocol is frozen. The sprint must stop if context adds
+little beyond attacker path and prior movement; the existing measurement paper
+remains the fallback. SkillCorner is a conditional external-validation option
+only after an outcome-blind provider/support gate. Game 3 remains untouched.
+
 The [Opportunity Redistribution v1 protocol](protocols/opportunity_redistribution_v1.md) tested whether the replicated focal-local defensive contrast was associated with differential nearest-defender separation gain for other attackers initially local rather than remote to the focal attacker. The [Game 1 result](results/opportunity_redistribution_game1_v1.md) is **NEGATIVE**: the primary $\beta_D$ was −0.02407 [−0.09392, 0.04776], and two of three robustness signs were negative. This narrow geometric bridge did not survive development. Game 2 was not opened; Game 3 remains reserved.
 
 ### Research decision point after Opportunity Redistribution v1
