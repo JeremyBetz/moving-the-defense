@@ -1,0 +1,8 @@
+match_id,inherited_target_rows,threshold_free_off_ball_base_rows,common_sample_rows,retention_of_off_ball_base_rows,unique_anchors,occupied_60_second_blocks,period_coverage,active_outfield_anchor_counts
+J03WMX,12071,10850,10850,1.0,1206,97,"{'P1': {'anchors': 623, 'start_s': 8.0, 'end_s': 2816.0}, 'P2': {'anchors': 583, 'start_s': 8.0, 'end_s': 3000.0}}",{'10': 12056}
+J03WN1,4791,4268,4268,1.0,523,81,"{'P1': {'anchors': 287, 'start_s': 8.0, 'end_s': 2768.0}, 'P2': {'anchors': 236, 'start_s': 8.0, 'end_s': 2840.0}}","{'10': 869, '9': 3922}"
+J03WOH,10975,9853,9853,1.0,1095,92,"{'P1': {'anchors': 564, 'start_s': 8.0, 'end_s': 2764.0}, 'P2': {'anchors': 531, 'start_s': 8.0, 'end_s': 2668.0}}",{'10': 10948}
+J03WOY,11238,10097,10097,1.0,1122,95,"{'P1': {'anchors': 535, 'start_s': 8.0, 'end_s': 2752.0}, 'P2': {'anchors': 587, 'start_s': 8.0, 'end_s': 2928.0}}",{'10': 11219}
+J03WPY,12171,10913,10913,1.0,1213,98,"{'P1': {'anchors': 607, 'start_s': 8.0, 'end_s': 2756.0}, 'P2': {'anchors': 606, 'start_s': 8.0, 'end_s': 3068.0}}",{'10': 12125}
+J03WQQ,9792,8682,8682,1.0,988,94,"{'P1': {'anchors': 609, 'start_s': 8.0, 'end_s': 2760.0}, 'P2': {'anchors': 379, 'start_s': 8.0, 'end_s': 2872.0}}","{'10': 7800, '9': 1870}"
+J03WR9,11278,10142,10142,1.0,1127,93,"{'P1': {'anchors': 573, 'start_s': 8.0, 'end_s': 2720.0}, 'P2': {'anchors': 554, 'start_s': 8.0, 'end_s': 3044.0}}",{'10': 11269}

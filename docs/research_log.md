@@ -1,5 +1,20 @@
 # Research Log
 
+## 2026-09-04 — Defensive Reorganization Departure v2 mixed
+
+The superseding active-roster rule passed all unchanged common-sample gates.
+J03WN1 retained 4,268 rows across 523 anchors and 81 occupied 60-second blocks
+using complete event-defined current attacking sets. The seven-match nested
+Ridge execution gave E0 macro held-out MAE 0.933017 m and E1 0.913141 m, a
+2.130% improvement, with E1 improving all seven matches and no worsening.
+Start-position and ball-geometry ablations each passed the frozen family rule.
+
+The 3.0% macro SUPPORT gate did not pass, so the exact status is **DRD
+APPLICATION FOUNDATION MIXED**. The status was serialized before residual
+inspection. No DRD, retrieval passage, Metrica transport, SkillCorner outcome,
+player ranking, or Game 3 access occurred. All 11 compact governed outputs
+reproduced byte-for-byte in an independent rerun.
+
 ## 2026-09-04 — Defensive Reorganization Departure v2 support governance frozen
 
 An outcome-blind audit retained the closed v1 **INVALID** status and found no

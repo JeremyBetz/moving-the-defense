@@ -10,9 +10,12 @@ subsequently froze a [superseding v2 protocol](protocols/defensive_reorganizatio
 that changes only the attacking entity-support definition: complete support
 must equal the event-defined current on-pitch outfield set, including after a
 confirmed dismissal. The 1,000-row gate and every downstream scientific rule
-remain unchanged. V2 has not executed. No E0/E1 prediction, residual, DRD,
-retrieval, Metrica transport, SkillCorner outcome, or player ranking was
-computed; Metrica Sample Game 3 remains untouched.
+remain unchanged. Its [v2 execution](results/defensive_reorganization_departure_v2.md)
+passed every support gate and classified **MIXED**: E1 improved all seven
+matches but its 2.130% macro MAE improvement missed the frozen 3.0% SUPPORT
+gate. Therefore no residual/DRD inspection, retrieval, Metrica transport,
+SkillCorner outcome, or player ranking was computed; Metrica Sample Game 3
+remains untouched.
 
 **Working paper:** *Measuring Localized Defensive Reorganization Associated
 with Off-Ball Movement in Football*

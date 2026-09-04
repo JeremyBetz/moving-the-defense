@@ -1,0 +1,13 @@
+{
+  "bootstrap_intervals.csv": "b500c8c49eee66f7c83c38985aa18d0b30a0fa0c1f7ef863b3c33c0e2e7c3348",
+  "e0_e1_per_match_comparison.csv": "5b75b8408858fdab0bf187a9576bf6c378f0f41ba920765fe450273c1ee142f1",
+  "family_ablations.csv": "0000ca421aac9c13a3f9978ed4987c689ba60892c44cb76a7bf7e96e1acddbe9",
+  "feature_dictionary.json": "bbccc83b6370152ae048ff1b44076f72bc4bb67143a25b1b4d834abe6757c44e",
+  "fold_alpha_ledger.csv": "448ffdabdc79b256110f85be65f473b3e14b9e9f53e5539523a6ad99384c91a6",
+  "hard_qc.json": "e384c0cdde64c7009ce8f9d932623dcddd46accfcfd8e7189a014c5ecbeaa5a5",
+  "manifest.json": "b2c2db713bf9a1bf239033a9c75b0c15b979ec5a0cc96da50f8b750e288a1ecb",
+  "match_metrics.csv": "dd818206de4a3b42c541846c3dae327dd01b1e3b63ffc50f25c53f507e03735a",
+  "result.json": "a88ad2a070f4f632e6544bcfc10611bfdd1e4f92d910ff0d2aafcdec1eefb74e",
+  "result_report.md": "a47367a373650667a2d7aad6f7e78a97a40a66acc5eb9168b90828a759191d5e",
+  "sample_retention.csv": "f1af3ce12b317df28cf4b200f6d58026d3ea0d67851361eee0aebe401cda1e42"
+}

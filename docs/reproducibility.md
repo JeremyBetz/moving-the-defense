@@ -422,9 +422,12 @@ unchanged ball-nearest exclusion. Focused contract tests are:
 ```
 
 The 1,000-row/90% gates, target, E0/E1, model, validation, classifications,
-retrieval, SkillCorner gate, player prohibition, and stop rule remain v1. V2
-has not been executed and has no sample, model, prediction, residual, or DRD
-artifact.
+retrieval, SkillCorner gate, player prohibition, and stop rule remain v1. The
+[v2 result](results/defensive_reorganization_departure_v2.md) is MIXED: its
+support gates passed and it reproduced byte-for-byte, but 2.130% macro
+improvement missed the frozen 3.0% SUPPORT gate. Therefore its local-only
+prediction ledger was not used to inspect residuals or DRD, and no retrieval,
+transport, SkillCorner outcome, player ranking, or Game 3 access occurred.
 
 ## Known reproducibility limitations
 

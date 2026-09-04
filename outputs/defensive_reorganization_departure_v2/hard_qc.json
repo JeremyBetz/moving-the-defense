@@ -1,0 +1,12 @@
+{
+  "bootstrap_valid_at_least_950": true,
+  "common_sample_minimum_rows": true,
+  "common_sample_retention_minimum": true,
+  "finite_common_features_and_target": true,
+  "frozen_hashes": true,
+  "game3_untouched": true,
+  "no_metrica_transport": true,
+  "no_player_ranking": true,
+  "no_skillcorner": true,
+  "one_outer_prediction_per_model_observation": true
+}
