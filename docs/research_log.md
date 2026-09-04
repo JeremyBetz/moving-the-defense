@@ -1,5 +1,33 @@
 # Research Log
 
+## 2026-09-04 — SkillCorner Spatial Form compatibility passed; external protocol frozen before outcome
+
+An outcome-blind provider audit classified the proposed SkillCorner external
+replication **A — feasible**. The official ten-match 2024/25 A-League release
+was fixed at upstream commit `c1e17a0cc3e07e1774b52d929c1a0b85115143fc`;
+match `1953632` was excluded prospectively because its provider status says
+`not_started`, leaving nine formal matches and an eight-match minimum. The
+support-only audit retained 49,084 candidate rows after the frozen identity
+gate and 11,812 rows in the stricter majority-detected sensitivity. These are
+computability counts, not defensive-response outcomes.
+
+Full native-versus-Kloppy equivalence on match `1886347` preserved frames,
+periods, identities, coordinates, ball, possession team, and pitch dimensions.
+Kloppy 3.19.0 did not preserve native `is_detected`, image projection, or
+possession-player metadata, so native JSONL support remains authoritative and
+is merged beneath the project measurement layer. Native 10 Hz time is retained;
+the sole provider adaptation is a prospectively frozen centered three-frame
+(0.30 s) position mean in place of the IDSSE seven-frame (0.28 s) mean. The
+estimand, target, covariates, model, bootstrap, trim, and interpretation limits
+remain unchanged.
+
+No SkillCorner localized-reorganization target, coefficient, interval, model,
+or classification was computed. DRD residuals, Metrica Game 3, players, teams,
+and downstream value remained unopened. The external-replication protocol,
+configuration, compatibility note, license boundary, provider helpers, tests,
+and hash ledger were frozen prospectively. Execution remains a separate future
+decision.
+
 ## 2026-09-04 — Defensive Reorganization Spatial Form v1 executed: SUPPORTED
 
 The prospectively frozen seven-match IDSSE spatial-form study reconstructed the

@@ -429,6 +429,37 @@ improvement missed the frozen 3.0% SUPPORT gate. Therefore its local-only
 prediction ledger was not used to inspect residuals or DRD, and no retrieval,
 transport, SkillCorner outcome, player ranking, or Game 3 access occurred.
 
+## SkillCorner Spatial Form external replication — frozen, unexecuted
+
+The prospective external-replication design is governed by
+[`protocols/defensive_reorganization_spatial_form_v1_skillcorner_external.md`](protocols/defensive_reorganization_spatial_form_v1_skillcorner_external.md)
+and
+[`config/defensive_reorganization_spatial_form_v1_skillcorner_external.json`](../config/defensive_reorganization_spatial_form_v1_skillcorner_external.json).
+The [provider-compatibility audit](skillcorner_spatial_form_provider_compatibility.md)
+and [license/publication note](skillcorner_open_data_license.md) document the
+outcome firewall and public-artifact boundary. Frozen-file identities are in
+[`config/defensive_reorganization_spatial_form_v1_skillcorner_external_hashes.json`](../config/defensive_reorganization_spatial_form_v1_skillcorner_external_hashes.json).
+
+The source release is SkillCorner Open Data at upstream commit
+`c1e17a0cc3e07e1774b52d929c1a0b85115143fc`. Native SkillCorner JSONL is
+authoritative for frame-level support and `is_detected`; Kloppy 3.19.0 supplies
+the community parser and normalized roster, pitch, player/team, ball, and
+possession-team objects. The governed adapter merges support by exact
+match/frame/player identity. Raw provider data remain ignored and are not
+committed.
+
+The focused pre-outcome contract checks are:
+
+```bash
+.venv/bin/python -m pytest -q tests/test_skillcorner_spatial_form_adapter.py
+```
+
+They verify native period time, physical windows, canonical pitch scaling,
+goalward/outward transforms, active-roster construction, tracking-quality
+support, and the identity-step boundary. They do not construct the localized
+defensive-reorganization target or fit a model. The protocol is frozen but has
+not been executed; there is no SkillCorner coefficient, interval, or result.
+
 ## Known reproducibility limitations
 
 - There is no one-command end-to-end workflow or continuous integration check.

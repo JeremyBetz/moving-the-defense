@@ -185,9 +185,12 @@ its timing, ranks, or controls.
 2. Preserve the completed Final A bridge and its local, nonlocal, temporal, activity/context, tracking-quality, and influence limits.
 3. Preserve the completed Final A spatial footprint and its supported frozen external/native-frequency replication; do not search another bridge specification.
 4. Preserve the closed Spatial Form v1 **OUTWARD GREATER** association and its
-   inconclusive static-versus-dynamic comparison. Any SkillCorner replication
-   requires a separate provider-equivalence and prospective protocol; no
-   Metrica transport is authorized by the present result.
+   inconclusive static-versus-dynamic comparison. A separate
+   [SkillCorner provider-compatibility audit](skillcorner_spatial_form_provider_compatibility.md)
+   has passed and its [external-replication protocol](protocols/defensive_reorganization_spatial_form_v1_skillcorner_external.md)
+   is frozen prospectively, but no outcome has been computed and execution
+   remains a future decision. No Metrica transport is authorized by the
+   present result.
 5. Keep Game 3 untouched before Sloan; do not manufacture an under-specified
    moderator or use it for generic replication.
 6. Preserve a conservative result even if it is mixed or negative.

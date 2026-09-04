@@ -1,0 +1,140 @@
+{
+  "schema_version": "1.0.0",
+  "status": "FROZEN_BEFORE_ANY_SKILLCORNER_SPATIAL_FORM_OUTCOME",
+  "freeze_date": "2026-09-04",
+  "starting_commit": "b9760207ebe4e59b14a6ff9b3302fda86a29dddb",
+  "parent_protocol": "docs/protocols/defensive_reorganization_spatial_value_v1.md",
+  "protocol": "docs/protocols/defensive_reorganization_spatial_form_v1_skillcorner_external.md",
+  "data": {
+    "repository": "https://github.com/SkillCorner/opendata",
+    "repository_commit": "c1e17a0cc3e07e1774b52d929c1a0b85115143fc",
+    "competition": "AUS A-League",
+    "season": "2024/2025",
+    "available_matches": [1886347, 1899585, 1925299, 1953632, 1996435, 2006229, 2011166, 2013725, 2015213, 2017461],
+    "formal_matches": [1886347, 1899585, 1925299, 1996435, 2006229, 2011166, 2013725, 2015213, 2017461],
+    "prospective_exclusion": {"1953632": "provider_top_level_status_not_started_conflicts_with_complete_two_period_files"},
+    "minimum_valid_matches": 8,
+    "Game3": "prohibited",
+    "DRD_residuals": "prohibited"
+  },
+  "ingestion": {
+    "kloppy_version": "3.19.0",
+    "native_authoritative_for": ["frame_id", "timestamp", "is_detected", "image_corners_projection", "possession_player_id", "support"],
+    "kloppy_role": "community_parser_and_identity_pitch_ball_possession_team_layer",
+    "native_status_merge_key": ["match_id", "frame_id", "player_id"],
+    "interpolation": false
+  },
+  "time": {
+    "native_hz": 10,
+    "anchor_grid": "period_origin_plus_4_plus_4k_seconds",
+    "prior_seconds": [-4.0, -2.0],
+    "exposure_seconds": [-2.0, 0.0],
+    "response_seconds": [0.0, 2.0],
+    "inclusive_endpoints": true,
+    "position_smoother": "centered_3_native_frame_arithmetic_mean",
+    "smoother_nominal_support_seconds": 0.3,
+    "raw_edge_frames_each_side": 1,
+    "path_accumulation": "successive_smoothed_native_0_1_second_positions"
+  },
+  "coordinates": {
+    "native": "centered_metres_x_pitch_length_y_pitch_width",
+    "canonical_pitch_m": [105.0, 68.0],
+    "transform": "x_times_105_over_native_length_y_times_68_over_native_width",
+    "goalward_sign_source": "home_team_side_by_period",
+    "focal_start_side_reflection": "reflect_y_if_focal_y_at_t_minus_2_is_negative",
+    "outward": "positive_y_displacement_after_start_fixed_reflection",
+    "clipping": false
+  },
+  "support": {
+    "primary_tracking_status": "detected_plus_provider_extrapolated_with_nonnull_boolean_status",
+    "active_roster_source": "provider_playing_time_start_end_frames_and_role_id_zero_goalkeeper",
+    "required_outfield_players_per_team": 10,
+    "expected_equals_observed_every_required_frame": true,
+    "ball_required_seconds": [-4.0, 0.0],
+    "ball_in_play_mask": "union_of_official_phase_file_intervals_labels_ignored",
+    "ball_in_play_required_seconds": [-4.0, 2.0],
+    "possession_team_at_anchor_required": true,
+    "possession_after_anchor_required": false,
+    "ball_nearest_exclusion": "smoothed_anchor_distance_then_canonical_player_id",
+    "identity_max_adjacent_native_step_m": 1.5,
+    "identity_gate_entities": "focal_attacker_and_fixed_D1_D7"
+  },
+  "quality_sensitivity": {
+    "detected_fraction_minimum": 0.5,
+    "focal_and_ball_interval_seconds": [-4.0, 0.0],
+    "fixed_D1_D7_interval_seconds": [0.0, 2.0],
+    "smoother_edge_included": true,
+    "pooled_sign_required": "positive",
+    "absolute_magnitude_retention_inclusive": [0.5, 1.5],
+    "full_rank_required": true
+  },
+  "target": "mean_D1_D3_subsequent_accumulated_leave_one_out_defender_relative_path_m_minus_mean_D4_D7",
+  "primary_columns": [
+    "attacker_path_exposure_m",
+    "attacker_path_prior_m",
+    "attacker_minus_unit_goalward_m",
+    "attacker_ball_distance_start_m",
+    "defending_unit_width_m",
+    "defending_unit_depth_m",
+    "ball_minus_unit_goalward_m",
+    "attacker_goalward_displacement_m",
+    "attacker_outward_displacement_m"
+  ],
+  "model": {
+    "family": "equal_match_weighted_raw_unit_OLS_with_match_intercepts",
+    "solver": "numpy_linalg_lstsq_rcond_None",
+    "full_rank_required": true,
+    "primary_estimand": "beta_outward_minus_beta_goalward",
+    "expected_direction": "positive",
+    "standardization": false,
+    "regularization": false,
+    "interactions": false,
+    "nonlinear_terms": false,
+    "provider_indicator": false
+  },
+  "inference": {
+    "replicates": 2000,
+    "minimum_valid": 1900,
+    "generator": "PCG64",
+    "seed": 20260905,
+    "block_seconds": 60.0,
+    "strata": "match_period",
+    "group_complete_anchor_vectors": true,
+    "interval": "two_sided_95_percentile"
+  },
+  "trim": {
+    "variables": ["attacker_goalward_displacement_m", "attacker_outward_displacement_m"],
+    "within_match_quantiles": [0.025, 0.975],
+    "inclusive": true,
+    "sign_required": "positive",
+    "absolute_magnitude_retention_inclusive": [0.5, 1.5]
+  },
+  "classification": {
+    "order": ["INVALID", "SUPPORTED", "MIXED", "NOT_SUPPORTED"],
+    "match_positive_minimum": "ceil_0_70_times_valid_matches",
+    "all_leave_one_match_out_positive": true,
+    "SUPPORTED": "valid_and_pooled_positive_and_95CI_strictly_positive_and_match_majority_and_all_LOMO_positive_and_trim_pass_and_quality_sensitivity_pass",
+    "MIXED": "valid_and_pooled_positive_but_one_or_more_support_gates_fail",
+    "NOT_SUPPORTED": "every_other_valid_result_including_nonpositive_pooled",
+    "INVALID": "provider_equivalence_support_identity_time_geometry_rank_solver_bootstrap_reproduction_or_minimum_match_failure"
+  },
+  "publication": {
+    "license": "MIT",
+    "attribution": "Copyright (c) 2020 SkillCorner; credit SkillCorner Open Data",
+    "raw_tracking_committed": false,
+    "frame_player_or_anchor_rows_committed": false,
+    "public_artifacts": ["source", "tests", "protocol", "hashes", "aggregate_match_support", "compact_result_summaries"]
+  },
+  "prohibited": [
+    "static_dynamic_replication",
+    "DRD",
+    "player_effects",
+    "team_effects",
+    "alternative_directions",
+    "alternative_ranks",
+    "alternative_windows_or_lags",
+    "threshold_tuning",
+    "Game3",
+    "tactical_or_value_claims"
+  ]
+}

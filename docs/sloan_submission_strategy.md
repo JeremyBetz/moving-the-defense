@@ -29,6 +29,11 @@ positive in all seven match and leave-one-match-out fits. Its static five-lane
 versus dynamic unit-relative comparison found **NO CLEAR REPRESENTATIONAL
 ADVANTAGE**. Treat this as a bounded geometric characterization for a results
 table or supplement—not a tactical, causal, space-creation, or value claim.
+The [SkillCorner external-replication protocol](protocols/defensive_reorganization_spatial_form_v1_skillcorner_external.md)
+is now frozen after an outcome-blind provider-compatibility audit, but it has
+not been executed. A third-environment result could strengthen the paper later;
+it is not required to support the current submission story and must not be
+treated as existing evidence.
 
 ## 1. The paper that exists today
 

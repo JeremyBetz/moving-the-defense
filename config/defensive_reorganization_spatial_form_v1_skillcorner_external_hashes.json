@@ -1,0 +1,26 @@
+{
+  "status": "FROZEN_BEFORE_ANY_SKILLCORNER_SPATIAL_FORM_OUTCOME",
+  "freeze_date": "2026-09-04",
+  "starting_commit": "b9760207ebe4e59b14a6ff9b3302fda86a29dddb",
+  "upstream_skillcorner_commit": "c1e17a0cc3e07e1774b52d929c1a0b85115143fc",
+  "frozen_sha256": {
+    "docs/protocols/defensive_reorganization_spatial_form_v1_skillcorner_external.md": "9d863157e9bf938b4e13d216f73c5b56057d9c59f34a86b47dac20a4d9d9f80e",
+    "config/defensive_reorganization_spatial_form_v1_skillcorner_external.json": "7b1537235dd6966b9ade55a091c3688635e8cdf586673f45fa0b5aa64d50a79e",
+    "docs/skillcorner_spatial_form_provider_compatibility.md": "8db117d5b89c6029c4a379d14087264ce8f20a6cc4059cba2914708223922021",
+    "docs/skillcorner_open_data_license.md": "a1ab50a24cc847d83d6204de86770579d0f67c8f14df112741bfaf4e31c5d73d",
+    "src/infrastructure/skillcorner_spatial_form_adapter.py": "78ff9af7adb795a71585061d677e4fd1c77d6e5eed90645217664ec8a9fd7246",
+    "tests/test_skillcorner_spatial_form_adapter.py": "fe89aeb68860acbf86ef68646c6fd37272c94842bfb58718691da1d91bb902a4"
+  },
+  "preserved_parent_sha256": {
+    "docs/protocols/defensive_reorganization_spatial_value_v1.md": "d394519c7839ad20aba3806b2bbae5bf7b71bdb33a77a70eeb0b6d0c8af08e25",
+    "config/defensive_reorganization_spatial_value_v1.json": "2d8d7abac9738ccb8a4765c657f6865ab445cf390e41ed8063b05a111d62e5df"
+  },
+  "firewall": {
+    "skillcorner_spatial_form_target_constructed": false,
+    "skillcorner_spatial_form_model_fitted": false,
+    "skillcorner_spatial_form_outcome_inspected": false,
+    "DRD_residuals_inspected": false,
+    "Metrica_Game_3": "untouched",
+    "player_or_team_ranking_created": false
+  }
+}
