@@ -46,6 +46,14 @@ positive in all seven matches. That is evidence of a larger correctly ordered
 association under the frozen design—not proof that the attacker caused a
 response. The reverse-time control also retained structure.
 
+![Flagship temporal-footprint figure](docs/figures/sloan/temporal_footprint_flagship.svg)
+
+*The flagship figure explains the measurement (synthetic Panel A), the
+time-ordered near-versus-middle replication across Metrica and IDSSE (Panel B),
+and the positive paired forward-minus-reverse comparison (Panel C). It does not
+infer marking assignments or establish causation, tactical meaning,
+opportunity, or value.*
+
 The pattern is not a simple decline with distance. Nearby ranks were elevated relative to the middle group, but the pooled rank profile was non-monotonic and the far ranks rebounded.
 
 ![Governed pooled IDSSE D1-D10 concurrent-geometry coefficient profile](docs/figures/readme/idsse_pooled_rank_profile.svg)

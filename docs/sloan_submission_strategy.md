@@ -209,9 +209,10 @@ movement created value.
 
 ## 7. Pre-Sloan work plan
 
-1. Build the flagship measurement-to-replication figure from closed governed
-   results, with any pitch example selected deterministically from attacker
-   geometry rather than defender response.
+1. Use the [flagship measurement-to-replication figure](figures/sloan/temporal_footprint_flagship.svg)
+   built exclusively from closed governed results. Its explanatory panel is
+   synthetic rather than a provider-derived passage, so no match episode was
+   selected by attacker or defender outcome.
 2. Turn the working abstract into the paper's introduction, methods spine, and
    results tables.
 3. Complete a claim-language, reproducibility, and literature-positioning
@@ -222,6 +223,22 @@ movement created value.
 Game 3 is not a generic replication reserve to spend merely because it exists.
 Reconsider it only after Sloan or after an independently motivated contextual
 construct has a unique, predeclared representation and estimand.
+
+### Flagship figure caption
+
+**Figure 1. Measuring and validating a temporal defensive footprint.**
+**(A)** Synthetic schematic of the measurement: a defender's absolute path can
+contain a shared defensive-unit shift plus movement relative to that unit.
+Attacker path precedes the response interval, and the near (D1–D3) and middle
+(D4–D7) groups are start-fixed proximity ranks; no marking assignment is
+inferred. **(B)** Governed near-minus-middle associations between preceding
+attacker path and subsequent defender-relative path across Metrica development,
+heldout, and seven IDSSE matches. Within-environment pools are shown separately
+and are not a nine-match meta-analysis. **(C)** The forward association exceeds
+the frozen reverse-time comparison in pooled Metrica and IDSSE results, while
+reverse-time structure remains positive. The figure shows an observational
+time-ordered geometric association, not causation, tactical meaning,
+opportunity, or value.
 
 ## 8. Stop researching before submission
 
