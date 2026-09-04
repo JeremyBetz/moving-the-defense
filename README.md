@@ -25,7 +25,7 @@ This geometric measurement is deliberately narrower than a football interpretati
 
 The strongest current result is an externally replicated, time-ordered
 observational association between attacker movement and localized defensive
-geometry. A concurrent version supplies complementary evidence that the same
+reorganization. A concurrent version supplies complementary evidence that the same
 localization is visible within a shared interval.
 
 > **Greater attacker movement was associated with a stronger concurrent defender-relative movement coefficient among the nearest three defenders than among the middle four defenders, conditional on the frozen model.**
@@ -46,7 +46,7 @@ positive in all seven matches. That is evidence of a larger correctly ordered
 association under the frozen design—not proof that the attacker caused a
 response. The reverse-time control also retained structure.
 
-![Flagship temporal-footprint figure](docs/figures/sloan/temporal_footprint_flagship.svg)
+![Flagship temporal association figure](docs/figures/sloan/temporal_footprint_flagship.svg)
 
 *The flagship figure opens with a deterministic heldout Metrica Game 2 pitch
 passage selected from the governed anchor registry using preceding attacker

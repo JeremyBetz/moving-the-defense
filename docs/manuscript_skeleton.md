@@ -2,9 +2,48 @@
 
 > **Internal manuscript spine — not submission prose.** This outline uses only closed governed results. Status labels identify drafting work, not evidence strength: `[READY]`, `[NEEDS WRITING]`, `[NEEDS CITATION]`, `[NEEDS DECISION]`, and `[SUPPLEMENT]`.
 
-## Abstract placeholder
+## Abstract
 
-**[NEEDS WRITING]** Start from the football problem: an attacker can move off-ball while the defensive unit shifts, but raw defender displacement alone does not distinguish a shared unit shift from a defender's movement within that unit. State the narrow observational question, the leave-one-out defender-relative representation, and the temporal near-versus-middle result. Report the external IDSSE primary contrast, `0.06115 m/m` (95% interval `[0.05579, 0.06681]`), and the paired forward-minus-reverse excess, `0.02455` `[0.01932, 0.02985]`. End with the nonclaim: this is not evidence of marking, causation, tactical success, or attacking value.
+**[READY]**
+
+**Introduction.** Analysts often describe an off-ball run as having shifted a
+defence, but tracking data conflate two different phenomena: collective movement
+of the defensive unit and individual defenders moving differently from that
+unit. We develop a transparent observational method that separates those
+quantities and tests whether preceding attacker movement is followed by
+localized defensive reorganization in defender-relative movement without
+inferring marking assignments, tactical roles, or attacking value.
+
+**Methods.** Each defender's path is expressed relative to the contemporaneous
+movement of the other defending outfield players. Attacker movement is measured
+over a preceding fixed interval, defender proximity ranks are fixed before the
+subsequent response interval, and the primary estimand compares the
+attacker-movement coefficient for the three nearest defenders with the four
+middle-ranked defenders. Models condition on strictly prior movement and spatial
+context. Protocols were frozen before development, heldout, and external tests.
+A reverse-time comparison assessed whether the attacker-before-defender
+association exceeded background temporal structure.
+
+**Results.** In two Metrica sample matches, the pooled near-minus-middle contrast
+was 0.05029 m of defender-relative path per metre of preceding attacker path
+(97.5% interval 0.03433–0.06858), with a paired forward-minus-reverse excess of
+0.02912 (0.01410–0.04526). Under the unchanged design across seven IDSSE
+matches, the pooled primary contrast was 0.06115 (95% interval
+0.05579–0.06681). The reverse-time comparison remained positive at 0.03661
+(0.03224–0.04111), but the paired forward-minus-reverse excess was 0.02455
+(0.01932–0.02985). Primary and paired-excess estimates were positive in all
+seven IDSSE matches and remained positive across frozen 1-, 2-, and 4-second
+sensitivity windows.
+
+**Conclusion.** Preceding attacker movement is reproducibly associated with
+stronger subsequent defender-relative movement among nearby than middle-ranked
+defenders across two tracking environments. Because reverse-time structure
+remains positive, the result supports a stronger time-ordered association, not
+reaction time or causation. Separate prospectively specified tests did not
+establish teammate separation or a robust downstream matching-geometry
+consequence. The method therefore provides a reproducible measurement layer for
+surfacing passages where off-ball movement is followed by localized defensive
+reorganization before tactical meaning or value is assigned.
 
 ## 1. Introduction
 
@@ -101,7 +140,7 @@ The goalkeeper is excluded, and the focal defender is excluded from its own refe
 
 The representation also retains a useful football distinction that raw distance-to-attacker measures do not. A defender may remain close to an attacker while moving with the unit, or may become more distant while departing from the unit; neither situation alone establishes a defensive meaning. The focal-relative path is therefore a movement-magnitude primitive, not a substitute for proximity, pressure, coverage, or space-control measures. Those constructs require their own context and validation.
 
-### 4.2 Temporal spatial defensive-response footprint
+### 4.2 Temporal defender-relative association
 
 **[READY] Timing.** At each anchor \(t\), strictly prior defensive context is measured over \([t-4,t-2]\), attacker exposure over \([t-2,t]\), and the primary subsequent defender response over \([t,t+2]\). The exposure \(X_i\) is the attacker’s two-second path length before the defender outcome begins. The primary outcome for rank \(k\) is the two-second focal-relative path \(Y_{ik}=P_{\mathrm{rel}}(D_k;t,t+2)\). This ordering does not prove that the attacker caused the subsequent movement, but it prevents the outcome itself from defining the exposure.
 
@@ -144,7 +183,7 @@ The resulting validation claim is correspondingly narrow: a result can be extern
 
 ## 6. Results
 
-### 6.1 Primary temporal footprint
+### 6.1 Primary temporal association
 
 **[READY] Metrica.** Across the prospectively pooled Metrica analysis, the near-minus-middle association was `0.05029 m/m` with a frozen 97.5% bootstrap interval of `[0.03433, 0.06858]`. In the fitted observational model, one additional metre of preceding attacker path was associated with approximately `5.0 cm` more subsequent defender-relative path for the near ranks than for the middle ranks. The paired forward-minus-reverse excess was `0.02912` `[0.01410, 0.04526]`. Reverse-time structure was therefore not absent; the qualifying evidence is that the correctly ordered association was larger under the prospectively paired comparison.
 
@@ -206,7 +245,7 @@ A practical analyst workflow is therefore deliberately simple:
 
 1. identify a governed attacker-movement interval;
 2. quantify the subsequent localized defender-relative reorganization;
-3. surface passages with a notable temporal footprint for review;
+3. surface passages with a notable defender-relative pattern for review;
 4. inspect video and the wider tracking context; and
 5. assign any tactical interpretation only after that contextual review.
 

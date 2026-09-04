@@ -146,40 +146,44 @@ context protocol or configuration is frozen, and no Game 3 outcome is opened.
 
 **Working title:** *Measuring Localized Defensive Reorganization Associated with Off-Ball Movement in Football*
 
-Football analysts often say that an off-ball movement shifted a defence, but
-tracking data conflate an individual defender's adjustment with the movement
-of the defensive unit and do not reveal why anyone moved. We introduce a
-transparent observational framework that expresses each defender's path
-relative to the contemporaneous movement of the other defending outfield
-players. Attacker movement is measured in a preceding fixed interval, defender
-proximity ranks are fixed before the response interval, and no marking
-assignment is inferred. The primary contrast compares the attacker-movement
-coefficient for the three nearest defenders with the four middle-ranked
-defenders, conditional on strictly prior movement and spatial context.
+**Introduction.** Analysts often describe an off-ball run as having shifted a
+defence, but tracking data conflate two different phenomena: collective movement
+of the defensive unit and individual defenders moving differently from that
+unit. We develop a transparent observational method that separates those
+quantities and tests whether preceding attacker movement is followed by
+localized defensive reorganization in defender-relative movement without
+inferring marking assignments, tactical roles, or attacking value.
 
-Protocols were frozen before development, heldout, and external tests. In
-Metrica Sample Games 1 and 2, the pooled near-minus-middle contrast was 0.05029
-metres of defender-relative path per metre of preceding attacker path (97.5%
-interval 0.03433–0.06858). Its paired excess over a frozen reverse-time
-comparison was 0.02912 (0.01410–0.04526). We then transported the unchanged
-design to seven matches from an independent IDSSE provider environment. The
-pooled primary contrast was 0.06115 (95% interval 0.05579–0.06681), and the
-paired forward-minus-reverse excess was 0.02455 (0.01932–0.02985). Primary and
-paired-excess estimates were positive in all seven matches; 2,000/2,000
-bootstrap replicates were valid, trimming retained 95.35% of the primary
-magnitude, and 1-, 2-, and 4-second signs were preserved.
+**Methods.** Each defender's path is expressed relative to the contemporaneous
+movement of the other defending outfield players. Attacker movement is measured
+over a preceding fixed interval, defender proximity ranks are fixed before the
+subsequent response interval, and the primary estimand compares the
+attacker-movement coefficient for the three nearest defenders with the four
+middle-ranked defenders. Models condition on strictly prior movement and spatial
+context. Protocols were frozen before development, heldout, and external tests.
+A reverse-time comparison assessed whether the attacker-before-defender
+association exceeded background temporal structure.
 
-Concurrent and attacker-direction analyses provide supporting descriptions of
-where and in what geometric form the footprint appears, but rank profiles are
-stepped rather than a smooth distance law. The reverse-time comparison also
-retains positive structure, so the result is a larger correctly ordered
-association, not evidence of reaction or causation. A prospectively specified
-teammate-separation consequence test was negative, and a matching-geometry
-consequence test was mixed. The measured defensive reorganization therefore
-cannot be equated with space creation, tactical success, gravity, or attacking
-value. The contribution is a reproducible way to surface passages where
-attacking movement is followed by localized internal defensive reorganization
-before tactical meaning is assigned.
+**Results.** In two Metrica sample matches, the pooled near-minus-middle contrast
+was 0.05029 m of defender-relative path per metre of preceding attacker path
+(97.5% interval 0.03433–0.06858), with a paired forward-minus-reverse excess of
+0.02912 (0.01410–0.04526). Under the unchanged design across seven IDSSE
+matches, the pooled primary contrast was 0.06115 (95% interval
+0.05579–0.06681). The reverse-time comparison remained positive at 0.03661
+(0.03224–0.04111), but the paired forward-minus-reverse excess was 0.02455
+(0.01932–0.02985). Primary and paired-excess estimates were positive in all
+seven IDSSE matches and remained positive across frozen 1-, 2-, and 4-second
+sensitivity windows.
+
+**Conclusion.** Preceding attacker movement is reproducibly associated with
+stronger subsequent defender-relative movement among nearby than middle-ranked
+defenders across two tracking environments. Because reverse-time structure
+remains positive, the result supports a stronger time-ordered association, not
+reaction time or causation. Separate prospectively specified tests did not
+establish teammate separation or a robust downstream matching-geometry
+consequence. The method therefore provides a reproducible measurement layer for
+surfacing passages where off-ball movement is followed by localized defensive
+reorganization before tactical meaning or value is assigned.
 
 ### Concise abstract (175 words)
 
@@ -198,7 +202,7 @@ pooled primary contrast was 0.06115 (95% interval 0.05579–0.06681) and paired
 excess was 0.02455 (0.01932–0.02985); both point estimates were positive in
 all seven matches. Reverse-time structure remained positive, so this is an
 observational time-order result, not causation. A teammate-separation test was
-negative. The framework can surface passages of localized internal defensive
+negative. The framework can surface passages of localized defensive
 reorganization for analyst review, but does not establish tactical meaning,
 space creation, gravity, or attacking value.
 
@@ -228,6 +232,23 @@ movement created value.
 Game 3 is not a generic replication reserve to spend merely because it exists.
 Reconsider it only after Sloan or after an independently motivated contextual
 construct has a unique, predeclared representation and estimand.
+
+### Submission checklist from current repository guidance
+
+- [x] Use the working paper title above and an abstract grounded only in closed
+  governed methods and results.
+- [x] Keep the abstract below the repository's documented 500-word target.
+- [x] Lead with the football measurement problem, then state the reproducible
+  time-ordered association and its interpretation boundary.
+- [x] Use the flagship Figure 1 sequence: a heldout illustrative passage,
+  cross-match temporal replication, and forward-versus-reverse comparison.
+- [x] Keep the result observational; do not claim causation, tactical labels,
+  space creation, gravity, or attacking value.
+- [x] Preserve development, heldout, and external-validation provenance and
+  the negative/mixed downstream results.
+- [ ] Resolve the existing manuscript decisions on target venue, author list,
+  citation style, compact external-match table placement, and data/code
+  availability wording before submission.
 
 ### Flagship figure caption
 
