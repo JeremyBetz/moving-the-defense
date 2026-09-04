@@ -1,0 +1,9 @@
+{
+  "bootstrap_replicates": 2000,
+  "bootstrap_seed": 20260906,
+  "configuration_sha256": "9f51a6ba488e3de8f6d0251b6f5b836bae965c19d4947046bb885d593269fdf7",
+  "implementation_sha256": "308548ebfda14f736940b5ee6e073ef8755de5341dce9cc206ef6d62ece68a15",
+  "protocol_sha256": "5ed5158f8ed0f90c39ffedc7deae225b1b21be4155cfba4ae383056d4bf19da2",
+  "provider_row_level_outputs": "not_written",
+  "status": "RESPONSE MODE WIDTH HYPOTHESIS MIXED"
+}

@@ -1,0 +1,18 @@
+{
+  "DRD_residuals_not_opened": true,
+  "Metrica_Game_3_untouched": true,
+  "SkillCorner_response_mode_not_opened": true,
+  "bootstrap_valid_at_least_1900": true,
+  "complete_ten_defender_geometry": true,
+  "exact_closed_observation_count": true,
+  "exact_seven_IDSSE_matches": true,
+  "finite_predictors_and_outcomes": true,
+  "frozen_hashes": true,
+  "lomo_all_channels_full_rank": true,
+  "per_match_all_channels_full_rank": true,
+  "player_or_team_ranking_not_created": true,
+  "pooled_full_rank": true,
+  "provider_row_level_outputs_not_written": true,
+  "unique_observation_ids": true,
+  "width_depth_sign_definition_checked": true
+}

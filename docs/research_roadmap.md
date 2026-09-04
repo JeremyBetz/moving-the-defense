@@ -191,12 +191,12 @@ its timing, ranks, or controls.
    [0.042940, 0.054707]); it uses native support metadata alongside Kloppy
    equivalence and does not create a cross-provider pooled estimate. No Metrica
    transport is authorized by these results.
-   A subsequent [response-mode feasibility audit](defensive_response_mode_feasibility.md)
-   froze one narrow, still-unexecuted IDSSE hypothesis: inward rather than
-   outward displacement may be associated with greater pitch-axis width
-   reduction. Rotation and shear are explicit limits, and the design does not
-   treat translation, shape, and localized movement as exhaustive response
-   shares. Execution requires a separate decision.
+   The subsequent [Response Mode v1 result](results/defensive_response_mode_v1.md)
+   is **MIXED**: its inward-minus-outward width-reduction point estimate was
+   positive, but the frozen interval crossed zero and only 5/7 match contrasts
+   were positive. The secondary centroid-translation result remains
+   nonclassifying. The stop rule closes this mechanism branch: do not search
+   area, hull, rotation, shear, line-specific, or other shape mechanisms.
 5. Keep Game 3 untouched before Sloan; do not manufacture an under-specified
    moderator or use it for generic replication.
 6. Preserve a conservative result even if it is mixed or negative.

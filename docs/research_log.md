@@ -1,5 +1,24 @@
 # Research Log
 
+## 2026-09-04 — Defensive Response Mode v1 executed: MIXED
+
+The prospectively frozen seven-match IDSSE width hypothesis was executed on the
+exact closed Spatial Form support set (64,805 observations). The 5 m
+inward-minus-outward width-reduction contrast was positive at 0.134003 m, all
+seven leave-one-match-out fits were positive, and the frozen signed-movement
+trim retained sign and 106.54% of the full magnitude. However, the frozen 95%
+interval crossed zero ([-0.006622, 0.273430]) and only 5/7 individual match
+contrasts were positive, giving **RESPONSE MODE WIDTH HYPOTHESIS MIXED**.
+
+The secondary, nonclassifying goalward-minus-outward centroid-translation
+contrast was 2.962709 m [2.870720, 3.048322] and positive in 7/7 match and
+leave-one-match-out fits. Depth and localized-path descriptions remained
+separate and nonclassifying. The study therefore does not establish a
+narrowing mechanism; its frozen stop rule closes this branch without testing
+another shape metric. All 14 governed compact outputs reproduced byte-for-byte.
+SkillCorner response-mode outcomes, DRD residuals, player/team rankings, and
+Metrica Game 3 remained unopened.
+
 ## 2026-09-04 — Defensive Response Mode v1 frozen before outcome
 
 After the outward-greater Spatial Form association replicated in IDSSE and

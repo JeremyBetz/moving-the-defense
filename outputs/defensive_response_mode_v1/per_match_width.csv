@@ -1,0 +1,8 @@
+match_id,outcome,rows,model_rank,beta_goalward_m_per_m,beta_outward_m_per_m,canonical_contrast,canonical_5m_contrast_m,positive_contrast
+J03WMX,width_reduction_m,10850,10,0.0957631896310129,-0.0255264036235374,inward_minus_outward,0.25526403623537397,True
+J03WN1,width_reduction_m,4268,10,0.06511089756776005,-0.021712675086754913,inward_minus_outward,0.21712675086754912,True
+J03WOH,width_reduction_m,9853,10,0.11263180538350986,0.013939997521034421,inward_minus_outward,-0.13939997521034422,False
+J03WOY,width_reduction_m,10097,10,0.045424521039760066,-0.01400476717638441,inward_minus_outward,0.1400476717638441,True
+J03WPY,width_reduction_m,10913,10,0.07851177927828046,0.012839113711922503,inward_minus_outward,-0.12839113711922504,False
+J03WQQ,width_reduction_m,8682,10,0.10959925232240907,-0.04633833502804396,inward_minus_outward,0.4633833502804396,True
+J03WR9,width_reduction_m,10142,10,0.05303290642745727,-0.028711807967919344,inward_minus_outward,0.28711807967919345,True

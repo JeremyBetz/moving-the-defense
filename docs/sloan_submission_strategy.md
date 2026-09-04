@@ -36,12 +36,14 @@ all match and leave-one-match-out directions positive. It strengthens the
 geometric evidence across a third tracking environment, while remaining
 observational and separate from any cross-provider pooled estimate.
 
-A [prospectively frozen response-mode design](protocols/defensive_response_mode_v1.md)
-now asks one narrower unresolved question: whether inward rather than outward
-movement is associated with greater subsequent pitch-axis width reduction in
-IDSSE. It remains unexecuted. Even a supported result would characterize
-different geometric response forms, not prove compression, intent, influence,
-or value; rotation and shear prevent an exhaustive decomposition claim.
+A [prospectively frozen response-mode study](results/defensive_response_mode_v1.md)
+tested one narrower explanation: whether inward rather than outward movement
+is associated with greater subsequent pitch-axis width reduction in IDSSE. It
+is **MIXED**: the 0.134003 m inward-minus-outward point estimate had a frozen
+interval crossing zero and only 5/7 positive match contrasts. The stronger
+secondary centroid-translation pattern is nonclassifying. This is a useful
+boundary result, not a reason to search another shape mechanism before Sloan;
+rotation and shear still prevent an exhaustive decomposition claim.
 
 ## 1. The paper that exists today
 

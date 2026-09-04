@@ -1,0 +1,266 @@
+{
+  "bootstrap": {
+    "block_seconds": 60.0,
+    "contrast_intervals": {
+      "centroid_goalward_displacement_m": {
+        "ci_high": 3.0483222239238104,
+        "ci_low": 2.870719969678398
+      },
+      "depth_reduction_m": {
+        "ci_high": -0.07580500337648176,
+        "ci_low": -0.29643428406988653
+      },
+      "localized_internal_reorganization_m": {
+        "ci_high": -0.2816431787154292,
+        "ci_low": -0.37239768592972206
+      },
+      "width_reduction_m": {
+        "ci_high": 0.2734299808344615,
+        "ci_low": -0.006622287041022189
+      }
+    },
+    "replicates_requested": 2000,
+    "seed": 20260906,
+    "valid_replicates": {
+      "centroid_goalward_displacement_m": 2000,
+      "depth_reduction_m": 2000,
+      "localized_internal_reorganization_m": 2000,
+      "width_reduction_m": 2000
+    }
+  },
+  "execution": {
+    "DRD_residuals_opened": false,
+    "Metrica_Game_3_accessed": false,
+    "SkillCorner_response_mode_opened": false,
+    "player_or_team_ranking_created": false,
+    "response_mode_models_fitted": true,
+    "response_mode_outcomes_constructed": true
+  },
+  "figure_paths": [
+    "figures/defensive_response_mode_v1/response_modes.png",
+    "figures/defensive_response_mode_v1/response_modes.svg",
+    "figures/defensive_response_mode_v1/response_modes.pdf"
+  ],
+  "firewall": {
+    "DRD_residuals_opened": false,
+    "Metrica_Game_3_accessed": false,
+    "SkillCorner_response_mode_opened": false,
+    "closed_spatial_form_result_sha256": "568f383f049ef1ec02360c6b33f900ad595c49ca68a6f62922bb8599b81fe4ee",
+    "closed_spatial_form_status": "SPATIAL FORM SUPPORTED",
+    "frozen_response_mode_hashes": {
+      "config/defensive_response_mode_v1.json": "9f51a6ba488e3de8f6d0251b6f5b836bae965c19d4947046bb885d593269fdf7",
+      "docs/protocols/defensive_response_mode_v1.md": "5ed5158f8ed0f90c39ffedc7deae225b1b21be4155cfba4ae383056d4bf19da2"
+    }
+  },
+  "hard_qc": {
+    "DRD_residuals_not_opened": true,
+    "Metrica_Game_3_untouched": true,
+    "SkillCorner_response_mode_not_opened": true,
+    "bootstrap_valid_at_least_1900": true,
+    "complete_ten_defender_geometry": true,
+    "exact_closed_observation_count": true,
+    "exact_seven_IDSSE_matches": true,
+    "finite_predictors_and_outcomes": true,
+    "frozen_hashes": true,
+    "lomo_all_channels_full_rank": true,
+    "per_match_all_channels_full_rank": true,
+    "player_or_team_ranking_not_created": true,
+    "pooled_full_rank": true,
+    "provider_row_level_outputs_not_written": true,
+    "unique_observation_ids": true,
+    "width_depth_sign_definition_checked": true
+  },
+  "outcome_summary": [
+    {
+      "beta_goalward_m_per_m": 0.07635588866837865,
+      "beta_outward_m_per_m": -0.013400265559099993,
+      "canonical_5m_contrast_m": 0.13400265559099994,
+      "canonical_contrast": "inward_minus_outward",
+      "ci_high": 0.2734299808344615,
+      "ci_low": -0.006622287041022189,
+      "observed_outcome_iqr_high_m": 1.6628574643816307,
+      "observed_outcome_iqr_low_m": -1.791428838457385,
+      "outcome": "width_reduction_m",
+      "pooled_model_rank": 16
+    },
+    {
+      "beta_goalward_m_per_m": 0.5492016378152642,
+      "beta_outward_m_per_m": -0.043340246322472735,
+      "canonical_5m_contrast_m": 2.9627094206886846,
+      "canonical_contrast": "goalward_minus_outward",
+      "ci_high": 3.0483222239238104,
+      "ci_low": 2.870719969678398,
+      "observed_outcome_iqr_high_m": 1.9154285717489437,
+      "observed_outcome_iqr_low_m": -1.2971427283116768,
+      "outcome": "centroid_goalward_displacement_m",
+      "pooled_model_rank": 16
+    },
+    {
+      "beta_goalward_m_per_m": -0.038217059255500695,
+      "beta_outward_m_per_m": 0.0184422606995525,
+      "canonical_5m_contrast_m": -0.184422606995525,
+      "canonical_contrast": "inward_minus_outward",
+      "ci_high": -0.07580500337648176,
+      "ci_low": -0.29643428406988653,
+      "observed_outcome_iqr_high_m": 1.7885714939662378,
+      "observed_outcome_iqr_low_m": -1.7585718972342335,
+      "outcome": "depth_reduction_m",
+      "pooled_model_rank": 16
+    },
+    {
+      "beta_goalward_m_per_m": -0.02405003624456644,
+      "beta_outward_m_per_m": 0.032805828809363946,
+      "canonical_5m_contrast_m": -0.32805828809363946,
+      "canonical_contrast": "inward_minus_outward",
+      "ci_high": -0.2816431787154292,
+      "ci_low": -0.37239768592972206,
+      "observed_outcome_iqr_high_m": 0.6611057153921589,
+      "observed_outcome_iqr_low_m": -0.7503434792678663,
+      "outcome": "localized_internal_reorganization_m",
+      "pooled_model_rank": 16
+    }
+  ],
+  "primary_gates": {
+    "gates": {
+      "all_7_leave_one_match_out_estimates_positive": true,
+      "at_least_6_of_7_match_estimates_positive": false,
+      "primary_95_percent_interval_strictly_positive": false,
+      "primary_point_positive": true,
+      "trim_positive_and_50_to_150_percent_magnitude": true
+    },
+    "trimmed_to_full_absolute_ratio": 1.0653592728906758,
+    "valid": true
+  },
+  "response_channel_match_consistency": {
+    "centroid_goalward_displacement_m": {
+      "positive_leave_one_match_out_contrasts": 7,
+      "positive_match_contrasts": 7
+    },
+    "depth_reduction_m": {
+      "positive_leave_one_match_out_contrasts": 0,
+      "positive_match_contrasts": 1
+    },
+    "localized_internal_reorganization_m": {
+      "positive_leave_one_match_out_contrasts": 0,
+      "positive_match_contrasts": 0
+    },
+    "width_reduction_m": {
+      "positive_leave_one_match_out_contrasts": 7,
+      "positive_match_contrasts": 5
+    }
+  },
+  "sample_audit": {
+    "DRD_residuals_opened": false,
+    "SkillCorner_response_mode_opened": false,
+    "closed_support_rows": 64805,
+    "localized_target_joined_only_after_outcome_blind_support": true,
+    "observation_id_sha256": "ff2e0a376899486c36a8224ff3b711c55bcc4b9f19e4cef2a1784d8451ea1242",
+    "response_geometry_constructed_only_after_outcome_blind_support": true
+  },
+  "status": "RESPONSE MODE WIDTH HYPOTHESIS MIXED",
+  "translation_descriptives": [
+    {
+      "iqr_high_m": 0.8304286139351991,
+      "iqr_low_m": -1.3540000881467567,
+      "median_m": -0.11785714562449989,
+      "quantity": "centroid_lateral_displacement_m",
+      "rows": 64805
+    },
+    {
+      "iqr_high_m": 4.572902737840332,
+      "iqr_low_m": 1.1783864153952421,
+      "median_m": 2.4824041389261855,
+      "quantity": "centroid_net_displacement_m",
+      "rows": 64805
+    },
+    {
+      "iqr_high_m": 4.647687011305512,
+      "iqr_low_m": 1.2899664448592183,
+      "median_m": 2.5927695336129424,
+      "quantity": "centroid_path_m",
+      "rows": 64805
+    }
+  ],
+  "trim_robustness": {
+    "bounds": {
+      "J03WMX": {
+        "attacker_goalward_displacement_m": [
+          -6.267892828583717,
+          8.113928553887767
+        ],
+        "attacker_outward_displacement_m": [
+          -5.847928980418613,
+          5.5811071314982
+        ]
+      },
+      "J03WN1": {
+        "attacker_goalward_displacement_m": [
+          -6.1588214354855655,
+          8.920928800106049
+        ],
+        "attacker_outward_displacement_m": [
+          -5.679500043392181,
+          5.025214406422207
+        ]
+      },
+      "J03WOH": {
+        "attacker_goalward_displacement_m": [
+          -7.012000097547259,
+          8.09657129560197
+        ],
+        "attacker_outward_displacement_m": [
+          -6.2475714508976266,
+          5.957142835003989
+        ]
+      },
+      "J03WOY": {
+        "attacker_goalward_displacement_m": [
+          -6.880856949942453,
+          8.255428573063444
+        ],
+        "attacker_outward_displacement_m": [
+          -6.056571434225355,
+          5.8351428849356575
+        ]
+      },
+      "J03WPY": {
+        "attacker_goalward_displacement_m": [
+          -6.902856877871923,
+          8.461428397042372
+        ],
+        "attacker_outward_displacement_m": [
+          -6.195143365008491,
+          5.75657109533037
+        ]
+      },
+      "J03WQQ": {
+        "attacker_goalward_displacement_m": [
+          -7.5182858671460835,
+          8.492749578612194
+        ],
+        "attacker_outward_displacement_m": [
+          -6.046999990940095,
+          5.8598571385656095
+        ]
+      },
+      "J03WR9": {
+        "attacker_goalward_displacement_m": [
+          -6.861285846999713,
+          7.746321415901186
+        ],
+        "attacker_outward_displacement_m": [
+          -5.8392499629740735,
+          5.646107142099317
+        ]
+      }
+    },
+    "model_rank": 16,
+    "pass": true,
+    "quantile_method": "numpy_linear",
+    "retention": 0.9035105315947843,
+    "rows_retained": 58552,
+    "sign_retained": true,
+    "trimmed_inward_minus_outward_width_reduction_m": 0.14276097172584734,
+    "trimmed_to_full_absolute_ratio": 1.0653592728906758
+  }
+}

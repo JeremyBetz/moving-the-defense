@@ -1,0 +1,8 @@
+match_id,eligible_rows,eligible_anchors,periods,blocks,support_registry_rows,support_registry_retention,support_registry_status
+J03WMX,10850,722,"1,2",51,10850.0,1.0,PASS
+J03WN1,4268,423,"1,2",48,4268.0,1.0,PASS
+J03WOH,9853,670,"1,2",47,9853.0,1.0,PASS
+J03WOY,10097,703,"1,2",49,10097.0,1.0,PASS
+J03WPY,10913,735,"1,2",52,10913.0,1.0,PASS
+J03WQQ,8682,661,"1,2",48,8682.0,1.0,PASS
+J03WR9,10142,704,"1,2",51,10142.0,1.0,PASS

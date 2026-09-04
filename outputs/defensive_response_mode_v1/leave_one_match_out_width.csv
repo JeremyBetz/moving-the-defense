@@ -1,0 +1,8 @@
+heldout_match_id,outcome,training_rows,model_rank,canonical_contrast,canonical_5m_contrast_m,positive_contrast
+J03WMX,width_reduction_m,53955,15,inward_minus_outward,0.11567054106397683,True
+J03WN1,width_reduction_m,60537,15,inward_minus_outward,0.1421051753911817,True
+J03WOH,width_reduction_m,54952,15,inward_minus_outward,0.18279930485293522,True
+J03WOY,width_reduction_m,54708,15,inward_minus_outward,0.1299467851438745,True
+J03WPY,width_reduction_m,53892,15,inward_minus_outward,0.1862506915359295,True
+J03WQQ,width_reduction_m,56123,15,inward_minus_outward,0.07279392142985039,True
+J03WR9,width_reduction_m,54663,15,inward_minus_outward,0.11184284919197438,True
