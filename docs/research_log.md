@@ -1,5 +1,23 @@
 # Research Log
 
+## 2026-09-04 — Defensive Reorganization Context v1 executed: SUPPORTED
+
+The frozen seven-match IDSSE-only descriptive context study executed without
+reading DRD residuals or SkillCorner data. Both prospectively selected starting
+relationships passed all four context gates for observed near-minus-middle
+defender-relative path: attacker goalward position relative to the defensive
+unit was -0.010161 m/m with familywise 97.5% interval [-0.011805, -0.008499],
+and attacker–ball distance was -0.007533 m/m [-0.008864, -0.006245]. Each
+retained the pooled sign in 7/7 match fits and 7/7 leave-one-match-out fits;
+the joint central-support trim retained 90.46% of rows and passed both
+robustness gates. All 13 governed compact outputs reproduced byte-for-byte.
+
+This is a bounded observational characterization of starting geometry in
+which the measured localized defender-relative difference varied. It neither
+rescues DRD v2's MIXED result nor establishes tactical response, causation,
+marking, quality, gravity, or value. Game 3 remained untouched; no player
+ranking, retrieval, residual, or SkillCorner outcome was created.
+
 ## 2026-09-04 — Defensive Reorganization Context v1 frozen
 
 After DRD v2 closed MIXED, a separate IDSSE-only descriptive context study was

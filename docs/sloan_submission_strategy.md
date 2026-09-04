@@ -12,9 +12,10 @@ reaction time, or automatic tactical recognition.
 
 The paper strategy uses only closed governed evidence. Metrica Sample Game 3
 remains untouched and no Game 3 contextual holdout is authorized before the
-Sloan abstract. A separate IDSSE-only context characterization is now frozen
-but unexecuted; it is not evidence unless it later passes its own governed
-classification.
+Sloan abstract. The separate IDSSE-only [Context v1 result](results/defensive_reorganization_context_v1.md)
+is **SUPPORTED**: the two prospectively frozen starting relationships passed
+their governed descriptive gates. This bounded context characterization is not
+tactical, causal, or value evidence.
 
 ## 1. The paper that exists today
 
@@ -139,8 +140,9 @@ candidates justified spending the last pristine Metrica holdout. After the
 separate DRD v2 family-level result, an IDSSE-only
 [context protocol](protocols/defensive_reorganization_context_v1.md) froze two
 continuous starting relationships without using individual coefficients or
-residuals. That design does not alter this Game 3 decision, is unexecuted, and
-cannot supply paper evidence until classified. No Game 3 outcome is opened.
+residuals. Its governed IDSSE result is **SUPPORTED**, but it does not alter
+this Game 3 decision or supply a Game 3 authorization. No Game 3 outcome is
+opened.
 
 ## 6. Working abstract drafts
 

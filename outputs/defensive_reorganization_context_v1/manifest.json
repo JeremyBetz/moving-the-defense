@@ -1,0 +1,10 @@
+{
+  "bootstrap_replicates": 2000,
+  "bootstrap_seed": 20260904,
+  "configuration_sha256": "a6aa11319d1d49ff3a599ab61be5ba41ce3a2e4729f05ed45991f92bf725204f",
+  "hash_ledger_sha256": "756a73119995b01f784efa4b0948836bda052f61e7a36bf831c087b3238f4a38",
+  "implementation_sha256": "8a11b17fd670fdc9cce46f9e1b7f5b1b35b2af111755b0e5f3ba4c5b83982c7e",
+  "protocol_sha256": "f385b94015041a37089850a077743f38b448ab3e1251c39cdd8d5b918268819d",
+  "provider_row_level_outputs": "not_written",
+  "status": "DEFENSIVE REORGANIZATION CONTEXT v1 SUPPORTED"
+}

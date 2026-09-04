@@ -18,10 +18,13 @@ SkillCorner outcome, or player ranking was computed; Metrica Sample Game 3
 remains untouched.
 
 A separate [Defensive Reorganization Context v1 protocol](protocols/defensive_reorganization_context_v1.md)
-is now frozen but unexecuted. It does not rescue DRD or use residuals. It asks
-whether observed near-minus-middle geometry varies with two prospectively
-chosen starting relationships: attacker goalward position relative to the
-defensive unit and attacker–ball distance.
+is now [SUPPORTED across the governed seven IDSSE matches](results/defensive_reorganization_context_v1.md).
+It does not rescue DRD or use residuals. Both prospectively selected starting
+relationships—attacker goalward position relative to the defensive unit and
+attacker–ball distance—passed their frozen familywise interval, match,
+leave-one-match-out, and trim gates for observed near-minus-middle geometry.
+This is a bounded characterization of where the measured geometry tends to
+vary, not a DRD retrieval result, tactical explanation, or player ranking.
 
 **Working paper:** *Measuring Localized Defensive Reorganization Associated
 with Off-Ball Movement in Football*

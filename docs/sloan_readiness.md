@@ -46,10 +46,11 @@ It uses continuous two-second attacker path rather than the rejected discrete ep
 
 The main pre-Sloan gap remains communication: integrate the externally
 replicated localized defensive-reorganization result into one football-readable
-figure and a concise methods/results narrative. A separate IDSSE-only
-[context design](protocols/defensive_reorganization_context_v1.md) is frozen
-but unexecuted; a SUPPORTED result could add bounded application value, while
-MIXED or NOT SUPPORTED closes that branch. It does not justify opening Metrica
+figure and a concise methods/results narrative. The separate IDSSE-only
+[Context v1 result](results/defensive_reorganization_context_v1.md) is
+**SUPPORTED**: two frozen starting relationships characterize variation in the
+observed near-minus-middle geometry. It adds bounded descriptive application
+value, not tactical or causal meaning, and does not justify opening Metrica
 Sample Game 3 before the abstract deadline.
 
 The gap is **not** the absence of a gravity score. Gravity, attacker attribution, tactical classification, causal influence, and final off-ball value are later possibilities, not abstract prerequisites.

@@ -1,0 +1,15 @@
+match_id,context,estimate_m_per_m,sign,rows,model_rank
+J03WMX,attacker_minus_unit_goalward_m,-0.012889976481784209,-1,10850,7
+J03WMX,attacker_ball_distance_start_m,-0.009430470731834556,-1,10850,7
+J03WN1,attacker_minus_unit_goalward_m,-0.011101775621313257,-1,4268,7
+J03WN1,attacker_ball_distance_start_m,-0.006813276428115915,-1,4268,7
+J03WOH,attacker_minus_unit_goalward_m,-0.008008452020991912,-1,9853,7
+J03WOH,attacker_ball_distance_start_m,-0.0063140954898032635,-1,9853,7
+J03WOY,attacker_minus_unit_goalward_m,-0.012968213935092367,-1,10097,7
+J03WOY,attacker_ball_distance_start_m,-0.007199527136064681,-1,10097,7
+J03WPY,attacker_minus_unit_goalward_m,-0.007226580270863885,-1,10913,7
+J03WPY,attacker_ball_distance_start_m,-0.006479619267871587,-1,10913,7
+J03WQQ,attacker_minus_unit_goalward_m,-0.007868315916159921,-1,8682,7
+J03WQQ,attacker_ball_distance_start_m,-0.00943113610173842,-1,8682,7
+J03WR9,attacker_minus_unit_goalward_m,-0.010521776085913722,-1,10142,7
+J03WR9,attacker_ball_distance_start_m,-0.008393265808493764,-1,10142,7

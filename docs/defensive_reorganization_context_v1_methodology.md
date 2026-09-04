@@ -1,6 +1,7 @@
 # Defensive Reorganization Context v1 — Methodology Note
 
-**Status:** prospective design; no empirical context effect has been computed.
+**Status:** the frozen seven-match IDSSE execution is **SUPPORTED**; see the
+[governed result](results/defensive_reorganization_context_v1.md).
 
 ## Why this is separate from DRD
 
@@ -48,11 +49,11 @@ tests whether context extremes dominate without opening a robustness search.
 ## Football and paper use
 
 Each slope translates to the change in near-minus-middle defender-relative
-path associated with a 10 m difference in starting context. One two-panel
-figure can place those relationships on a pitch and show the adjusted curves
-in metres. If SUPPORTED, this could add “where it tends to be strongest” to the
-replicated measurement result. MIXED or NOT SUPPORTED is not an application
-headline and closes this branch before Sloan.
+path associated with a 10 m difference in starting context. The governed
+two-panel figure places those relationships on a pitch and shows adjusted
+curves in metres. The supported result adds a bounded description of where the
+measured geometry varied; it does not upgrade the result to an application
+headline, tactical interpretation, or causal claim.
 
 Metrica Games 1–2 and SkillCorner are conditional future confirmation settings,
 not part of this design execution. Game 3 remains untouched. The authoritative

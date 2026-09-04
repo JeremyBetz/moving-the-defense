@@ -1,0 +1,14 @@
+{
+  "bootstrap_intervals.csv": "daf338592c74b4ee80fcd132ebc3795205363ff2e9b832abc01065c7d42bf612",
+  "effect_sizes.csv": "a51f5293739c039d561e95c696d9f37a9f96c2c2e1c49ae45a3f0cab2e316404",
+  "governed_hashes.json": "1f2a12e22fcf3cd1e5d755cef49342a91922c2f7d5db88d8f86d111624b22bda",
+  "hard_qc.json": "821e4b24f71301b0835ad0e1c28c2eb64be7d9abd1d6e6a933c6b0c8af5dcfce",
+  "leave_one_match_out_coefficients.csv": "48f36df21985600b466d4a9cbfc165f0febafd5aa5555c91feb264cdab9c0f6f",
+  "manifest.json": "7a9c66ec4a829abbdbc8311cf3abd6c008aa72a787e2602339ee15b90f786c8a",
+  "per_match_coefficients.csv": "2c4644bf4937b3057b77832ee39929e565ccb96f049bdaaf251609dccda8b108",
+  "pooled_coefficients.csv": "593c7d75515b1e9cb9c60a589dd891e32ae2c23680b3951a61d4c89a3976f40f",
+  "result.json": "42b75b7281d955dcfbe75854520d05a6262d1befe13a57b85f45bd62ecac8f98",
+  "result_report.md": "41569841b4dc8600407ead161a55e5cc4ecafbfe692cb7385b36eaf961f38b3c",
+  "sample_summary.csv": "ee66a8e2599ee01e71c299bccbfeec620343a9cf63ce32a8082e2ff131f7de12",
+  "trim_robustness.csv": "2bbfe7e8dcbfa3ae7dde85a91e99df92f4a648dd6b9284346c04e229a0c299c6"
+}

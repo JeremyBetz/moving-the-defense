@@ -122,11 +122,13 @@ SkillCorner, or player-level work.
 
 The stable family-level signal motivated a separate, non-residual
 [Defensive Reorganization Context v1 design](protocols/defensive_reorganization_context_v1.md).
-It freezes two football-readable, continuous starting relationships on the
-existing seven IDSSE matches and leaves the DRD stop rule intact. No context
-effect has been computed. SUPPORTED could add a bounded “where it tends to be
-stronger” characterization to the measurement paper; MIXED or NOT SUPPORTED
-ends this branch before Sloan rather than triggering feature repair.
+Its [closed seven-match IDSSE result](results/defensive_reorganization_context_v1.md)
+is **SUPPORTED**. Both continuous starting relationships—attacker goalward
+position relative to the defensive unit and attacker–ball distance—passed the
+frozen familywise interval, match-direction, leave-one-match-out, and trim
+gates for observed near-minus-middle geometry. This adds a bounded “where it
+tends to vary” characterization to the measurement paper while leaving the
+DRD stop rule intact. It is not a tactical, causal, value, or retrieval result.
 
 The [Opportunity Redistribution v1 protocol](protocols/opportunity_redistribution_v1.md) tested whether the replicated focal-local defensive contrast was associated with differential nearest-defender separation gain for other attackers initially local rather than remote to the focal attacker. The [Game 1 result](results/opportunity_redistribution_game1_v1.md) is **NEGATIVE**: the primary $\beta_D$ was −0.02407 [−0.09392, 0.04776], and two of three robustness signs were negative. This narrow geometric bridge did not survive development. Game 2 was not opened; Game 3 remains reserved.
 

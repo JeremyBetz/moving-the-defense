@@ -1,0 +1,341 @@
+{
+  "bootstrap_intervals": {
+    "attacker_ball_distance_start_m": {
+      "ci_high": -0.006244614357055032,
+      "ci_low": -0.008864311549472804,
+      "estimate": -0.007569877474425608,
+      "valid": 2000
+    },
+    "attacker_minus_unit_goalward_m": {
+      "ci_high": -0.008498557614481525,
+      "ci_low": -0.011804976680680647,
+      "estimate": -0.010174716018533505,
+      "valid": 2000
+    }
+  },
+  "context_gates": {
+    "attacker_ball_distance_start_m": {
+      "checks": {
+        "central_support_trim_same_sign_and_50_to_150_percent": true,
+        "familywise_interval_excludes_zero": true,
+        "leave_one_match_out_direction_7_of_7": true,
+        "match_direction_at_least_6_of_7": true
+      },
+      "passed": true,
+      "same_sign_leave_one_match_out": 7,
+      "same_sign_matches": 7,
+      "suggestive": true,
+      "trimmed_to_primary_absolute_ratio": 1.0816059202660697
+    },
+    "attacker_minus_unit_goalward_m": {
+      "checks": {
+        "central_support_trim_same_sign_and_50_to_150_percent": true,
+        "familywise_interval_excludes_zero": true,
+        "leave_one_match_out_direction_7_of_7": true,
+        "match_direction_at_least_6_of_7": true
+      },
+      "passed": true,
+      "same_sign_leave_one_match_out": 7,
+      "same_sign_matches": 7,
+      "suggestive": true,
+      "trimmed_to_primary_absolute_ratio": 0.9974886357520002
+    }
+  },
+  "execution": {
+    "DRD_residual_inspected": false,
+    "Metrica_Game_3_accessed": false,
+    "SkillCorner_opened": false,
+    "context_effect_inspected": true,
+    "context_model_fitted": true,
+    "player_ranking_created": false,
+    "retrieval_generated": false
+  },
+  "figure_paths": [
+    "figures/defensive_reorganization_context_v1/context_relationships.png",
+    "figures/defensive_reorganization_context_v1/context_relationships.svg",
+    "figures/defensive_reorganization_context_v1/context_relationships.pdf"
+  ],
+  "hard_qc": {
+    "DRD_residual_not_read": true,
+    "Game3_untouched": true,
+    "SkillCorner_not_opened": true,
+    "bootstrap_valid_at_least_1900": true,
+    "compact_outputs_only": true,
+    "finite_target_and_model_columns": true,
+    "frozen_hashes": true,
+    "leave_one_match_out_full_rank": true,
+    "minimum_rows_and_retention_per_match": true,
+    "one_row_per_observation": true,
+    "per_match_full_rank": true,
+    "player_ranking_not_created": true,
+    "pooled_full_rank": true,
+    "seven_exact_matches": true,
+    "v2_common_sample_reconstructed_before_target_join": true
+  },
+  "pooled_coefficients": {
+    "attacker_ball_distance_start_m": -0.0075334263786825395,
+    "attacker_minus_unit_goalward_m": -0.010161084482222832,
+    "attacker_path_exposure_m": 0.04526099616164333,
+    "attacker_path_prior_m": -0.009877137093434341,
+    "ball_minus_unit_goalward_m": 0.0007478493915456276,
+    "defending_unit_depth_m": -0.0020427150972932664
+  },
+  "pooled_model_rank": 13,
+  "sample_retention": {
+    "J03WMX": {
+      "active_outfield_anchor_counts": {
+        "10": 12056
+      },
+      "common_sample_rows": 10850,
+      "inherited_target_rows": 12071,
+      "occupied_60_second_blocks": 97,
+      "period_coverage": {
+        "P1": {
+          "anchors": 623,
+          "end_s": 2816.0,
+          "start_s": 8.0
+        },
+        "P2": {
+          "anchors": 583,
+          "end_s": 3000.0,
+          "start_s": 8.0
+        }
+      },
+      "retention_of_off_ball_base_rows": 1.0,
+      "threshold_free_off_ball_base_rows": 10850,
+      "unique_anchors": 1206
+    },
+    "J03WN1": {
+      "active_outfield_anchor_counts": {
+        "10": 869,
+        "9": 3922
+      },
+      "common_sample_rows": 4268,
+      "inherited_target_rows": 4791,
+      "occupied_60_second_blocks": 81,
+      "period_coverage": {
+        "P1": {
+          "anchors": 287,
+          "end_s": 2768.0,
+          "start_s": 8.0
+        },
+        "P2": {
+          "anchors": 236,
+          "end_s": 2840.0,
+          "start_s": 8.0
+        }
+      },
+      "retention_of_off_ball_base_rows": 1.0,
+      "threshold_free_off_ball_base_rows": 4268,
+      "unique_anchors": 523
+    },
+    "J03WOH": {
+      "active_outfield_anchor_counts": {
+        "10": 10948
+      },
+      "common_sample_rows": 9853,
+      "inherited_target_rows": 10975,
+      "occupied_60_second_blocks": 92,
+      "period_coverage": {
+        "P1": {
+          "anchors": 564,
+          "end_s": 2764.0,
+          "start_s": 8.0
+        },
+        "P2": {
+          "anchors": 531,
+          "end_s": 2668.0,
+          "start_s": 8.0
+        }
+      },
+      "retention_of_off_ball_base_rows": 1.0,
+      "threshold_free_off_ball_base_rows": 9853,
+      "unique_anchors": 1095
+    },
+    "J03WOY": {
+      "active_outfield_anchor_counts": {
+        "10": 11219
+      },
+      "common_sample_rows": 10097,
+      "inherited_target_rows": 11238,
+      "occupied_60_second_blocks": 95,
+      "period_coverage": {
+        "P1": {
+          "anchors": 535,
+          "end_s": 2752.0,
+          "start_s": 8.0
+        },
+        "P2": {
+          "anchors": 587,
+          "end_s": 2928.0,
+          "start_s": 8.0
+        }
+      },
+      "retention_of_off_ball_base_rows": 1.0,
+      "threshold_free_off_ball_base_rows": 10097,
+      "unique_anchors": 1122
+    },
+    "J03WPY": {
+      "active_outfield_anchor_counts": {
+        "10": 12125
+      },
+      "common_sample_rows": 10913,
+      "inherited_target_rows": 12171,
+      "occupied_60_second_blocks": 98,
+      "period_coverage": {
+        "P1": {
+          "anchors": 607,
+          "end_s": 2756.0,
+          "start_s": 8.0
+        },
+        "P2": {
+          "anchors": 606,
+          "end_s": 3068.0,
+          "start_s": 8.0
+        }
+      },
+      "retention_of_off_ball_base_rows": 1.0,
+      "threshold_free_off_ball_base_rows": 10913,
+      "unique_anchors": 1213
+    },
+    "J03WQQ": {
+      "active_outfield_anchor_counts": {
+        "10": 7800,
+        "9": 1870
+      },
+      "common_sample_rows": 8682,
+      "inherited_target_rows": 9792,
+      "occupied_60_second_blocks": 94,
+      "period_coverage": {
+        "P1": {
+          "anchors": 609,
+          "end_s": 2760.0,
+          "start_s": 8.0
+        },
+        "P2": {
+          "anchors": 379,
+          "end_s": 2872.0,
+          "start_s": 8.0
+        }
+      },
+      "retention_of_off_ball_base_rows": 1.0,
+      "threshold_free_off_ball_base_rows": 8682,
+      "unique_anchors": 988
+    },
+    "J03WR9": {
+      "active_outfield_anchor_counts": {
+        "10": 11269
+      },
+      "common_sample_rows": 10142,
+      "inherited_target_rows": 11278,
+      "occupied_60_second_blocks": 93,
+      "period_coverage": {
+        "P1": {
+          "anchors": 573,
+          "end_s": 2720.0,
+          "start_s": 8.0
+        },
+        "P2": {
+          "anchors": 554,
+          "end_s": 3044.0,
+          "start_s": 8.0
+        }
+      },
+      "retention_of_off_ball_base_rows": 1.0,
+      "threshold_free_off_ball_base_rows": 10142,
+      "unique_anchors": 1127
+    }
+  },
+  "status": "DEFENSIVE REORGANIZATION CONTEXT v1 SUPPORTED",
+  "support_audit": {
+    "common_sample_observation_ids_reconstructed_from_frozen_v2_rules": 64805,
+    "target_join_after_support_gate": true,
+    "v2_prediction_or_residual_ledger_read": false
+  },
+  "trim_robustness": {
+    "bounds": {
+      "J03WMX": {
+        "attacker_ball_distance_start_m": [
+          2.0564884168774467,
+          61.638903962507406
+        ],
+        "attacker_minus_unit_goalward_m": [
+          -27.478646518041913,
+          16.948921440115996
+        ]
+      },
+      "J03WN1": {
+        "attacker_ball_distance_start_m": [
+          2.874681361309372,
+          53.42320603207885
+        ],
+        "attacker_minus_unit_goalward_m": [
+          -24.40187510626657,
+          15.361178912801124
+        ]
+      },
+      "J03WOH": {
+        "attacker_ball_distance_start_m": [
+          3.152604753415774,
+          59.901529847640184
+        ],
+        "attacker_minus_unit_goalward_m": [
+          -28.165228599863394,
+          21.11828575321599
+        ]
+      },
+      "J03WOY": {
+        "attacker_ball_distance_start_m": [
+          2.8046552645070877,
+          59.82363914059026
+        ],
+        "attacker_minus_unit_goalward_m": [
+          -27.45245690686362,
+          21.476828474317283
+        ]
+      },
+      "J03WPY": {
+        "attacker_ball_distance_start_m": [
+          2.9201788611450863,
+          58.84914405137076
+        ],
+        "attacker_minus_unit_goalward_m": [
+          -26.338142801012314,
+          16.002742794752116
+        ]
+      },
+      "J03WQQ": {
+        "attacker_ball_distance_start_m": [
+          1.671666914557298,
+          56.0246992085958
+        ],
+        "attacker_minus_unit_goalward_m": [
+          -27.114242575647577,
+          15.49472856646405
+        ]
+      },
+      "J03WR9": {
+        "attacker_ball_distance_start_m": [
+          2.8177216787362758,
+          56.913819888748506
+        ],
+        "attacker_minus_unit_goalward_m": [
+          -28.24040356640305,
+          15.845485721485963
+        ]
+      }
+    },
+    "coefficients": {
+      "attacker_ball_distance_start_m": -0.008148198571071612,
+      "attacker_minus_unit_goalward_m": -0.010135566297933272,
+      "attacker_path_exposure_m": 0.049041121264118595,
+      "attacker_path_prior_m": -0.01266216355317622,
+      "ball_minus_unit_goalward_m": 1.5523199176752745e-05,
+      "defending_unit_depth_m": -0.00288023129752228
+    },
+    "model_rank": 13,
+    "quantile_method": "numpy_linear",
+    "retention": 0.9046215569786282,
+    "rows_retained": 58624
+  }
+}

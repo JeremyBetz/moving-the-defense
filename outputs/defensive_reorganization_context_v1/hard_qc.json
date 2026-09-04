@@ -1,0 +1,17 @@
+{
+  "DRD_residual_not_read": true,
+  "Game3_untouched": true,
+  "SkillCorner_not_opened": true,
+  "bootstrap_valid_at_least_1900": true,
+  "compact_outputs_only": true,
+  "finite_target_and_model_columns": true,
+  "frozen_hashes": true,
+  "leave_one_match_out_full_rank": true,
+  "minimum_rows_and_retention_per_match": true,
+  "one_row_per_observation": true,
+  "per_match_full_rank": true,
+  "player_ranking_not_created": true,
+  "pooled_full_rank": true,
+  "seven_exact_matches": true,
+  "v2_common_sample_reconstructed_before_target_join": true
+}
