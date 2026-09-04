@@ -112,6 +112,14 @@ flagship figure from the closed evidence. No **Game 3 contextual holdout**
 protocol is frozen; the IDSSE application protocol below does not spend that
 holdout.
 
+### Football semantic validation
+
+Feasibility is designed; it awaits a written ethics/HRPP determination before
+any reviewer recruitment, passage selection, or protocol freeze. The
+[feasibility note](football_semantic_validation_feasibility.md) describes a
+possible blinded practitioner study, not an empirical result or a commitment
+to complete it before Sloan.
+
 ### Conditional pre-Sloan application sprint
 
 The [Defensive Reorganization Departure strategy](application_sprint_strategy.md)
