@@ -91,7 +91,7 @@ The subsequent [representation fork](attacking_movement_representation_fork.md) 
 
 That design was frozen in [attacker-to-defender bridge protocol v1.0](protocols/attacker_defender_bridge_v1.md). Game 1 was development-coherent, and the unchanged [held-out Game 2 plus pooled execution](results/attacker_defender_bridge_game2_v1.md) is **FINAL BRIDGE A**. Local coefficients were positive and exceeded nonlocal/placebo controls in both matches; pooled primary and paired-control intervals were positive; every frozen robustness, hard-QC, and reproduction gate passed. This is a replicated observational association across two within-provider sample matches, not tactical response or causation.
 
-The [spatial defensive-response footprint v1.0](protocols/spatial_defensive_response_footprint_v1.md) is complete at **FINAL FOOTPRINT A**. The [Game 1 development result](results/spatial_defensive_response_footprint_game1_v1.md) was coherent; untouched [Game 2 measurements](results/spatial_defensive_response_footprint_game2_v1.md) remained descriptively unclassified and were closed before comparison; the [pooled/final result](results/spatial_defensive_response_footprint_final_v1.md) reproduced the positive near-minus-middle distinction while middle-minus-far remained null. This is a stepped observational spatial association across two within-provider sample matches, not assignment, tactics, or causation. The [IDSSE external replication](protocols/spatial_defensive_response_footprint_v1_idsse_external_replication.md) is now frozen before any external temporal-footprint result; it is the final planned time-ordered bridge test and must report a mixed or unsupported result directly rather than search another lag or rank definition.
+The [spatial defensive-response footprint v1.0](protocols/spatial_defensive_response_footprint_v1.md) is complete at **FINAL FOOTPRINT A**. The [Game 1 development result](results/spatial_defensive_response_footprint_game1_v1.md) was coherent; untouched [Game 2 measurements](results/spatial_defensive_response_footprint_game2_v1.md) remained descriptively unclassified and were closed before comparison; the [pooled/final result](results/spatial_defensive_response_footprint_final_v1.md) reproduced the positive near-minus-middle distinction while middle-minus-far remained null. The unchanged [seven-match IDSSE external replication](results/spatial_defensive_response_footprint_idsse_v1.md) is **SUPPORTED**: the pooled primary contrast was 0.06115 [0.05579, 0.06681] and its paired excess over the frozen reverse-time control was 0.02455 [0.01932, 0.02985], with both signs positive in all seven matches. This is an externally replicated, stepped, time-ordered observational spatial association—not assignment, tactics, causation, or value. No alternate lag, window, rank definition, or bridge metric was searched.
 
 The [local defensive response form v1 protocol](protocols/local_defensive_response_form_v1.md) preserves the validated movement magnitude and separately tests signed endpoint geometry. Game 1 development was coherent; [Game 2](results/local_defensive_response_form_game2_v1.md) reproduced the positive primary near-minus-middle distinction, but its paired primary-minus-control interval crossed zero. The [pooled/final execution](results/local_defensive_response_form_final_v1.md) therefore closed at **FINAL RESPONSE FORM B**. Directional localization is supported descriptively across both matches, but the beyond-control distinction did not fully replicate. Radial, orthogonal, and absolute-versus-unit views remain descriptive rather than tactical labels; Game 3 remains reserved.
 
@@ -107,14 +107,14 @@ The [2027 MIT Sloan Sports Analytics Conference Research Paper Competition](http
 
 The bounded priorities and stopping rules are consolidated in the
 [Sloan submission strategy](sloan_submission_strategy.md). The preferred paper
-is a hybrid measurement-and-validation contribution. At most two additional
-empirical investments are defensible before submission: external IDSSE
-replication of the frozen time-ordered bridge, and one narrowly frozen context
-hypothesis with Game 3 used only as its holdout.
+is a hybrid measurement-and-validation contribution. The external IDSSE
+time-ordered bridge is now closed as supported; any additional empirical
+investment requires a new prospectively frozen question and must not reopen
+its timing, ranks, or controls.
 
 1. Preserve the negative Opportunity Redistribution v1 result; do not tune it or open Game 2 without a separately justified prospective decision.
 2. Preserve the completed Final A bridge and its local, nonlocal, temporal, activity/context, tracking-quality, and influence limits.
-3. Preserve the completed Final A spatial footprint and seek external/native-frequency replication only under a separately frozen design.
+3. Preserve the completed Final A spatial footprint and its supported frozen external/native-frequency replication; do not search another bridge specification.
 4. Preserve a conservative result even if it is mixed or negative.
 5. Produce an abstract-ready evidence story, clear football figures, and a reproducible public repository.
 6. Complete literature positioning around movement segmentation, expected defence, opponent relationships, and off-ball action—without novelty inflation.

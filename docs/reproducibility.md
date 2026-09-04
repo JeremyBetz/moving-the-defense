@@ -346,7 +346,25 @@ The first command reruns the full provider-equivalence gate and scientific execu
 
 ## Temporal spatial footprint v1 — IDSSE external replication
 
-The [frozen external protocol](protocols/spatial_defensive_response_footprint_v1_idsse_external_replication.md), configuration, hash ledger, and [provider-equivalence specification](spatial_defensive_response_footprint_v1_idsse_equivalence.md) govern the final planned time-ordered external bridge test. No IDSSE temporal-footprint output exists at this checkpoint. A future Tier 3 implementation must first pass the seven-match outcome-blind equivalence gate, then serialize and reproduce the governed match-level and pooled results. It may not alter the fixed 2-second preceding exposure, subsequent response, near/middle ranks, reverse-time control, or transported trim threshold. It uses only the seven governed IDSSE matches and does not access Metrica Sample Game 3.
+The [frozen external protocol](protocols/spatial_defensive_response_footprint_v1_idsse_external_replication.md), configuration, hash ledger, and [provider-equivalence specification](spatial_defensive_response_footprint_v1_idsse_equivalence.md) governed the final planned time-ordered external bridge test. Its [seven-match IDSSE result](results/spatial_defensive_response_footprint_idsse_v1.md) is **SUPPORTED** and commits only compact governed outputs under `outputs/spatial_defensive_response_footprint_idsse_v1/`; provider-derived rows and local staging remain ignored. Reproduce each match's outcome-blind reconstruction in an isolated process, then the staged fit and its independent rerun:
+
+```bash
+for match in J03WMX J03WN1 J03WOH J03WOY J03WPY J03WQQ J03WR9; do
+  MPLCONFIGDIR=/tmp/moving-defense-footprint PYTHONPATH=src .venv/bin/python \
+    src/spatial_defensive_response_footprint_idsse_v1.py \
+    --output outputs/spatial_defensive_response_footprint_idsse_v1 --stage-match "$match"
+done
+MPLCONFIGDIR=/tmp/moving-defense-footprint PYTHONPATH=src .venv/bin/python \
+  src/spatial_defensive_response_footprint_idsse_v1.py
+```
+
+The memory-bounded staging reconstructs exactly the frozen native inputs; it
+does not change the 25 Hz cadence, seven-frame support, fixed 2-second
+preceding exposure/subsequent response, near/middle ranks, reverse-time
+control, or transported trim threshold. Independently repeat the commands in
+an ignored output directory and use `--verify-against` to require byte-identical
+governed outputs. The execution used only the seven governed IDSSE matches and
+did not access Metrica Sample Game 3.
 
 ## Concurrent Defensive Coordination Form v1 — IDSSE external replication
 

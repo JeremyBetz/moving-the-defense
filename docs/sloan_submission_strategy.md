@@ -60,7 +60,7 @@ correct or valuable.
 |---|---|---|
 | Measurement foundation | Leave-one-out focal-relative movement replicated on held-out Metrica Game 2 and seven IDSSE matches | Define movement relative to the defensive unit; acknowledge close centroid/coordination precedent |
 | Core localization | Concurrent near-minus-middle positive in Metrica Games 1–2 and all seven IDSSE matches; pooled IDSSE 0.05115 [0.04595, 0.05642] | Main result |
-| Spatial footprint | Final Footprint A across two Metrica matches; pooled near-minus-middle 0.05029 [0.03433, 0.06858]; middle-minus-far null | Show stepped rather than monotonic localization |
+| Spatial footprint | Final Footprint A across two Metrica matches; seven-match IDSSE temporal replication supported with pooled near-minus-middle 0.06115 [0.05579, 0.06681] and paired excess 0.02455 [0.01932, 0.02985] | Show stepped rather than monotonic localization and distinguish paired temporal excess from causation |
 | Directional form | Metrica Game 1 coherent, Game 2 mixed; seven IDSSE matches all supported | Secondary empirical contribution, with mixed Metrica evidence explicit |
 | Baseline audits | Rank-only null approximately zero; activity adjustment removed about 99.2% of induced synthetic localization; rank composition moderate | Rebut simple mechanical/confounding explanations without claiming all confounding is removed |
 | Expectation | Compact spatial context slightly improved movement-only prediction; match-side increment not supported | Boundary: no stable defensive-identity claim |
@@ -126,7 +126,7 @@ reviewed literature.
 | **Critical** | “Player relative to team” and coordination are established, so the metric is not novel | Literature audit agrees; novelty is the governed combination, validation, and finding | **Addressable:** lead with validation/application novelty, not formula novelty |
 | **Major** | The result does not show opportunity, tactical success, or value | Opportunity was negative; coverage was mixed | **Already addressed.** Use as an explicit boundary, not a missing promised endpoint |
 | **Major** | Proximity ranks may encode baseline structure rather than response | Start-distance conditioning, rank-only null, activity-confounding test, and composition audit reduce this concern; goalward offset remains moderate | **Addressed with limitation.** Report the moderate composition finding prominently |
-| **Major** | The time-ordered bridge/footprint is only validated across two Metrica sample matches | Concurrent geometry and directional form transport to IDSSE, but the full preceding-to-subsequent bridge has not | **Addressable before deadline** through one frozen IDSSE bridge replication |
+| **Major** | The time-ordered bridge/footprint has limited external scope | The full frozen preceding-to-subsequent footprint passed across seven IDSSE matches, but those matches are one provider environment and do not establish causation | **Addressed with limitation.** Report the external replication without claiming broad universality. |
 | **Major** | Two Metrica matches and seven IDSSE matches are limited independent football units | Seven IDSSE matches are one provider environment; Metrica Game 1 was repeatedly used for development | **Paper limitation.** Be explicit about units and development history |
 | **Major** | A 0.051 m/m contrast may be statistically clear but football significance is unclear | It translates to about 5.1 cm additional near-versus-middle movement per attacker metre, conditional on the model | **Addressable:** pair effect size with football-readable geometry, not value rhetoric |
 | **Major** | Far ranks rebound and the footprint is not a clean distance decay | Middle-minus-far is null; every pooled rank coefficient is positive | **Already addressed.** Present a stepped near-versus-rest-of-unit distinction, not monotonic decay |
@@ -159,44 +159,37 @@ the core contribution.
 
 | Rank | Investment | Scientific value | Sloan-story value | Implementation / Codex cost | Inconclusive risk | Post-hoc risk | Deadline feasibility |
 |---:|---|---|---|---|---|---|---|
-| 1 | External/native-frequency replication of the frozen time-ordered bridge and spatial footprint on IDSSE | Very high | Very high | High / high | Moderate | Low if frozen unchanged | Feasible but schedule-critical |
-| 2 | One theory-constrained contextual moderation study | High | Very high | Medium-high / high | Moderate-high | Moderate; control by freezing few dimensions | Feasible if scoped by mid-September |
-| 3 | One football-readable measurement-to-replication figure/demo from closed results | No new inferential claim; high communication value | Very high | Medium / medium | Low | Low with deterministic selection | Highly feasible |
-| 4 | Paper, literature, effect-size, and practitioner narrative integration | High for acceptance | Very high | Medium / medium | Low | None | Essential and highly feasible |
+| 1 | One theory-constrained contextual moderation study | High | Very high | Medium-high / high | Moderate-high | Moderate; control by freezing few dimensions | Feasible if scoped by mid-September |
+| 2 | One football-readable measurement-to-replication figure/demo from closed results | No new inferential claim; high communication value | Very high | Medium / medium | Low | Low with deterministic selection | Highly feasible |
+| 3 | Paper, literature, effect-size, and practitioner narrative integration | High for acceptance | Very high | Medium / medium | Low | None | Essential and highly feasible |
+| 4 | Reproducibility and claim-boundary audit of the closed evidence | Moderate | High | Low-medium / medium | Low | Low | Essential and highly feasible |
 | 5 | Small blinded practitioner/analyst comprehension review of the figure and claims | Moderate | Moderate-high | Medium / low-medium | Moderate | Low | Optional; skip if it delays writing |
 
-Do not run all five. Items 1–2 are the only recommended empirical candidates;
-items 3–4 are required communication work. Item 5 is optional and must not
+Do not run all five. Item 1 is the only remaining recommended empirical candidate;
+items 2–4 are required communication work. Item 5 is optional and must not
 become tactical validation.
 
 ## 8. Recommended empirical analyses (maximum two)
 
-### Analysis 1 — external replication of the time-ordered bridge
+### Closed analysis — external replication of the time-ordered bridge
 
-**Question:** Does the [prospectively frozen external temporal-footprint
-replication](protocols/spatial_defensive_response_footprint_v1_idsse_external_replication.md)
-transport the association between preceding attacker movement and subsequent
-near-versus-middle localized defender-relative movement to the seven IDSSE
-matches at native cadence?
+**Result:** The [prospectively frozen external temporal-footprint
+replication](results/spatial_defensive_response_footprint_idsse_v1.md) was
+supported across the seven IDSSE matches at native cadence.
 
-**Why it matters:** The strongest full temporal bridge and footprint are Final
-A only within two Metrica sample matches. IDSSE currently validates concurrent
-localization and directional form, not the complete preceding-to-subsequent
-bridge. This is the clearest external-validity gap in the paper.
+**Why it matters:** The full preceding-to-subsequent association now has an
+external observational replication, while preserving the reverse-time control
+and all original inference limits.
 
-**Story-changing result:** A positive near-minus-middle pattern and paired
-excess over the frozen reverse-time control under the unchanged design would
-support an externally replicated temporal bridge. A mixed result would narrow
-the paper to concurrent geometry; a negative result would make the measurement
-paper more appropriate than a response paper.
-
-**Meaning of a null:** The defensive-relative primitive may transport while
-the specific temporal bridge does not. That is interpretable and publishable
-as a boundary.
+**Story-changing result:** The pooled primary near-minus-middle estimate was
+0.06115 [0.05579, 0.06681] and its paired excess was 0.02455 [0.01932,
+0.02985], with positive point estimates in all seven matches for both. The
+paper can therefore present external temporal ordering, not reaction or
+causation.
 
 **Data role:** IDSSE seven matches; no Metrica Game 3. Existing Metrica Games
-1–2 remain development/held-out history. **Role:** confirmatory external
-replication. **Expected Codex cost:** high.
+1–2 remain development/held-out history. **Role:** closed confirmatory external
+replication.
 
 ### Analysis 2 — narrow contextual characterization
 
@@ -344,7 +337,7 @@ vulnerable to “defenders follow runners” and causality objections.
    mixed coverage and unsupported match-side identity.
 9. Literature position: limited metric novelty; meaningful validation and
    application contribution.
-10. Limitations and next evidence: external time-ordered bridge and one context
+10. Limitations and next evidence: external time-ordered bridge limits and one context
     hypothesis, not gravity or value.
 
 Keep protocol history, segmentation failures, complete robustness tables, and
@@ -367,8 +360,8 @@ coverage-design lineage in supplementary material.
 
 **Overall current readiness: 78%.**
 
-**Realistic October 1 readiness: 91%** if one external bridge replication or
-one narrow held-out context result is completed without delaying the figure and
+**Realistic October 1 readiness: 91%** if one narrow held-out context result is
+completed without delaying the figure and
 manuscript. If empirical work becomes uncertain by mid-September, stop it and
 submit the already defensible measurement/validation paper. The largest gap is
 not statistical significance; it is a concise football-significance story
@@ -390,8 +383,7 @@ exploration.
 | Implementation, deterministic execution, focused tests, figures | **Terra High / Turbo ON** | Main economical execution setting |
 | Tables, links, formatting, compact documentation QC | **Terra Medium / Turbo ON** | Use for mechanical closure |
 
-The external IDSSE bridge is the highest-cost recommended analysis. The narrow
-context study is medium-high cost because its main risk is identification and
+The external IDSSE bridge is closed. The narrow context study is medium-high cost because its main risk is identification and
 multiplicity, not computation. Visual and writing work should consume more of
 late September than additional modeling.
 

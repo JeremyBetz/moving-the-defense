@@ -72,8 +72,10 @@ class IDSSETemporalFootprintGovernanceTest(unittest.TestCase):
         self.assertEqual(classify(True, 1, 0.1, 7, 1, 0, 7, 1, 1, False), "MIXED")
         self.assertEqual(classify(True, 1, 0.1, 7, 1, 0.1, 7, 1, 1, True), "MIXED")
 
-    def test_no_external_result_exists_during_design_freeze(self) -> None:
-        self.assertFalse((ROOT / "outputs/spatial_defensive_response_footprint_idsse_v1").exists())
+    def test_provider_derived_row_outputs_remain_ignored(self) -> None:
+        ignored = (ROOT / ".gitignore").read_text(encoding="utf-8")
+        self.assertIn("outputs/spatial_defensive_response_footprint_idsse_v1/observation_rows.parquet", ignored)
+        self.assertIn("outputs/spatial_defensive_response_footprint_idsse_v1/_stage/", ignored)
 
 
 if __name__ == "__main__":

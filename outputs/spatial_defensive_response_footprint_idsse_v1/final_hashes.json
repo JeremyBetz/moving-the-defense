@@ -1,0 +1,11 @@
+{
+  "coefficient_intervals.csv": "80d98b2512303695ecaa53e5d9a52dd27534ede941c7627bfb961fc579d82666",
+  "exclusion_ledger.csv": "8dd87b0d531096264397ccefd518a214b9a67bf10b690c6139c5817c097079e6",
+  "external_forest_plot.png": "99d1073acf5359695bbb6102a324bd99de2387c39a7f8c56e6068c52e0959a0c",
+  "final_results.json": "f3e1f13fefca35d624550893c9eefbfe7fc050647fba8ccc4f501ca10442f726",
+  "governed_hashes.json": "b2b82429cf7900df3f1cadeb31f53374a8adbc9b6afdb6c4495171e4fe70d5bb",
+  "hard_qc.csv": "fe74d258eada989fcc6e60e6ec38e1b80176a2e939be50caf0f3baee50867562",
+  "provider_equivalence.csv": "bf8a1066b097d46b1131cef91cf29e6c528cc8ad75ae112953122d75e2b20f95",
+  "reproduction.json": "177a2537c051c16f10fa893d09d8e8eb344e119fe0924eefb098173d997274cf",
+  "sample_by_match.csv": "b3b6b36b8d3792e6962d0b6931b15aaf83ee8f90817f97efef0dd2791b4e55e7"
+}

@@ -23,7 +23,10 @@ This geometric measurement is deliberately narrower than a football interpretati
 
 ## What has been demonstrated
 
-The strongest current result is a replicated observational association between attacker movement and localized concurrent defensive geometry.
+The strongest current result is an externally replicated, time-ordered
+observational association between attacker movement and localized defensive
+geometry. A concurrent version supplies complementary evidence that the same
+localization is visible within a shared interval.
 
 > **Greater attacker movement was associated with a stronger concurrent defender-relative movement coefficient among the nearest three defenders than among the middle four defenders, conditional on the frozen model.**
 
@@ -32,6 +35,16 @@ The result was supported in Metrica Sample Game 1, heldout Metrica Sample Game 2
 ![Near-minus-middle concurrent-geometry estimates across Metrica and IDSSE matches](docs/figures/readme/concurrent_geometry_replication.svg)
 
 The governed pooled IDSSE near-minus-middle estimate was **0.05115 metres per metre**, with 95% interval **[0.04595, 0.05642]**. An intuitive—but still observational—translation is that each additional metre of attacker movement was associated with about **5.1 centimetres more concurrent defender-relative movement among the three nearest defenders than the middle group**, conditional on the specified model.
+
+The same frozen spatial-footprint design then tested whether the association
+survived a fixed temporal ordering: attacker movement in the preceding two
+seconds, defender-relative movement in the following two seconds. Across the
+same seven IDSSE matches, its pooled near-minus-middle contrast was **0.06115
+metres per metre [0.05579, 0.06681]**; its prospectively paired excess over a
+reverse-time control was **0.02455 [0.01932, 0.02985]**, and both estimates were
+positive in all seven matches. That is evidence of a larger correctly ordered
+association under the frozen design—not proof that the attacker caused a
+response. The reverse-time control also retained structure.
 
 The pattern is not a simple decline with distance. Nearby ranks were elevated relative to the middle group, but the pooled rank profile was non-monotonic and the far ranks rebounded.
 
@@ -153,7 +166,7 @@ Key result trails:
 - [Opportunity Redistribution v1 negative result](docs/results/opportunity_redistribution_game1_v1.md)
 - [Coordination Form v1: Game 1](docs/results/concurrent_defensive_coordination_form_game1_v1.md), [Game 2 mixed replication](docs/results/concurrent_defensive_coordination_form_game2_v1.md), and [seven-match IDSSE external replication](docs/results/concurrent_defensive_coordination_form_idsse_v1.md)
 - [Final attacker-to-defender bridge result](docs/results/attacker_defender_bridge_game2_v1.md)
-- [Final spatial footprint result](docs/results/spatial_defensive_response_footprint_final_v1.md)
+- [Final spatial footprint result](docs/results/spatial_defensive_response_footprint_final_v1.md) and [seven-match IDSSE temporal replication](docs/results/spatial_defensive_response_footprint_idsse_v1.md)
 - [Final directional response-form result](docs/results/local_defensive_response_form_final_v1.md)
 
 The figure source is [reproducible](src/generate_readme_research_visuals.py) and reads only closed governed artifacts for empirical plots. Code and documentation are released under the [MIT License](LICENSE).

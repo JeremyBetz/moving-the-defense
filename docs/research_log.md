@@ -1,5 +1,32 @@
 # Research Log
 
+## 2026-09-03 — IDSSE temporal spatial-footprint replication supported
+
+The prospectively frozen Spatial Defensive-Response Footprint v1 external
+replication executed on the seven governed IDSSE matches with the unchanged
+`[t-4,t-2]` context, `[t-2,t]` attacker exposure, `[t,t+2]` focal-relative
+response, fixed D1–D10 ranks, reverse-time placebo, trim, and 1/2/4-second
+horizons. Every match passed the all-seven provider-equivalence gate; all
+governed compact outputs reproduced byte-for-byte in an independent rerun.
+
+The pooled near-minus-middle contrast was 0.06115 [0.05579, 0.06681]. The
+reverse-time contrast was also positive at 0.03661 [0.03224, 0.04111], while
+the prospectively classifying paired primary-minus-placebo excess was 0.02455
+[0.01932, 0.02985]. Primary and paired-excess point estimates were positive in
+all seven matches; trimming retained 95.35% magnitude and both horizon signs
+were positive. The exact frozen classification is **IDSSE TEMPORAL FOOTPRINT
+EXTERNAL REPLICATION SUPPORTED**.
+
+This adds external time-ordered observational evidence, not causation,
+reaction latency, tactical response, assignment, attention, space creation,
+gravity, or value. Because the reverse-time control retained structure, the
+evidence is the predeclared paired excess rather than an absence of temporal
+pattern under control. No alternate lag, rank grouping, smoothing treatment,
+or bridge metric was tested; Metrica Sample Game 3 was untouched. The closed
+raw-to-Kloppy equivalence gate was verified by its byte-hashed all-match
+artifacts, while temporal-specific components were rebuilt from the same
+native caches in memory-bounded isolated match processes.
+
 ## 2026-09-03 — IDSSE temporal spatial-footprint replication frozen before outcomes
 
 The project froze one final external time-ordered bridge test before any IDSSE

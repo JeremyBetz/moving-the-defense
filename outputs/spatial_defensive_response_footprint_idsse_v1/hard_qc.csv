@@ -1,0 +1,12 @@
+check,passed
+provider_equivalence_all_seven,True
+all_match_designs_rank_40,True
+pooled_design_rank_46,True
+all_bootstrap_families_at_least_1900,True
+complete_D1_D10,True
+ten_unique_defenders,True
+goalkeepers_excluded,True
+no_interpolation,True
+game3_untouched,True
+no_alternate_temporal_specification,True
+frozen_hashes,True
