@@ -40,7 +40,14 @@ attacking movement interval
 defensive geometric change
 ```
 
-It uses continuous two-second attacker path rather than the rejected discrete episode rules, and subsequent focal-relative path supplies amount of defender movement rather than tactical meaning. The stepped spatial footprint now has unchanged held-out Game 2 and pooled support. External/native-frequency transport and football semantics remain later questions; proximity or timing must not become causation.
+It uses continuous two-second attacker path rather than the rejected discrete episode rules, and subsequent focal-relative path supplies amount of defender movement rather than tactical meaning. The stepped spatial footprint now has unchanged held-out Game 2, pooled, and seven-match IDSSE support. Broader population transport and football semantics remain later questions; proximity or timing must not become causation.
+
+The main pre-Sloan gap is now communication rather than another empirical
+coefficient: integrate the externally replicated temporal footprint into one
+football-readable figure and a concise methods/results narrative. A contextual
+moderator could be scientifically useful later, but no candidate currently has
+a sufficiently unique representation and estimand to justify opening untouched
+Metrica Sample Game 3 before the abstract deadline.
 
 The gap is **not** the absence of a gravity score. Gravity, attacker attribution, tactical classification, causal influence, and final off-ball value are later possibilities, not abstract prerequisites.
 
@@ -51,7 +58,7 @@ The gap is **not** the absence of a gravity score. Gravity, attacker attribution
 | Football problem | Clear | Keep the attacker-movement-to-defensive-change question central. |
 | Reproducible defensive primitive | Externally replicated geometry | Preserve activity and semantic limitations. |
 | Attacking temporal unit | Continuous fixed-window geometry replicated across both Metrica sample matches; discrete episode rules remain mixed | Use the validated continuous interval in the paper; do not reopen segmentation before submission. |
-| Bridge evidence | Final A across two Metrica matches; concurrent localization supported across seven IDSSE matches | Preserve observational scope, shared-motion caveats, and provider-timescale differences; do not infer causation or tactics. |
+| Bridge evidence | Final A across two Metrica matches; unchanged temporal footprint supported across seven IDSSE matches | Preserve positive reverse-time structure, observational scope, shared-motion caveats, and provider-timescale differences; do not infer causation or tactics. |
 | Tactical interpretation | Unsupported | Not required if the contribution is framed as geometry/methodology. |
 | Development/validation discipline | Strong through the frozen two-match bridge | Apply the same discipline to any semantic or cross-provider extension. |
 | Reproducibility | Substantial but incomplete | Resolve environment drift, document large artifacts, and add lightweight automated integrity checks. |
@@ -84,4 +91,4 @@ The abstract can center the successful geometric bridge while treating the faile
 
 ## Current readiness conclusion
 
-The project is **bridge-complete at the external observational level, but interpretation-incomplete**. It has validated component geometry, a supported seven-match IDSSE [temporal-footprint replication](results/spatial_defensive_response_footprint_idsse_v1.md), and strong negative evidence. Gravity, tactical classification, causation, and value are neither established nor required for a strong abstract.
+The project is **bridge-complete at the external observational level, but interpretation-incomplete**. It has validated component geometry, a supported seven-match IDSSE [temporal-footprint replication](results/spatial_defensive_response_footprint_idsse_v1.md), and strong negative evidence. The pre-Sloan priority is writing and visualization from closed results; Game 3 remains untouched. Gravity, tactical classification, causation, and value are neither established nor required for a strong abstract.

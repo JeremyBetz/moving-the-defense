@@ -65,11 +65,29 @@ Every arrow can fail. Football language does not become a tracking construct mer
 
 ## Current methodological frontier
 
-> **During the same fixed interval, is attacker movement associated with spatially localized defensive geometric change beyond strictly prior movement context?**
+> **How should the externally replicated, time-ordered defensive footprint be
+> communicated and stress-tested without converting an observational
+> measurement into causation, tactics, or value?**
 
 The [Concurrent Attacker–Defensive Geometry v1 protocol](protocols/concurrent_attacker_defensive_geometry_v1.md) removed the artificial attacker-before/defender-after requirement and did not use unresolved episode boundaries. [Game 1 development](results/concurrent_attacker_defensive_geometry_game1_v1.md) was coherent, and the prospectively governed [Game 2 heldout replication](results/concurrent_attacker_defensive_geometry_game2_v1.md) was **SUPPORTED**. The unchanged [seven-match IDSSE external replication](results/concurrent_attacker_defensive_geometry_idsse_v1.md) is also **SUPPORTED**: all seven match estimates were positive and the pooled estimate was 0.05115 [0.04595, 0.05642] with robust trimming. All-rank positivity, nonmonotonic shapes, far-above-middle geometry, possible concurrent common motion, and provider-specific smoothing timescales remain important caveats. Game 3 remains reserved.
 
 The completed bridge resolves the first within-provider association test, not its tactical or causal meaning. Continuous attacker intervals remain defined without defensive outcomes, and defensive change remains geometric rather than tactical. Historical segmentation failures still constrain any future episode-based extension. No new empirical phase may begin unless its design is prospectively specified and frozen.
+
+The unchanged time-ordered footprint is now also supported across all seven
+governed IDSSE matches. The paper's primary evidence is therefore no longer the
+concurrent association alone: preceding attacker movement is associated with
+stronger subsequent near-than-middle defender-relative movement in Metrica and
+IDSSE, and the pooled forward association exceeds its frozen paired
+reverse-time comparison in both environments. Reverse-time structure remains
+positive, so this is temporal ordering under an observational design rather
+than reaction or causation.
+
+Metrica Sample Game 3 remains untouched. A pre-Sloan contextual holdout was
+considered and rejected because the leading candidates—movement direction
+relative to the unit, block position, ball distance, width, and compactness—do
+not yet have a uniquely justified representation and estimand. Spending the
+last pristine holdout would add less information than completing the paper and
+flagship figure from the closed evidence. No contextual protocol is frozen.
 
 The [Opportunity Redistribution v1 protocol](protocols/opportunity_redistribution_v1.md) tested whether the replicated focal-local defensive contrast was associated with differential nearest-defender separation gain for other attackers initially local rather than remote to the focal attacker. The [Game 1 result](results/opportunity_redistribution_game1_v1.md) is **NEGATIVE**: the primary $\beta_D$ was −0.02407 [−0.09392, 0.04776], and two of three robustness signs were negative. This narrow geometric bridge did not survive development. Game 2 was not opened; Game 3 remains reserved.
 
@@ -115,9 +133,12 @@ its timing, ranks, or controls.
 1. Preserve the negative Opportunity Redistribution v1 result; do not tune it or open Game 2 without a separately justified prospective decision.
 2. Preserve the completed Final A bridge and its local, nonlocal, temporal, activity/context, tracking-quality, and influence limits.
 3. Preserve the completed Final A spatial footprint and its supported frozen external/native-frequency replication; do not search another bridge specification.
-4. Preserve a conservative result even if it is mixed or negative.
-5. Produce an abstract-ready evidence story, clear football figures, and a reproducible public repository.
-6. Complete literature positioning around movement segmentation, expected defence, opponent relationships, and off-ball action—without novelty inflation.
+4. Keep Game 3 untouched before Sloan; do not manufacture an under-specified
+   moderator or use it for generic replication.
+5. Preserve a conservative result even if it is mixed or negative.
+6. Produce an abstract-ready temporal-footprint story, clear football figures,
+   and a reproducible public repository.
+7. Complete literature positioning around movement segmentation, expected defence, opponent relationships, and off-ball action—without novelty inflation.
 
 The October submission can succeed as a validated measurement/bridge contribution or a well-supported methodological warning. It does not require a gravity metric, final player value, tactical classifier, or causal attribution.
 

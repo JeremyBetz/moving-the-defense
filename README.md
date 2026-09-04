@@ -112,13 +112,19 @@ Those results moved the project away from universal state labels and post-hoc ep
 
 ## Current scientific frontier
 
-The project is moving from:
+The project has now answered, at an observational measurement level:
 
 > **Can defensive reorganization associated with attacking movement be measured reproducibly?**
 
-toward:
+The frozen time-ordered footprint replicated across two Metrica matches and
+seven IDSSE matches. The immediate task is to turn that result into a clear,
+reproducible paper and football-readable figure while preserving the positive
+reverse-time structure and the negative consequence evidence as interpretation
+boundaries.
 
-> **Which observable context explains variation in that geometry without prematurely treating match-side identity as stable tactical style?**
+Metrica Sample Game 3 remains untouched. Several contextual questions could be
+useful later, but none yet has a uniquely justified representation and estimand
+that warrants spending the final pristine holdout before Sloan.
 
 A longer-term possibility is to judge observed reorganization relative to what a particular defense normally does in comparable situations. That contextual opponent model has not been built or validated.
 

@@ -1,5 +1,27 @@
 # Research Log
 
+## 2026-09-03 — Sloan paper recentred; Game 3 retained untouched
+
+After the unchanged temporal footprint was supported across all seven IDSSE
+matches, the Sloan strategy was recentred on the time-ordered observational
+result rather than the concurrent association. The closed Metrica evidence is
+Game 1 near-minus-middle 0.04559 [0.02979, 0.06428], untouched Game 2 0.08553
+[0.02917, 0.15786], and pooled 0.05029 [0.03433, 0.06858], with pooled paired
+forward-minus-reverse excess 0.02912 [0.01410, 0.04526]. The IDSSE pooled
+primary is 0.06115 [0.05579, 0.06681] and paired excess is 0.02455 [0.01932,
+0.02985], with both point-estimate signs positive in all seven matches.
+
+Five possible contextual hypotheses were assessed prospectively without
+opening Game 3: movement direction relative to the defensive unit, initial
+position relative to the block, ball distance, central-versus-wide geometry,
+and defensive depth/compactness. None yet has a uniquely justified
+representation and estimand sufficient to spend the final pristine Metrica
+holdout. The exact decision is **B — KEEP GAME 3 UNTOUCHED BEFORE SLOAN**. No
+context protocol or configuration was created. Pre-Sloan work is restricted to
+the flagship figure, manuscript, claim/reproducibility audit, and compact
+presentation of negative consequence evidence. This strategic synthesis added
+no result, classification, or causal/tactical interpretation.
+
 ## 2026-09-03 — IDSSE temporal spatial-footprint replication supported
 
 The prospectively frozen Spatial Defensive-Response Footprint v1 external
