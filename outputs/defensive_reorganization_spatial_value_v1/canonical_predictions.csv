@@ -1,0 +1,5 @@
+canonical_movement,goalward_displacement_m,outward_displacement_m,exposure_path_m,equal_match_adjusted_predicted_Y_m
+goalward,5.0,0.0,5.0,-0.13041320150001753
+outward,0.0,5.0,5.0,0.15386612376963438
+away_from_goal,-5.0,0.0,5.0,0.11008716094564687
+inward,0.0,-5.0,5.0,-0.17419216432400506

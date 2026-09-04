@@ -82,6 +82,16 @@ reverse-time comparison in both environments. Reverse-time structure remains
 positive, so this is temporal ordering under an observational design rather
 than reaction or causation.
 
+The frozen [Defensive Reorganization Spatial Form v1](protocols/defensive_reorganization_spatial_value_v1.md)
+has now executed on the same seven IDSSE matches. Its primary conditional
+outward-minus-goalward contrast is **SUPPORTED**: 0.056856 m/m [0.051358,
+0.062430], with positive direction in all seven match and leave-one-match-out
+fits and a passing frozen trim. The separate dynamic-unit-relative versus
+static-five-lane prediction comparison found **NO CLEAR REPRESENTATIONAL
+ADVANTAGE**. This is an observational spatial-form characterization, not
+evidence that outward movement is tactically better, causes defenders to move,
+creates space, or has attacking value.
+
 Metrica Sample Game 3 remains untouched. A pre-Sloan contextual holdout was
 considered and rejected because the leading candidates—movement direction
 relative to the unit, block position, ball distance, width, and compactness—do
@@ -174,12 +184,16 @@ its timing, ranks, or controls.
 1. Preserve the negative Opportunity Redistribution v1 result; do not tune it or open Game 2 without a separately justified prospective decision.
 2. Preserve the completed Final A bridge and its local, nonlocal, temporal, activity/context, tracking-quality, and influence limits.
 3. Preserve the completed Final A spatial footprint and its supported frozen external/native-frequency replication; do not search another bridge specification.
-4. Keep Game 3 untouched before Sloan; do not manufacture an under-specified
+4. Preserve the closed Spatial Form v1 **OUTWARD GREATER** association and its
+   inconclusive static-versus-dynamic comparison. Any SkillCorner replication
+   requires a separate provider-equivalence and prospective protocol; no
+   Metrica transport is authorized by the present result.
+5. Keep Game 3 untouched before Sloan; do not manufacture an under-specified
    moderator or use it for generic replication.
-5. Preserve a conservative result even if it is mixed or negative.
-6. Produce an abstract-ready localized defensive-reorganization story, clear football figures,
+6. Preserve a conservative result even if it is mixed or negative.
+7. Produce an abstract-ready localized defensive-reorganization story, clear football figures,
    and a reproducible public repository.
-7. Complete literature positioning around movement segmentation, expected defence, opponent relationships, and off-ball action—without novelty inflation.
+8. Complete literature positioning around movement segmentation, expected defence, opponent relationships, and off-ball action—without novelty inflation.
 
 The October submission can succeed as a validated measurement/bridge contribution or a well-supported methodological warning. It does not require a gravity metric, final player value, tactical classifier, or causal attribution.
 

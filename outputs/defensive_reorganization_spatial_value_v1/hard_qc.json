@@ -1,0 +1,18 @@
+{
+  "DRD_residual_not_read": true,
+  "Game3_untouched": true,
+  "SkillCorner_not_opened": true,
+  "bootstrap_valid_at_least_1900": true,
+  "exact_context_v1_observation_count": true,
+  "exact_seven_IDSSE_matches": true,
+  "finite_frozen_geometry": true,
+  "frozen_hashes": true,
+  "lomo_full_rank": true,
+  "no_provider_row_level_outputs_written": true,
+  "per_match_full_rank": true,
+  "player_ranking_not_created": true,
+  "pooled_full_rank": true,
+  "positive_unit_width": true,
+  "secondary_all_folds_full_rank": true,
+  "unique_observation_ids": true
+}

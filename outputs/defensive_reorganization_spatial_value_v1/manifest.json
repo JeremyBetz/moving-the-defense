@@ -1,0 +1,10 @@
+{
+  "bootstrap_replicates": 2000,
+  "bootstrap_seed": 20260905,
+  "configuration_sha256": "2d8d7abac9738ccb8a4765c657f6865ab445cf390e41ed8063b05a111d62e5df",
+  "implementation_sha256": "dbbe906a0e9193dd9e2400b3da4144cc6b3f0ee5d734e872e7cd188a96f7d7dd",
+  "protocol_sha256": "d394519c7839ad20aba3806b2bbae5bf7b71bdb33a77a70eeb0b6d0c8af08e25",
+  "provider_row_level_outputs": "not_written",
+  "secondary_status": "NO CLEAR REPRESENTATIONAL ADVANTAGE",
+  "status": "SPATIAL FORM SUPPORTED"
+}

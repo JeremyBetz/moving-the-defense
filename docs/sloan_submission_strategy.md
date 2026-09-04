@@ -21,6 +21,15 @@ all seven match and leave-one-match-out fits, with the frozen trim passing.
 This bounded context characterization is not tactical, causal, or value
 evidence.
 
+The separate seven-match [Spatial Form v1 result](results/defensive_reorganization_spatial_value_v1.md)
+is also **SUPPORTED**: conditional on frozen path and start context, outward
+rather than goalward displacement was associated with 0.056856 m/m greater
+subsequent localized reorganization [0.051358, 0.062430], with the direction
+positive in all seven match and leave-one-match-out fits. Its static five-lane
+versus dynamic unit-relative comparison found **NO CLEAR REPRESENTATIONAL
+ADVANTAGE**. Treat this as a bounded geometric characterization for a results
+table or supplement—not a tactical, causal, space-creation, or value claim.
+
 ## 1. The paper that exists today
 
 ### Strongest defensible claim
@@ -86,6 +95,7 @@ not promise causation, tactics, or a demonstrated downstream benefit.
 | Concurrent spatial form | Near-minus-middle concurrent localization is positive in Metrica Games 1–2 and all seven IDSSE matches | Supporting characterization, not the paper's primary result |
 | Directional form | Metrica Game 1 coherent, Game 2 mixed; seven IDSSE matches supported | Secondary evidence about geometric form, with mixed internal replication explicit |
 | Starting spatial context | IDSSE Context v1 supported: goalward attacker--unit offset and attacker--ball distance both have consistent negative slopes in 7/7 match and 7/7 LOMO fits | Characterize where measured reorganization is larger or smaller; do not infer why |
+| Conditional spatial form | IDSSE Spatial Form v1 supported: outward-minus-goalward was 0.056856 m/m [0.051358, 0.062430] in 7/7 match and 7/7 LOMO directions; static versus dynamic lateral representation was inconclusive | Compact geometric characterization; do not call outward movement better or a source of value |
 | Falsification and QC | Rank-only null is approximately zero; activity adjustment removed about 99.2% of induced synthetic localization; rank composition remains a moderate limitation | Address simple mechanical alternatives without claiming all confounding is removed |
 | Consequence boundary | Opportunity Redistribution negative; Coverage Redistribution v3 mixed | Show that measured response is not established as separation, coverage, space creation, or value |
 
@@ -246,8 +256,9 @@ not say that the attacker caused the movement or that the movement created value
    governed preceding-attacker-path distribution. It is selected before, and
    without reference to, defender response magnitude or any football outcome.
 2. Turn the working abstract into the paper's introduction, methods spine, and
-   results table, keeping Context v1 as a compact “when is it stronger?”
-   characterization rather than a new primary result.
+   results table, keeping Context v1 and Spatial Form v1 as compact
+   “where/what directional form?” characterizations rather than new primary
+   results.
 3. Complete a claim-language, reproducibility, and literature-positioning
    audit of the closed evidence.
 4. Preserve the negative consequence results as compact interpretation

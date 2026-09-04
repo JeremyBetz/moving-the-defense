@@ -1,5 +1,24 @@
 # Research Log
 
+## 2026-09-04 — Defensive Reorganization Spatial Form v1 executed: SUPPORTED
+
+The prospectively frozen seven-match IDSSE spatial-form study reconstructed the
+exact closed Context v1 observation set (64,805 eligible attacker-anchor rows)
+before reading the observed target. Conditional on frozen path and start
+context, the pooled outward-minus-goalward coefficient was 0.056856 m/m with a
+95% block-bootstrap interval [0.051358, 0.062430]. All seven match-specific
+and all seven leave-one-match-out contrasts were positive; the joint signed
+movement trim was positive at 103.08% of full magnitude. The exact primary
+status is **SPATIAL FORM SUPPORTED — OUTWARD GREATER**.
+
+The secondary static five-lane versus dynamic unit-relative lateral comparison
+is **NO CLEAR REPRESENTATIONAL ADVANTAGE**: dynamic macro heldout MAE was
+0.919147 m versus static 0.918654, and the paired static-minus-dynamic interval
+crossed zero. This does not select another spatial representation. All 14
+compact governed outputs reproduced byte-identically. No DRD residual,
+SkillCorner outcome, Metrica transport, Game 3 datum, player ranking, tactical
+label, value metric, or post-result representation was used.
+
 ## 2026-09-04 — Defensive Reorganization Context v1 executed: SUPPORTED
 
 The frozen seven-match IDSSE-only descriptive context study executed without

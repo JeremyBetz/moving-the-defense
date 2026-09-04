@@ -15,6 +15,9 @@ outputs/defensive_reorganization_departure_v1/eligibility_ledger.csv
 outputs/defensive_reorganization_departure_v2/eligibility_ledger.csv
 outputs/defensive_reorganization_departure_v2/heldout_predictions.parquet
 outputs/.defensive_reorganization_departure_v1_rerun/
+outputs/defensive_reorganization_spatial_value_v1/eligibility_exclusions.csv
+outputs/.defensive_reorganization_spatial_value_v1_rerun/
+figures/defensive_reorganization_spatial_value_v1/spatial_form.svg
 
 # Licensed-provider anchor-level derivatives (compact governed summaries are tracked)
 outputs/defensive_coverage_redistribution_game1_v2/observation_rows.csv

@@ -1,0 +1,147 @@
+{
+  "bootstrap": {
+    "primary_ci_high": 0.062430030351618114,
+    "primary_ci_low": 0.051357502908698824,
+    "replicates_requested": 2000,
+    "secondary_ci_high": 0.0006504937070285237,
+    "secondary_ci_low": -0.001629291905085398,
+    "seed": 20260905,
+    "valid_primary": 2000,
+    "valid_secondary": 2000
+  },
+  "execution": {
+    "DRD_residual_inspected": false,
+    "Metrica_Game_3_accessed": false,
+    "Metrica_transport_executed": false,
+    "SkillCorner_opened": false,
+    "new_spatial_representation_added": false
+  },
+  "figure_paths": [
+    "figures/defensive_reorganization_spatial_value_v1/spatial_form.png",
+    "figures/defensive_reorganization_spatial_value_v1/spatial_form.svg",
+    "figures/defensive_reorganization_spatial_value_v1/spatial_form.pdf"
+  ],
+  "firewall": {
+    "DRD_residuals_read": false,
+    "Metrica_Game_3_accessed": false,
+    "SkillCorner_opened": false,
+    "context_v1_status": "DEFENSIVE REORGANIZATION CONTEXT v1 SUPPORTED",
+    "drd_v2_status": "DRD APPLICATION FOUNDATION MIXED",
+    "spatial_form_frozen_hashes": {
+      "config/defensive_reorganization_spatial_value_v1.json": "2d8d7abac9738ccb8a4765c657f6865ab445cf390e41ed8063b05a111d62e5df",
+      "docs/protocols/defensive_reorganization_spatial_value_v1.md": "d394519c7839ad20aba3806b2bbae5bf7b71bdb33a77a70eeb0b6d0c8af08e25"
+    }
+  },
+  "hard_qc": {
+    "DRD_residual_not_read": true,
+    "Game3_untouched": true,
+    "SkillCorner_not_opened": true,
+    "bootstrap_valid_at_least_1900": true,
+    "exact_context_v1_observation_count": true,
+    "exact_seven_IDSSE_matches": true,
+    "finite_frozen_geometry": true,
+    "frozen_hashes": true,
+    "lomo_full_rank": true,
+    "no_provider_row_level_outputs_written": true,
+    "per_match_full_rank": true,
+    "player_ranking_not_created": true,
+    "pooled_full_rank": true,
+    "positive_unit_width": true,
+    "secondary_all_folds_full_rank": true,
+    "unique_observation_ids": true
+  },
+  "primary": {
+    "beta_goalward_m_per_m": -0.02405003624456644,
+    "beta_outward_m_per_m": 0.032805828809363946,
+    "five_m_translation_m": 0.28427932526965194,
+    "outward_minus_goalward_m_per_m": 0.056855865053930386,
+    "pooled_model_rank": 16,
+    "trimmed_outward_minus_goalward_m_per_m": 0.05860551809388033,
+    "trimmed_retention": 0.9035105315947843,
+    "trimmed_rows": 58552
+  },
+  "primary_gates": {
+    "gates": {
+      "all_7_leave_one_match_out_estimates_same_sign": true,
+      "at_least_6_of_7_match_estimates_same_sign": true,
+      "primary_95_percent_interval_excludes_zero": true,
+      "trim_same_strict_sign_and_50_to_150_percent_magnitude": true
+    },
+    "same_sign_lomo_count": 7,
+    "same_sign_match_count": 7,
+    "trimmed_to_full_absolute_ratio": 1.0307734837609157,
+    "valid": true
+  },
+  "primary_status": "SPATIAL FORM SUPPORTED",
+  "sample_audit": {
+    "DRD_residuals_read": false,
+    "context_v1_observation_set_reconstructed_by_frozen_v2_support": true,
+    "observation_id_count": 64805,
+    "observation_id_sha256": "ff2e0a376899486c36a8224ff3b711c55bcc4b9f19e4cef2a1784d8451ea1242",
+    "target_read_only_after_outcome_blind_support_and_spatial_geometry": true
+  },
+  "secondary": {
+    "dynamic_by_match": {
+      "J03WMX": 0.9014422556344948,
+      "J03WN1": 0.9015759347644405,
+      "J03WOH": 0.8989188021253874,
+      "J03WOY": 0.9312477793167465,
+      "J03WPY": 0.9073196301162293,
+      "J03WQQ": 0.9627776249836756,
+      "J03WR9": 0.9307467212025138
+    },
+    "dynamic_improved_matches": 2,
+    "dynamic_macro_MAE_m": 0.9191469640204983,
+    "dynamic_weighted_MAE_m": 0.9195043292695643,
+    "heldout_unseen_match_intercept": "common_global_intercept_with_unseen_match_effect_zero",
+    "paired_interval_strictly_above_zero": false,
+    "paired_interval_strictly_below_zero": false,
+    "relative_dynamic_improvement_percent": -0.05370185499188151,
+    "static_by_match": {
+      "J03WMX": 0.9001618576210779,
+      "J03WN1": 0.9011798292979615,
+      "J03WOH": 0.8979649189112796,
+      "J03WOY": 0.92982934275234,
+      "J03WPY": 0.9052165339632076,
+      "J03WQQ": 0.9650185226686028,
+      "J03WR9": 0.9312044046472725
+    },
+    "static_improved_matches": 5,
+    "static_macro_MAE_m": 0.9186536299802487,
+    "static_minus_dynamic_macro_mae_m": -0.0004933340402496489,
+    "static_weighted_MAE_m": 0.9189155282357463
+  },
+  "secondary_status": "NO CLEAR REPRESENTATIONAL ADVANTAGE",
+  "support": {
+    "Y_IQR_m": [
+      -0.7503434792678663,
+      0.6611057153921589
+    ],
+    "predictor_support": {
+      "attacker_goalward_displacement_m": {
+        "max": 32.20142856878894,
+        "min": -40.96571322849819,
+        "p10": -3.834285661152431,
+        "p90": 4.926571437290734
+      },
+      "attacker_outward_displacement_m": {
+        "max": 18.795714378356934,
+        "min": -35.27142824445452,
+        "p10": -3.4922858170100612,
+        "p90": 2.8599997929164354
+      },
+      "attacker_path_exposure_m": {
+        "max": 54.394928023473305,
+        "min": 0.0,
+        "p10": 0.9730575178710308,
+        "p90": 7.535800809840236
+      },
+      "attacker_path_prior_m": {
+        "max": 49.20984089272887,
+        "min": 0.0,
+        "p10": 1.0214423053965485,
+        "p90": 7.681830708252838
+      }
+    }
+  }
+}
