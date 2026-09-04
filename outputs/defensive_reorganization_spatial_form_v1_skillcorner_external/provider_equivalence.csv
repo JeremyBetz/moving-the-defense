@@ -1,0 +1,10 @@
+match_id,frames_compared,player_sets_exact,team_ids_exact,goalkeeper_ids_exact,possession_team_exact,coordinate_null_masks_exact,max_period_time_difference_s,max_player_coordinate_difference_m,max_ball_coordinate_difference_m,pitch_dimensions_exact,Kloppy_drops_native_is_detected,pass
+1886347,59042,True,True,True,True,True,4.547473508864641e-13,0.0,0.0,True,True,True
+1899585,60511,True,True,True,True,True,4.547473508864641e-13,0.0,0.0,True,True,True
+1925299,61282,True,True,True,True,True,4.547473508864641e-13,0.0,0.0,True,True,True
+1996435,57602,True,True,True,True,True,4.547473508864641e-13,0.0,0.0,True,True,True
+2006229,59251,True,True,True,True,True,4.547473508864641e-13,0.0,0.0,True,True,True
+2011166,59292,True,True,True,True,True,4.547473508864641e-13,0.0,0.0,True,True,True
+2013725,56792,True,True,True,True,True,4.547473508864641e-13,0.0,0.0,True,True,True
+2015213,59902,True,True,True,True,True,4.547473508864641e-13,0.0,0.0,True,True,True
+2017461,58452,True,True,True,True,True,4.547473508864641e-13,0.0,0.0,True,True,True

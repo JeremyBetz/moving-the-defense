@@ -1,0 +1,18 @@
+{
+  "gates": {
+    "all_leave_one_match_out_contrasts_positive": true,
+    "at_least_70_percent_match_contrasts_positive": true,
+    "at_least_8_valid_matches": true,
+    "bootstrap_95_percent_interval_strictly_positive": true,
+    "pooled_contrast_strictly_positive": true,
+    "quality_full_rank_positive_and_50_to_150_percent_magnitude": true,
+    "trim_positive_and_50_to_150_percent_magnitude": true
+  },
+  "minimum_positive_matches_required": 7,
+  "positive_match_percent": 100.0,
+  "positive_matches": 9,
+  "quality_to_full_absolute_ratio": 0.9569842186620117,
+  "trimmed_to_full_absolute_ratio": 0.9900553981748696,
+  "valid_execution": true,
+  "valid_matches": 9
+}

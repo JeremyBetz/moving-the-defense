@@ -1,0 +1,10 @@
+column,estimate_m_per_m
+attacker_path_exposure_m,0.05211783281548593
+attacker_path_prior_m,0.0014099954796168677
+attacker_minus_unit_goalward_m,-0.020051980781614548
+attacker_ball_distance_start_m,-0.012239259006905003
+defending_unit_width_m,0.0012679236828311911
+defending_unit_depth_m,-0.004064219668567008
+ball_minus_unit_goalward_m,-0.003396575954084912
+attacker_goalward_displacement_m,-0.01842532728337104
+attacker_outward_displacement_m,0.030457826648368377

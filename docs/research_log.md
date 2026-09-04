@@ -1,5 +1,30 @@
 # Research Log
 
+## 2026-09-04 — SkillCorner Spatial Form external replication executed: SUPPORTED
+
+The first governed SkillCorner outcome construction followed a full nine-match
+native-versus-Kloppy equivalence gate before target construction: frames,
+identities, goalkeeper IDs, ball and player coordinates, possession team, pitch
+dimensions, and null masks were exact; maximum period-time deviation was
+4.55e-13 s. A pre-execution canonical-rank reconciliation corrected only a
+mechanical support-audit discrepancy (native rather than required canonical
+105-by-68 m rank ordering); no outcome was constructed before that correction.
+
+The unchanged external model retained 49,107 rows across 3,382 anchors and all
+nine formal matches. The outward-minus-goalward coefficient was **0.048883
+m/m** with frozen block-bootstrap interval **[0.042940, 0.054707]**. Every
+match-specific and leave-one-match-out contrast was positive; the joint trim
+retained 99.01% of full magnitude and the majority-detected sensitivity retained
+95.70%. The exact status is **SKILLCORNER SPATIAL FORM EXTERNAL REPLICATION
+SUPPORTED**. Fourteen compact governed outputs reproduced byte-for-byte in an
+independent run.
+
+This is a third tracking-environment observational replication of the frozen
+spatial-form association. It does not establish tactical preference, attacker
+influence, causation, marking, space creation, gravity, or value. No DRD
+residuals, Game 3, player/team rankings, alternate representation, or
+cross-provider pooled estimate was created.
+
 ## 2026-09-04 — SkillCorner Spatial Form compatibility passed; external protocol frozen before outcome
 
 An outcome-blind provider audit classified the proposed SkillCorner external

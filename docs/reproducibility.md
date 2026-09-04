@@ -429,15 +429,17 @@ improvement missed the frozen 3.0% SUPPORT gate. Therefore its local-only
 prediction ledger was not used to inspect residuals or DRD, and no retrieval,
 transport, SkillCorner outcome, player ranking, or Game 3 access occurred.
 
-## SkillCorner Spatial Form external replication — frozen, unexecuted
+## SkillCorner Spatial Form external replication — executed
 
 The prospective external-replication design is governed by
 [`protocols/defensive_reorganization_spatial_form_v1_skillcorner_external.md`](protocols/defensive_reorganization_spatial_form_v1_skillcorner_external.md)
 and
 [`config/defensive_reorganization_spatial_form_v1_skillcorner_external.json`](../config/defensive_reorganization_spatial_form_v1_skillcorner_external.json).
-The [provider-compatibility audit](skillcorner_spatial_form_provider_compatibility.md)
+The [provider-compatibility audit](skillcorner_spatial_form_provider_compatibility.md),
+[pre-execution support reconciliation](protocols/defensive_reorganization_spatial_form_v1_skillcorner_external_preexecution_support_reconciliation.md),
 and [license/publication note](skillcorner_open_data_license.md) document the
-outcome firewall and public-artifact boundary. Frozen-file identities are in
+outcome firewall, canonical-rank support correction, and public-artifact
+boundary. Frozen-file identities are in
 [`config/defensive_reorganization_spatial_form_v1_skillcorner_external_hashes.json`](../config/defensive_reorganization_spatial_form_v1_skillcorner_external_hashes.json).
 
 The source release is SkillCorner Open Data at upstream commit
@@ -448,17 +450,28 @@ possession-team objects. The governed adapter merges support by exact
 match/frame/player identity. Raw provider data remain ignored and are not
 committed.
 
-The focused pre-outcome contract checks are:
+The governed execution is implemented in
+`src/defensive_reorganization_spatial_form_skillcorner_external.py`; compact
+aggregate outputs and the [result report](results/defensive_reorganization_spatial_form_v1_skillcorner_external.md)
+are committed. It retained 49,107 rows across 3,382 anchors and nine valid
+matches. The pooled outward-minus-goalward contrast was 0.048883 m/m with a
+95% block-bootstrap interval [0.042940, 0.054707]. All nine match and
+leave-one-match-out contrasts were positive; the frozen trim and
+majority-detected quality sensitivity passed. This is a supported
+observational spatial-form replication, not a tactical or value result.
+
+Focused checks are:
 
 ```bash
-.venv/bin/python -m pytest -q tests/test_skillcorner_spatial_form_adapter.py
+.venv/bin/python -m pytest -q tests/test_defensive_reorganization_spatial_form_skillcorner_external.py tests/test_skillcorner_spatial_form_adapter.py
 ```
 
 They verify native period time, physical windows, canonical pitch scaling,
 goalward/outward transforms, active-roster construction, tracking-quality
-support, and the identity-step boundary. They do not construct the localized
-defensive-reorganization target or fit a model. The protocol is frozen but has
-not been executed; there is no SkillCorner coefficient, interval, or result.
+support, identity-step boundary, raw-unit model design, and the external
+classification gate. A complete independent rerun reproduced all 14 governed
+compact outputs byte-for-byte. Native support flags remain authoritative because
+Kloppy does not retain `is_detected`.
 
 ## Known reproducibility limitations
 

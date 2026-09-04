@@ -1,0 +1,20 @@
+{
+  "DRD_residual_not_read": true,
+  "Metrica_Game_3_untouched": true,
+  "alternate_spatial_representation_not_tested": true,
+  "at_least_eight_valid_matches": true,
+  "bootstrap_valid_at_least_1900": true,
+  "cross_provider_meta_analysis_not_created": true,
+  "exact_formal_match_set_only": true,
+  "finite_target_and_model_columns": true,
+  "frozen_hashes": true,
+  "lomo_full_rank": true,
+  "no_interpolation": true,
+  "no_row_level_provider_outputs_written": true,
+  "per_match_full_rank": true,
+  "player_team_rankings_not_created": true,
+  "pooled_full_rank": true,
+  "provider_equivalence_every_valid_match": true,
+  "simultaneous_retained_anchor_groups_preserved": true,
+  "unique_observation_ids": true
+}

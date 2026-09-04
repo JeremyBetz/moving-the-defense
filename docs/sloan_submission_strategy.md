@@ -29,11 +29,12 @@ positive in all seven match and leave-one-match-out fits. Its static five-lane
 versus dynamic unit-relative comparison found **NO CLEAR REPRESENTATIONAL
 ADVANTAGE**. Treat this as a bounded geometric characterization for a results
 table or supplement—not a tactical, causal, space-creation, or value claim.
-The [SkillCorner external-replication protocol](protocols/defensive_reorganization_spatial_form_v1_skillcorner_external.md)
-is now frozen after an outcome-blind provider-compatibility audit, but it has
-not been executed. A third-environment result could strengthen the paper later;
-it is not required to support the current submission story and must not be
-treated as existing evidence.
+The [SkillCorner external replication](results/defensive_reorganization_spatial_form_v1_skillcorner_external.md)
+subsequently passed its separately frozen nine-match design: the
+outward-minus-goalward contrast was 0.048883 m/m [0.042940, 0.054707], with
+all match and leave-one-match-out directions positive. It strengthens the
+geometric evidence across a third tracking environment, while remaining
+observational and separate from any cross-provider pooled estimate.
 
 ## 1. The paper that exists today
 

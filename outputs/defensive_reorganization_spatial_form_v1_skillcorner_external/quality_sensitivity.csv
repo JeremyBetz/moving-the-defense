@@ -1,0 +1,2 @@
+rows,anchors,matches,full_rank,model_rank,beta_goalward_m_per_m,beta_outward_m_per_m,outward_minus_goalward_m_per_m
+11810,2037,9,True,18,-0.01799710509780816,0.02878330177329233,0.046780406871100494

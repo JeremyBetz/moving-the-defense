@@ -1,0 +1,205 @@
+{
+  "bootstrap": {
+    "block_seconds": 60.0,
+    "ci_high": 0.05470717099579395,
+    "ci_low": 0.042940468423309466,
+    "replicates_requested": 2000,
+    "seed": 20260905,
+    "valid_replicates": 2000
+  },
+  "classification": "SKILLCORNER SPATIAL FORM EXTERNAL REPLICATION SUPPORTED",
+  "classification_criteria": {
+    "gates": {
+      "all_leave_one_match_out_contrasts_positive": true,
+      "at_least_70_percent_match_contrasts_positive": true,
+      "at_least_8_valid_matches": true,
+      "bootstrap_95_percent_interval_strictly_positive": true,
+      "pooled_contrast_strictly_positive": true,
+      "quality_full_rank_positive_and_50_to_150_percent_magnitude": true,
+      "trim_positive_and_50_to_150_percent_magnitude": true
+    },
+    "minimum_positive_matches_required": 7,
+    "positive_match_percent": 100.0,
+    "positive_matches": 9,
+    "quality_to_full_absolute_ratio": 0.9569842186620117,
+    "trimmed_to_full_absolute_ratio": 0.9900553981748696,
+    "valid_execution": true,
+    "valid_matches": 9
+  },
+  "execution": {
+    "DRD_residuals_read": false,
+    "Metrica_Game_3_accessed": false,
+    "alternate_spatial_representation": false,
+    "cross_provider_pooled_meta_analysis": false
+  },
+  "firewall": {
+    "DRD_residuals_read": false,
+    "Metrica_Game_3_accessed": false,
+    "SkillCorner_classification_preexisting": false,
+    "SkillCorner_coefficient_preexisting": false,
+    "SkillCorner_response_target_preexisting": false,
+    "excluded_match": 1953632,
+    "excluded_match_reason": "provider_top_level_status_not_started_conflicts_with_complete_two_period_files",
+    "frozen_hashes_verified": {
+      "config/defensive_reorganization_spatial_form_v1_skillcorner_external.json": "7b1537235dd6966b9ade55a091c3688635e8cdf586673f45fa0b5aa64d50a79e",
+      "config/defensive_reorganization_spatial_form_v1_skillcorner_external_hashes.json": "b24b0ffda4a96052851100c28254799cf7099f76b225aabb3597d8bb555f2f73",
+      "config/defensive_reorganization_spatial_value_v1.json": "2d8d7abac9738ccb8a4765c657f6865ab445cf390e41ed8063b05a111d62e5df",
+      "docs/protocols/defensive_reorganization_spatial_form_v1_skillcorner_external.md": "9d863157e9bf938b4e13d216f73c5b56057d9c59f34a86b47dac20a4d9d9f80e",
+      "docs/protocols/defensive_reorganization_spatial_form_v1_skillcorner_external_preexecution_support_reconciliation.md": "db3dcdf533f687f875c252a2d17aebe55a4f3bfe5c29726d33a259056fc1bf84",
+      "docs/protocols/defensive_reorganization_spatial_value_v1.md": "d394519c7839ad20aba3806b2bbae5bf7b71bdb33a77a70eeb0b6d0c8af08e25"
+    }
+  },
+  "hard_qc": {
+    "DRD_residual_not_read": true,
+    "Metrica_Game_3_untouched": true,
+    "alternate_spatial_representation_not_tested": true,
+    "at_least_eight_valid_matches": true,
+    "bootstrap_valid_at_least_1900": true,
+    "cross_provider_meta_analysis_not_created": true,
+    "exact_formal_match_set_only": true,
+    "finite_target_and_model_columns": true,
+    "frozen_hashes": true,
+    "lomo_full_rank": true,
+    "no_interpolation": true,
+    "no_row_level_provider_outputs_written": true,
+    "per_match_full_rank": true,
+    "player_team_rankings_not_created": true,
+    "pooled_full_rank": true,
+    "provider_equivalence_every_valid_match": true,
+    "simultaneous_retained_anchor_groups_preserved": true,
+    "unique_observation_ids": true
+  },
+  "primary": {
+    "beta_goalward_m_per_m": -0.01842532728337104,
+    "beta_outward_m_per_m": 0.030457826648368377,
+    "five_m_translation_m": 0.2444157696586971,
+    "outward_minus_goalward_m_per_m": 0.04888315393173942,
+    "pooled_model_rank": 18
+  },
+  "quality_sensitivity": {
+    "anchors": 2037,
+    "beta_goalward_m_per_m": -0.01799710509780816,
+    "beta_outward_m_per_m": 0.02878330177329233,
+    "full_rank": true,
+    "matches": 9,
+    "model_rank": 18,
+    "outward_minus_goalward_m_per_m": 0.046780406871100494,
+    "rows": 11810
+  },
+  "sample": {
+    "anchors": 3382,
+    "match_ids": [
+      "1886347",
+      "1899585",
+      "1925299",
+      "1996435",
+      "2006229",
+      "2011166",
+      "2013725",
+      "2015213",
+      "2017461"
+    ],
+    "rows": 49107,
+    "valid_matches": 9
+  },
+  "trim": {
+    "beta_goalward_m_per_m": -0.01886475203195639,
+    "beta_outward_m_per_m": 0.029532278397975325,
+    "bounds": {
+      "1886347": {
+        "attacker_goalward_displacement_m": [
+          -7.741983173076923,
+          9.158137019230766
+        ],
+        "attacker_outward_displacement_m": [
+          -7.03,
+          6.913333333333334
+        ]
+      },
+      "1899585": {
+        "attacker_goalward_displacement_m": [
+          -7.092379807692311,
+          9.648221153846157
+        ],
+        "attacker_outward_displacement_m": [
+          -6.409166666666667,
+          6.285499999999998
+        ]
+      },
+      "1925299": {
+        "attacker_goalward_displacement_m": [
+          -6.819916666666662,
+          8.497749999999995
+        ],
+        "attacker_outward_displacement_m": [
+          -6.478500000000001,
+          6.118499999999998
+        ]
+      },
+      "1996435": {
+        "attacker_goalward_displacement_m": [
+          -7.459000000000004,
+          9.176499999999987
+        ],
+        "attacker_outward_displacement_m": [
+          -6.338500000000001,
+          5.74799999999999
+        ]
+      },
+      "2006229": {
+        "attacker_goalward_displacement_m": [
+          -6.986666666666666,
+          8.557166666666667
+        ],
+        "attacker_outward_displacement_m": [
+          -6.733333333333332,
+          6.577166666666664
+        ]
+      },
+      "2011166": {
+        "attacker_goalward_displacement_m": [
+          -7.789916666666669,
+          9.928999999999977
+        ],
+        "attacker_outward_displacement_m": [
+          -7.066583333333334,
+          6.176583333333333
+        ]
+      },
+      "2013725": {
+        "attacker_goalward_displacement_m": [
+          -8.779716981132072,
+          9.111556603773586
+        ],
+        "attacker_outward_displacement_m": [
+          -6.798333333333334,
+          6.220000000000001
+        ]
+      },
+      "2015213": {
+        "attacker_goalward_displacement_m": [
+          -8.180259433962263,
+          9.49341981132075
+        ],
+        "attacker_outward_displacement_m": [
+          -7.206666666666667,
+          6.664833333333334
+        ]
+      },
+      "2017461": {
+        "attacker_goalward_displacement_m": [
+          -7.635416666666668,
+          9.673749999999998
+        ],
+        "attacker_outward_displacement_m": [
+          -6.877916666666667,
+          6.376250000000001
+        ]
+      }
+    },
+    "model_rank": 18,
+    "outward_minus_goalward_m_per_m": 0.048397030429931716,
+    "retained_proportion": 0.9018877145824424,
+    "rows_retained": 44289
+  }
+}

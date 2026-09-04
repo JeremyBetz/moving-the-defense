@@ -1,0 +1,25 @@
+{
+  "bootstrap_replicates": 2000,
+  "bootstrap_seed": 20260905,
+  "classification": "SKILLCORNER SPATIAL FORM EXTERNAL REPLICATION SUPPORTED",
+  "configuration_sha256": "7b1537235dd6966b9ade55a091c3688635e8cdf586673f45fa0b5aa64d50a79e",
+  "data_repository_commit": "c1e17a0cc3e07e1774b52d929c1a0b85115143fc",
+  "formal_matches": [
+    1886347,
+    1899585,
+    1925299,
+    1996435,
+    2006229,
+    2011166,
+    2013725,
+    2015213,
+    2017461
+  ],
+  "freeze_ledger_sha256": "b24b0ffda4a96052851100c28254799cf7099f76b225aabb3597d8bb555f2f73",
+  "implementation_sha256": "933cfe4da4687f20473914d452e7c211e2a6ae955597400093af990e0f695f2c",
+  "kloppy_version": "3.19.0",
+  "preexecution_support_reconciliation_sha256": "db3dcdf533f687f875c252a2d17aebe55a4f3bfe5c29726d33a259056fc1bf84",
+  "prospective_match_exclusion": 1953632,
+  "protocol_sha256": "9d863157e9bf938b4e13d216f73c5b56057d9c59f34a86b47dac20a4d9d9f80e",
+  "publication_policy": "compact_aggregate_outputs_only"
+}
