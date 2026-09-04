@@ -5,9 +5,14 @@ closed **INVALID before model fitting**. The seven-match common sample failed
 its frozen 1,000-rows-per-match gate because `J03WN1` retained 782
 threshold-free off-ball rows under the exact 10-attacking-outfielder support
 rule. See the [governed result](results/defensive_reorganization_departure_v1.md).
-No E0/E1 prediction, residual, DRD, retrieval, Metrica transport, SkillCorner
-outcome, or player ranking was computed; Metrica Sample Game 3 remains
-untouched.
+An [outcome-blind support audit](defensive_reorganization_departure_v2_support_audit.md)
+subsequently froze a [superseding v2 protocol](protocols/defensive_reorganization_departure_v2.md)
+that changes only the attacking entity-support definition: complete support
+must equal the event-defined current on-pitch outfield set, including after a
+confirmed dismissal. The 1,000-row gate and every downstream scientific rule
+remain unchanged. V2 has not executed. No E0/E1 prediction, residual, DRD,
+retrieval, Metrica transport, SkillCorner outcome, or player ranking was
+computed; Metrica Sample Game 3 remains untouched.
 
 **Working paper:** *Measuring Localized Defensive Reorganization Associated
 with Off-Ball Movement in Football*

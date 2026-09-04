@@ -1,0 +1,34 @@
+{
+  "status": "FROZEN_BEFORE_ANY_DRD_V2_TARGET_OR_MODEL_OUTCOME",
+  "freeze_date": "2026-09-04",
+  "starting_commit": "0a25e0996393184a9e5e1c01ca3c8e7aa58fd26d",
+  "frozen_v2_sha256": {
+    "docs/protocols/defensive_reorganization_departure_v2.md": "25fb7ad7a08ddbeeced5b63a51894f4b94acd66235131908fb73c38e5cde5c1b",
+    "config/defensive_reorganization_departure_v2.json": "37718dad1e696a1cc0b6717fc9132efe1368dbf3d114b680e63556822670c3af"
+  },
+  "support_audit_sha256": {
+    "docs/defensive_reorganization_departure_v2_support_audit.md": "cabcca67d8a39c7f998ea30ecba57f84b730c469002bfa090aa4c292f3222d5b",
+    "src/defensive_reorganization_departure_v2_support.py": "90285951c4ec60d474c5ec36d930c3e5568bf9be404e55d4eabc348cacd9e032",
+    "tests/test_defensive_reorganization_departure_v2_support.py": "f784f18329c52065dd90e920ce84760d10846667be7976ddd35ca1fa0752f768"
+  },
+  "preserved_v1_sha256": {
+    "docs/protocols/defensive_reorganization_departure_v1.md": "14e504345ca1cdf4f972cde2e751af94593c6fc7ccb7fc283f7328c605113df9",
+    "config/defensive_reorganization_departure_v1.json": "db6aa141d95fa10adaee1c151f116da06ffb535d6e12a8f67e512b3348090174",
+    "config/defensive_reorganization_departure_v1_hashes.json": "fedaeb907807e098a8fb1ede68d62403dc0787bcbe19bd92e738aee6ce545f80",
+    "outputs/defensive_reorganization_departure_v1/result.json": "2684d4d5abe616c918890bc0a0c9cc8a7e0a6c333d6d9bf44a2670ab31cacdd5",
+    "outputs/defensive_reorganization_departure_v1/governed_hashes.json": "2cb47e10700648e878120b93815e3bb8e1f160033ae091f64e366f2533f42b86",
+    "outputs/defensive_reorganization_departure_v1/reproduction.json": "67c4a1fa5da4d064c1054739601372779b1ad35a7fb43d07a624b9024bc5aec9",
+    "outputs/defensive_reorganization_departure_v1/final_hashes.json": "10dcf60a7c65d7ff15da4c521238a788828c3793e4cb186e5d5daae6a99a20c4",
+    "outputs/defensive_reorganization_departure_v1/sample_retention.csv": "535d7abc7f1bdad4d38840428e84589f7795abb0ad377db47ec9e63099f9be0c"
+  },
+  "firewall": {
+    "v1_status_preserved": "DRD APPLICATION FOUNDATION INVALID",
+    "v2_sample_built": false,
+    "empirical_target_inspected": false,
+    "E0_or_E1_fitted": false,
+    "prediction_error_or_residual_inspected": false,
+    "DRD_or_retrieval_computed": false,
+    "SkillCorner_outcome_ingested": false,
+    "Metrica_Game_3": "untouched"
+  }
+}

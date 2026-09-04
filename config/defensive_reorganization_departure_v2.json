@@ -1,0 +1,61 @@
+{
+  "schema_version": "2.0.0",
+  "status": "FROZEN_BEFORE_ANY_DRD_V2_TARGET_OR_MODEL_OUTCOME",
+  "freeze_date": "2026-09-04",
+  "supersedes_for_future_execution": "defensive_reorganization_departure_v1",
+  "v1_final_status_preserved": "DRD APPLICATION FOUNDATION INVALID",
+  "inherit_v1_protocol": "docs/protocols/defensive_reorganization_departure_v1.md",
+  "inherit_v1_configuration": "config/defensive_reorganization_departure_v1.json",
+  "sole_scientific_change": "attacking_entity_support_uses_complete_event_defined_current_on_pitch_outfield_set_instead_of_exactly_ten",
+  "attacking_entity_support": {
+    "starting_registry": "ten_match_metadata_outfield_players_with_Starting_true",
+    "events_through_anchor": [
+      "identified_substitution_replaces_active_outgoing_with_incoming",
+      "confirmed_player_dismissal_removes_active_player"
+    ],
+    "simultaneous_event_order": "provider_event_time_then_lexical_event_id",
+    "tracking_requirement": "exact_set_equality_between_event_defined_active_outfield_and_complete_finite_centered_7_frame_tracking_support",
+    "tracking_support_seconds": [-0.12, 0.12],
+    "minimum_active_outfield_for_focal_eligibility": 2,
+    "maximum_active_outfield": 10,
+    "ambiguous_or_inconsistent_roster_history": "exclude_anchor_fail_closed",
+    "partial_active_set": "prohibited",
+    "extra_noncurrent_complete_player": "prohibited"
+  },
+  "off_ball": {
+    "reference_set": "complete_event_defined_current_on_pitch_attacking_outfield_set",
+    "rule": "exclude_unique_Euclidean_ball_nearest_at_anchor",
+    "tie_break": "canonical_player_key_ascending",
+    "distance_threshold": null,
+    "semantics": "not_ball_nearest_at_anchor_not_observed_ball_carrier_or_tactical_run"
+  },
+  "unchanged": {
+    "matches": ["J03WMX", "J03WN1", "J03WOH", "J03WOY", "J03WPY", "J03WQQ", "J03WR9"],
+    "minimum_rows_per_match": 1000,
+    "minimum_retention_of_otherwise_eligible_off_ball_rows": 0.9,
+    "target_Y": true,
+    "E0": true,
+    "E1": true,
+    "ridge_model": true,
+    "alpha_grid": true,
+    "nested_leave_match_out_validation": true,
+    "success_thresholds": true,
+    "context_family_ablations": true,
+    "DRD_definition": true,
+    "retrieval_rules": true,
+    "SkillCorner_gate": true,
+    "player_ranking_prohibition": true,
+    "stop_rules": true
+  },
+  "disclosure": "v1 prospectively failed support before fitting; v2 was designed after observing support composition but before outcomes",
+  "execution": {
+    "v2_sample_built": false,
+    "empirical_target_inspected": false,
+    "E0_or_E1_fitted": false,
+    "prediction_error_or_residual_inspected": false,
+    "DRD_computed": false,
+    "retrieval_generated": false,
+    "SkillCorner_outcome_ingested": false,
+    "Metrica_Game_3_accessed": false
+  }
+}

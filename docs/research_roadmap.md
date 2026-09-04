@@ -107,6 +107,16 @@ forbids repairing the support rule or reducing the match set. It remains a
 movement/context application—not gravity, influence, value, tactical response,
 or a player ranking—and Game 3 remains untouched.
 
+An outcome-blind [support audit](defensive_reorganization_departure_v2_support_audit.md)
+retains that v1 INVALID result while distinguishing complete current-player
+support from an invariant ten-player team size. A confirmed J03WN1 dismissal
+made v1's exact-ten attacker rule inapplicable after the dismissal even though
+the complete current set could in principle be identified. The prospectively
+[frozen v2 protocol](protocols/defensive_reorganization_departure_v2.md) changes
+only that entity-support rule and retains the 1,000-row gate and every
+scientific model/decision rule. V2 has not executed and supplies no application
+evidence.
+
 The [Opportunity Redistribution v1 protocol](protocols/opportunity_redistribution_v1.md) tested whether the replicated focal-local defensive contrast was associated with differential nearest-defender separation gain for other attackers initially local rather than remote to the focal attacker. The [Game 1 result](results/opportunity_redistribution_game1_v1.md) is **NEGATIVE**: the primary $\beta_D$ was −0.02407 [−0.09392, 0.04776], and two of three robustness signs were negative. This narrow geometric bridge did not survive development. Game 2 was not opened; Game 3 remains reserved.
 
 ### Research decision point after Opportunity Redistribution v1

@@ -390,7 +390,7 @@ MPLCONFIGDIR=/tmp/mtd-mpl OPENBLAS_NUM_THREADS=1 .venv/bin/python src/defensive_
 
 The ten compact governed outputs reproduce byte-for-byte. `prediction_source_rows.parquet` and `prediction_rows.parquet` remain local-only; compact errors, bootstrap/control results, provenance, and hashes are publishable. The execution does not access Metrica Sample Game 3.
 
-## Defensive Reorganization Departure v1
+## Defensive Reorganization Departure v1 and frozen v2 support governance
 
 The [frozen protocol](protocols/defensive_reorganization_departure_v1.md) and
 [result](results/defensive_reorganization_departure_v1.md) govern the compact
@@ -409,6 +409,22 @@ No prediction ledger is created: the frozen support gate stops before model
 fitting. The provider-linked observation-level eligibility ledger remains
 local-only; its governed SHA-256 is retained in the compact final hash ledger.
 The execution does not access Metrica Sample Game 3.
+
+The [outcome-blind support audit](defensive_reorganization_departure_v2_support_audit.md)
+and [v2 protocol](protocols/defensive_reorganization_departure_v2.md) supersede
+only future attacking-entity support. V2 derives the current outfield set from
+starting metadata, substitutions, and confirmed dismissals, then requires
+exact equality with complete seven-frame tracking support before applying the
+unchanged ball-nearest exclusion. Focused contract tests are:
+
+```bash
+.venv/bin/python -m pytest -q tests/test_defensive_reorganization_departure_v2_support.py
+```
+
+The 1,000-row/90% gates, target, E0/E1, model, validation, classifications,
+retrieval, SkillCorner gate, player prohibition, and stop rule remain v1. V2
+has not been executed and has no sample, model, prediction, residual, or DRD
+artifact.
 
 ## Known reproducibility limitations
 

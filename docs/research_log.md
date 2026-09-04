@@ -1,5 +1,26 @@
 # Research Log
 
+## 2026-09-04 — Defensive Reorganization Departure v2 support governance frozen
+
+An outcome-blind audit retained the closed v1 **INVALID** status and found no
+documented mathematical, power, or effective-support derivation for its
+1,000-row minimum. That threshold remains unchanged: J03WN1's 782 v1 rows span
+only 87 anchors, eight first-period blocks, and 416 seconds, so selecting a
+passing block rule now would be result-driven.
+
+The audit instead identified a principled entity-definition issue. A confirmed
+J03WN1 dismissal left nine current attacking outfield players, while v1 still
+required ten to define the ball-nearest exclusion. Complete support for every
+current attacker is necessary; a team size of exactly ten is not. The
+[superseding v2 protocol](protocols/defensive_reorganization_departure_v2.md)
+therefore requires exact agreement between the event-defined current on-pitch
+attacking outfield set and complete anchor tracking support. All target, model,
+validation, threshold, retrieval, provider, and stopping rules are inherited
+unchanged. Disclosure is explicit: v1 failed support before fitting; v2 was
+designed after observing support composition but before outcomes. No v2 sample,
+target, E0/E1 fit, error, residual, DRD, retrieval, SkillCorner outcome, or
+Game 3 access occurred.
+
 ## 2026-09-04 — Defensive Reorganization Departure v1 invalid before model fitting
 
 The prospective seven-match IDSSE execution deterministically failed its
