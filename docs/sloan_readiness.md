@@ -24,6 +24,7 @@ The repository now supports a prospectively tested attacker-movement-to-defensiv
 - **Attacking-interval groundwork:** discrete direction-aware episode boundaries remain **MIXED**, but continuous fixed 1/2/4-second attacker geometry subsequently replicated under the frozen two-match Metrica protocol and supplied the bridge's temporal unit.
 - **Within-provider bridge:** the frozen continuous-window attacker-to-defender test classified Final A across both Metrica sample matches, with positive pooled primary and paired-control intervals and every frozen robustness/QC gate passing.
 - **External temporal bridge:** the unchanged spatial-footprint test was supported across all seven governed IDSSE matches. Its pooled near-minus-middle contrast was 0.06115 [0.05579, 0.06681] and its prospectively paired excess over reverse time was 0.02455 [0.01932, 0.02985]. This is external observational time ordering, not causation or tactical meaning.
+- **Starting spatial context:** the IDSSE-only Context v1 analysis was **SUPPORTED**. Conditional on frozen movement/depth controls, measured near-minus-middle defender-relative movement was smaller when the attacker started farther goalward relative to the defensive unit (`-0.010161 m/m`, 97.5% `[-0.011805, -0.008499]`) or farther from the ball (`-0.007533 m/m`, 97.5% `[-0.008864, -0.006245]`). Both directions held in `7/7` match-specific and `7/7` leave-one-match-out fits, with the frozen trim passing. This characterizes observed geometry; it does not explain why it occurred.
 - **Spatial-footprint replication:** the frozen footprint classified Final A across the two Metrica sample matches: near ranks had a stronger association than middle ranks, while middle and far regions remained similar.
 - **Concurrent localization and interpretation boundary:** the near-minus-middle concurrent focal-relative movement association replicated across both Metrica matches and all seven governed IDSSE matches (pooled 0.05115 [0.04595, 0.05642]), but frozen Opportunity Redistribution v1 was negative on Game 1 ($\beta_D=-0.02407$ [−0.09392, 0.04776]). Cross-provider observational geometry therefore cannot be presented as teammate separation, space creation, gravity, or value.
 - **Match-side expectation boundary:** Defensive Response Expectation v1 was **NOT SUPPORTED**. Compact spatial context improved the movement baseline slightly in all seven IDSSE matches, but the frozen match-side increment worsened heldout prediction in every match. Stable team identity and tactical style therefore remain outside the evidence.
@@ -44,14 +45,13 @@ defensive geometric change
 
 It uses continuous two-second attacker path rather than the rejected discrete episode rules, and subsequent focal-relative path supplies amount of defender movement rather than tactical meaning. The stepped spatial footprint now has unchanged held-out Game 2, pooled, and seven-match IDSSE support. Broader population transport and football semantics remain later questions; proximity or timing must not become causation.
 
-The main pre-Sloan gap remains communication: integrate the externally
-replicated localized defensive-reorganization result into one football-readable
-figure and a concise methods/results narrative. The separate IDSSE-only
-[Context v1 result](results/defensive_reorganization_context_v1.md) is
-**SUPPORTED**: two frozen starting relationships characterize variation in the
-observed near-minus-middle geometry. It adds bounded descriptive application
-value, not tactical or causal meaning, and does not justify opening Metrica
-Sample Game 3 before the abstract deadline.
+The main pre-Sloan task is now presentation rather than another empirical
+branch: explain the externally replicated localized-reorganization result with
+one football-readable figure, a concise results table, and the bounded Context
+v1 finding that starting ball/block geometry characterizes variation in the
+observed near-minus-middle measure. Analysts can use this to contextualize
+passages with strong measured reorganization, not to infer tactics or advice.
+It does not justify opening Metrica Sample Game 3 before the abstract deadline.
 
 The gap is **not** the absence of a gravity score. Gravity, attacker attribution, tactical classification, causal influence, and final off-ball value are later possibilities, not abstract prerequisites.
 
@@ -67,8 +67,8 @@ The gap is **not** the absence of a gravity score. Gravity, attacker attribution
 | Development/validation discipline | Strong through the frozen two-match bridge | Apply the same discipline to any semantic or cross-provider extension. |
 | Reproducibility | Substantial but incomplete | Resolve environment drift, document large artifacts, and add lightweight automated integrity checks. |
 | Literature positioning | Targeted, not systematic | Extend movement/change-point and elite-tracking coverage; avoid universal novelty claims. |
-| Figures | Explanatory base plus governed bridge diagnostics | Build the abstract narrative from existing evidence without tactical overstatement. |
-| Practical relevance | Plausible applications only | Explain analyst-review and style-description uses without claiming a deployed product. |
+| Figures | Flagship Figure 1 plus compact temporal/context table; Context v1 figure recommended for supplement | Build the narrative from existing evidence without tactical overstatement. |
+| Practical relevance | Analyst retrieval and context characterization are supported uses | Surface passages with strong measured reorganization and compare starting ball/block geometry; do not claim advice or deployed decision support. |
 
 ## Pre-deadline evidence standard
 
@@ -95,4 +95,12 @@ The abstract can center the successful geometric bridge while treating the faile
 
 ## Current readiness conclusion
 
-The project is **bridge-complete at the external observational level, but interpretation-incomplete**. It has validated component geometry, a supported seven-match IDSSE replication of localized defensive reorganization through the named [temporal-footprint analysis](results/spatial_defensive_response_footprint_idsse_v1.md), and strong negative evidence. The pre-Sloan priority is writing and visualization from closed results; Game 3 remains untouched. Gravity, tactical classification, causation, and value are neither established nor required for a strong abstract.
+The project is **bridge-complete at the external observational level, but
+interpretation-incomplete**. It has validated component geometry, a supported
+seven-match IDSSE replication of localized defensive reorganization through the
+named [temporal-footprint analysis](results/spatial_defensive_response_footprint_idsse_v1.md),
+and a supported, bounded characterization of how the observed measure varies
+with starting ball/block geometry. It also retains strong negative evidence.
+The pre-Sloan priority is writing and visualization from closed results; Game 3
+remains untouched. Gravity, tactical classification, causation, and value are
+neither established nor required for a strong abstract.

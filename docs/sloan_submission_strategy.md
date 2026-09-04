@@ -13,9 +13,13 @@ reaction time, or automatic tactical recognition.
 The paper strategy uses only closed governed evidence. Metrica Sample Game 3
 remains untouched and no Game 3 contextual holdout is authorized before the
 Sloan abstract. The separate IDSSE-only [Context v1 result](results/defensive_reorganization_context_v1.md)
-is **SUPPORTED**: the two prospectively frozen starting relationships passed
-their governed descriptive gates. This bounded context characterization is not
-tactical, causal, or value evidence.
+is **SUPPORTED**: the measured near-minus-middle geometry was smaller when an
+attacker started farther goalward relative to the defensive unit
+(`-0.010161 m/m`, 97.5% `[-0.011805, -0.008499]`) or farther from the ball
+(`-0.007533 m/m`, 97.5% `[-0.008864, -0.006245]`). Both directions held in
+all seven match and leave-one-match-out fits, with the frozen trim passing.
+This bounded context characterization is not tactical, causal, or value
+evidence.
 
 ## 1. The paper that exists today
 
@@ -59,14 +63,16 @@ heldout testing, external replication, and explicit interpretation boundaries.
 
 ### Revised “so what?”
 
-The project now supplies a reproducible way to surface passages where attacking
-movement is followed by localized internal defensive reorganization before an
-analyst assigns tactical meaning. A coach can separate a whole-unit shift from
-one or more defenders moving differently within it; a club analyst can index
-candidate passages without first inventing marking labels; a sports scientist
-gets a provider-tested individual–collective coordination measure with an
-explicit temporal control; and a Sloan reviewer gets a prospectively governed,
-nine-match result plus genuine negative boundaries. This is strong enough as a
+The project now supplies a reproducible way to surface passages with strong
+measured localized reorganization and contextualize them using the attacker’s
+starting relationship to the ball and defensive unit before an analyst assigns
+tactical meaning. A coach can separate a whole-unit shift from one or more
+defenders moving differently within it; a club analyst can compare similar
+attacker movements from different starting ball/block geometry without first
+inventing marking labels; a sports scientist gets a provider-tested
+individual–collective coordination measure with an explicit temporal control;
+and a Sloan reviewer gets a prospectively governed, nine-match result plus
+genuine negative boundaries. This is strong enough as a
 measurement-and-validation paper without a value model, provided the paper does
 not promise causation, tactics, or a demonstrated downstream benefit.
 
@@ -79,6 +85,7 @@ not promise causation, tactics, or a demonstrated downstream benefit.
 | Temporal qualification | Forward-minus-reverse paired excess is positive pooled in Metrica and IDSSE; reverse-time structure itself remains positive | Establish frozen time-order evidence without implying reaction or causation |
 | Concurrent spatial form | Near-minus-middle concurrent localization is positive in Metrica Games 1–2 and all seven IDSSE matches | Supporting characterization, not the paper's primary result |
 | Directional form | Metrica Game 1 coherent, Game 2 mixed; seven IDSSE matches supported | Secondary evidence about geometric form, with mixed internal replication explicit |
+| Starting spatial context | IDSSE Context v1 supported: goalward attacker--unit offset and attacker--ball distance both have consistent negative slopes in 7/7 match and 7/7 LOMO fits | Characterize where measured reorganization is larger or smaller; do not infer why |
 | Falsification and QC | Rank-only null is approximately zero; activity adjustment removed about 99.2% of induced synthetic localization; rank composition remains a moderate limitation | Address simple mechanical alternatives without claiming all confounding is removed |
 | Consequence boundary | Opportunity Redistribution negative; Coverage Redistribution v3 mixed | Show that measured response is not established as separation, coverage, space creation, or value |
 
@@ -96,15 +103,17 @@ not promise causation, tactics, or a demonstrated downstream benefit.
    association in both environments.
 6. **Temporal control:** forward association exceeds the paired reverse-time
    comparison even though reverse-time structure remains positive.
-7. **Supporting form:** concurrent localization and attacker-direction geometry
-   characterize where and how the footprint appears.
-8. **Interpretation boundaries:** observational common causes, moderate rank
+7. **Contextual characterization:** starting attacker--unit and attacker--ball
+   geometry characterize where the measured footprint is larger or smaller.
+8. **Supporting form:** concurrent localization and attacker-direction geometry
+   provide secondary geometric evidence.
+9. **Interpretation boundaries:** observational common causes, moderate rank
    composition, negative opportunity, mixed coverage, and unsupported
    match-side identity.
-9. **Practical use:** surface candidate passages for review before assigning
+10. **Practical use:** surface and contextualize candidate passages for review before assigning
    tactical meaning.
-10. **Literature and limitations:** limited metric novelty; meaningful
-    validation/application contribution; no gravity or value result.
+11. **Literature and limitations:** limited metric novelty; meaningful
+   validation/application contribution; no gravity or value result.
 
 Protocol history, rejected segmentation methods, complete robustness tables,
 and consequence-design lineage belong in supplementary material rather than
@@ -177,7 +186,12 @@ matches, the pooled primary contrast was 0.06115 (95% interval
 (0.03224–0.04111), but the paired forward-minus-reverse excess was 0.02455
 (0.01932–0.02985). Primary and paired-excess estimates were positive in all
 seven IDSSE matches and remained positive across frozen 1-, 2-, and 4-second
-sensitivity windows.
+sensitivity windows. Across the seven IDSSE matches, reorganization was also
+larger when attackers started less far goalward relative to the defensive unit
+and closer to the ball; both context slopes had consistent signs in all seven
+match and leave-one-match-out fits. The predeclared trim also passed for both
+contexts, which were evaluated separately from the temporal primary model and
+do not identify a tactical mechanism.
 
 **Conclusion.** Preceding attacker movement is reproducibly associated with
 stronger subsequent defender-relative movement among nearby than middle-ranked
@@ -205,19 +219,24 @@ matches, the pooled near-minus-middle contrast was 0.05029 m/m (97.5% interval
 pooled primary contrast was 0.06115 (95% interval 0.05579–0.06681) and paired
 excess was 0.02455 (0.01932–0.02985); both point estimates were positive in
 all seven matches. Reverse-time structure remained positive, so this is an
-observational time-order result, not causation. A teammate-separation test was
-negative. The framework can surface passages of localized defensive
-reorganization for analyst review, but does not establish tactical meaning,
-space creation, gravity, or attacking value.
+observational time-order result, not causation. Across the seven IDSSE matches,
+the measured reorganization was also larger when attackers started less far
+goalward relative to the defensive unit and closer to the ball; both context
+slopes had consistent signs in all seven match and leave-one-match-out fits. A
+teammate-separation test was negative. The framework can surface and
+contextualize passages of localized defensive reorganization for analyst review,
+but does not establish tactical meaning, space creation, gravity, or attacking
+value.
 
 ### Practitioner summary
 
 The method separates a defender's movement from the shared shift of the rest
 of the defensive unit, then asks whether nearby defenders move differently
-after an attacker has moved. The pattern repeated in both Metrica matches and
-all seven IDSSE matches, so it can help surface candidate passages for video
-review—but it does not say that the attacker caused the movement or that the
-movement created value.
+after an attacker has moved. It also describes how the measured pattern varies
+with the attacker’s starting relationship to the ball and defensive unit. The
+pattern repeated in both Metrica matches and all seven IDSSE matches, so it can
+help surface and contextualize candidate passages for video review—but it does
+not say that the attacker caused the movement or that the movement created value.
 
 ## 7. Pre-Sloan work plan
 
@@ -227,7 +246,8 @@ movement created value.
    governed preceding-attacker-path distribution. It is selected before, and
    without reference to, defender response magnitude or any football outcome.
 2. Turn the working abstract into the paper's introduction, methods spine, and
-   results tables.
+   results table, keeping Context v1 as a compact “when is it stronger?”
+   characterization rather than a new primary result.
 3. Complete a claim-language, reproducibility, and literature-positioning
    audit of the closed evidence.
 4. Preserve the negative consequence results as compact interpretation
@@ -250,6 +270,8 @@ construct has a unique, predeclared representation and estimand.
   space creation, gravity, or attacking value.
 - [x] Preserve development, heldout, and external-validation provenance and
   the negative/mixed downstream results.
+- [x] Include the supported IDSSE Context v1 result as bounded descriptive
+  characterization, not tactical or causal interpretation.
 - [ ] Resolve the existing manuscript decisions on target venue, author list,
   citation style, compact external-match table placement, and data/code
   availability wording before submission.
@@ -275,6 +297,13 @@ meta-analysis. **(C)** The forward association exceeds the frozen reverse-time
 comparison in pooled Metrica and IDSSE results, while reverse-time structure
 remains positive. The figure shows an observational time-ordered geometric
 association, not causation, tactical meaning, opportunity, or value.
+
+**Figure strategy.** Keep the existing flagship as the sole main-text figure.
+The governed Context v1 figure belongs in the supplement: its two continuous
+context slopes are read more efficiently in the compact main-results table and
+context subsection, while the figure provides useful supplementary diagnostics
+for readers who need the full contextual shape. This is a presentation decision,
+not a judgment about the validity of the Context v1 result.
 
 ## 8. Stop researching before submission
 

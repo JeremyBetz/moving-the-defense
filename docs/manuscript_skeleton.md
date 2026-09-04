@@ -33,7 +33,12 @@ matches, the pooled primary contrast was 0.06115 (95% interval
 (0.03224–0.04111), but the paired forward-minus-reverse excess was 0.02455
 (0.01932–0.02985). Primary and paired-excess estimates were positive in all
 seven IDSSE matches and remained positive across frozen 1-, 2-, and 4-second
-sensitivity windows.
+sensitivity windows. Across the seven IDSSE matches, reorganization was also
+larger when attackers started less far goalward relative to the defensive unit
+and closer to the ball; both context slopes had consistent signs in all seven
+match and leave-one-match-out fits. The predeclared trim also passed for both
+contexts, which were evaluated separately from the temporal primary model and
+do not identify a tactical mechanism.
 
 **Conclusion.** Preceding attacker movement is reproducibly associated with
 stronger subsequent defender-relative movement among nearby than middle-ranked
@@ -61,9 +66,25 @@ Football tracking research already offers many ways to describe this terrain. St
 
 The core representation places each defender in a moving reference frame defined by the other defending outfield players. Shared translation of the defensive unit is therefore largely removed, while movement that differs from the unit remains visible. The primary temporal estimand compares the association between preceding attacker path and subsequent defender-relative path for prespecified near (D1--D3) and middle (D4--D7) defender-distance ranks. Rank is a transparent local ordering at the anchor time, not a claim that the nearest defender is responsible for the attacker. A reverse-time comparison further asks whether the forward temporal association exceeds structure preserved under the same construction in reverse time.
 
+Once that measurement is established, the paper asks a second descriptive
+question: in which starting spatial contexts is the measured near-minus-middle
+reorganization larger or smaller? This is a characterization of observed ball
+and defensive-unit geometry, not a claim about tactical purpose or mechanism.
+
 ### 1.3 Contributions and boundaries
 
-**[READY]** The contribution is primarily the combination of a model-light, attacker-centered defender-relative temporal measurement with prospective cross-environment validation and explicit interpretation boundaries. The study develops the measure in one Metrica sample match, replicates it unchanged in a heldout Metrica match, and then externally tests it across seven IDSSE/DFL matches from one independent provider environment. It reports the forward association alongside a paired forward-minus-reverse qualification, grouped block-bootstrap uncertainty, and frozen trimming and horizon checks. It also records negative and mixed downstream tests rather than treating any localized movement association as evidence of space creation, stable defensive style, tactical success, or attacking value.
+**[READY]** The contribution is a prospectively validated measurement of
+localized defensive reorganization associated with off-ball movement, together
+with evidence that its magnitude varies systematically with football-readable
+ball and defensive-unit geometry. The study develops the measure in one
+Metrica sample match, replicates it unchanged in a heldout Metrica match, and
+then externally tests it across seven IDSSE/DFL matches from one independent
+provider environment. It reports the forward association alongside a paired
+forward-minus-reverse qualification, grouped block-bootstrap uncertainty, and
+frozen trimming and horizon checks. It also records negative and mixed
+downstream tests rather than treating any localized movement association as
+evidence of space creation, stable defensive style, tactical success, or
+attacking value.
 
 The resulting scope is intentionally modest. The paper measures observable defensive geometry associated with preceding attacker movement. It does not directly observe intent, attention, responsibility, tactical instruction, a marking assignment, causal influence, or attacking value. The question is whether a reproducible measurement layer can be established before those later football interpretations are attempted.
 
@@ -161,7 +182,22 @@ The baseline \(B_{ik}\) and centroid-path context \(C_i\) are strictly earlier t
 
 The near-minus-middle contrast is intended to test localization rather than to select the visually most active defender after the fact. Averaging within the two pre-specified rank regions reduces emphasis on any single rank while keeping the comparison close to the attacker-centered football question. A positive contrast means that the fitted attacker-path association is larger for the near group than for the middle group; it does not mean that every nearby defender moved more in every passage, that middle defenders were uninvolved, or that the near group had a tactical assignment.
 
-### 4.3 Validation controls and uncertainty
+### 4.3 Starting spatial context
+
+**[READY]** A separate, IDSSE-only governed context analysis used the same
+anchor-level near-minus-middle subsequent defender-relative path as its target.
+It fit raw-unit OLS models for two predeclared starting relationships: the
+focal attacker’s goalward position relative to the defensive-unit centroid and
+the focal attacker’s distance to the ball. Each model included attacker
+exposure path, prior attacker path, defensive-unit depth, and the ball’s
+goalward position relative to the defensive-unit centroid, plus match
+intercepts. We report the pooled association, seven match-specific fits, seven
+leave-one-match-out fits, familywise 97.5% block-bootstrap intervals, and the
+predeclared central-support trim. This characterization asks where the observed
+near-minus-middle geometry is larger or smaller; it does not estimate tactical
+intent, a causal mechanism, or a new response outcome.
+
+### 4.4 Validation controls and uncertainty
 
 **[READY] Reverse-time comparison.** Football movement is temporally autocorrelated, and attacker and defender motion can share ball, phase, or other common causes. A positive forward association alone therefore does not establish meaningful time ordering. The frozen reverse-time control pairs earlier defender-relative movement over \([t-2,t]\) with nominally future attacker path over \([t,t+2]\), while retaining the same anchor, rank construction, and strictly earlier covariates. We report the paired forward-minus-reverse excess from identical bootstrap draws. A positive excess supports a stronger correctly ordered temporal association; it does not establish causality or a reaction time.
 
@@ -201,15 +237,71 @@ The IDSSE intervals use the transported 95% convention. Keeping both the forward
 
 In practical terms, the coefficient describes how the fitted difference between nearby and middle defender-relative movement changes with observed preceding attacker path. It does not estimate how far a named defender must move in a particular play, and it should not be read as a threshold for analyst judgment.
 
+### 6.2 Spatial context of defensive reorganization
+
+**[READY]** The temporal result establishes a reproducible, time-ordered
+association; the separate Context v1 analysis asks in which observable starting
+geometries its measured magnitude was larger or smaller. It uses the same
+anchor-level near-minus-middle subsequent defender-relative path, rather than a
+DRD residual or a tactical label. Both predeclared contexts were evaluated in
+the seven-match IDSSE sample using raw-unit OLS with frozen attacker-movement,
+prior-movement, defensive-depth, ball-position, and match controls.
+
+First, the attacker’s goalward position relative to the defensive-unit centroid
+had a pooled association of `-0.010161 m/m` (familywise 97.5% interval
+`[-0.011805, -0.008499]`). Thus, conditional on the frozen controls, the
+measured near-minus-middle defender-relative movement was smaller when the
+attacker started farther goalward of the defensive unit. The estimate had the
+pooled negative sign in all `7/7` match-specific and all `7/7`
+leave-one-match-out fits, and the central-support trim passed. A 10 m greater
+goalward offset corresponds to `-0.10161 m` in the fitted response; across the
+observed 10th--90th percentile span, the fitted difference is approximately
+`-0.32453 m`.
+
+Second, attacker--ball distance at exposure start had a pooled association of
+`-0.007533 m/m` (familywise 97.5% interval `[-0.008864, -0.006245]`). The
+measured difference was therefore also smaller when the attacker began farther
+from the ball. This direction was retained in all `7/7` match-specific and
+`7/7` leave-one-match-out fits, and the trim passed. A 10 m greater
+attacker--ball distance corresponds to `-0.07533 m`; across its observed
+10th--90th percentile span, the fitted difference is approximately `-0.28586
+m`.
+
+In football-readable terms, the governed geometry was larger when attackers
+started less far goalward relative to the defensive unit and closer to the
+ball. This is a contextual description of observed movement, not evidence of
+between-the-lines positioning, showing short, drawing defenders, press baiting,
+tactical intent, or value. It nevertheless makes the measurement more useful
+for review: analysts can compare passages with similar attacker movement but
+different starting ball and defensive-unit geometry, then inspect the wider
+football context on video.
+
+### Table 1. Compact main-paper results recommendation
+
+**[READY — main paper.]** Keep the temporal visual evidence in Figure 1 and
+use one compact table for the principal estimates and context characterization.
+It should not replace the full rank, robustness, or match-level tables in the
+supplement.
+
+| Analysis | Estimate (m/m) | Interval | Replication / consistency |
+|---|---:|---|---|
+| Temporal Metrica near--middle | 0.05029 | 97.5% [0.03433, 0.06858] | Pooled Games 1--2 |
+| Temporal Metrica paired forward--reverse | 0.02912 | 97.5% [0.01410, 0.04526] | Pooled Games 1--2 |
+| Temporal IDSSE near--middle | 0.06115 | 95% [0.05579, 0.06681] | Positive in 7/7 matches |
+| Temporal IDSSE paired forward--reverse | 0.02455 | 95% [0.01932, 0.02985] | Positive in 7/7 matches |
+| Context H1: attacker minus unit, goalward | -0.010161 | 97.5% [-0.011805, -0.008499] | 7/7 match; 7/7 LOMO; trim passed |
+| Context H2: attacker--ball distance | -0.007533 | 97.5% [-0.008864, -0.006245] | 7/7 match; 7/7 LOMO; trim passed |
+
 ### Figure 1. Measurement and replication overview
 
-**[READY — place at the Methods/Results transition, immediately before Section 6.1.]**
+**[READY — position at the Methods/Results transition in final layout; retained
+here after the compact results table for drafting reference.]**
 
 > **Figure 1 introduction draft.** Figure 1 links the measurement to the population result. Panel A shows a real heldout passage, selected solely from attacker movement and chronology, in which the defensive unit shifts while individual defenders move differently from that shift. Panel B summarizes the Metrica and IDSSE temporal replication. Panel C shows why the result is qualified by the prospectively frozen paired forward-minus-reverse comparison rather than by an assumption that reverse time contains no structure.
 
 **[READY] Panel A uses Metrica Game 2, period 1, 2336.04 s, Home 1. The unit shifts goalward and laterally; D2 and D3 are less goalward than their leave-one-out unit shifts, while D1 is more goalward. This is a heterogeneous, factual illustration of the representation, not population evidence and not a tactical label. Panels B and C are the governed cross-match temporal replication and forward-versus-reverse summaries.
 
-### 6.2 Supporting concurrent geometry and coordination form
+### 6.3 Supporting concurrent geometry and coordination form
 
 **[READY] Concurrent localization.** A separately governed concurrent analysis provides supporting evidence that the temporal finding is not solely a consequence of the lagged construction. In Metrica Game 1, the concurrent near-minus-middle contrast was `0.02667 m/m` with a 95% interval of `[0.01134, 0.04487]`; the unchanged Game 2 replication was `0.04463 m/m` `[0.02151, 0.07848]`. Both were positive under their frozen within-provider design.
 
@@ -225,7 +317,7 @@ The scalar and directional analyses answer complementary measurement questions. 
 
 **[READY] Rank shape.** Neither the scalar nor directional results form a simple monotonic distance-decay curve. Near ranks are elevated relative to the pre-specified middle region, but far ranks can rebound; all pooled IDSSE scalar rank coefficients were positive. The main text therefore reports a localized near-versus-middle contrast and a stepped, nonmonotonic rank structure. Full D1--D10 tables belong in the supplement.
 
-### 6.3 What the measurement does not establish
+### 6.4 What the measurement does not establish
 
 **[READY] Boundary results.** The measurement does not show that local defensive reorganization creates a downstream opportunity. Opportunity Redistribution v1 tested the simple hypothesis that a larger focal-local defensive change would be associated with relatively improved nearest-defender separation for other initially local attackers. The Game 1 primary estimate was negative and uncertain, \(\beta_D=-0.02407\) with a 95% bootstrap interval of `[-0.09392, 0.04776]`. The predicted separation consequence was therefore not supported. This is a boundary result for the tested representation, not evidence that attacker movement never changes teammates’ opportunities.
 
@@ -249,7 +341,15 @@ A practical analyst workflow is therefore deliberately simple:
 4. inspect video and the wider tracking context; and
 5. assign any tactical interpretation only after that contextual review.
 
-This workflow can support retrieval of candidate off-ball passages, comparison of how similar attacker movements coincide with different defensive geometries, and descriptive study of local defensive reorganization. It is a research layer before more assumption-heavy tactical or value models, not a player-ranking system or an automatic tactical-labeling tool. Figure 1 plus this prose is sufficient for the main paper; a second analyst-workflow figure is not recommended unless a venue requires one.
+This workflow can support retrieval of candidate off-ball passages, comparison
+of how similar attacker movements coincide with different defensive geometries,
+and contextualization using the attacker’s starting relationship to the ball and
+defensive unit. It is a research layer before more assumption-heavy tactical or
+value models, not a player-ranking system or an automatic tactical-labeling
+tool. Figure 1 plus Table 1 and this prose are sufficient for the main paper;
+the Context v1 figure is recommended for the supplement because the two compact
+context rows communicate the limited “when” result without adding a second main
+figure.
 
 For a club analyst, the value is in narrowing a large tracking archive to reviewable questions without pre-committing to an answer. A high footprint may prompt review of whether the unit was shifting, whether a defender had to protect another space, whether the ball or another attacker supplied the more plausible context, or whether the apparent pattern is ordinary transition movement. A low footprint can be equally informative when an attacker moved but the unit stayed internally coherent. The measurement supplies comparable geometric evidence; football judgment remains with the analyst.
 
@@ -279,7 +379,13 @@ Finally, tracking geometry does not reveal marking responsibility, tactical inst
 
 The conclusion is deliberately narrower than common football language. The measurement does not show that an attacker caused a response, created space, drew a marker, or added value. Reverse-time structure remained positive, rank profiles were stepped rather than monotonic, and the negative or mixed downstream analyses prevented interpretation of observed geometry as demonstrated opportunity, coverage, stable defensive identity, or tactical success.
 
-For analysts and researchers, the method is best viewed as a transparent way to retrieve and describe passages in which nearby defenders moved differently from their defensive unit after attacker movement. Future work should add richer contextual characterization, semantic and video validation, broader match and provider replication, and independently motivated downstream tactical or value consequences. Those steps should extend the measurement only after their own constructs have been validated.
+For analysts and researchers, the method is best viewed as a transparent way to
+retrieve and describe passages in which nearby defenders moved differently from
+their defensive unit after attacker movement, and to contextualize that geometry
+with starting ball and unit position. Future work should add semantic and video
+validation, broader match and provider replication, and independently motivated
+downstream tactical or value consequences. Those steps should extend the
+measurement only after their own constructs have been validated.
 
 The immediate contribution is thus not an automated verdict on what an attacker “made” the defence do. It is a reproducible geometric starting point for asking that question more carefully: first describe local defensive reorganization, then test its interpretation and consequences with designs capable of supporting them.
 
@@ -294,7 +400,13 @@ The immediate contribution is thus not an automated verdict on what an attacker 
 
 ### Preliminary main-paper versus supplement recommendation
 
-**[READY]** Keep Figure 1, a concise primary-results table, and one short boundary-results paragraph in the main paper. Place full D1--D10 and match-level coefficient tables, robustness details, provider-equivalence checks, synthetic audits, the rank-composition audit, Opportunity Redistribution detail, Coverage v1/v2/v3 history, expectation-model detail, and hashes/reproducibility mechanics in the supplement. This is a manuscript-organization recommendation, not final venue formatting.
+**[READY]** Keep Figure 1, Table 1, and one short boundary-results paragraph in
+the main paper. Place the Context v1 figure, full D1--D10 and match-level
+coefficient tables, robustness details, provider-equivalence checks, synthetic
+audits, the rank-composition audit, Opportunity Redistribution detail, Coverage
+v1/v2/v3 history, expectation-model detail, and hashes/reproducibility
+mechanics in the supplement. This is a manuscript-organization recommendation,
+not final venue formatting.
 
 ## Drafting decisions before full prose
 
