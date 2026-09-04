@@ -68,15 +68,17 @@ Here, preceding attacker path is an exposure variable over a fixed, prospectivel
 
 ### 3.1 Development and heldout sample: Metrica
 
-**[READY]** Metrica Sample Game 1 served as development and Metrica Sample Game 2 as the protected heldout replication for the temporal footprint. Both are sample-match tracking environments with limited match and provider breadth; they are not a population of football matches.
+**[READY]** We used two Metrica sample matches for within-provider development and replication. Game 1 was used to develop and close the governed temporal measurement; Game 2 was then held out for the rank-conditioned temporal relationship and executed under the unchanged protocol. Analyses used canonical metric pitch coordinates, complete tracking support over each governed interval, and nonoverlapping four-second endpoint cadence. These sample matches provide a transparent development environment, not a representative population of football matches or teams.
 
 ### 3.2 External replication: IDSSE / DFL
 
-**[READY]** Seven complete professional matches from the IDSSE/DFL environment provided external replication in one independent provider environment, not seven providers. Native tracking cadence was 25 Hz. The external temporal sample contained 72,316 anchor observations, 7,300 unique anchors, and 723,160 defender rows.
+**[READY]** External replication used seven complete professional matches from the IDSSE/DFL environment, an independent tracking-provider environment rather than seven distinct providers. Native tracking cadence was 25 Hz, so the frozen centred seven-frame support spans 0.28 seconds. The external temporal analysis contained 72,316 attacker-anchor observations, 7,300 unique match-period-time anchors, and 723,160 defender rows. Its purpose was to test transport of the already specified measurement and temporal association, not to estimate a league-wide effect.
 
 ### 3.3 Availability and provenance
 
-**[READY]** Where provider restrictions prevent redistribution of raw or observation-level tracking, the repository provides source code, compact governed outputs, hash ledgers, and regeneration procedures. Provider-specific loading, coordinate equivalence, and support requirements belong in the supplement.
+**[READY]** Provider-derived raw tracking and observation-level rows are not redistributed where restricted. The public materials instead provide source code, compact governed outputs, hash ledgers, and regeneration procedures. Provider-specific ingestion, coordinate equivalence, and detailed support requirements are reported in the supplement so that the main paper can focus on the measurement and its validation boundary.
+
+**[READY]** Across both environments, an observation is retained only when the attacker and a complete defending outfield unit have the governed support needed for the full context, exposure, and response construction. This requirement makes the defender-relative reference interpretable at every path step, but it also means that results apply to supported open-play observations rather than every frame of every match.
 
 **[SUPPLEMENT]** Dataset licensing, raw-data access paths, canonical coordinate contract, tracking cadence/support requirements, player metadata, and the full eligibility/exclusion ledgers.
 
@@ -84,7 +86,7 @@ Here, preceding attacker path is an exposure variable over a fixed, prospectivel
 
 ### 4.1 Defender-relative representation
 
-**[READY] Plain-language statement.** For each defender, measure position relative to the other defending outfield players, not relative to a fixed pitch point. A shared defensive shift therefore largely cancels, while motion that differs from the unit remains visible.
+**[READY] Plain-language statement.** A defender can move substantially because the entire defensive unit shifts. We therefore measure each defender relative to the other defending outfield players rather than relative to a fixed pitch point. A shared shift largely cancels in this moving reference frame, while movement that differs from the unit remains visible. This is a description of geometry within the unit, not a claim about why that defender moved.
 
 **[READY] Formal definition.** With ten defending outfield players and focal defender \(d\),
 
@@ -93,15 +95,19 @@ Here, preceding attacker path is an exposure variable over a fixed, prospectivel
 \mathbf c_{-d}(t)=\frac{1}{9}\sum_{j\ne d}\mathbf x_j(t).
 \]
 
-The goalkeeper is excluded. For ten defenders, \(\mathbf x_d-\mathbf c_{-d}=\tfrac{10}{9}(\mathbf x_d-\mathbf c)\), which makes the reference-frame relationship transparent without changing its interpretation.
+The goalkeeper is excluded, and the focal defender is excluded from its own reference. We then measure focal-relative path by accumulating Euclidean changes in \(\mathbf r_d(t)\) over a governed interval. For ten defenders, \(\mathbf x_d-\mathbf c_{-d}=\tfrac{10}{9}(\mathbf x_d-\mathbf c)\). Thus leave-one-out centering is a rank-independent rescaling of the focal defender’s deviation from the full outfield centroid, rather than a mechanism that can create a rank-specific pattern.
 
-**[READY] Boundary.** This geometry measures movement within a defensive structure. It does not identify a mark, assignment, tactical responsibility, or why a defender moved.
+**[READY] Boundary.** This geometry measures movement within a defensive structure. It does not identify a mark, assignment, tactical responsibility, pressure, or why a defender moved.
+
+The representation also retains a useful football distinction that raw distance-to-attacker measures do not. A defender may remain close to an attacker while moving with the unit, or may become more distant while departing from the unit; neither situation alone establishes a defensive meaning. The focal-relative path is therefore a movement-magnitude primitive, not a substitute for proximity, pressure, coverage, or space-control measures. Those constructs require their own context and validation.
 
 ### 4.2 Temporal spatial defensive-response footprint
 
-**[READY] Timing.** At anchor \(t\), strictly prior defensive context is \([t-4,t-2]\), attacker exposure is \([t-2,t]\), and the primary subsequent defender window is \([t,t+2]\). The exposure \(X_i\) is the attacker's preceding two-second path length. The primary defender outcome is the two-second focal-relative path \(Y_{ik}=P_{\mathrm{rel}}(D_k;t,t+2)\).
+**[READY] Timing.** At each anchor \(t\), strictly prior defensive context is measured over \([t-4,t-2]\), attacker exposure over \([t-2,t]\), and the primary subsequent defender response over \([t,t+2]\). The exposure \(X_i\) is the attacker’s two-second path length before the defender outcome begins. The primary outcome for rank \(k\) is the two-second focal-relative path \(Y_{ik}=P_{\mathrm{rel}}(D_k;t,t+2)\). This ordering does not prove that the attacker caused the subsequent movement, but it prevents the outcome itself from defining the exposure.
 
-**[READY] Rank construction.** At \(t\), the ten supported defending outfield players are ranked by Euclidean distance to the attacker, with ranks fixed for the whole context/exposure/response construction. D1--D3 are the prespecified near region; D4--D7 are middle; D8--D10 remain descriptive. Rank is relative ordering, not a marking label.
+**[READY] Rank construction.** At \(t\), the ten supported defending outfield players are ranked by Euclidean distance to the attacker; the ranks are fixed before the response interval and never reassigned during the context, exposure, or response windows. D1--D3 form the prespecified near region, D4--D7 the middle region, and D8--D10 remain descriptive. Rank is relative ordering within a complete defensive block, not a marking label or a proxy for responsibility.
+
+Each retained anchor requires complete raw and centred-seven-frame smoothed support for the attacker and the same ten defending outfield players across the primary \([t-4,t+2]\) span, exact canonical endpoints, no period crossing, and the frozen restart/ball-out exclusion. The goalkeeper is excluded before rank construction. This complete-unit requirement avoids changing the collective reference or the membership of a rank vector midway through the comparison. Exact ties are resolved prospectively by canonical player key; no tolerance or jitter is added.
 
 **[READY] Frozen primary model.** For rank \(k\), with prior rank-specific focal-relative path \(B_{ik}=P_{\mathrm{rel}}(D_k;t-4,t-2)\) and prior full defending-outfield centroid path \(C_i\), fit the stacked rank-specific model without a global intercept:
 
@@ -110,35 +116,57 @@ Y_{ik}=\sum_{r=1}^{10}I(k=r)
 \left(\alpha_r+\beta_rX_i+\gamma_rB_{ik}+\eta_rC_i\right)+\varepsilon_{ik}.
 \]
 
-The primary estimand is the near-minus-middle contrast \(N-M\), where \(N=(\beta_1+\beta_2+\beta_3)/3\) and \(M=(\beta_4+\beta_5+\beta_6+\beta_7)/4\).
+The model permits each rank to have its own intercept, attacker-path association, strictly prior focal-relative baseline, and strictly prior full-unit centroid-path association. It therefore does not impose a common baseline across ranks or a smooth distance-decay curve. The primary estimand is the near-minus-middle contrast \(N-M\), where \(N=(\beta_1+\beta_2+\beta_3)/3\) and \(M=(\beta_4+\beta_5+\beta_6+\beta_7)/4\). D8--D10 are retained to show the whole rank profile but do not define the primary claim.
+
+The baseline \(B_{ik}\) and centroid-path context \(C_i\) are strictly earlier than attacker exposure. They therefore adjust for pre-existing rank-specific defender-relative movement and whole-unit movement without conditioning on movement from the exposure interval itself. The model remains an observational association model: conditioning makes the comparison more specific, but cannot eliminate unmeasured shared match context.
+
+The near-minus-middle contrast is intended to test localization rather than to select the visually most active defender after the fact. Averaging within the two pre-specified rank regions reduces emphasis on any single rank while keeping the comparison close to the attacker-centered football question. A positive contrast means that the fitted attacker-path association is larger for the near group than for the middle group; it does not mean that every nearby defender moved more in every passage, that middle defenders were uninvolved, or that the near group had a tactical assignment.
 
 ### 4.3 Validation controls and uncertainty
 
-**[READY]** Use the frozen reverse-time comparison and the paired forward-minus-reverse contrast as the timing qualification. Block bootstrap, trim, and 1/2/4-second horizon checks are validation safeguards, not ways to select a preferred result after inspection.
+**[READY] Reverse-time comparison.** Football movement is temporally autocorrelated, and attacker and defender motion can share ball, phase, or other common causes. A positive forward association alone therefore does not establish meaningful time ordering. The frozen reverse-time control pairs earlier defender-relative movement over \([t-2,t]\) with nominally future attacker path over \([t,t+2]\), while retaining the same anchor, rank construction, and strictly earlier covariates. We report the paired forward-minus-reverse excess from identical bootstrap draws. A positive excess supports a stronger correctly ordered temporal association; it does not establish causality or a reaction time.
+
+**[READY] Inference and sensitivity.** Uncertainty uses the frozen 60-second match-period block bootstrap with 2,000 replicates and empirical percentile intervals. Blocks are resampled within match-period, while simultaneous attacker observations at an anchor and their complete ten-defender rank vectors remain together. This preserves the grouped dependence structure better than treating defender rows or frames as independent. The analysis also retains pre-specified extreme-exposure trimming and 1-, 2-, and 4-second response-horizon checks. These are robustness checks fixed in advance, not a search for a preferred lag, rank, or window.
 
 **[SUPPLEMENT]** Full endpoint, smoothing, support, restart/ball-out, tie-handling, bootstrap, classification, numerical-boundary, and provider-equivalence specifications.
 
 ## 5. Validation Design
 
-**[READY]** The temporal footprint was developed in Metrica Game 1, replicated without changing the governed method in heldout Metrica Game 2, then externally replicated across seven IDSSE matches. Protocols and classifications were frozen before their protected outcomes. The provider-equivalence gates tested that the representation and governed pipeline transferred before interpreting external coefficients.
+**[READY]** Validation was staged to distinguish a development finding from a reproducible measurement. Metrica Game 1 was used for development under a frozen protocol. Metrica Game 2 was then analyzed as a protected heldout replication with the same representation, temporal windows, ranks, model, reverse-time comparison, and robustness rules. Only after Game 2 outputs were serialized, hashed, and independently reproduced were the two Metrica matches compared and pooled under the pre-specified model.
 
-**[READY]** Inference uses grouped time-block resampling specified in the governed protocols. The main paper reports results and robustness; hashes, classification mechanics, and complete rank tables are retained as reproducibility material rather than main-text clutter.
+External replication then applied the same temporal design across seven IDSSE/DFL matches. Before interpreting external coefficients, a provider-equivalence gate verified the relevant raw time and frame identities, player/team/goalkeeper identity, coordinates and masks, cadence, event context, complete ranks, and derived components. The gate is not a claim that providers are interchangeable in every respect; it establishes that the governed representation and its inputs transferred for this analysis.
+
+All protocols, rank regions, windows, controls, and classification rules were frozen before their protected outcomes. No alternate lag, rank definition, or response window was selected after results were seen. We retain match-level external estimates alongside the prospectively defined pooled summary, so a pooled coefficient does not conceal inconsistent match signs. Full hash ledgers, classification mechanics, and equivalence details are supplied as reproducibility material rather than main-text clutter.
+
+The validation sequence was designed to make a negative or mixed result informative. A failure to replicate would have remained part of the evidence record rather than prompting a new rank grouping, lag, or model in the protected sample. Independent reruns reproduced governed outputs before their role in the next validation stage was interpreted. This discipline does not remove all observational uncertainty, but it separates a reproducible measurement result from a pattern found only through iterative development.
+
+The resulting validation claim is correspondingly narrow: a result can be externally replicated as observable geometry without being a validated account of defensive tactics. The staged design tests reproducibility of the measurement and its time-ordered association, while preserving the need for separate semantic, causal, and value validation.
 
 ## 6. Results
 
 ### 6.1 Primary temporal footprint
 
-**[READY] Metrica.** The pooled Metrica near-minus-middle contrast was `0.05029 m/m` with frozen 97.5% interval `[0.03433, 0.06858]`. Its paired forward-minus-reverse excess was `0.02912` `[0.01410, 0.04526]`.
+**[READY] Metrica.** Across the prospectively pooled Metrica analysis, the near-minus-middle association was `0.05029 m/m` with a frozen 97.5% bootstrap interval of `[0.03433, 0.06858]`. In the fitted observational model, one additional metre of preceding attacker path was associated with approximately `5.0 cm` more subsequent defender-relative path for the near ranks than for the middle ranks. The paired forward-minus-reverse excess was `0.02912` `[0.01410, 0.04526]`. Reverse-time structure was therefore not absent; the qualifying evidence is that the correctly ordered association was larger under the prospectively paired comparison.
 
-**[READY] IDSSE external replication.** The pooled IDSSE primary contrast was `0.06115 m/m` `[0.05579, 0.06681]`; the reverse-time contrast was `0.03661` `[0.03224, 0.04111]`; and the paired excess was `0.02455` `[0.01932, 0.02985]`. All seven matches had positive primary contrasts and positive paired excesses. The 1-, 2-, and 4-second horizon signs were positive; the extreme-exposure trim retained 95.35% of the primary magnitude.
+The Metrica result is a within-provider replication across the development and heldout sample matches, not a claim of general professional-football prevalence. Its stepped rank profile also matters: the primary evidence concerns the pre-specified near-versus-middle average, not a smooth assertion that every additional metre of defender distance weakens the association.
 
-**[READY] Effect-size translation.** In the fitted observational IDSSE model, an additional metre of preceding attacker path was associated with about `6.1 cm` more subsequent defender-relative movement for near versus middle ranks. A five-metre exposure difference would correspond to about `0.306 m` as an illustrative linear translation, not as a claim about a typical run or causal effect. The corresponding pooled Metrica estimate is about `5.0 cm` per metre (`0.05029 m/m`) and `0.251 m` for the same illustrative five metres.
+The pooled Metrica intervals use the frozen 97.5% convention. They quantify stability under the specified match-period block resampling scheme rather than a population-wide causal effect. The same caution applies to the positive paired excess: it is evidence that the forward contrast was larger than its reverse-time counterpart under the governed comparison, not evidence that all common causes were removed.
+
+**[READY] IDSSE external replication.** In the independent provider environment, the pooled primary near-minus-middle association was `0.06115 m/m` with a 95% bootstrap interval of `[0.05579, 0.06681]`. The reverse-time comparison was also positive, `0.03661` `[0.03224, 0.04111]`, but the paired forward-minus-reverse excess was `0.02455` `[0.01932, 0.02985]`. Primary and paired-excess point estimates were positive in all seven matches. The near-minus-middle sign also remained positive at the frozen 1-, 2-, and 4-second response horizons; the extreme-exposure trim retained 95.35% of the primary magnitude.
+
+The external result therefore reproduces the direction and timing-qualified association in seven matches within one independent provider environment. It does not convert the seven matches into seven provider replications, nor does it establish a causal attacker-to-defender mechanism. The positive reverse-time estimate remains a reminder that shared movement structure persists even under the temporal comparison.
+
+The IDSSE intervals use the transported 95% convention. Keeping both the forward and reverse estimates visible is important: reporting only the primary association would overstate what time ordering contributes. The paired excess is the relevant temporal comparison, while the continuing reverse-time structure is an explicit limitation of a purely observational design.
+
+**[READY] Effect-size translation.** As an illustrative model-based translation, a five-metre difference in preceding attacker path corresponds to roughly `0.31 m` more subsequent near-versus-middle defender-relative path under the pooled IDSSE model. This is a linear translation of the fitted association, not a claim that five metres is a typical run or that attacker movement caused the difference.
+
+In practical terms, the coefficient describes how the fitted difference between nearby and middle defender-relative movement changes with observed preceding attacker path. It does not estimate how far a named defender must move in a particular play, and it should not be read as a threshold for analyst judgment.
 
 ### Figure 1. Measurement and replication overview
 
 **[READY — place at the Methods/Results transition, immediately before Section 6.1.]**
 
-> **Figure 1 introduction draft.** Figure 1 links the measurement to the population result. Panel A shows a real heldout passage in which the defensive unit shifts while individual defenders move differently from that unit. Panel B summarizes the cross-match forward-time near-versus-middle association. Panel C shows why the result is qualified by the prospectively frozen paired forward-minus-reverse comparison rather than by an assumption that reverse time contains no structure.
+> **Figure 1 introduction draft.** Figure 1 links the measurement to the population result. Panel A shows a real heldout passage, selected solely from attacker movement and chronology, in which the defensive unit shifts while individual defenders move differently from that shift. Panel B summarizes the Metrica and IDSSE temporal replication. Panel C shows why the result is qualified by the prospectively frozen paired forward-minus-reverse comparison rather than by an assumption that reverse time contains no structure.
 
 **[READY] Panel A uses Metrica Game 2, period 1, 2336.04 s, Home 1. The unit shifts goalward and laterally; D2 and D3 are less goalward than their leave-one-out unit shifts, while D1 is more goalward. This is a heterogeneous, factual illustration of the representation, not population evidence and not a tactical label. Panels B and C are the governed cross-match temporal replication and forward-versus-reverse summaries.
 
