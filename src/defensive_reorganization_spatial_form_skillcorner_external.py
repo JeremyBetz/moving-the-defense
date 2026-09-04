@@ -102,7 +102,7 @@ def write_json(path: Path, value: Any) -> None:
     path.write_text(json.dumps(clean(value), indent=2, sort_keys=True) + "\n", encoding="utf-8")
 
 
-def verify_frozen(output: Path) -> dict[str, Any]:
+def verify_frozen(output: Path, allow_existing_results: bool = False) -> dict[str, Any]:
     actual = {str(path.relative_to(ROOT)): sha(path) for path in FROZEN}
     failures = {
         str(path.relative_to(ROOT)): {"actual": actual[str(path.relative_to(ROOT))], "expected": expected}
@@ -111,10 +111,11 @@ def verify_frozen(output: Path) -> dict[str, Any]:
     }
     if failures:
         raise RuntimeError(f"frozen SkillCorner Spatial Form hash failure: {failures}")
-    if output.exists() and any(output.iterdir()):
-        raise RuntimeError("a SkillCorner Spatial Form result already exists")
-    if DOC_RESULT.exists():
-        raise RuntimeError("a SkillCorner Spatial Form report already exists")
+    if not allow_existing_results:
+        if output.exists() and any(output.iterdir()):
+            raise RuntimeError("a SkillCorner Spatial Form result already exists")
+        if DOC_RESULT.exists():
+            raise RuntimeError("a SkillCorner Spatial Form report already exists")
     return {
         "frozen_hashes_verified": actual,
         "excluded_match": EXCLUDED_MATCH,
@@ -774,8 +775,8 @@ def hash_outputs(output: Path) -> dict[str, str]:
     return {path.name: sha(path) for path in sorted(output.iterdir()) if path.is_file() and path.name not in omit}
 
 
-def execute(data_dir: Path, output: Path = OUTPUT, preflight_only: bool = False) -> dict[str, Any]:
-    firewall = verify_frozen(output) if not preflight_only else {"frozen_hashes_verified": {str(path.relative_to(ROOT)): sha(path) for path in FROZEN}}
+def execute(data_dir: Path, output: Path = OUTPUT, preflight_only: bool = False, allow_existing_results: bool = False) -> dict[str, Any]:
+    firewall = verify_frozen(output, allow_existing_results=allow_existing_results) if not preflight_only else {"frozen_hashes_verified": {str(path.relative_to(ROOT)): sha(path) for path in FROZEN}}
     provider_rows, support_rows, samples = [], [], []
     invalid: dict[str, str] = {}
     for match_id in FORMAL_MATCHES:
@@ -934,12 +935,13 @@ def main() -> None:
     parser.add_argument("--data-dir", type=Path, required=True)
     parser.add_argument("--output", type=Path, default=OUTPUT)
     parser.add_argument("--preflight-only", action="store_true")
+    parser.add_argument("--reproduction-run", action="store_true", help="permit an isolated deterministic rerun after primary outputs exist")
     parser.add_argument("--verify-against", type=Path)
     args = parser.parse_args()
     if args.verify_against:
         result = verify(args.output, args.verify_against)
     else:
-        result = execute(args.data_dir, args.output, args.preflight_only)
+        result = execute(args.data_dir, args.output, args.preflight_only, args.reproduction_run)
     print(json.dumps(clean(result), sort_keys=True))
 
 
