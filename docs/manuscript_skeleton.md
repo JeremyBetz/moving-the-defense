@@ -120,12 +120,14 @@ tactical movement type. This paper uses governed fixed-window path and signed
 directional displacement as geometric exposures. It does not label attackers'
 movements as decoys, overlaps, checks, or threats.
 
-### 2.4 Measurement limits before tactical or value claims
+### 2.4 The gap addressed here
 
-Pressure, pitch control, space, expected movement, and value frameworks address
-later layers of football analysis. They motivate the importance of defensive
-geometry but also make the present boundary clear: localized reorganization is
-not thereby teammate separation, opportunity creation, tactical success,
+The paper combines time ordering, defender-relative geometry, start-fixed
+proximity groups, prospective development/holdout/external validation, and
+cross-environment directional asymmetry. None of those individual primitives is
+claimed as new. Pressure, pitch control, space, expected movement, and value
+frameworks address later layers of football analysis; localized reorganization
+is not thereby teammate separation, opportunity creation, tactical success,
 gravity, or off-ball value.
 
 ## 3. Data
@@ -136,7 +138,7 @@ Metrica Sample Game 1 developed the governed temporal measurement. Metrica
 Sample Game 2 then tested the unchanged design as a protected within-provider
 holdout. Both use supported open-play tracking intervals in standardized metric
 coordinates; they are transparent sample matches, not a representative
-population of football.
+population of football. Metrica Game 3 remains untouched.
 
 ### 3.2 IDSSE external temporal validation
 
@@ -147,18 +149,21 @@ not a league-wide effect or seven distinct provider replications.
 
 ### 3.3 SkillCorner directional replication
 
-Nine SkillCorner matches provide a separate external replication of the
-outward-versus-goalward movement-direction analysis. SkillCorner is not pooled
-with IDSSE: the environments retain their own pre-specified models, intervals,
-support checks, and provider-specific compatibility work.
+Nine usable 2024/25 A-League SkillCorner Open Data matches provide a separate
+external replication of the outward-versus-goalward movement-direction
+analysis. SkillCorner is not pooled with IDSSE: the environments retain their
+own pre-specified models, intervals, support checks, and provider-specific
+compatibility work.
 
 ### 3.4 Availability and provenance
 
-Restricted provider tracking and row-level derivatives are not redistributed.
-Public materials provide implementation, compact governed summaries, figure
-artifacts, hash ledgers, and regeneration guidance. Full source-data access,
-coordinate handling, support rules, and eligibility details are documented in
-the supplement and repository materials.
+Metrica and SkillCorner data are open under their respective terms; IDSSE
+requires authorized/provider access. Provider-derived row-level or
+reconstructive tables are not redistributed. Public materials provide
+implementation, compact summaries, figure artifacts, hash ledgers, and
+regeneration guidance. Full source-data access, coordinate handling, support
+rules, and eligibility details are documented in the supplement and repository
+materials.
 
 ## 4. Methods
 
@@ -183,12 +188,16 @@ relative to the other defending outfield players:
 Accumulated movement in \(\mathbf r_d\) over the subsequent interval is the
 primary local outcome. Shared translation of the defensive unit largely cancels
 from this moving reference frame; it is not assumed to be the only relevant
-defensive change.
+defensive change. With the full outfield centroid \(\mathbf c\),
+\(\mathbf x_d-\mathbf c_{-d}=\tfrac{10}{9}(\mathbf x_d-\mathbf c)\):
+leave-one-out centering is a constant rescaling, not a device that can create a
+rank pattern.
 
 ### 4.3 Temporal ordering and start-fixed proximity groups
 
-Attacker movement precedes the defensive response interval. At the anchor,
-outfield defenders are ordered by distance to the attacker and retained in
+At anchor \(t\), context occupies \([t-4,t-2]\), attacker exposure occupies
+\([t-2,t]\), and subsequent defender response occupies \([t,t+2]\). Outfield
+defenders are ordered by distance to the attacker at the anchor and retained in
 fixed ranks through the response interval. The primary localized comparison is
 the three nearest ranks (D1–D3) versus the four middle ranks (D4–D7). These
 groups express local versus reference geometry, not an inferred assignment.
@@ -287,8 +296,9 @@ it. In IDSSE, the localized association was larger when attackers started less
 far goalward relative to the defensive unit and closer to the ball; the context
 slopes were -0.010161 [-0.011805, -0.008499] m/m and -0.007533
 [-0.008864, -0.006245] m/m, respectively, with consistent signs across match
-and leave-one-match-out fits. Present this as a compact contextual “when”
-description, not a mechanism or tactical prescription.
+and leave-one-match-out fits (7/7 each), and both pre-specified trims retained
+their direction. Present this as a compact contextual “when” description, not
+a mechanism or tactical prescription.
 
 ### 5.4 Response scale and mechanism boundary
 
@@ -345,7 +355,9 @@ concept.
 
 The evidence is observational; residual shared context, rank composition,
 limited match/provider coverage, support restrictions, and provider-specific
-processing remain material limitations. Opportunity Redistribution v1 did not
+processing remain material limitations. SkillCorner's broadcast-derived
+tracking and extrapolation environment is a further scope condition, not an
+assumption of provider interchangeability. Opportunity Redistribution v1 did not
 support the tested nearest-defender-separation consequence
 (\(\beta_D=-0.02407\), 95% bootstrap interval [-0.09392, 0.04776]). This is a
 boundary result, not a metric to tune until positive, and it prevents treating
