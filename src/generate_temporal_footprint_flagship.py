@@ -249,6 +249,10 @@ def panel_a(axes: list[Any]) -> dict[str, Any]:
     a1.scatter(*geometry["attacker_path"][-1], s=52, color=ORANGE, zorder=5)
     if geometry["ball"] is not None:
         a1.scatter(*geometry["ball"], s=26, facecolors="white", edgecolors="#344054", linewidths=1.1, zorder=6)
+    # `display` orients the selected attacker's preceding x movement left to right.
+    a1.annotate("attacking direction", xy=(.94, .94), xytext=(.59, .94), xycoords="axes fraction",
+                textcoords="axes fraction", ha="left", va="center", fontsize=6.9, color="#344054",
+                arrowprops=dict(arrowstyle="->", color="#344054", lw=1.1))
     a1.text(.02, .03, "orange: focal attacker   green: D1–D3   blue-grey: D4–D7", transform=a1.transAxes, fontsize=6.8, color=GREY)
     a1.set_title("A1  Exposure: preceding attacker movement", loc="left", fontsize=10.2, weight="bold")
 
@@ -322,9 +326,9 @@ def panel_b(ax) -> None:
     ax.set_xlabel("Near − middle coefficient (m defender-relative path / m preceding attacker path)", fontsize=8.4)
     ax.set_xlim(-.01, .18)
     ax.set_title("B  The localized association replicates across matches", loc="left", fontsize=11.5, weight="bold")
-    ax.text(.01, .94, "Circles: individual matches   ◆: governed within-environment pooled estimate",
+    ax.text(.01, .94, "Circles: individual matches   ◆: within-environment pooled estimate",
             transform=ax.transAxes, fontsize=7.3, color=GREY, va="top")
-    ax.text(.01, -.22, "Metrica intervals: frozen 97.5%; IDSSE intervals: frozen 95%. Pools are shown separately, not as a nine-match meta-analysis.",
+    ax.text(.01, -.18, "Metrica intervals: 97.5%; IDSSE intervals: 95%. Pools are shown separately, not as a nine-match meta-analysis.",
             transform=ax.transAxes, fontsize=7.0, color=GREY, va="top")
     ax.spines[["top", "right", "left"]].set_visible(False)
     ax.tick_params(axis="y", length=0)
@@ -367,7 +371,7 @@ def panel_c(ax) -> None:
     ax.set_ylim(-1.1, 5.9)
     ax.set_xlabel("Near − middle association (m/m)", fontsize=8.4)
     ax.set_title("C  Forward association exceeds reverse time", loc="left", fontsize=11.5, weight="bold")
-    ax.text(.01, -.25, "Reverse-time structure remains positive. The evidence is paired forward − reverse excess, not a reverse-time null.",
+    ax.text(.01, -.18, "Reverse-time structure remains positive. The evidence is paired forward − reverse excess, not a reverse-time null.",
             transform=ax.transAxes, fontsize=7.0, color=GREY, va="top")
     ax.spines[["top", "right", "left"]].set_visible(False)
     ax.tick_params(axis="y", length=0)
@@ -376,21 +380,21 @@ def panel_c(ax) -> None:
 
 def build() -> None:
     OUT.mkdir(parents=True, exist_ok=True)
-    fig = plt.figure(figsize=(19.5, 10.3))
-    grid = fig.add_gridspec(2, 2, height_ratios=[1.04, 1.0], hspace=.48, wspace=.38)
+    fig = plt.figure(figsize=(19.5, 11.1))
+    grid = fig.add_gridspec(2, 2, height_ratios=[1.02, 1.08], hspace=.57, wspace=.38)
     pitch_grid = grid[0, :].subgridspec(1, 3, wspace=.10)
     geometry = panel_a([fig.add_subplot(pitch_grid[0, index]) for index in range(3)])
     panel_b(fig.add_subplot(grid[1, 0]))
     panel_c(fig.add_subplot(grid[1, 1]))
-    fig.suptitle("Measuring Localized Defensive Reorganization Associated with Off-Ball Movement in Football", x=.075, y=.992,
+    fig.suptitle("Time-ordered localized defensive reorganization", x=.13, y=.992,
                  ha="left", fontsize=14.2, weight="bold")
-    fig.text(.075, .958,
+    fig.text(.13, .958,
              f"Panel A: deterministic heldout Metrica Game 2 anchor at {float(geometry['selected']['time_period_s']):.2f} s "
              "(earliest eligible anchor at or above the upper quartile of preceding attacker path; selection uses attacker movement only).",
              fontsize=7.7, color=GREY, va="top")
-    fig.text(.075, .018, "Replicated: localized, time-ordered defensive reorganization.   Not established: causation, tactical meaning, opportunity, or value.",
+    fig.text(.13, .030, "Replicated: localized, time-ordered defensive reorganization.   Not established: causation, tactical meaning, opportunity, or value.",
              fontsize=8.7, color="#344054")
-    fig.subplots_adjust(left=.075, right=.985, bottom=.10, top=.90)
+    fig.subplots_adjust(left=.13, right=.98, bottom=.15, top=.90)
     for suffix, kwargs in (("svg", {"metadata": {"Date": None}}), ("png", {"dpi": 240}), ("pdf", {"metadata": {"CreationDate": None, "ModDate": None}})):
         fig.savefig(OUT / f"temporal_footprint_flagship.{suffix}", facecolor="white", **kwargs)
     plt.close(fig)

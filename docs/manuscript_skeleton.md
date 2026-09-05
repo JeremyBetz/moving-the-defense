@@ -465,6 +465,10 @@ and forward-versus-reverse comparison. It illustrates defender-relative movement
 alongside a shared defensive shift. The passage is explanatory rather than
 evidence that one attacker caused the observed movement.
 
+![Time-ordered localized defensive reorganization](figures/sloan/temporal_footprint_flagship.svg)
+
+*Figure 1. Time-ordered localized defensive reorganization. Panel A is a real heldout Metrica Game 2 passage (period 1; anchor 2336.04 s) selected deterministically from attacker movement only. In the subsequent interval, the defensive unit shifts goalward and laterally; D2 and D3 move less goalward than that shared-unit reference, while D1 moves more goalward. Panels B and C show the Metrica and IDSSE time association and its forward-minus-reverse qualification; reverse-time structure remains positive. The passage is explanatory, and temporal ordering is observational rather than causal.*
+
 ### 5.2 Movement direction: outward-versus-goalward difference
 
 Having established the time-ordered localized association, we tested whether it
