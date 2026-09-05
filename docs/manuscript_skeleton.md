@@ -502,6 +502,19 @@ with movement toward goal. This is the paper's central directional finding:
 comparable movement components can be associated with different localized
 defensive geometry.
 
+![Replicated outward-versus-goalward difference in localized defensive reorganization](figures/sloan/directional_replication.svg)
+
+*Figure 2. Replicated movement-direction difference in localized defensive
+reorganization. Positive outward-minus-goalward estimates indicate a stronger
+association between outward attacker movement and subsequent localized
+defender-relative movement than for goalward movement. Separately estimated
+pooled effects were 0.056856 m/m (95% CI [0.051358, 0.062430]) in IDSSE and
+0.048883 m/m (95% CI [0.042940, 0.054707]) in SkillCorner; all seven and nine
+match-level contrasts, respectively, were positive. The tracking environments
+were analysed separately; no cross-provider pooled estimate was calculated.
+These estimates describe observational defensive geometry, not attacking value
+or causal influence.*
+
 ### 5.3 Starting context
 
 Starting context characterized where the localized temporal association was
