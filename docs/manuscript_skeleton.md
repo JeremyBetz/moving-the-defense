@@ -784,24 +784,11 @@ intent, defensive quality, space creation, or attacking value. Its concrete
 contribution is a bounded, externally replicated way to describe where
 off-ball movement and localized defensive geometry are associated over time.
 
-## Supplement plan
+## Supplementary material
 
-- **S1 — Representation and eligibility:** coordinate contract; complete
-  support; smoothing; endpoint, timing, tie, and numerical-boundary rules.
-- **S2 — Full temporal results:** complete statistics, D1–D10 profiles,
-  regional estimates, horizons, trimming, reverse-time/placebo results, and
-  all match-level external estimates.
-- **S3 — Validation and provenance:** Metrica holdout, provider-equivalence
-  checks, bootstrap and reproducibility materials, hash ledgers, and
-  regeneration pointers.
-- **S4 — Additional geometry:** concurrent geometry/coordination, rank
-  composition and synthetic audits, starting-context diagnostics, and the full
-  response-scale follow-up.
-- **S5 — Directional detail:** IDSSE and SkillCorner compatibility checks,
-  separate provider-specific specifications, sensitivity results, and complete
-  movement-direction tables.
-- **S6 — Boundary findings:** Opportunity Redistribution, Defensive Coverage,
-  Defensive Response Expectation, and other negative or mixed outcomes.
-- **S7 — Additional visuals:** D1–D10, context, response-scale, robustness,
-  and provider-equivalence figures. The comprehensive results table is
-  supplementary.
+The completed [supplementary material](manuscript_supplement.md) provides the
+full data/support description, defender-relative geometry, models and
+inference, temporal and directional robustness, context and response-scale
+summaries, the opportunity-redistribution boundary result, reproducibility
+information, and the comprehensive compact results table. It supplements the
+two-figure main submission rather than adding competing main-table material.
