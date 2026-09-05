@@ -26,14 +26,16 @@ for scientific provenance, not as prerequisites for the paper.
 | Dataset | Why needed | Where to obtain | Expected local location | Redistributed here? | Notes |
 |---|---|---|---|---|---|
 | Metrica Sample Games 1--2 | Within-provider temporal result and flagship Figure 1 passage | [Metrica sample data](https://github.com/metrica-sports/sample-data) | `data/metrica_sample_game_1/`, `data/metrica_sample_game_2/` | No | Public sample data. Use Games 1--2 only; Game 3 is outside this paper. |
-| IDSSE / DFL XML | Seven-match temporal, context, and movement-direction analyses | Authorised IDSSE/DFL access | `data/idsse_raw/` | No | Provider-linked data; the seven governed matches require the expected match-information, event, and observed-position XML files. |
+| IDSSE / DFL XML | Seven-match temporal, context, and movement-direction analyses | [IDSSE/DFL Figshare dataset](https://doi.org/10.6084/m9.figshare.28196177.v1) | `data/idsse_raw/` | No | Public CC BY 4.0 research release. Download the required XML files locally; this repository does not duplicate raw files or detailed generated intermediates. |
 | SkillCorner Open Data | Nine-match external directional replication | [SkillCorner Open Data](https://github.com/SkillCorner/opendata) | `data/skillcorner_opendata/` | No | Public MIT-licensed source, but this repository deliberately keeps raw provider files and row-level derivatives local. Each formal match needs `<id>_match.json`, `<id>_tracking_extrapolated.jsonl`, and `<id>_phases_of_play.csv`. |
 
 Raw tracking, player/frame rows, and detailed provider-derived ledgers are not
 committed. The repository does include source, frozen protocols/configurations,
-compact aggregate results, figures, and hash ledgers. A data holder can rebuild
-the local rows; a reader without provider data can inspect the published paper
-artifacts and their governed summaries.
+compact aggregate results, figures, and hash ledgers. Download the public
+IDSSE/DFL release from its canonical source and place the required files under
+`data/idsse_raw/`; the repository deliberately does not duplicate upstream raw
+files or locally generated detailed intermediates. A reader can inspect the
+published paper artifacts and their governed summaries without a local data copy.
 
 ## Environment
 

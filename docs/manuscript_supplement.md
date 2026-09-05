@@ -6,7 +6,17 @@ This supplement accompanies the manuscript and provides technical detail for the
 
 ## S1. Data, observation support, and temporal design
 
-The temporal footprint was developed in Metrica Sample Game 1, evaluated on the untouched Sample Game 2, and pooled only under its pre-specified rule. The external temporal analysis used seven IDSSE professional matches. The directional analysis used the same seven-match IDSSE environment and a separate nine-match SkillCorner environment under a provider-compatible frozen specification. Analyses were kept separate by provider; no cross-provider effect was pooled.
+The temporal footprint was developed in Metrica Sample Game 1, evaluated on the untouched Sample Game 2, and pooled only under its pre-specified rule. The external temporal analysis used the seven public IDSSE/DFL matches in *An integrated dataset of spatiotemporal and event data in elite soccer* (Bassek et al., 2025; [Figshare DOI](https://doi.org/10.6084/m9.figshare.28196177.v1); CC BY 4.0). The directional analysis used the same seven-match IDSSE environment and a separate nine-match SkillCorner environment under a provider-compatible frozen specification. Analyses were kept separate by provider; no cross-provider effect was pooled.
+
+| Match ID | Present in the public IDSSE/DFL release? | Paper role | Notes |
+|---|---|---|---|
+| J03WMX | Yes | temporal external replication; context; direction | canonical Figshare filename manifest |
+| J03WN1 | Yes | temporal external replication; context; direction | canonical Figshare filename manifest |
+| J03WOH | Yes | temporal external replication; context; direction | canonical Figshare filename manifest |
+| J03WOY | Yes | temporal external replication; context; direction | canonical Figshare filename manifest |
+| J03WPY | Yes | temporal external replication; context; direction | canonical Figshare filename manifest |
+| J03WQQ | Yes | temporal external replication; context; direction | canonical Figshare filename manifest |
+| J03WR9 | Yes | temporal external replication; context; direction | canonical Figshare filename manifest |
 
 For the temporal estimand, one observation is an eligible `(match, period, t, attacker)` anchor and its complete vector of ten defending outfield players. The prior context is `[t-4, t-2]`, attacker exposure is `[t-2, t]`, and subsequent defensive movement is `[t, t+2]`. Anchors follow the frozen four-second grid, remain within a period, and require complete raw and smoothed support for the attacker and the same ten defending outfield players across the full window. Restarts, ball-out intervals, incomplete support, and goalkeeper/focal-player violations are excluded prospectively. These are support conditions, not tactical labels.
 
@@ -102,15 +112,15 @@ This is a boundary result, not a metric-selection prompt: the existing evidence 
 
 ## S9. Reproducibility and provider boundaries
 
-The public repository contains source, frozen protocol/configuration artifacts, compact aggregate results, figures, and hash/provenance records. It excludes raw provider tracking and detailed row-level provider derivatives. The [reproduction guide](../REPRODUCE.md) identifies environment setup, source entry points, public outputs, and the boundary between reproducible public artifacts and licensed inputs.
+The public repository contains source, frozen protocol/configuration artifacts, compact aggregate results, figures, and hash/provenance records. The IDSSE/DFL source XML is publicly downloadable from its canonical Figshare release under CC BY 4.0, but this repository does not duplicate raw source files or detailed locally generated row-level derivatives. The [reproduction guide](../REPRODUCE.md) identifies environment setup, source entry points, public outputs, and the boundary between reproducible public artifacts and local inputs.
 
 | Layer | What is public | What remains provider-bound |
 |---|---|---|
-| Scientific governance | protocols, configurations, eligibility logic, tests, compact results | licensed tracking/event inputs |
+| Scientific governance | protocols, configurations, eligibility logic, tests, compact results | locally downloaded source inputs |
 | Implementations | loaders, measurement/model code, QC and deterministic-reproduction checks | provider-specific raw and reconstructed rows |
 | Presentation | figures, reports, manuscript, supplementary tables | row-level observations and player-level derivatives |
 
-Provider environments were analyzed under frozen compatible specifications, with their own support and cadence rules. Agreement across environments is replication of a measurement result, not proof that providers are interchangeable or that the estimates can be meta-analytically pooled.
+Provider environments were analyzed under frozen compatible specifications, with their own support and cadence rules. Agreement across environments is replication of a measurement result, not proof that providers are interchangeable or that the estimates can be meta-analytically pooled. Public source/access information is documented for submission review; any portal-specific data-policy determination remains the conference's decision.
 
 ## S10. Comprehensive compact results table
 

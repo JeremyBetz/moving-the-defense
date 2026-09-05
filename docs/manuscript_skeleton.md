@@ -239,11 +239,13 @@ development-to-holdout sequence within a common coordinate and event setting.
 ### 3.2 IDSSE / DFL external validation
 
 The principal external temporal analysis used seven complete professional
-matches from the IDSSE/DFL tracking environment, accessed under authorized
-provider terms. This environment tested whether the already specified temporal
-measurement and its time-ordered association transported beyond the Metrica
-sample. It also supplied the primary external analysis of starting-context
-characteristics and the movement-direction comparison.
+matches from the public IDSSE/DFL research release, *An integrated dataset of
+spatiotemporal and event data in elite soccer* (Bassek et al., 2025; Figshare DOI:
+10.6084/m9.figshare.28196177.v1; CC BY 4.0). This environment tested whether
+the already specified temporal measurement and its time-ordered association
+transported beyond the Metrica sample. It also supplied the primary external
+analysis of starting-context characteristics and the movement-direction
+comparison.
 
 The seven matches are independent external matches, not seven provider
 replications or a league-wide population estimate. The aim was replication of a
@@ -266,10 +268,10 @@ population samples of football actions.
 
 ### 3.4 Availability and publication scope
 
-Metrica and SkillCorner data are available under their respective open-data
-terms, while IDSSE data require authorized access. Reproducibility materials are
-public where licensing permits; detailed implementation and data-access
-information are provided in the supplement and repository documentation.
+Metrica, IDSSE/DFL, and SkillCorner data are available from their respective
+public sources under their stated licenses. Reproducibility materials are public;
+detailed implementation and data-access information are provided in the
+supplement and repository documentation.
 
 ## 4. Methods
 
@@ -736,8 +738,9 @@ not be tuned until positive: localized reorganization is not demonstrated space
 creation, attacking value, or tactical success.
 
 Third, the samples and tracking environments remain limited. Metrica provides
-two open sample matches, IDSSE seven authorized professional matches, and
-SkillCorner broadcast-derived tracking with provider-specific support handling.
+two open sample matches, seven IDSSE/DFL public-release professional matches,
+and SkillCorner broadcast-derived tracking with provider-specific support
+handling.
 The external estimates were not pooled. This is staged replication, not
 population-wide generalization or provider interchangeability.
 

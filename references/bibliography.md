@@ -4,6 +4,8 @@ Targeted working bibliography for the Phase 4A literature/novelty audit and Phas
 
 ## Collective Organization and Team Geometry
 
+Bassek, Manuel, Robert Rein, Hendrik Weber, and Daniel Memmert. 2025. “An Integrated Dataset of Spatiotemporal and Event Data in Elite Soccer.” *figshare*, Dataset. <https://doi.org/10.6084/m9.figshare.28196177.v1>
+
 Frencken, Wouter, and Koen Lemmink. 2011. “Oscillations of Centroid Position and Surface Area of Soccer Teams in Small-Sided Games.” *European Journal of Sport Science* 11 (4): 215–223. <https://doi.org/10.1080/17461391.2010.499967>
 
 Sampaio, Jaime, and Vítor Maçãs. 2012. “Measuring Tactical Behaviour in Football.” *International Journal of Sports Medicine* 33 (5): 395–401. <https://doi.org/10.1055/s-0031-1301320>

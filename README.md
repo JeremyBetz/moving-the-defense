@@ -152,7 +152,7 @@ retained in the [claim-status ledger](docs/claim_status.md) and
 |---|---|
 | Metrica Sample Game 1 | Open/public development environment |
 | Metrica Sample Game 2 | Open/public heldout validation and real explanatory example |
-| IDSSE / DFL XML | Seven-match external validation; authorized/provider access required |
+| IDSSE / DFL XML | Seven-match public research release; [IDSSE/DFL Figshare dataset](https://doi.org/10.6084/m9.figshare.28196177.v1), CC BY 4.0 |
 | SkillCorner Open Data | Open third, broadcast-derived environment for directional replication |
 | Metrica Sample Game 3 | Untouched |
 
