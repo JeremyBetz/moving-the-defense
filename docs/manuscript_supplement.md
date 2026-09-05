@@ -26,7 +26,9 @@ Metrica and IDSSE use native 25 Hz tracking and a centred seven-frame smoother w
 
 For focal defender $d$ at time $s$, with ten defending outfield positions $x_1(s),\ldots,x_{10}(s)$, define the leave-one-out reference
 
-$$c_{-d}(s)=\frac{1}{9}\sum_{j\ne d}x_j(s),\qquad r_d(s)=x_d(s)-c_{-d}(s).$$
+$$
+c_{-d}(s)=\frac{1}{9}\sum_{j\ne d}x_j(s),\qquad r_d(s)=x_d(s)-c_{-d}(s).
+$$
 
 The focal-relative path over an interval is the accumulated Euclidean movement of $r_d$. Thus common translation of all ten defenders cancels, while movement of a focal defender relative to the other nine remains observable. The reference is a geometric baseline, not an inferred defensive assignment.
 
@@ -40,13 +42,17 @@ At the boundary $t$, each defender is ranked by Euclidean distance to the attack
 
 For rank $k$, the temporal model estimates subsequent focal-relative path $Y_{ik}$ from preceding attacker path $X_i$, the corresponding prior focal-relative path $B_{ik}$, and prior defensive-unit-centroid path $C_i$:
 
-$$Y_{ik}=\sum_{r=1}^{10}\mathbb{1}(k=r)\left(\alpha_r+\beta_rX_i+\gamma_rB_{ik}+\eta_rC_i\right)+\epsilon_{ik}.$$
+$$
+Y_{ik}=\sum_{r=1}^{10}\mathbb{1}(k=r)\left(\alpha_r+\beta_rX_i+\gamma_rB_{ik}+\eta_rC_i\right)+\epsilon_{ik}.
+$$
 
 Pooled Metrica adds a common Game 2 indicator; IDSSE adds match indicators. The principal temporal contrast is $\Delta_{NM}=\operatorname{mean}(\beta_{D1:D3})-\operatorname{mean}(\beta_{D4:D7})$. It is a difference in observed associations, not a causal local effect.
 
 The directional model uses a common attacker movement magnitude, goalward and outward signed components, and frozen starting-context covariates:
 
-$$Y_i=\alpha_{m(i)}+\beta_GG_i+\beta_OO_i+\theta^\top Z_i+\epsilon_i.$$
+$$
+Y_i=\alpha_{m(i)}+\beta_GG_i+\beta_OO_i+\theta^\top Z_i+\epsilon_i.
+$$
 
 Its main contrast is $\beta_O-\beta_G$. Outward means movement away from the pitch centreline; it is not a tactical label. Context analyses use the same observed near-minus-middle path as outcome. Response-scale summaries retain focal-relative movement and shared defensive-unit translation as separate, non-exhaustive channels.
 

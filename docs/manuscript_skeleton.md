@@ -278,8 +278,8 @@ supplement and repository documentation.
 ### 4.1 Analysis unit and attacker movement
 
 The analysis unit was a supported attacker-time anchor during open play. Each
-anchor defined three consecutive two-second intervals: context ([t-4,t-2]),
-attacker exposure ([t-2,t]), and a subsequent defender interval ([t,t+2]).
+anchor defined three consecutive two-second intervals: context $[t-4,t-2]$,
+attacker exposure $[t-2,t]$, and a subsequent defender interval $[t,t+2]$.
 Attacker movement was treated as an observed exposure, not as a causal treatment
 or tactical label.
 
@@ -299,15 +299,15 @@ configuration.
 
 ### 4.2 Defender-relative representation
 
-For each focal defender \(d\), position was expressed relative to the other
+For each focal defender $d$, position was expressed relative to the other
 nine defending outfield players,
 
-\[
+$$
 \mathbf r_d(t)=\mathbf x_d(t)-\frac{1}{9}\sum_{j\ne d}\mathbf x_j(t),
-\]
+$$
 
-where \(\mathbf x_d(t)\) is the focal defender's position. The primary local
-outcome was accumulated path in \(\mathbf r_d(t)\) over the subsequent interval.
+where $\mathbf x_d(t)$ is the focal defender's position. The primary local
+outcome was accumulated path in $\mathbf r_d(t)$ over the subsequent interval.
 It expresses how much the defender moved relative to the defensive unit and so
 reduces the contribution of a shared translation. For a complete ten-defender
 set, leave-one-out centering is a constant rescaling of ordinary
@@ -319,7 +319,7 @@ near-versus-middle rank pattern.
 
 ### 4.3 Temporal ordering and start-fixed proximity groups
 
-At the boundary \(t\), all ten defending outfield players were ranked by
+At the boundary $t$, all ten defending outfield players were ranked by
 Euclidean distance from the focal attacker and held fixed for the subsequent
 interval. The primary group was the three nearest defenders (D1–D3); the
 reference group was the four middle-ranked defenders (D4–D7). D8–D10 were
@@ -346,15 +346,15 @@ path of the full defending-outfield centroid; pooled fits added only common
 match indicators. The headline near-minus-middle contrast was the mean
 attacker-path coefficient for D1–D3 minus the mean coefficient for D4–D7.
 
-Writing \(i\) for the attacker-time anchor and \(k\) for the fixed defender
+Writing $i$ for the attacker-time anchor and $k$ for the fixed defender
 rank, the fitted rank-specific structure was
 
-\[
+$$
 Y_{ik}=\alpha_k+\beta_kX_i+\gamma_kB_{ik}+\eta_kC_i+\varepsilon_{ik},
-\]
+$$
 
-where \(Y_{ik}\) is subsequent defender-relative path, \(X_i\) is preceding
-attacker path, \(B_{ik}\) is the defender's strictly prior path, and \(C_i\)
+where $Y_{ik}$ is subsequent defender-relative path, $X_i$ is preceding
+attacker path, $B_{ik}$ is the defender's strictly prior path, and $C_i$
 is the strictly prior defending-unit-centroid path.
 
 A positive contrast indicates a stronger association among near than
@@ -395,13 +395,13 @@ components as mutually exclusive football actions.
 
 Equivalently, the directional model was
 
-\[
+$$
 Y_i=\alpha_{m(i)}+\beta_GG_i+\beta_OO_i+\boldsymbol\theta^\top\mathbf Z_i+\varepsilon_i,
-\]
+$$
 
-with \(G_i\) and \(O_i\) the goalward and outward displacement components and
-\(\mathbf Z_i\) the listed path and starting-geometry covariates. The reported
-estimand was \(\beta_O-\beta_G\).
+with $G_i$ and $O_i$ the goalward and outward displacement components and
+$\mathbf Z_i$ the listed path and starting-geometry covariates. The reported
+estimand was $\beta_O-\beta_G$.
 
 IDSSE was the primary directional environment. SkillCorner provided a separate
 provider-compatible replication under pre-specified rules; the environments
