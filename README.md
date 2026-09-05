@@ -1,4 +1,4 @@
-# Measuring Localized Defensive Reorganization Associated with Off-Ball Movement in Football
+# Off-Ball Movement Direction and Localized Defensive Reorganization in Football
 
 *Working paper from the `moving-the-defense` repository.*
 
@@ -14,9 +14,10 @@ Data.
 The paper asks how this association varies with an attacker's starting geometry
 and movement direction.
 
-This is an observational measurement, not a causal or value claim. It can help
-analysts surface passages where attacker movement is followed by localized
-internal defensive change for later video review.
+This is an observational measurement, not a causal or value claim. The
+measurement can filter or identify candidate passages for later video review;
+the football meaning and retrieval usefulness of those passages have not been
+independently validated.
 
 > **Reproduce the paper:** begin with [REPRODUCE.md](REPRODUCE.md), the
 > human-first data-to-figure guide. The
@@ -33,6 +34,8 @@ shared collective shift can be distinguished from local movement within the
 unit. Defenders are grouped by their start-time proximity to the moving
 attacker; “near-minus-middle” means the difference between the three nearest
 and four middle-ranked defenders.
+
+**Figure 1 — Temporal measurement and validation.**
 
 ![Time-ordered localized defensive-reorganization evidence](docs/figures/sloan/temporal_footprint_flagship.svg)
 
@@ -72,18 +75,21 @@ defender-relative reorganization than goalward displacement.
 | IDSSE | 0.056856 m/m | [0.051358, 0.062430] | 7/7 match; 7/7 leave-one-match-out positive |
 | SkillCorner Open Data | 0.048883 m/m | [0.042940, 0.054707] | 9/9 match; 9/9 leave-one-match-out positive |
 
-The frozen IDSSE illustration corresponds to approximately **0.284 m** more
+The IDSSE illustration corresponds to approximately **0.284 m** more
 subsequent localized defender-relative reorganization for a 5 m outward rather
 than 5 m goalward displacement, under equal path magnitude and context.
 Defensive reorganization was therefore not simply aligned with movement toward
 goal. This does not mean outward movement is better, more valuable, or a
 preferred tactical action.
 
-![Outward-versus-goalward movement-direction result](figures/defensive_reorganization_spatial_value_v1/spatial_form.png)
+**Figure 2 — Directional replication across separate tracking environments.**
 
-*Left: frozen 5 m canonical movement descriptions. Right: all seven IDSSE
-match-specific outward-minus-goalward contrasts are positive. No cross-provider
-pooled estimate was created.*
+![Replicated outward-versus-goalward difference in localized defensive reorganization](docs/figures/sloan/directional_replication.svg)
+
+*Separate pooled estimates are shown for IDSSE and SkillCorner: all 7/7 IDSSE
+and all 9/9 SkillCorner match-level outward-minus-goalward contrasts are
+positive. No cross-provider pooled estimate was calculated. The figure reports
+observational geometry, not value.*
 
 ### 3. Starting geometry matters
 
@@ -101,18 +107,18 @@ where the observed geometry was larger; they do not explain why defenders moved.
 
 ## What this could be used for
 
-The method can surface off-ball movements followed by strong measured
-reorganization within the defensive unit, distinguish those changes from a
-shared defensive shift, and give analysts a structured set of passages for
-video review. It does not automatically assign tactical labels, rank players,
-or measure value.
+The measurement can identify or filter candidate off-ball passages with strong
+measured reorganization within the defensive unit, distinguish those changes
+from a shared defensive shift, and give analysts a structured starting point
+for video review. Its football meaning and retrieval usefulness have not been
+independently validated; it does not automatically assign tactical labels, rank
+players, or measure value.
 
 The contribution is not a new centroid or generic tracking primitive. It is a
-prospectively validated temporal measurement of internal defensive
-reorganization, combined with a replicated finding that outward and goalward
-off-ball movement are associated with different defensive geometry across
-multiple tracking environments—without requiring inferred marking assignments
-or a value model.
+prospectively tested and externally replicated temporal measurement of internal
+defensive reorganization, combined with a replicated directional difference in
+the defensive geometry associated with outward versus goalward off-ball
+movement—without requiring inferred marking assignments or a value model.
 
 ## What the follow-up does and does not explain
 
@@ -124,7 +130,7 @@ leave-one-match-out fits.
 The proposed inward-versus-outward narrowing mechanism was **MIXED**:
 0.134003 m [−0.006622, 0.273430], with 5/7 positive match contrasts. Different
 geometric response scales are visible, but the mechanism behind the directional
-asymmetry remains unresolved.
+difference remains unresolved.
 
 ## What the evidence does not establish
 

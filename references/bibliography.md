@@ -40,8 +40,6 @@ Herold, M., A. Hecksteden, D. Radke, F. Goes, S. Nopp, T. Meyer, and M. Kempe. 2
 
 Groom, Sean, Shuo Wang, Francisco Belo, Axl Rice, and Liam Anderson. 2026. “A Machine Learning Framework for Off Ball Defensive Role and Performance Evaluation in Football.” arXiv:2601.00748. <https://arxiv.org/abs/2601.00748>
 
-Calero-Sanz, Jorge, Roberto López del Campo, Ricardo Resta, and Javier M. Buldú. 2026. “Beyond Marking Networks in Soccer: Coordination, Similarity and Entropy.” *Chaos, Solitons & Fractals* 211, Part 2: 118819. <https://doi.org/10.1016/j.chaos.2026.118819>
-
 Buldú, Javier M., David Garrido, Daniel R. Antequera, Javier Busquets, Ernesto Estrada, Ricardo Resta, and Roberto López del Campo. 2020. “Football Tracking Networks: Beyond Event-Based Connectivity.” arXiv:2011.06014. <https://arxiv.org/abs/2011.06014>
 
 Franks, Alexander, Andrew Miller, Luke Bornn, and Kirk Goldsberry. 2015. “Characterizing the Spatial Structure of Defensive Skill in Professional Basketball.” *The Annals of Applied Statistics* 9 (1): 94–121. <https://doi.org/10.1214/14-AOAS799>

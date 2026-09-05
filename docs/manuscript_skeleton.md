@@ -186,8 +186,8 @@ represented without making a path a single named football action.
 ### 2.4 Temporal disruption and directional movement
 
 Temporal ordering is also established in adjacent work. Moura et al. (2016)
-reported short lags in coordinated team spread. Forcher, Kempe, and colleagues
-(2021) evaluated D-Def, a pass-triggered measure of changes in team and line
+reported short lags in coordinated team spread. Forcher et al. (2021)
+evaluated D-Def, a pass-triggered measure of changes in team and line
 centroids, area, and spread during the seconds after a pass. Herold et al.
 (2022) followed pressure trajectories through off-ball actions. These studies
 show that delayed defensive change can be measured, but they use collective
@@ -256,6 +256,13 @@ from SkillCorner Open Data. This broadcast-derived tracking environment was used
 only for the outward-versus-goalward comparison, under separate
 provider-compatible rules. SkillCorner and IDSSE were analysed separately rather
 than pooled across providers because their tracking and support conditions differ.
+
+Across the closed analyses, the temporal sample contained 8,910 supported
+attacker-time anchors in the two Metrica matches and 72,316 in the seven IDSSE
+matches. The directional analyses contained 4,618 eligible anchors (64,805
+analysis rows) in IDSSE and 5,458 eligible anchors (49,107 rows) in SkillCorner.
+These are measurement samples under provider-specific support rules, not
+population samples of football actions.
 
 ### 3.4 Availability and publication scope
 
@@ -328,12 +335,25 @@ profile rather than to impose a monotonic relationship with distance.
 
 ### 4.4 Primary temporal association and reverse-time comparison
 
-The primary temporal models estimated the association between attacker path
-during \([t-2,t]\) and focal defender-relative path during \([t,t+2]\), with
-separate terms by start-fixed rank. Models conditioned on pre-interval movement
-and spatial context only. The headline quantity was the near-minus-middle
-contrast: the difference between the attacker-path associations for D1–D3 and
-D4–D7.
+Each primary temporal-regression row was one start-fixed defender rank at one
+supported attacker-time anchor. The outcome was that defender's subsequent
+two-second defender-relative path. In raw-metre ordinary least squares, each
+rank received its own intercept and coefficients for preceding attacker path,
+that defender's strictly prior defender-relative path, and the strictly prior
+path of the full defending-outfield centroid; pooled fits added only common
+match indicators. The headline near-minus-middle contrast was the mean
+attacker-path coefficient for D1–D3 minus the mean coefficient for D4–D7.
+
+Writing \(i\) for the attacker-time anchor and \(k\) for the fixed defender
+rank, the fitted rank-specific structure was
+
+\[
+Y_{ik}=\alpha_k+\beta_kX_i+\gamma_kB_{ik}+\eta_kC_i+\varepsilon_{ik},
+\]
+
+where \(Y_{ik}\) is subsequent defender-relative path, \(X_i\) is preceding
+attacker path, \(B_{ik}\) is the defender's strictly prior path, and \(C_i\)
+is the strictly prior defending-unit-centroid path.
 
 A positive contrast indicates a stronger association among near than
 middle-ranked defenders; it does not establish causation or assignment.
@@ -358,12 +378,28 @@ ordering, not an estimator of a response onset or an intervention effect.
 
 ### 4.5 Movement-direction analysis
 
-The directional analysis decomposed attacker displacement into the pre-specified
-goalward/away-from-goal axis and outward/inward axis. Outward movement means
-movement away from the pitch centreline under the standardized orientation; it
-does not mean movement away from goal. The primary directional contrast compared
-outward with goalward displacement while conditioning on attacker path magnitude
-and starting geometry.
+The directional analysis used one eligible attacker-time anchor per row, with
+the near-minus-middle subsequent defender-relative-path contrast as the outcome.
+It decomposed attacker displacement into the pre-specified goalward/away-from-
+goal axis and outward/inward axis. Outward movement means movement away from
+the pitch centreline under the standardized orientation; it does not mean
+movement away from goal. Equal-match-weighted raw-metre OLS with match
+intercepts estimated the outward-minus-goalward coefficient contrast, while
+conditioning on exposure and prior attacker path, attacker depth relative to
+the defensive unit, attacker-ball distance, defending-unit width and depth, and
+ball depth relative to that unit. Thus the comparison holds overall path and
+observed starting geometry in the model rather than treating movement
+components as mutually exclusive football actions.
+
+Equivalently, the directional model was
+
+\[
+Y_i=\alpha_{m(i)}+\beta_GG_i+\beta_OO_i+\boldsymbol\theta^\top\mathbf Z_i+\varepsilon_i,
+\]
+
+with \(G_i\) and \(O_i\) the goalward and outward displacement components and
+\(\mathbf Z_i\) the listed path and starting-geometry covariates. The reported
+estimand was \(\beta_O-\beta_G\).
 
 IDSSE was the primary directional environment. SkillCorner provided a separate
 provider-compatible replication under pre-specified rules; the environments
@@ -407,11 +443,15 @@ in a distinct tracking environment, while SkillCorner separately tested the
 directional comparison. These analyses were specified before their protected
 outcomes were inspected.
 
-Uncertainty used grouped block bootstraps appropriate to temporally dependent
-tracking observations, with match-level or leave-one-match-out sign checks to
-assess concentration in a small number of matches. Robustness checks included
-the reverse-time comparison, pre-specified horizons and trimming, and
-complete-support checks. Detailed support,
+Uncertainty used 2,000 deterministic 60-second match-period block-bootstrap
+replicates, retaining complete anchor vectors and simultaneous attackers within
+each resampled block; at least 1,900 finite, estimable replicates were required.
+Metrica temporal and starting-context primary families used 97.5% percentile
+intervals, while IDSSE temporal, IDSSE directional, SkillCorner directional,
+and response-scale results used 95% percentile intervals. Match-level or
+leave-one-match-out sign checks assessed concentration in a small number of
+matches. Robustness checks included the reverse-time comparison, pre-specified
+horizons and trimming, and complete-support checks. Detailed support,
 provider-compatibility, and reproducibility checks are reported in the
 supplement and repository materials. The resulting intervals are
 provider-specific observational inferences, not pooled or causal estimates.
@@ -539,10 +579,11 @@ produced it.
 
 The secondary response-scale analysis found that a 5 m goalward-versus-outward
 contrast was associated with 2.962709 m of collective defensive translation
-[2.870720, 3.048322], positive in all 7/7 match-specific and leave-one-match-
-out fits. The proposed inward-versus-outward width-narrowing mechanism was not
-established: its contrast was 0.134003 m [−0.006622, 0.273430], with positive
-estimates in 5/7 matches. Goalward and outward movement were therefore
+(95% CI [2.870720, 3.048322]), positive in all 7/7 match-specific and leave-one-
+match-out fits. The proposed inward-versus-outward width-narrowing mechanism had
+mixed evidence: its contrast was 0.134003 m (95% CI [−0.006622, 0.273430]),
+with positive estimates in 5/7 matches; the narrowing mechanism was not
+established. Goalward and outward movement were therefore
 associated with different geometric scales, but the mechanism behind the
 directional difference remains unresolved. Because the outcomes were estimated
 separately, they are not a decomposition of total defensive movement into

@@ -1,8 +1,8 @@
 # Reproduce the current paper
 
 This is the short, human-first path for reproducing the current paper,
-*Measuring Localized Defensive Reorganization Associated with Off-Ball Movement
-in Football*. It assumes that you have the required data access. For protocol
+*Off-Ball Movement Direction and Localized Defensive Reorganization in
+Football*. It assumes that you have the required data access. For protocol
 history, every negative branch, and machine-oriented provenance, use the
 [technical reproducibility guide](docs/reproducibility.md) instead.
 
@@ -12,10 +12,10 @@ history, every negative branch, and machine-oriented provenance, use the
   its seven-match IDSSE replication;
 - the IDSSE starting-context results for attacker--unit goalward position and
   attacker--ball distance;
-- the IDSSE outward-versus-goalward localized spatial-form result;
-- its SkillCorner Open Data external replication; and
-- the paper's flagship temporal figure and the retained context/spatial-form
-  supplementary figures.
+- the IDSSE outward-versus-goalward movement-direction analysis;
+- its SkillCorner Open Data directional replication; and
+- the paper's Figure 1 temporal measurement figure, Figure 2 directional
+  replication figure, and retained context/directional supplementary figures.
 
 It does **not** require reproducing historical segmentation, opportunity,
 coverage, expectation, or other mixed/negative branches. Those are preserved
@@ -26,8 +26,8 @@ for scientific provenance, not as prerequisites for the paper.
 | Dataset | Why needed | Where to obtain | Expected local location | Redistributed here? | Notes |
 |---|---|---|---|---|---|
 | Metrica Sample Games 1--2 | Within-provider temporal result and flagship Figure 1 passage | [Metrica sample data](https://github.com/metrica-sports/sample-data) | `data/metrica_sample_game_1/`, `data/metrica_sample_game_2/` | No | Public sample data. Use Games 1--2 only; Game 3 is outside this paper. |
-| IDSSE / DFL XML | Seven-match temporal, context, and IDSSE spatial-form analyses | Authorised IDSSE/DFL access | `data/idsse_raw/` | No | Provider-linked data; the seven governed matches require the expected match-information, event, and observed-position XML files. |
-| SkillCorner Open Data | Nine-match external spatial-form replication | [SkillCorner Open Data](https://github.com/SkillCorner/opendata) | `data/skillcorner_opendata/` | No | Public MIT-licensed source, but this repository deliberately keeps raw provider files and row-level derivatives local. Each formal match needs `<id>_match.json`, `<id>_tracking_extrapolated.jsonl`, and `<id>_phases_of_play.csv`. |
+| IDSSE / DFL XML | Seven-match temporal, context, and movement-direction analyses | Authorised IDSSE/DFL access | `data/idsse_raw/` | No | Provider-linked data; the seven governed matches require the expected match-information, event, and observed-position XML files. |
+| SkillCorner Open Data | Nine-match external directional replication | [SkillCorner Open Data](https://github.com/SkillCorner/opendata) | `data/skillcorner_opendata/` | No | Public MIT-licensed source, but this repository deliberately keeps raw provider files and row-level derivatives local. Each formal match needs `<id>_match.json`, `<id>_tracking_extrapolated.jsonl`, and `<id>_phases_of_play.csv`. |
 
 Raw tracking, player/frame rows, and detailed provider-derived ledgers are not
 committed. The repository does include source, frozen protocols/configurations,
@@ -87,11 +87,12 @@ reading for the linear paper path below.
 | Temporal result, Metrica | `src/spatial_defensive_response_footprint_game1_v1.py`, then `src/spatial_defensive_response_footprint_game2_final_v1.py` | [`footprint protocol`](docs/protocols/spatial_defensive_response_footprint_v1.md) | `outputs/spatial_defensive_response_footprint_game2_final_v1/pooled_regional.csv` | Flagship Figure 1, Panel B/C | Near-minus-middle `0.05029` [0.03433, 0.06858]; paired excess `0.02912` [0.01410, 0.04526] |
 | Temporal result, IDSSE | `src/spatial_defensive_response_footprint_idsse_v1.py` | [`external protocol`](docs/protocols/spatial_defensive_response_footprint_v1_idsse_external_replication.md) | `outputs/spatial_defensive_response_footprint_idsse_v1/coefficient_intervals.csv` | Flagship Figure 1, Panel B/C | `0.06115` [0.05579, 0.06681]; paired excess `0.02455` [0.01932, 0.02985] |
 | Context H1/H2, IDSSE | `src/defensive_reorganization_context_v1.py` | [`Context v1 protocol`](docs/protocols/defensive_reorganization_context_v1.md) | `outputs/defensive_reorganization_context_v1/result.json` | Table 1; supplementary context figure | H1 `-0.010161` [−0.011805, −0.008499]; H2 `-0.007533` [−0.008864, −0.006245] |
-| Spatial Form, IDSSE | `src/defensive_reorganization_spatial_value_v1.py` | [`Spatial Form v1 protocol`](docs/protocols/defensive_reorganization_spatial_value_v1.md) | `outputs/defensive_reorganization_spatial_value_v1/result.json` | Table 1; supplementary spatial-form figure | Outward minus goalward `0.056856` [0.051358, 0.062430] |
-| Spatial Form, SkillCorner | `src/defensive_reorganization_spatial_form_skillcorner_external.py` | [`SkillCorner protocol`](docs/protocols/defensive_reorganization_spatial_form_v1_skillcorner_external.md) | `outputs/defensive_reorganization_spatial_form_v1_skillcorner_external/result.json` | Table 1 / external-replication text | Outward minus goalward `0.048883` [0.042940, 0.054707] |
-| Flagship figure | `src/generate_temporal_footprint_flagship.py` | Closed compact temporal outputs | `docs/figures/sloan/temporal_footprint_flagship.svg` | Figure 1 | Uses the closed values above plus one deterministic Game 2 passage |
+| Movement-direction analysis, IDSSE | `src/defensive_reorganization_spatial_value_v1.py` | [`directional-analysis protocol`](docs/protocols/defensive_reorganization_spatial_value_v1.md) | `outputs/defensive_reorganization_spatial_value_v1/result.json` | Table 1; supplementary directional figure | Outward minus goalward `0.056856` [0.051358, 0.062430] |
+| Directional replication, SkillCorner | `src/defensive_reorganization_spatial_form_skillcorner_external.py` | [`SkillCorner protocol`](docs/protocols/defensive_reorganization_spatial_form_v1_skillcorner_external.md) | `outputs/defensive_reorganization_spatial_form_v1_skillcorner_external/result.json` | Table 1 / external-replication text | Outward minus goalward `0.048883` [0.042940, 0.054707] |
+| Figure 1 — Time-ordered localized defensive reorganization | `src/generate_temporal_footprint_flagship.py` | Closed compact temporal outputs plus one deterministic Game 2 passage | `docs/figures/sloan/temporal_footprint_flagship.svg` | Figure 1 | Uses the closed values above plus one deterministic Game 2 passage |
+| Figure 2 — Directional replication | `src/generate_directional_replication_figure.py` | Closed compact aggregate directional inputs only | `docs/figures/sloan/directional_replication.{svg,png,pdf}` | Figure 2 | IDSSE `0.056856` [0.051358, 0.062430], 7/7 positive; SkillCorner `0.048883` [0.042940, 0.054707], 9/9 positive; no cross-provider pooled estimate |
 
-Intervals are governed bootstrap intervals. Exact byte identity is expected for
+Intervals are pre-specified bootstrap intervals. Exact byte identity is expected for
 the compact files when the same data release, Python/package environment, and
 deterministic execution path are used. On another compatible platform, first
 compare the reported values to the precisions shown above, then consult the
@@ -179,7 +180,7 @@ mv figures/spatial_defensive_response_footprint_game1_v1 \
    figure are written to `outputs/defensive_reorganization_context_v1/` and
    `figures/defensive_reorganization_context_v1/`.
 
-5. **Reproduce IDSSE Spatial Form v1** — after moving its closed compact
+5. **Reproduce the IDSSE movement-direction analysis** — after moving its closed compact
    output/figure folders aside, execute the frozen model. Runtime: **tens of
    minutes**.
 
@@ -190,7 +191,7 @@ mv figures/spatial_defensive_response_footprint_game1_v1 \
 
    Expect outward-minus-goalward `0.056856` [0.051358, 0.062430].
 
-6. **Reproduce the SkillCorner external replication** — use a new output path
+6. **Reproduce the SkillCorner directional replication** — use a new output path
    for an isolated rerun. Runtime: **long**.
 
    ```bash
@@ -206,18 +207,22 @@ mv figures/spatial_defensive_response_footprint_game1_v1 \
    row-level outputs.
 
 7. **Regenerate paper figures/tables** — after the temporal Metrica outputs
-   are present, regenerate the flagship figure. Runtime: **seconds to
-   minutes**.
+   are present, regenerate Figure 1. Figure 2 uses only closed compact
+   aggregate inputs and therefore does not require provider row-level data.
+   Runtime: **seconds to minutes**.
 
    ```bash
    MPLCONFIGDIR=/tmp/moving-the-defense-mpl .venv/bin/python \
      src/generate_temporal_footprint_flagship.py
+   MPLCONFIGDIR=/tmp/moving-the-defense-mpl .venv/bin/python \
+     src/generate_directional_replication_figure.py
    ```
 
    This writes `docs/figures/sloan/temporal_footprint_flagship.{svg,png,pdf}`.
-   The Context and Spatial Form scripts in steps 4--5 regenerate their own
-   supplementary figures. Table values are read from the compact result files
-   listed above.
+   Figure 2 writes `docs/figures/sloan/directional_replication.{svg,png,pdf}`.
+   The Context and historical internal source scripts in steps 4--5 regenerate
+   their own supplementary figures. Table values are read from the compact
+   result files listed above.
 
 ## Fast paper-artifact path
 
@@ -290,6 +295,6 @@ historical result not listed here, return to
 - [ ] Provider gates pass
 - [ ] Temporal result matches
 - [ ] Context result matches
-- [ ] IDSSE Spatial Form result matches
+- [ ] IDSSE movement-direction result matches
 - [ ] SkillCorner replication matches
 - [ ] Figures regenerate
