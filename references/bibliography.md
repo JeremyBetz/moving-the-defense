@@ -34,6 +34,10 @@ Marcelino, Rui, Jaime Sampaio, Guy Amichay, Bruno Gonçalves, Iain D. Couzin, an
 
 Forcher, Leander, Stefan Altmann, Leon Forcher, Darko Jekauc, and Matthias Kempe. 2022. “The Use of Player Tracking Data to Analyze Defensive Play in Professional Soccer—A Scoping Review.” *International Journal of Sports Science & Coaching* 17 (6). <https://doi.org/10.1177/17479541221075734>
 
+Forcher, Leander, Matthias Kempe, Stefan Altmann, Leon Forcher, and Alexander Woll. 2021. “The ‘Hockey’ Assist Makes the Difference—Validation of a Defensive Disruptiveness Model to Evaluate Passing Sequences in Elite Soccer.” *Entropy* 23 (12): 1607. <https://doi.org/10.3390/e23121607>
+
+Herold, M., A. Hecksteden, D. Radke, F. Goes, S. Nopp, T. Meyer, and M. Kempe. 2022. “Off-Ball Behavior in Association Football: A Data-Driven Model to Measure Changes in Individual Defensive Pressure.” *Journal of Sports Sciences* 40 (12): 1412–1425. <https://doi.org/10.1080/02640414.2022.2081405>
+
 Groom, Sean, Shuo Wang, Francisco Belo, Axl Rice, and Liam Anderson. 2026. “A Machine Learning Framework for Off Ball Defensive Role and Performance Evaluation in Football.” arXiv:2601.00748. <https://arxiv.org/abs/2601.00748>
 
 Calero-Sanz, Jorge, Roberto López del Campo, Ricardo Resta, and Javier M. Buldú. 2026. “Beyond Marking Networks in Soccer: Coordination, Similarity and Entropy.” *Chaos, Solitons & Fractals* 211, Part 2: 118819. <https://doi.org/10.1016/j.chaos.2026.118819>
@@ -133,6 +137,8 @@ Caetano, Fabio Giuliano, Paulo Roberto Pereira Santiago, Ricardo da Silva Torres
 Moura, Felipe Arruda, Richard E. A. van Emmerik, Juliana Exel Santana, Luiz Eduardo Barreto Martins, Ricardo Machado Leite de Barros, and Sérgio Augusto Cunha. 2016. “Coordination Analysis of Players’ Distribution in Football Using Cross-Correlation and Vector Coding Techniques.” *Journal of Sports Sciences* 34 (24): 2224–2232. <https://doi.org/10.1080/02640414.2016.1173222>
 
 Narizuka, Takuma, and Yoshihiro Yamazaki. 2016. “Statistical Properties for Directional Alignment and Chasing of Players in Football Games.” *EPL* 116 (6): 68001. <https://doi.org/10.1209/0295-5075/116/68001>
+
+Narizuka, Takuma, and Issei Yamazaki. 2025. “Evaluating Soccer Player Movements Using the Attacker-Defender Model.” arXiv:2512.22596. <https://arxiv.org/abs/2512.22596>
 
 Chacoma, Andrés, Nicolás Almeira, Juan I. Perotti, and Omar V. Billoni. 2022. “Complexity Emerges in Measures of the Marking Dynamics in Football Games.” *Physical Review E* 106: 044308. <https://doi.org/10.1103/PhysRevE.106.044308>
 

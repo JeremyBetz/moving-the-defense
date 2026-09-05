@@ -32,8 +32,9 @@ magnitude. Across seven IDSSE matches, the corresponding association was
 was 0.02455 [0.01932, 0.02985]. All seven primary and paired-excess estimates
 were positive; 1-, 2-, and 4-second horizons were likewise positive (0.03536,
 0.06115, and 0.09549 m/m), although reverse-time structure itself remained
-positive. The IDSSE trim retained 95.35% of primary magnitude. The directional
-asymmetry replicated across independent tracking environments: conditional on
+positive. The IDSSE trim retained 95.35% of primary magnitude. The
+outward-versus-goalward directional difference replicated across independent
+tracking environments: conditional on
 equal path magnitude and frozen starting geometry, outward minus goalward
 movement was 0.056856 m/m [0.051358, 0.062430] in IDSSE, positive in all 7/7
 match and leave-one-match-out fits, and 0.048883 m/m [0.042940, 0.054707] in
@@ -50,12 +51,12 @@ toward goal. Goalward movement instead had a secondary, nonclassifying
 proposed inward-versus-outward narrowing mechanism was not established.
 
 **Conclusion.** This is not a new centroid or tracking primitive, but a
-prospectively validated temporal measure of internal defensive reorganization
-with replicated directional asymmetry. It can distinguish shared defensive
-shifts from localized internal reorganization and surface passages for video
-analysis. It does not automatically assign tactical labels. These are
-observational geometric associations, not estimates of causal influence or
-attacking value.
+prospectively tested and externally replicated temporal measure of internal
+defensive reorganization with a replicated directional difference. It can
+distinguish shared defensive shifts from localized internal reorganization and
+surface passages for video analysis. It does not automatically assign tactical
+labels. These are observational geometric associations, not estimates of causal
+influence or attacking value.
 
 ## 1. Introduction
 
@@ -71,18 +72,21 @@ they occurred.
 
 ### 1.2 Research question and contribution
 
-This paper asks whether preceding off-ball attacker movement is associated with
-subsequent localized defensive reorganization: defender movement relative to
-the defensive unit among initially nearer defenders compared with a
-pre-specified middle-distance reference. It then asks whether that association
-depends on attacker-movement direction after accounting for path magnitude and
-starting geometry.
+Established player-to-team geometry is the measurement substrate. This paper
+defines and prospectively tests a specific observable, assignment-free temporal
+estimand: subsequent movement by start-near defenders relative to the defensive
+unit following a fixed interval of off-ball attacking movement. The start-fixed
+ranks are a prospective localization safeguard, not a football invention or an
+inferred marking assignment. The same estimand is tested through protected
+holdout, reverse-time, and external validation before examining movement
+direction.
 
-The contribution is a transparent, replicated measurement and directional
-association—not an assignment, tactical label, causal effect, or attacking
-value model. The argument proceeds from a validated time-ordered measurement to
-the outward-versus-goalward asymmetry, then characterizes starting context and
-tests the boundary between local and collective-scale geometry.
+The main empirical contribution is a replicated outward-versus-goalward
+difference in the movement-direction association, conditional on path magnitude
+and starting geometry. The contribution is therefore the temporal localization,
+control architecture, and replication across independent tracking environments
+—not an assignment, tactical label, causal effect, attacking-value model, or
+new centroid primitive.
 
 ### 1.3 Boundaries from the outset
 
@@ -94,41 +98,97 @@ ball, phase, possession, and other unmeasured context may still contribute.
 
 ## 2. Related work
 
-### 2.1 Collective defensive geometry and coordination
+### 2.1 Collective defensive geometry and player-team synchronization
 
-Position-tracking research has established centroids, width, depth, surface
-area, player-to-team distances, synchrony, relative phase, and other ways to
-describe collective football geometry. This paper builds on—not claims to
-invent—player-to-collective representations. Its leave-one-out defensive-unit
-reference is a transparent way to keep shared defensive shifts visible as
-context while measuring a focal defender's deviation from them.
+Centroids, width, depth, surface area, player-to-team distance, synchrony, and
+relative phase are established football-tracking representations. Sampaio and
+Maçãs (2012) use player distance to the team centre and player-team relative
+phase; Duarte, Araújo, and Correia (2013) study team-team and player-team
+synchrony; Moura et al. (2016) examine team spread and time-lagged
+coordination; and Carrilho et al. (2020) study player/team synchronization with
+optical tracking. These works establish player-relative-to-team geometry as a
+measurement family. This paper builds on that family: its leave-one-out
+defensive-unit reference keeps shared shifts visible as context while measuring
+a focal defender's deviation from them. Player-relative-to-team geometry is not
+claimed as novel here.
 
-### 2.2 Attacker-defender spatial relationships
+**Citation placement:** MUST CITE Sampaio and Maçãs (2012); Duarte et al.
+(2013); Moura et al. (2016); Carrilho et al. (2020).
 
-Prior work models attacker-defender distance, angles, relative motion,
-coordination, marking-like relationships, and assignments. Here, start-fixed
-distance ranks offer a reproducible localization comparison without inferring
-who is marking, covering, or responsible for an attacker. The paper is
-complementary to assignment or network approaches rather than a replacement for
-them.
+### 2.2 Attacker-defender pressure, dyads, and assignments
 
-### 2.3 Off-ball movement and directional movement
+Prior work measures attacker-defender distance, angles, relative motion,
+pressure, coordination, marking-like relationships, and latent defensive roles.
+Herold et al. (2022) are the closest direct off-ball precedent: expert-annotated
+deep runs and changes of direction are followed through time using individual
+defensive pressure. Caetano et al. (2023) examine lateral and longitudinal
+coordination in nearest-opponent dyads. Calero-Sanz et al. (2026) construct
+proximity/alignment marking networks, while Groom et al. (2026) infer
+time-resolved defensive assignments and roles.
 
-Off-ball paths can be described as movement efforts, runs, trajectory patterns,
-or directional changes, but no observed path automatically identifies a
-tactical movement type. This paper uses governed fixed-window path and signed
-directional displacement as geometric exposures. It does not label attackers'
-movements as decoys, overlaps, checks, or threats.
+The present paper instead fixes distance ranks before the response interval as
+a prospective localization safeguard. It compares nearby and middle ranks
+without inferring who is marking, covering, or responsible for an attacker. It
+is complementary to pressure, dyadic, network, and assignment approaches—not a
+replacement for them.
 
-### 2.4 The gap addressed here
+**Citation placement:** MUST CITE Herold et al. (2022); Caetano et al. (2023).
+SHOULD CITE Calero-Sanz et al. (2026); Groom et al. (2026); Narizuka and
+Yamazaki (2016).
 
-The paper combines time ordering, defender-relative geometry, start-fixed
-proximity groups, prospective development/holdout/external validation, and
-cross-environment directional asymmetry. None of those individual primitives is
-claimed as new. Pressure, pitch control, space, expected movement, and value
-frameworks address later layers of football analysis; localized reorganization
-is not thereby teammate separation, opportunity creation, tactical success,
-gravity, or off-ball value.
+### 2.3 Off-ball movement, space, trajectories, and value
+
+Off-ball paths can be represented as movement efforts, trajectory patterns, or
+directional changes, but observed paths do not automatically identify a
+tactical movement type. Fernández and Bornn (2018) place off-ball movement in a
+space-generation and value framework; this is an important adjacent lineage,
+not evidence of causal defender response. Beernaerts et al. (2020) provide a
+relative-trajectory representation precedent, and receiver-availability,
+pressure, and pitch-control work address other spatial targets. Esposito et al.
+(2026) review the active but fragmented elite off-ball tracking literature,
+including heterogeneous definitions and limited opponent/context integration.
+
+The present exposures are governed fixed-window path and signed directional
+displacement. Space generated, pressure changed, and attacking value are not the
+same estimand as subsequent defender movement relative to the defensive unit.
+
+**Citation placement:** MUST CITE Fernández and Bornn (2018); Esposito et al.
+(2026). SHOULD CITE Beernaerts et al. (2020) and a relevant space/control
+review.
+
+### 2.4 Temporal disruption and directional movement
+
+Temporal response and directional coordination are preceded concepts. Moura et
+al. (2016) report time-lagged coordination in team spread. Forcher, Kempe, and
+colleagues' D-Def work (2021) measures changes in defensive centroids, line
+centroids, area, and spread in the seconds following passes. Herold et al.
+(2022) connect off-ball actions to pressure trajectories, Caetano et al. (2023)
+study lateral/longitudinal dyadic coordination, and Narizuka and Yamazaki
+(2025) decompose goal- and opponent-oriented movement in on-ball dribbles.
+
+What remains distinct is the specific observable local-response estimand: a
+pre-specified attacker interval, a subsequent non-overlapping
+defender-relative interval, localization fixed before that response, paired
+temporal control, and replication across independent tracking environments. The
+reviewed literature did not identify a direct controlled comparison of outward
+and goalward off-ball movement against this kind of subsequent localized
+internal defensive outcome.
+
+**Citation placement:** MUST CITE Forcher et al. (2021); Herold et al. (2022);
+Caetano et al. (2023). SHOULD CITE Narizuka and Yamazaki (2025).
+
+### 2.5 Precise gap
+
+Existing tracking research has characterized collective defensive shape,
+player-team synchronization, attacker-defender pressure, inferred marking
+relationships, and space generated by off-ball movement. Less attention has
+been given to a transparent, assignment-free estimand linking a pre-specified
+attacking movement interval to subsequent defender movement relative to the
+defensive unit, localized using relationships fixed before that response occurs.
+The reviewed literature also did not identify a direct controlled comparison of
+outward and goalward off-ball movement against this kind of subsequent localized
+internal defensive outcome. These are bounded literature statements, not claims
+that no related work exists.
 
 ## 3. Data
 
@@ -216,10 +276,12 @@ time; it does not require the reverse-time control itself to be structure-free.
 
 The central directional model contrasts outward versus goalward attacker
 movement while conditioning on equal path magnitude and pre-specified starting
-geometry. IDSSE and SkillCorner are analyzed separately, with no cross-provider
-pool. Goalward/away and outward/inward signed components remain geometric
-descriptions; the analysis does not identify a tactical run type or an
-attacker-caused defensive action.
+geometry. Outward means movement away from the pitch centreline under the
+pre-specified orientation; it does not mean movement away from goal. IDSSE and
+SkillCorner are analyzed separately, with no cross-provider pool. Goalward/away
+and outward/inward signed components remain geometric descriptions; the
+analysis does not identify a tactical run type or an attacker-caused defensive
+action.
 
 ### 4.6 Starting-context characterization
 
@@ -269,7 +331,7 @@ with the pooled temporal estimate and reverse-time qualification. Use the
 existing temporal flagship figure; do not make it an illustrative proof of
 causation.
 
-### 5.2 Movement direction: outward versus goalward
+### 5.2 Movement direction: outward-versus-goalward difference
 
 The directional result is the manuscript headline. Conditional on equal path
 magnitude and starting geometry, outward minus goalward attacker movement was
@@ -280,9 +342,9 @@ leave-one-match-out fits. In IDSSE, 5 m outward rather than goalward movement
 corresponded descriptively to about 0.284 m more subsequent localized defender
 movement relative to the defensive unit.
 
-The asymmetry says measured local reorganization was not simply aligned with
-movement toward goal. It does not say outward movement is tactically better,
-that it dragged defenders, or that it created value.
+This directional difference says measured local reorganization was not simply
+aligned with movement toward goal. It does not say outward movement is
+tactically better, that it dragged defenders, or that it created value.
 
 **Main Figure 2 — outward versus goalward replication.** Present the two
 external environments side by side, their separate estimates and intervals,
@@ -315,19 +377,21 @@ occurred.
 
 ### 6.1 A reproducible temporal measurement
 
-Interpret the validated temporal result as a measurement layer: nearby
-defenders moved more relative to the defensive unit than middle-distance ranks
-after preceding attacker movement. The reverse-time control retained structure;
-the qualifying evidence is the pre-specified paired forward-minus-reverse
-excess, not an assumption that controls should be null.
+Interpret the prospectively tested and externally replicated temporal result as
+a measurement layer: nearby defenders moved more relative to the defensive unit
+than middle-distance ranks after preceding attacker movement. The reverse-time
+control retained structure; the qualifying evidence is the pre-specified paired
+forward-minus-reverse excess, not an assumption that controls should be null.
 
-### 6.2 Directional asymmetry
+### 6.2 Replicated directional difference
 
-Lead the discussion with the replicated outward-versus-goalward asymmetry in
-IDSSE and SkillCorner. It narrows the descriptive claim: local reorganization
-is not simply stronger for movement toward goal once path magnitude and starting
-geometry are modeled. It neither names a tactical mechanism nor estimates
-attacker influence.
+Lead the discussion with the replicated outward-versus-goalward difference in
+the movement-direction association in IDSSE and SkillCorner. It is surprising
+relative to progression-centric descriptions of attacking movement, while being
+consistent with defensive geometry operating at collective, local, and dyadic
+scales. It complements pressure, space-generation, assignment, and value
+models; it neither names a tactical mechanism nor estimates attacker influence
+or value.
 
 ### 6.3 Local and collective response scales
 
@@ -375,7 +439,7 @@ labeler of pinning, dragging, tracking, or tactical correctness.
 
 The paper establishes a reproducible observational measurement of localized
 defensive reorganization associated with preceding off-ball movement and a
-replicated outward-versus-goalward directional asymmetry. It separates a shared
+replicated outward-versus-goalward directional difference. It separates a shared
 defensive shift from defender movement relative to the defensive unit, but does
 not establish causation, assignment, tactical meaning, opportunity creation,
 or attacking value. Its practical role is to make candidate passages more
@@ -404,6 +468,20 @@ legible for analyst review while preserving those boundaries.
   supplementary for a two-slot Sloan package.
 
 ## Internal drafting decisions
+
+- **Skeptical-reviewer guidance — Why is this not just another
+  centroid-relative metric?** Centroid-relative geometry is the substrate. The
+  contribution is the pre-specified attacker interval, subsequent
+  non-overlapping defender interval, proximity fixed before response,
+  near-versus-middle localization contrast, temporal controls, and external
+  replication.
+- **Skeptical-reviewer guidance — What did we learn about football?** Comparable
+  movement directions were not associated with the same localized defensive
+  geometry: outward movement showed a stronger subsequent localized association
+  than goalward movement across independent tracking environments.
+- Treat assignment-free geometry and the absence of a downstream value model as
+  interpretability and scope choices, not inventions. Do not claim that all
+  earlier work requires inferred marking assignments or a value model.
 
 - Main paper: Figure 1 is the temporal flagship; Figure 2 is the
   outward-versus-goalward external replication. All other result visuals are
