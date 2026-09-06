@@ -5,6 +5,7 @@ from pathlib import Path
 import unittest
 
 import polars as pl
+import pytest
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -15,6 +16,9 @@ from infrastructure.unravelsports_compat import (  # noqa: E402
     UNRAVEL_REFERENCE_COLUMNS,
     canonical_to_unravel_reference_view,
 )
+
+
+pytestmark = pytest.mark.provider_data
 
 
 class UnravelSportsCompatibilityViewTest(unittest.TestCase):

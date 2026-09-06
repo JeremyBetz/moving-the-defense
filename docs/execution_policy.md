@@ -95,8 +95,8 @@ Tier 1 should escalate when the result is coherent/successful, scientifically co
 ## Project examples
 
 - **New Game 1 construct:** execute under Tier 1. If mixed and not direction-changing, stop cheaply. If coherent, promote under Tier 2.
-- **Completed Game 1 Local Defensive Response Form v1:** it was executed with effectively Tier 3-like rigor and is already closed. This policy does not alter its status.
-- **Future Game 2 Local Defensive Response Form v1:** it is the prospectively governed internal-replication step and must use Tier 3. It remains unexecuted.
+- **Completed Local Defensive Response Form v1 sequence:** Game 1, Game 2, and the pooled/final analysis were closed with Tier 3-like rigor. The final status is `FINAL RESPONSE FORM B`; this policy does not alter it.
+- **Future authorized heldout replication:** use Tier 3 and the analysis-specific frozen protocol rather than inferring rules from a historical checkpoint.
 - **Exploratory secondary-geometry decomposition on Game 1:** use Tier 1 unless its frozen protocol explicitly requires more.
 
 ## Reusable read-only helpers
@@ -104,7 +104,7 @@ Tier 1 should escalate when the result is coherent/successful, scientifically co
 The helper at `src/research_execution_governance.py` centralizes recurring mechanical checks without importing or changing scientific pipelines:
 
 ```bash
-# Verify the current scientific checkpoint and forbidden heldout outputs
+# Verify the scoped historical Local Defensive Response Form checkpoint
 .venv/bin/python src/research_execution_governance.py verify-checkpoint
 
 # Verify an analysis-specific artifact ledger
@@ -116,7 +116,7 @@ The helper at `src/research_execution_governance.py` centralizes recurring mecha
 .venv/bin/python src/research_execution_governance.py repo-state
 ```
 
-The checkpoint manifest is `config/execution_governance_checkpoint.json`. It is a convenience firewall, not a replacement for an analysis protocol. Focused and full test commands remain analysis-specific so a generic wrapper cannot silently select an incomplete scientific test set.
+The checkpoint manifest is `config/execution_governance_checkpoint.json`. It preserves the closed Local Defensive Response Form state; it is not a global current-project ledger. Consult [current research governance](research_governance.md) and the [claim-status ledger](claim_status.md) for current state. The helper remains a convenience firewall, not a replacement for an analysis protocol. Focused and full test commands remain analysis-specific so a generic wrapper cannot silently select an incomplete scientific test set.
 
 ## Prompt economy
 

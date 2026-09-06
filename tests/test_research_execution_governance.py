@@ -13,10 +13,14 @@ import research_execution_governance as governance  # noqa: E402
 
 
 class ExecutionGovernanceTest(unittest.TestCase):
-    def test_current_checkpoint(self):
+    def test_default_response_form_checkpoint_integrity(self):
         result = governance.verify_checkpoint()
         self.assertTrue(result["pass"])
         self.assertEqual(result["scientific_state"], "FINAL RESPONSE FORM B")
+        self.assertEqual(
+            result["checkpoint_commit"],
+            "a89c9b72b5e58d281c168b489d1255cf338f6b03",
+        )
 
     def test_checkpoint_detects_hash_and_forbidden_output(self):
         with tempfile.TemporaryDirectory() as temp:

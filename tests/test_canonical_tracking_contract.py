@@ -5,6 +5,7 @@ from pathlib import Path
 import unittest
 
 import polars as pl
+import pytest
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -74,6 +75,7 @@ class CanonicalContractUnitTest(unittest.TestCase):
             validate_chunk(table)
 
 
+@pytest.mark.provider_data
 class CanonicalProviderCompatibilityTest(unittest.TestCase):
     @classmethod
     def setUpClass(cls):

@@ -170,6 +170,12 @@ def test_generated_sample_counts_and_output_shapes_are_exact() -> None:
         assert match["goalward_sign_support_precedes_every_anchor"] is True
         if match["provider"] == "IDSSE/Sportec":
             assert match["event_file_opened"] is False
+
+
+@pytest.mark.provider_data
+def test_bound_provider_source_files_exist_and_match_recorded_hashes() -> None:
+    provenance = _json(OUTPUT / "input_provenance.json")
+    for match in provenance["matches"]:
         for source in match["source_files"]:
             path = ROOT / source["path"]
             assert path.exists()

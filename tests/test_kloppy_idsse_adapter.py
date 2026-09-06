@@ -6,6 +6,7 @@ import unittest
 
 from kloppy.domain import PositionType
 import numpy as np
+import pytest
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -20,6 +21,9 @@ from infrastructure.kloppy_idsse_adapter import (  # noqa: E402
     roster,
 )
 from infrastructure.kloppy_metrica_adapter import CANONICAL_COLUMNS  # noqa: E402
+
+
+pytestmark = pytest.mark.provider_data
 
 
 class KloppyIDSSEAdapterTest(unittest.TestCase):

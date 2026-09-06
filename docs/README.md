@@ -4,6 +4,9 @@
 
 Use current-facing summaries before historical notebooks. The [claim-status ledger](claim_status.md) governs whenever older language conflicts with later evidence.
 
+Before opening a protected dataset or outcome, consult the
+[current research-governance and firewall record](research_governance.md).
+
 ## First-time visitor — five minutes
 
 1. [Project README](../README.md) — football problem, strongest evidence, failures, and current frontier.

@@ -66,6 +66,22 @@ No secret environment variable or automatic data download is used. The
 optional `jupyter`, `pytest`, and `uv` command-line tools are conveniences; the
 paper scripts run through `.venv/bin/python`.
 
+For development and the data-free portable suite, install the bounded test
+dependency:
+
+```bash
+python -m pip install -r requirements-phase0.txt -r requirements-dev.txt
+python -m compileall -q src tests
+pytest -q -m "not provider_data"
+```
+
+Tests marked `provider_data` are deliberate local integration gates. They need
+the provider files listed above and are excluded from the portable command; run them
+manually with `pytest -q -m provider_data` after preparing those data. The
+portable suite reports one expected historical xfail: an immutable
+Coverage Redistribution v3 pre-execution condition retained for provenance.
+Current closed v3 status is checked separately.
+
 ## Repository layout
 
 | Location | What a reproducer needs it for |

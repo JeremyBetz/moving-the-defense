@@ -6,6 +6,7 @@ import unittest
 
 import numpy as np
 import pandas as pd
+import pytest
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -22,6 +23,9 @@ from infrastructure.kloppy_metrica_adapter import (  # noqa: E402
     read_provider_frame_index,
     to_long_dataframe,
 )
+
+
+pytestmark = pytest.mark.provider_data
 
 
 class KloppyMetricaAdapterTest(unittest.TestCase):
