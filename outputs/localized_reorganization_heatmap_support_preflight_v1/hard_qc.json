@@ -1,0 +1,11 @@
+{
+  "aggregate_schema_allowlist": true,
+  "anchor_coordinates_serialized": false,
+  "coordinate_clipping_applied": false,
+  "period_aware_block_correction_support_pass_cells_changed": 0,
+  "period_aware_temporal_blocks": true,
+  "provider_native_coordinates_finite": true,
+  "response_fields_selected": false,
+  "seven_matches_exact": true,
+  "support_grid_under_10_mib": true
+}

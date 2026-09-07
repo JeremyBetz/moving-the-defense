@@ -1,0 +1,37 @@
+{
+  "anchor_coordinates_serialized": false,
+  "configuration_sha256": "3fe8f0b88d07833abc534706734480cbd1a4396d0c6aada0f8d24cf6503fd1fd",
+  "coordinate_clipping_applied": false,
+  "future_response_map_mask_frozen": true,
+  "matches": [
+    "J03WMX",
+    "J03WN1",
+    "J03WOH",
+    "J03WOY",
+    "J03WPY",
+    "J03WQQ",
+    "J03WR9"
+  ],
+  "observation_count": 72316,
+  "period_aware_block_correction_support_pass_cells_changed": 0,
+  "protocol_sha256": "050152e1a1c598cd8fcb985f70cd958b3ba4e9d17dca52db814561f979c65472",
+  "provider_native_anchor_count_outside_nominal_pitch": 586,
+  "provider_native_coordinates_finite": true,
+  "recommendation": {
+    "bandwidth_m": 7.5,
+    "common_support_fraction": 0.9774509803921568,
+    "description": "Human review selected this option after response-blind support inspection. It was not selected by a prospectively frozen automatic rule, and response values remained unseen when selected. It is frozen only for the future descriptive response-map stage; this support-only execution did not render a response surface.",
+    "profile": "conservative",
+    "recommended": true,
+    "status": "HUMAN_APPROVED_FUTURE_RESPONSE_MAP_CHOICE"
+  },
+  "response_fields_selected": false,
+  "response_surface_rendered": false,
+  "source_sha256": "d64f1e66a4ca65297133bbd11d4440cfb9c0b1b8fbc228c058a1f68b873cdf31",
+  "status": "RESPONSE_BLIND_SUPPORT_PREFLIGHT_COMPLETE",
+  "support_frontier_figure_sha256": "b0f242188fdad52bef92eb5e7f022cf90800fdcc1bcb4b4d9d00078e32ebf071",
+  "support_grid_sha256": "dccd54618018e6dd1bee8f136f9a2b0eef0f3384b73a502b931a6719f0ad25fc",
+  "support_mask_figure_sha256": "813882a2612e1ce4e7b69f17581b6c307facd0afa9e209d66b2f3f3a42870508",
+  "support_profile_summary_sha256": "854767d7e1f11acf292f96f506346a9c2380bc924e725cfdd26724ee7660234f",
+  "temporal_block_identity": "period_x_60_second_block"
+}

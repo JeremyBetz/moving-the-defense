@@ -1,0 +1,97 @@
+{
+  "schema_version": "1.0.0",
+  "status": "SUPPORT_PREFLIGHT_EXECUTED_FUTURE_RESPONSE_MAP_SPECIFICATION_HUMAN_APPROVED",
+  "purpose": "Characterize IDSSE spatial support before any localized response surface is constructed.",
+  "source_population": {
+    "governed_registry": "outputs/spatial_defensive_response_footprint_idsse_v1/observation_rows.parquet",
+    "matches": ["J03WMX", "J03WN1", "J03WOH", "J03WOY", "J03WPY", "J03WQQ", "J03WR9"],
+    "permitted_registry_columns": ["observation_id", "match_id", "period", "time_period_s", "time_utc_ns", "attacker_key", "attacking_team", "block_id", "distance_rank"],
+    "forbidden_columns": ["response_1s_m", "response_2s_m", "response_4s_m", "earlier_relative_path_m", "attacker_path_m", "future_attacker_path_m"]
+  },
+  "coordinates": {
+    "provider_system": "centred_105x68_metre_IDSSE_coordinates",
+    "anchor": "attacker_smoothed_position_at_t_minus_2_seconds",
+    "smoothing": "centred_7_frame_arithmetic_mean_with_complete_support",
+    "plot_transform": "x_plot=attack_sign*x_provider; y_plot=y_provider",
+    "lateral_reflection": false,
+    "anchor_coordinates_serialized": false
+  },
+  "grid": {
+    "x_centres_m": {"start": -52.0, "stop": 52.0, "step": 1.0},
+    "y_centres_m": {"start": -33.5, "stop": 33.5, "step": 1.0}
+  },
+  "kernel": {
+    "family": "gaussian",
+    "bandwidths_m": [2.5, 5.0, 7.5, 10.0, 12.5, 15.0],
+    "truncate_at_bandwidths": 2.0,
+    "kish_row_weight_concentration_count": "Kish_(sum_w)^2/sum_w_squared; describes kernel-weight concentration, not independent observations"
+  },
+  "support_profiles": {
+    "basic": {
+      "matches_required": 7,
+      "minimum_distinct_60_second_blocks_per_match": 2,
+      "maximum_nearest_observation_distance_bandwidths": 1.0,
+      "minimum_kish_row_weight_concentration_count_per_match": 10.0
+    },
+    "conservative": {
+      "matches_required": 7,
+      "minimum_distinct_60_second_blocks_per_match": 4,
+      "maximum_nearest_observation_distance_bandwidths": 1.0,
+      "minimum_kish_row_weight_concentration_count_per_match": 20.0
+    }
+  },
+  "human_recommendation": {
+    "bandwidth_m": 7.5,
+    "profile": "conservative",
+    "status": "HUMAN_APPROVED_FUTURE_RESPONSE_MAP_CHOICE",
+    "description": "Human review selected this option after response-blind support inspection. It was not selected by a prospectively frozen automatic rule, and response values remained unseen when selected. It is frozen only for the future descriptive response-map stage; this support-only execution did not render a response surface."
+  },
+  "future_response_map_stage": {
+    "status": "HUMAN_APPROVED_FROZEN_BEFORE_RESPONSE_ACCESS",
+    "provider": "IDSSE",
+    "matches_required": 7,
+    "attacker_location": "smoothed_attacker_position_at_t_minus_2_seconds",
+    "coordinates": {
+      "plot_transform": "x_plot=attack_sign*x_provider; y_plot=y_provider",
+      "physical_provider_y_unchanged": true,
+      "exact_centreline_outward_direction_not_used": true
+    },
+    "color_quantity": {
+      "formula": "Y_m=mean(response_2s_m for D1-D3)-mean(response_2s_m for D4-D7)",
+      "units": "m",
+      "response_values_read_at_freeze": false
+    },
+    "estimator": {
+      "family": "gaussian_local_mean",
+      "kernel_truncation_bandwidths": 2.0,
+      "within_match": "one weighted local mean per match",
+      "across_matches": "equal arithmetic mean across all seven matches",
+      "local_regression_coefficient": false,
+      "gam_or_spline": false,
+      "local_hypothesis_test_or_significance_map": false,
+      "interpretation": "descriptive_only"
+    },
+    "bandwidths_m": {
+      "primary": 7.5,
+      "sensitivity": [5.0, 10.0],
+      "instability_rule": "accept_absent_weak_or_unstable_pattern_without_changing_smoother"
+    },
+    "support": {
+      "primary_profile": "conservative",
+      "display_grid_m": 1.0,
+      "all_seven_matches_must_pass_local_mask": true,
+      "out_of_pitch_anchors": "retain_native_coordinates_in_kernels; evaluate_and_render_legal_pitch_grid_only; no_clipping; no_exclusion"
+    },
+    "color_scale": {
+      "limits": "symmetric_-L_to_L",
+      "L_rule": "weighted_95th_percentile_of_abs(Y_m)_over_one_Y_m_per_governed_anchor_with_each_match_total_weight_1_over_7",
+      "same_L_for_primary_and_sensitivity_surfaces": true,
+      "saturation": "explicitly_mark_values_clipped_to_plus_or_minus_L"
+    }
+  },
+  "publication": {
+    "support_grid_schema": ["grid_x_m", "grid_y_m", "bandwidth_m", "profile", "support_pass", "matches_supported", "raw_anchor_count", "unique_time_anchor_count", "minimum_match_raw_anchor_count", "maximum_match_raw_anchor_count", "minimum_match_unique_time_anchor_count", "maximum_match_unique_time_anchor_count", "minimum_match_block_count", "maximum_match_block_count", "maximum_nearest_distance_m", "mean_nearest_distance_m", "minimum_match_kernel_mass", "maximum_match_kernel_mass", "combined_kernel_mass", "minimum_match_kish_row_weight_concentration_count", "maximum_match_kish_row_weight_concentration_count", "combined_kish_row_weight_concentration_count", "kernel_mass_balance_min_over_mean", "edge_touchline", "edge_goal_line", "edge_centre_line", "edge_penalty_area_boundary"],
+    "forbidden_field_tokens": ["observation_id", "attacker_key", "player_id", "team_id", "time_utc", "block_id", "response", "defender_key", "distance_rank", "_path_", "identifier"],
+    "maximum_support_grid_bytes": 10485760
+  }
+}
