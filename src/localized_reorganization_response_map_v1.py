@@ -7,10 +7,14 @@ future explicit human authorization has been supplied at the command line.
 from __future__ import annotations
 
 import argparse
+from datetime import datetime, timezone
 import hashlib
 import json
 import math
+import os
+import platform
 import sys
+import tempfile
 from pathlib import Path
 from typing import Any, Iterable
 
@@ -204,6 +208,70 @@ def saturation_counts(surface: np.ndarray, limit: float) -> tuple[int, int]:
     return int((values < -limit).sum()), int((values > limit).sum())
 
 
+def saturation_extension(negative_count: int, positive_count: int) -> str:
+    """Return Matplotlib's shared-colorbar extension from actual clipping."""
+    if negative_count < 0 or positive_count < 0:
+        raise ResponseMapInvalid("saturation counts must be nonnegative")
+    if negative_count and positive_count:
+        return "both"
+    if negative_count:
+        return "min"
+    if positive_count:
+        return "max"
+    return "neither"
+
+
+def _destination_error(path: Path) -> ResponseMapInvalid:
+    return ResponseMapInvalid(
+        f"refusing to overwrite existing authoritative destination: {path}; "
+        "use a clean/disposable environment or an explicitly isolated reproduction destination"
+    )
+
+
+def require_clean_destinations(output: Path, figure_base: Path) -> None:
+    """Fail closed before any protected access when an authoritative target exists."""
+    if output.exists():
+        raise _destination_error(output)
+    for suffix in (".png", ".svg"):
+        target = figure_base.with_suffix(suffix)
+        if target.exists():
+            raise _destination_error(target)
+
+
+def _artifact_paths(output: Path, figure_base: Path, cfg: dict[str, Any]) -> dict[str, Path]:
+    names = cfg["closure"]["deterministic_machine_readable_files"]
+    result = {name: output / name for name in names}
+    result.update({f"figures/response_map{suffix}": figure_base.with_suffix(suffix) for suffix in (".png", ".svg")})
+    return result
+
+
+def _artifact_hashes(output: Path, figure_base: Path, cfg: dict[str, Any]) -> dict[str, str]:
+    paths = _artifact_paths(output, figure_base, cfg)
+    missing = [name for name, path in paths.items() if not path.is_file()]
+    if missing:
+        raise ResponseMapInvalid(f"run is missing deterministic artifacts: {missing}")
+    return {name: sha(path) for name, path in paths.items()}
+
+
+def compare_deterministic_artifacts(
+    primary_output: Path,
+    primary_figure: Path,
+    rerun_output: Path,
+    rerun_figure: Path,
+    cfg: dict[str, Any],
+) -> dict[str, Any]:
+    """Compare the deterministic scientific package byte-for-byte."""
+    primary = _artifact_paths(primary_output, primary_figure, cfg)
+    rerun = _artifact_paths(rerun_output, rerun_figure, cfg)
+    differences = [name for name in primary if primary[name].read_bytes() != rerun[name].read_bytes()]
+    figure_names = {"figures/response_map.png", "figures/response_map.svg"}
+    return {
+        "machine_readable_byte_identical": not any(name not in figure_names for name in differences),
+        "figure_byte_identical": not any(name in figure_names for name in differences),
+        "differing_artifacts": differences,
+    }
+
+
 def validate_aggregate_schema(frame: pd.DataFrame, cfg: dict[str, Any], key: str) -> None:
     expected = cfg["outputs"][key]
     if list(frame.columns) != expected:
@@ -288,20 +356,22 @@ def summarize_surfaces(
     return frame
 
 
-def render_response_map(aggregate: pd.DataFrame, limit: float, cfg: dict[str, Any], output_base: Path) -> None:
+def render_response_map(aggregate: pd.DataFrame, limit: float, cfg: dict[str, Any], output_base: Path) -> dict[str, int | str]:
     """Render only aggregate response-grid values on the frozen three panels."""
     bands = [float(value) for value in cfg["figure"]["panel_order_bandwidth_m"]]
     if scale_state(limit, [aggregate.equal_match_local_mean_m.to_numpy(float)]) == "INVALID":
         raise ResponseMapInvalid("degenerate shared color scale is invalid")
-    cmap = plt.get_cmap("RdBu_r").copy()
-    cmap.set_bad("#d9d9d9")
+    cmap = plt.get_cmap("RdBu_r").with_extremes(bad="#d9d9d9")
     with matplotlib.rc_context({"svg.hashsalt": "moving-the-defense-response-map-v1"}):
         fig, axes = plt.subplots(1, 3, figsize=(15, 5.2), constrained_layout=True)
         image = None
+        negative_total = positive_total = 0
         for label, bandwidth, axis in zip(("A", "B", "C"), bands, axes, strict=True):
             group = aggregate[aggregate.bandwidth_m == bandwidth].sort_values(["grid_y_m", "grid_x_m"], kind="mergesort")
             x = np.sort(group.grid_x_m.unique()); y = np.sort(group.grid_y_m.unique())
             values = group.equal_match_local_mean_m.to_numpy(float).reshape(len(y), len(x))
+            negative, positive = saturation_counts(values[np.isfinite(values)], limit)
+            negative_total += negative; positive_total += positive
             if limit == 0.0:
                 values = np.ma.masked_invalid(values)
                 image = axis.pcolormesh(x, y, values * 0.0, shading="nearest", cmap="Greys", vmin=-1, vmax=1)
@@ -309,17 +379,21 @@ def render_response_map(aggregate: pd.DataFrame, limit: float, cfg: dict[str, An
             else:
                 image = axis.pcolormesh(x, y, values, shading="nearest", cmap=cmap, vmin=-limit, vmax=limit)
                 title = f"{label}. h={bandwidth:g} m" + (" — primary" if bandwidth == 7.5 else " — sensitivity")
+                title += f" — saturation −{negative}/+{positive}"
             axis.add_patch(plt.Rectangle((-52.5, -34), 105, 68, fill=False, color="#222222", lw=1.1))
             axis.axvline(0, color="#555555", lw=0.6)
             axis.set(xlim=(-52.5, 52.5), ylim=(-34, 34), aspect="equal", title=title,
                      xlabel="Deeper ← longitudinal position (m) → Goalward",
                      ylabel="Provider physical lateral position (m)")
-        colorbar = fig.colorbar(image, ax=axes, shrink=0.78, pad=0.02, extend="both" if limit > 0 else "neither")
+        extension = saturation_extension(negative_total, positive_total) if limit > 0 else "neither"
+        colorbar = fig.colorbar(image, ax=axes, shrink=0.78, pad=0.02, extend=extension)
         colorbar.set_label("Equal-match local mean near-minus-middle response (m)")
+        fig.text(0.5, 0.01, f"Display saturation across panels: negative={negative_total}, positive={positive_total}", ha="center", fontsize=8)
         output_base.parent.mkdir(parents=True, exist_ok=True)
         fig.savefig(output_base.with_suffix(".png"), dpi=180, metadata={"Software": "Moving the Defense"})
         fig.savefig(output_base.with_suffix(".svg"), metadata={"Date": None, "Creator": "Moving the Defense"})
         plt.close(fig)
+    return {"negative_saturation_count": negative_total, "positive_saturation_count": positive_total, "colorbar_extension": extension}
 
 
 def verify_freeze(cfg: dict[str, Any], ledger_path: Path = HASH_LEDGER) -> dict[str, str]:
@@ -365,26 +439,46 @@ def _load_execution_inputs(cfg: dict[str, Any]) -> tuple[pd.DataFrame, dict[floa
     return anchors.sort_values(["match_id", "observation_id"], kind="mergesort").reset_index(drop=True), select_frozen_masks(grid, cfg)
 
 
-def execute_response(output: Path, authorization_reference: str, cfg: dict[str, Any]) -> dict[str, Any]:
-    """Future-only response execution; never invoke during the freeze pass."""
-    if not authorization_reference.strip():
-        raise ResponseMapInvalid("--execute-response requires a nonempty authorization reference")
-    verify_freeze(cfg)
-    if sha(REGISTRY) != cfg["protected_source"]["registry_sha256"]:
-        raise ResponseMapInvalid("protected response registry hash mismatch")
-    anchors, masks = _load_execution_inputs(cfg)
+def _validate_anchor_population(anchors: pd.DataFrame, cfg: dict[str, Any]) -> None:
+    required = {"match_id", "observation_id", "x_plot_m", "y_plot_m", "y_m"}
+    if not required.issubset(anchors.columns) or anchors.observation_id.duplicated().any():
+        raise ResponseMapInvalid("response execution anchor population is incomplete or duplicated")
+    if set(anchors.match_id) != set(expected_match_order(cfg)):
+        raise ResponseMapInvalid("response execution anchor matches differ from the frozen population")
+    if not np.isfinite(anchors[["x_plot_m", "y_plot_m", "y_m"]].to_numpy(float)).all():
+        raise ResponseMapInvalid("response execution anchors contain nonfinite values")
+
+
+def run_from_inputs(
+    anchors: pd.DataFrame,
+    masks: dict[float, pd.DataFrame],
+    output: Path,
+    figure_base: Path,
+    authorization_reference: str,
+    cfg: dict[str, Any],
+) -> dict[str, Any]:
+    """Create one isolated, pre-closure run from already-authorized inputs."""
+    require_clean_destinations(output, figure_base)
+    _validate_anchor_population(anchors, cfg)
+    by_match = {
+        match_id: (group[["x_plot_m", "y_plot_m"]].to_numpy(float), group.y_m.to_numpy(float))
+        for match_id, group in anchors.groupby("match_id", sort=True)
+    }
     limit = weighted_inverse_ecdf_limit(anchors[["match_id", "observation_id", "y_m"]], expected_match_order(cfg))
-    surfaces: dict[float, np.ndarray] = {}; denominators: dict[float, dict[str, np.ndarray]] = {}
+    surfaces: dict[float, np.ndarray] = {}
+    denominators: dict[float, dict[str, np.ndarray]] = {}
     for bandwidth, mask in masks.items():
         valid = mask.support_pass.to_numpy(bool)
         grid = mask.loc[valid, ["grid_x_m", "grid_y_m"]].to_numpy(float)
-        by_match = {match_id: (group[["x_plot_m", "y_plot_m"]].to_numpy(float), group.y_m.to_numpy(float))
-                    for match_id, group in anchors.groupby("match_id", sort=True)}
-        means, denoms = equal_match_surface(by_match, grid, bandwidth, float(cfg["kernel"]["truncate_at_bandwidths"]), expected_match_order(cfg))
-        full = np.full(len(mask), np.nan); full[valid] = means
+        means, denoms = equal_match_surface(
+            by_match, grid, bandwidth, float(cfg["kernel"]["truncate_at_bandwidths"]), expected_match_order(cfg)
+        )
+        full = np.full(len(mask), np.nan)
+        full[valid] = means
         if any((~np.isfinite(value)).any() or (value <= 0).any() for value in denoms.values()):
             raise ResponseMapInvalid("a displayed cell lacks a finite positive denominator in a required match")
-        surfaces[bandwidth] = full; denominators[bandwidth] = denoms
+        surfaces[bandwidth] = full
+        denominators[bandwidth] = denoms
     state = scale_state(limit, surfaces.values())
     if state == "INVALID":
         raise ResponseMapInvalid("frozen shared color-scale rule is invalid")
@@ -395,37 +489,143 @@ def execute_response(output: Path, authorization_reference: str, cfg: dict[str, 
     counts["missing_required_response_anchor_count"] = 0
     counts["identity_join_pass"] = True
     validate_aggregate_schema(counts, cfg, "sample_counts_schema")
-    output.mkdir(parents=True, exist_ok=True)
+
+    output.mkdir(parents=True, exist_ok=False)
     _write_csv(aggregate, output / "aggregate_response_grid.csv", cfg["outputs"]["aggregate_response_grid_schema"])
     _write_csv(counts, output / "sample_counts.csv", cfg["outputs"]["sample_counts_schema"])
     _write_csv(summary, output / "surface_summary.csv", cfg["outputs"]["surface_summary_schema"])
-    render_response_map(aggregate, limit, cfg, DEFAULT_FIGURE)
-    manifest = {"status": cfg["statuses"]["valid"], "authorization_reference": authorization_reference,
-                "color_limit_m": limit, "color_scale_state": state, "response_registry_sha256": cfg["protected_source"]["registry_sha256"],
-                "support_grid_path": cfg["support"]["source_grid_path"], "matches": list(expected_match_order(cfg)),
-                "anchor_coordinates_serialized": False, "row_level_y_serialized": False, "per_match_surfaces_serialized": False}
+    saturation = render_response_map(aggregate, limit, cfg, figure_base)
+    manifest = {
+        "status": cfg["statuses"]["preclosure"],
+        "authorization_reference": authorization_reference,
+        "color_limit_m": limit,
+        "color_scale_state": state,
+        "response_registry_sha256": cfg["protected_source"]["registry_sha256"],
+        "support_grid_path": cfg["support"]["source_grid_path"],
+        "matches": list(expected_match_order(cfg)),
+        "anchor_coordinates_serialized": False,
+        "row_level_y_serialized": False,
+        "per_match_surfaces_serialized": False,
+        "closure_state": "PENDING_INDEPENDENT_REPRODUCTION",
+    }
     _write_json(output / "manifest.json", manifest)
-    _write_json(output / "hard_qc.json", {"exact_identity_join": True, "all_required_responses_finite": True,
-                                            "all_match_denominators_finite": True, "frozen_masks_used": True,
-                                            "response_field_exact": True, "coordinate_clipping_applied": False})
-    governed = ["aggregate_response_grid.csv", "sample_counts.csv", "surface_summary.csv", "manifest.json", "hard_qc.json"]
+    _write_json(output / "hard_qc.json", {
+        "exact_identity_join": True,
+        "all_required_responses_finite": True,
+        "all_match_denominators_finite": True,
+        "frozen_masks_used": True,
+        "response_field_exact": True,
+        "coordinate_clipping_applied": False,
+        "saturation": saturation,
+    })
+    governed = cfg["closure"]["governed_hash_files"]
     _write_json(output / "governed_hashes.json", {name: sha(output / name) for name in governed})
+    return {"manifest": manifest, "artifact_hashes": _artifact_hashes(output, figure_base, cfg)}
+
+
+def _final_artifact_paths(output: Path, figure_base: Path, cfg: dict[str, Any]) -> dict[str, Path]:
+    result = {name: output / name for name in cfg["closure"]["final_output_files"]}
+    result.update({f"figures/response_map{suffix}": figure_base.with_suffix(suffix) for suffix in (".png", ".svg")})
+    return result
+
+
+def validate_final_hashes(output: Path, figure_base: Path, cfg: dict[str, Any]) -> dict[str, str]:
+    recorded = json.loads((output / "final_hashes.json").read_text(encoding="utf-8"))
+    expected_paths = _final_artifact_paths(output, figure_base, cfg)
+    if set(recorded["artifacts_sha256"]) != set(expected_paths):
+        raise ResponseMapInvalid("final hash ledger has an unexpected artifact set")
+    actual = {name: sha(path) for name, path in expected_paths.items()}
+    if recorded["artifacts_sha256"] != actual:
+        raise ResponseMapInvalid("final hash ledger does not match the closed package")
+    return actual
+
+
+def finalize_closure(
+    primary_output: Path,
+    primary_figure: Path,
+    rerun_output: Path,
+    rerun_figure: Path,
+    authorization_reference: str,
+    cfg: dict[str, Any],
+) -> dict[str, Any]:
+    """Close a staging run only after byte-identical independent reproduction."""
+    comparison = compare_deterministic_artifacts(primary_output, primary_figure, rerun_output, rerun_figure, cfg)
+    if not comparison["machine_readable_byte_identical"] or not comparison["figure_byte_identical"]:
+        raise ResponseMapInvalid(f"deterministic reproduction failed: {comparison['differing_artifacts']}")
+    reproduction = {
+        "closure_status": "DETERMINISTIC_REPRODUCTION_PASSED",
+        "authorization_reference": authorization_reference,
+        "frozen_artifacts_sha256": json.loads(HASH_LEDGER.read_text(encoding="utf-8"))["frozen_artifacts_sha256"],
+        "protected_registry_expected_sha256": cfg["protected_source"]["registry_sha256"],
+        "primary": {
+            "path": cfg["outputs"]["directory"],
+            "figure_base": str(Path(cfg["figure"]["directory"]) / "response_map"),
+            "artifacts_sha256": _artifact_hashes(primary_output, primary_figure, cfg),
+        },
+        "reproduction": {"path": "isolated_temporary_reproduction", "artifacts_sha256": _artifact_hashes(rerun_output, rerun_figure, cfg)},
+        "comparison": comparison,
+        "execution_timestamp_utc": datetime.now(timezone.utc).isoformat(),
+        "environment": {"python": platform.python_version(), "platform": platform.platform()},
+    }
+    _write_json(primary_output / "reproduction.json", reproduction)
+    manifest = json.loads((primary_output / "manifest.json").read_text(encoding="utf-8"))
+    manifest["status"] = cfg["statuses"]["valid"]
+    manifest["closure_state"] = "INDEPENDENT_REPRODUCTION_PASSED"
+    _write_json(primary_output / "manifest.json", manifest)
+    final_paths = _final_artifact_paths(primary_output, primary_figure, cfg)
+    _write_json(primary_output / "final_hashes.json", {
+        "closure_status": cfg["statuses"]["valid"],
+        "artifacts_sha256": {name: sha(path) for name, path in final_paths.items()},
+        "self_hash_excluded": True,
+    })
+    validate_final_hashes(primary_output, primary_figure, cfg)
     return manifest
 
 
-def main() -> int:
+def _promote_authoritative_package(staging_output: Path, staging_figure: Path, output: Path, figure_base: Path) -> None:
+    require_clean_destinations(output, figure_base)
+    output.parent.mkdir(parents=True, exist_ok=True)
+    figure_base.parent.mkdir(parents=True, exist_ok=True)
+    os.replace(staging_output, output)
+    for suffix in (".png", ".svg"):
+        os.replace(staging_figure.with_suffix(suffix), figure_base.with_suffix(suffix))
+
+
+def execute_response(output: Path, figure_base: Path, authorization_reference: str, cfg: dict[str, Any]) -> dict[str, Any]:
+    """Future-only, two-run closure; never invoke during the pre-access freeze."""
+    if not authorization_reference.strip():
+        raise ResponseMapInvalid("--execute-response requires a nonempty authorization reference")
+    require_clean_destinations(output, figure_base)
+    verify_freeze(cfg)
+    if sha(REGISTRY) != cfg["protected_source"]["registry_sha256"]:
+        raise ResponseMapInvalid("protected response registry hash mismatch")
+    with tempfile.TemporaryDirectory(prefix="localized-response-map-") as temporary_root:
+        root = Path(temporary_root)
+        primary_output, primary_figure = root / "primary" / "outputs", root / "primary" / "figures" / "response_map"
+        rerun_output, rerun_figure = root / "rerun" / "outputs", root / "rerun" / "figures" / "response_map"
+        primary_anchors, primary_masks = _load_execution_inputs(cfg)
+        run_from_inputs(primary_anchors, primary_masks, primary_output, primary_figure, authorization_reference, cfg)
+        rerun_anchors, rerun_masks = _load_execution_inputs(cfg)
+        run_from_inputs(rerun_anchors, rerun_masks, rerun_output, rerun_figure, authorization_reference, cfg)
+        manifest = finalize_closure(primary_output, primary_figure, rerun_output, rerun_figure, authorization_reference, cfg)
+        _promote_authoritative_package(primary_output, primary_figure, output, figure_base)
+    return manifest
+
+
+def main(argv: list[str] | None = None) -> int:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--verify-freeze", action="store_true", help="verify frozen non-response artifacts only")
     parser.add_argument("--execute-response", action="store_true", help="future authorized response execution only")
     parser.add_argument("--authorization-reference", default="")
     parser.add_argument("--output", type=Path, default=DEFAULT_OUTPUT)
-    args = parser.parse_args(); cfg = load_config()
+    parser.add_argument("--figure-base", type=Path, default=DEFAULT_FIGURE)
+    args = parser.parse_args(argv); cfg = load_config()
     if args.verify_freeze and args.execute_response:
         parser.error("choose either --verify-freeze or --execute-response")
     if args.verify_freeze:
         print(json.dumps({"verified_frozen_artifacts": verify_freeze(cfg)}, sort_keys=True)); return 0
     if args.execute_response:
-        print(json.dumps(execute_response(args.output, args.authorization_reference, cfg), sort_keys=True)); return 0
+        print(json.dumps(execute_response(args.output, args.figure_base, args.authorization_reference, cfg), sort_keys=True)); return 0
     parser.error("response access is disabled by default; use --verify-freeze or a later authorized --execute-response")
     return 2
 

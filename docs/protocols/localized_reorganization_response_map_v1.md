@@ -6,6 +6,10 @@
 **Starting commit:** `079fbd49c8756c71cc2db200b7a80aa7beb4fede`
 **Execution tier after authorization:** Tier 2
 
+**Pre-access closure hardening:** deterministic reproduction, no-overwrite, and
+final-ledger mechanics were clarified before any response access. They do not
+change the estimand, sample, mask, bandwidth, weighting, or display scale.
+
 ## Purpose and firewall
 
 This protocol governs one descriptive IDSSE-only visualization of the already
@@ -110,10 +114,30 @@ The only public result files may be the frozen compact CSV/JSON package and a
 three-panel PNG/SVG figure. No output may contain anchor rows, identities,
 timestamps, rank rows, coordinates, per-match surfaces, or row-level \(Y\).
 
+The primary authoritative output and figure destinations must not already
+exist. Execution fails closed rather than overwriting them, with the operator
+directed to use a clean/disposable environment or an explicitly isolated
+reproduction destination. Both the primary calculation and an independent
+rerun are first generated in isolated temporary roots. Their aggregate CSV/JSON
+outputs and PNG/SVG figures must be byte-identical under the current platform
+policy before the primary package is promoted to its authoritative paths.
+
+`reproduction.json` records the frozen identities, authorization reference,
+primary and temporary-rerun artifact hashes, equality outcomes, compact runtime
+metadata, and closure state. `final_hashes.json` is written only after that
+comparison passes; it hashes the closed authoritative CSV/JSON package and
+PNG/SVG figures, while excluding its own recursive hash. The final valid status
+is never written before successful reproduction and final-ledger validation.
+
 Panel A is the primary 7.5 m surface, Panel B the 5 m sensitivity, and Panel C
 the 10 m sensitivity. Rendering is cell-based with no spatial interpolation,
 a shared symmetric scale, and clearly gray failed-mask cells. No confidence,
 significance, or tactical overlays are permitted.
+
+Colorbar extensions are derived from actual display saturation: neither, max,
+min, or both for no clipping, positive-only, negative-only, or two-sided
+clipping respectively. Each panel and the figure footer disclose the observed
+negative/positive saturation counts.
 
 There is no `SUPPORTED`, `MIXED`, or `NOT SUPPORTED` classification. A valid
 execution is `DESCRIPTIVE RESPONSE MAP EXECUTED — QC PASSED`; a mechanical

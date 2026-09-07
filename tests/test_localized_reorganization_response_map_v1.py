@@ -30,10 +30,21 @@ def _response_rows(values: list[float] | None = None) -> pd.DataFrame:
 
 def _small_cfg() -> dict:
     cfg = _cfg()
+    cfg["matches"] = ["m1", "m2"]
     cfg["grid"]["legal_cells"] = 2
     cfg["support"]["valid_cells_by_bandwidth"] = {"5.0": 1, "7.5": 1, "10.0": 1}
     cfg["support"]["common_intersection_cells"] = 1
     return cfg
+
+
+def _small_anchors() -> pd.DataFrame:
+    return pd.DataFrame({
+        "match_id": ["m1", "m2"],
+        "observation_id": ["a", "b"],
+        "x_plot_m": [0.0, 0.0],
+        "y_plot_m": [0.0, 0.0],
+        "y_m": [-2.0, 4.0],
+    })
 
 
 def _small_masks() -> dict[float, pd.DataFrame]:
@@ -169,11 +180,111 @@ def test_compact_aggregate_schema_and_synthetic_csv_svg_png_are_deterministic(tm
         assert first.with_suffix(suffix).read_bytes() == second.with_suffix(suffix).read_bytes()
 
 
-def test_source_default_path_requires_explicit_future_execution_gate():
-    source = Path(response_map.__file__).read_text(encoding="utf-8")
-    assert "--execute-response" in source
-    assert "response access is disabled by default" in source
-    assert "authorization_reference" in source
+@pytest.mark.parametrize(
+    ("negative", "positive", "expected"),
+    [(0, 0, "neither"), (0, 1, "max"), (1, 0, "min"), (1, 1, "both")],
+)
+def test_saturation_extensions_follow_actual_clipping(negative, positive, expected):
+    assert response_map.saturation_extension(negative, positive) == expected
+
+
+def test_authoritative_destinations_refuse_overwrite_and_rerun_roots_are_isolated(tmp_path):
+    output, figure = tmp_path / "authoritative", tmp_path / "figures" / "response_map"
+    output.mkdir()
+    with pytest.raises(response_map.ResponseMapInvalid, match="refusing to overwrite"):
+        response_map.require_clean_destinations(output, figure)
+    output.rmdir()
+    figure.parent.mkdir()
+    figure.with_suffix(".png").touch()
+    with pytest.raises(response_map.ResponseMapInvalid, match="refusing to overwrite"):
+        response_map.require_clean_destinations(output, figure)
+    figure.with_suffix(".png").unlink()
+    response_map.require_clean_destinations(output, figure)
+
+
+def test_execute_response_blocks_existing_authoritative_output_before_registry_hash(monkeypatch, tmp_path):
+    cfg, output, figure = _small_cfg(), tmp_path / "authoritative", tmp_path / "figures" / "response_map"
+    output.mkdir()
+    monkeypatch.setattr(response_map, "sha", lambda _path: pytest.fail("registry hash must not run after overwrite block"))
+    with pytest.raises(response_map.ResponseMapInvalid, match="refusing to overwrite"):
+        response_map.execute_response(output, figure, "review-approved", cfg)
+
+
+def test_synthetic_isolated_rerun_closes_only_after_byte_identical_reproduction(tmp_path):
+    cfg, anchors, masks = _small_cfg(), _small_anchors(), _small_masks()
+    primary_output, primary_figure = tmp_path / "primary" / "out", tmp_path / "primary" / "fig" / "response_map"
+    rerun_output, rerun_figure = tmp_path / "rerun" / "out", tmp_path / "rerun" / "fig" / "response_map"
+    response_map.run_from_inputs(anchors, masks, primary_output, primary_figure, "review-approval", cfg)
+    primary_before = response_map._artifact_hashes(primary_output, primary_figure, cfg)
+    response_map.run_from_inputs(anchors, masks, rerun_output, rerun_figure, "review-approval", cfg)
+    assert response_map._artifact_hashes(primary_output, primary_figure, cfg) == primary_before
+    comparison = response_map.compare_deterministic_artifacts(primary_output, primary_figure, rerun_output, rerun_figure, cfg)
+    assert comparison == {"machine_readable_byte_identical": True, "figure_byte_identical": True, "differing_artifacts": []}
+    manifest = response_map.finalize_closure(primary_output, primary_figure, rerun_output, rerun_figure, "review-approval", cfg)
+    assert manifest["status"] == cfg["statuses"]["valid"]
+    record = json.loads((primary_output / "reproduction.json").read_text(encoding="utf-8"))
+    assert record["comparison"] == comparison
+    assert set(record) >= {"frozen_artifacts_sha256", "protected_registry_expected_sha256", "primary", "reproduction", "closure_status"}
+    assert not any(token in json.dumps(record).lower() for token in ("row_level_y", "attacker_key", "time_utc"))
+    assert response_map.validate_final_hashes(primary_output, primary_figure, cfg)
+    assert rerun_output.parent != primary_output.parent
+
+
+def test_final_hash_ledger_detects_tampering_and_valid_status_requires_reproduction(tmp_path):
+    cfg, anchors, masks = _small_cfg(), _small_anchors(), _small_masks()
+    primary_output, primary_figure = tmp_path / "primary" / "out", tmp_path / "primary" / "fig" / "response_map"
+    rerun_output, rerun_figure = tmp_path / "rerun" / "out", tmp_path / "rerun" / "fig" / "response_map"
+    run = response_map.run_from_inputs(anchors, masks, primary_output, primary_figure, "approval", cfg)
+    assert run["manifest"]["status"] == cfg["statuses"]["preclosure"]
+    assert not (primary_output / "final_hashes.json").exists()
+    response_map.run_from_inputs(anchors, masks, rerun_output, rerun_figure, "approval", cfg)
+    response_map.finalize_closure(primary_output, primary_figure, rerun_output, rerun_figure, "approval", cfg)
+    (primary_output / "aggregate_response_grid.csv").write_text("tampered\n", encoding="utf-8")
+    with pytest.raises(response_map.ResponseMapInvalid, match="final hash ledger"):
+        response_map.validate_final_hashes(primary_output, primary_figure, cfg)
+
+
+def test_finalization_rejects_nonidentical_rerun_before_valid_status(tmp_path):
+    cfg, anchors, masks = _small_cfg(), _small_anchors(), _small_masks()
+    primary_output, primary_figure = tmp_path / "primary" / "out", tmp_path / "primary" / "fig" / "response_map"
+    rerun_output, rerun_figure = tmp_path / "rerun" / "out", tmp_path / "rerun" / "fig" / "response_map"
+    response_map.run_from_inputs(anchors, masks, primary_output, primary_figure, "approval", cfg)
+    response_map.run_from_inputs(anchors, masks, rerun_output, rerun_figure, "approval", cfg)
+    (rerun_output / "surface_summary.csv").write_text("different\n", encoding="utf-8")
+    with pytest.raises(response_map.ResponseMapInvalid, match="deterministic reproduction failed"):
+        response_map.finalize_closure(primary_output, primary_figure, rerun_output, rerun_figure, "approval", cfg)
+    assert json.loads((primary_output / "manifest.json").read_text(encoding="utf-8"))["status"] == cfg["statuses"]["preclosure"]
+
+
+def test_cli_execution_gate_is_reachable_only_with_authorization(monkeypatch, tmp_path):
+    called = {"loader": False}
+
+    class LoaderReached(RuntimeError):
+        pass
+
+    def sentinel(_cfg):
+        called["loader"] = True
+        raise LoaderReached("synthetic protected-loader sentinel")
+
+    monkeypatch.setattr(response_map, "_load_authorized_response_rows", sentinel)
+    monkeypatch.setattr(response_map, "verify_freeze", lambda _cfg: {})
+    cfg = _cfg()
+    monkeypatch.setattr(response_map, "sha", lambda _path: cfg["protected_source"]["registry_sha256"])
+    monkeypatch.setattr(response_map.support, "_registry", lambda _cfg: pd.DataFrame())
+    monkeypatch.setattr(response_map, "DEFAULT_OUTPUT", tmp_path / "out")
+    monkeypatch.setattr(response_map, "DEFAULT_FIGURE", tmp_path / "fig" / "response_map")
+
+    with pytest.raises(SystemExit):
+        response_map.main([])
+    assert not called["loader"]
+    assert response_map.main(["--verify-freeze"]) == 0
+    assert not called["loader"]
+    with pytest.raises(response_map.ResponseMapInvalid, match="nonempty authorization"):
+        response_map.main(["--execute-response"])
+    assert not called["loader"]
+    with pytest.raises(LoaderReached, match="sentinel"):
+        response_map.main(["--execute-response", "--authorization-reference", "review-approved"])
+    assert called["loader"]
 
 
 def test_config_freezes_nonbinary_status_and_no_response_access():

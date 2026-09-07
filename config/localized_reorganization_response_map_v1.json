@@ -81,10 +81,13 @@
     "panel_order_bandwidth_m": [7.5, 5.0, 10.0],
     "renderer": "cell_based_no_spatial_interpolation",
     "masked_cells": "gray_not_zero",
+    "colorbar_extension": "derived_from_actual_negative_and_positive_saturation_counts",
+    "saturation_disclosure": "per_panel_counts_and_shared_figure_footer",
     "significance_overlay": false,
     "tactical_zone_labels": false
   },
   "statuses": {
+    "preclosure": "DESCRIPTIVE RESPONSE MAP PRE-CLOSURE QC PASSED",
     "valid": "DESCRIPTIVE RESPONSE MAP EXECUTED — QC PASSED",
     "invalid": "DESCRIPTIVE RESPONSE MAP INVALID",
     "nonbinary_scientific_classification": true
@@ -95,6 +98,16 @@
     "per_match_surfaces_serialized": false,
     "row_level_y_serialized": false,
     "sloan_main_text_authorized": false
+  },
+  "closure": {
+    "primary_destination": "authoritative_outputs_and_figures_are_promoted_only_after_isolated_rerun_passes",
+    "existing_authoritative_destination": "fail_closed_no_overwrite",
+    "reproduction_destination": "isolated_temporary_root_removed_after_byte_comparison",
+    "deterministic_machine_readable_files": ["aggregate_response_grid.csv", "sample_counts.csv", "surface_summary.csv", "manifest.json", "hard_qc.json", "governed_hashes.json"],
+    "governed_hash_files": ["aggregate_response_grid.csv", "sample_counts.csv", "surface_summary.csv", "hard_qc.json"],
+    "final_output_files": ["aggregate_response_grid.csv", "sample_counts.csv", "surface_summary.csv", "manifest.json", "hard_qc.json", "governed_hashes.json", "reproduction.json"],
+    "comparison": "byte_for_byte_machine_readable_png_and_svg_under_current_platform_policy",
+    "final_status_requires": ["scientific_qc", "isolated_independent_rerun", "byte_identical_machine_readable_outputs", "byte_identical_png_and_svg", "reproduction_record", "validated_final_hash_ledger"]
   },
   "stop_rule": "no_post_response_change_to_bandwidth_mask_scale_zones_estimator_response_field_weighting_or_diagnostics_without_new_prospective_approval"
 }
