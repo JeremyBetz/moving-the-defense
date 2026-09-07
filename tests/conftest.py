@@ -1,8 +1,8 @@
 """Repository-wide pytest governance hooks.
 
 One hash-frozen pre-execution test remains part of scientific provenance after
-the governed v3 execution closed. It is retained byte-for-byte and reported as
-an expected historical condition; current-state coverage lives separately.
+the governed v3 execution closed. It is retained byte-for-byte and runs as an
+expected historical failure; current-state coverage lives separately.
 """
 
 from __future__ import annotations
@@ -24,6 +24,6 @@ def pytest_collection_modifyitems(items: list[pytest.Item]) -> None:
                     "hash-frozen pre-execution assertion retained for provenance; "
                     "the governed v3 result is now closed and covered by current-state tests"
                 ),
-                run=False,
+                run=True,
                 strict=True,
             ))

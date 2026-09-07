@@ -477,6 +477,16 @@ classification gate. A complete independent rerun reproduced all 14 governed
 compact outputs byte-for-byte. Native support flags remain authoritative because
 Kloppy does not retain `is_detected`.
 
+## IDSSE localized-reorganization support preflight
+
+The [support-preflight protocol](protocols/localized_reorganization_heatmap_support_preflight_v1.md) and [aggregate result report](results/localized_reorganization_heatmap_support_preflight_v1.md) preserve a closed, response-blind IDSSE support characterization. Its committed grid, summary, manifest, hashes, hard-QC record, and support-only figures can be verified without provider data through:
+
+```bash
+.venv/bin/python -m pytest -q tests/test_localized_reorganization_heatmap_support_preflight_v1.py -m "not provider_data"
+```
+
+The future near-minus-middle response map is frozen but unexecuted. Do not rerun its provider-backed preflight or read any response field unless separately authorized under [current research governance](research_governance.md).
+
 ## Known reproducibility limitations
 
 - There is no one-command end-to-end workflow or continuous integration check.

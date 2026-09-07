@@ -4,6 +4,8 @@
 
 **Established:** 2026-09-06
 
+**Last reviewed:** 2026-09-07 — Batch 1 governance/preflight hardening
+
 **Starting scientific checkpoint:** `57644b3205ead6ef7ede76aa15c3f23b28c2af8e`
 
 This document records temporary research boundaries that may change after an
@@ -19,11 +21,14 @@ for individual analyses.
 | Metrica Sample Game 3 | Untouched and outside [current paper reproduction](../REPRODUCE.md) | A prospectively approved scientific plan and any required frozen protocol before access |
 | SkillCorner response-mode outcomes | Unopened; the [IDSSE response-mode result](results/defensive_response_mode_v1.md) is MIXED and does not authorize transport | A separately motivated and approved design; not a repair of the mixed result |
 | Defensive Reorganization Departure residuals and retrieval | Unopened after [DRD v2](results/defensive_reorganization_departure_v2.md) classified MIXED | A separately motivated and approved design that does not alter the closed v2 result |
+| IDSSE localized-reorganization response map | Support geometry is frozen, but the response stage is unexecuted and protected. `response_2s_m`, the future near-minus-middle outcome, and any fitted/local response surface remain unread so response-blind support selection cannot become outcome-tuned. | Explicit human approval of response-stage execution under the [frozen support-preflight protocol](protocols/localized_reorganization_heatmap_support_preflight_v1.md), or an explicitly approved revised prospective protocol before any outcome inspection |
 | Closed negative, mixed, rejected, or invalid branches | Closed as recorded in the [claim ledger](claim_status.md) | Independent football/scientific rationale, planning, and explicit approval before a new version or dataset is opened |
 
 These are operational firewalls, not claims that previously completed authorized
 outcomes remain uninspected. Historical pre-execution firewalls retain their
 recorded meaning in the research log and governed artifacts.
+
+The response-map firewall is supported by its [configuration](../config/localized_reorganization_heatmap_support_preflight_v1.json), [support-only result report](results/localized_reorganization_heatmap_support_preflight_v1.md), and [aggregate manifest](../outputs/localized_reorganization_heatmap_support_preflight_v1/manifest.json). Those artifacts establish support geometry only; they are not evidence of a response surface.
 
 ## Current paper boundary
 

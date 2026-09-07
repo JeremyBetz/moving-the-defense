@@ -1,5 +1,19 @@
 # Research Log
 
+## 2026-09-07 — IDSSE localized-reorganization support preflight closed
+
+An IDSSE-only, response-blind spatial-support preflight reconstructed the
+governed attackers' smoothed `t-2 s` coordinates in memory and published only
+aggregate support artifacts. It evaluated the bounded six-bandwidth/two-profile
+frontier, retained native out-of-pitch coordinates without clipping, and found
+that period-aware block correction changed no support-mask cell. Human review
+then froze the Conservative `h=7.5 m` support geometry, with 5 m and 10 m
+sensitivities, for a possible future descriptive response map. This is not a
+response result: `response_2s_m`, the near-minus-middle outcome, and every
+response-colored or fitted surface remain unexecuted and require explicit
+authorization under current research governance. Metrica Game 3, SkillCorner
+response-mode outcomes, and DRD residual/retrieval outputs remained unopened.
+
 ## 2026-09-04 — Defensive Response Mode v1 executed: MIXED
 
 The prospectively frozen seven-match IDSSE width hypothesis was executed on the

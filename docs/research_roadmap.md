@@ -112,6 +112,10 @@ flagship figure from the closed evidence. No **Game 3 contextual holdout**
 protocol is frozen; the IDSSE application protocol below does not spend that
 holdout.
 
+### IDSSE localized-reorganization response-map preflight
+
+The [support preflight](protocols/localized_reorganization_heatmap_support_preflight_v1.md) is closed and response-blind. It fixed the seven-match, `t-2 s`, goalward-x/physical-y, 1 m-grid support geometry and the human-reviewed Conservative `h=7.5 m` display mask for a possible future descriptive map. Its [support-only report](results/localized_reorganization_heatmap_support_preflight_v1.md) is not evidence of a response pattern. The defined near-minus-middle response surface remains unexecuted and protected; it requires explicit authorization under [current research governance](research_governance.md) before any response value is read.
+
 ### Football semantic validation
 
 Feasibility is designed; it awaits a written ethics/HRPP determination before
