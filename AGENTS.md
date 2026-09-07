@@ -46,6 +46,10 @@ pass. Any change to the frozen design still requires separate approval.
 - Do not commit raw provider tracking data.
 - Do not add reconstructive provider-linked row tables, predictions, residuals,
   or detailed eligibility ledgers without explicit publication approval.
+- An approved exception is an exact, hash-bound, capability-specific record in
+  `config/repository_policy.json`; it never permits raw provider data or an
+  unsafe symlink. Public source datasets remain download-only unless separately
+  approved.
 - Preserve provider and licence attribution.
 - Existing tracked historical artifacts are grandfathered scientific records;
   do not silently rewrite or delete them.

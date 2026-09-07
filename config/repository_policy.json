@@ -46,6 +46,29 @@
       "residual_rows",
       "player_rows"
     ],
+    "exception_policy": {
+      "required_fields": [
+        "path",
+        "change_status",
+        "exception_type",
+        "purpose",
+        "rationale",
+        "approval_reference",
+        "sha256",
+        "overrides"
+      ],
+      "allowed_types": [
+        "synthetic_fixture",
+        "publication_artifact"
+      ],
+      "allowed_overrides": [
+        "provider_like_filename",
+        "reconstructive_name",
+        "large_file",
+        "opaque_container",
+        "notebook_embedded_output"
+      ]
+    },
     "exceptions": []
   }
 }

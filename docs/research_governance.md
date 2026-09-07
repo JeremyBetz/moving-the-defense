@@ -54,6 +54,14 @@ resolved, not that it is safe. These checks supplement review; neither can prove
 non-access to a protected dataset or establish publication approval from its
 metadata alone.
 
+The paper-firewall warning report groups unresolved static read expressions by
+source file and function while preserving each source line, reader, and
+expression. A warning is uncertainty—not a safety assertion—and does not block
+only because the bounded evaluator cannot resolve the path. A statically
+resolved protected path, missing configured entry point, or protected import is
+blocking. The evaluator intentionally does not prove safety for runtime path
+generation, reflection/importlib, subprocesses, notebooks, or manual access.
+
 ## Publication boundary
 
 - Raw provider files stay under ignored local `data/` paths.
@@ -63,6 +71,17 @@ metadata alone.
   scientific audit trail.
 - New public outputs should normally be compact governed summaries with units,
   provenance, and hashes.
+- The changed-artifact guard examines added, modified, renamed, and copied paths
+  only; unchanged historical artifacts stay grandfathered. It checks both sides
+  of a rename/copy and permits an exception only for one exact path, change
+  status, source path where applicable, target SHA-256, and named capability.
+  A metadata approval reference records review context but does not itself prove
+  authorization.
+- Synthetic provider-like fixtures may receive only a narrow fixture exception.
+  Public raw source data remain download-only by default. External, broken, and
+  directory symlinks always fail; an internal file symlink must resolve inside
+  the repository and its resolved target is checked under the same artifact
+  rules.
 
 ## Changing a firewall
 

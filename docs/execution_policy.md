@@ -56,7 +56,8 @@ Required:
 4. serialize governed outputs and generate predeclared/governed figures;
 5. complete result, reproduction, and hash ledgers;
 6. update current-state documentation, claim status, research log, roadmap, and Sloan readiness as appropriate;
-7. commit and push; and
+7. run the bounded publication/artifact guard where a commit contains generated
+   or provider-adjacent artifacts, then commit and push; and
 8. verify a clean, synchronized repository.
 
 Use Tier 2 when a development result meets its frozen success/coherence rule, a negative/mixed result materially changes the research direction, shared infrastructure changed materially, or a paper-facing milestone is being closed. Tier 2 cannot repair or upgrade a result by changing its scientific definition.
@@ -71,7 +72,7 @@ Tier 3 is mandatory for untouched or estimand-heldout evidence, external replica
 4. run every frozen control and robustness check;
 5. complete hard QC, independent deterministic reproduction, and artifact hashing;
 6. complete result and current-state documentation;
-7. commit and push; and
+7. run the bounded publication/artifact guard where applicable, then commit and push; and
 8. verify clean synchronization.
 
 Heldout evidence cannot use Tier 1 for convenience.
