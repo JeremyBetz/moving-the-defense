@@ -40,6 +40,15 @@ Static repository checks can detect direct path or dependency regressions, but
 they do not replace prospective protocol governance or prove that data was never
 opened outside repository code.
 
+`src/repository_policy.py` provides two bounded checks: a static import/read-path
+check for the configured paper entry points, and a Git-diff check for changed
+provider/publication artifacts. They inspect only configured code paths and
+changed files. Blocking findings fail the relevant guard. An unresolved dynamic
+read path is a visible nonblocking warning: it means the path was not statically
+resolved, not that it is safe. These checks supplement review; neither can prove
+non-access to a protected dataset or establish publication approval from its
+metadata alone.
+
 ## Publication boundary
 
 - Raw provider files stay under ignored local `data/` paths.

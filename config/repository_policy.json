@@ -1,0 +1,51 @@
+{
+  "current_paper_entrypoints": [
+    "src/spatial_defensive_response_footprint_game1_v1.py",
+    "src/spatial_defensive_response_footprint_game2_final_v1.py",
+    "src/spatial_defensive_response_footprint_idsse_v1.py",
+    "src/defensive_reorganization_context_v1.py",
+    "src/defensive_reorganization_spatial_value_v1.py",
+    "src/defensive_reorganization_spatial_form_skillcorner_external.py",
+    "src/generate_temporal_footprint_flagship.py",
+    "src/generate_directional_replication_figure.py"
+  ],
+  "protected_module_prefixes": [
+    "defensive_response_mode_skillcorner",
+    "skillcorner_response_mode",
+    "drd_retrieval"
+  ],
+  "protected_path_prefixes": [
+    "data/metrica_sample_game_3/",
+    "outputs/defensive_reorganization_departure_v2/heldout_predictions",
+    "outputs/defensive_reorganization_departure_v2/residuals/",
+    "outputs/defensive_reorganization_departure_v2/retrieval/",
+    "outputs/defensive_reorganization_departure_v2/player_rankings/",
+    "outputs/defensive_response_mode_skillcorner/"
+  ],
+  "protected_path_substrings": [
+    "Sample_Game_3_",
+    "drd_residual",
+    "skillcorner_response_mode"
+  ],
+  "artifact_policy": {
+    "allowed_data_paths": [
+      "data/.gitkeep"
+    ],
+    "max_changed_file_bytes": 10485760,
+    "raw_filename_substrings": [
+      "RawTrackingData",
+      "RawEventsData",
+      "raw_tracking",
+      "tracking_extrapolated"
+    ],
+    "reconstructive_name_substrings": [
+      "observation_rows",
+      "eligibility_ledger",
+      "heldout_predictions",
+      "prediction_rows",
+      "residual_rows",
+      "player_rows"
+    ],
+    "exceptions": []
+  }
+}
