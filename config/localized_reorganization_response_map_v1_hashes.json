@@ -1,0 +1,24 @@
+{
+  "status": "FROZEN_PRE_RESPONSE_IMPLEMENTATION_RESPONSE_ACCESS_NOT_AUTHORIZED",
+  "freeze_date": "2026-09-07",
+  "starting_commit": "079fbd49c8756c71cc2db200b7a80aa7beb4fede",
+  "frozen_artifacts_sha256": {
+    "docs/protocols/localized_reorganization_response_map_v1.md": "3a3b646b96be0a54a38c0f4640faf3070fb90d94d816aca695dfd32b4bca0e5d",
+    "config/localized_reorganization_response_map_v1.json": "2b66f226c6109d83229fb02097e277693cf91d4555d6627d4bf720529403367d",
+    "src/localized_reorganization_response_map_v1.py": "b603977162888a97a0cf673e2d21c3779f787612e8e1e4ee0b9b94492942ad9d",
+    "tests/test_localized_reorganization_response_map_v1.py": "5ccdb6c45823ec59daf76316b13dffa515a21d8b251f945ff31c10c5690a9736",
+    "docs/protocols/localized_reorganization_heatmap_support_preflight_v1.md": "050152e1a1c598cd8fcb985f70cd958b3ba4e9d17dca52db814561f979c65472",
+    "config/localized_reorganization_heatmap_support_preflight_v1.json": "3fe8f0b88d07833abc534706734480cbd1a4396d0c6aada0f8d24cf6503fd1fd",
+    "src/localized_reorganization_heatmap_support_preflight_v1.py": "d64f1e66a4ca65297133bbd11d4440cfb9c0b1b8fbc228c058a1f68b873cdf31",
+    "outputs/localized_reorganization_heatmap_support_preflight_v1/support_grid.parquet": "dccd54618018e6dd1bee8f136f9a2b0eef0f3384b73a502b931a6719f0ad25fc",
+    "outputs/localized_reorganization_heatmap_support_preflight_v1/manifest.json": "061a5db4c234eb634660230875cf825b249aedad4d1e1641efd01be849561d25",
+    "docs/protocols/spatial_defensive_response_footprint_v1_idsse_external_replication.md": "0336ad07964b5a133eb0c0e3986accef2c3058144d47e3ab0f20d9ba72497db1",
+    "config/spatial_defensive_response_footprint_v1_idsse_external_replication.json": "a3d5ea305c67dd6f65d1314ce4e0a14feffb4078b51f8e01a42dea58ad97dbe2"
+  },
+  "protected_registry_identity": {
+    "path": "outputs/spatial_defensive_response_footprint_idsse_v1/observation_rows.parquet",
+    "sha256": "3c8a50cfa07f034b4428e280ecc6fcf7df423ed4dacad86b0862ba1e7d6716d2",
+    "identity_source": "config/defensive_reorganization_departure_v1_hashes.json",
+    "response_values_opened_at_freeze": false
+  }
+}

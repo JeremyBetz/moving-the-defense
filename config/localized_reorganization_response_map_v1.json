@@ -1,0 +1,100 @@
+{
+  "schema_version": "1.0.0",
+  "status": "FROZEN_PRE_RESPONSE_IMPLEMENTATION_RESPONSE_ACCESS_NOT_AUTHORIZED",
+  "freeze_date": "2026-09-07",
+  "starting_commit": "079fbd49c8756c71cc2db200b7a80aa7beb4fede",
+  "execution_tier_after_authorization": 2,
+  "matches": ["J03WMX", "J03WN1", "J03WOH", "J03WOY", "J03WPY", "J03WQQ", "J03WR9"],
+  "protected_source": {
+    "registry_path": "outputs/spatial_defensive_response_footprint_idsse_v1/observation_rows.parquet",
+    "registry_sha256": "3c8a50cfa07f034b4428e280ecc6fcf7df423ed4dacad86b0862ba1e7d6716d2",
+    "authorized_response_columns": ["observation_id", "distance_rank", "response_2s_m"],
+    "required_support_columns": ["observation_id", "match_id", "period", "time_period_s", "time_utc_ns", "attacker_key", "attacking_team", "block_id", "distance_rank"],
+    "prohibited_outcome_columns": ["response_1s_m", "response_4s_m", "earlier_relative_path_m", "attacker_path_m", "future_attacker_path_m"],
+    "response_access_requires": ["execute_response_flag", "nonempty_authorization_reference", "frozen_input_verification"]
+  },
+  "coordinates": {
+    "anchor": "centred_7_frame_attacker_position_at_t_minus_2_seconds_complete_support",
+    "transform": "x_plot=attack_sign*x_provider; y_plot=y_provider",
+    "physical_provider_y_unchanged": true,
+    "out_of_pitch_anchors": "retain_native_coordinates_no_clip_no_reflect_no_exclude_no_boundary_correction"
+  },
+  "grid": {
+    "x_centres_m": {"start": -52.0, "stop": 52.0, "step": 1.0},
+    "y_centres_m": {"start": -33.5, "stop": 33.5, "step": 1.0},
+    "legal_cells": 7140
+  },
+  "kernel": {
+    "family": "gaussian",
+    "truncate_at_bandwidths": 2.0,
+    "bandwidths_m": {"primary": 7.5, "sensitivity": [5.0, 10.0]}
+  },
+  "support": {
+    "source_grid_path": "outputs/localized_reorganization_heatmap_support_preflight_v1/support_grid.parquet",
+    "source_profile": "conservative",
+    "all_seven_matches_required": true,
+    "valid_cells_by_bandwidth": {"5.0": 6373, "7.5": 6979, "10.0": 7132},
+    "common_intersection_cells": 6373,
+    "mask_rule": "saved_bandwidth_specific_conservative_support_pass_only"
+  },
+  "outcome": {
+    "field": "response_2s_m",
+    "formula": "mean_D1_D3_minus_mean_D4_D7",
+    "units": "m",
+    "required_ranks": [1, 2, 3, 4, 5, 6, 7],
+    "missingness": "fail_closed_no_complete_case_pruning"
+  },
+  "estimator": {
+    "within_match": "kernel_weighted_local_mean",
+    "across_matches": "equal_arithmetic_mean_of_seven_match_means",
+    "row_pooling": false,
+    "local_regression": false,
+    "gam_or_spline": false,
+    "local_inference": false
+  },
+  "color_scale": {
+    "limits": "symmetric_minus_L_to_L",
+    "anchor_weight": "1_over_7_times_n_m",
+    "L_rule": "smallest_observed_abs_Y_with_cumulative_equal_match_anchor_weight_at_least_0.95",
+    "algorithm": "weighted_inverse_empirical_cdf_no_interpolation_no_prerounding",
+    "shared_across_all_bandwidths": true,
+    "degenerate_nonzero_surface": "invalid",
+    "degenerate_all_zero": "valid_but_uninformative_neutral_map",
+    "saturation": "display_only_explicit_counts_and_colorbar_extension"
+  },
+  "diagnostics": {
+    "required": ["total_eligible_anchors", "complete_response_anchors", "missing_response_anchors", "per_match_counts", "denominator_qc", "valid_grid_counts", "saturation_counts", "deterministic_reproduction"],
+    "forbidden": ["individual_match_response_surfaces", "match_specific_response_summaries", "leave_one_match_out_maps", "alternative_bandwidths", "alternative_masks", "alternative_response_fields", "tactical_zone_summaries", "significance_maps", "local_confidence_intervals", "p_values", "gams", "regressions", "hotspot_tests", "cluster_tests"]
+  },
+  "outputs": {
+    "directory": "outputs/localized_reorganization_response_map_v1",
+    "files": ["aggregate_response_grid.csv", "sample_counts.csv", "surface_summary.csv", "manifest.json", "hard_qc.json", "governed_hashes.json", "reproduction.json", "final_hashes.json"],
+    "aggregate_response_grid_schema": ["grid_x_m", "grid_y_m", "bandwidth_m", "support_profile", "support_valid", "equal_match_local_mean_m"],
+    "sample_counts_schema": ["match_id", "eligible_anchor_count", "complete_response_anchor_count", "missing_required_response_anchor_count", "identity_join_pass"],
+    "surface_summary_schema": ["bandwidth_m", "legal_grid_cell_count", "support_valid_cell_count", "support_fraction", "surface_min_m", "surface_median_m", "surface_max_m", "area_weighted_mean_m", "positive_cell_fraction", "negative_cell_fraction", "zero_cell_fraction", "saturated_low_cell_count", "saturated_high_cell_count", "all_match_denominators_finite"],
+    "forbidden_field_tokens": ["attacker_key", "defender_key", "player_id", "team_id", "time_utc", "period", "block_id", "distance_rank", "observation_id", "coordinate", "row_level_y"],
+    "maximum_file_bytes": 10485760
+  },
+  "figure": {
+    "directory": "figures/localized_reorganization_response_map_v1",
+    "files": ["response_map.png", "response_map.svg"],
+    "panel_order_bandwidth_m": [7.5, 5.0, 10.0],
+    "renderer": "cell_based_no_spatial_interpolation",
+    "masked_cells": "gray_not_zero",
+    "significance_overlay": false,
+    "tactical_zone_labels": false
+  },
+  "statuses": {
+    "valid": "DESCRIPTIVE RESPONSE MAP EXECUTED — QC PASSED",
+    "invalid": "DESCRIPTIVE RESPONSE MAP INVALID",
+    "nonbinary_scientific_classification": true
+  },
+  "publication": {
+    "aggregate_only": true,
+    "anchor_rows_serialized": false,
+    "per_match_surfaces_serialized": false,
+    "row_level_y_serialized": false,
+    "sloan_main_text_authorized": false
+  },
+  "stop_rule": "no_post_response_change_to_bandwidth_mask_scale_zones_estimator_response_field_weighting_or_diagnostics_without_new_prospective_approval"
+}

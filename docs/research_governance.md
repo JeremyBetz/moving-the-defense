@@ -21,14 +21,14 @@ for individual analyses.
 | Metrica Sample Game 3 | Untouched and outside [current paper reproduction](../REPRODUCE.md) | A prospectively approved scientific plan and any required frozen protocol before access |
 | SkillCorner response-mode outcomes | Unopened; the [IDSSE response-mode result](results/defensive_response_mode_v1.md) is MIXED and does not authorize transport | A separately motivated and approved design; not a repair of the mixed result |
 | Defensive Reorganization Departure residuals and retrieval | Unopened after [DRD v2](results/defensive_reorganization_departure_v2.md) classified MIXED | A separately motivated and approved design that does not alter the closed v2 result |
-| IDSSE localized-reorganization response map | Support geometry is frozen, but the response stage is unexecuted and protected. `response_2s_m`, the future near-minus-middle outcome, and any fitted/local response surface remain unread so response-blind support selection cannot become outcome-tuned. | Explicit human approval of response-stage execution under the [frozen support-preflight protocol](protocols/localized_reorganization_heatmap_support_preflight_v1.md), or an explicitly approved revised prospective protocol before any outcome inspection |
+| IDSSE localized-reorganization response map | The response-stage [protocol](protocols/localized_reorganization_response_map_v1.md), configuration, source, tests, and hash ledger are frozen, but execution remains unexecuted and protected. `response_2s_m`, the near-minus-middle outcome, and any local response surface remain unread so response-blind support selection cannot become outcome-tuned. | Explicit human approval to invoke the frozen response-stage execution after independent pre-access review, or an explicitly approved revised prospective protocol before any outcome inspection |
 | Closed negative, mixed, rejected, or invalid branches | Closed as recorded in the [claim ledger](claim_status.md) | Independent football/scientific rationale, planning, and explicit approval before a new version or dataset is opened |
 
 These are operational firewalls, not claims that previously completed authorized
 outcomes remain uninspected. Historical pre-execution firewalls retain their
 recorded meaning in the research log and governed artifacts.
 
-The response-map firewall is supported by its [configuration](../config/localized_reorganization_heatmap_support_preflight_v1.json), [support-only result report](results/localized_reorganization_heatmap_support_preflight_v1.md), and [aggregate manifest](../outputs/localized_reorganization_heatmap_support_preflight_v1/manifest.json). Those artifacts establish support geometry only; they are not evidence of a response surface.
+The response-map firewall is supported by its response-blind [support configuration](../config/localized_reorganization_heatmap_support_preflight_v1.json), [support-only result report](results/localized_reorganization_heatmap_support_preflight_v1.md), [aggregate manifest](../outputs/localized_reorganization_heatmap_support_preflight_v1/manifest.json), and frozen [response-stage protocol](protocols/localized_reorganization_response_map_v1.md). These artifacts establish geometry and future execution rules only; they are not evidence of a response surface.
 
 ## Current paper boundary
 

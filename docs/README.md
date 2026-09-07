@@ -9,7 +9,7 @@ Before opening a protected dataset or outcome, consult the
 
 ## Frozen support preflight
 
-The [IDSSE localized-reorganization heatmap support preflight](protocols/localized_reorganization_heatmap_support_preflight_v1.md) is complete and response-blind: it froze display support geometry, not a response result. Its [support-only report](results/localized_reorganization_heatmap_support_preflight_v1.md) records the aggregate frontier and human-selected future map settings. The response stage remains unexecuted and requires explicit authorization under the [current firewall](research_governance.md).
+The [IDSSE localized-reorganization heatmap support preflight](protocols/localized_reorganization_heatmap_support_preflight_v1.md) is complete and response-blind: it froze display support geometry, not a response result. Its [support-only report](results/localized_reorganization_heatmap_support_preflight_v1.md) records the aggregate frontier and human-selected future map settings. The separate [response-map v1 protocol](protocols/localized_reorganization_response_map_v1.md) is frozen with data-free implementation tests, but response access remains unexecuted and requires explicit authorization under the [current firewall](research_governance.md).
 
 ## First-time visitor — five minutes
 
