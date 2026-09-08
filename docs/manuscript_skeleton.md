@@ -424,12 +424,14 @@ episodes into exclusive movement types.
 
 ### 4.6 Starting-context characterization
 
-Separate models characterized heterogeneity in the temporal association using
+A separate additive context model characterized how the observed near-minus-middle
+defender-relative path outcome varied with starting geometry, using
 two observed quantities at the start of the exposure interval: the attacker's
 goalward position relative to the defensive-unit centroid and the attacker's
-distance from the ball. These models characterize where the local temporal
-association was larger or smaller; they do not identify why that geometry
-occurred. They were kept separate from the primary temporal and directional
+distance from the ball. The model estimates conditional associations of these
+starting quantities with the observed outcome; it does not estimate changes in
+the attacker-path coefficient or identify why that geometry occurred. It was
+kept separate from the primary temporal and directional
 estimands so that observed context is not silently promoted to a tactical class.
 The two variables represent relative unit depth and immediate ball proximity,
 respectively, rather than an exhaustive account of match state.
@@ -562,8 +564,8 @@ defensive geometry.
 
 ### 5.3 Starting context
 
-Starting context characterized where the localized temporal association was
-larger or smaller. It declined with the attacker's goalward position relative to
+In the frozen additive model, the observed near-minus-middle defender-relative
+path outcome was smaller with greater attacker goalward position relative to
 the defensive unit (−0.010161 m/m, 97.5% CI [−0.011805, −0.008499]) and with
 attacker-ball distance (−0.007533 m/m, 97.5% CI [−0.008864, −0.006245]). Thus,
 localized reorganization was larger when attackers began less far goalward
@@ -572,8 +574,8 @@ across match and leave-one-match-out checks and under trimming. These secondary
 results characterize observed context rather than a tactical mechanism or an
 optimal attacking position. The estimates were secondary to the directional
 comparison and were not used to select passages, define a movement type, or
-construct a response score. They show where the measured association was larger
-or smaller in the IDSSE sample, not a complete account of the game state that
+construct a response score. They describe conditional differences in the observed
+outcome in the IDSSE sample, not a complete account of the game state that
 produced it.
 
 ### 5.4 Response-scale boundary
@@ -606,7 +608,7 @@ defender or team moved far in absolute coordinates. Start-fixed ranks also
 ensure that locality was determined before later defender movement.
 
 The paired reverse-time comparison matters for interpreting that result. The
-control retained directional structure, as is plausible in a continuous game in
+control retained a positive reverse-time association, as is plausible in a continuous game in
 which player motion, team shape, and ball context persist across neighbouring
 intervals. The forward association nevertheless exceeded the matched
 reverse-time association. This supports a time-ordered geometric association;
@@ -689,8 +691,8 @@ a single composite score.
 
 ### 6.4 Starting geometry
 
-The starting-context results characterize the conditions under which the local
-temporal association was larger in the IDSSE analysis. It was larger when the
+The starting-context results characterize conditional differences in observed
+localized reorganization in the IDSSE additive model. The outcome was larger when the
 attacker began less far goalward relative to the defensive unit and closer to
 the ball. These observed contextual relationships are compatible with the idea
 that the same path may have different geometric meaning in different locations,
@@ -700,8 +702,8 @@ was arranged as observed.
 This is an important distinction from pressure, availability, and ball-control
 research. Those literatures may describe nearby football questions, but they do
 not make ball proximity or relative depth a tactical label in this analysis.
-The estimates are descriptive characterizations of association heterogeneity,
-not evidence for an optimal starting position, a pressing trigger, or a
+The estimates describe conditional associations between starting geometry and
+the observed outcome, not evidence for an optimal starting position, a pressing trigger, or a
 particular tactical template.
 
 ### 6.5 Analyst use

@@ -3,7 +3,7 @@
 ## Already complete
 
 - [x] Title: *Off-Ball Movement Direction and Localized Defensive Reorganization in Football*.
-- [x] Structured abstract: 346 words; 355 including the nine-word title.
+- [x] Structured abstract: 365 body words; 378 including the nine-word title and four section headings (whitespace-delimited count).
 - [x] Manuscript draft and completed S1--S10 supplement.
 - [x] Figure 1: temporal flagship, in SVG, PNG, and PDF.
 - [x] Figure 2: directional replication, in SVG, PNG, and PDF.
