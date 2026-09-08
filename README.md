@@ -105,6 +105,18 @@ Both relationships had the same direction in all 7/7 match and
 leave-one-match-out fits, and passed their predeclared trims. They characterize
 where the observed geometry was larger; they do not explain why defenders moved.
 
+The localized response also varies systematically with the attacker’s starting
+location.
+
+![Localized defensive reorganization by attacker starting location](figures/presentation/localized_reorganization_response_map_readme_h10.png)
+
+*The predeclared h=10 m sensitivity is shown as the main presentation view
+because its Conservative support covers 99.89% of the legal pitch. The
+prospectively selected h=7.5 m analysis remains the scientific primary. Both
+retain the same broad descriptive pattern: larger localized defensive response
+toward the lateral extremes and smaller response through a more central lateral
+band.*
+
 ## What this could be used for
 
 The measurement can identify or filter candidate off-ball passages with strong
