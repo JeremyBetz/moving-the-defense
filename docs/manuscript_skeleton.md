@@ -517,7 +517,7 @@ evidence that one attacker caused the observed movement.
 
 ![Time-ordered localized defensive reorganization](figures/sloan/temporal_footprint_flagship.svg)
 
-*Figure 1. Time-ordered localized defensive reorganization. Panel A is a real heldout Metrica Game 2 passage (period 1; anchor 2336.04 s) selected deterministically from attacker movement only. In the subsequent interval, the defensive unit shifts goalward and laterally; D2 and D3 move less goalward than that shared-unit reference, while D1 moves more goalward. Panels B and C show the Metrica and IDSSE time association and its forward-minus-reverse qualification; reverse-time structure remains positive. The passage is explanatory, and temporal ordering is observational rather than causal.*
+*Figure 1. Time-ordered localized defensive reorganization. A1 shows preceding attacker movement; A2 shows absolute defender paths over the next two seconds; A3 shows net defender displacement relative to the other nine defenders over that same interval. The statistical outcome is accumulated defender-relative path, rather than the illustrated net arrows. The Metrica Game 2 example (period 1, anchor 2336.04 s) was selected as the earliest eligible anchor at or above the upper quartile of preceding attacker path, using attacker movement only. B shows match estimates and separate within-environment pooled estimates. Near–middle compares D1–D3 with D4–D7; m/m denotes metres of defender-relative path per metre of preceding attacker path. C shows positive forward-minus-reverse excess despite positive reverse-time structure. Intervals are 97.5% for Metrica and 95% for IDSSE. The example and associations establish neither marking assignments nor causation.*
 
 ### 5.2 Movement direction: outward-versus-goalward difference
 
@@ -558,16 +558,7 @@ defensive geometry.
 
 ![Replicated outward-versus-goalward difference in localized defensive reorganization](figures/sloan/directional_replication.svg)
 
-*Figure 2. Replicated movement-direction difference in localized defensive
-reorganization. Positive outward-minus-goalward estimates indicate a stronger
-association between outward attacker movement and subsequent localized
-defender-relative movement than for goalward movement. Separately estimated
-pooled effects were 0.056856 m/m (95% CI [0.051358, 0.062430]) in IDSSE and
-0.048883 m/m (95% CI [0.042940, 0.054707]) in SkillCorner; all seven and nine
-match-level contrasts, respectively, were positive. The tracking environments
-were analysed separately; no cross-provider pooled estimate was calculated.
-These estimates describe observational defensive geometry, not attacking value
-or causal influence.*
+*Figure 2. Replicated outward-versus-goalward difference in localized defensive reorganization. Outward means away from the pitch centreline; goalward means toward goal. A shows separate conditional coefficient contrasts: IDSSE 0.056856 m/m (95% CI [0.051358, 0.062430]) and SkillCorner 0.048883 m/m [0.042940, 0.054707]. For straight 5 m outward versus straight 5 m goalward movement, holding modeled path magnitude and starting context equal, these correspond to approximately 28 cm and 24 cm greater near-minus-middle group-average defender-relative path. They do not represent extra movement by each defender. B shows all seven IDSSE and nine SkillCorner match contrasts, each positive. No cross-provider estimate was pooled. The results describe observational geometry, not causal influence, tactical effectiveness or value.*
 
 ### 5.3 Starting context
 

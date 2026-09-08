@@ -76,9 +76,9 @@ def render() -> None:
     skillcorner_matches = checked_matches(SKILLCORNER_MATCHES, 9)
 
     figure, (pooled_axis, match_axis) = plt.subplots(
-        1, 2, figsize=(13.3, 6.1), gridspec_kw={"width_ratios": [1.03, 1.25]}
+        1, 2, figsize=(7, 5), gridspec_kw={"width_ratios": [1, 1.05]}
     )
-    figure.subplots_adjust(left=0.09, right=0.985, bottom=0.16, top=0.79, wspace=0.30)
+    figure.subplots_adjust(left=0.15, right=0.98, bottom=0.27, top=0.78, wspace=0.65)
 
     sources = [
         ("IDSSE\n(7 matches)", *idsse, IDSSE_COLOUR, "o"),
@@ -88,23 +88,22 @@ def render() -> None:
         pooled_axis.plot([low, high], [y, y], color=colour, linewidth=3.0, solid_capstyle="round")
         pooled_axis.scatter(estimate, y, color=colour, marker=marker, s=72, zorder=3)
         pooled_axis.text(
-            high + 0.0012, y, f"{estimate:.6f}  [{low:.6f}, {high:.6f}]",
-            va="center", fontsize=8.0, color=colour
+            estimate, y + 0.16, f"{estimate:.3f}",
+            ha="center", va="bottom", fontsize=9, color=colour, weight="bold"
         )
     pooled_axis.axvline(0, color="#344054", linewidth=1.0, zorder=0)
     pooled_axis.set_xlim(-0.004, 0.078)
     pooled_axis.set_ylim(-0.55, 1.55)
-    pooled_axis.set_yticks([1, 0], [item[0] for item in sources], fontsize=10.5)
-    pooled_axis.set_xlabel("Outward minus goalward association (m/m)", fontsize=10)
-    pooled_axis.set_title("A  Separate provider estimates", loc="left", fontweight="bold", fontsize=12)
+    pooled_axis.set_yticks([1, 0], [item[0] for item in sources], fontsize=9)
+    pooled_axis.set_xlabel("Outward minus goalward\nassociation (m/m)", fontsize=9)
+    pooled_axis.set_title("A  Separate provider estimates", loc="left", fontweight="bold", fontsize=10, pad=12)
     pooled_axis.grid(axis="x", color="#EAECF0", linewidth=0.9)
     pooled_axis.spines[["top", "right", "left"]].set_visible(False)
     pooled_axis.tick_params(axis="y", length=0)
-    pooled_axis.text(
-        0.01, -0.22,
-        "Positive = stronger localized defender-relative association for outward movement.",
-        transform=pooled_axis.transAxes, fontsize=8.1, color=GREY, va="top"
-    )
+    pooled_axis.tick_params(axis="x", labelsize=9)
+    figure.text(.05, .09, "Modeled 5 m comparison:\nIDSSE ≈28 cm · SkillCorner ≈24 cm\n"
+                "Difference in near–middle defender-relative path", fontsize=8,
+                color="#344054", va="center", linespacing=1.5)
 
     match_values = [("IDSSE", idsse_matches, IDSSE_COLOUR, "o"), ("SkillCorner", skillcorner_matches, SKILLCORNER_COLOUR, "s")]
     y = 0
@@ -119,28 +118,25 @@ def render() -> None:
     match_axis.axhline(6.5, color=LIGHT_GREY, linewidth=1.0)
     match_axis.axvline(0, color="#344054", linewidth=1.0, zorder=0)
     match_axis.set_xlim(-0.004, 0.078)
-    match_axis.set_yticks(ticks, labels, fontsize=8.3)
+    match_axis.set_yticks(ticks, labels, fontsize=8)
     match_axis.invert_yaxis()
-    match_axis.set_xlabel("Outward minus goalward association (m/m)", fontsize=10)
-    match_axis.set_title("B  Positive match-level contrasts in both environments", loc="left", fontweight="bold", fontsize=12)
+    match_axis.set_xlabel("Outward minus goalward\nassociation (m/m)", fontsize=9)
+    match_axis.set_title("B  Individual matches", loc="left", fontweight="bold", fontsize=10, pad=12)
     match_axis.grid(axis="x", color="#EAECF0", linewidth=0.9)
     match_axis.spines[["top", "right", "left"]].set_visible(False)
     match_axis.tick_params(axis="y", length=0)
-    match_axis.legend(loc="lower right", frameon=False, fontsize=8.5, handletextpad=0.4)
-    match_axis.text(
-        0.01, -0.16,
-        "IDSSE: 7/7 positive. SkillCorner: 9/9 positive. Points are separate match-level estimates.",
-        transform=match_axis.transAxes, fontsize=8.1, color=GREY, va="top"
-    )
+    match_axis.tick_params(axis="x", labelsize=9)
+    match_axis.text(.006, 3, "7/7\npositive", fontsize=8, color=IDSSE_COLOUR, ha="left", va="center")
+    match_axis.text(.006, 11, "9/9\npositive", fontsize=8, color=SKILLCORNER_COLOUR, ha="left", va="center")
 
     figure.suptitle(
-        "Replicated outward-versus-goalward difference in localized defensive reorganization",
-        x=0.09, y=0.96, ha="left", fontsize=15, fontweight="bold"
+        "Directional difference replicates across tracking environments",
+        x=0.04, y=0.97, ha="left", fontsize=12, fontweight="bold"
     )
     figure.text(
-        0.09, 0.905,
-        "IDSSE and SkillCorner were analysed separately; no cross-provider pooled estimate was calculated.",
-        fontsize=9.2, color=GREY
+        0.04, 0.90,
+        "Outward: away from the pitch centreline · Goalward: toward goal",
+        fontsize=9, color="#344054"
     )
 
     OUTPUT.mkdir(parents=True, exist_ok=True)

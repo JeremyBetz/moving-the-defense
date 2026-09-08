@@ -1,9 +1,9 @@
 """Build the Sloan-facing temporal-footprint figure from governed results.
 
-Panel A renders one bounded, deterministic Metrica Game 2 passage.  It selects
-the earliest chronological Game 2 anchor in the upper quartile of the already
-governed two-second attacker-path registry, before looking at any defensive
-response quantity.  The source opens only the small local tracking slice needed
+Panel A renders the fixed Metrica Game 2 passage previously selected as the
+earliest chronological anchor in the upper quartile of governed attacker path.
+Regeneration retrieves only that anchor and its ranks, without reselecting or
+opening defensive response fields. The source opens only the local tracking slice needed
 to draw that passage; it never writes provider coordinates, fits a model, or
 calculates a new scientific result.  Panels B and C read closed compact result
 tables unchanged.
@@ -18,6 +18,7 @@ import matplotlib
 matplotlib.use("Agg")
 import matplotlib.pyplot as plt
 from matplotlib.patches import Rectangle
+from matplotlib.lines import Line2D
 import numpy as np
 import pandas as pd
 import polars as pl
@@ -32,7 +33,7 @@ ORANGE = "#D97706"
 GREY = "#667085"
 LIGHT_GREY = "#D0D5DD"
 NEAR = "#176B55"
-MIDDLE = "#6B7C93"
+MIDDLE = "#456789"
 FAR = "#B8C2CC"
 PITCH_LENGTH_M = 105.0
 PITCH_WIDTH_M = 68.0
@@ -62,16 +63,13 @@ def interval_item(label: str, source: str, item: dict[str, float], colour: str, 
 
 def _bounded_tracking_rows(path: Path, period: int, frame_start: int, frame_end: int) -> pd.DataFrame:
     """Keep only the locally bounded provider rows needed for the displayed passage."""
-    retained: list[pd.DataFrame] = []
-    for chunk in pd.read_csv(path, skiprows=2, chunksize=10_000):
-        q = chunk.loc[(chunk["Period"] == period) & (chunk["Frame"] >= frame_start) & (chunk["Frame"] <= frame_end)]
-        if not q.empty:
-            retained.append(q)
-        if int(chunk["Frame"].iloc[-1]) > frame_end:
-            break
-    if not retained:
-        raise RuntimeError("The deterministic Game 2 display passage was unavailable")
-    return pd.concat(retained, ignore_index=True).sort_values("Frame", kind="mergesort").reset_index(drop=True)
+    # Metrica's third line is the header, followed by one row per provider frame.
+    # Skip preceding rows before parsing coordinates, then verify that convention.
+    rows = pd.read_csv(path, skiprows=lambda index: index < 2 or 2 < index < frame_start + 2,
+                       nrows=frame_end - frame_start + 1)
+    if not np.array_equal(rows["Frame"].to_numpy(), np.arange(frame_start, frame_end + 1)) or not (rows["Period"] == period).all():
+        raise RuntimeError("The frozen Game 2 display interval is unavailable or has an unexpected frame grid")
+    return rows.reset_index(drop=True)
 
 
 def _team_positions(rows: pd.DataFrame, team: str) -> tuple[dict[str, tuple[np.ndarray, np.ndarray]], np.ndarray, np.ndarray]:
@@ -103,23 +101,34 @@ def _smooth_trace(frames: np.ndarray, xy: np.ndarray) -> tuple[np.ndarray, np.nd
 
 
 def heldout_game2_geometry() -> dict[str, Any]:
-    """Select one Game 2 visual passage from attacker-only governed information."""
-    anchors = pl.read_parquet(GAME2_OUTPUT / "game2_anchors.parquet")
-    q75 = float(anchors.select(pl.col("attacker_path_length_m").quantile(0.75, interpolation="linear")).item())
-    selected = (
-        anchors.filter(pl.col("attacker_path_length_m") >= q75)
-        .sort(["time_match_s", "period", "time_period_s", "player_key", "observation_id"])
-        .head(1)
-        .to_dicts()[0]
+    """Render the fixed, previously attacker-only-selected Game 2 passage."""
+    anchors = (
+        pl.scan_parquet(GAME2_OUTPUT / "game2_anchors.parquet")
+        .select("period", "time_period_s", "player_key", "observation_id",
+                "frame_id_provider", "attacker_delta_x_m")
+        .filter((pl.col("period") == 1) & (pl.col("time_period_s") == 2336.04)
+                & (pl.col("player_key") == "metrica:Home:1"))
+        .collect()
     )
+    if anchors.height != 1:
+        raise RuntimeError("The frozen Game 2 illustrative anchor is not unique")
+    selected = anchors.to_dicts()[0]
+    if int(selected["frame_id_provider"]) != 58401:
+        raise RuntimeError("The frozen illustrative frame changed")
     links = (
-        pl.read_parquet(GAME2_OUTPUT / "game2_linkage.parquet")
+        pl.scan_parquet(GAME2_OUTPUT / "game2_linkage.parquet")
+        .select("observation_id", "player_key_defender", "distance_rank")
         .filter(pl.col("observation_id") == selected["observation_id"])
         .sort("distance_rank")
+        .collect()
         .to_dicts()
     )
     if [int(item["distance_rank"]) for item in links] != list(range(1, 11)):
         raise RuntimeError("The selected governed anchor did not retain D1–D10 exactly once")
+    if [item["player_key_defender"] for item in links] != [
+        f"metrica:Away:{number}" for number in (22, 24, 18, 20, 17, 23, 16, 19, 21, 15)
+    ]:
+        raise RuntimeError("The frozen illustrative defender identities changed")
 
     # Seven-frame smoothing needs three observed frames on each side of the shown interval.
     anchor_frame = int(selected["frame_id_provider"])
@@ -189,7 +198,6 @@ def heldout_game2_geometry() -> dict[str, Any]:
         relative_end[key] = defender_start[key] + (defender_end[key] - defender_start[key] - shift)
     return {
         "selected": selected,
-        "q75": q75,
         "anchor_frame": anchor_frame,
         "attacker_key": attacker_key,
         "attacker_path": interval(attacker_key, anchor_frame - 50, anchor_frame),
@@ -238,10 +246,13 @@ def panel_a(axes: list[Any]) -> dict[str, Any]:
             a1.scatter(*point, s=18, color=ORANGE, alpha=.22, zorder=2)
     for key in defenders:
         rank = ranks[key]
-        a1.scatter(*geometry["defender_start"][key], s=42 if rank <= 3 else 22,
-                   color=_rank_colour(rank), alpha=1.0 if rank <= 3 else .45, zorder=3)
+        a1.scatter(*geometry["defender_start"][key], s=25 if rank <= 3 else 18,
+                   marker="s" if 4 <= rank <= 7 else "o",
+                   color=_rank_colour(rank), alpha=1.0 if rank <= 7 else .6, zorder=3)
         if rank <= 3:
-            a1.text(*(geometry["defender_start"][key] + np.array([1.2, 1.1])), f"D{rank}", fontsize=7.2, color=NEAR, weight="bold")
+            a1.annotate(f"D{rank}", geometry["defender_start"][key],
+                        xytext=(-18, -3) if rank == 2 else (2, 4), textcoords="offset points",
+                        fontsize=8, color=NEAR, weight="bold")
     a1.plot(geometry["attacker_path"][:, 0], geometry["attacker_path"][:, 1], color=ORANGE, lw=2.2, zorder=4)
     a1.annotate("", xy=geometry["attacker_path"][-1], xytext=geometry["attacker_path"][-8],
                 arrowprops=dict(arrowstyle="->", color=ORANGE, lw=2.2))
@@ -250,39 +261,48 @@ def panel_a(axes: list[Any]) -> dict[str, Any]:
     if geometry["ball"] is not None:
         a1.scatter(*geometry["ball"], s=26, facecolors="white", edgecolors="#344054", linewidths=1.1, zorder=6)
     # `display` orients the selected attacker's preceding x movement left to right.
-    a1.annotate("attacking direction", xy=(.94, .94), xytext=(.59, .94), xycoords="axes fraction",
-                textcoords="axes fraction", ha="left", va="center", fontsize=6.9, color="#344054",
+    a1.annotate("", xy=(.94, .94), xytext=(.59, .94), xycoords="axes fraction",
+                textcoords="axes fraction",
                 arrowprops=dict(arrowstyle="->", color="#344054", lw=1.1))
-    a1.text(.02, .03, "orange: focal attacker   green: D1–D3   blue-grey: D4–D7", transform=a1.transAxes, fontsize=6.8, color=GREY)
-    a1.set_title("A1  Exposure: preceding attacker movement", loc="left", fontsize=10.2, weight="bold")
+    a1.text(.5, -.12, "Attacker's longitudinal\nmovement", transform=a1.transAxes,
+            fontsize=8, color="#344054", ha="center", va="top")
+    a1.set_title("A1  Attacker movement:\npreceding 2 s", loc="left", fontsize=10, weight="bold")
 
     # A2: actual absolute post-anchor defender paths and the all-defender unit shift.
     for key in defenders:
         rank = ranks[key]
         path = geometry["defender_paths"][key]
-        a2.plot(path[:, 0], path[:, 1], color=_rank_colour(rank), alpha=.95 if rank <= 3 else .4,
-                lw=1.7 if rank <= 3 else .85, zorder=2)
-        a2.scatter(*path[0], s=28 if rank <= 3 else 14, facecolors="white", edgecolors=_rank_colour(rank), linewidths=.8, zorder=3)
+        a2.plot(path[:, 0], path[:, 1], color=_rank_colour(rank), alpha=.95 if rank <= 7 else .5,
+                lw=1.7 if rank <= 3 else 1.1, zorder=2)
+        a2.scatter(*path[0], s=22 if rank <= 3 else 16, marker="s" if 4 <= rank <= 7 else "o",
+                   facecolors="white", edgecolors=_rank_colour(rank), linewidths=.8, zorder=3)
         if rank <= 3:
-            a2.text(*(path[-1] + np.array([1.15, 1.0])), f"D{rank}", fontsize=7.2, color=NEAR, weight="bold")
+            a2.annotate(f"D{rank}", path[-1], xytext=(5, -6) if rank == 1 else (2, 5),
+                        textcoords="offset points", fontsize=8, color=NEAR, weight="bold")
     a2.annotate("", xy=geometry["unit_end"], xytext=geometry["unit_start"],
                 arrowprops=dict(arrowstyle="->", color="#344054", lw=2.1, linestyle="--"))
     a2.scatter(*geometry["unit_end"], marker="X", color="#344054", s=36, zorder=6)
-    a2.text(*(geometry["unit_end"] + np.array([1.3, 1.4])), "unit shift:\ngoalward + lateral", fontsize=6.8, color="#344054")
-    a2.set_title("A2  Next 2 s: absolute defender movement", loc="left", fontsize=10.2, weight="bold")
+    a2.text(.5, -.12, "Shared unit shift: dashed arrow", transform=a2.transAxes,
+            fontsize=8, color="#344054", ha="center", va="top")
+    a2.set_title("A2  Defender paths:\nnext 2 s", loc="left", fontsize=10, weight="bold")
 
     # A3: exact focal-relative vector construction, using each defender's leave-one-out unit shift.
     for key in defenders:
         rank = ranks[key]
         start, end = geometry["defender_start"][key], geometry["relative_end"][key]
         emph = rank <= 3 or rank in {4, 5}
-        a3.scatter(*start, s=24 if emph else 10, facecolors="white", edgecolors=_rank_colour(rank), linewidths=.7, alpha=1 if emph else .25, zorder=3)
+        a3.scatter(*start, s=20 if emph else 14, marker="s" if 4 <= rank <= 7 else "o",
+                   facecolors="white", edgecolors=_rank_colour(rank), linewidths=.8,
+                   alpha=1 if rank <= 7 else .5, zorder=3)
         if emph:
             a3.annotate("", xy=end, xytext=start, arrowprops=dict(arrowstyle="->", color=_rank_colour(rank), lw=2.0 if rank <= 3 else 1.2, alpha=.95 if rank <= 3 else .65))
         if rank <= 3:
-            a3.text(*(end + np.array([1.1, 1.0])), f"D{rank}", fontsize=7.2, color=NEAR, weight="bold")
-    a3.text(.02, .03, "arrow = defender movement − leave-one-out defensive-unit shift", transform=a3.transAxes, fontsize=6.7, color=GREY)
-    a3.set_title("A3  Same movement relative to the defensive unit", loc="left", fontsize=10.2, weight="bold")
+            a3.annotate(f"D{rank}", end, xytext={1: (-24, -10), 2: (-16, 10), 3: (3, 6)}[rank],
+                        textcoords="offset points", fontsize=8, color=NEAR, weight="bold",
+                        arrowprops=dict(arrowstyle="-", color=NEAR, lw=.6) if rank == 1 else None)
+    a3.text(.5, -.12, "Net arrows; outcome is path", transform=a3.transAxes,
+            fontsize=8, color="#344054", ha="center", va="top")
+    a3.set_title("A3  Same interval:\nrelative displacement", loc="left", fontsize=10, weight="bold")
     return geometry
 
 
@@ -322,16 +342,13 @@ def panel_b(ax) -> None:
         ax.scatter(item["estimate"], yi, color=item["colour"], marker=item["marker"], s=38 if item["marker"] == "o" else 47, zorder=3)
     ax.axhline(8.5, color=LIGHT_GREY, lw=.8)
     ax.axhline(1.5, color=LIGHT_GREY, lw=.8)
-    ax.set_yticks(y, [item["label"] for item in rows], fontsize=8.2)
-    ax.set_xlabel("Near − middle coefficient (m defender-relative path / m preceding attacker path)", fontsize=8.4)
+    ax.set_yticks(y, [item["label"] for item in rows], fontsize=9)
+    ax.set_xlabel("Near–middle association (m/m)", fontsize=9)
     ax.set_xlim(-.01, .18)
-    ax.set_title("B  The localized association replicates across matches", loc="left", fontsize=11.5, weight="bold")
-    ax.text(.01, .94, "Circles: individual matches   ◆: within-environment pooled estimate",
-            transform=ax.transAxes, fontsize=7.3, color=GREY, va="top")
-    ax.text(.01, -.18, "Metrica intervals: 97.5%; IDSSE intervals: 95%. Pools are shown separately, not as a nine-match meta-analysis.",
-            transform=ax.transAxes, fontsize=7.0, color=GREY, va="top")
+    ax.set_title("B  Temporal association across matches", loc="left", fontsize=10, weight="bold", pad=9)
     ax.spines[["top", "right", "left"]].set_visible(False)
     ax.tick_params(axis="y", length=0)
+    ax.tick_params(axis="x", labelsize=9)
     ax.grid(axis="x", color="#EAECF0", lw=.8)
 
 
@@ -364,37 +381,36 @@ def panel_c(ax) -> None:
     for yi, item in zip(y, rows):
         ax.plot([item["low"], item["high"]], [yi, yi], color=item["colour"], lw=2.1, solid_capstyle="round")
         ax.scatter(item["estimate"], yi, color=item["colour"], s=40, zorder=3)
-        ax.text(item["high"] + .002, yi, f"{item['estimate']:.3f}", fontsize=7.4, va="center", color=item["colour"])
+        ax.text(item["high"] + .002, yi, f"{item['estimate']:.3f}", fontsize=8, va="center", color=item["colour"])
     ax.axhline(2.25, color=LIGHT_GREY, lw=.8)
-    ax.set_yticks(y, ["Metrica: " + item["label"] for item in rows[:3]] + ["IDSSE: " + item["label"] for item in rows[3:]], fontsize=7.8)
+    short_labels = ["Forward", "Reverse", "Forward − reverse"]
+    ax.set_yticks(y, [f"{provider}: {label}" for provider in ("Metrica", "IDSSE") for label in short_labels], fontsize=9)
     ax.set_xlim(-.014, .085)
     ax.set_ylim(-1.1, 5.9)
-    ax.set_xlabel("Near − middle association (m/m)", fontsize=8.4)
-    ax.set_title("C  Forward association exceeds reverse time", loc="left", fontsize=11.5, weight="bold")
-    ax.text(.01, -.18, "Reverse-time structure remains positive. The evidence is paired forward − reverse excess, not a reverse-time null.",
-            transform=ax.transAxes, fontsize=7.0, color=GREY, va="top")
+    ax.set_xlabel("Near–middle association (m/m)", fontsize=9)
+    ax.set_title("C  Forward versus reverse time", loc="left", fontsize=10, weight="bold", pad=9)
     ax.spines[["top", "right", "left"]].set_visible(False)
     ax.tick_params(axis="y", length=0)
+    ax.tick_params(axis="x", labelsize=9)
     ax.grid(axis="x", color="#EAECF0", lw=.8)
 
 
 def build() -> None:
     OUT.mkdir(parents=True, exist_ok=True)
-    fig = plt.figure(figsize=(19.5, 11.1))
-    grid = fig.add_gridspec(2, 2, height_ratios=[1.02, 1.08], hspace=.57, wspace=.38)
-    pitch_grid = grid[0, :].subgridspec(1, 3, wspace=.10)
-    geometry = panel_a([fig.add_subplot(pitch_grid[0, index]) for index in range(3)])
-    panel_b(fig.add_subplot(grid[1, 0]))
-    panel_c(fig.add_subplot(grid[1, 1]))
-    fig.suptitle("Time-ordered localized defensive reorganization", x=.13, y=.992,
-                 ha="left", fontsize=14.2, weight="bold")
-    fig.text(.13, .958,
-             f"Panel A: deterministic heldout Metrica Game 2 anchor at {float(geometry['selected']['time_period_s']):.2f} s "
-             "(earliest eligible anchor at or above the upper quartile of preceding attacker path; selection uses attacker movement only).",
-             fontsize=7.7, color=GREY, va="top")
-    fig.text(.13, .030, "Replicated: localized, time-ordered defensive reorganization.   Not established: causation, tactical meaning, opportunity, or value.",
-             fontsize=8.7, color="#344054")
-    fig.subplots_adjust(left=.13, right=.98, bottom=.15, top=.90)
+    fig = plt.figure(figsize=(7, 7.5))
+    pitch_grid = fig.add_gridspec(1, 3, left=.035, right=.985, bottom=.715, top=.90, wspace=.13)
+    panel_a([fig.add_subplot(pitch_grid[0, index]) for index in range(3)])
+    panel_b(fig.add_axes([.315, .355, .65, .265]))
+    panel_c(fig.add_axes([.315, .065, .65, .195]))
+    fig.suptitle("Time-ordered localized defensive reorganization", x=.035, y=.98,
+                 ha="left", fontsize=12, weight="bold")
+    fig.legend(handles=[
+        Line2D([], [], marker="o", color=ORANGE, linestyle="-", label="Focal attacker"),
+        Line2D([], [], marker="o", color=NEAR, linestyle="none", label="D1–D3"),
+        Line2D([], [], marker="s", color=MIDDLE, linestyle="none", label="D4–D7"),
+        Line2D([], [], marker="o", color=FAR, linestyle="none", label="D8–D10"),
+    ], loc="center", bbox_to_anchor=(.5, .661), ncol=4, frameon=False,
+        fontsize=8, handlelength=1.4, columnspacing=1.3)
     for suffix, kwargs in (("svg", {"metadata": {"Date": None}}), ("png", {"dpi": 240}), ("pdf", {"metadata": {"CreationDate": None, "ModDate": None}})):
         fig.savefig(OUT / f"temporal_footprint_flagship.{suffix}", facecolor="white", **kwargs)
     plt.close(fig)
