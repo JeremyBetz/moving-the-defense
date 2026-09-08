@@ -26,6 +26,7 @@ AGGREGATE = GOVERNED_OUTPUT / "aggregate_response_grid.csv"
 SUMMARY = GOVERNED_OUTPUT / "surface_summary.csv"
 FINAL_HASHES = GOVERNED_OUTPUT / "final_hashes.json"
 OUTPUT_BASE = ROOT / "figures/presentation/localized_reorganization_response_map_readme"
+OUTPUT_BASE_H10 = ROOT / "figures/presentation/localized_reorganization_response_map_readme_h10"
 
 PITCH_LENGTH_M = 105.0
 PITCH_WIDTH_M = 68.0
@@ -40,6 +41,7 @@ PENALTY_SPOT_M = 11.0
 DISPLAY_LIMIT_M = 0.55
 VALID_CELLS = {5.0: 6373, 7.5: 6979, 10.0: 7132}
 PANEL_ORDER = (7.5, 5.0, 10.0)
+LAYOUTS = ("h75-main", "h10-main")
 
 
 class PresentationMapError(RuntimeError):
@@ -154,7 +156,7 @@ def _surface(axis: plt.Axes, aggregate: pd.DataFrame, bandwidth: float, label: s
     values = group.equal_match_local_mean_m.to_numpy(float).reshape(len(y), len(x))
     values = np.ma.masked_where(~group.support_valid.to_numpy(bool).reshape(len(y), len(x)), values)
     px, py = centered_to_pitch(x, y)
-    image = axis.pcolormesh(px, py, values, shading="nearest", cmap=presentation_colormap().with_extremes(bad="#c9cdd1"),
+    image = axis.pcolormesh(px, py, values, shading="nearest", cmap=presentation_colormap().with_extremes(bad="#d9dcdf"),
                             vmin=-DISPLAY_LIMIT_M, vmax=DISPLAY_LIMIT_M, zorder=1)
     _draw_pitch(axis)
     axis.set_title(f"{label} — h = {bandwidth:g} m", loc="left", fontsize=11.5 if primary else 10.2, weight="bold", pad=7)
@@ -162,8 +164,18 @@ def _surface(axis: plt.Axes, aggregate: pd.DataFrame, bandwidth: float, label: s
     return image
 
 
-def render_presentation_map(aggregate: pd.DataFrame, output_base: Path = OUTPUT_BASE) -> None:
+def layout_spec(layout: str) -> tuple[float, tuple[float, ...], str, str]:
+    """Return frozen editorial panel hierarchy; it never changes a scientific estimator."""
+    if layout == "h75-main":
+        return 7.5, (5.0, 10.0), "Primary", "IDSSE seven-match sample · primary h=7.5 m with predeclared bandwidth sensitivities"
+    if layout == "h10-main":
+        return 10.0, (7.5,), "Near-complete-support presentation view", "h=10 shown for near-complete spatial coverage; h=7.5 remains the predeclared primary analysis"
+    raise PresentationMapError(f"unknown presentation layout {layout!r}; allowed layouts are {LAYOUTS}")
+
+
+def render_presentation_map(aggregate: pd.DataFrame, output_base: Path = OUTPUT_BASE, layout: str = "h75-main") -> None:
     """Render the fixed-scale presentation figure from closed compact aggregates."""
+    main_bandwidth, inset_bands, main_label, subtitle = layout_spec(layout)
     with matplotlib.rc_context({"svg.hashsalt": "moving-the-defense-presentation-response-map-v1", "font.family": "DejaVu Sans"}):
         fig = plt.figure(figsize=(15.0, 7.6))
         # Explicit margins reserve independent space for the shared scale and
@@ -174,22 +186,32 @@ def render_presentation_map(aggregate: pd.DataFrame, output_base: Path = OUTPUT_
         primary = fig.add_subplot(layout[:, 0])
         small_top = fig.add_subplot(layout[0, 1])
         small_bottom = fig.add_subplot(layout[1, 1])
-        image = _surface(primary, aggregate, 7.5, "Primary", True)
-        _surface(small_top, aggregate, 5.0, "Sensitivity", False)
-        _surface(small_bottom, aggregate, 10.0, "Sensitivity", False)
+        image = _surface(primary, aggregate, main_bandwidth, main_label, True)
+        inset = inset_bands[0]
+        inset_label = "Scientific primary" if inset == 7.5 else "Sensitivity"
+        _surface(small_top, aggregate, inset, inset_label, False)
+        if len(inset_bands) == 2:
+            _surface(small_bottom, aggregate, inset_bands[1], "Sensitivity", False)
+        else:
+            small_bottom.axis("off")
+            small_bottom.text(0.5, 0.54, "Scientific primary\nshown above", ha="center", va="center", transform=small_bottom.transAxes,
+                              fontsize=12, weight="bold", color="#46515a")
+            small_bottom.text(0.5, 0.39, "h=7.5 m remains the\nprospectively selected analysis.", ha="center", va="center",
+                              transform=small_bottom.transAxes, fontsize=9, color="#46515a")
         primary.set_xlabel("Deeper  ←  Starting longitudinal position  →  Goalward", fontsize=9.5, labelpad=5)
         primary.set_ylabel("Physical lateral starting position (m)", fontsize=9.5, labelpad=5)
-        small_top.set_xticklabels([])
+        small_top.set_xticklabels([] if len(inset_bands) == 2 else small_top.get_xticklabels())
         small_top.set_yticklabels([])
-        small_bottom.set_xlabel("Deeper  ←  Goalward", fontsize=8.5, labelpad=3)
-        small_bottom.set_yticklabels([])
+        if len(inset_bands) == 2:
+            small_bottom.set_xlabel("Deeper  ←  Goalward", fontsize=8.5, labelpad=3)
+            small_bottom.set_yticklabels([])
         colorbar = fig.colorbar(image, cax=fig.add_axes((0.15, 0.105, 0.70, 0.028)), orientation="horizontal",
                                 ticks=[-0.55, -0.275, 0.0, 0.275, 0.55])
         colorbar.set_label("Localized near-minus-middle response (m)", fontsize=10, labelpad=3)
         colorbar.ax.tick_params(labelsize=8.5)
         fig.suptitle("Localized defensive reorganization by attacker starting location", fontsize=16, weight="bold", x=0.46)
-        fig.text(0.46, 0.935, "IDSSE seven-match sample · primary h=7.5 m with predeclared bandwidth sensitivities", ha="center", fontsize=9.5, color="#46515a")
-        fig.text(0.5, 0.022, "Presentation display scale: ±0.55 m. Underlying aggregate estimates and support masks are unchanged.", ha="center", fontsize=8.2, color="#46515a")
+        fig.text(0.46, 0.935, subtitle, ha="center", fontsize=9.1, color="#46515a")
+        fig.text(0.5, 0.022, "Light gray: insufficient all-match support. Presentation-only view; underlying estimates and support masks are unchanged.", ha="center", fontsize=8.2, color="#46515a")
         output_base.parent.mkdir(parents=True, exist_ok=True)
         fig.savefig(output_base.with_suffix(".png"), dpi=190, metadata={"Software": "Moving the Defense", "Creation Time": None})
         fig.savefig(output_base.with_suffix(".svg"), metadata={"Date": None, "Creator": "Moving the Defense"})
@@ -199,13 +221,15 @@ def render_presentation_map(aggregate: pd.DataFrame, output_base: Path = OUTPUT_
 
 def main(argv: list[str] | None = None) -> int:
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("--output-base", type=Path, default=OUTPUT_BASE)
+    parser.add_argument("--layout", choices=LAYOUTS, default="h75-main")
+    parser.add_argument("--output-base", type=Path)
     args = parser.parse_args(argv)
     verify_closed_package()
     aggregate, summary = load_aggregate_inputs()
     stats = validate_display_inputs(aggregate, summary)
-    render_presentation_map(aggregate, args.output_base)
-    print(json.dumps({"output_base": str(args.output_base), "display_limit_m": DISPLAY_LIMIT_M, "statistics": stats}, indent=2, sort_keys=True))
+    output_base = args.output_base or (OUTPUT_BASE_H10 if args.layout == "h10-main" else OUTPUT_BASE)
+    render_presentation_map(aggregate, output_base, args.layout)
+    print(json.dumps({"layout": args.layout, "output_base": str(output_base), "display_limit_m": DISPLAY_LIMIT_M, "statistics": stats}, indent=2, sort_keys=True))
     return 0
 
 

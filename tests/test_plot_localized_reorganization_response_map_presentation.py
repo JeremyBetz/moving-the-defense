@@ -43,6 +43,24 @@ def test_closed_aggregate_package_and_presentation_scale_are_valid():
     assert {h: int((aggregate[(aggregate.bandwidth_m == h) & aggregate.support_valid]).shape[0]) for h in presentation.VALID_CELLS} == presentation.VALID_CELLS
 
 
+def test_h10_main_layout_is_presentation_only_and_h75_remains_primary():
+    main, insets, label, subtitle = presentation.layout_spec("h10-main")
+    assert (main, insets) == (10.0, (7.5,))
+    assert label == "Near-complete-support presentation view"
+    assert "h=7.5 remains the predeclared primary" in subtitle
+    with pytest.raises(presentation.PresentationMapError, match="unknown presentation layout"):
+        presentation.layout_spec("h12-main")
+
+
+def test_h10_uses_only_closed_supported_cells_and_leaves_eight_cells_masked():
+    aggregate, _ = presentation.load_aggregate_inputs()
+    h10 = aggregate[aggregate.bandwidth_m == 10.0]
+    assert h10.support_profile.eq("conservative").all()
+    assert int(h10.support_valid.sum()) == 7132
+    assert int((~h10.support_valid).sum()) == 8
+    assert h10.loc[~h10.support_valid, "equal_match_local_mean_m"].isna().all()
+
+
 def test_out_of_scale_aggregate_value_fails_instead_of_rescaling():
     aggregate, summary = presentation.load_aggregate_inputs()
     changed = aggregate.copy()
@@ -66,7 +84,7 @@ def test_synthetic_presentation_render_is_deterministic(tmp_path):
     aggregate, summary = presentation.load_aggregate_inputs()
     presentation.validate_display_inputs(aggregate, summary)
     first, second = tmp_path / "first" / "response", tmp_path / "second" / "response"
-    presentation.render_presentation_map(aggregate, first)
-    presentation.render_presentation_map(aggregate, second)
+    presentation.render_presentation_map(aggregate, first, "h10-main")
+    presentation.render_presentation_map(aggregate, second, "h10-main")
     for suffix in (".png", ".svg"):
         assert first.with_suffix(suffix).read_bytes() == second.with_suffix(suffix).read_bytes()
