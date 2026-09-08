@@ -1,0 +1,13 @@
+{
+  "all_match_denominators_finite": true,
+  "all_required_responses_finite": true,
+  "coordinate_clipping_applied": false,
+  "exact_identity_join": true,
+  "frozen_masks_used": true,
+  "response_field_exact": true,
+  "saturation": {
+    "colorbar_extension": "neither",
+    "negative_saturation_count": 0,
+    "positive_saturation_count": 0
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "anchor_coordinates_serialized": false,
+  "authorization_reference": "AUTHORIZED \u2014 IDSSE RESPONSE MAP V1 FIRST EXECUTION",
+  "closure_state": "PENDING_FINAL_HASH_VALIDATION",
+  "color_limit_m": 2.641190071185019,
+  "color_scale_state": "VALID",
+  "matches": [
+    "J03WMX",
+    "J03WN1",
+    "J03WOH",
+    "J03WOY",
+    "J03WPY",
+    "J03WQQ",
+    "J03WR9"
+  ],
+  "per_match_surfaces_serialized": false,
+  "response_registry_sha256": "3c8a50cfa07f034b4428e280ecc6fcf7df423ed4dacad86b0862ba1e7d6716d2",
+  "row_level_y_serialized": false,
+  "status": "DESCRIPTIVE RESPONSE MAP PRE-CLOSURE QC PASSED",
+  "support_grid_path": "outputs/localized_reorganization_heatmap_support_preflight_v1/support_grid.parquet"
+}

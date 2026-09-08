@@ -1,0 +1,54 @@
+{
+  "authorization_reference": "AUTHORIZED \u2014 IDSSE RESPONSE MAP V1 FIRST EXECUTION",
+  "closure_status": "DETERMINISTIC_REPRODUCTION_PASSED",
+  "comparison": {
+    "differing_artifacts": [],
+    "figure_byte_identical": true,
+    "machine_readable_byte_identical": true
+  },
+  "environment": {
+    "platform": "macOS-26.6.2-arm64-arm-64bit-Mach-O",
+    "python": "3.13.15"
+  },
+  "execution_timestamp_utc": "2026-09-08T00:53:43.511627+00:00",
+  "frozen_artifacts_sha256": {
+    "config/localized_reorganization_heatmap_support_preflight_v1.json": "3fe8f0b88d07833abc534706734480cbd1a4396d0c6aada0f8d24cf6503fd1fd",
+    "config/localized_reorganization_response_map_v1.json": "06063c06914576e4cd21d560c698318327c5614dd9d898cd210b9fb1e6bcdfc4",
+    "config/spatial_defensive_response_footprint_v1_idsse_external_replication.json": "a3d5ea305c67dd6f65d1314ce4e0a14feffb4078b51f8e01a42dea58ad97dbe2",
+    "docs/protocols/localized_reorganization_heatmap_support_preflight_v1.md": "050152e1a1c598cd8fcb985f70cd958b3ba4e9d17dca52db814561f979c65472",
+    "docs/protocols/localized_reorganization_response_map_v1.md": "434dd36db0f7d73123a92ddfaba368d5c8081de7440ede597ce3b001c418ecae",
+    "docs/protocols/spatial_defensive_response_footprint_v1_idsse_external_replication.md": "0336ad07964b5a133eb0c0e3986accef2c3058144d47e3ab0f20d9ba72497db1",
+    "outputs/localized_reorganization_heatmap_support_preflight_v1/manifest.json": "061a5db4c234eb634660230875cf825b249aedad4d1e1641efd01be849561d25",
+    "outputs/localized_reorganization_heatmap_support_preflight_v1/support_grid.parquet": "dccd54618018e6dd1bee8f136f9a2b0eef0f3384b73a502b931a6719f0ad25fc",
+    "src/localized_reorganization_heatmap_support_preflight_v1.py": "d64f1e66a4ca65297133bbd11d4440cfb9c0b1b8fbc228c058a1f68b873cdf31",
+    "src/localized_reorganization_response_map_v1.py": "4b48e50babed99daa8f366011fd25d603527b33756e600507228c4cfd4714537",
+    "tests/test_localized_reorganization_response_map_v1.py": "fa985bdbec308d488b450fe6511a83ff265ec0ad319acd8215e9312347fbc859"
+  },
+  "primary_staging": {
+    "artifact_scope": "isolated_preclosure_primary_staging",
+    "artifacts_sha256": {
+      "aggregate_response_grid.csv": "d75fedcce414e6cb0f63c7df930759587816c44a1dd487025f594d07ab41ce78",
+      "figures/response_map.png": "211c01f8cc7496462cd032fb7d9c0f0b962fd22700ae1ab12032e464d6975205",
+      "figures/response_map.svg": "2d2817a96e367665c08f9e3657eb20e9917b612ea5906a123a8ab221bd0d29d0",
+      "governed_hashes.json": "d549d776ec549eb9940d8619c841b1c7182d5070c241ae51ab174dd59ed77a78",
+      "hard_qc.json": "cc60303a57257653820702b5040b143be65f41c6ca9dd440210829fd2fc642f7",
+      "manifest.json": "5de4718c22d037bbe9e0325962b42b77206809b6cbe2e1c0c0175b973210b095",
+      "sample_counts.csv": "74b4effbe1aff0c0597de89fc1b08eb4865e666b5f2a01ae1e2ad1e398508795",
+      "surface_summary.csv": "fc82d5a9700ece9c385234cd78ef16d7452d1b29fb7dc20cfc7c86e276ce356a"
+    }
+  },
+  "protected_registry_expected_sha256": "3c8a50cfa07f034b4428e280ecc6fcf7df423ed4dacad86b0862ba1e7d6716d2",
+  "reproduction_staging": {
+    "artifact_scope": "isolated_preclosure_independent_rerun",
+    "artifacts_sha256": {
+      "aggregate_response_grid.csv": "d75fedcce414e6cb0f63c7df930759587816c44a1dd487025f594d07ab41ce78",
+      "figures/response_map.png": "211c01f8cc7496462cd032fb7d9c0f0b962fd22700ae1ab12032e464d6975205",
+      "figures/response_map.svg": "2d2817a96e367665c08f9e3657eb20e9917b612ea5906a123a8ab221bd0d29d0",
+      "governed_hashes.json": "d549d776ec549eb9940d8619c841b1c7182d5070c241ae51ab174dd59ed77a78",
+      "hard_qc.json": "cc60303a57257653820702b5040b143be65f41c6ca9dd440210829fd2fc642f7",
+      "manifest.json": "5de4718c22d037bbe9e0325962b42b77206809b6cbe2e1c0c0175b973210b095",
+      "sample_counts.csv": "74b4effbe1aff0c0597de89fc1b08eb4865e666b5f2a01ae1e2ad1e398508795",
+      "surface_summary.csv": "fc82d5a9700ece9c385234cd78ef16d7452d1b29fb7dc20cfc7c86e276ce356a"
+    }
+  }
+}

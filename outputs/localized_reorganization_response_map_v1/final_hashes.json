@@ -1,0 +1,15 @@
+{
+  "artifacts_sha256": {
+    "aggregate_response_grid.csv": "d75fedcce414e6cb0f63c7df930759587816c44a1dd487025f594d07ab41ce78",
+    "figures/response_map.png": "211c01f8cc7496462cd032fb7d9c0f0b962fd22700ae1ab12032e464d6975205",
+    "figures/response_map.svg": "2d2817a96e367665c08f9e3657eb20e9917b612ea5906a123a8ab221bd0d29d0",
+    "governed_hashes.json": "d549d776ec549eb9940d8619c841b1c7182d5070c241ae51ab174dd59ed77a78",
+    "hard_qc.json": "cc60303a57257653820702b5040b143be65f41c6ca9dd440210829fd2fc642f7",
+    "manifest.json": "5e4e1fbdade0951f3ce9aca3c838d7b44a5004871c0015bb529b97203fd32c9d",
+    "reproduction.json": "533f6410f0a5519c7e06b39f7d04213752f03056eff2cebe0a22fb3283dc9e73",
+    "sample_counts.csv": "74b4effbe1aff0c0597de89fc1b08eb4865e666b5f2a01ae1e2ad1e398508795",
+    "surface_summary.csv": "fc82d5a9700ece9c385234cd78ef16d7452d1b29fb7dc20cfc7c86e276ce356a"
+  },
+  "closure_status": "DESCRIPTIVE RESPONSE MAP EXECUTED \u2014 QC PASSED",
+  "self_hash_excluded": true
+}
