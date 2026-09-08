@@ -69,6 +69,19 @@
         "notebook_embedded_output"
       ]
     },
-    "exceptions": []
+    "exceptions": [
+      {
+        "path": "notebooks/tracking_animation_prototype.ipynb",
+        "change_status": "A",
+        "exception_type": "publication_artifact",
+        "purpose": "Output-free notebook interface for the approved tracking replay prototype",
+        "rationale": "The committed notebook contains only reusable code and explanatory Markdown; generated JSHTML, GIF, provider coordinates, and cell outputs remain untracked.",
+        "approval_reference": "Explicit user authorization for the exact notebook exception on 2026-09-08",
+        "sha256": "0f91e9407e346ac3420acc5645dae8bc392536ddab90f216e7f4b314e6e1d95c",
+        "overrides": [
+          "notebook_embedded_output"
+        ]
+      }
+    ]
   }
 }
