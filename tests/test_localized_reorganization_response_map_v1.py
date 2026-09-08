@@ -57,6 +57,28 @@ def _small_masks() -> dict[float, pd.DataFrame]:
     }
 
 
+def _execute_synthetic(monkeypatch, tmp_path):
+    """Exercise the real closure path without materializing protected inputs."""
+    cfg = _small_cfg()
+    original_sha = response_map.sha
+
+    def synthetic_sha(path: Path) -> str:
+        if Path(path) == response_map.REGISTRY:
+            return cfg["protected_source"]["registry_sha256"]
+        return original_sha(Path(path))
+
+    def synthetic_inputs(_cfg):
+        return _small_anchors(), {bandwidth: mask.copy() for bandwidth, mask in _small_masks().items()}
+
+    monkeypatch.setattr(response_map, "verify_freeze", lambda _cfg: {})
+    monkeypatch.setattr(response_map, "sha", synthetic_sha)
+    monkeypatch.setattr(response_map, "_load_execution_inputs", synthetic_inputs)
+    output = tmp_path / "authoritative" / "outputs"
+    figure = tmp_path / "authoritative" / "figures" / "response_map"
+    result = response_map.execute_response(output, figure, "synthetic-pre-access-test", cfg)
+    return result, cfg, output, figure
+
+
 def test_exact_authorized_response_request_rejects_alternatives_and_wildcards():
     cfg = _cfg()
     assert response_map.authorized_response_columns(cfg) == ("observation_id", "distance_rank", "response_2s_m")
@@ -224,10 +246,83 @@ def test_synthetic_isolated_rerun_closes_only_after_byte_identical_reproduction(
     assert manifest["status"] == cfg["statuses"]["valid"]
     record = json.loads((primary_output / "reproduction.json").read_text(encoding="utf-8"))
     assert record["comparison"] == comparison
-    assert set(record) >= {"frozen_artifacts_sha256", "protected_registry_expected_sha256", "primary", "reproduction", "closure_status"}
+    assert set(record) >= {"frozen_artifacts_sha256", "protected_registry_expected_sha256", "primary_staging", "reproduction_staging", "closure_status"}
+    assert "primary" not in record and "reproduction" not in record
+    assert record["primary_staging"]["artifact_scope"] == "isolated_preclosure_primary_staging"
+    assert record["reproduction_staging"]["artifact_scope"] == "isolated_preclosure_independent_rerun"
+    assert "path" not in record["primary_staging"] and "path" not in record["reproduction_staging"]
+    assert record["primary_staging"]["artifacts_sha256"]["manifest.json"] != response_map.sha(primary_output / "manifest.json")
     assert not any(token in json.dumps(record).lower() for token in ("row_level_y", "attacker_key", "time_utc"))
     assert response_map.validate_final_hashes(primary_output, primary_figure, cfg)
     assert rerun_output.parent != primary_output.parent
+
+
+def test_execute_response_promotes_a_complete_authoritative_package_and_revalidates(monkeypatch, tmp_path):
+    calls = []
+    original_validate = response_map.validate_final_hashes
+
+    def validating(output, figure_base, cfg):
+        calls.append((output, figure_base, output.exists(), figure_base.with_suffix(".png").exists(), figure_base.with_suffix(".svg").exists()))
+        return original_validate(output, figure_base, cfg)
+
+    monkeypatch.setattr(response_map, "validate_final_hashes", validating)
+    result, cfg, output, figure = _execute_synthetic(monkeypatch, tmp_path)
+    assert result["status"] == cfg["statuses"]["valid"]
+    assert calls[-1] == (output, figure, True, True, True)
+    assert response_map.validate_final_hashes(output, figure, cfg)
+    final = json.loads((output / "final_hashes.json").read_text(encoding="utf-8"))
+    for name, digest in final["artifacts_sha256"].items():
+        path = figure.with_suffix(Path(name).suffix) if name.startswith("figures/") else output / name
+        assert digest == response_map.sha(path)
+    record = json.loads((output / "reproduction.json").read_text(encoding="utf-8"))
+    assert set(record) >= {"primary_staging", "reproduction_staging"}
+    assert "primary" not in record and "reproduction" not in record
+
+
+@pytest.mark.parametrize("failed_suffix", [".png", ".svg"])
+def test_figure_promotion_failure_never_exposes_authoritative_valid_output(monkeypatch, tmp_path, failed_suffix):
+    cfg = _small_cfg()
+    original_sha = response_map.sha
+    original_replace = response_map.os.replace
+
+    def synthetic_sha(path: Path) -> str:
+        if Path(path) == response_map.REGISTRY:
+            return cfg["protected_source"]["registry_sha256"]
+        return original_sha(Path(path))
+
+    monkeypatch.setattr(response_map, "verify_freeze", lambda _cfg: {})
+    monkeypatch.setattr(response_map, "sha", synthetic_sha)
+    monkeypatch.setattr(
+        response_map,
+        "_load_execution_inputs",
+        lambda _cfg: (_small_anchors(), {bandwidth: mask.copy() for bandwidth, mask in _small_masks().items()}),
+    )
+
+    def failing_replace(source, destination):
+        if Path(source).suffix == failed_suffix:
+            raise OSError(f"synthetic {failed_suffix} promotion failure")
+        return original_replace(source, destination)
+
+    monkeypatch.setattr(response_map.os, "replace", failing_replace)
+    output = tmp_path / "authoritative" / "outputs"
+    figure = tmp_path / "authoritative" / "figures" / "response_map"
+    with pytest.raises(OSError, match="synthetic"):
+        response_map.execute_response(output, figure, "synthetic-pre-access-test", cfg)
+    assert not output.exists()
+    assert not (output / "manifest.json").exists()
+
+
+def test_authoritative_output_directory_promotes_after_both_figures(monkeypatch, tmp_path):
+    destinations = []
+    original_replace = response_map.os.replace
+
+    def recording_replace(source, destination):
+        destinations.append(Path(destination))
+        return original_replace(source, destination)
+
+    monkeypatch.setattr(response_map.os, "replace", recording_replace)
+    _result, _cfg, output, figure = _execute_synthetic(monkeypatch, tmp_path)
+    assert destinations[-3:] == [figure.with_suffix(".png"), figure.with_suffix(".svg"), output]
 
 
 def test_final_hash_ledger_detects_tampering_and_valid_status_requires_reproduction(tmp_path):

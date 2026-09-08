@@ -122,12 +122,17 @@ rerun are first generated in isolated temporary roots. Their aggregate CSV/JSON
 outputs and PNG/SVG figures must be byte-identical under the current platform
 policy before the primary package is promoted to its authoritative paths.
 
-`reproduction.json` records the frozen identities, authorization reference,
-primary and temporary-rerun artifact hashes, equality outcomes, compact runtime
-metadata, and closure state. `final_hashes.json` is written only after that
-comparison passes; it hashes the closed authoritative CSV/JSON package and
-PNG/SVG figures, while excluding its own recursive hash. The final valid status
-is never written before successful reproduction and final-ledger validation.
+`reproduction.json` records only explicitly labeled primary and independent
+rerun **pre-closure staging** identities, their equality outcome, the frozen
+identities, authorization reference, and compact runtime metadata. It does not
+claim that a staging manifest hash is an authoritative final-file hash.
+`final_hashes.json` is the sole authority for the closed authoritative CSV/JSON
+package and PNG/SVG figures, while excluding its own recursive hash.
+
+After staging comparison and final-ledger creation, promotion is ordered PNG,
+SVG, then finalized output directory last. Thus an authoritative valid-status
+manifest cannot appear before both figures. The final ledger is re-read and
+validated against the promoted authoritative paths before success returns.
 
 Panel A is the primary 7.5 m surface, Panel B the 5 m sensitivity, and Panel C
 the 10 m sensitivity. Rendering is cell-based with no spatial interpolation,

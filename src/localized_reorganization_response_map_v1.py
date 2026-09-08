@@ -557,12 +557,14 @@ def finalize_closure(
         "authorization_reference": authorization_reference,
         "frozen_artifacts_sha256": json.loads(HASH_LEDGER.read_text(encoding="utf-8"))["frozen_artifacts_sha256"],
         "protected_registry_expected_sha256": cfg["protected_source"]["registry_sha256"],
-        "primary": {
-            "path": cfg["outputs"]["directory"],
-            "figure_base": str(Path(cfg["figure"]["directory"]) / "response_map"),
+        "primary_staging": {
+            "artifact_scope": "isolated_preclosure_primary_staging",
             "artifacts_sha256": _artifact_hashes(primary_output, primary_figure, cfg),
         },
-        "reproduction": {"path": "isolated_temporary_reproduction", "artifacts_sha256": _artifact_hashes(rerun_output, rerun_figure, cfg)},
+        "reproduction_staging": {
+            "artifact_scope": "isolated_preclosure_independent_rerun",
+            "artifacts_sha256": _artifact_hashes(rerun_output, rerun_figure, cfg),
+        },
         "comparison": comparison,
         "execution_timestamp_utc": datetime.now(timezone.utc).isoformat(),
         "environment": {"python": platform.python_version(), "platform": platform.platform()},
@@ -586,9 +588,12 @@ def _promote_authoritative_package(staging_output: Path, staging_figure: Path, o
     require_clean_destinations(output, figure_base)
     output.parent.mkdir(parents=True, exist_ok=True)
     figure_base.parent.mkdir(parents=True, exist_ok=True)
-    os.replace(staging_output, output)
     for suffix in (".png", ".svg"):
         os.replace(staging_figure.with_suffix(suffix), figure_base.with_suffix(suffix))
+    # The finalized manifest is inside ``staging_output``.  Move its directory
+    # only after both authoritative figures exist, so a promotion failure can
+    # never expose an authoritative valid-status output package prematurely.
+    os.replace(staging_output, output)
 
 
 def execute_response(output: Path, figure_base: Path, authorization_reference: str, cfg: dict[str, Any]) -> dict[str, Any]:
@@ -609,6 +614,7 @@ def execute_response(output: Path, figure_base: Path, authorization_reference: s
         run_from_inputs(rerun_anchors, rerun_masks, rerun_output, rerun_figure, authorization_reference, cfg)
         manifest = finalize_closure(primary_output, primary_figure, rerun_output, rerun_figure, authorization_reference, cfg)
         _promote_authoritative_package(primary_output, primary_figure, output, figure_base)
+        validate_final_hashes(output, figure_base, cfg)
     return manifest
 
 
