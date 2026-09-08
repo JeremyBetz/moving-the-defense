@@ -57,6 +57,19 @@ def _write_json(path: Path, value: Any) -> None:
     path.write_text(json.dumps(value, indent=2, sort_keys=True) + "\n", encoding="utf-8")
 
 
+def _atomic_write_json(path: Path, value: Any) -> None:
+    """Publish one closure marker only after its content has been validated."""
+    temporary = path.with_name(f".{path.name}.tmp")
+    if path.exists() or temporary.exists():
+        raise ResponseMapInvalid(f"refusing to replace an existing closure marker: {path}")
+    try:
+        _write_json(temporary, value)
+        os.replace(temporary, path)
+    finally:
+        if temporary.exists():
+            temporary.unlink()
+
+
 def _write_csv(frame: pd.DataFrame, path: Path, columns: list[str]) -> None:
     if list(frame.columns) != columns:
         raise ResponseMapInvalid(f"output schema differs for {path.name}")
@@ -531,13 +544,37 @@ def _final_artifact_paths(output: Path, figure_base: Path, cfg: dict[str, Any]) 
 
 def validate_final_hashes(output: Path, figure_base: Path, cfg: dict[str, Any]) -> dict[str, str]:
     recorded = json.loads((output / "final_hashes.json").read_text(encoding="utf-8"))
+    return validate_final_hash_content(recorded, output, figure_base, cfg)
+
+
+def validate_final_hash_content(
+    recorded: dict[str, Any], output: Path, figure_base: Path, cfg: dict[str, Any]
+) -> dict[str, str]:
+    """Validate a final-ledger candidate against actual authoritative paths."""
     expected_paths = _final_artifact_paths(output, figure_base, cfg)
-    if set(recorded["artifacts_sha256"]) != set(expected_paths):
+    if (
+        recorded.get("closure_status") != cfg["statuses"]["valid"]
+        or recorded.get("self_hash_excluded") is not True
+        or set(recorded.get("artifacts_sha256", {})) != set(expected_paths)
+    ):
         raise ResponseMapInvalid("final hash ledger has an unexpected artifact set")
     actual = {name: sha(path) for name, path in expected_paths.items()}
     if recorded["artifacts_sha256"] != actual:
         raise ResponseMapInvalid("final hash ledger does not match the closed package")
     return actual
+
+
+def publish_final_hashes(output: Path, figure_base: Path, cfg: dict[str, Any]) -> dict[str, Any]:
+    """Validate actual authoritative artifacts, then atomically publish final authority."""
+    final_path = output / "final_hashes.json"
+    ledger = {
+        "closure_status": cfg["statuses"]["valid"],
+        "artifacts_sha256": {name: sha(path) for name, path in _final_artifact_paths(output, figure_base, cfg).items()},
+        "self_hash_excluded": True,
+    }
+    validate_final_hash_content(ledger, output, figure_base, cfg)
+    _atomic_write_json(final_path, ledger)
+    return ledger
 
 
 def finalize_closure(
@@ -571,16 +608,10 @@ def finalize_closure(
     }
     _write_json(primary_output / "reproduction.json", reproduction)
     manifest = json.loads((primary_output / "manifest.json").read_text(encoding="utf-8"))
-    manifest["status"] = cfg["statuses"]["valid"]
-    manifest["closure_state"] = "INDEPENDENT_REPRODUCTION_PASSED"
+    # A promoted manifest is deliberately non-final.  The separately published
+    # final ledger below is the only authoritative valid-status marker.
+    manifest["closure_state"] = "PENDING_FINAL_HASH_VALIDATION"
     _write_json(primary_output / "manifest.json", manifest)
-    final_paths = _final_artifact_paths(primary_output, primary_figure, cfg)
-    _write_json(primary_output / "final_hashes.json", {
-        "closure_status": cfg["statuses"]["valid"],
-        "artifacts_sha256": {name: sha(path) for name, path in final_paths.items()},
-        "self_hash_excluded": True,
-    })
-    validate_final_hashes(primary_output, primary_figure, cfg)
     return manifest
 
 
@@ -614,6 +645,7 @@ def execute_response(output: Path, figure_base: Path, authorization_reference: s
         run_from_inputs(rerun_anchors, rerun_masks, rerun_output, rerun_figure, authorization_reference, cfg)
         manifest = finalize_closure(primary_output, primary_figure, rerun_output, rerun_figure, authorization_reference, cfg)
         _promote_authoritative_package(primary_output, primary_figure, output, figure_base)
+        publish_final_hashes(output, figure_base, cfg)
         validate_final_hashes(output, figure_base, cfg)
     return manifest
 

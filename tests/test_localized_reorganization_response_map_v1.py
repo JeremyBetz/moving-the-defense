@@ -57,9 +57,8 @@ def _small_masks() -> dict[float, pd.DataFrame]:
     }
 
 
-def _execute_synthetic(monkeypatch, tmp_path):
-    """Exercise the real closure path without materializing protected inputs."""
-    cfg = _small_cfg()
+def _install_synthetic_execution(monkeypatch, cfg: dict) -> None:
+    """Route the closure path through synthetic inputs without registry access."""
     original_sha = response_map.sha
 
     def synthetic_sha(path: Path) -> str:
@@ -67,12 +66,19 @@ def _execute_synthetic(monkeypatch, tmp_path):
             return cfg["protected_source"]["registry_sha256"]
         return original_sha(Path(path))
 
-    def synthetic_inputs(_cfg):
-        return _small_anchors(), {bandwidth: mask.copy() for bandwidth, mask in _small_masks().items()}
-
     monkeypatch.setattr(response_map, "verify_freeze", lambda _cfg: {})
     monkeypatch.setattr(response_map, "sha", synthetic_sha)
-    monkeypatch.setattr(response_map, "_load_execution_inputs", synthetic_inputs)
+    monkeypatch.setattr(
+        response_map,
+        "_load_execution_inputs",
+        lambda _cfg: (_small_anchors(), {bandwidth: mask.copy() for bandwidth, mask in _small_masks().items()}),
+    )
+
+
+def _execute_synthetic(monkeypatch, tmp_path):
+    """Exercise the real closure path without materializing protected inputs."""
+    cfg = _small_cfg()
+    _install_synthetic_execution(monkeypatch, cfg)
     output = tmp_path / "authoritative" / "outputs"
     figure = tmp_path / "authoritative" / "figures" / "response_map"
     result = response_map.execute_response(output, figure, "synthetic-pre-access-test", cfg)
@@ -243,7 +249,9 @@ def test_synthetic_isolated_rerun_closes_only_after_byte_identical_reproduction(
     comparison = response_map.compare_deterministic_artifacts(primary_output, primary_figure, rerun_output, rerun_figure, cfg)
     assert comparison == {"machine_readable_byte_identical": True, "figure_byte_identical": True, "differing_artifacts": []}
     manifest = response_map.finalize_closure(primary_output, primary_figure, rerun_output, rerun_figure, "review-approval", cfg)
-    assert manifest["status"] == cfg["statuses"]["valid"]
+    assert manifest["status"] == cfg["statuses"]["preclosure"]
+    assert manifest["closure_state"] == "PENDING_FINAL_HASH_VALIDATION"
+    assert not (primary_output / "final_hashes.json").exists()
     record = json.loads((primary_output / "reproduction.json").read_text(encoding="utf-8"))
     assert record["comparison"] == comparison
     assert set(record) >= {"frozen_artifacts_sha256", "protected_registry_expected_sha256", "primary_staging", "reproduction_staging", "closure_status"}
@@ -253,24 +261,44 @@ def test_synthetic_isolated_rerun_closes_only_after_byte_identical_reproduction(
     assert "path" not in record["primary_staging"] and "path" not in record["reproduction_staging"]
     assert record["primary_staging"]["artifacts_sha256"]["manifest.json"] != response_map.sha(primary_output / "manifest.json")
     assert not any(token in json.dumps(record).lower() for token in ("row_level_y", "attacker_key", "time_utc"))
-    assert response_map.validate_final_hashes(primary_output, primary_figure, cfg)
     assert rerun_output.parent != primary_output.parent
 
 
 def test_execute_response_promotes_a_complete_authoritative_package_and_revalidates(monkeypatch, tmp_path):
-    calls = []
-    original_validate = response_map.validate_final_hashes
+    events = []
+    original_replace = response_map.os.replace
+    original_validate_content = response_map.validate_final_hash_content
 
-    def validating(output, figure_base, cfg):
-        calls.append((output, figure_base, output.exists(), figure_base.with_suffix(".png").exists(), figure_base.with_suffix(".svg").exists()))
-        return original_validate(output, figure_base, cfg)
+    def recording_replace(source, destination):
+        events.append(Path(destination).name)
+        return original_replace(source, destination)
 
-    monkeypatch.setattr(response_map, "validate_final_hashes", validating)
+    def validating_content(record, output, figure_base, cfg):
+        final = output / "final_hashes.json"
+        manifest = json.loads((output / "manifest.json").read_text(encoding="utf-8"))
+        if final.exists():
+            events.append("published-ledger-validation")
+        else:
+            events.append("authoritative-path-validation")
+            assert manifest["status"] == cfg["statuses"]["preclosure"]
+            assert manifest["closure_state"] == "PENDING_FINAL_HASH_VALIDATION"
+        return original_validate_content(record, output, figure_base, cfg)
+
+    monkeypatch.setattr(response_map.os, "replace", recording_replace)
+    monkeypatch.setattr(response_map, "validate_final_hash_content", validating_content)
     result, cfg, output, figure = _execute_synthetic(monkeypatch, tmp_path)
-    assert result["status"] == cfg["statuses"]["valid"]
-    assert calls[-1] == (output, figure, True, True, True)
+    assert result["status"] == cfg["statuses"]["preclosure"]
+    assert result["closure_state"] == "PENDING_FINAL_HASH_VALIDATION"
+    assert events[-6:] == [
+        "response_map.png", "response_map.svg", "outputs", "authoritative-path-validation",
+        "final_hashes.json", "published-ledger-validation",
+    ]
     assert response_map.validate_final_hashes(output, figure, cfg)
     final = json.loads((output / "final_hashes.json").read_text(encoding="utf-8"))
+    assert final["closure_status"] == cfg["statuses"]["valid"]
+    manifest = json.loads((output / "manifest.json").read_text(encoding="utf-8"))
+    assert manifest["status"] == cfg["statuses"]["preclosure"]
+    assert manifest["closure_state"] == "PENDING_FINAL_HASH_VALIDATION"
     for name, digest in final["artifacts_sha256"].items():
         path = figure.with_suffix(Path(name).suffix) if name.startswith("figures/") else output / name
         assert digest == response_map.sha(path)
@@ -282,21 +310,8 @@ def test_execute_response_promotes_a_complete_authoritative_package_and_revalida
 @pytest.mark.parametrize("failed_suffix", [".png", ".svg"])
 def test_figure_promotion_failure_never_exposes_authoritative_valid_output(monkeypatch, tmp_path, failed_suffix):
     cfg = _small_cfg()
-    original_sha = response_map.sha
     original_replace = response_map.os.replace
-
-    def synthetic_sha(path: Path) -> str:
-        if Path(path) == response_map.REGISTRY:
-            return cfg["protected_source"]["registry_sha256"]
-        return original_sha(Path(path))
-
-    monkeypatch.setattr(response_map, "verify_freeze", lambda _cfg: {})
-    monkeypatch.setattr(response_map, "sha", synthetic_sha)
-    monkeypatch.setattr(
-        response_map,
-        "_load_execution_inputs",
-        lambda _cfg: (_small_anchors(), {bandwidth: mask.copy() for bandwidth, mask in _small_masks().items()}),
-    )
+    _install_synthetic_execution(monkeypatch, cfg)
 
     def failing_replace(source, destination):
         if Path(source).suffix == failed_suffix:
@@ -312,6 +327,45 @@ def test_figure_promotion_failure_never_exposes_authoritative_valid_output(monke
     assert not (output / "manifest.json").exists()
 
 
+def test_post_promotion_validation_failure_leaves_only_pending_authoritative_artifacts(monkeypatch, tmp_path):
+    cfg = _small_cfg()
+    _install_synthetic_execution(monkeypatch, cfg)
+    output = tmp_path / "authoritative" / "outputs"
+    figure = tmp_path / "authoritative" / "figures" / "response_map"
+    monkeypatch.setattr(
+        response_map,
+        "validate_final_hash_content",
+        lambda *_args: (_ for _ in ()).throw(response_map.ResponseMapInvalid("synthetic authoritative validation failure")),
+    )
+    with pytest.raises(response_map.ResponseMapInvalid, match="synthetic authoritative validation failure"):
+        response_map.execute_response(output, figure, "synthetic-pre-access-test", cfg)
+    assert not (output / "final_hashes.json").exists()
+    manifest = json.loads((output / "manifest.json").read_text(encoding="utf-8"))
+    assert manifest["status"] == cfg["statuses"]["preclosure"]
+    assert manifest["closure_state"] == "PENDING_FINAL_HASH_VALIDATION"
+
+
+def test_final_ledger_publication_failure_never_returns_success(monkeypatch, tmp_path):
+    cfg = _small_cfg()
+    _install_synthetic_execution(monkeypatch, cfg)
+    original_replace = response_map.os.replace
+    output = tmp_path / "authoritative" / "outputs"
+    figure = tmp_path / "authoritative" / "figures" / "response_map"
+
+    def failing_final_ledger_replace(source, destination):
+        if Path(destination).name == "final_hashes.json":
+            raise OSError("synthetic final-ledger publication failure")
+        return original_replace(source, destination)
+
+    monkeypatch.setattr(response_map.os, "replace", failing_final_ledger_replace)
+    with pytest.raises(OSError, match="synthetic final-ledger publication failure"):
+        response_map.execute_response(output, figure, "synthetic-pre-access-test", cfg)
+    assert not (output / "final_hashes.json").exists()
+    manifest = json.loads((output / "manifest.json").read_text(encoding="utf-8"))
+    assert manifest["status"] == cfg["statuses"]["preclosure"]
+    assert manifest["closure_state"] == "PENDING_FINAL_HASH_VALIDATION"
+
+
 def test_authoritative_output_directory_promotes_after_both_figures(monkeypatch, tmp_path):
     destinations = []
     original_replace = response_map.os.replace
@@ -322,7 +376,7 @@ def test_authoritative_output_directory_promotes_after_both_figures(monkeypatch,
 
     monkeypatch.setattr(response_map.os, "replace", recording_replace)
     _result, _cfg, output, figure = _execute_synthetic(monkeypatch, tmp_path)
-    assert destinations[-3:] == [figure.with_suffix(".png"), figure.with_suffix(".svg"), output]
+    assert destinations[-4:] == [figure.with_suffix(".png"), figure.with_suffix(".svg"), output, output / "final_hashes.json"]
 
 
 def test_final_hash_ledger_detects_tampering_and_valid_status_requires_reproduction(tmp_path):
@@ -334,6 +388,7 @@ def test_final_hash_ledger_detects_tampering_and_valid_status_requires_reproduct
     assert not (primary_output / "final_hashes.json").exists()
     response_map.run_from_inputs(anchors, masks, rerun_output, rerun_figure, "approval", cfg)
     response_map.finalize_closure(primary_output, primary_figure, rerun_output, rerun_figure, "approval", cfg)
+    response_map.publish_final_hashes(primary_output, primary_figure, cfg)
     (primary_output / "aggregate_response_grid.csv").write_text("tampered\n", encoding="utf-8")
     with pytest.raises(response_map.ResponseMapInvalid, match="final hash ledger"):
         response_map.validate_final_hashes(primary_output, primary_figure, cfg)

@@ -125,14 +125,20 @@ policy before the primary package is promoted to its authoritative paths.
 `reproduction.json` records only explicitly labeled primary and independent
 rerun **pre-closure staging** identities, their equality outcome, the frozen
 identities, authorization reference, and compact runtime metadata. It does not
-claim that a staging manifest hash is an authoritative final-file hash.
-`final_hashes.json` is the sole authority for the closed authoritative CSV/JSON
-package and PNG/SVG figures, while excluding its own recursive hash.
+claim that a staging manifest hash is an authoritative final-file hash. The
+promoted `manifest.json` remains non-final with closure state
+`PENDING_FINAL_HASH_VALIDATION`; it never claims execution success.
+`final_hashes.json` is the sole final-valid authority for the closed
+authoritative CSV/JSON package and PNG/SVG figures, while excluding its own
+recursive hash.
 
-After staging comparison and final-ledger creation, promotion is ordered PNG,
-SVG, then finalized output directory last. Thus an authoritative valid-status
-manifest cannot appear before both figures. The final ledger is re-read and
-validated against the promoted authoritative paths before success returns.
+After staging comparison, promotion is ordered PNG, SVG, then the finalized
+output directory with its non-final manifest. Hashes are then computed and
+validated from those actual authoritative paths. Only after that validation is
+the final ledger atomically published, and it is immediately re-read and
+validated before success returns. A validation or ledger-publication failure
+therefore exposes neither an authoritative final ledger nor a valid-status
+manifest.
 
 Panel A is the primary 7.5 m surface, Panel B the 5 m sensitivity, and Panel C
 the 10 m sensitivity. Rendering is cell-based with no spatial interpolation,
