@@ -1,0 +1,13 @@
+{
+  "checks": {
+    "all_nine_matches": true,
+    "both_periods_primary_and_quality": true,
+    "count_reconciliation": true,
+    "full_rank_primary_and_quality": true,
+    "quality_region_blocks": true,
+    "quality_region_times": true,
+    "source_identities": true
+  },
+  "human_review_required": true,
+  "status": "SUPPORT_PREFLIGHT_QC_PASSED_AWAITING_HUMAN_REVIEW"
+}

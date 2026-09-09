@@ -1,0 +1,65 @@
+{
+  "authorization_reference": "AUTHORIZED \u2014 SKILLCORNER LATERAL GRADIENT SUPPORT PREFLIGHT V1 \u2014 RETRY AFTER VERIFIED MATERIALIZATION",
+  "counts": {
+    "primary": 49107,
+    "quality": 11810
+  },
+  "environment": {
+    "numpy": "2.5.2",
+    "pandas": "2.3.3",
+    "python": "3.13.15"
+  },
+  "hashes": {
+    "config/defensive_reorganization_spatial_form_v1_skillcorner_external.json": "7b1537235dd6966b9ade55a091c3688635e8cdf586673f45fa0b5aa64d50a79e",
+    "config/skillcorner_lateral_gradient_support_preflight_v1.json": "8a25438a31d954d0f0d3a43577ebc6b39f16af3e902625b2554ca9150c9d17fb",
+    "docs/protocols/defensive_reorganization_spatial_form_v1_skillcorner_external.md": "9d863157e9bf938b4e13d216f73c5b56057d9c59f34a86b47dac20a4d9d9f80e",
+    "docs/protocols/defensive_reorganization_spatial_form_v1_skillcorner_external_preexecution_support_reconciliation.md": "db3dcdf533f687f875c252a2d17aebe55a4f3bfe5c29726d33a259056fc1bf84",
+    "docs/protocols/skillcorner_lateral_gradient_support_preflight_v1.md": "02303400884ad6054d4aed123e13186c9706c887d0a618319953f2563ba25b94",
+    "src/defensive_reorganization_spatial_form_skillcorner_external.py": "933cfe4da4687f20473914d452e7c211e2a6ae955597400093af990e0f695f2c",
+    "src/infrastructure/skillcorner_spatial_form_adapter.py": "78ff9af7adb795a71585061d677e4fd1c77d6e5eed90645217664ec8a9fd7246",
+    "src/skillcorner_lateral_gradient_support_preflight_v1.py": "3df05634112a41edb1b7eba356a06b98573a7976950a9f188fc470dcf1adf931",
+    "tests/test_skillcorner_lateral_gradient_support_preflight_v1.py": "25dadbe60c903cd597a3160e99948c75a1e28b9b4689e5d5e6643d032163c5cf"
+  },
+  "observation_digests": {
+    "primary": {
+      "all_matches": "2dc4e404e2c462c54416ac122f9a33950ced22d5e5e2fe5dc6ca7760d892d018",
+      "per_match": {
+        "1886347": "e80ac178e26cc31ce06a2c2db00a8d52eea4250096124b9eae750da238fb3942",
+        "1899585": "c1fc7824b00760f8773c705be822183eddf30b580da27a40fca6805b23fc9d62",
+        "1925299": "1a8d80d96a8e88f2bc6cc3618bd3492045d85fb2691967a3a38e73bff3b06100",
+        "1996435": "c68b114b647e3e386ff2b9eb3d2fd67ea35ddf474a969baca7f3617f9d68d77d",
+        "2006229": "952d54cf9cb352eaca3d27efb3f79727077af0072a31ef0134cddccfd1094d1c",
+        "2011166": "9da1b6ec300ae9c2248c52c98f08e220b5ad5e0bebb91231cce2c038335b75c0",
+        "2013725": "a10a9bafc3d6f5d4998eb59e4e3b8454db3ae389489e75c9df535a5d724f1729",
+        "2015213": "eec705b043a9f5414bbf68cc828007d936e3cf0ba6ed3e7b5479752b896d6443",
+        "2017461": "76f28243f728aebe52cc943b7dd31bb17a4bd891bc4ce60f0a13819ce9458412"
+      }
+    },
+    "quality": {
+      "all_matches": "a81c9a16cae54ed0f4b45908265f9c91514eb3e3f9467cbbf9105812de9fb17b",
+      "per_match": {
+        "1886347": "72e511e195244a479cd6889c7f6ca75ac4fb899397e083d5ca6000dc5dd6cfc5",
+        "1899585": "a7995ddf5dd99e8f57ebac8b77f675cd18578300166587507a6433941c99ccae",
+        "1925299": "5ce23adbf0ddfd54f76c3f2ecd27e96d4876ae047a810d0add63c3325afe3623",
+        "1996435": "3c43d802f386a2c7635c4dfd6265ddee24eb066521199d518a3e800170b2bd07",
+        "2006229": "c10bb80fca9b36ca350b2159222122c2301a067bf019109d4771ca989195d6e5",
+        "2011166": "60143204d4e4a14f0e3335c33dedae12f3a79f85c887c719953f626e0becc915",
+        "2013725": "a5bafae3f516b8139ca079b076ea2599a6811680f0d5f87d12548573ae289c10",
+        "2015213": "306a5f05f47c79081b20765528085d483acdb0fb69478697e8d58fa7b6f675fc",
+        "2017461": "2797459096666dfca5ce255a699b015b553156b962b26804a6f9ac5288e1a337"
+      }
+    }
+  },
+  "outputs": [
+    "design_qc.csv",
+    "exclusions.csv",
+    "final_hashes.json",
+    "hard_qc.json",
+    "lateral_support.csv",
+    "manifest.json",
+    "period_summary.csv",
+    "quality_region_support.csv",
+    "sample_summary.csv",
+    "source_hashes.json"
+  ]
+}

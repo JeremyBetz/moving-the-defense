@@ -1,0 +1,14 @@
+{
+  "artifacts": {
+    "design_qc.csv": "b61a453199ceb228bc3f652ce910583e5a0f6c8dc73f66321daa553cfc10f0a0",
+    "exclusions.csv": "46653d4b4d3fd5ab67c94a9620953c61a436594ce35ed75f1e3cff58faadb952",
+    "hard_qc.json": "802ab34d68f87359e47f7b9c1f26604422d70404fca386f359aef4235d1f4636",
+    "lateral_support.csv": "c5cf4e26d998a1161d6b8f6051934bd7fb42005c32c09e3c848470539bc66cc8",
+    "manifest.json": "e3f4df125e4516f25770583b458f73d1de0cd2ae05b7d60b811fdf3002c0ff52",
+    "period_summary.csv": "48132e4dfc23520c5ef158b0db21815ab8ed3f41284345165d4b82b604e2b1e4",
+    "quality_region_support.csv": "fabb16343d3331171f174c0e08bdb6cd5fae7bf9b468b1630d176ea3eced3e1b",
+    "sample_summary.csv": "6228d6436510b5e2056eba2c34f4d7c7a9cf2a91aaf6323286001349839da773",
+    "source_hashes.json": "7bd20c0fe5b4a02f3dba6396791ead40f71c91c2b4b8cc4dd7a787ffcff64834"
+  },
+  "report_sha256": "23127c19e76f2c7d102c2daa9c45425b88473665b45c1ac460e435541e189feb"
+}
