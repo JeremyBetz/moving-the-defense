@@ -1,0 +1,128 @@
+{
+  "schema_version": "1.0.0",
+  "status": "FROZEN_PRE_RESPONSE_IMPLEMENTATION_RESPONSE_ACCESS_NOT_AUTHORIZED",
+  "freeze_date": "2026-09-09",
+  "starting_commit": "bb71b9c1f61729a4e40dbb1e36325b57b5c7eb7c",
+  "execution_tier_after_authorization": 3,
+  "matches": [1886347, 1899585, 1925299, 1996435, 2006229, 2011166, 2013725, 2015213, 2017461],
+  "excluded_matches": [1953632],
+  "support": {
+    "manifest_path": "outputs/skillcorner_lateral_gradient_support_preflight_v1/manifest.json",
+    "manifest_sha256": "e3f4df125e4516f25770583b458f73d1de0cd2ae05b7d60b811fdf3002c0ff52",
+    "source_hashes_path": "outputs/skillcorner_lateral_gradient_support_preflight_v1/source_hashes.json",
+    "source_hashes_sha256": "7bd20c0fe5b4a02f3dba6396791ead40f71c91c2b4b8cc4dd7a787ffcff64834",
+    "primary_count": 49107,
+    "quality_count": 11810,
+    "unique_time_anchor_count": 5458,
+    "primary_digest": "2dc4e404e2c462c54416ac122f9a33950ced22d5e5e2fe5dc6ca7760d892d018",
+    "quality_digest": "a81c9a16cae54ed0f4b45908265f9c91514eb3e3f9467cbbf9105812de9fb17b",
+    "per_match_counts": {
+      "1886347": {"primary": 5670, "quality": 1529},
+      "1899585": {"primary": 5083, "quality": 1068},
+      "1925299": {"primary": 6570, "quality": 1305},
+      "1996435": {"primary": 5967, "quality": 2559},
+      "2006229": {"primary": 5795, "quality": 2278},
+      "2011166": {"primary": 4522, "quality": 625},
+      "2013725": {"primary": 5471, "quality": 942},
+      "2015213": {"primary": 5143, "quality": 803},
+      "2017461": {"primary": 4886, "quality": 701}
+    }
+  },
+  "provider": {
+    "repository_commit": "c1e17a0cc3e07e1774b52d929c1a0b85115143fc",
+    "native_hz": 10,
+    "authoritative_stack": "native_skillcorner_source_and_current_project_wrapper",
+    "kloppy_role": "equivalence_evidence_only",
+    "response_access_requires": ["execute_response_flag", "nonempty_authorization_reference", "frozen_hash_verification", "source_identity_agreement", "support_digest_agreement"],
+    "authorization_reference_is_proof_of_approval": false
+  },
+  "predictor": {
+    "name": "z_m",
+    "formula": "abs(y_c_at_t_minus_2)",
+    "units": "m",
+    "canonical_scale": "y_c=68*y_native/pitch_width",
+    "clip": false,
+    "exclude_finite_out_of_pitch": false,
+    "interpret_over_34_m": false
+  },
+  "outcome": {
+    "name": "Y_m",
+    "formula": "mean_D1_D3_accumulated_leave_one_out_defender_relative_path_minus_mean_D4_D7",
+    "response_interval_s": [0, 2],
+    "units": "m",
+    "native_hz": 10,
+    "smoother": "centered_3_native_frame_arithmetic_mean",
+    "ranks": "D1_D10_fixed_at_anchor",
+    "required_ranks": [1, 2, 3, 4, 5, 6, 7],
+    "alternate_response_fields": false
+  },
+  "model": {
+    "formula": "Y_m ~ z_m + match_intercepts",
+    "primary_estimand": "beta_lat",
+    "estimand_units": "m_near_minus_middle_path_per_m_absolute_lateral_start",
+    "reporting_translation_m": 10,
+    "objective": "sum_over_matches_one_over_n_m_times_sum_squared_residuals",
+    "equal_total_match_weight": true,
+    "mean_of_match_slopes": false,
+    "additional_covariates": []
+  },
+  "quality_sensitivity": {
+    "required": true,
+    "sample": "committed_majority_detected_digest",
+    "same_model_and_inference": true,
+    "ground_truth_claim": false
+  },
+  "bootstrap": {
+    "draws": 2000,
+    "prng": "PCG64",
+    "seed": 20260909,
+    "block_seconds": 60,
+    "strata": ["match_id", "period"],
+    "block_identity": ["match_id", "period", "block_id"],
+    "simultaneous_attacker_perspectives_together": true,
+    "all_nine_matches_each_valid_draw": true,
+    "recalculate_match_weights_each_draw": true,
+    "paired_primary_quality_draws": true,
+    "full_rank_required": true,
+    "minimum_valid_paired_draws": 1900,
+    "interval": "two_sided_95_percentile_linear_quantile"
+  },
+  "outputs": {
+    "directory": "outputs/skillcorner_lateral_gradient_v1",
+    "report": "docs/results/skillcorner_lateral_gradient_v1.md",
+    "files": ["pooled_estimate.csv", "match_estimates.csv", "lomo_estimates.csv", "quality_estimate.csv", "bootstrap_summary.json", "manifest.json", "hard_qc.json", "reproduction.json", "final_hashes.json"],
+    "schemas": {
+      "pooled_estimate.csv": ["sample", "beta_lat_m_per_m", "ci_low_m_per_m", "ci_high_m_per_m", "ten_m_contrast_m", "valid_bootstrap_draws", "classification"],
+      "quality_estimate.csv": ["sample", "beta_lat_m_per_m", "ci_low_m_per_m", "ci_high_m_per_m", "ten_m_contrast_m", "valid_bootstrap_draws"],
+      "match_estimates.csv": ["match_id", "beta_lat_m_per_m", "sign"],
+      "lomo_estimates.csv": ["omitted_match_id", "beta_lat_m_per_m", "sign"]
+    },
+    "aggregate_only": true,
+    "forbidden_serialized_content": ["observation_ids", "tracking_coordinates", "player_ids", "team_ids", "timestamps", "block_rows", "provider_rows", "row_level_Y", "predictions", "residuals"]
+  },
+  "classification": {
+    "invalid": "INVALID",
+    "supported": "SUPPORTED",
+    "mixed": "MIXED",
+    "not_supported": "NOT SUPPORTED",
+    "supported_requires": ["primary_ci_low_gt_zero", "quality_beta_gt_zero", "all_nine_lomo_beta_gt_zero"],
+    "mixed_rule": "primary_beta_gt_zero_and_any_supported_condition_fails",
+    "not_supported_rule": "primary_beta_lte_zero"
+  },
+  "closure": {
+    "isolated_executions": 2,
+    "comparison": "byte_for_byte_governed_machine_readable_outputs",
+    "authoritative_output_directory_promoted_last": true,
+    "final_hashes_is_sole_final_authority": true,
+    "final_hashes_nonrecursive": true,
+    "no_overwrite": true
+  },
+  "limitations": [
+    "primary_coordinates_include_detected_and_provider_extrapolated_values",
+    "direct_detection_retention_varies_by_match",
+    "aggregate_support_found_no_strong_monotonic_quality_deterioration_with_absolute_y",
+    "interval_is_conditional_on_nine_matches_and_measurement_process",
+    "match_slopes_are_descriptive_not_independent_replications"
+  ],
+  "deferred": ["A2_context_model", "A3_direction_interactions", "SkillCorner_heatmap", "manuscript_or_Sloan_changes", "Game3", "orientation_empirical_work"]
+}
