@@ -4,7 +4,7 @@
 
 **Established:** 2026-09-06
 
-**Last reviewed:** 2026-09-07 — Batch 1 governance/preflight hardening
+**Last reviewed:** 2026-09-09 — IDSSE response-map execution-status correction
 
 **Starting scientific checkpoint:** `57644b3205ead6ef7ede76aa15c3f23b28c2af8e`
 
@@ -21,14 +21,14 @@ for individual analyses.
 | Metrica Sample Game 3 | Untouched and outside [current paper reproduction](../REPRODUCE.md) | A prospectively approved scientific plan and any required frozen protocol before access |
 | SkillCorner response-mode outcomes | Unopened; the [IDSSE response-mode result](results/defensive_response_mode_v1.md) is MIXED and does not authorize transport | A separately motivated and approved design; not a repair of the mixed result |
 | Defensive Reorganization Departure residuals and retrieval | Unopened after [DRD v2](results/defensive_reorganization_departure_v2.md) classified MIXED | A separately motivated and approved design that does not alter the closed v2 result |
-| IDSSE localized-reorganization response map | The response-stage [protocol](protocols/localized_reorganization_response_map_v1.md), configuration, source, tests, and hash ledger are frozen and closure-hardened, but execution remains unexecuted and protected. `response_2s_m`, the near-minus-middle outcome, and any local response surface remain unread so response-blind support selection cannot become outcome-tuned. | Explicit human approval to invoke the frozen response-stage execution after independent pre-access review, or an explicitly approved revised prospective protocol before any outcome inspection |
+| IDSSE localized-reorganization response map | IDSSE localized-reorganization response-map v1 completed one authorized scientific execution under its frozen protocol. QC and deterministic reproduction passed, and the final package was hash-closed. No post-response retuning is permitted. | Closure does not authorize further response access or analysis. Any follow-up requires a separately approved prospective plan and explicit human authorization; the closed v1 package remains unchanged. |
 | Closed negative, mixed, rejected, or invalid branches | Closed as recorded in the [claim ledger](claim_status.md) | Independent football/scientific rationale, planning, and explicit approval before a new version or dataset is opened |
 
 These are operational firewalls, not claims that previously completed authorized
 outcomes remain uninspected. Historical pre-execution firewalls retain their
 recorded meaning in the research log and governed artifacts.
 
-The response-map firewall is supported by its response-blind [support configuration](../config/localized_reorganization_heatmap_support_preflight_v1.json), [support-only result report](results/localized_reorganization_heatmap_support_preflight_v1.md), [aggregate manifest](../outputs/localized_reorganization_heatmap_support_preflight_v1/manifest.json), and frozen [response-stage protocol](protocols/localized_reorganization_response_map_v1.md). These artifacts establish geometry and future execution rules only; they are not evidence of a response surface.
+The response-map firewall retains its historical response-blind [support configuration](../config/localized_reorganization_heatmap_support_preflight_v1.json), [support-only result report](results/localized_reorganization_heatmap_support_preflight_v1.md), and [aggregate manifest](../outputs/localized_reorganization_heatmap_support_preflight_v1/manifest.json), alongside the frozen [response-stage protocol](protocols/localized_reorganization_response_map_v1.md). Those support/pre-access records establish the geometry and execution rules that preceded the authorized run. The completed package is recorded by its [manifest](../outputs/localized_reorganization_response_map_v1/manifest.json), [hard QC](../outputs/localized_reorganization_response_map_v1/hard_qc.json), [reproduction record](../outputs/localized_reorganization_response_map_v1/reproduction.json), and [final hash ledger](../outputs/localized_reorganization_response_map_v1/final_hashes.json). They record one closed descriptive response-map execution; they do not authorize response reopening, post-response retuning, or another analysis.
 
 ## Current paper boundary
 
