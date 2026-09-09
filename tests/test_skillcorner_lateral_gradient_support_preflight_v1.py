@@ -197,6 +197,25 @@ def test_malformed_native_input_fails(case):
         source_from(fragments)
 
 
+@pytest.mark.parametrize("timestamp", ["nan:0", "inf:0", "-inf:0"], ids=["nan", "positive_infinity", "negative_infinity"])
+def test_nonfinite_native_timestamp_fails_before_support_observations(timestamp):
+    fragments = native_fragments()
+    fragments[1][50]["timestamp"] = timestamp
+    # Source construction fails before an extractor can accept any observation.
+    with pytest.raises(preflight.SupportError, match="timestamp/cadence"):
+        source_from(fragments)
+
+
+def test_finite_clock_controls_preserve_valid_and_mismatch_behavior():
+    valid = source_from(native_fragments())
+    rows, _ = preflight.extract_match_support(valid)
+    assert rows
+    mismatch = native_fragments()
+    mismatch[1][50]["timestamp"] = "0:5.1"
+    with pytest.raises(preflight.SupportError, match="timestamp/cadence"):
+        source_from(mismatch)
+
+
 def test_eligibility_matches_inherited_support():
     source = source_from(native_fragments())
     rows, counts = preflight.extract_match_support(source)

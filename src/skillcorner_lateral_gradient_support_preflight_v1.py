@@ -35,6 +35,7 @@ from infrastructure.skillcorner_spatial_form_adapter import (
     goalward_sign,
     required_frame_ids,
     stricter_quality_pass,
+    timestamp_seconds,
 )
 
 
@@ -235,8 +236,15 @@ class SupportSource(MatchSource):
         source.phase_coverage = cls._coverage(phases)
         # Suppress inherited error messages that contain individual frame IDs.
         try:
+            # The inherited comparison correctly rejects finite clock drift, but
+            # ``abs(nan - expected) > tolerance`` is false.  Reject nonfinite
+            # parsed clocks here before delegating to that shared check.
+            for period, frames in source.period_frames.items():
+                for frame in frames:
+                    _require(math.isfinite(timestamp_seconds(source.rows[frame]["timestamp"], period)),
+                             "native timestamp/cadence disagreement")
             source._verify_native_clock()
-        except (RuntimeError, ValueError, KeyError):
+        except (SupportError, RuntimeError, ValueError, KeyError):
             raise SupportError("native timestamp/cadence disagreement") from None
         return source
 
