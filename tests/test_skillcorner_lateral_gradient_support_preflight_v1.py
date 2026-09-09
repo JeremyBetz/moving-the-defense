@@ -470,7 +470,9 @@ def test_real_synthetic_git_source_identity_and_mismatch(synthetic_git):
     assert len(verified["files"]) == 27
     assert len({f["path"] for f in verified["files"]}) == 27
     first = verified["files"][0]
-    assert first["sha256"] == hashlib.sha256((local / first["path"]).read_bytes()).hexdigest()
+    assert first["lfs_oid_sha256"] is None
+    assert first["materialized_sha256"] == hashlib.sha256((local / first["path"]).read_bytes()).hexdigest()
+    assert first["identity_valid"] is True
     (local / first["path"]).write_text("changed synthetic bytes", encoding="utf-8")
     with pytest.raises(preflight.SupportError, match="blob mismatch"):
         preflight.verify_source_identity(local, repo)
@@ -484,6 +486,88 @@ def test_missing_source_and_unavailable_pinned_commit_fail(synthetic_git, monkey
     monkeypatch.setattr(preflight, "RELEASE", "f" * 40)
     with pytest.raises(preflight.SupportError, match="unavailable"):
         preflight.verify_source_identity(local, repo)
+
+
+@pytest.fixture
+def synthetic_lfs_git(tmp_path, monkeypatch):
+    repo, local = tmp_path / "release", tmp_path / "local"
+    repo.mkdir()
+    local.mkdir()
+
+    def git(*args):
+        return subprocess.run(["git", "-C", str(repo), *args], check=True, capture_output=True).stdout.decode().strip()
+
+    git("init", "-q")
+    materialized = b"synthetic materialized LFS tracking payload\n"
+    target = preflight.TEMPLATES[1].format(preflight.MATCHES[0])
+    pointer = (b"version https://git-lfs.github.com/spec/v1\n"
+               + b"oid sha256:" + hashlib.sha256(materialized).hexdigest().encode() + b"\n"
+               + b"size " + str(len(materialized)).encode() + b"\n")
+    for match in preflight.MATCHES:
+        for template in preflight.TEMPLATES:
+            filename = template.format(match)
+            payload = pointer if filename == target else ("ordinary synthetic source " + filename + "\n").encode()
+            (repo / filename).write_bytes(payload)
+            (local / filename).write_bytes(materialized if filename == target else payload)
+    git("add", ".")
+    git("-c", "user.name=Synthetic Test", "-c", "user.email=synthetic@example.invalid", "commit", "-qm", "synthetic LFS release")
+    monkeypatch.setattr(preflight, "RELEASE", git("rev-parse", "HEAD"))
+    return repo, local, target, pointer, materialized
+
+
+def test_lfs_materialized_source_identity_and_provenance(synthetic_lfs_git):
+    repo, local, target, _pointer, materialized = synthetic_lfs_git
+    verified = preflight.verify_source_identity(local, repo)
+    lfs = next(item for item in verified["files"] if item["path"] == target)
+    assert lfs["lfs_oid_sha256"] == hashlib.sha256(materialized).hexdigest()
+    assert lfs["lfs_declared_size"] == len(materialized)
+    assert lfs["materialized_sha256"] == hashlib.sha256(materialized).hexdigest()
+    assert lfs["materialized_size"] == len(materialized)
+    assert lfs["identity_valid"] is True
+    ordinary = next(item for item in verified["files"] if item["path"] != target)
+    assert ordinary["lfs_oid_sha256"] is None and ordinary["lfs_declared_size"] is None
+
+
+@pytest.mark.parametrize("case", ["pointer", "sha", "size", "symlink", "missing"])
+def test_lfs_source_identity_rejects_unresolved_or_invalid_payload(synthetic_lfs_git, case):
+    repo, local, target, pointer, materialized = synthetic_lfs_git
+    path = local / target
+    if case == "pointer":
+        path.write_bytes(pointer)
+        message = "unresolved"
+    elif case == "sha":
+        path.write_bytes(b"x" * len(materialized))
+        message = "SHA-256"
+    elif case == "size":
+        changed_pointer = (b"version https://git-lfs.github.com/spec/v1\n"
+                           + b"oid sha256:" + hashlib.sha256(materialized).hexdigest().encode() + b"\n"
+                           + b"size " + str(len(materialized) + 1).encode() + b"\n")
+        (repo / target).write_bytes(changed_pointer)
+        subprocess.run(["git", "-C", str(repo), "add", target], check=True)
+        subprocess.run(["git", "-C", str(repo), "-c", "user.name=Synthetic Test", "-c", "user.email=synthetic@example.invalid", "commit", "-qm", "wrong LFS size"], check=True)
+        preflight.RELEASE = subprocess.run(["git", "-C", str(repo), "rev-parse", "HEAD"], check=True, capture_output=True, text=True).stdout.strip()
+        message = "size"
+    elif case == "symlink":
+        path.unlink()
+        path.symlink_to(local / preflight.TEMPLATES[0].format(preflight.MATCHES[0]))
+        message = "symlinked"
+    else:
+        path.unlink()
+        message = "missing"
+    with pytest.raises(preflight.SupportError, match=message):
+        preflight.verify_source_identity(local, repo)
+
+
+@pytest.mark.parametrize("pointer", [
+    b"version https://git-lfs.github.com/spec/v2\noid sha256:" + b"0" * 64 + b"\nsize 1\n",
+    b"version https://git-lfs.github.com/spec/v1\noid sha1:" + b"0" * 40 + b"\nsize 1\n",
+    b"version https://git-lfs.github.com/spec/v1\noid sha256:not-a-hash\nsize 1\n",
+    b"version https://git-lfs.github.com/spec/v1\nsize 1\n",
+    b"version https://git-lfs.github.com/spec/v1\noid sha256:" + b"0" * 64 + b"\nsize -1\n",
+])
+def test_lfs_pointer_parser_rejects_malformed_metadata(pointer):
+    with pytest.raises(preflight.SupportError, match="malformed"):
+        preflight._parse_lfs_pointer(pointer)
 
 
 def test_source_has_no_dangerous_calls_or_imports():

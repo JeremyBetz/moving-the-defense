@@ -16,6 +16,7 @@ import json
 import math
 import platform
 import re
+import stat
 import subprocess
 from collections import Counter
 from dataclasses import dataclass
@@ -119,11 +120,46 @@ def _pinned_tree(repository):
     return tree
 
 
-def verify_source_identity(data_dir, pinned_repository):
-    """Verify exactly 27 local files against Git blob IDs in the pinned tree.
+_LFS_POINTER_PREFIX = b"version https://git-lfs.github.com/"
+_LFS_POINTER = re.compile(
+    rb"version https://git-lfs\.github\.com/spec/v1\n"
+    rb"oid sha256:([0-9a-f]{64})\n"
+    rb"size ([0-9]+)\n"
+)
 
-    Streaming Git blob SHA-1 includes the Git header; SHA-256 is recorded for
-    package provenance. No fields are decoded and no network request is made.
+
+def _parse_lfs_pointer(blob):
+    """Return exact LFS metadata, or ``None`` for an ordinary Git blob."""
+    if not blob.startswith(_LFS_POINTER_PREFIX):
+        return None
+    match = _LFS_POINTER.fullmatch(blob)
+    _require(match is not None, "malformed Git LFS pointer")
+    return {"lfs_oid_sha256": match.group(1).decode("ascii"),
+            "lfs_declared_size": int(match.group(2))}
+
+
+def _stream_file_identities(path):
+    """Return Git-blob SHA-1, SHA-256, and size without decoding content."""
+    path = Path(path)
+    size = path.stat().st_size
+    blob = hashlib.sha1(f"blob {size}\0".encode("ascii"))
+    sha256 = hashlib.sha256()
+    read_size = 0
+    with path.open("rb") as handle:
+        for chunk in iter(lambda: handle.read(1024 * 1024), b""):
+            read_size += len(chunk)
+            blob.update(chunk)
+            sha256.update(chunk)
+    _require(read_size == size, "source size changed while reading")
+    return blob.hexdigest(), sha256.hexdigest(), size
+
+
+def verify_source_identity(data_dir, pinned_repository):
+    """Verify exactly 27 local files against pinned Git or LFS identities.
+
+    Ordinary paths must match their pinned Git blob bytes. LFS-backed paths
+    must be materialized and match the pointer's SHA-256 and declared size.
+    No source fields are decoded and no network request is made.
     """
     tree = _pinned_tree(pinned_repository)
     records = []
@@ -136,19 +172,25 @@ def verify_source_identity(data_dir, pinned_repository):
             mode, kind, expected_blob = tree[upstream_path]
             _require(mode in {"100644", "100755"} and kind == "blob", "source must be a regular Git blob")
             local = Path(data_dir) / filename
-            _require(not local.is_symlink() and local.is_file(), "missing or symlinked source file")
-            size = local.stat().st_size
-            blob = hashlib.sha1(f"blob {size}\0".encode("ascii"))
-            sha256 = hashlib.sha256()
-            read_size = 0
-            with local.open("rb") as handle:
-                for chunk in iter(lambda: handle.read(1024 * 1024), b""):
-                    read_size += len(chunk)
-                    blob.update(chunk)
-                    sha256.update(chunk)
-            _require(read_size == size and blob.hexdigest() == expected_blob, "source blob mismatch")
+            _require(not local.is_symlink(), "symlinked source file")
+            _require(local.exists(), "missing materialized source file")
+            _require(stat.S_ISREG(local.stat().st_mode), "nonregular source file")
+            pointer = _parse_lfs_pointer(_git(pinned_repository, "cat-file", "blob", expected_blob))
+            blob_sha, materialized_sha, materialized_size = _stream_file_identities(local)
+            if pointer is None:
+                _require(blob_sha == expected_blob, "source blob mismatch")
+                records.append({"path": filename, "upstream_path": upstream_path,
+                                "git_blob_sha": expected_blob, "lfs_oid_sha256": None,
+                                "lfs_declared_size": None, "materialized_sha256": materialized_sha,
+                                "materialized_size": materialized_size, "identity_valid": True})
+                continue
+            _require(not (blob_sha == expected_blob), "unresolved Git LFS pointer used as provider input")
+            _require(materialized_sha == pointer["lfs_oid_sha256"], "materialized LFS SHA-256 mismatch")
+            _require(materialized_size == pointer["lfs_declared_size"], "materialized LFS size mismatch")
             records.append({"path": filename, "upstream_path": upstream_path,
-                            "blob_id": expected_blob, "sha256": sha256.hexdigest()})
+                            "git_blob_sha": expected_blob, **pointer,
+                            "materialized_sha256": materialized_sha,
+                            "materialized_size": materialized_size, "identity_valid": True})
     return {"release_commit": RELEASE, "files": records}
 
 
@@ -528,13 +570,23 @@ def _validate_json_package(source_hashes, manifest, qc, hashes, config):
     expected_paths = {t.format(m) for m in MATCHES for t in TEMPLATES}
     _require(len(files) == 27 and {f["path"] for f in files} == expected_paths, "source provenance population mismatch")
     for item in files:
-        keys(item, ("path", "upstream_path", "blob_id", "sha256_before", "sha256_after"))
+        keys(item, ("path", "upstream_path", "git_blob_sha", "lfs_oid_sha256", "lfs_declared_size",
+                    "materialized_sha256_before", "materialized_sha256_after",
+                    "materialized_size_before", "materialized_size_after", "identity_valid"))
         path = PurePosixPath(item["upstream_path"])
         _require(not path.is_absolute() and ".." not in path.parts and path.name == item["path"], "source provenance path mismatch")
-        _require(re.fullmatch(r"[0-9a-f]{40}", item["blob_id"]) is not None, "invalid blob identity")
-        sha(item["sha256_before"])
-        sha(item["sha256_after"])
-        _require(item["sha256_before"] == item["sha256_after"], "source changed during extraction")
+        _require(re.fullmatch(r"[0-9a-f]{40}", item["git_blob_sha"]) is not None, "invalid blob identity")
+        sha(item["materialized_sha256_before"])
+        sha(item["materialized_sha256_after"])
+        _require(item["materialized_sha256_before"] == item["materialized_sha256_after"], "source changed during extraction")
+        _require(type(item["materialized_size_before"]) is int and item["materialized_size_before"] >= 0
+                 and item["materialized_size_before"] == item["materialized_size_after"], "invalid materialized size")
+        _require(type(item["identity_valid"]) is bool and item["identity_valid"], "invalid source identity status")
+        if item["lfs_oid_sha256"] is None:
+            _require(item["lfs_declared_size"] is None, "ordinary source has LFS metadata")
+        else:
+            sha(item["lfs_oid_sha256"])
+            _require(type(item["lfs_declared_size"]) is int and item["lfs_declared_size"] >= 0, "invalid LFS provenance")
     keys(manifest, ("hashes", "environment", "authorization_reference", "counts", "observation_digests", "outputs"))
     expected_outputs = sorted([*config["publication"]["csv_columns"], *config["publication"]["json_artifacts"]])
     _require(manifest["outputs"] == expected_outputs, "output manifest allowlist mismatch")
@@ -601,8 +653,13 @@ def execute_support(*, execute=False, data_dir=None, pinned_repository=None,
     validate_public_outputs(tables, config)
     qc = check_support_gates(tables, True, config)
     source_hashes = {"release_commit": RELEASE, "files": [
-        {"path": f["path"], "upstream_path": f["upstream_path"], "blob_id": f["blob_id"],
-         "sha256_before": f["sha256"], "sha256_after": f["sha256"]} for f in before["files"]]}
+        {"path": f["path"], "upstream_path": f["upstream_path"], "git_blob_sha": f["git_blob_sha"],
+         "lfs_oid_sha256": f["lfs_oid_sha256"], "lfs_declared_size": f["lfs_declared_size"],
+         "materialized_sha256_before": f["materialized_sha256"],
+         "materialized_sha256_after": f["materialized_sha256"],
+         "materialized_size_before": f["materialized_size"],
+         "materialized_size_after": f["materialized_size"], "identity_valid": f["identity_valid"]}
+        for f in before["files"]]}
     names = sorted([*tables, "source_hashes.json", "manifest.json", "hard_qc.json", "final_hashes.json"])
     manifest = {"hashes": hashes, "environment": {"python": platform.python_version(), "numpy": np.__version__, "pandas": pd.__version__},
                 "authorization_reference": authorization_reference,
