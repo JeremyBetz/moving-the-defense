@@ -1,0 +1,78 @@
+{
+  "authorization_reference": "SC-LATERAL-GRADIENT-V1-FIRST-EXECUTION-05ea0c7-20260909",
+  "classification": "SUPPORTED",
+  "counts": {
+    "per_match": {
+      "1886347": {
+        "primary": 5670,
+        "quality": 1529
+      },
+      "1899585": {
+        "primary": 5083,
+        "quality": 1068
+      },
+      "1925299": {
+        "primary": 6570,
+        "quality": 1305
+      },
+      "1996435": {
+        "primary": 5967,
+        "quality": 2559
+      },
+      "2006229": {
+        "primary": 5795,
+        "quality": 2278
+      },
+      "2011166": {
+        "primary": 4522,
+        "quality": 625
+      },
+      "2013725": {
+        "primary": 5471,
+        "quality": 942
+      },
+      "2015213": {
+        "primary": 5143,
+        "quality": 803
+      },
+      "2017461": {
+        "primary": 4886,
+        "quality": 701
+      }
+    },
+    "primary": 49107,
+    "quality": 11810
+  },
+  "frozen_hashes": {
+    "config/skillcorner_lateral_gradient_support_preflight_v1.json": "8a25438a31d954d0f0d3a43577ebc6b39f16af3e902625b2554ca9150c9d17fb",
+    "config/skillcorner_lateral_gradient_v1.json": "94423a8e42526b985fa4331f9af8ea408d00244ca2a1869a2aa22742cbae1f4f",
+    "docs/protocols/skillcorner_lateral_gradient_support_preflight_v1.md": "02303400884ad6054d4aed123e13186c9706c887d0a618319953f2563ba25b94",
+    "docs/protocols/skillcorner_lateral_gradient_v1.md": "8423c5cd05b832d72061c3ea6884b8451655fa8768737ac0535ab0a7215dea1e",
+    "outputs/skillcorner_lateral_gradient_support_preflight_v1/manifest.json": "e3f4df125e4516f25770583b458f73d1de0cd2ae05b7d60b811fdf3002c0ff52",
+    "outputs/skillcorner_lateral_gradient_support_preflight_v1/source_hashes.json": "7bd20c0fe5b4a02f3dba6396791ead40f71c91c2b4b8cc4dd7a787ffcff64834",
+    "src/defensive_reorganization_spatial_form_skillcorner_external.py": "933cfe4da4687f20473914d452e7c211e2a6ae955597400093af990e0f695f2c",
+    "src/defensive_reorganization_spatial_value_v1_design.py": "b13bb0f5b394910eb72b68072243287c31bede88870399280dc4354cd8495156",
+    "src/infrastructure/skillcorner_spatial_form_adapter.py": "78ff9af7adb795a71585061d677e4fd1c77d6e5eed90645217664ec8a9fd7246",
+    "src/skillcorner_lateral_gradient_support_preflight_v1.py": "3df05634112a41edb1b7eba356a06b98573a7976950a9f188fc470dcf1adf931",
+    "src/skillcorner_lateral_gradient_v1.py": "1bee4e4b5c7d7f6457d34bb549978fc657e647bb4d537b27f13fe987d5681627",
+    "tests/test_skillcorner_lateral_gradient_support_preflight_v1.py": "25dadbe60c903cd597a3160e99948c75a1e28b9b4689e5d5e6643d032163c5cf",
+    "tests/test_skillcorner_lateral_gradient_v1.py": "ebdf0fdcfe2fcc001763f76fe340de4bbdd4a3717a2f29971b66679c56dc642d"
+  },
+  "outputs": [
+    "pooled_estimate.csv",
+    "match_estimates.csv",
+    "lomo_estimates.csv",
+    "quality_estimate.csv",
+    "bootstrap_summary.json",
+    "manifest.json",
+    "hard_qc.json",
+    "reproduction.json",
+    "final_hashes.json"
+  ],
+  "source_ledger_sha256": "7bd20c0fe5b4a02f3dba6396791ead40f71c91c2b4b8cc4dd7a787ffcff64834",
+  "status": "STAGING_QC_PASSED_NOT_AUTHORITATIVE",
+  "support_digests": {
+    "primary": "2dc4e404e2c462c54416ac122f9a33950ced22d5e5e2fe5dc6ca7760d892d018",
+    "quality": "a81c9a16cae54ed0f4b45908265f9c91514eb3e3f9467cbbf9105812de9fb17b"
+  }
+}

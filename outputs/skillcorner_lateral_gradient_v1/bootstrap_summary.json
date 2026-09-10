@@ -1,0 +1,6 @@
+{
+  "draws_requested": 2000,
+  "prng": "PCG64",
+  "seed": 20260909,
+  "valid_paired_draws": 2000
+}

@@ -1,0 +1,9 @@
+{
+  "all_nine_matches": true,
+  "exact_source_identity": true,
+  "exact_support_identity": true,
+  "full_rank": true,
+  "source_rows_absent": true,
+  "status": "STAGING_QC_PASSED_NOT_AUTHORITATIVE",
+  "valid_paired_draws": 2000
+}

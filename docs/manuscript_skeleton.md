@@ -262,9 +262,10 @@ pre-specified measurement in a distinct tracking environment.
 
 A separate directional replication used nine usable 2024/25 A-League matches
 from SkillCorner Open Data. This broadcast-derived tracking environment was used
-only for the outward-versus-goalward comparison, under separate
-provider-compatible rules. SkillCorner and IDSSE were analysed separately rather
-than pooled across providers because their tracking and support conditions differ.
+for the outward-versus-goalward comparison and subsequently for a prospectively
+frozen lateral-starting-position test, under separate frozen specifications.
+SkillCorner and IDSSE were analysed separately rather than pooled across providers
+because their tracking and support conditions differ.
 
 Across the closed analyses, the temporal sample contained 8,910 supported
 attacker-time anchors in the two Metrica matches and 72,316 in the seven IDSSE
@@ -436,6 +437,13 @@ estimands so that observed context is not silently promoted to a tactical class.
 The two variables represent relative unit depth and immediate ball proximity,
 respectively, rather than an exhaustive account of match state.
 
+A subsequent, prospectively frozen SkillCorner analysis tested the IDSSE-generated
+spatial hypothesis using absolute canonical lateral position at $t-2$ as the sole
+predictor of the near-minus-middle outcome, with match intercepts and equal total
+fitting weight per match. It included no movement or other starting-context
+covariates. The population, paired temporal-block inference, and required
+majority-detected sensitivity are detailed in Supplement S6.
+
 ### 4.7 Response-scale follow-up
 
 Defensive movement can be represented at several scales. In addition to the
@@ -578,6 +586,16 @@ construct a response score. They describe conditional differences in the observe
 outcome in the IDSSE sample, not a complete account of the game state that
 produced it.
 
+In a prospectively frozen SkillCorner test of the IDSSE-generated spatial
+hypothesis, greater absolute lateral starting position was associated with a
+larger subsequent near-minus-middle defender-relative path contrast
+($\beta=0.00981$ m/m, 95% CI [0.00812, 0.01157]). Under the frozen linear model,
+a 10 m greater absolute lateral starting position corresponded to about 9.8 cm
+greater group-average near-minus-middle defender-relative path. The slope was
+positive in all nine matches and all nine leave-one-match-out estimates. The
+majority-detected sensitivity was also positive, with a larger estimate
+($\beta=0.01963$ m/m, 95% CI [0.01624, 0.02311]).
+
 ### 5.4 Response-scale boundary
 
 The secondary response-scale analysis found that a 5 m goalward-versus-outward
@@ -705,6 +723,15 @@ not make ball proximity or relative depth a tactical label in this analysis.
 The estimates describe conditional associations between starting geometry and
 the observed outcome, not evidence for an optimal starting position, a pressing trigger, or a
 particular tactical template.
+
+The IDSSE descriptive map generated the hypothesis of a positive
+lateral-starting-position association. The prospectively frozen SkillCorner test
+supports that low-dimensional association in a separate tracking environment
+already used for the directional study; it does not replicate the heatmap itself.
+The larger majority-detected estimate supports consistency of direction rather
+than stability of magnitude. Because the model adjusts for match but not movement
+or other starting context, the result does not isolate a causal effect of lateral
+position or establish monotonic behavior at every location.
 
 ### 6.5 Analyst use
 

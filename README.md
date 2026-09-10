@@ -158,6 +158,12 @@ its Conservative support covers 99.89% of the legal pitch. Its tighter display
 scale is presentation-only and does not change the scientific primary. This is
 not a significance map or a hotspot test.*
 
+A [prospectively frozen SkillCorner follow-up](docs/results/skillcorner_lateral_gradient_v1.md)
+in the already-used nine-match sample found a positive lateral-starting-position
+association ($\beta=0.00981$ m/m, 95% CI [0.00812, 0.01157]; all nine match slopes
+positive). This supports the IDSSE-generated low-dimensional lateral hypothesis,
+not the heatmap itself.
+
 ## Data and engineering
 
 | Data source | Role |

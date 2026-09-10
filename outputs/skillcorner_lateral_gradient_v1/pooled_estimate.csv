@@ -1,0 +1,2 @@
+sample,beta_lat_m_per_m,ci_low_m_per_m,ci_high_m_per_m,ten_m_contrast_m,valid_bootstrap_draws,classification
+primary,0.0098086533864113427,0.0081246756511706413,0.01157275468504116,0.098086533864113423,2000,SUPPORTED

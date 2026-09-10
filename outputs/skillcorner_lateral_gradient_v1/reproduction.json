@@ -1,0 +1,29 @@
+{
+  "authorization_reference": "SC-LATERAL-GRADIENT-V1-FIRST-EXECUTION-05ea0c7-20260909",
+  "byte_identical": true,
+  "primary_staging_sha256": {
+    "bootstrap_summary.json": "d6401db1e97075a17863b53544887b0915780ed032e27ed885320e9a1bf48f61",
+    "hard_qc.json": "2a6b31203336215988731f5ee74dbb9fef4b96325723fe705bffa83941609c12",
+    "lomo_estimates.csv": "19c14794e02c3cf3d41ee0c3ff9ccf32852c01100b723d28210af90878439616",
+    "manifest.json": "0de27f518f8980cc0cc3e5474aca31765a1dbb82bd0cef426a788f11ed9ffc9a",
+    "match_estimates.csv": "622d5ae36a0fa63382ba8d02d4dc06a02c8d9e9ce14a776708a7a63874038965",
+    "pooled_estimate.csv": "8602c7f8377db42b70326bcddb066e8286f45c390e1bd8b2778bc642ef5fd448",
+    "quality_estimate.csv": "d46a9b00d78114f10dfa6ebbdc33ca6710146f9d57688dc7fb841c72486d7972",
+    "report.md": "eae9de912f39e2085c235c5dff4c07993458bcf11bb8b789b3ad705902737c46"
+  },
+  "report_metadata": {
+    "path": "../../docs/results/skillcorner_lateral_gradient_v1.md",
+    "sha256": "eae9de912f39e2085c235c5dff4c07993458bcf11bb8b789b3ad705902737c46"
+  },
+  "reproduction_staging_sha256": {
+    "bootstrap_summary.json": "d6401db1e97075a17863b53544887b0915780ed032e27ed885320e9a1bf48f61",
+    "hard_qc.json": "2a6b31203336215988731f5ee74dbb9fef4b96325723fe705bffa83941609c12",
+    "lomo_estimates.csv": "19c14794e02c3cf3d41ee0c3ff9ccf32852c01100b723d28210af90878439616",
+    "manifest.json": "0de27f518f8980cc0cc3e5474aca31765a1dbb82bd0cef426a788f11ed9ffc9a",
+    "match_estimates.csv": "622d5ae36a0fa63382ba8d02d4dc06a02c8d9e9ce14a776708a7a63874038965",
+    "pooled_estimate.csv": "8602c7f8377db42b70326bcddb066e8286f45c390e1bd8b2778bc642ef5fd448",
+    "quality_estimate.csv": "d46a9b00d78114f10dfa6ebbdc33ca6710146f9d57688dc7fb841c72486d7972",
+    "report.md": "eae9de912f39e2085c235c5dff4c07993458bcf11bb8b789b3ad705902737c46"
+  },
+  "status": "DETERMINISTIC_REPRODUCTION_PASSED"
+}

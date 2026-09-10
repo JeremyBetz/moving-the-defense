@@ -102,6 +102,38 @@ Both signs were negative in all seven match and leave-one-match-out analyses. Th
 
 *Figure S3. Starting-context relationships are descriptive associations with the observed local geometric outcome.*
 
+### S6.1 Prospective SkillCorner lateral-starting-position test
+
+The IDSSE descriptive spatial pattern generated a prospectively frozen
+SkillCorner hypothesis in a provider environment already used for the directional
+study. The model was
+
+$$
+Y_{im}=\alpha_m+\beta_{\mathrm{lat}}|y_{c,im}(t-2)|+\epsilon_{im},
+$$
+
+with match intercepts, equal total fitting weight per match, and no other
+covariates. The primary sample contained 49,107 observations and the required
+majority-detected sensitivity contained 11,810. The primary estimate was
+$\beta_{\mathrm{lat}}=0.0098086534$ m/m (95% interval [0.0081246757,
+0.0115727547]); a 10 m greater absolute lateral starting position therefore
+corresponded to about 9.8 cm greater group-average near-minus-middle
+defender-relative path under the frozen linear model. All nine match slopes and
+all nine leave-one-match-out estimates were positive.
+
+The majority-detected sensitivity was also positive
+($\beta_{\mathrm{lat}}=0.0196305655$ m/m, interval [0.0162436399,
+0.0231065256]). Its larger magnitude supports consistency of direction rather
+than stability of magnitude, and the sensitivity is not ground truth. Inference
+used 2,000 paired resamples of 60-second match-by-period blocks; all 2,000 paired
+draws were valid. The interval is conditional on these nine matches, the frozen
+block convention, and the measurement process. This prospective test supports a
+low-dimensional lateral association; it does not replicate the IDSSE heatmap,
+establish monotonic behavior at every location, or identify causation, optimal
+positions, tactical effectiveness, or value. See the [protocol](protocols/skillcorner_lateral_gradient_v1.md),
+[closed report](results/skillcorner_lateral_gradient_v1.md), and [final authority
+ledger](../outputs/skillcorner_lateral_gradient_v1/final_hashes.json).
+
 ## S7. Response scale and shared defensive movement
 
 The response-scale analysis separates shared defensive-unit translation from internal focal-relative movement rather than treating either as a complete description. The secondary, nonclassifying goalward centroid displacement was 2.962709 m [2.870720, 3.048322] for the frozen goalward-versus-outward comparison. Width change was mixed (0.134003 m [-0.006622, 0.273430]). These channels are non-orthogonal and non-exhaustive: a shared shift and local change can coexist.
@@ -137,6 +169,7 @@ Provider environments were analyzed under frozen compatible specifications, with
 | Directional localized geometry | IDSSE, 7 matches | outward minus goalward 0.056856 m/m [0.051358, 0.062430] | Replicated directional association |
 | Directional localized geometry | SkillCorner, 9 matches | outward minus goalward 0.048883 m/m [0.042940, 0.054707] | Separate provider-compatible replication |
 | Starting context | IDSSE, 7 matches | unit offset -0.010161; attacker--ball distance -0.007533 m/m | Descriptive context, not mechanism |
+| Absolute lateral starting position | SkillCorner, 9 matches | $\beta_{\mathrm{lat}}=0.009809$ m/m [0.008125, 0.011573]; 9/9 match and LOMO estimates positive | Prospective test of IDSSE-generated hypothesis; not heatmap validation |
 | Response scale | IDSSE, 7 matches | centroid translation 2.962709 m [2.870720, 3.048322] | Secondary/nonclassifying shared-movement context |
 | Opportunity redistribution | Metrica Game 1 | $\beta_D=-0.02407$ [-0.09392, 0.04776] | Negative boundary result |
 

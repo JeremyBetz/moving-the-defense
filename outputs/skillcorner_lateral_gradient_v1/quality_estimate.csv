@@ -1,0 +1,2 @@
+sample,beta_lat_m_per_m,ci_low_m_per_m,ci_high_m_per_m,ten_m_contrast_m,valid_bootstrap_draws
+majority_detected,0.019630565465954434,0.016243639904342848,0.023106525552496981,0.19630565465954433,2000
