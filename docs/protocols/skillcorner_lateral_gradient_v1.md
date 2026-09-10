@@ -10,6 +10,8 @@
 
 Within the nine governed SkillCorner matches, is a larger absolute lateral attacker starting position associated with larger subsequent localized near-minus-middle defender-relative reorganization?
 
+The IDSSE spatial pattern generated the hypothesis. This SkillCorner analysis tests that hypothesis prospectively in a provider environment already used previously for the directional study. It is not untouched-dataset replication or independent new dataset validation, and does not validate the IDSSE heatmap itself.
+
 For attacker-anchor observation (i) in match (m), the predictor is
 
 \[
@@ -73,7 +75,11 @@ No `MIXED` or `NOT SUPPORTED` result may trigger A2, A3, alternate filters, a he
 
 Only the compact aggregate files named in the config may be published. Observation IDs, tracking coordinates, identities, timestamps, blocks, provider rows, row-level outcomes, predictions, and residuals may never be serialized by this analysis.
 
-Two isolated executions with identical frozen inputs must produce byte-identical governed machine-readable outputs. A complete staging package is validated before its output directory is promoted last. `final_hashes.json` is the sole nonrecursive authority for the final package, and every recorded authoritative hash is revalidated before success. Existing destinations are never overwritten.
+Primary and reproduction payloads are materialized in separate temporary destinations with identical frozen inputs. All governed machine-readable outputs and the deterministic report must be byte-identical. Exact structural validation checks schemas, cardinalities, nine-match identities, finite values, counts, classification, and frozen lineage; unknown nested fields are rejected. The shared equal-match OLS implementation is hash-bound without changing its behavior.
+
+The validated staging package is promoted without final authority. Its manifest and QC retain the explicitly non-authoritative staging status while pending at final paths. Every authoritative artifact and the report are checked before `final_hashes.json` is atomically published last, then reread and validated again before success. This nonrecursive ledger is the sole final authority. If publication or subsequent validation fails, no final-valid marker may remain; pending aggregates may remain for diagnosis. Existing destinations are never overwritten.
+
+Reproduction hashes describe pre-authority staging artifacts only. The actual report destination is recorded relative to the authoritative output directory, consistently in reproduction metadata and the final ledger, including custom destinations. Report validation cannot be omitted. The report exposes the approved primary and quality estimates/intervals, quality sign, match-sign count, nine LOMO estimates, classification, support counts/digests, valid-draw count, source and frozen dependency hashes, and measurement/interpretation limitations. It introduces no new analysis or diagnostic.
 
 The primary tracking contains both detected and provider-extrapolated coordinates, and direct-detection retention varies by match. The support audit found no strong monotonic deterioration of aggregate quality with `|y|`; it did not prove coordinate accuracy. The interval is conditional on these nine matches and this measurement process. Results describe an observational spatial association, not causation, influence, marking, tactical effectiveness, or value.
 

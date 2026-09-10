@@ -8,14 +8,13 @@ construction is reachable only through the explicit, separately authorized
 from __future__ import annotations
 
 import argparse
+import csv
 import hashlib
 import io
 import json
 import math
 import os
-import platform
 import tempfile
-from collections import Counter
 from pathlib import Path
 from typing import Any, Iterable, Mapping, Sequence
 
@@ -97,16 +96,20 @@ def verify_freeze(root: Path = ROOT) -> dict[str, str]:
         str(SOURCE.relative_to(ROOT)), str(TESTS.relative_to(ROOT)),
     }
     _require(set(recorded) >= required, "incomplete response-analysis hash ledger")
+    _require("src/defensive_reorganization_spatial_value_v1_design.py" in
+             ledger.get("bound_response_construction_sha256", {}), "missing shared OLS identity")
+    verified = {}
     for group_name in ("frozen_artifacts_sha256", "bound_support_sha256", "bound_response_construction_sha256"):
         group = ledger.get(group_name, {})
         _require(bool(group), f"missing hash-ledger group: {group_name}")
         for relative, expected in group.items():
             _require(sha(root / relative) == expected, f"frozen artifact hash mismatch: {relative}")
+            verified[relative] = expected
     cfg = load_config(root)
     for key in ("manifest", "source_hashes"):
         relative = cfg["support"][f"{key}_path"]
         _require(sha(root / relative) == cfg["support"][f"{key}_sha256"], f"support {key} hash mismatch")
-    return recorded
+    return verified
 
 
 def reconcile_support_observations(rows: Sequence[SupportObservation], manifest: Mapping[str, Any], cfg: Mapping[str, Any]) -> dict[str, Any]:
@@ -302,7 +305,12 @@ def analyze(rows: pd.DataFrame, cfg: Mapping[str, Any]) -> dict[str, Any]:
         "quality": {"beta": quality_fit["beta_lat_m_per_m"], "low": float(qlow), "high": float(qhigh)},
         "match_estimates": matches_table, "lomo_estimates": lomo,
         "valid_bootstrap_draws": valid, "classification": status,
-        "counts": {"primary": len(data), "quality": len(quality_rows)},
+        "fit_qc": {"primary_full_rank": primary_fit["rank"] == len(matches) + 1,
+                   "quality_full_rank": quality_fit["rank"] == len(matches) + 1},
+        "counts": {"primary": len(data), "quality": len(quality_rows), "per_match": {
+            str(match): {"primary": int((data.match_id == match).sum()),
+                         "quality": int((quality_rows.match_id == match).sum())}
+            for match in matches}},
     }
 
 
@@ -324,19 +332,126 @@ def build_payloads(result: Mapping[str, Any], provenance: Mapping[str, Any], cfg
         "lomo_estimates.csv": _csv_bytes(result["lomo_estimates"], schemas["lomo_estimates.csv"]),
     }
     payloads["bootstrap_summary.json"] = _json_bytes({"draws_requested": cfg["bootstrap"]["draws"], "valid_paired_draws": valid, "seed": cfg["bootstrap"]["seed"], "prng": "PCG64"})
-    payloads["manifest.json"] = _json_bytes({"status": "STAGING_QC_PASSED_NOT_AUTHORITATIVE", "classification": result["classification"], "counts": result["counts"], "support_digests": provenance["observation_digests"], "authorization_reference": provenance["authorization_reference"], "frozen_hashes": provenance["frozen_hashes"], "outputs": cfg["outputs"]["files"]})
-    payloads["hard_qc.json"] = _json_bytes({"status": "STAGING_QC_PASSED_NOT_AUTHORITATIVE", "exact_support_identity": True, "exact_source_identity": True, "all_nine_matches": True, "full_rank": True, "valid_paired_draws": valid, "source_rows_absent": True})
+    expected_digests = {key: cfg["support"][f"{key}_digest"] for key in ("primary", "quality")}
+    expected_counts = _expected_counts(cfg)
+    payloads["manifest.json"] = _json_bytes({"status": "STAGING_QC_PASSED_NOT_AUTHORITATIVE", "classification": result["classification"], "counts": result["counts"], "support_digests": provenance["observation_digests"], "authorization_reference": provenance["authorization_reference"], "frozen_hashes": provenance["frozen_hashes"], "outputs": cfg["outputs"]["files"], "source_ledger_sha256": cfg["support"]["source_hashes_sha256"]})
+    payloads["hard_qc.json"] = _json_bytes({"status": "STAGING_QC_PASSED_NOT_AUTHORITATIVE", "exact_support_identity": provenance["observation_digests"] == expected_digests and result["counts"] == expected_counts, "exact_source_identity": provenance["frozen_hashes"].get(cfg["support"]["source_hashes_path"]) == cfg["support"]["source_hashes_sha256"], "all_nine_matches": set(result["match_estimates"].match_id) == set(cfg["matches"]), "full_rank": result["fit_qc"]["primary_full_rank"] and result["fit_qc"]["quality_full_rank"], "valid_paired_draws": valid, "source_rows_absent": all(list(pd.read_csv(io.BytesIO(payloads[name])).columns) == list(columns) for name, columns in schemas.items())})
     return payloads
 
 
-def validate_public_payloads(payloads: Mapping[str, bytes], cfg: Mapping[str, Any]) -> None:
+def _expected_counts(cfg: Mapping[str, Any]) -> dict[str, Any]:
+    return {"primary": cfg["support"]["primary_count"], "quality": cfg["support"]["quality_count"],
+            "per_match": cfg["support"]["per_match_counts"]}
+
+
+def _expected_frozen_hashes() -> dict[str, str]:
+    ledger = json.loads(LEDGER.read_text(encoding="utf-8"))
+    return {path: digest for group in ("frozen_artifacts_sha256", "bound_support_sha256",
+                                      "bound_response_construction_sha256")
+            for path, digest in ledger[group].items()}
+
+
+def _keys(value: Any, expected: Iterable[str], name: str) -> None:
+    _require(type(value) is dict and set(value) == set(expected), f"unexpected structural fields in {name}")
+
+
+def _read_json(value: bytes, name: str, cfg: Mapping[str, Any]) -> dict[str, Any]:
+    def unique(pairs):
+        result = {}
+        for key, item in pairs:
+            _require(key not in result, f"duplicate JSON key in {name}")
+            result[key] = item
+        return result
+    def invalid_constant(value):
+        raise LateralGradientInvalid(f"nonfinite JSON constant in {name}")
+    try:
+        result = json.loads(value.decode("utf-8"), object_pairs_hook=unique, parse_constant=invalid_constant)
+    except (ValueError, UnicodeError) as exc:
+        raise LateralGradientInvalid(f"forbidden or malformed JSON in {name}") from exc
+    _keys(result, cfg["outputs"]["json_keys"][name], name)
+    # Finite JSON syntax can still overflow, e.g. 1e999.
+    def finite(item):
+        if isinstance(item, dict):
+            for child in item.values(): finite(child)
+        elif isinstance(item, list):
+            for child in item: finite(child)
+        elif isinstance(item, float):
+            _require(math.isfinite(item), f"nonfinite JSON value in {name}")
+    finite(result)
+    return result
+
+
+def _integer(value: Any, name: str) -> None:
+    _require(type(value) is int and value >= 0, f"invalid integer {name}")
+
+
+def _sign(value: float) -> str:
+    return "positive" if value > 0 else "negative" if value < 0 else "zero"
+
+
+def validate_public_payloads(payloads: Mapping[str, bytes], cfg: Mapping[str, Any]) -> dict[str, Any]:
+    """Allow only the frozen aggregate structure, never arbitrary nested data."""
     expected = set(cfg["outputs"]["files"]) - {"reproduction.json", "final_hashes.json"}
     _require(set(payloads) == expected, "unexpected aggregate package")
-    forbidden = tuple(cfg["outputs"]["forbidden_serialized_content"])
     for name, value in payloads.items():
         _require(len(value) < 10 * 1024 * 1024, "aggregate output exceeds publication limit")
-        lowered = value.decode("utf-8").lower()
-        _require(not any(token.lower() in lowered for token in forbidden), f"forbidden serialized field in {name}")
+    tables = {}
+    text_fields = {"sample", "classification", "sign"}
+    for name, columns in cfg["outputs"]["schemas"].items():
+        records = list(csv.reader(io.StringIO(payloads[name].decode("utf-8"))))
+        _require(bool(records) and records[0] == columns and all(len(row) == len(columns) for row in records[1:]), f"aggregate output schema mismatch: {name}")
+        expected_n = cfg["outputs"]["csv_rows"][name]
+        _require(len(records) - 1 == expected_n, f"aggregate row cardinality mismatch: {name}")
+        frame = pd.read_csv(io.BytesIO(payloads[name]), float_precision="round_trip")
+        for column in set(columns) - text_fields:
+            try:
+                values = pd.to_numeric(frame[column], errors="raise").to_numpy(float)
+            except (ValueError, TypeError) as exc:
+                raise LateralGradientInvalid(f"invalid numeric column in {name}") from exc
+            _require(np.isfinite(values).all(), f"nonfinite numeric column in {name}")
+        if name in ("match_estimates.csv", "lomo_estimates.csv"):
+            identity = "match_id" if name.startswith("match") else "omitted_match_id"
+            _require(not frame[identity].duplicated().any() and set(frame[identity]) == set(cfg["matches"]), f"aggregate match identity mismatch: {name}")
+            _require(frame.sign.tolist() == [_sign(x) for x in frame.beta_lat_m_per_m], f"sign mismatch: {name}")
+        tables[name] = frame
+    primary = tables["pooled_estimate.csv"].iloc[0]
+    quality = tables["quality_estimate.csv"].iloc[0]
+    _require(primary["sample"] == "primary" and quality["sample"] == "majority_detected", "sample status mismatch")
+    for row in (primary, quality):
+        _require(row.ci_low_m_per_m <= row.ci_high_m_per_m, "reversed interval")
+        _require(row.ten_m_contrast_m == 10 * row.beta_lat_m_per_m, "translation mismatch")
+        _require(float(row.valid_bootstrap_draws).is_integer(), "noninteger bootstrap count")
+    valid = int(primary.valid_bootstrap_draws)
+    _require(valid == quality.valid_bootstrap_draws and cfg["bootstrap"]["minimum_valid_paired_draws"] <= valid <= cfg["bootstrap"]["draws"], "invalid paired bootstrap count")
+    classification = classify_result(primary.beta_lat_m_per_m, primary.ci_low_m_per_m, quality.beta_lat_m_per_m, tables["lomo_estimates.csv"].beta_lat_m_per_m.tolist())
+    _require(primary.classification == classification, "classification mismatch")
+    manifest = _read_json(payloads["manifest.json"], "manifest.json", cfg)
+    qc = _read_json(payloads["hard_qc.json"], "hard_qc.json", cfg)
+    boot = _read_json(payloads["bootstrap_summary.json"], "bootstrap_summary.json", cfg)
+    _require(manifest["status"] == qc["status"] == "STAGING_QC_PASSED_NOT_AUTHORITATIVE", "invalid staging status")
+    _require(manifest["classification"] == classification, "manifest classification mismatch")
+    _keys(manifest["counts"], ("primary", "quality", "per_match"), "counts")
+    _keys(manifest["counts"]["per_match"], map(str, cfg["matches"]), "per-match counts")
+    for sample in ("primary", "quality"):
+        _integer(manifest["counts"][sample], sample)
+    for counts in manifest["counts"]["per_match"].values():
+        _keys(counts, ("primary", "quality"), "match counts")
+        for key, value in counts.items(): _integer(value, key)
+        _require(0 < counts["quality"] <= counts["primary"], "invalid quality count")
+    _require(manifest["counts"] == _expected_counts(cfg), "support counts mismatch")
+    for sample in ("primary", "quality"):
+        _require(sum(v[sample] for v in manifest["counts"]["per_match"].values()) == manifest["counts"][sample], "inconsistent total count")
+    _require(manifest["support_digests"] == {key: cfg["support"][f"{key}_digest"] for key in ("primary", "quality")}, "support lineage mismatch")
+    _require(manifest["source_ledger_sha256"] == cfg["support"]["source_hashes_sha256"], "source lineage mismatch")
+    _require(manifest["frozen_hashes"] == _expected_frozen_hashes(), "frozen dependency lineage mismatch")
+    _require(manifest["outputs"] == cfg["outputs"]["files"], "output inventory mismatch")
+    _require(type(manifest["authorization_reference"]) is str and bool(manifest["authorization_reference"].strip()), "missing authorization metadata")
+    for key in ("draws_requested", "valid_paired_draws", "seed"):
+        _integer(boot[key], key)
+    _require(boot == {"draws_requested": cfg["bootstrap"]["draws"], "valid_paired_draws": valid, "seed": cfg["bootstrap"]["seed"], "prng": "PCG64"}, "bootstrap metadata mismatch")
+    _integer(qc["valid_paired_draws"], "QC draws")
+    _require(qc["valid_paired_draws"] == valid and all(qc[key] is True for key in set(qc) - {"status", "valid_paired_draws"}), "hard QC mismatch")
+    return {"tables": tables, "manifest": manifest}
 
 
 def _write_package(path: Path, payloads: Mapping[str, bytes]) -> None:
@@ -345,52 +460,142 @@ def _write_package(path: Path, payloads: Mapping[str, bytes]) -> None:
         (path / name).write_bytes(value)
 
 
+def _report_bytes(checked: Mapping[str, Any], cfg: Mapping[str, Any]) -> bytes:
+    manifest, tables = checked["manifest"], checked["tables"]
+    primary, quality = tables["pooled_estimate.csv"].iloc[0], tables["quality_estimate.csv"].iloc[0]
+    matches, lomo = tables["match_estimates.csv"], tables["lomo_estimates.csv"]
+    lines = ["# SkillCorner Lateral Gradient v1", "", cfg["report_lineage"], "",
+             "Frozen hypothesis: beta_lat > 0 for |y_c(t-2)| under match-intercept equal-total-match-weight OLS.", "",
+             f"**Classification:** {manifest['classification']}", "",
+             f"Primary beta_lat: {primary.beta_lat_m_per_m:.6f} m/m; 95% interval [{primary.ci_low_m_per_m:.6f}, {primary.ci_high_m_per_m:.6f}].",
+             f"Majority-detected beta_lat: {quality.beta_lat_m_per_m:.6f} m/m; 95% interval [{quality.ci_low_m_per_m:.6f}, {quality.ci_high_m_per_m:.6f}]; sign: {_sign(quality.beta_lat_m_per_m)}.",
+             f"Positive match slopes: {int((matches.sign == 'positive').sum())}/9. Match slopes are descriptive, not independent replications.", "",
+             "## Leave-one-match-out estimates", ""]
+    lines.extend(f"- Omit {int(row.omitted_match_id)}: {row.beta_lat_m_per_m:.6f} m/m ({row.sign})." for row in lomo.itertuples())
+    lines.extend(["", "## Population and provenance", "",
+                  f"Primary observations: {manifest['counts']['primary']}; quality observations: {manifest['counts']['quality']}.",
+                  f"Valid paired bootstrap draws: {int(primary.valid_bootstrap_draws)}/{cfg['bootstrap']['draws']}.",
+                  f"Support manifest: `{cfg['support']['manifest_path']}`; SHA-256 `{cfg['support']['manifest_sha256']}`.",
+                  f"Pinned source ledger: `{cfg['support']['source_hashes_path']}`; SHA-256 `{manifest['source_ledger_sha256']}`."])
+    for match, counts in manifest["counts"]["per_match"].items():
+        lines.append(f"- Match {match}: primary {counts['primary']}; quality {counts['quality']}.")
+    for sample, digest in manifest["support_digests"].items():
+        lines.append(f"- {sample} observation digest: `{digest}`.")
+    for path, digest in sorted(manifest["frozen_hashes"].items()):
+        lines.append(f"- `{path}`: `{digest}`.")
+    lines.extend(["", "## Measurement and interpretation boundaries", "",
+                  "Coordinates include detected and provider-extrapolated positions; direct-detection retention varies by match. The aggregate support audit did not establish coordinate accuracy. The majority-detected sensitivity is not ground truth.",
+                  "The interval is conditional on these nine matches, the frozen 60-second block convention, and this measurement process. Finite out-of-pitch starts remain retained; the sparse tail beyond 34 m is not interpreted.",
+                  "This is an observational spatial association, not causation, influence, marking, tactical effectiveness, or value. It does not validate the IDSSE heatmap itself. No post-result model, filter, or diagnostic changes are authorized.", ""])
+    return "\n".join(lines).encode("utf-8")
+
+
+def _report_path(output: Path, report: Path) -> str:
+    return Path(os.path.relpath(report.resolve(), output.resolve())).as_posix()
+
+
+def _digest_map(payloads: Mapping[str, bytes]) -> dict[str, str]:
+    return {name: hashlib.sha256(value).hexdigest() for name, value in sorted(payloads.items())}
+
+
+def _validate_authoritative(output: Path, cfg: Mapping[str, Any], recorded: Mapping[str, Any], report: Path) -> dict[str, str]:
+    """Validate actual final paths before (and after) publishing authority."""
+    _keys(recorded, cfg["outputs"]["json_keys"]["final_hashes.json"], "final authority")
+    _require(recorded["closure_status"] == "FINAL_PACKAGE_VALID" and recorded["self_hash_excluded"] is True, "invalid final authority")
+    expected = set(cfg["outputs"]["files"]) - {"final_hashes.json"}
+    _keys(recorded["artifacts_sha256"], expected, "final artifact identities")
+    _require({p.name for p in output.iterdir()} in (expected, expected | {"final_hashes.json"}), "unexpected authoritative file set")
+    _require(not output.is_symlink() and not report.is_symlink() and report.is_file(), "unsafe authoritative path")
+    for name in expected:
+        _require(not (output / name).is_symlink() and (output / name).is_file(), "unsafe authoritative artifact")
+        _require((output / name).stat().st_size < 10 * 1024 * 1024, "aggregate output exceeds publication limit")
+    payloads = {name: (output / name).read_bytes() for name in expected}
+    base = {name: value for name, value in payloads.items() if name != "reproduction.json"}
+    checked = validate_public_payloads(base, cfg)
+    reproduction = _read_json(payloads["reproduction.json"], "reproduction.json", cfg)
+    _require(reproduction["status"] == "DETERMINISTIC_REPRODUCTION_PASSED" and reproduction["byte_identical"] is True, "invalid reproduction status")
+    _require(reproduction["authorization_reference"] == checked["manifest"]["authorization_reference"], "authorization metadata mismatch")
+    report_bytes = _report_bytes(checked, cfg)
+    expected_staging = _digest_map({**base, "report.md": report_bytes})
+    _require(reproduction["primary_staging_sha256"] == reproduction["reproduction_staging_sha256"] == expected_staging, "staging hash mismatch")
+    expected_report = {"path": _report_path(output, report), "sha256": hashlib.sha256(report_bytes).hexdigest()}
+    _require(reproduction["report_metadata"] == expected_report, "reproduction report identity mismatch")
+    _require(recorded["report_path"] == expected_report["path"] and recorded["report_sha256"] == expected_report["sha256"], "final report path/hash mismatch")
+    _require(report.read_bytes() == report_bytes and sha(report) == recorded["report_sha256"], "final report content/hash mismatch")
+    actual = {name: sha(output / name) for name in sorted(expected)}
+    _require(actual == recorded["artifacts_sha256"], "final authoritative hash mismatch")
+    return actual
+
+
 def close_reproduced_package(primary: Mapping[str, bytes], rerun: Mapping[str, bytes], output: Path, report: Path, cfg: Mapping[str, Any], authorization_reference: str) -> dict[str, Any]:
-    """Publish only after byte-identical isolated staging payloads."""
+    """Promote pending files, validate final paths, then publish authority last."""
+    output, report = Path(output), Path(report)
     _require(not output.exists() and not output.is_symlink() and not report.exists() and not report.is_symlink(), "refusing to overwrite authoritative result")
-    validate_public_payloads(primary, cfg); validate_public_payloads(rerun, cfg)
-    _require(primary == rerun, "deterministic reproduction failed")
-    with tempfile.TemporaryDirectory(prefix="skillcorner-lateral-gradient-close-") as tmp:
-        staging = Path(tmp) / "finalized"
-        reproduction = _json_bytes({"status": "DETERMINISTIC_REPRODUCTION_PASSED", "authorization_reference": authorization_reference, "primary_staging_sha256": {name: hashlib.sha256(value).hexdigest() for name, value in sorted(primary.items())}, "reproduction_staging_sha256": {name: hashlib.sha256(value).hexdigest() for name, value in sorted(rerun.items())}, "byte_identical": True})
-        complete = dict(primary); complete["reproduction.json"] = reproduction
-        manifest = json.loads(primary["manifest.json"])
-        pooled = pd.read_csv(io.BytesIO(primary["pooled_estimate.csv"])).iloc[0]
-        report_bytes = (
-            "# SkillCorner Lateral Gradient v1\n\n"
-            f"**Classification:** {manifest['classification']}\n\n"
-            f"Primary beta: {pooled['beta_lat_m_per_m']:.6f} m/m "
-            f"(95% interval [{pooled['ci_low_m_per_m']:.6f}, {pooled['ci_high_m_per_m']:.6f}]).\n\n"
-            "This is an observational within-match lateral association. The majority-detected "
-            "sample is a required measurement-quality sensitivity, not ground truth. The interval "
-            "is conditional on these nine matches and this measurement process.\n"
-        ).encode("utf-8")
-        final = {
-            "closure_status": "FINAL_PACKAGE_VALID", "self_hash_excluded": True,
-            "artifacts_sha256": {name: hashlib.sha256(value).hexdigest() for name, value in sorted(complete.items())},
-            "report_path": cfg["outputs"]["report"], "report_sha256": hashlib.sha256(report_bytes).hexdigest(),
-        }
-        complete["final_hashes.json"] = _json_bytes(final)
-        _write_package(staging, complete)
-        report.parent.mkdir(parents=True, exist_ok=True)
-        with report.open("xb") as handle:
-            handle.write(report_bytes)
-        output.parent.mkdir(parents=True, exist_ok=True)
-        os.replace(staging, output)
-    validate_final_hashes(output, cfg, report)
+    _require(not report.resolve().is_relative_to(output.resolve()), "report must be outside package directory")
+    checked = [validate_public_payloads(p, cfg) for p in (primary, rerun)]
+    _require(all(item["manifest"]["authorization_reference"] == authorization_reference for item in checked), "authorization metadata mismatch")
+    output.parent.mkdir(parents=True, exist_ok=True)
+    report.parent.mkdir(parents=True, exist_ok=True)
+    # Keep isolated staging on failure as diagnosis evidence. No row data enter it.
+    temporary = Path(tempfile.mkdtemp(prefix=".lateral-staging-", dir=output.parent))
+    staged_runs = []
+    for name, payload, validated in zip(("primary", "reproduction"), (primary, rerun), checked):
+        run = temporary / name
+        _write_package(run, {**payload, "report.md": _report_bytes(validated, cfg)})
+        actual = {p.name: p.read_bytes() for p in run.iterdir()}
+        validate_public_payloads({k: v for k, v in actual.items() if k != "report.md"}, cfg)
+        staged_runs.append(actual)
+    _require(staged_runs[0] == staged_runs[1], "deterministic reproduction failed")
+    report_bytes = staged_runs[0]["report.md"]
+    report_metadata = {"path": _report_path(output, report), "sha256": hashlib.sha256(report_bytes).hexdigest()}
+    reproduction = _json_bytes({"status": "DETERMINISTIC_REPRODUCTION_PASSED", "authorization_reference": authorization_reference, "primary_staging_sha256": _digest_map(staged_runs[0]), "reproduction_staging_sha256": _digest_map(staged_runs[1]), "byte_identical": True, "report_metadata": report_metadata})
+    complete = {**primary, "reproduction.json": reproduction}
+    final = {"closure_status": "FINAL_PACKAGE_VALID", "self_hash_excluded": True,
+             "artifacts_sha256": _digest_map(complete), "report_path": report_metadata["path"], "report_sha256": report_metadata["sha256"]}
+    pending = temporary / "pending"
+    _write_package(pending, complete)
+    # Validate the staged package using its own physical report location.
+    staged_report = temporary / "primary" / "report.md"
+    staging_record = dict(final, report_path=_report_path(pending, staged_report))
+    staged_reproduction = dict(_read_json(reproduction, "reproduction.json", cfg), report_metadata={"path": staging_record["report_path"], "sha256": report_metadata["sha256"]})
+    (pending / "reproduction.json").write_bytes(_json_bytes(staged_reproduction))
+    staging_record["artifacts_sha256"] = {name: sha(pending / name) for name in complete}
+    _validate_authoritative(pending, cfg, staging_record, staged_report)
+    (pending / "reproduction.json").write_bytes(reproduction)
+    _require({name: sha(pending / name) for name in complete} == final["artifacts_sha256"], "final staging hash mismatch")
+    # Exclusive report creation; existing authoritative files are never replaced.
+    with report.open("xb") as handle:
+        handle.write(report_bytes)
+    _require(not output.exists() and not output.is_symlink(), "refusing to overwrite authoritative result")
+    os.replace(pending, output)
+    marker = output / "final_hashes.json"
+    try:
+        _validate_authoritative(output, cfg, final, report)
+        candidate = temporary / "final_hashes.json"
+        candidate.write_bytes(_json_bytes(final))
+        os.replace(candidate, marker)
+        validate_final_hashes(output, cfg, report)
+        # Successful staging contains aggregates only; remove exact owned files.
+        # Cleanup failure is also fail-closed: the exception handler revokes authority.
+        for run in (temporary / "primary", temporary / "reproduction"):
+            for path in run.iterdir(): path.unlink()
+            run.rmdir()
+        temporary.rmdir()
+    except BaseException:
+        # Only our newly published marker is removed; pending evidence remains.
+        if marker.exists() or marker.is_symlink():
+            marker.unlink()
+        raise
     return final
 
 
 def validate_final_hashes(output: Path, cfg: Mapping[str, Any], report: Path | None = None) -> dict[str, str]:
-    recorded = json.loads((output / "final_hashes.json").read_text(encoding="utf-8"))
-    expected = set(cfg["outputs"]["files"]) - {"final_hashes.json"}
-    _require(recorded.get("closure_status") == "FINAL_PACKAGE_VALID" and recorded.get("self_hash_excluded") is True, "invalid final authority")
-    _require(set(recorded.get("artifacts_sha256", {})) == expected, "unexpected final artifact set")
-    actual = {name: sha(output / name) for name in sorted(expected)}
-    _require(actual == recorded["artifacts_sha256"], "final authoritative hash mismatch")
-    if report is not None:
-        _require(recorded.get("report_path") == cfg["outputs"]["report"] and sha(report) == recorded.get("report_sha256"), "final report hash mismatch")
-    return actual
+    output = Path(output)
+    _require(not (output / "final_hashes.json").is_symlink(), "unsafe final authority")
+    recorded = _read_json((output / "final_hashes.json").read_bytes(), "final_hashes.json", cfg)
+    _require(type(recorded["report_path"]) is str and not Path(recorded["report_path"]).is_absolute(), "invalid report path")
+    actual_report = Path(report) if report is not None else output / recorded["report_path"]
+    return _validate_authoritative(output, cfg, recorded, actual_report)
 
 
 def execute_response(*, execute: bool = False, data_dir: Path | None = None, pinned_repository: Path | None = None, authorization_reference: str = "", expected_implementation_hashes: Mapping[str, str] | None = None, output: Path = DEFAULT_OUTPUT, report: Path = DEFAULT_REPORT) -> dict[str, Any]:

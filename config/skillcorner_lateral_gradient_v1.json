@@ -97,6 +97,22 @@
       "match_estimates.csv": ["match_id", "beta_lat_m_per_m", "sign"],
       "lomo_estimates.csv": ["omitted_match_id", "beta_lat_m_per_m", "sign"]
     },
+    "csv_rows": {"pooled_estimate.csv": 1, "quality_estimate.csv": 1, "match_estimates.csv": 9, "lomo_estimates.csv": 9},
+    "json_keys": {
+      "bootstrap_summary.json": ["draws_requested", "valid_paired_draws", "seed", "prng"],
+      "manifest.json": ["status", "classification", "counts", "support_digests", "authorization_reference", "frozen_hashes", "outputs", "source_ledger_sha256"],
+      "hard_qc.json": ["status", "exact_support_identity", "exact_source_identity", "all_nine_matches", "full_rank", "valid_paired_draws", "source_rows_absent"],
+      "reproduction.json": ["status", "authorization_reference", "primary_staging_sha256", "reproduction_staging_sha256", "byte_identical", "report_metadata"],
+      "final_hashes.json": ["closure_status", "self_hash_excluded", "artifacts_sha256", "report_path", "report_sha256"]
+    },
+    "nested_schema_contract": {
+      "counts": "exact primary/quality nonnegative integers and nine per-match primary/quality counts, equal to frozen support",
+      "support_digests": "exact primary/quality frozen digests",
+      "frozen_hashes": "exact complete response/support/construction dependency ledger mapping",
+      "staging_hashes": "exact seven base artifact names plus report.md, SHA-256 of compared staging bytes",
+      "report_metadata": "exact path and sha256; path is actual destination relative to authoritative output directory",
+      "final_hashes": "exact eight nonrecursive artifact names and matching authoritative SHA-256 values"
+    },
     "aggregate_only": true,
     "forbidden_serialized_content": ["observation_ids", "tracking_coordinates", "player_ids", "team_ids", "timestamps", "block_rows", "provider_rows", "row_level_Y", "predictions", "residuals"]
   },
@@ -112,11 +128,16 @@
   "closure": {
     "isolated_executions": 2,
     "comparison": "byte_for_byte_governed_machine_readable_outputs",
-    "authoritative_output_directory_promoted_last": true,
+    "authoritative_output_directory_promoted_last": false,
+    "pending_artifacts_validated_at_final_paths_before_authority": true,
+    "final_authority_marker_published_atomically_last": true,
+    "failed_final_revalidation_removes_authority_marker": true,
+    "report_path_base": "authoritative_output_directory",
     "final_hashes_is_sole_final_authority": true,
     "final_hashes_nonrecursive": true,
     "no_overwrite": true
   },
+  "report_lineage": "The IDSSE spatial pattern generated the hypothesis. This SkillCorner analysis tests that hypothesis prospectively in a provider environment already used previously for the directional study. It is not untouched-dataset replication or independent new dataset validation.",
   "limitations": [
     "primary_coordinates_include_detected_and_provider_extrapolated_values",
     "direct_detection_retention_varies_by_match",
