@@ -55,7 +55,18 @@ outcome is accumulated defender-relative path, not the illustrated net arrows.*
 
 ### Illustrative replay
 
-Open the [six-second Metrica Game 2 replay notebook](notebooks/tracking_animation_prototype.ipynb) to watch an illustration of the tracking geometry; local public Game 2 data are required. The replay is illustration only—not human validation or independent evidence of tactical meaning.
+![Six-second Metrica Game 2 tracking replay](figures/presentation/tracking_replay_game2.gif)
+
+This six-second Metrica Game 2 replay illustrates the fixed passage used in
+Figure 1. It shows tracking geometry only; it is not human validation or
+independent evidence of tactical meaning.
+
+**Run or reproduce locally:** use the output-free
+[tracking replay notebook](notebooks/tracking_animation_prototype.ipynb) with
+the public Game 2 files available locally.
+
+Tracking data: [Metrica Sports sample data](https://github.com/metrica-sports/sample-data).
+Animation rendered by Moving the Defense; no original match video is included.
 
 ### Temporal results
 
