@@ -1,57 +1,69 @@
 # Off-Ball Movement Direction and Localized Defensive Reorganization in Football
 
-*Working paper from the `moving-the-defense` repository.*
+A defence can shift together while nearby defenders also move within the unit. This project measures that second geometry: movement by defenders nearest an off-ball attacker relative to the wider defensive unit. It compares the average accumulated defender-relative path of the nearest three defenders with that of four middle-ranked defenders, with ranks fixed before the defender interval.
 
-Off-ball movement can coincide with defenders moving differently from the
-defensive unit as a whole. Across Metrica and IDSSE tracking data, preceding
-attacker movement was associated with stronger later localized
-defender-relative movement among the three nearest defenders than among a
-middle-ranked group. More surprisingly, outward movement was associated with
-greater localized defensive reorganization than equivalently modelled goalward
-movement—and that directional pattern replicated again in SkillCorner Open
-Data.
+**Main finding:** movement away from the pitch centreline (“outward”) was associated with greater subsequent localized defensive reorganization than comparable movement toward goal.
 
-The paper asks how this association varies with an attacker's starting geometry
-and movement direction.
+For the prespecified comparison of straight 5 m outward versus straight 5 m goalward movement, holding modeled path magnitude and starting context equal, the contrast was approximately **28 cm in IDSSE** and **24 cm in SkillCorner**. These are differences in the near-minus-middle group-average defender-relative path—not extra movement by each defender.
 
-This is an observational measurement, not a causal or value claim. The
-measurement can filter or identify candidate passages for later video review;
-the football meaning and retrieval usefulness of those passages have not been
-independently validated.
+The directional difference appeared in separate analyses of seven IDSSE and nine SkillCorner matches; every match contrast was positive. The tracking environments were not pooled.
 
-> **Reproduce the paper:** begin with [REPRODUCE.md](REPRODUCE.md), the
-> human-first data-to-figure guide. The
-> [technical reproducibility guide](docs/reproducibility.md) contains full
-> protocol and audit detail.
+The measurement could organize candidate passages for later video review; its football interpretation and review usefulness remain unvalidated. It does not establish causation, marking responsibility, tactical effectiveness, or attacking value.
 
-## The football problem
+**Reproduce and inspect:** start with [REPRODUCE.md](REPRODUCE.md), or browse the [frozen protocols](docs/protocols/), [public result summaries](docs/results/), and [tests](tests/).
 
-A defender may move because the whole defensive unit shifts, or because that
-defender changes position relative to the unit. Raw displacement blends those
-geometries together. This project measures each defender's movement relative to
-the contemporaneous movement of the other defending outfield players, so a
-shared collective shift can be distinguished from local movement within the
-unit. Defenders are grouped by their start-time proximity to the moving
-attacker; “near-minus-middle” means the difference between the three nearest
-and four middle-ranked defenders.
+## Main finding: directional replication
 
-**Figure 1 — Temporal measurement and validation.**
+**Primary evidence — separate directional analyses**
+
+![Replicated outward-versus-goalward difference in localized defensive reorganization](docs/figures/sloan/directional_replication.svg)
+
+*Separate pooled estimates are shown for IDSSE and SkillCorner: all 7/7 IDSSE
+and all 9/9 SkillCorner match-level outward-minus-goalward contrasts are
+positive. No cross-provider pooled estimate was calculated. The figure reports
+observational geometry, not value.*
+
+| Environment | Outward minus goalward | 95% CI | Direction consistency |
+|---|---:|---:|---|
+| IDSSE | 0.056856 m/m | [0.051358, 0.062430] | 7/7 match; 7/7 leave-one-match-out positive |
+| SkillCorner Open Data | 0.048883 m/m | [0.042940, 0.054707] | 9/9 match; 9/9 leave-one-match-out positive |
+
+The IDSSE modeled comparison corresponds to approximately **0.284 m** greater
+near-minus-middle group-average accumulated defender-relative path for a 5 m
+outward rather than 5 m goalward displacement, under equal path magnitude and context.
+Defensive reorganization was therefore not simply aligned with movement toward
+goal. This does not mean outward movement is better, more valuable, or a
+preferred tactical action.
+
+## What the measurement separates
+
+Raw defender movement combines collective unit shift and movement within the
+unit. The measurement separates these by expressing each outfield defender's
+movement relative to the contemporaneous movement of the other nine defending
+outfield players. D1–D3 and D4–D7 are proximity groups fixed before the defender
+interval, not inferred marking assignments. Attacker movement is measured over
+the preceding two seconds; defender-relative path over the subsequent two seconds.
+
+**Supporting evidence — temporal association and reverse-time comparison**
 
 ![Time-ordered localized defensive-reorganization evidence](docs/figures/sloan/temporal_footprint_flagship.svg)
 
-*Panel A is a real, deterministic heldout Metrica Game 2 passage. The defensive
-unit shifts goalward and laterally; D2 and D3 move less goalward than their
-unit reference, whereas D1 moves more goalward. Panels B–C show the replicated
-time-ordered evidence. The example does not assign marking or cause.*
+*Panel A illustrates one fixed passage; panels B–C report statistical evidence.
+The fixed Metrica Game 2 passage contrasts absolute defender paths with net
+defender-relative displacement over the same subsequent interval. The statistical
+outcome is accumulated defender-relative path, not the illustrated net arrows.*
 
-## What we found
+### Illustrative replay
 
-### 1. Time-ordered localized reorganization
+Open the [six-second Metrica Game 2 replay notebook](notebooks/tracking_animation_prototype.ipynb) to watch an illustration of the tracking geometry; local public Game 2 data are required. The replay is illustration only—not human validation or independent evidence of tactical meaning.
+
+### Temporal results
 
 Preceding attacker movement was associated with greater subsequent defender
 movement relative to the defensive unit among the nearest defenders than the
-middle group. Here, **m/m** means metres of additional defender-relative
-movement per metre of attacker movement.
+middle group. Here, **m/m** expresses the near-minus-middle group-average
+accumulated defender-relative path contrast in metres per metre of attacker
+movement, not additional movement by every defender.
 
 | Environment | Near-minus-middle association | Interval |
 |---|---:|---:|
@@ -64,34 +76,34 @@ differences were positive. Reverse-time structure also remained positive: the
 evidence is that the correctly ordered association exceeded the reverse-time
 comparison, not that shared temporal structure disappeared.
 
-### 2. Outward movement produced a different geometric response than goalward movement
+## What this could be used for
 
-At equal movement magnitude and comparable predeclared starting geometry,
-outward attacker displacement was associated with greater subsequent localized
-defender-relative reorganization than goalward displacement.
+The measurement could organize candidate passages for later video review.
+Its football interpretation and review usefulness remain unvalidated. It can
+describe local movement separately from a shared defensive shift, but does not
+automatically assign tactical labels, rank players, or measure value.
 
-| Environment | Outward minus goalward | 95% CI | Direction consistency |
-|---|---:|---:|---|
-| IDSSE | 0.056856 m/m | [0.051358, 0.062430] | 7/7 match; 7/7 leave-one-match-out positive |
-| SkillCorner Open Data | 0.048883 m/m | [0.042940, 0.054707] | 9/9 match; 9/9 leave-one-match-out positive |
+The contribution is not a new centroid or generic tracking primitive. It is a
+prospectively tested and externally replicated temporal measurement of internal
+defensive reorganization, combined with a replicated directional difference in
+the defensive geometry associated with outward versus goalward off-ball
+movement—without requiring inferred marking assignments or a value model.
 
-The IDSSE illustration corresponds to approximately **0.284 m** more
-subsequent localized defender-relative reorganization for a 5 m outward rather
-than 5 m goalward displacement, under equal path magnitude and context.
-Defensive reorganization was therefore not simply aligned with movement toward
-goal. This does not mean outward movement is better, more valuable, or a
-preferred tactical action.
+## Boundaries and secondary findings
 
-**Figure 2 — Directional replication across separate tracking environments.**
+### Collective translation and width
 
-![Replicated outward-versus-goalward difference in localized defensive reorganization](docs/figures/sloan/directional_replication.svg)
+Goalward movement showed a strong **secondary, nonclassifying** association with
+collective defensive translation: the frozen 5 m goalward-versus-outward
+contrast was 2.962709 m [2.870720, 3.048322], positive in 7/7 match and 7/7
+leave-one-match-out fits.
 
-*Separate pooled estimates are shown for IDSSE and SkillCorner: all 7/7 IDSSE
-and all 9/9 SkillCorner match-level outward-minus-goalward contrasts are
-positive. No cross-provider pooled estimate was calculated. The figure reports
-observational geometry, not value.*
+The proposed inward-versus-outward narrowing mechanism was **MIXED**:
+0.134003 m [−0.006622, 0.273430], with 5/7 positive match contrasts. Different
+geometric response scales are visible, but the mechanism behind the directional
+difference remains unresolved.
 
-### 3. Starting geometry matters
+### Starting geometry
 
 Localized reorganization tended to be larger when attackers started closer to
 the ball and less far goalward relative to the defensive unit.
@@ -105,46 +117,7 @@ Both relationships had the same direction in all 7/7 match and
 leave-one-match-out fits, and passed their predeclared trims. They characterize
 where the observed geometry was larger; they do not explain why defenders moved.
 
-The localized response also varies systematically with the attacker’s starting
-location.
-
-![Localized defensive reorganization by attacker starting location](figures/presentation/localized_reorganization_response_map_readme_h10.png)
-
-*The predeclared h=10 m sensitivity is shown as the main presentation view
-because its Conservative support covers 99.89% of the legal pitch. The
-prospectively selected h=7.5 m analysis remains the scientific primary. Both
-retain the same broad descriptive pattern: larger localized defensive response
-toward the lateral extremes and smaller response through a more central lateral
-band.*
-
-## What this could be used for
-
-The measurement can identify or filter candidate off-ball passages with strong
-measured reorganization within the defensive unit, distinguish those changes
-from a shared defensive shift, and give analysts a structured starting point
-for video review. Its football meaning and retrieval usefulness have not been
-independently validated; it does not automatically assign tactical labels, rank
-players, or measure value.
-
-The contribution is not a new centroid or generic tracking primitive. It is a
-prospectively tested and externally replicated temporal measurement of internal
-defensive reorganization, combined with a replicated directional difference in
-the defensive geometry associated with outward versus goalward off-ball
-movement—without requiring inferred marking assignments or a value model.
-
-## What the follow-up does and does not explain
-
-Goalward movement showed a strong **secondary, nonclassifying** association with
-collective defensive translation: the frozen 5 m goalward-versus-outward
-contrast was 2.962709 m [2.870720, 3.048322], positive in 7/7 match and 7/7
-leave-one-match-out fits.
-
-The proposed inward-versus-outward narrowing mechanism was **MIXED**:
-0.134003 m [−0.006622, 0.273430], with 5/7 positive match contrasts. Different
-geometric response scales are visible, but the mechanism behind the directional
-difference remains unresolved.
-
-## What the evidence does not establish
+### What the evidence does not establish
 
 The evidence does not establish attacker causation or influence; defender
 attention, marking, assignment, or responsibility; tactical success; space
@@ -158,7 +131,23 @@ missing its predeclared application threshold. Negative and mixed findings are
 retained in the [claim-status ledger](docs/claim_status.md) and
 [research log](docs/research_log.md), not tuned away.
 
-## Data and external validation
+## Additional descriptive spatial view
+
+**Descriptive secondary result — IDSSE only**
+
+An additional descriptive map summarizes the contrast by attacker starting
+location.
+
+![Localized defensive reorganization by attacker starting location](figures/presentation/localized_reorganization_response_map_readme_h10.png)
+
+*The scientific primary remains h=7.5 m, selected by human review of
+response-blind support and frozen before response access. Shown here is the
+predeclared h=10 m sensitivity as a near-complete-support presentation view;
+its Conservative support covers 99.89% of the legal pitch. Its tighter display
+scale is presentation-only and does not change the scientific primary. This is
+not a significance map or a hotspot test.*
+
+## Data and engineering
 
 | Data source | Role |
 |---|---|
@@ -168,8 +157,9 @@ retained in the [claim-status ledger](docs/claim_status.md) and
 | SkillCorner Open Data | Open third, broadcast-derived environment for directional replication |
 | Metrica Sample Game 3 | Untouched |
 
-Under the repository’s conservative publication policy, raw provider files,
-row-level data, and reconstructive provider-derived tables are not committed.
+Current publication policy excludes raw provider files and new reconstructive
+provider-linked row artifacts without explicit approval; historical tracked
+artifacts retain their governed provenance.
 Compact governed results, code, figures, protocols, configurations, and
 provenance ledgers are public.
 
@@ -178,6 +168,7 @@ provenance ledgers are public.
 | Goal | Start here |
 |---|---|
 | **Reproduce the paper** | [REPRODUCE.md](REPRODUCE.md) |
+| Inspect technical reproduction detail | [Technical reproducibility guide](docs/reproducibility.md) |
 | **Audit research history and claim limits** | [Claim-status ledger](docs/claim_status.md) and [research log](docs/research_log.md) |
 | **Continue the research** | [Research roadmap](docs/research_roadmap.md) |
 | Understand the football question | [Project explainer](docs/project_explainer.md) |
