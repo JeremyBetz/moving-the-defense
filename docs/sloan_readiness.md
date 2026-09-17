@@ -1,6 +1,6 @@
 # Sloan Readiness
 
-**Working paper title:** *Measuring Localized Defensive Reorganization Associated with Off-Ball Movement in Football*
+**Working paper title:** *Off-Ball Movement Direction and Localized Defensive Reorganization in Football*
 
 The current paper choice, reviewer-risk assessment, pre-deadline priorities,
 and stop list are consolidated in the
@@ -26,6 +26,7 @@ The repository now supports a prospectively tested attacker-movement-to-defensiv
 - **External temporal bridge:** the unchanged spatial-footprint test was supported across all seven governed IDSSE matches. Its pooled near-minus-middle contrast was 0.06115 [0.05579, 0.06681] and its prospectively paired excess over reverse time was 0.02455 [0.01932, 0.02985]. This is external observational time ordering, not causation or tactical meaning.
 - **Starting spatial context:** the IDSSE-only Context v1 analysis was **SUPPORTED**. Conditional on frozen movement/depth controls, measured near-minus-middle defender-relative movement was smaller when the attacker started farther goalward relative to the defensive unit (`-0.010161 m/m`, 97.5% `[-0.011805, -0.008499]`) or farther from the ball (`-0.007533 m/m`, 97.5% `[-0.008864, -0.006245]`). Both directions held in `7/7` match-specific and `7/7` leave-one-match-out fits, with the frozen trim passing. This characterizes observed geometry; it does not explain why it occurred.
 - **Response-scale boundary:** Spatial Form v1 found an outward-minus-goalward localized-reorganization contrast of `0.056856 m/m` [0.051358, 0.062430] in all `7/7` IDSSE match and leave-one-match-out fits, reproduced in SkillCorner at `0.048883 m/m` [0.042940, 0.054707] in all `9/9` fits. Response Mode v1’s inward-width mechanism was **MIXED**; its stronger goalward collective-translation contrast was secondary and nonclassifying. This supports a bounded scale-of-observable-geometry story, not a mechanism.
+- **Prospective additional-match replication:** the previously frozen directional contrast was tested once in ten prospectively frozen, nonoverlapping additional SkillCorner matches. The separately estimated contrast was `0.05501 m/m` (95% interval [0.05006, 0.06002]); all `10/10` match contrasts and all ten leave-one-match-out contrasts were positive. This strengthens within-provider transportability without establishing global independence, causation, or tactical meaning. No pooled 19-match estimate was created.
 - **Spatial-footprint replication:** the frozen footprint classified Final A across the two Metrica sample matches: near ranks had a stronger association than middle ranks, while middle and far regions remained similar.
 - **Concurrent localization and interpretation boundary:** the near-minus-middle concurrent focal-relative movement association replicated across both Metrica matches and all seven governed IDSSE matches (pooled 0.05115 [0.04595, 0.05642]), but frozen Opportunity Redistribution v1 was negative on Game 1 ($\beta_D=-0.02407$ [−0.09392, 0.04776]). Cross-provider observational geometry therefore cannot be presented as teammate separation, space creation, gravity, or value.
 - **Match-side expectation boundary:** Defensive Response Expectation v1 was **NOT SUPPORTED**. Compact spatial context improved the movement baseline slightly in all seven IDSSE matches, but the frozen match-side increment worsened heldout prediction in every match. Stable team identity and tactical style therefore remain outside the evidence.
@@ -46,14 +47,12 @@ defensive geometric change
 
 It uses continuous two-second attacker path rather than the rejected discrete episode rules, and subsequent focal-relative path supplies amount of defender movement rather than tactical meaning. The stepped spatial footprint now has unchanged held-out Game 2, pooled, and seven-match IDSSE support. Broader population transport and football semantics remain later questions; proximity or timing must not become causation.
 
-The main pre-Sloan task is now presentation rather than another empirical
-branch: explain the externally replicated localized-reorganization result with
-one football-readable figure, a concise results table, the bounded Context v1
-finding, and the response-scale synthesis. The current Response Mode figure is
-best kept supplementary because it is a four-channel diagnostic; a later
-editorial synthesis figure can pair collective translation with localized
-reorganization without inventing a composite score. Analysts can use this to
-contextualize passages, not to infer tactics or advice. It does not justify
+The main pre-Sloan task is now portal preparation rather than another empirical
+branch. The submission retains exactly two main figures: the temporal flagship
+and a directional figure showing separate estimates for seven IDSSE matches,
+the original nine-match SkillCorner cohort, and the prospective ten-match
+SkillCorner cohort. The cohorts are not pooled. Analysts can use the measurement
+to contextualize passages, not to infer tactics or advice. It does not justify
 opening Metrica Sample Game 3 before the abstract deadline.
 
 The gap is **not** the absence of a gravity score. Gravity, attacker attribution, tactical classification, causal influence, and final off-ball value are later possibilities, not abstract prerequisites.
@@ -70,7 +69,7 @@ The gap is **not** the absence of a gravity score. Gravity, attacker attribution
 | Development/validation discipline | Strong through the frozen two-match bridge | Apply the same discipline to any semantic or cross-provider extension. |
 | Reproducibility | Substantial but incomplete | Resolve environment drift, document large artifacts, and add lightweight automated integrity checks. |
 | Literature positioning | Targeted, not systematic | Extend movement/change-point and elite-tracking coverage; avoid universal novelty claims. |
-| Figures | Flagship Figure 1 plus compact temporal/context table; current Response Mode figure supplementary | Later editorial synthesis may contrast collective translation with localized reorganization; build it only from closed compact results. |
+| Figures | Two main figures are ready: the temporal flagship and the three-cohort directional replication figure | Preserve the separate 7/9/10-match cohort estimates and no-pooling boundary during portal upload. |
 | Practical relevance | Analyst retrieval and context characterization are supported uses | Surface passages with strong measured reorganization and compare starting ball/block geometry; do not claim advice or deployed decision support. |
 
 ## Pre-deadline evidence standard
@@ -102,8 +101,12 @@ The project is **bridge-complete at the external observational level, but
 interpretation-incomplete**. It has validated component geometry, a supported
 seven-match IDSSE replication of localized defensive reorganization through the
 named [temporal-footprint analysis](results/spatial_defensive_response_footprint_idsse_v1.md),
-and a supported, bounded characterization of how the observed measure varies
-with starting ball/block geometry. It also retains strong negative evidence.
+the original nine-match SkillCorner directional replication, and the supported
+prospective replication in ten additional nonoverlapping SkillCorner matches.
+The three directional cohorts remain separately estimated, with no pooled
+19-match effect. The project also retains a supported, bounded characterization
+of how the observed measure varies with starting ball/block geometry and strong
+negative evidence.
 The pre-Sloan priority is writing and visualization from closed results; Game 3
 remains untouched. Gravity, tactical classification, causation, and value are
 neither established nor required for a strong abstract.

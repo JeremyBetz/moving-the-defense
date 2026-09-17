@@ -4,7 +4,7 @@
 
 **Established:** 2026-09-06
 
-**Last reviewed:** 2026-09-09 — IDSSE response-map execution-status correction
+**Last reviewed:** 2026-09-17 — current-paper SkillCorner replication synchronization
 
 **Starting scientific checkpoint:** `57644b3205ead6ef7ede76aa15c3f23b28c2af8e`
 
@@ -34,8 +34,12 @@ The response-map firewall retains its historical response-blind [support configu
 
 The public paper path is the one documented in [REPRODUCE.md](../REPRODUCE.md).
 Its current entry points may read the authorized Metrica Games 1–2, seven-match
-IDSSE, and nine-match SkillCorner Spatial Form inputs described there. They must
-not acquire dependencies on:
+IDSSE, and original nine-match SkillCorner Spatial Form inputs described there.
+The current submission also reads the closed aggregate package from the
+prospectively frozen ten-match nonoverlapping SkillCorner directional
+replication. The original and additional SkillCorner cohorts remain separately
+estimated; no pooled 19-match primary estimand is authorized. Current paper
+entry points must not acquire dependencies on:
 
 - Metrica Game 3;
 - DRD prediction residuals, retrieval passages, or player rankings; or
