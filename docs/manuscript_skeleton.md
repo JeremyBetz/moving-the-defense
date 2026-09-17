@@ -17,20 +17,24 @@ without inferring marking assignments. The temporal design was developed in
 Metrica Game 1, tested in held-out Game 2, and evaluated externally in seven
 IDSSE matches using a paired reverse-time comparison. Directional models
 conditioned on attacker path magnitude and starting geometry, with a separate
-replication in nine SkillCorner matches; tracking environments were analysed
-separately, not pooled. Uncertainty was estimated by block bootstrap,
+nine-match SkillCorner replication and a prospectively frozen replication in
+ten additional nonoverlapping SkillCorner matches; cohorts and tracking
+environments were analysed separately, not pooled. Uncertainty was estimated by block bootstrap,
 preserving simultaneous attacker perspectives and temporal grouping rather
 than treating individual observations as independent.
 
 **Results.** Outward movement was associated with greater subsequent localized
-reorganization than goalward movement in both directional analyses. For the
+reorganization than goalward movement in all three separately analysed cohorts. For the
 prespecified comparison of straight 5 m outward versus straight 5 m goalward
 movement, holding modeled path magnitude and context equal, the
 near-minus-middle path difference was approximately 28 cm in IDSSE (95%
 interval: 26–31 cm) and 24 cm in SkillCorner (21–27 cm). These are
 differences between group-average defender-relative paths, not additional
 movement by each defender. Directional contrasts were positive in all seven
-IDSSE and all nine SkillCorner matches. The temporal near-minus-middle
+IDSSE and all nine original SkillCorner matches. In the prospectively frozen
+additional SkillCorner population, the contrast was 0.05501 m/m [0.05006,
+0.06002], with positive match and leave-one-match-out estimates in all 10/10
+matches. The temporal near-minus-middle
 association also replicated from Metrica to IDSSE (0.06115 m/m, 95% CI
 [0.05579, 0.06681]) and was positive in all seven IDSSE matches. The IDSSE
 forward-minus-reverse excess was 0.02455 m/m [0.01932, 0.02985], positive in
@@ -261,17 +265,21 @@ pre-specified measurement in a distinct tracking environment.
 ### 3.3 SkillCorner Open Data directional replication
 
 A separate directional replication used nine usable 2024/25 A-League matches
-from SkillCorner Open Data. This broadcast-derived tracking environment was used
-for the outward-versus-goalward comparison and subsequently for a prospectively
-frozen lateral-starting-position test, under separate frozen specifications.
-SkillCorner and IDSSE were analysed separately rather than pooled across providers
-because their tracking and support conditions differ.
+from SkillCorner Open Data. A later prospective replication used ten additional
+nonoverlapping matches independently reacquired from the same official release.
+This broadcast-derived tracking environment was used for the outward-versus-goalward
+comparison and subsequently for a prospectively frozen lateral-starting-position
+test, under separate frozen specifications. The original SkillCorner cohort,
+additional SkillCorner cohort, and IDSSE were analysed separately rather than
+pooled because their tracking and support conditions differ.
 
 Across the closed analyses, the temporal sample contained 8,910 supported
 attacker-time anchors in the two Metrica matches and 72,316 in the seven IDSSE
 matches. The IDSSE directional analysis contained 4,618 eligible anchors (64,805
 analysis rows). The SkillCorner directional analysis contained 49,107 attacker–anchor
 observations across 5,458 retained match-specific anchor times in nine matches.
+The additional directional replication retained 57,917 observations across
+6,437 match-specific anchor times in ten matches.
 These are measurement samples under provider-specific support rules, not
 population samples of football actions.
 
@@ -413,8 +421,9 @@ $\mathbf Z_i$ the listed path and starting-geometry covariates. The reported
 estimand was $\beta_O-\beta_G$.
 
 IDSSE was the primary directional environment. SkillCorner provided a separate
-provider-compatible replication under pre-specified rules; the environments
-were analysed separately. Because a two-dimensional path can contain both
+provider-compatible nine-match replication, followed by a prospectively frozen
+replication in ten additional nonoverlapping matches. All three cohorts were
+analysed separately. Because a two-dimensional path can contain both
 goalward and outward components, the model compares their conditional
 associations rather than mutually exclusive football actions. It asks whether
 comparable movements in observed starting contexts have different associations
@@ -460,8 +469,9 @@ remain complementary descriptions of the same passage, not rival measurements.
 The temporal measurement was developed in Metrica Game 1 and evaluated without
 revision in protected Metrica Game 2. IDSSE tested the time-ordered association
 in a distinct tracking environment, while SkillCorner separately tested the
-directional comparison. These analyses were specified before their protected
-outcomes were inspected.
+directional comparison in an original nine-match cohort and a prospectively
+frozen ten-match nonoverlapping cohort. These analyses were specified before
+their protected outcomes were inspected.
 
 Uncertainty used 2,000 deterministic 60-second match-period block-bootstrap
 replicates, retaining complete anchor vectors and simultaneous attackers within
@@ -548,6 +558,16 @@ derived tracking environment: the estimate was 0.048883 m/m (95% CI [0.042940,
 0.054707]), positive in all 9/9 match-specific and leave-one-match-out fits.
 The environments were analysed separately under provider-compatible rules.
 
+The previously frozen outward-minus-goalward conditional association
+prospectively replicated in ten additional nonoverlapping SkillCorner matches.
+The separately estimated contrast was 0.055007 m/m (95% CI [0.050064,
+0.060021]), with positive contrasts in all 10/10 matches and all ten
+leave-one-match-out fits. The inherited joint-displacement trim and
+majority-detected sensitivity gates both passed. The ten matches were frozen
+after independent reacquisition and response-blind compatibility checking;
+Project 1 had not previously evaluated this response on them, but absence of
+prior exposure outside this project is not claimed.
+
 The estimates arise from separate models, samples, and inference procedures;
 their common positive direction is replication evidence, not a pooled effect or
 a claim that the environments share identical player populations or tactical
@@ -560,7 +580,7 @@ the comparison asks whether their conditional associations with subsequent local
 geometry differ after accounting for overall path magnitude and observed
 starting geometry.
 
-Figure 2 presents the two external analyses. Conditional on path magnitude and
+Figure 2 presents the three separately estimated cohorts. Conditional on path magnitude and
 starting geometry, localized defensive reorganization was not simply aligned
 with movement toward goal. This is the paper's central directional finding:
 comparable movement components can be associated with different localized
@@ -568,7 +588,7 @@ defensive geometry.
 
 ![Replicated outward-versus-goalward difference in localized defensive reorganization](figures/sloan/directional_replication.svg)
 
-*Figure 2. Replicated outward-versus-goalward difference in localized defensive reorganization. Outward means away from the pitch centreline; goalward means toward goal. A shows separate conditional coefficient contrasts: IDSSE 0.056856 m/m (95% CI [0.051358, 0.062430]) and SkillCorner 0.048883 m/m [0.042940, 0.054707]. For straight 5 m outward versus straight 5 m goalward movement, holding modeled path magnitude and starting context equal, these correspond to approximately 28 cm and 24 cm greater near-minus-middle group-average defender-relative path. They do not represent extra movement by each defender. B shows all seven IDSSE and nine SkillCorner match contrasts, each positive. No cross-provider estimate was pooled. The results describe observational geometry, not causal influence, tactical effectiveness or value.*
+*Figure 2. Replicated outward-versus-goalward difference in localized defensive reorganization. Outward means away from the pitch centreline; goalward means toward goal. A shows separately estimated conditional contrasts: IDSSE 0.056856 m/m (95% CI [0.051358, 0.062430]), original SkillCorner 0.048883 m/m [0.042940, 0.054707], and the prospective additional SkillCorner cohort 0.055007 m/m [0.050064, 0.060021]. For straight 5 m outward versus straight 5 m goalward movement, holding modeled path magnitude and starting context equal, these correspond to approximately 28 cm, 24 cm, and 28 cm greater near-minus-middle group-average defender-relative path. They do not represent extra movement by each defender. B shows all 7/7 IDSSE, 9/9 original SkillCorner, and 10/10 prospective SkillCorner match contrasts positive. The cohorts and providers were not pooled. The results describe observational geometry, not causal influence, tactical effectiveness or value.*
 
 ### 5.3 Starting context
 
@@ -671,8 +691,11 @@ ask whether actions expand opportunity (Fernández and Bornn, 2018). The
 reviewed literature did not identify a direct controlled outward-versus-goalward
 comparison against later localized defender-relative movement. That is a
 bounded distinction, not a claim that temporal response or directional
-coordination is new. IDSSE and SkillCorner are corroborating separate
-replications, not ingredients of a pooled cross-provider effect.
+coordination is new. IDSSE, the original SkillCorner cohort, and the prospective
+additional SkillCorner cohort provide corroborating separate estimates, not
+ingredients of a pooled cross-provider or pooled 19-match effect. The prospective
+cohort strengthens within-provider transportability while retaining the same
+observational interpretation.
 
 This distinction has a useful football-facing consequence. An analyst can keep
 movement toward goal and movement across the pitch conceptually separate when
@@ -768,8 +791,9 @@ creation, attacking value, or tactical success.
 Third, the samples and tracking environments remain limited. Metrica provides
 two open sample matches, seven IDSSE/DFL public-release professional matches,
 and SkillCorner broadcast-derived tracking with provider-specific support
-handling.
-The external estimates were not pooled. This is staged replication, not
+handling. The prospectively frozen ten-match SkillCorner population was
+nonoverlapping within Project 1, but global prior exposure outside this project
+is not claimed to be absent. The external estimates were not pooled. This is staged replication, not
 population-wide generalization or provider interchangeability.
 
 Finally, the mechanism remains incomplete. The width test was mixed, and the
@@ -797,8 +821,9 @@ This paper reports a reproducible temporal measurement of localized defensive
 reorganization associated with preceding off-ball movement. Nearby defenders
 showed a stronger subsequent defender-relative association than middle-ranked
 defenders, and the time-ordered association replicated beyond the Metrica sample
-in IDSSE. The main directional result also replicated across IDSSE and
-SkillCorner: conditional on movement magnitude and observed starting geometry,
+in IDSSE. The main directional result also replicated across IDSSE, the original
+nine-match SkillCorner cohort, and a prospectively frozen ten-match
+nonoverlapping SkillCorner cohort: conditional on movement magnitude and observed starting geometry,
 outward movement away from the pitch centreline was associated with stronger
 subsequent localized defender-relative reorganization than goalward movement.
 

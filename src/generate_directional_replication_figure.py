@@ -22,12 +22,16 @@ IDSSE_POOLED = ROOT / "outputs" / "defensive_reorganization_spatial_value_v1" / 
 IDSSE_MATCHES = ROOT / "outputs" / "defensive_reorganization_spatial_value_v1" / "per_match_primary.csv"
 SKILLCORNER_POOLED = ROOT / "outputs" / "defensive_reorganization_spatial_form_v1_skillcorner_external" / "primary_contrast.csv"
 SKILLCORNER_MATCHES = ROOT / "outputs" / "defensive_reorganization_spatial_form_v1_skillcorner_external" / "per_match_coefficients.csv"
+ADDITIONAL_POOLED = ROOT / "outputs" / "skillcorner_additional_directional_replication_v1" / "primary_contrast.csv"
+ADDITIONAL_MATCHES = ROOT / "outputs" / "skillcorner_additional_directional_replication_v1" / "per_match_coefficients.csv"
 
 IDSSE_EXPECTED = (0.056855865053930386, 0.051357502908698824, 0.062430030351618114)
 SKILLCORNER_EXPECTED = (0.04888315393173942, 0.042940468423309466, 0.05470717099579395)
+ADDITIONAL_EXPECTED = (0.0550074750390188, 0.05006431954919066, 0.0600211052509831)
 
 IDSSE_COLOUR = "#1F5A82"
 SKILLCORNER_COLOUR = "#9A4F2B"
+ADDITIONAL_COLOUR = "#C17C1B"
 GREY = "#667085"
 LIGHT_GREY = "#D0D5DD"
 matplotlib.rcParams["svg.hashsalt"] = "moving-the-defense-directional-replication-v1"
@@ -72,19 +76,22 @@ def checked_matches(path: Path, expected_count: int) -> list[float]:
 def render() -> None:
     idsse = checked_pooled(IDSSE_POOLED, IDSSE_EXPECTED, "estimate")
     skillcorner = checked_pooled(SKILLCORNER_POOLED, SKILLCORNER_EXPECTED, "outward_minus_goalward_m_per_m")
+    additional = checked_pooled(ADDITIONAL_POOLED, ADDITIONAL_EXPECTED, "outward_minus_goalward_m_per_m")
     idsse_matches = checked_matches(IDSSE_MATCHES, 7)
     skillcorner_matches = checked_matches(SKILLCORNER_MATCHES, 9)
+    additional_matches = checked_matches(ADDITIONAL_MATCHES, 10)
 
     figure, (pooled_axis, match_axis) = plt.subplots(
-        1, 2, figsize=(7, 5), gridspec_kw={"width_ratios": [1, 1.05]}
+        1, 2, figsize=(7, 6.2), gridspec_kw={"width_ratios": [1, 1.08]}
     )
-    figure.subplots_adjust(left=0.15, right=0.98, bottom=0.27, top=0.78, wspace=0.65)
+    figure.subplots_adjust(left=0.17, right=0.98, bottom=0.23, top=0.76, wspace=0.68)
 
     sources = [
         ("IDSSE\n(7 matches)", *idsse, IDSSE_COLOUR, "o"),
-        ("SkillCorner\n(9 matches)", *skillcorner, SKILLCORNER_COLOUR, "s"),
+        ("SkillCorner\noriginal\n(9 matches)", *skillcorner, SKILLCORNER_COLOUR, "s"),
+        ("SkillCorner\nprospective\n(10 matches)", *additional, ADDITIONAL_COLOUR, "^"),
     ]
-    for y, (label, estimate, low, high, colour, marker) in zip([1, 0], sources, strict=True):
+    for y, (label, estimate, low, high, colour, marker) in zip([2, 1, 0], sources, strict=True):
         pooled_axis.plot([low, high], [y, y], color=colour, linewidth=3.0, solid_capstyle="round")
         pooled_axis.scatter(estimate, y, color=colour, marker=marker, s=72, zorder=3)
         pooled_axis.text(
@@ -93,19 +100,23 @@ def render() -> None:
         )
     pooled_axis.axvline(0, color="#344054", linewidth=1.0, zorder=0)
     pooled_axis.set_xlim(-0.004, 0.078)
-    pooled_axis.set_ylim(-0.55, 1.55)
-    pooled_axis.set_yticks([1, 0], [item[0] for item in sources], fontsize=9)
+    pooled_axis.set_ylim(-0.55, 2.55)
+    pooled_axis.set_yticks([2, 1, 0], [item[0] for item in sources], fontsize=8.5)
     pooled_axis.set_xlabel("Outward minus goalward\nassociation (m/m)", fontsize=9)
-    pooled_axis.set_title("A  Separate provider estimates", loc="left", fontweight="bold", fontsize=10, pad=12)
+    pooled_axis.set_title("A  Separate frozen cohort estimates", loc="left", fontweight="bold", fontsize=10, pad=12)
     pooled_axis.grid(axis="x", color="#EAECF0", linewidth=0.9)
     pooled_axis.spines[["top", "right", "left"]].set_visible(False)
     pooled_axis.tick_params(axis="y", length=0)
     pooled_axis.tick_params(axis="x", labelsize=9)
-    figure.text(.05, .09, "Modeled 5 m comparison:\nIDSSE ≈28 cm · SkillCorner ≈24 cm\n"
+    figure.text(.05, .075, "Modeled 5 m comparison:\nIDSSE ≈28 cm · SkillCorner original ≈24 cm\nSkillCorner prospective ≈28 cm\n"
                 "Difference in near–middle defender-relative path", fontsize=8,
-                color="#344054", va="center", linespacing=1.5)
+                color="#344054", va="center", linespacing=1.4)
 
-    match_values = [("IDSSE", idsse_matches, IDSSE_COLOUR, "o"), ("SkillCorner", skillcorner_matches, SKILLCORNER_COLOUR, "s")]
+    match_values = [
+        ("IDSSE", idsse_matches, IDSSE_COLOUR, "o"),
+        ("SC original", skillcorner_matches, SKILLCORNER_COLOUR, "s"),
+        ("SC prospective", additional_matches, ADDITIONAL_COLOUR, "^"),
+    ]
     y = 0
     ticks: list[int] = []
     labels: list[str] = []
@@ -116,6 +127,7 @@ def render() -> None:
         labels.extend([f"{provider} {index}" for index in range(1, len(values) + 1)])
         y += len(values)
     match_axis.axhline(6.5, color=LIGHT_GREY, linewidth=1.0)
+    match_axis.axhline(15.5, color=LIGHT_GREY, linewidth=1.0)
     match_axis.axvline(0, color="#344054", linewidth=1.0, zorder=0)
     match_axis.set_xlim(-0.004, 0.078)
     match_axis.set_yticks(ticks, labels, fontsize=8)
@@ -128,13 +140,14 @@ def render() -> None:
     match_axis.tick_params(axis="x", labelsize=9)
     match_axis.text(.006, 3, "7/7\npositive", fontsize=8, color=IDSSE_COLOUR, ha="left", va="center")
     match_axis.text(.006, 11, "9/9\npositive", fontsize=8, color=SKILLCORNER_COLOUR, ha="left", va="center")
+    match_axis.text(.006, 20.5, "10/10\npositive", fontsize=8, color=ADDITIONAL_COLOUR, ha="left", va="center")
 
     figure.suptitle(
-        "Directional difference replicates across tracking environments",
-        x=0.04, y=0.97, ha="left", fontsize=12, fontweight="bold"
+        "Directional difference replicates across tracking\nenvironments and additional matches",
+        x=0.04, y=0.98, ha="left", va="top", fontsize=11.5, fontweight="bold"
     )
     figure.text(
-        0.04, 0.90,
+        0.04, 0.865,
         "Outward: away from the pitch centreline · Goalward: toward goal",
         fontsize=9, color="#344054"
     )

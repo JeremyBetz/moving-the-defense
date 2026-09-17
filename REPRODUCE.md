@@ -27,7 +27,7 @@ for scientific provenance, not as prerequisites for the paper.
 |---|---|---|---|---|---|
 | Metrica Sample Games 1--2 | Within-provider temporal result and flagship Figure 1 passage | [Metrica sample data](https://github.com/metrica-sports/sample-data) | `data/metrica_sample_game_1/`, `data/metrica_sample_game_2/` | No | Public sample data. Use Games 1--2 only; Game 3 is outside this paper. |
 | IDSSE / DFL XML | Seven-match temporal, context, and movement-direction analyses | [IDSSE/DFL Figshare dataset](https://doi.org/10.6084/m9.figshare.28196177.v1) | `data/idsse_raw/` | No | Public CC BY 4.0 research release. Download the required XML files locally; this repository does not duplicate raw files or detailed generated intermediates. |
-| SkillCorner Open Data | Nine-match external directional replication | [SkillCorner Open Data](https://github.com/SkillCorner/opendata) | `data/skillcorner_opendata/` | No | Public MIT-licensed source, but this repository deliberately keeps raw provider files and row-level derivatives local. Each formal match needs `<id>_match.json`, `<id>_tracking_extrapolated.jsonl`, and `<id>_phases_of_play.csv`. |
+| SkillCorner Open Data | Nine-match external directional replication and prospective ten-match nonoverlapping replication | [SkillCorner Open Data](https://github.com/SkillCorner/opendata) | `data/skillcorner_opendata/` | No | Public MIT-licensed source, but this repository deliberately keeps raw provider files and row-level derivatives local. Each formal match needs `<id>_match.json`, `<id>_tracking_extrapolated.jsonl`, and `<id>_phases_of_play.csv`. |
 
 Raw tracking, player/frame rows, and detailed provider-derived ledgers are not
 committed. The repository does include source, frozen protocols/configurations,
@@ -107,8 +107,9 @@ reading for the linear paper path below.
 | Context H1/H2, IDSSE | `src/defensive_reorganization_context_v1.py` | [`Context v1 protocol`](docs/protocols/defensive_reorganization_context_v1.md) | `outputs/defensive_reorganization_context_v1/result.json` | Table 1; supplementary context figure | H1 `-0.010161` [−0.011805, −0.008499]; H2 `-0.007533` [−0.008864, −0.006245] |
 | Movement-direction analysis, IDSSE | `src/defensive_reorganization_spatial_value_v1.py` | [`directional-analysis protocol`](docs/protocols/defensive_reorganization_spatial_value_v1.md) | `outputs/defensive_reorganization_spatial_value_v1/result.json` | Table 1; supplementary directional figure | Outward minus goalward `0.056856` [0.051358, 0.062430] |
 | Directional replication, SkillCorner | `src/defensive_reorganization_spatial_form_skillcorner_external.py` | [`SkillCorner protocol`](docs/protocols/defensive_reorganization_spatial_form_v1_skillcorner_external.md) | `outputs/defensive_reorganization_spatial_form_v1_skillcorner_external/result.json` | Table 1 / external-replication text | Outward minus goalward `0.048883` [0.042940, 0.054707] |
+| Prospective additional directional replication, SkillCorner | `src/skillcorner_additional_directional_replication_v1.py publication-check` | [`additional replication protocol`](docs/protocols/skillcorner_additional_directional_replication_v1.md) | `outputs/skillcorner_additional_directional_replication_v1/result.json` | Figure 2 / replication text | Outward minus goalward `0.055007` [0.050064, 0.060021], 10/10 match and LOMO contrasts positive |
 | Figure 1 — Time-ordered localized defensive reorganization | `src/generate_temporal_footprint_flagship.py` | Closed compact temporal outputs plus one deterministic Game 2 passage | `docs/figures/sloan/temporal_footprint_flagship.svg` | Figure 1 | Uses the closed values above plus one deterministic Game 2 passage |
-| Figure 2 — Directional replication | `src/generate_directional_replication_figure.py` | Closed compact aggregate directional inputs only | `docs/figures/sloan/directional_replication.{svg,png,pdf}` | Figure 2 | IDSSE `0.056856` [0.051358, 0.062430], 7/7 positive; SkillCorner `0.048883` [0.042940, 0.054707], 9/9 positive; no cross-provider pooled estimate |
+| Figure 2 — Directional replication | `src/generate_directional_replication_figure.py` | Closed compact aggregate directional inputs only | `docs/figures/sloan/directional_replication.{svg,png,pdf}` | Figure 2 | IDSSE `0.056856` [0.051358, 0.062430], 7/7 positive; original SkillCorner `0.048883` [0.042940, 0.054707], 9/9 positive; prospective SkillCorner `0.055007` [0.050064, 0.060021], 10/10 positive; no cross-provider or pooled 19-match estimate |
 
 Intervals are pre-specified bootstrap intervals. Exact byte identity is expected for
 the compact files when the same data release, Python/package environment, and
@@ -224,9 +225,25 @@ mv figures/spatial_defensive_response_footprint_game1_v1 \
    local compact hash ledger with the published result; do not commit raw or
    row-level outputs.
 
+   Inspect the separately closed prospective ten-match package without provider
+   access or response re-execution:
+
+   ```bash
+   .venv/bin/python src/skillcorner_additional_directional_replication_v1.py \
+     publication-check \
+     --output outputs/skillcorner_additional_directional_replication_v1
+   ```
+
+   Expect `FINAL_PACKAGE_VALID`, outward-minus-goalward `0.055007`
+   [0.050064, 0.060021], and 10/10 positive match and leave-one-match-out
+   contrasts. The original nine-match and prospective ten-match cohorts remain
+   separate; this command does not authorize another response execution.
+
 7. **Regenerate paper figures/tables** — after the temporal Metrica outputs
-   are present, regenerate Figure 1. Figure 2 uses only closed compact
-   aggregate inputs and therefore does not require provider row-level data.
+   are present, regenerate Figure 1. Figure 2 uses only closed compact aggregate
+   inputs from IDSSE, the original SkillCorner cohort, and the prospective
+   additional SkillCorner cohort and therefore does not require provider
+   row-level data.
    Runtime: **seconds to minutes**.
 
    ```bash

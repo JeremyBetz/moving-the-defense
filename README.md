@@ -4,9 +4,9 @@ A defence can shift together while nearby defenders also move within the unit. T
 
 **Main finding:** movement away from the pitch centreline (“outward”) was associated with greater subsequent localized defensive reorganization than comparable movement toward goal.
 
-For the prespecified comparison of straight 5 m outward versus straight 5 m goalward movement, holding modeled path magnitude and starting context equal, the contrast was approximately **28 cm in IDSSE** and **24 cm in SkillCorner**. These are differences in the near-minus-middle group-average defender-relative path—not extra movement by each defender.
+For the prespecified comparison of straight 5 m outward versus straight 5 m goalward movement, holding modeled path magnitude and starting context equal, the contrast was approximately **28 cm in IDSSE**, **24 cm in the original SkillCorner cohort**, and **28 cm in the prospective additional SkillCorner cohort**. These are differences in the near-minus-middle group-average defender-relative path—not extra movement by each defender.
 
-The directional difference appeared in separate analyses of seven IDSSE and nine SkillCorner matches; every match contrast was positive. The tracking environments were not pooled.
+The directional difference appeared in separate analyses of seven IDSSE and nine original SkillCorner matches, then prospectively replicated in ten additional nonoverlapping SkillCorner matches. Every match contrast was positive. The cohorts and tracking environments were not pooled.
 
 The measurement could organize candidate passages for later video review; its football interpretation and review usefulness remain unvalidated. It does not establish causation, marking responsibility, tactical effectiveness, or attacking value.
 
@@ -18,15 +18,17 @@ The measurement could organize candidate passages for later video review; its fo
 
 ![Replicated outward-versus-goalward difference in localized defensive reorganization](docs/figures/sloan/directional_replication.svg)
 
-*Separate pooled estimates are shown for IDSSE and SkillCorner: all 7/7 IDSSE
-and all 9/9 SkillCorner match-level outward-minus-goalward contrasts are
-positive. No cross-provider pooled estimate was calculated. The figure reports
-observational geometry, not value.*
+*Separate estimates are shown for IDSSE, original SkillCorner, and the
+prospective additional SkillCorner cohort: all 7/7, 9/9, and 10/10 match-level
+outward-minus-goalward contrasts are positive. No cross-provider or pooled
+19-match estimate was calculated. The figure reports observational geometry,
+not value.*
 
 | Environment | Outward minus goalward | 95% CI | Direction consistency |
 |---|---:|---:|---|
 | IDSSE | 0.056856 m/m | [0.051358, 0.062430] | 7/7 match; 7/7 leave-one-match-out positive |
 | SkillCorner Open Data | 0.048883 m/m | [0.042940, 0.054707] | 9/9 match; 9/9 leave-one-match-out positive |
+| SkillCorner prospective additional cohort | 0.055007 m/m | [0.050064, 0.060021] | 10/10 match; 10/10 leave-one-match-out positive |
 
 The IDSSE modeled comparison corresponds to approximately **0.284 m** greater
 near-minus-middle group-average accumulated defender-relative path for a 5 m
@@ -171,7 +173,7 @@ not the heatmap itself.
 | Metrica Sample Game 1 | Open/public development environment |
 | Metrica Sample Game 2 | Open/public heldout validation and real explanatory example |
 | IDSSE / DFL XML | Seven-match public research release; [IDSSE/DFL Figshare dataset](https://doi.org/10.6084/m9.figshare.28196177.v1), CC BY 4.0 |
-| SkillCorner Open Data | Open third, broadcast-derived environment for directional replication |
+| SkillCorner Open Data | Open third, broadcast-derived environment for the original directional replication and prospective ten-match nonoverlapping replication |
 | Metrica Sample Game 3 | Untouched |
 
 Current publication policy excludes raw provider files and new reconstructive

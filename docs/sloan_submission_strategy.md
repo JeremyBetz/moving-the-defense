@@ -20,46 +20,58 @@ association is larger. Second, the paper's main empirical centerpiece is a
 replicated directional difference: conditional on path magnitude and starting
 geometry, outward movement is more strongly associated with subsequent
 localized defensive reorganization than goalward movement in separate IDSSE and
-SkillCorner analyses.
+original SkillCorner analyses, then prospectively replicates in ten additional
+nonoverlapping SkillCorner matches.
 
 ## Submission abstract
 
-**Introduction.** Off-ball movement can coincide with a shared defensive shift
-or with defenders changing position within the defensive unit. Tracking analyses
-need to distinguish those geometries. We examine whether this localized movement
-is associated differently with outward and goalward attacker movement, rather
-than treating either direction as a tactical label or a measure of value.
+**Introduction.** A defence can shift together while nearby defenders also change
+position within the unit. We call movement by nearby defenders relative to the
+wider defensive unit localized defensive reorganization. Distinguishing these
+geometries lets us ask whether off-ball movement away from the pitch centreline
+(“outward”) is associated with different subsequent reorganization than comparable
+movement toward goal.
 
-**Methods.** Fixed windows measured attacker path before subsequent
-defender-relative path. Start-fixed proximity ranks compared the three nearest
-defenders with four middle-ranked defenders without inferring marking
-assignments. The temporal design was developed and held out in Metrica, then
-tested externally in seven IDSSE matches with a paired reverse-time comparison.
-The directional comparison was separately replicated in nine SkillCorner
-matches. The local outcome retained a shared defensive shift as context rather
-than treating all observed defender movement as one quantity. Proximity was a
-localization device, not an assignment of defensive responsibility.
+**Methods.** Fixed, non-overlapping two-second intervals measured attacker movement
+and subsequent defender-relative path. We compared the average accumulated
+defender-relative path of the nearest three defenders with that of four
+middle-ranked defenders, fixing proximity ranks before the defender interval
+without inferring marking assignments. The temporal design was developed in
+Metrica Game 1, tested in held-out Game 2, and evaluated externally in seven
+IDSSE matches using a paired reverse-time comparison. Directional models
+conditioned on attacker path magnitude and starting geometry, with a separate
+nine-match SkillCorner replication and a prospectively frozen replication in
+ten additional nonoverlapping SkillCorner matches; cohorts and tracking
+environments were analysed separately, not pooled. Uncertainty was estimated by block bootstrap,
+preserving simultaneous attacker perspectives and temporal grouping rather
+than treating individual observations as independent.
 
-**Results.** In pooled Metrica, the near-minus-middle association was 0.05029
-m/m (97.5% interval [0.03433, 0.06858]). In IDSSE it was 0.06115 m/m (95% CI
-[0.05579, 0.06681]), and the paired forward-minus-reverse excess was 0.02455
-[0.01932, 0.02985]; both estimates were positive in all seven matches.
-Reverse-time structure nevertheless remained positive. The central finding was
-a replicated directional difference: conditional on path magnitude and starting
-geometry, outward minus goalward movement was 0.056856 m/m [0.051358, 0.062430]
-in IDSSE and 0.048883 m/m [0.042940, 0.054707] in SkillCorner. Goalward movement
-was instead more strongly associated with secondary collective defensive
-translation, while the proposed width-narrowing mechanism was not established.
-The external environments were analysed separately under provider-compatible
-specifications, so their agreement is replication evidence rather than a pooled
-cross-provider effect.
+**Results.** Outward movement was associated with greater subsequent localized
+reorganization than goalward movement in all three separately analysed cohorts. For the
+prespecified comparison of straight 5 m outward versus straight 5 m goalward
+movement, holding modeled path magnitude and context equal, the
+near-minus-middle path difference was approximately 28 cm in IDSSE (95%
+interval: 26–31 cm) and 24 cm in SkillCorner (21–27 cm). These are
+differences between group-average defender-relative paths, not additional
+movement by each defender. Directional contrasts were positive in all seven
+IDSSE and all nine original SkillCorner matches. In the prospectively frozen
+additional SkillCorner population, the contrast was 0.05501 m/m [0.05006,
+0.06002], with positive match and leave-one-match-out estimates in all 10/10
+matches. The temporal near-minus-middle
+association also replicated from Metrica to IDSSE (0.06115 m/m, 95% CI
+[0.05579, 0.06681]) and was positive in all seven IDSSE matches. The IDSSE
+forward-minus-reverse excess was 0.02455 m/m [0.01932, 0.02985], positive in
+all seven matches, although reverse-time structure remained positive. A
+secondary analysis associated goalward movement more strongly with
+collective defensive translation; the proposed width-narrowing explanation
+was not established.
 
-**Conclusion.** The analysis provides a prospectively tested and externally
-replicated temporal measure of localized defensive reorganization. It can help
-structure later video review by separating internal movement from a shared
-defensive shift. The findings are observational associations, not estimates of
-causal influence, named tactical behaviour, or attacking value. The measure is
-a descriptive layer for later football interpretation, not a tactical classifier.
+**Conclusion.** The findings show that goalward progression and localized
+defensive reorganization are distinct geometric descriptions of off-ball movement.
+They do not establish causation, marking responsibility, tactical
+effectiveness or attacking value. The measurement could provide a
+descriptive layer for organizing candidate passages for subsequent video
+review; its football interpretation and review usefulness remain unvalidated.
 
 ## Visual argument
 
@@ -70,7 +82,7 @@ Use exactly two main figures. They should make one visual argument:
 | Figure | Role | Required message |
 |---|---|---|
 | **Figure 1 — Temporal flagship** | Establishes the measurement and temporal validation. | A protected-holdout Metrica passage distinguishes a shared defensive shift from defender-relative movement; accompanying estimates show the Metrica/IDSSE temporal pattern and paired forward-versus-reverse qualification. The passage illustrates geometry and does not assign movement to one attacker. |
-| **Figure 2 — Outward-versus-goalward replication** | Main empirical centerpiece. | Separate IDSSE and SkillCorner estimates show the replicated directional difference. Keep provider-specific results and uncertainty visible; do not pool the environments. |
+| **Figure 2 — Outward-versus-goalward replication** | Main empirical centerpiece. | Separate IDSSE, original SkillCorner, and prospective additional SkillCorner estimates show the replicated directional difference. Keep cohort-specific results and uncertainty visible; do not pool providers or the two SkillCorner cohorts. |
 
 If a combined figure/table limit of two applies, retain these two figures. Keep
 the comprehensive results table supplementary or repository-facing.
@@ -82,7 +94,8 @@ the comprehensive results table supplementary or repository-facing.
    attacker movement.
 2. **Replicated directional difference:** outward rather than goalward movement
    is more strongly associated with subsequent localized defensive
-   reorganization in the separate IDSSE and SkillCorner analyses.
+   reorganization in the separate IDSSE and original SkillCorner analyses and
+   in the prospectively frozen ten-match additional SkillCorner cohort.
 3. **Starting context:** attacker--unit goalward position and attacker--ball
    distance characterize where the IDSSE association is larger or smaller. Keep
    this in the full paper, not as a central abstract result.

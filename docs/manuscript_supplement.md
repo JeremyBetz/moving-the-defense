@@ -6,7 +6,7 @@ This supplement accompanies the manuscript and provides technical detail for the
 
 ## S1. Data, observation support, and temporal design
 
-The temporal footprint was developed in Metrica Sample Game 1, evaluated on the untouched Sample Game 2, and pooled only under its pre-specified rule. The external temporal analysis used the seven public IDSSE/DFL matches in *An integrated dataset of spatiotemporal and event data in elite soccer* (Bassek et al., 2025; [Figshare DOI](https://doi.org/10.6084/m9.figshare.28196177.v1); CC BY 4.0). The directional analysis used the same seven-match IDSSE environment and a separate nine-match SkillCorner environment under a provider-compatible frozen specification. Analyses were kept separate by provider; no cross-provider effect was pooled.
+The temporal footprint was developed in Metrica Sample Game 1, evaluated on the untouched Sample Game 2, and pooled only under its pre-specified rule. The external temporal analysis used the seven public IDSSE/DFL matches in *An integrated dataset of spatiotemporal and event data in elite soccer* (Bassek et al., 2025; [Figshare DOI](https://doi.org/10.6084/m9.figshare.28196177.v1); CC BY 4.0). The directional analysis used the same seven-match IDSSE environment, a separate nine-match SkillCorner cohort under a provider-compatible frozen specification, and a prospectively frozen ten-match nonoverlapping SkillCorner cohort independently reacquired from the same official release. All cohorts were estimated separately; no cross-provider or pooled 19-match effect was calculated.
 
 | Match ID | Present in the public IDSSE/DFL release? | Paper role | Notes |
 |---|---|---|---|
@@ -81,11 +81,11 @@ The rank profile is irregular and stepped; it is evidence for the frozen near-ve
 
 ## S5. Directional geometry and external replication
 
-Signed displacement complements path magnitude because similar path lengths can have different goalward and outward components. Conditional on frozen magnitude and starting geometry, the outward-minus-goalward contrast was 0.056856 m/m [0.051358, 0.062430] in IDSSE. It was positive in all seven match and leave-one-match-out fits. The separately governed nine-match SkillCorner analysis estimated 0.048883 m/m [0.042940, 0.054707]; its trim retained 90.19% of rows and the majority-directly-detected sensitivity was 0.046780 m/m.
+Signed displacement complements path magnitude because similar path lengths can have different goalward and outward components. Conditional on frozen magnitude and starting geometry, the outward-minus-goalward contrast was 0.056856 m/m [0.051358, 0.062430] in IDSSE. It was positive in all seven match and leave-one-match-out fits. The separately governed nine-match SkillCorner analysis estimated 0.048883 m/m [0.042940, 0.054707]; its trim retained 90.19% of rows and the majority-directly-detected sensitivity was 0.046780 m/m. The prospective ten-match additional SkillCorner replication estimated 0.055007 m/m [0.050064, 0.060021]; all 10/10 match and all ten leave-one-match-out contrasts were positive. Its trim estimate was 0.052606 m/m (0.9564 of the primary magnitude), and its full-rank majority-detected sensitivity was 0.059504 m/m (1.0817 of the primary magnitude). Both inherited sensitivity gates passed, with 2,000/2,000 valid bootstrap draws.
 
 ![Directional localized-reorganization contrast in separate external environments.](figures/sloan/directional_replication.svg)
 
-*Figure S2. Directional contrast replicated under separate provider-compatible specifications. This is replication evidence, not a pooled provider effect or a tactical direction label.*
+*Figure S2. Directional contrast in separately estimated IDSSE, original SkillCorner, and prospective additional SkillCorner cohorts. This is replication evidence, not a pooled provider or pooled 19-match effect, causal result, or tactical direction label.*
 
 ## S6. Starting-context analyses
 
@@ -168,6 +168,7 @@ Provider environments were analyzed under frozen compatible specifications, with
 | Temporal rank footprint | IDSSE, 7 matches | $\Delta_{NM}=0.06115$ m/m [0.05579, 0.06681]; paired excess 0.02455 [0.01932, 0.02985] | External observational replication |
 | Directional localized geometry | IDSSE, 7 matches | outward minus goalward 0.056856 m/m [0.051358, 0.062430] | Replicated directional association |
 | Directional localized geometry | SkillCorner, 9 matches | outward minus goalward 0.048883 m/m [0.042940, 0.054707] | Separate provider-compatible replication |
+| Directional localized geometry | SkillCorner, 10 prospective additional matches | outward minus goalward 0.055007 m/m [0.050064, 0.060021]; 10/10 match and LOMO estimates positive | Prospective nonoverlapping Project 1 replication; no pooled 19-match effect |
 | Starting context | IDSSE, 7 matches | unit offset -0.010161; attacker--ball distance -0.007533 m/m | Descriptive context, not mechanism |
 | Absolute lateral starting position | SkillCorner, 9 matches | $\beta_{\mathrm{lat}}=0.009809$ m/m [0.008125, 0.011573]; 9/9 match and LOMO estimates positive | Prospective test of IDSSE-generated hypothesis; not heatmap validation |
 | Response scale | IDSSE, 7 matches | centroid translation 2.962709 m [2.870720, 3.048322] | Secondary/nonclassifying shared-movement context |

@@ -1,5 +1,19 @@
 # Research Log
 
+## 2026-09-17 — Additional SkillCorner directional replication supported
+
+The prospectively frozen outward-minus-goalward association replicated in ten
+additional nonoverlapping SkillCorner matches independently reacquired and
+checked response-blind within Project 1. The separate macro contrast was
+0.055007 m/m (95% interval [0.050064, 0.060021]); all 10/10 match contrasts and
+all ten leave-one-match-out contrasts were positive. The inherited trim estimate
+was 0.052606 m/m (ratio 0.9564), the full-rank majority-detected sensitivity was
+0.059504 m/m (ratio 1.0817), and both gates passed with 2,000/2,000 valid
+bootstrap draws. The package reproduced byte-for-byte and closed as SUPPORTED.
+No pooled 19-match or cross-provider effect, animation, API, causal, tactical,
+quality, space-creation, or value analysis was created. Global prior exposure
+outside Project 1 is not claimed to be absent.
+
 ## 2026-09-07 — IDSSE localized-reorganization support preflight closed
 
 An IDSSE-only, response-blind spatial-support preflight reconstructed the
