@@ -1,0 +1,42 @@
+{
+  "acquisition": {
+    "clickthrough_acceptance_required": false,
+    "commands": [
+      "GIT_LFS_SKIP_SMUDGE=1 git clone --filter=blob:none https://github.com/SkillCorner/opendata.git <ignored-source>",
+      "GIT_LFS_SKIP_SMUDGE=1 git -C <ignored-source> checkout --detach 02a396ffd09b283c9f092fdedeff11da6d535b66",
+      "git -C <ignored-source> lfs fetch --include=data/matches/*/*_tracking_extrapolated.jsonl origin 02a396ffd09b283c9f092fdedeff11da6d535b66",
+      "git -C <ignored-source> lfs checkout data/matches/*/*_tracking_extrapolated.jsonl"
+    ],
+    "credentials_required": false,
+    "git_lfs_version": "git-lfs/3.8.0 (GitHub; darwin arm64; go 1.27.0)",
+    "git_version": "git version 2.50.1 (Apple Git-155)",
+    "materialized_tracking_bytes": 1823448331,
+    "raw_destination": "ignored data/skillcorner_opendata",
+    "timestamp_utc": "2026-09-17T15:33:13Z"
+  },
+  "config_sha256": "b5237ba47ebb254df5cbf9d7f4004dab0469aacab55c54e645ef7e1772f63452",
+  "contamination_caveat": "Project 1 nonoverlap is verified; global prior exposure was not audited because no sibling repository was accessed.",
+  "next_action": "freeze one prospective ten-match directional replication protocol; no execution is authorized",
+  "protocol_sha256": "34f6ea94ae14a2bd990214496dcbe0db7fbec6de434f830a5e654aa75be9f0b3",
+  "qc": {
+    "animation_generated": false,
+    "candidate_matches": 10,
+    "directional_contrast_run": false,
+    "excluded_incompatible": 1,
+    "existing_overlap": 9,
+    "response_constructed": false,
+    "status": "OUTCOME_BLIND_COMPATIBILITY_PASSED",
+    "total_matches": 20,
+    "unresolved": 0
+  },
+  "source": {
+    "attribution": "SkillCorner Open Data; Copyright (c) 2020 SkillCorner",
+    "commit": "02a396ffd09b283c9f092fdedeff11da6d535b66",
+    "competition": "Australian A-League",
+    "license": "MIT",
+    "repository": "https://github.com/SkillCorner/opendata",
+    "season": "2024/2025",
+    "tree": "44fd5081d0e6a441dbafadd12c51d6ffca8ab98b"
+  },
+  "source_sha256": "a83e30e2726b90ae457c74c8b8153b9bdc27b1a8ac34d8c8fc6b2c95596d68b0"
+}

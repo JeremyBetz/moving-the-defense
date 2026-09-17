@@ -1,0 +1,546 @@
+{
+  "commit": "02a396ffd09b283c9f092fdedeff11da6d535b66",
+  "files": [
+    {
+      "bytes": 33730,
+      "file": "1874553_match.json",
+      "git_blob_sha": "51ef142ceba0f85700b376faf1fdbc4e4a728629",
+      "lfs": false,
+      "match_id": 1874553,
+      "sha256": "e6974e402779d8be44e75bf88ef2a3acfd4d025b87b3fc57f518fa826a645ad8",
+      "upstream_path": "data/matches/1874553/1874553_match.json"
+    },
+    {
+      "bytes": 90729279,
+      "file": "1874553_tracking_extrapolated.jsonl",
+      "git_blob_sha": "7439f0ba7da6bc03625258b98fe84a5bf770b72e",
+      "lfs": true,
+      "match_id": 1874553,
+      "sha256": "ea97f58f8eaad925feaeacc6395ec24860dd80027af8a89450276adebd29d265",
+      "upstream_path": "data/matches/1874553/1874553_tracking_extrapolated.jsonl"
+    },
+    {
+      "bytes": 115978,
+      "file": "1874553_phases_of_play.csv",
+      "git_blob_sha": "a566fbbaf11cf47838cdf36e6d7fe17904b85f59",
+      "lfs": false,
+      "match_id": 1874553,
+      "sha256": "e70054b64202a3f318b7208edec9a329da1f4cfcafeeb72ae197176c4a043a8c",
+      "upstream_path": "data/matches/1874553/1874553_phases_of_play.csv"
+    },
+    {
+      "bytes": 27541,
+      "file": "1886347_match.json",
+      "git_blob_sha": "10779035f95d26a30adf8330c351e4cc4d16a513",
+      "lfs": false,
+      "match_id": 1886347,
+      "sha256": "30c608e78663e9f490b3545479a3ce67b171f418c5133d5609cb249a2466abb2",
+      "upstream_path": "data/matches/1886347/1886347_match.json"
+    },
+    {
+      "bytes": 89280839,
+      "file": "1886347_tracking_extrapolated.jsonl",
+      "git_blob_sha": "6c1d01ae3bafa28cf94e4b7a581fb3779effe4bd",
+      "lfs": true,
+      "match_id": 1886347,
+      "sha256": "3577e2803da95390f8b2f85d47829eb55fbbfee6211c94adc65db0dc78e46b41",
+      "upstream_path": "data/matches/1886347/1886347_tracking_extrapolated.jsonl"
+    },
+    {
+      "bytes": 123081,
+      "file": "1886347_phases_of_play.csv",
+      "git_blob_sha": "44d6409ef0fe74615de2f8bb0a830b243b68d531",
+      "lfs": false,
+      "match_id": 1886347,
+      "sha256": "0e2df3f35b32ab41f2d667e8964c861268c34a38323d76817dbb59905d9799df",
+      "upstream_path": "data/matches/1886347/1886347_phases_of_play.csv"
+    },
+    {
+      "bytes": 27810,
+      "file": "1899585_match.json",
+      "git_blob_sha": "42ca159d85dc59476bf5278961ccbda6633a3303",
+      "lfs": false,
+      "match_id": 1899585,
+      "sha256": "41de8cb74a0512fcf0cbaaa5c615ae3e7dcaaf6745b9c78a050b59b906b1cb06",
+      "upstream_path": "data/matches/1899585/1899585_match.json"
+    },
+    {
+      "bytes": 85550410,
+      "file": "1899585_tracking_extrapolated.jsonl",
+      "git_blob_sha": "8fdf9cb1e792bb5c4b141155a29e402a83e7ad0c",
+      "lfs": true,
+      "match_id": 1899585,
+      "sha256": "90b6289ec2181192d1793ec6240fbbe8225ff0219c7956710c6278c31a661100",
+      "upstream_path": "data/matches/1899585/1899585_tracking_extrapolated.jsonl"
+    },
+    {
+      "bytes": 125583,
+      "file": "1899585_phases_of_play.csv",
+      "git_blob_sha": "a634a73aa252929921911af14ccfbe9973819488",
+      "lfs": false,
+      "match_id": 1899585,
+      "sha256": "354e2cd891b4566eaddb5eba3908ac63b22e4ef1dbe0f2767f872ccc3544fae5",
+      "upstream_path": "data/matches/1899585/1899585_phases_of_play.csv"
+    },
+    {
+      "bytes": 28396,
+      "file": "1925299_match.json",
+      "git_blob_sha": "62b69aba5be11f795ccdbcf65c6d07f662832b66",
+      "lfs": false,
+      "match_id": 1925299,
+      "sha256": "f4345b32c0fdd7c9990df70050b3a74f57b1992cf762e20f2a4d309bd2fba7d2",
+      "upstream_path": "data/matches/1925299/1925299_match.json"
+    },
+    {
+      "bytes": 97091519,
+      "file": "1925299_tracking_extrapolated.jsonl",
+      "git_blob_sha": "524413c8696e438255c33e46e50149ba5b6bf2c2",
+      "lfs": true,
+      "match_id": 1925299,
+      "sha256": "48528be40ad82fa3e2b232e1af8d311705f7d6d119925ef199d2b59ea36fd3c9",
+      "upstream_path": "data/matches/1925299/1925299_tracking_extrapolated.jsonl"
+    },
+    {
+      "bytes": 133411,
+      "file": "1925299_phases_of_play.csv",
+      "git_blob_sha": "def8363cc61be8d2638abc451a54b1190237005a",
+      "lfs": false,
+      "match_id": 1925299,
+      "sha256": "0ff764fdaa9b2b3fdddbf854f03c5f0901dfe64ebe2d5b0bc3fdf03763c34132",
+      "upstream_path": "data/matches/1925299/1925299_phases_of_play.csv"
+    },
+    {
+      "bytes": 33400,
+      "file": "1927964_match.json",
+      "git_blob_sha": "e42fb7edbd49c81e087d0d73cc885cc3095d6a20",
+      "lfs": false,
+      "match_id": 1927964,
+      "sha256": "f967f911c20f5c5f8c89bbe2020a30c92731173616d5a1e4bafeb65435278b76",
+      "upstream_path": "data/matches/1927964/1927964_match.json"
+    },
+    {
+      "bytes": 91049828,
+      "file": "1927964_tracking_extrapolated.jsonl",
+      "git_blob_sha": "fa22f7fbca40a66d046b675e59b2c6ba0db19af6",
+      "lfs": true,
+      "match_id": 1927964,
+      "sha256": "858c7a756ca3d33017f864775af5999d2c0f364e58ab60ae040c8b9ebab17827",
+      "upstream_path": "data/matches/1927964/1927964_tracking_extrapolated.jsonl"
+    },
+    {
+      "bytes": 117263,
+      "file": "1927964_phases_of_play.csv",
+      "git_blob_sha": "d1960e21564d61372824bf8a844c68b391e35abb",
+      "lfs": false,
+      "match_id": 1927964,
+      "sha256": "9216447a63a912edcad1a4d36370372210dcc800a7f48fc10127fd7de9eae503",
+      "upstream_path": "data/matches/1927964/1927964_phases_of_play.csv"
+    },
+    {
+      "bytes": 27767,
+      "file": "1953632_match.json",
+      "git_blob_sha": "b63200aace34ada146ab615e776d9a022f1a72ad",
+      "lfs": false,
+      "match_id": 1953632,
+      "sha256": "366c8dd6b504d4f4ace5685040648b0f30081043a44f01663b8b7e077e6bfde8",
+      "upstream_path": "data/matches/1953632/1953632_match.json"
+    },
+    {
+      "bytes": 90027965,
+      "file": "1953632_tracking_extrapolated.jsonl",
+      "git_blob_sha": "3e3a8f6fea63aab93dce0b15f0eae11c547437ca",
+      "lfs": true,
+      "match_id": 1953632,
+      "sha256": "1c2014f97c3eff1ce2475203512c9d126930d7599c036105c9ac442d1de1667e",
+      "upstream_path": "data/matches/1953632/1953632_tracking_extrapolated.jsonl"
+    },
+    {
+      "bytes": 114478,
+      "file": "1953632_phases_of_play.csv",
+      "git_blob_sha": "bd5c07b7010bc00c73cedcef497aaaadf12a6455",
+      "lfs": false,
+      "match_id": 1953632,
+      "sha256": "9243e4be8efcc1922fe46f9cda56c781584329f1febe84a74ee808c8f4ff0b93",
+      "upstream_path": "data/matches/1953632/1953632_phases_of_play.csv"
+    },
+    {
+      "bytes": 32946,
+      "file": "1959846_match.json",
+      "git_blob_sha": "3513a7cd787f59e3f8027ba17365c17d78878969",
+      "lfs": false,
+      "match_id": 1959846,
+      "sha256": "4bbe2058af53edd42d5e3acd7fb28ecb8c79e4afb16cb9b77a6fe9b58f6e516b",
+      "upstream_path": "data/matches/1959846/1959846_match.json"
+    },
+    {
+      "bytes": 87710167,
+      "file": "1959846_tracking_extrapolated.jsonl",
+      "git_blob_sha": "13664e719ca355c2ab5e14899fe1c3dbefb007a7",
+      "lfs": true,
+      "match_id": 1959846,
+      "sha256": "5ba2d87f6fd1ba3138301b369bd9266be69416a2d799a3fba5b5ec8a52e1284b",
+      "upstream_path": "data/matches/1959846/1959846_tracking_extrapolated.jsonl"
+    },
+    {
+      "bytes": 128571,
+      "file": "1959846_phases_of_play.csv",
+      "git_blob_sha": "9ba4d7dff66a1b73ae9fbc39a899c678e308f5e9",
+      "lfs": false,
+      "match_id": 1959846,
+      "sha256": "63b33ce9c020cfd54be6e957cd01a42cebec2acacd1345c338196fff5ecd9a9f",
+      "upstream_path": "data/matches/1959846/1959846_phases_of_play.csv"
+    },
+    {
+      "bytes": 33792,
+      "file": "1986691_match.json",
+      "git_blob_sha": "dee942a7a5464f0730aff27b93b5269f5697d88b",
+      "lfs": false,
+      "match_id": 1986691,
+      "sha256": "754f6a6fd0d996236cf553ef5c3c24513274b0db024cb6833a7419b08d55dd68",
+      "upstream_path": "data/matches/1986691/1986691_match.json"
+    },
+    {
+      "bytes": 88531597,
+      "file": "1986691_tracking_extrapolated.jsonl",
+      "git_blob_sha": "4402bd9c59300005a9674882c5735299e55dc2f5",
+      "lfs": true,
+      "match_id": 1986691,
+      "sha256": "630e946950fe459f5e48872b01a36e6dfc319cf9027e7b98156150bb6e2c30f6",
+      "upstream_path": "data/matches/1986691/1986691_tracking_extrapolated.jsonl"
+    },
+    {
+      "bytes": 115267,
+      "file": "1986691_phases_of_play.csv",
+      "git_blob_sha": "ce1b2c410fd4130f0f385520e5c5c6f908a4a933",
+      "lfs": false,
+      "match_id": 1986691,
+      "sha256": "7589168484ae1305072afa397126a72f8925cf261b9eb121ecb0192083632cd3",
+      "upstream_path": "data/matches/1986691/1986691_phases_of_play.csv"
+    },
+    {
+      "bytes": 27830,
+      "file": "1996435_match.json",
+      "git_blob_sha": "4b6aea20c71dd1128228aff2d8a12d848a0109af",
+      "lfs": false,
+      "match_id": 1996435,
+      "sha256": "f54179645d3c3f308a7094086283277f2a7c99da5f3919302e622cbd82f9d065",
+      "upstream_path": "data/matches/1996435/1996435_match.json"
+    },
+    {
+      "bytes": 88634016,
+      "file": "1996435_tracking_extrapolated.jsonl",
+      "git_blob_sha": "6f068b84157e6f6b2f7b6f2631210ddf543f37fe",
+      "lfs": true,
+      "match_id": 1996435,
+      "sha256": "f42764d8bde290e8f738fa21141cadbed75408314b0b337bbf1d5a3444540a02",
+      "upstream_path": "data/matches/1996435/1996435_tracking_extrapolated.jsonl"
+    },
+    {
+      "bytes": 120335,
+      "file": "1996435_phases_of_play.csv",
+      "git_blob_sha": "4c616f64b0ddf8f8d759a3f70dce22745c033600",
+      "lfs": false,
+      "match_id": 1996435,
+      "sha256": "ff7ed406c900ad98bd48b6b9913e088c40bf176a3915f061430c1af7405ccb09",
+      "upstream_path": "data/matches/1996435/1996435_phases_of_play.csv"
+    },
+    {
+      "bytes": 32859,
+      "file": "1996436_match.json",
+      "git_blob_sha": "61736f019eea4d8c97e891dfee3df7e169fc27ff",
+      "lfs": false,
+      "match_id": 1996436,
+      "sha256": "4e8999668a79fccd43f01e5538d7595b4614ec6061d648b831a96951e495c78a",
+      "upstream_path": "data/matches/1996436/1996436_match.json"
+    },
+    {
+      "bytes": 88945845,
+      "file": "1996436_tracking_extrapolated.jsonl",
+      "git_blob_sha": "78b70bcba5d4dbf375bc43dd7188ef0da1a666b2",
+      "lfs": true,
+      "match_id": 1996436,
+      "sha256": "fab9d331e06f3042c83ac17798901b49bb259c99a8f3b319cd0146263cde65e7",
+      "upstream_path": "data/matches/1996436/1996436_tracking_extrapolated.jsonl"
+    },
+    {
+      "bytes": 104584,
+      "file": "1996436_phases_of_play.csv",
+      "git_blob_sha": "1e4533bcffac6d8407f1e17a3e89a73a1756da2a",
+      "lfs": false,
+      "match_id": 1996436,
+      "sha256": "e3729e8a66db43f4c7abed7ac096a0416d3ad0657dcad1604908aa4d617e81e5",
+      "upstream_path": "data/matches/1996436/1996436_phases_of_play.csv"
+    },
+    {
+      "bytes": 28213,
+      "file": "2006229_match.json",
+      "git_blob_sha": "71bff731f85f5266dafd4fa073b52ef66eb91ff8",
+      "lfs": false,
+      "match_id": 2006229,
+      "sha256": "87386df74b45eb7ccac80742c603763146cb2b61f47561122355fe246d8795eb",
+      "upstream_path": "data/matches/2006229/2006229_match.json"
+    },
+    {
+      "bytes": 90078007,
+      "file": "2006229_tracking_extrapolated.jsonl",
+      "git_blob_sha": "053f97dac07eaadb02d953dc92e4430fabc4087a",
+      "lfs": true,
+      "match_id": 2006229,
+      "sha256": "3ee193ba01f1fe2cbce087eca8a881c21b8b0ea3485ae6c3d7e32e8b2f51e738",
+      "upstream_path": "data/matches/2006229/2006229_tracking_extrapolated.jsonl"
+    },
+    {
+      "bytes": 122340,
+      "file": "2006229_phases_of_play.csv",
+      "git_blob_sha": "d0a3775cbdbda49b2cf5cef2981b4bdd4eb50fa2",
+      "lfs": false,
+      "match_id": 2006229,
+      "sha256": "fa5e3927a24f5ee78df26b96f398b376146a9cdbad9da48721322341fc758c38",
+      "upstream_path": "data/matches/2006229/2006229_phases_of_play.csv"
+    },
+    {
+      "bytes": 33294,
+      "file": "2006363_match.json",
+      "git_blob_sha": "edaf492c5fc4c98cb871a8ade25065e9a38d6ef7",
+      "lfs": false,
+      "match_id": 2006363,
+      "sha256": "26d4068baf7454d1e066b6e70715da6c7ac016b14963a3bfa3ed99ed7c3aba79",
+      "upstream_path": "data/matches/2006363/2006363_match.json"
+    },
+    {
+      "bytes": 90591887,
+      "file": "2006363_tracking_extrapolated.jsonl",
+      "git_blob_sha": "5880f8f797b3353814fa8e6af91e3554a945fefc",
+      "lfs": true,
+      "match_id": 2006363,
+      "sha256": "61dfdbd83f8e654127b249b8503f062338c14ec0c9e65404bcf70fb7c1346bd4",
+      "upstream_path": "data/matches/2006363/2006363_tracking_extrapolated.jsonl"
+    },
+    {
+      "bytes": 119862,
+      "file": "2006363_phases_of_play.csv",
+      "git_blob_sha": "d97071f5b62d284d9670dfd73b64a916df8a520f",
+      "lfs": false,
+      "match_id": 2006363,
+      "sha256": "651610758454913a5082b217dccd23ba0e002482dbe39b685528c542d3dcdab6",
+      "upstream_path": "data/matches/2006363/2006363_phases_of_play.csv"
+    },
+    {
+      "bytes": 32670,
+      "file": "2007448_match.json",
+      "git_blob_sha": "7798b2874d7593e33c9700ba19b12b380a64c65b",
+      "lfs": false,
+      "match_id": 2007448,
+      "sha256": "434b31c032656be4a89e7042eadd442d4dfb468e4bfa87ce188102f314262873",
+      "upstream_path": "data/matches/2007448/2007448_match.json"
+    },
+    {
+      "bytes": 90025383,
+      "file": "2007448_tracking_extrapolated.jsonl",
+      "git_blob_sha": "8b0d91430bed0fe3217e8f0a9525ee744fb2d906",
+      "lfs": true,
+      "match_id": 2007448,
+      "sha256": "12d00d6e4257218812df6e4c4263c49387ba0313a83ff8d826c4416828f9c798",
+      "upstream_path": "data/matches/2007448/2007448_tracking_extrapolated.jsonl"
+    },
+    {
+      "bytes": 113871,
+      "file": "2007448_phases_of_play.csv",
+      "git_blob_sha": "aaf6577efc71bfa092998f675abb0ab4e33fb4bc",
+      "lfs": false,
+      "match_id": 2007448,
+      "sha256": "4ec5ece7b261e8cbb87403cb8a54ac617f5a1b61412554afeaa967d46e841994",
+      "upstream_path": "data/matches/2007448/2007448_phases_of_play.csv"
+    },
+    {
+      "bytes": 33745,
+      "file": "2007721_match.json",
+      "git_blob_sha": "0bbbabf46dd7330bf8d16faf979fbf576f37218d",
+      "lfs": false,
+      "match_id": 2007721,
+      "sha256": "0ed112bc955eb341bc25005f9a7bb3fdf040223c8e1765646225c47e974b6139",
+      "upstream_path": "data/matches/2007721/2007721_match.json"
+    },
+    {
+      "bytes": 92872706,
+      "file": "2007721_tracking_extrapolated.jsonl",
+      "git_blob_sha": "2ef15e0a762e293cd16084202da60dbd7a71803e",
+      "lfs": true,
+      "match_id": 2007721,
+      "sha256": "fea913b8d4cbde8d85c6bdf5f1a4b3fd203b78227e976a171c8ab0946705d378",
+      "upstream_path": "data/matches/2007721/2007721_tracking_extrapolated.jsonl"
+    },
+    {
+      "bytes": 116997,
+      "file": "2007721_phases_of_play.csv",
+      "git_blob_sha": "7b61a82555d8ea1fa958b5b0645e324cb08b59f0",
+      "lfs": false,
+      "match_id": 2007721,
+      "sha256": "cfb08b62ec61b54ecabfa3f2bed01c6f3dc49a4dbae4382dfcb1006648ef95a3",
+      "upstream_path": "data/matches/2007721/2007721_phases_of_play.csv"
+    },
+    {
+      "bytes": 33744,
+      "file": "2010085_match.json",
+      "git_blob_sha": "82b15d3e8cac13d0403259785302023ad89ab9ca",
+      "lfs": false,
+      "match_id": 2010085,
+      "sha256": "3222413d358251e1ac1cdde1f5ee2fd126b0d9cc3470c2aa1bb07177a09ef24d",
+      "upstream_path": "data/matches/2010085/2010085_match.json"
+    },
+    {
+      "bytes": 92516156,
+      "file": "2010085_tracking_extrapolated.jsonl",
+      "git_blob_sha": "cbc77fbf800b88f1f49974c49d62d5c0acc53a95",
+      "lfs": true,
+      "match_id": 2010085,
+      "sha256": "04562d9754b2977c80430535e9b5733426bc4ce910db56fe7a3760876211ac5a",
+      "upstream_path": "data/matches/2010085/2010085_tracking_extrapolated.jsonl"
+    },
+    {
+      "bytes": 115871,
+      "file": "2010085_phases_of_play.csv",
+      "git_blob_sha": "dd1df31ea9e76118e99b8d1dc44377ebb72c4873",
+      "lfs": false,
+      "match_id": 2010085,
+      "sha256": "c2c7ac0a4286b171681d11a1e65e1d82594bcc33ff9cc5faf34ae6a5d28fa9af",
+      "upstream_path": "data/matches/2010085/2010085_phases_of_play.csv"
+    },
+    {
+      "bytes": 28420,
+      "file": "2011166_match.json",
+      "git_blob_sha": "6468e14c07f0108c56cd3457544c106643161099",
+      "lfs": false,
+      "match_id": 2011166,
+      "sha256": "6b381b8bd338859c394c1992da137436e2e09cd609a81ac94d5f5f941d35d1bc",
+      "upstream_path": "data/matches/2011166/2011166_match.json"
+    },
+    {
+      "bytes": 87441570,
+      "file": "2011166_tracking_extrapolated.jsonl",
+      "git_blob_sha": "fbc2873cc5258e94f8746bceea454f0125782437",
+      "lfs": true,
+      "match_id": 2011166,
+      "sha256": "8ec2937050930d87e4f52b2d65515f70ef8edd0ae2814bf40155c4448133390e",
+      "upstream_path": "data/matches/2011166/2011166_tracking_extrapolated.jsonl"
+    },
+    {
+      "bytes": 121175,
+      "file": "2011166_phases_of_play.csv",
+      "git_blob_sha": "0d191c3f8d3f373c41ee8110c2a196166c36e6e5",
+      "lfs": false,
+      "match_id": 2011166,
+      "sha256": "b49e1482a2d6086f06805f138f40a00dd22b2d14767a4418fbda47114e263b4c",
+      "upstream_path": "data/matches/2011166/2011166_phases_of_play.csv"
+    },
+    {
+      "bytes": 27899,
+      "file": "2013725_match.json",
+      "git_blob_sha": "4309772e339cd1f9ebc2aeb4a429076287af3a00",
+      "lfs": false,
+      "match_id": 2013725,
+      "sha256": "c8b9372fbd2e79ddcbb859b51b5086111ed7f3cd84ca0b457091c7d0e5209df3",
+      "upstream_path": "data/matches/2013725/2013725_match.json"
+    },
+    {
+      "bytes": 96059074,
+      "file": "2013725_tracking_extrapolated.jsonl",
+      "git_blob_sha": "1354649bc1c6b7bff90eb9e44a7e22544b4ed4c1",
+      "lfs": true,
+      "match_id": 2013725,
+      "sha256": "13eb83329814ed5f5d73da8f8ab5c5979d6c8a7858e89e28a7fa8072f91fb250",
+      "upstream_path": "data/matches/2013725/2013725_tracking_extrapolated.jsonl"
+    },
+    {
+      "bytes": 130821,
+      "file": "2013725_phases_of_play.csv",
+      "git_blob_sha": "90d4885a26817703b0f7736b0e47703f59c3dc41",
+      "lfs": false,
+      "match_id": 2013725,
+      "sha256": "02a4320f237512d0b3158d799a845cc1dc8a9d87c542fd64d27515afefb8354f",
+      "upstream_path": "data/matches/2013725/2013725_phases_of_play.csv"
+    },
+    {
+      "bytes": 27937,
+      "file": "2015213_match.json",
+      "git_blob_sha": "1d58d487d5ca7f8c9cfe28de8a9757e3fae2aff4",
+      "lfs": false,
+      "match_id": 2015213,
+      "sha256": "300342194bf3dcd9fe356ed30df26fd0ee6e8caeb8ce5d8cfd27cf90cd995dff",
+      "upstream_path": "data/matches/2015213/2015213_match.json"
+    },
+    {
+      "bytes": 102030769,
+      "file": "2015213_tracking_extrapolated.jsonl",
+      "git_blob_sha": "623dbb6a374c8f448f678d226233be618c4606a4",
+      "lfs": true,
+      "match_id": 2015213,
+      "sha256": "413990d0024d84856ce1f2a16866b8887472c0cea22c61caef0d1f46505a609e",
+      "upstream_path": "data/matches/2015213/2015213_tracking_extrapolated.jsonl"
+    },
+    {
+      "bytes": 134493,
+      "file": "2015213_phases_of_play.csv",
+      "git_blob_sha": "b46c9cb5b1cdc30e2ddd5b9a316547122e1ebeff",
+      "lfs": false,
+      "match_id": 2015213,
+      "sha256": "4ccaa43d8c390ba1b4011bcdb63ee8208686a5d11f275ead130048239e8a0ba8",
+      "upstream_path": "data/matches/2015213/2015213_phases_of_play.csv"
+    },
+    {
+      "bytes": 33791,
+      "file": "2016236_match.json",
+      "git_blob_sha": "8bb23c902bb3d5ea82092f6b9c8c20e2379fa67b",
+      "lfs": false,
+      "match_id": 2016236,
+      "sha256": "93ccf67cead82def1acda87d3cf550fd42f96cb0e1adbff9eeb8824077980495",
+      "upstream_path": "data/matches/2016236/2016236_match.json"
+    },
+    {
+      "bytes": 94737872,
+      "file": "2016236_tracking_extrapolated.jsonl",
+      "git_blob_sha": "c68f711f9c32d42aadfccd8e9a416b8a82e5fd0e",
+      "lfs": true,
+      "match_id": 2016236,
+      "sha256": "d78555f9dfd7d1ce9de38066d3c98e6d54417c6d45d73b1f1ce7e26f07263d8f",
+      "upstream_path": "data/matches/2016236/2016236_tracking_extrapolated.jsonl"
+    },
+    {
+      "bytes": 133630,
+      "file": "2016236_phases_of_play.csv",
+      "git_blob_sha": "8d0b1eefbbdae01260bd295d5133af6f02f8001d",
+      "lfs": false,
+      "match_id": 2016236,
+      "sha256": "cb162b42bd95306404da15071df07f70cb0458db9b532930dac2a1b0092242e9",
+      "upstream_path": "data/matches/2016236/2016236_phases_of_play.csv"
+    },
+    {
+      "bytes": 28545,
+      "file": "2017461_match.json",
+      "git_blob_sha": "281fd462ac1ca85a6d9ed2d5b5d5a7654627abe4",
+      "lfs": false,
+      "match_id": 2017461,
+      "sha256": "db27759bf734dc8e3d9e56f047965cc7c74833bc3d0345ee3821ab97681ce4b9",
+      "upstream_path": "data/matches/2017461/2017461_match.json"
+    },
+    {
+      "bytes": 89543442,
+      "file": "2017461_tracking_extrapolated.jsonl",
+      "git_blob_sha": "dda453946dcc75501a38d93a83feae65a7f80dbb",
+      "lfs": true,
+      "match_id": 2017461,
+      "sha256": "59cfa5588efee041da439f44df5b5b92f2b7305571dc831164e3d05f7415787a",
+      "upstream_path": "data/matches/2017461/2017461_tracking_extrapolated.jsonl"
+    },
+    {
+      "bytes": 119096,
+      "file": "2017461_phases_of_play.csv",
+      "git_blob_sha": "07d6ebeaf60ffc8414e73d5914749279ae5cbff4",
+      "lfs": false,
+      "match_id": 2017461,
+      "sha256": "2b53223304e7d8299b715fbc347462ad58f6c2b3720625fb36e018d4715eaea8",
+      "upstream_path": "data/matches/2017461/2017461_phases_of_play.csv"
+    }
+  ],
+  "repository": "https://github.com/SkillCorner/opendata"
+}
