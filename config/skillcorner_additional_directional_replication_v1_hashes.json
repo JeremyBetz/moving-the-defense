@@ -1,0 +1,18 @@
+{
+  "schema_version": "1.0.0",
+  "files": {
+    "config/defensive_reorganization_spatial_form_v1_skillcorner_external.json": "7b1537235dd6966b9ade55a091c3688635e8cdf586673f45fa0b5aa64d50a79e",
+    "config/skillcorner_additional_directional_replication_v1.json": "a6dfd6318272d231029f6cda125ebaabdefd1bcd5919f79b480f8c75023a5e62",
+    "config/skillcorner_additional_directional_support_preflight_v1.json": "b5237ba47ebb254df5cbf9d7f4004dab0469aacab55c54e645ef7e1772f63452",
+    "docs/protocols/defensive_reorganization_spatial_form_v1_skillcorner_external.md": "9d863157e9bf938b4e13d216f73c5b56057d9c59f34a86b47dac20a4d9d9f80e",
+    "docs/protocols/skillcorner_additional_directional_replication_v1.md": "4452fb1b66370a0da1756e5d64a656a3d40dd893a9d90d7d3a00a8f47f3c2bda",
+    "docs/protocols/skillcorner_additional_directional_support_preflight_v1.md": "34f6ea94ae14a2bd990214496dcbe0db7fbec6de434f830a5e654aa75be9f0b3",
+    "outputs/skillcorner_additional_directional_support_preflight_v1/final_hashes.json": "640cabf5ccb8759803393370027c020bcfa8d6b018e16dd74b6bf05facab6851",
+    "outputs/skillcorner_additional_directional_support_preflight_v1/inventory.csv": "cd53a11c3f58a12f0bb808a3cf7600e1dc82ceb09a3e7703a6447716cc08a3e5",
+    "outputs/skillcorner_additional_directional_support_preflight_v1/manifest.json": "f4b5a586dcb4c95a0d73373962d46aa54f6db9f4204b87a1fdacb5e27e86ba46",
+    "outputs/skillcorner_additional_directional_support_preflight_v1/source_hashes.json": "101a85a2f27ac50bfabae3059daf8df2fb39825accc528666348ba22a927aae1",
+    "src/defensive_reorganization_spatial_form_skillcorner_external.py": "933cfe4da4687f20473914d452e7c211e2a6ae955597400093af990e0f695f2c",
+    "src/skillcorner_additional_directional_replication_v1.py": "65336e7da6b5f68118e9507619865c721205352a2c96fdccb6f8979a4447e84e",
+    "tests/test_skillcorner_additional_directional_replication_v1.py": "1330558b708d63bb7c1a6bd343a0cb975fab33e0d09d577b34be47e5a372508d"
+  }
+}
