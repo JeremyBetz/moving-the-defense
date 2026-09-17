@@ -1,0 +1,116 @@
+{
+  "schema_version": "1.0.0",
+  "status": "FROZEN_RESPONSE_ACCESS_NOT_AUTHORIZED",
+  "freeze_date": "2026-09-17",
+  "protocol": "docs/protocols/skillcorner_additional_directional_replication_v1.md",
+  "scientific_authority": {
+    "protocol": "docs/protocols/defensive_reorganization_spatial_form_v1_skillcorner_external.md",
+    "protocol_sha256": "9d863157e9bf938b4e13d216f73c5b56057d9c59f34a86b47dac20a4d9d9f80e",
+    "config": "config/defensive_reorganization_spatial_form_v1_skillcorner_external.json",
+    "config_sha256": "7b1537235dd6966b9ade55a091c3688635e8cdf586673f45fa0b5aa64d50a79e",
+    "implementation": "src/defensive_reorganization_spatial_form_skillcorner_external.py",
+    "implementation_sha256": "933cfe4da4687f20473914d452e7c211e2a6ae955597400093af990e0f695f2c"
+  },
+  "source": {
+    "repository": "https://github.com/SkillCorner/opendata",
+    "commit": "02a396ffd09b283c9f092fdedeff11da6d535b66",
+    "tree": "44fd5081d0e6a441dbafadd12c51d6ffca8ab98b",
+    "competition": "Australian A-League",
+    "season": "2024/2025"
+  },
+  "population": {
+    "formal_matches": [1874553, 1927964, 1959846, 1986691, 1996436, 2006363, 2007448, 2007721, 2010085, 2016236],
+    "required_match_count": 10,
+    "prohibited_original_matches": [1886347, 1899585, 1925299, 1996435, 2006229, 2011166, 2013725, 2015213, 2017461],
+    "prohibited_provider_status_match": 1953632,
+    "all_formal_matches_required": true,
+    "post_response_removal": false,
+    "contamination_statement": "The ten matches were prospectively frozen as a nonoverlapping Project 1 replication population after independent reacquisition and response-blind compatibility checking. Project 1 had not previously evaluated its frozen directional response on these matches. Global prior exposure outside this project is not claimed to be absent."
+  },
+  "preflight_lineage": {
+    "protocol": "docs/protocols/skillcorner_additional_directional_support_preflight_v1.md",
+    "protocol_sha256": "34f6ea94ae14a2bd990214496dcbe0db7fbec6de434f830a5e654aa75be9f0b3",
+    "config": "config/skillcorner_additional_directional_support_preflight_v1.json",
+    "config_sha256": "b5237ba47ebb254df5cbf9d7f4004dab0469aacab55c54e645ef7e1772f63452",
+    "inventory": "outputs/skillcorner_additional_directional_support_preflight_v1/inventory.csv",
+    "inventory_sha256": "cd53a11c3f58a12f0bb808a3cf7600e1dc82ceb09a3e7703a6447716cc08a3e5",
+    "manifest": "outputs/skillcorner_additional_directional_support_preflight_v1/manifest.json",
+    "manifest_sha256": "f4b5a586dcb4c95a0d73373962d46aa54f6db9f4204b87a1fdacb5e27e86ba46",
+    "source_ledger": "outputs/skillcorner_additional_directional_support_preflight_v1/source_hashes.json",
+    "source_ledger_sha256": "101a85a2f27ac50bfabae3059daf8df2fb39825accc528666348ba22a927aae1",
+    "final_hashes": "outputs/skillcorner_additional_directional_support_preflight_v1/final_hashes.json",
+    "final_hashes_sha256": "640cabf5ccb8759803393370027c020bcfa8d6b018e16dd74b6bf05facab6851",
+    "required_status": "OUTCOME_BLIND_COMPATIBILITY_PASSED"
+  },
+  "target": "mean_D1_D3_subsequent_accumulated_leave_one_out_defender_relative_path_m_minus_mean_D4_D7",
+  "time": {
+    "native_hz": 10,
+    "prior_seconds": [-4.0, -2.0],
+    "exposure_seconds": [-2.0, 0.0],
+    "response_seconds": [0.0, 2.0],
+    "position_smoother": "centered_3_native_frame_arithmetic_mean"
+  },
+  "coordinates": {
+    "canonical_pitch_m": [105.0, 68.0],
+    "goalward_x": true,
+    "start_fixed_focal_side_y_reflection": true,
+    "clipping": false
+  },
+  "model": {
+    "family": "equal_total_match_weight_raw_unit_OLS_with_match_intercepts",
+    "continuous_columns": [
+      "attacker_path_exposure_m",
+      "attacker_path_prior_m",
+      "attacker_minus_unit_goalward_m",
+      "attacker_ball_distance_start_m",
+      "defending_unit_width_m",
+      "defending_unit_depth_m",
+      "ball_minus_unit_goalward_m",
+      "attacker_goalward_displacement_m",
+      "attacker_outward_displacement_m"
+    ],
+    "primary_estimand": "beta_outward_minus_beta_goalward",
+    "cross_provider_pooling": false,
+    "model_search": false
+  },
+  "inference": {
+    "replicates": 2000,
+    "minimum_valid": 1900,
+    "generator": "PCG64",
+    "seed": 20260905,
+    "block_seconds": 60.0,
+    "strata": "match_period",
+    "preserve_simultaneous_anchor_rows": true,
+    "interval": "two_sided_95_percentile"
+  },
+  "robustness": {
+    "joint_displacement_trim": "inherited_2_5_to_97_5_percent_within_match_inclusive",
+    "majority_detected_sensitivity": "inherited_required_quality_sensitivity",
+    "match_estimates": 10,
+    "leave_one_match_out_estimates": 10
+  },
+  "classification": {
+    "order": ["INVALID", "SUPPORTED", "MIXED", "NOT_SUPPORTED"],
+    "SUPPORTED": "positive_macro_and_strictly_positive_interval_and_at_least_7_of_10_positive_matches_and_all_10_LOMO_positive_and_trim_and_quality_pass",
+    "MIXED": "positive_macro_but_one_or_more_support_gates_fail",
+    "NOT_SUPPORTED": "every_other_valid_result_including_nonpositive_macro",
+    "INVALID": "identity_source_support_estimability_inference_reproduction_or_package_failure"
+  },
+  "publication": {
+    "aggregate_only": true,
+    "forbidden_fields": ["observation_id", "timestamp", "coordinate", "player_id", "team_id", "rank_row", "individual_response", "prediction", "residual", "match_surface"]
+  },
+  "prohibited": [
+    "original_nine_matches",
+    "match_1953632",
+    "post_response_match_removal",
+    "cross_provider_pooling",
+    "alternative_covariates_thresholds_windows_or_representations",
+    "animation",
+    "API",
+    "Game3",
+    "DRD",
+    "SkillCorner_response_mode"
+  ],
+  "execution_authorized": false
+}
