@@ -1,0 +1,66 @@
+{
+  "comparisons": [
+    {
+      "byte_identical": true,
+      "file": "primary_contrast.csv",
+      "sha256": "91f7f0748dbf38c478bdd87f338c0ab93096d172ed606f82023b412fee84342d"
+    },
+    {
+      "byte_identical": true,
+      "file": "per_match_coefficients.csv",
+      "sha256": "a50a31d4dad868620696914dfe70dd3852f797bbd14a1ddd35e338a7709703fa"
+    },
+    {
+      "byte_identical": true,
+      "file": "leave_one_match_out.csv",
+      "sha256": "18b9e34ed4595b48b90de131b6ec03740912fa065191e6d72e9000520a247a4f"
+    },
+    {
+      "byte_identical": true,
+      "file": "trim_sensitivity.csv",
+      "sha256": "e253ece0360e9e09624932074927e12a32927990e1512bf6e86780b7870b0363"
+    },
+    {
+      "byte_identical": true,
+      "file": "quality_sensitivity.csv",
+      "sha256": "628a31192cdc416482a8808854b85f55efd16c098d6f2a1ca9cae308836110a9"
+    },
+    {
+      "byte_identical": true,
+      "file": "sample_summary.csv",
+      "sha256": "380ffcca8068cb534c7577fc29bce8541342ffecf035dabf6fb671cdb2bf7988"
+    },
+    {
+      "byte_identical": true,
+      "file": "provider_equivalence.csv",
+      "sha256": "327a3774ffe6778591f5bd4aebc93a42d7805aba2b5cdd23c7b09bd6fe4ab227"
+    },
+    {
+      "byte_identical": true,
+      "file": "result.json",
+      "sha256": "b0408d91e01a480a9f9e53530463f42eabccf338c270d7a594d1a3dc6b9885bd"
+    },
+    {
+      "byte_identical": true,
+      "file": "hard_qc.json",
+      "sha256": "1cf124a1bb958fd3ca583bd2973e94e1a5493eb5073800f2f3df1a17d61ef88b"
+    },
+    {
+      "byte_identical": true,
+      "file": "classification_criteria.json",
+      "sha256": "4294029c6090215014dc20251a979ff2ce3fb2028021a19b6cadc651501865d1"
+    },
+    {
+      "byte_identical": true,
+      "file": "manifest.json",
+      "sha256": "84bfc9d4cc71e500fba1e3cbe84c95505a2de01dd9728c91019d3726b4b5aff1"
+    },
+    {
+      "byte_identical": true,
+      "file": "result_report.md",
+      "sha256": "53de24b2dc8a4c4be32da327b07b8cab7dcc7aa9e42f44419b5e08f4ad0d06df"
+    }
+  ],
+  "files_compared": 12,
+  "status": "STAGING_REPRODUCTION_PASSED"
+}

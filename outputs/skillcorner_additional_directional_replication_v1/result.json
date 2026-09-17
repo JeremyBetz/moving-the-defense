@@ -1,0 +1,70 @@
+{
+  "bootstrap": {
+    "block_seconds": 60.0,
+    "ci_high": 0.0600211052509831,
+    "ci_low": 0.05006431954919066,
+    "replicates_requested": 2000,
+    "seed": 20260905,
+    "valid_replicates": 2000
+  },
+  "classification": "ADDITIONAL SKILLCORNER DIRECTIONAL REPLICATION SUPPORTED",
+  "classification_criteria": {
+    "gates": {
+      "all_leave_one_match_out_contrasts_positive": true,
+      "at_least_70_percent_match_contrasts_positive": true,
+      "at_least_8_valid_matches": true,
+      "bootstrap_95_percent_interval_strictly_positive": true,
+      "pooled_contrast_strictly_positive": true,
+      "quality_full_rank_positive_and_50_to_150_percent_magnitude": true,
+      "trim_positive_and_50_to_150_percent_magnitude": true
+    },
+    "minimum_positive_matches_required": 7,
+    "positive_match_percent": 100.0,
+    "positive_matches": 10,
+    "quality_to_full_absolute_ratio": 1.0817470211817033,
+    "trimmed_to_full_absolute_ratio": 0.9563509128096773,
+    "valid_execution": true,
+    "valid_matches": 10
+  },
+  "primary": {
+    "beta_goalward_m_per_m": -0.020913548448037323,
+    "beta_outward_m_per_m": 0.03409392659098148,
+    "five_m_translation_m": 0.275037375195094,
+    "outward_minus_goalward_m_per_m": 0.0550074750390188
+  },
+  "quality_sensitivity": {
+    "anchors": 2040,
+    "beta_goalward_m_per_m": -0.015388845650384857,
+    "beta_outward_m_per_m": 0.04411532661580063,
+    "full_rank": true,
+    "matches": 10,
+    "model_rank": 19,
+    "outward_minus_goalward_m_per_m": 0.059504172266185484,
+    "rows": 13143
+  },
+  "sample": {
+    "anchors": 3344,
+    "match_ids": [
+      1874553,
+      1927964,
+      1959846,
+      1986691,
+      1996436,
+      2006363,
+      2007448,
+      2007721,
+      2010085,
+      2016236
+    ],
+    "matches": 10,
+    "rows": 57917
+  },
+  "trim": {
+    "beta_goalward_m_per_m": -0.01969114395032043,
+    "beta_outward_m_per_m": 0.03291530501460074,
+    "model_rank": 19,
+    "outward_minus_goalward_m_per_m": 0.05260644896492117,
+    "retained_proportion": 0.9024466046238583,
+    "rows_retained": 52267
+  }
+}

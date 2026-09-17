@@ -1,0 +1,31 @@
+{
+  "authorization_reference": "USER-AUTHORIZATION-98f5f805-2124-4b2a-983e-9dff068806f9-20260917",
+  "bootstrap_replicates": 2000,
+  "bootstrap_seed": 20260905,
+  "classification": "ADDITIONAL SKILLCORNER DIRECTIONAL REPLICATION SUPPORTED",
+  "configuration_sha256": "a6dfd6318272d231029f6cda125ebaabdefd1bcd5919f79b480f8c75023a5e62",
+  "formal_matches": [
+    1874553,
+    1927964,
+    1959846,
+    1986691,
+    1996436,
+    2006363,
+    2007448,
+    2007721,
+    2010085,
+    2016236
+  ],
+  "freeze_ledger_sha256": "d42e4704f7732a8bfccb89d43f3af13d6d93bb1722227885d1ef158128495b54",
+  "implementation_sha256": "65336e7da6b5f68118e9507619865c721205352a2c96fdccb6f8979a4447e84e",
+  "preflight_lineage": {
+    "manifest_sha256": "f4b5a586dcb4c95a0d73373962d46aa54f6db9f4204b87a1fdacb5e27e86ba46",
+    "source_ledger_sha256": "101a85a2f27ac50bfabae3059daf8df2fb39825accc528666348ba22a927aae1"
+  },
+  "protocol_sha256": "4452fb1b66370a0da1756e5d64a656a3d40dd893a9d90d7d3a00a8f47f3c2bda",
+  "publication_policy": "compact_aggregate_outputs_only",
+  "source_commit": "02a396ffd09b283c9f092fdedeff11da6d535b66",
+  "source_tree": "44fd5081d0e6a441dbafadd12c51d6ffca8ab98b",
+  "status": "PENDING_AUTHORITATIVE_VALIDATION",
+  "tests_sha256": "1330558b708d63bb7c1a6bd343a0cb975fab33e0d09d577b34be47e5a372508d"
+}

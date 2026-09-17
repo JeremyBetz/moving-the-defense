@@ -1,0 +1,13 @@
+{
+  "checks": {
+    "aggregate_outputs_only": true,
+    "bootstrap_valid_at_least_1900": true,
+    "exact_ten_matches": true,
+    "finite_response_and_design": true,
+    "lomo_full_rank": true,
+    "per_match_full_rank": true,
+    "pooled_full_rank": true,
+    "unique_observation_ids": true
+  },
+  "status": "PASSED"
+}
