@@ -1,0 +1,12 @@
+{
+  "config_sha256": "eca05d0c6cb1aae4e7995129cc115992766eda864139db2bbb5e9ef52dea3788",
+  "protocol_sha256": "fbbbad408b7ec18fe8bbf22d5afb53fa8ebbf796d80f5427e6b14628331b6514",
+  "scorer_path": "src/defensive_reorganization_replay.py",
+  "scorer_sha256": "6b5f33de5a034ae4000270e847ebcefe0164b1df1d21d4f3a7ed8adf9bd24a8a",
+  "tracking_sha256": {
+    "data/metrica_sample_game_1/Sample_Game_1_RawTrackingData_Away_Team.csv": "0a3df68a92af0290ede472e62de3b6489ddee29223da09bdf0cf76c8e0ab0618",
+    "data/metrica_sample_game_1/Sample_Game_1_RawTrackingData_Home_Team.csv": "0a3d0eff7785950379c587d3597b86a2d91c2492281b4652e1abb97c99b6b364",
+    "data/metrica_sample_game_2/Sample_Game_2_RawTrackingData_Away_Team.csv": "aa639f40762eade46c389020fe4458266b5ba14027b1e96e22e75db62803718b",
+    "data/metrica_sample_game_2/Sample_Game_2_RawTrackingData_Home_Team.csv": "3f9990ac204b07133e4202441d6fcbb386897c7c7f81e1bc3ce4d35bc8644694"
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "docs/results/defensive_reorganization_replay_display_scale_v1.md": "c6ba2acaf0f7a5266c3559517177c4e09ea7bcd7fe74950e489d74c2cc0b7ca7",
+  "outputs/defensive_reorganization_replay_display_scale_v1/candidate_scale_audit.csv": "e84d89e59c4cb19728c9823d3bfcb4010da4228e3014f6400e308549454af686",
+  "outputs/defensive_reorganization_replay_display_scale_v1/demo_secondary_check.json": "5be3702e59b2afb7acc9945381b3a4f208c104949a499ed167c3e0652687f51a",
+  "outputs/defensive_reorganization_replay_display_scale_v1/distribution_summary.json": "d49a4bae75ae02103ff8b85373f9788677046eaa52afab9184b9b0ae7ff32b1d",
+  "outputs/defensive_reorganization_replay_display_scale_v1/hard_qc.json": "925de3f4a9a3ecfe68410dcaf660c7ad80c1854a98edb219b1ab8a9b08dd810e",
+  "outputs/defensive_reorganization_replay_display_scale_v1/manifest.json": "f9fab069f72bf5ab50af11307230387173519671e4af45c04d1705e6b5d7059e",
+  "outputs/defensive_reorganization_replay_display_scale_v1/per_game_summary.csv": "85700cbfc3e9e5b72681daf38bc51a20ae7191f2d43af2839378dad2034a3b67",
+  "outputs/defensive_reorganization_replay_display_scale_v1/perceptual_spread.csv": "ac2b2c29e8eaaa83599966f4bb3f4e6ebd831dd48f9243390e6571fe4251b323",
+  "outputs/defensive_reorganization_replay_display_scale_v1/source_identities.json": "c46e06bef5d71d83b351b8e5960bc7a842809a33fb31f585f4a2dbffc8af03d7"
+}
