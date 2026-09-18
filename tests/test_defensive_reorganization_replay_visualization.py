@@ -1,6 +1,8 @@
 from __future__ import annotations
 
 import hashlib
+import inspect
+import json
 from pathlib import Path
 import sys
 
@@ -18,12 +20,14 @@ from defensive_reorganization_replay import (  # noqa: E402
     score_trailing_defender_relative_path,
 )
 from defensive_reorganization_replay_visualization import (  # noqa: E402
+    DEFAULT_SCORE_VMAX_M,
     PITCH_COLOR,
     SCORE_LABEL,
     animate_defensive_reorganization,
     plot_defensive_reorganization_diagnostic,
 )
 from tracking_animation import TrackingClipSpec  # noqa: E402
+from generate_defensive_reorganization_replay_demo import EXPECTED_DEMO_QA  # noqa: E402
 
 
 SCORER_SHA256 = "6b5f33de5a034ae4000270e847ebcefe0164b1df1d21d4f3a7ed8adf9bd24a8a"
@@ -155,12 +159,39 @@ def test_exact_join_frame_step_duration_team_meter_and_trails():
     finish(bundle)
 
 
+def test_renderer_default_and_closed_demo_qa_use_frozen_625_scale():
+    default = inspect.signature(animate_defensive_reorganization).parameters[
+        "score_vmax_m"
+    ].default
+    assert default == 6.25
+    assert EXPECTED_DEMO_QA == {
+        "native_frame_count": 501,
+        "displayed_frame_count": 251,
+        "elapsed_duration_s": 20.0,
+        "saturation_count": 134,
+        "frames_at_least_1_saturated": 97,
+        "frames_at_least_2_saturated": 37,
+        "frames_at_least_5_saturated": 0,
+        "team_mean_saturation_count": 0,
+    }
+
+
 def test_fixed_display_scale_saturation_and_raw_values_are_preserved():
     q = tracking()
     scores = with_known_supported_values(score(q))
     original = scores.player_scores.copy(deep=True)
-    bundle = animate_defensive_reorganization(q, scores, clip_spec(), frame_step=2)
-    assert bundle.animation._reorganization_metadata["score_vmin_m"] == 0.0
+    default_bundle = animate_defensive_reorganization(q, scores, clip_spec(), frame_step=2)
+    assert DEFAULT_SCORE_VMAX_M == 6.25
+    assert default_bundle.animation._reorganization_metadata["score_vmin_m"] == 0.0
+    assert default_bundle.animation._reorganization_metadata["score_vmax_m"] == 6.25
+    assert default_bundle.animation._reorganization_metadata["saturation_count"] == 0
+    meter = next(axis for axis in default_bundle.figure.axes if axis.get_xlabel() == "Team mean (m)")
+    assert meter.get_xlim() == pytest.approx((0.0, 6.25))
+    finish(default_bundle)
+
+    bundle = animate_defensive_reorganization(
+        q, scores, clip_spec(), frame_step=2, score_vmax_m=4.0
+    )
     assert bundle.animation._reorganization_metadata["score_vmax_m"] == 4.0
     assert bundle.animation._reorganization_metadata["saturation_count"] == 3
     bundle.animation._draw_frame(0)
@@ -213,6 +244,8 @@ def test_static_diagnostic_is_bounded_and_has_no_background_heat_field():
     pitch_axes = [axis for axis in figure.axes if np.allclose(axis.get_facecolor()[:3], (49 / 255, 93 / 255, 58 / 255), atol=.01)]
     assert pitch_axes and all(not axis.images for axis in pitch_axes)
     assert "not better or worse defending" in " ".join(text.get_text() for text in figure.texts)
+    score_axis = next(axis for axis in figure.axes if axis.get_ylabel() == SCORE_LABEL)
+    assert score_axis.get_ylim() == pytest.approx((0.0, 6.25))
     plt.close(figure)
 
 
@@ -230,3 +263,22 @@ def test_rendering_metadata_is_deterministic():
 def test_committed_scorer_source_is_byte_identical():
     actual = hashlib.sha256((ROOT / "src/defensive_reorganization_replay.py").read_bytes()).hexdigest()
     assert actual == SCORER_SHA256
+
+
+def test_public_notebook_has_exactly_five_output_free_nonreconstructive_cells():
+    path = ROOT / "notebooks" / "defender_relative_replay_demo.ipynb"
+    notebook = json.loads(path.read_text(encoding="utf-8"))
+    assert len(notebook["cells"]) == 5
+    assert [cell["cell_type"] for cell in notebook["cells"]] == [
+        "markdown", "code", "code", "code", "code"
+    ]
+    for cell in notebook["cells"]:
+        if cell["cell_type"] == "code":
+            assert cell["execution_count"] is None
+            assert cell["outputs"] == []
+    text = "\n".join("".join(cell["source"]) for cell in notebook["cells"])
+    assert "DISPLAY_CEILING_M == 6.25" in text
+    assert "to_inline_html(bundle)" in text
+    assert "response_2s_m" not in text
+    assert "player_scores.to_" not in text
+    assert "tracking.to_" not in text

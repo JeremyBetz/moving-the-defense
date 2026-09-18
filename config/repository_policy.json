@@ -81,6 +81,18 @@
         "overrides": [
           "notebook_embedded_output"
         ]
+      },
+      {
+        "path": "notebooks/defender_relative_replay_demo.ipynb",
+        "change_status": "A",
+        "exception_type": "publication_artifact",
+        "purpose": "Output-free notebook for the frozen defender-relative replay demonstration",
+        "rationale": "The exact notebook contains explanatory Markdown and reusable calls into the committed scorer and renderer; tracking rows, score rows, JSHTML, GIF bytes, and cell outputs are not embedded.",
+        "approval_reference": "Explicit user authorization for the bounded visualization-publication task on 2026-09-17",
+        "sha256": "b8a3d2298480e575f9c42c9755a50fe6015fd728c5f5db2cd7fc30984ec1c76f",
+        "overrides": [
+          "notebook_embedded_output"
+        ]
       }
     ]
   }

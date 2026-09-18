@@ -7,12 +7,14 @@ from pathlib import Path
 import time
 
 import matplotlib.pyplot as plt
+import numpy as np
 
 from defensive_reorganization_replay import (
     DefenderRelativePathSpec,
     score_trailing_defender_relative_path,
 )
 from defensive_reorganization_replay_visualization import (
+    DEFAULT_SCORE_VMAX_M,
     animate_defensive_reorganization,
     plot_defensive_reorganization_diagnostic,
 )
@@ -43,6 +45,17 @@ RAW_SUPPORT_SPEC = TrackingClipSpec(
     defending_team_key=DEMO_SPEC.defending_team_key,
     defender_ranks=None,
 )
+
+EXPECTED_DEMO_QA = {
+    "native_frame_count": 501,
+    "displayed_frame_count": 251,
+    "elapsed_duration_s": 20.0,
+    "saturation_count": 134,
+    "frames_at_least_1_saturated": 97,
+    "frames_at_least_2_saturated": 37,
+    "frames_at_least_5_saturated": 0,
+    "team_mean_saturation_count": 0,
+}
 
 
 def load_approved_scored_demo(root: Path = ROOT):
@@ -99,8 +112,18 @@ def generate_demo(output_dir: Path, root: Path = ROOT) -> dict[str, object]:
         "render_seconds": render_seconds,
         "gif_bytes": gif.stat().st_size,
         "saturation_count": metadata["saturation_count"],
+        "frames_at_least_1_saturated": metadata["frames_at_least_1_saturated"],
+        "frames_at_least_2_saturated": metadata["frames_at_least_2_saturated"],
+        "frames_at_least_5_saturated": metadata["frames_at_least_5_saturated"],
+        "team_mean_saturation_count": metadata["team_mean_saturation_count"],
+        "score_vmax_m": metadata["score_vmax_m"],
         "unsupported_score_frame_count": metadata["unsupported_score_frame_count"],
     }
+    for key, expected in EXPECTED_DEMO_QA.items():
+        if not np.isclose(result[key], expected, atol=1e-9, rtol=0):
+            raise RuntimeError(f"demo QA mismatch for {key}: {result[key]} != {expected}")
+    if result["score_vmax_m"] != DEFAULT_SCORE_VMAX_M:
+        raise RuntimeError("demo did not use the frozen 6.25 m display ceiling")
     bundle.animation._draw_was_started = True
     plt.close(bundle.figure)
     return result

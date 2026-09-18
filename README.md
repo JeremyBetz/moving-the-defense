@@ -70,6 +70,23 @@ the public Game 2 files available locally.
 Tracking data: [Metrica Sports sample data](https://github.com/metrica-sports/sample-data).
 Animation rendered by Moving the Defense; no original match video is included.
 
+### Defender-relative movement replay
+
+![Twenty-second defender-relative movement replay](figures/presentation/defender_relative_replay/metrica_game2_defensive_reorganization.gif)
+
+This retrospective analyst replay colors defenders by accumulated movement
+relative to the other nine defenders over the trailing two seconds. Values are
+raw metres shown on one fixed 0–6.25 m scale; the team meter is the arithmetic
+mean across all ten supported defenders. The centered smoother requires raw
+tracking just after the displayed time, so this is not a live detector. Missing
+ten-player support is shown as unavailable rather than interpolated.
+
+The replay describes tracking geometry only. It does not diagnose defensive
+quality, tactical error, marking, or causal attacker influence. Reproduce it
+with the output-free
+[defender-relative replay notebook](notebooks/defender_relative_replay_demo.ipynb)
+and the public Metrica Game 2 files.
+
 ### Temporal results
 
 Preceding attacker movement was associated with greater subsequent defender

@@ -37,6 +37,7 @@ DEFENDER_TRAIL_COLOR = "#2767a8"
 NEUTRAL_EDGE = "#252525"
 UNSUPPORTED_EDGE = "#b7b7b7"
 SCORE_LABEL = "Trailing 2 s defender-relative path (m)"
+DEFAULT_SCORE_VMAX_M = 6.25
 INTERPRETATION_NOTE = (
     "Higher values indicate more accumulated movement relative to the defensive unit, "
     "not better or worse defending."
@@ -322,7 +323,7 @@ def animate_defensive_reorganization(
     playback_fps: float = 12.5,
     trail_seconds: float = 0.4,
     score_vmin_m: float = 0.0,
-    score_vmax_m: float = 4.0,
+    score_vmax_m: float = DEFAULT_SCORE_VMAX_M,
     show_team_meter: bool = True,
     show_trails: bool = True,
 ) -> AnimationBundle:
@@ -430,17 +431,26 @@ def animate_defensive_reorganization(
     )
     animation._draw_frame = draw
     animation._reorganization_state = state
-    displayed_player_scores = [
-        prepared.player_by_key[(frame_id, key)]["trailing_relative_path_m"]
-        for frame_id in shown["frame_id_provider"]
-        for key in prepared.defender_keys
-        if prepared.player_by_key[(frame_id, key)]["support_status"] == SUPPORTED
-    ]
+    displayed_player_scores = []
+    saturated_by_frame: list[int] = []
+    for frame_id in shown["frame_id_provider"]:
+        frame_values = [
+            float(prepared.player_by_key[(frame_id, key)]["trailing_relative_path_m"])
+            for key in prepared.defender_keys
+            if prepared.player_by_key[(frame_id, key)]["support_status"] == SUPPORTED
+        ]
+        displayed_player_scores.extend(frame_values)
+        saturated_by_frame.append(int(np.count_nonzero(np.asarray(frame_values) > score_vmax_m)))
     display = normalize_scores_for_display(
         displayed_player_scores, vmin_m=score_vmin_m, vmax_m=score_vmax_m
     )
     unsupported_frames = sum(
         prepared.team_by_frame[frame_id]["support_status"] != SUPPORTED
+        for frame_id in shown["frame_id_provider"]
+    )
+    team_saturation_count = sum(
+        prepared.team_by_frame[frame_id]["support_status"] == SUPPORTED
+        and float(prepared.team_by_frame[frame_id]["mean_trailing_relative_path_m"]) > score_vmax_m
         for frame_id in shown["frame_id_provider"]
     )
     animation._reorganization_metadata = MappingProxyType(
@@ -450,6 +460,10 @@ def animate_defensive_reorganization(
             "score_vmin_m": float(score_vmin_m),
             "score_vmax_m": float(score_vmax_m),
             "saturation_count": int(display.saturation_count),
+            "frames_at_least_1_saturated": int(np.count_nonzero(np.asarray(saturated_by_frame) >= 1)),
+            "frames_at_least_2_saturated": int(np.count_nonzero(np.asarray(saturated_by_frame) >= 2)),
+            "frames_at_least_5_saturated": int(np.count_nonzero(np.asarray(saturated_by_frame) >= 5)),
+            "team_mean_saturation_count": int(team_saturation_count),
             "unsupported_score_frame_count": int(unsupported_frames),
             "trail_seconds": float(trail_seconds),
             "show_team_meter": bool(show_team_meter),
@@ -479,7 +493,7 @@ def plot_defensive_reorganization_diagnostic(
     selected_time_s: float | None = None,
     trail_seconds: float = 0.4,
     score_vmin_m: float = 0.0,
-    score_vmax_m: float = 4.0,
+    score_vmax_m: float = DEFAULT_SCORE_VMAX_M,
 ) -> Figure:
     """Create the two-panel static explanation of the committed score."""
     prepared = _prepare_visualization(tracking, scores, clip_spec)
@@ -544,7 +558,7 @@ def plot_defensive_reorganization_diagnostic(
         series_ax.text(
             .02,
             .98,
-            f"Saturation: {saturation_count} player-frame values >4 m\n(raw values retained)",
+            f"Saturation: {saturation_count} player-frame values >{score_vmax_m:g} m\n(raw values retained)",
             transform=series_ax.transAxes,
             va="top",
             fontsize=7.5,
