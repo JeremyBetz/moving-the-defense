@@ -1,0 +1,85 @@
+{
+  "audit_id": "defensive_reorganization_replay_display_scale_v2",
+  "status_before_execution": "FROZEN_RESPONSE_FREE_VISUAL_QA",
+  "inherits_v1": {
+    "classification": "D_UNRESOLVED",
+    "supported_player_frame_count": 5713060,
+    "supported_team_frame_count": 571306,
+    "stable_lineup_run_count": 18,
+    "artifacts_sha256": {
+      "docs/protocols/defensive_reorganization_replay_display_scale_v1.md": "fbbbad408b7ec18fe8bbf22d5afb53fa8ebbf796d80f5427e6b14628331b6514",
+      "config/defensive_reorganization_replay_display_scale_v1.json": "eca05d0c6cb1aae4e7995129cc115992766eda864139db2bbb5e9ef52dea3788",
+      "docs/results/defensive_reorganization_replay_display_scale_v1.md": "c6ba2acaf0f7a5266c3559517177c4e09ea7bcd7fe74950e489d74c2cc0b7ca7",
+      "outputs/defensive_reorganization_replay_display_scale_v1/final_hashes.json": "86459e688dc4b3ca5b156473b9a22b2aeb64d8fa10bb5f16f9b106eb3973c9da",
+      "outputs/defensive_reorganization_replay_display_scale_v1/source_identities.json": "c46e06bef5d71d83b351b8e5960bc7a842809a33fb31f585f4a2dbffc8af03d7",
+      "src/defensive_reorganization_replay_display_scale_v1.py": "eb44112e4620638592a709dda7c7a6ba11e4e8f6114b7093496593f259c4fb98",
+      "tests/test_defensive_reorganization_replay_display_scale_v1.py": "4066288fa388f1968bde10d58c60d2012a0f2d937c663439d5d01fc2d18bb2f7"
+    }
+  },
+  "reference_population": {
+    "provider": "Metrica Sports public sample data",
+    "games": [1, 2],
+    "teams": ["Home", "Away"],
+    "periods": [1, 2],
+    "source_fps": 25.0,
+    "goalkeeper_ids": {"Home": "11", "Away": "25"},
+    "stable_lineup_run_count": 18,
+    "events_read": false,
+    "ball_read": false,
+    "game_3_accessed": false
+  },
+  "scorer": {
+    "path": "src/defensive_reorganization_replay.py",
+    "sha256": "6b5f33de5a034ae4000270e847ebcefe0164b1df1d21d4f3a7ed8adf9bd24a8a",
+    "source_fps": 25.0,
+    "smoothing_method": "centered_mean",
+    "smoothing_frames": 7,
+    "window_seconds": 2.0,
+    "units": "metres",
+    "raw_scores_only": true
+  },
+  "candidate_ceilings_m": [6.25, 6.5, 7.0],
+  "quantile_method": "linear",
+  "saturation_operator": ">",
+  "perceptual_bins": {
+    "below_25_percent": "x < 0.25 * ceiling",
+    "between_25_and_75_percent": "0.25 * ceiling <= x < 0.75 * ceiling",
+    "above_75_percent_unsaturated": "0.75 * ceiling <= x <= ceiling",
+    "saturated": "x > ceiling"
+  },
+  "selection_rule": {
+    "order": "lowest_candidate_first",
+    "maximum_player_saturation_fraction": 0.05,
+    "maximum_team_mean_saturation_fraction": 0.01,
+    "no_qualifier_status": "D_UNRESOLVED"
+  },
+  "secondary_demo": {
+    "game": 2,
+    "period": 1,
+    "start_time_s": 2326.04,
+    "anchor_time_s": 2336.04,
+    "end_time_s": 2346.04,
+    "snapshot_offsets_s": [-10.0, 0.0, 10.0],
+    "gif_regeneration": false
+  },
+  "prohibited_inputs": [
+    "events",
+    "ball",
+    "goals",
+    "shots",
+    "passes",
+    "possession",
+    "attacker_direction",
+    "defender_ranks",
+    "research_anchors",
+    "scientific_outcomes",
+    "skillcorner",
+    "metrica_game_3"
+  ],
+  "publication": {
+    "aggregate_only": true,
+    "forbid_row_level_scores": true,
+    "forbid_identities_coordinates_timestamps_and_frame_ids": true,
+    "scientific_claim": false
+  }
+}
