@@ -14,10 +14,12 @@ Defender marker fill uses the prospectively audited fixed `cividis` scale from
 0 to 6.25 m. Values above 6.25 m saturate visually but remain unchanged in the
 score table. The ceiling was selected as the lowest passing candidate in the
 [response-free display-scale audit v2](results/defensive_reorganization_replay_display_scale_v2.md).
-An unsupported
-score is shown as a hollow gray marker; an invalid current coordinate hides the
-player. The team meter is the arithmetic mean of all ten player scores and is
-available only when all ten are supported.
+Attacking players use a fixed black fill and never enter the heat scale. Defender
+and attacker trails remain neutral gray and black respectively; marker fill is
+the primary score cue. An unsupported defender score is shown as a hollow gray
+marker; an invalid current coordinate hides the player. The ball remains white
+with a dark outline. The team meter is the arithmetic mean of all ten player
+scores and is available only when all ten are supported.
 
 Higher values mean more accumulated movement relative to the defensive unit.
 They do not mean better or worse defending and do not establish causation,

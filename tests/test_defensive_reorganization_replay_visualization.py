@@ -7,6 +7,7 @@ from pathlib import Path
 import sys
 
 import matplotlib.pyplot as plt
+from matplotlib.colors import Normalize, to_rgba
 import numpy as np
 import pandas as pd
 import pytest
@@ -20,7 +21,10 @@ from defensive_reorganization_replay import (  # noqa: E402
     score_trailing_defender_relative_path,
 )
 from defensive_reorganization_replay_visualization import (  # noqa: E402
+    ATTACKER_COLOR,
+    ATTACKER_TRAIL_COLOR,
     DEFAULT_SCORE_VMAX_M,
+    DEFENDER_TRAIL_COLOR,
     PITCH_COLOR,
     SCORE_LABEL,
     animate_defensive_reorganization,
@@ -174,6 +178,30 @@ def test_renderer_default_and_closed_demo_qa_use_frozen_625_scale():
         "frames_at_least_5_saturated": 0,
         "team_mean_saturation_count": 0,
     }
+
+
+def test_attackers_are_fixed_black_defenders_use_cividis_and_ball_is_white():
+    q = tracking()
+    scores = with_known_supported_values(score(q))
+    bundle = animate_defensive_reorganization(q, scores, clip_spec(), show_trails=True)
+    bundle.animation._draw_frame(0)
+    axis = bundle.figure.axes[0]
+    scatters = {
+        float(collection.get_sizes()[0]): collection
+        for collection in axis.collections
+        if len(collection.get_sizes()) == 1
+    }
+    assert ATTACKER_COLOR == "#000000"
+    assert ATTACKER_TRAIL_COLOR == "#202020"
+    assert DEFENDER_TRAIL_COLOR == "#9a9a9a"
+    assert scatters[75.0].get_facecolors()[0] == pytest.approx(to_rgba("black"))
+    assert scatters[145.0].get_facecolors()[0] == pytest.approx(to_rgba("black"))
+    assert scatters[35.0].get_facecolors()[0] == pytest.approx(to_rgba("white"))
+    defender_faces = scatters[92.0].get_facecolors()
+    expected = plt.get_cmap("cividis")(Normalize(0.0, 6.25)(5.0))
+    assert any(np.allclose(face, expected) for face in defender_faces)
+    assert not any(np.allclose(face, to_rgba("black")) for face in defender_faces)
+    finish(bundle)
 
 
 def test_fixed_display_scale_saturation_and_raw_values_are_preserved():

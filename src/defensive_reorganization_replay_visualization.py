@@ -32,17 +32,23 @@ from tracking_animation import (
 
 PITCH_COLOR = "#315d3a"
 LINE_COLOR = "#f5f5f0"
-ATTACKER_COLOR = "#ed8b32"
-DEFENDER_TRAIL_COLOR = "#2767a8"
+ATTACKER_COLOR = "#000000"
+ATTACKER_EDGE = "#f5f5f0"
+ATTACKER_TRAIL_COLOR = "#202020"
+DEFENDER_TRAIL_COLOR = "#9a9a9a"
 NEUTRAL_EDGE = "#252525"
 UNSUPPORTED_EDGE = "#b7b7b7"
 SCORE_LABEL = "Trailing 2 s defender-relative path (m)"
 DEFAULT_SCORE_VMAX_M = 6.25
 INTERPRETATION_NOTE = (
+    "Attackers: black · Defenders: color = trailing 2 s defender-relative path. "
     "Higher values indicate more accumulated movement relative to the defensive unit, "
     "not better or worse defending."
 )
-ANIMATION_NOTE = "Higher = more movement relative to the unit · not better/worse defending"
+ANIMATION_NOTE = (
+    "Attackers: black · Defenders: color = trailing 2 s defender-relative path · "
+    "not better/worse defending"
+)
 
 
 @dataclass(frozen=True)
@@ -180,7 +186,11 @@ def _draw_trails(
         trace = trace.iloc[start:]
         if len(trace) >= 2:
             tx, ty = centered_to_pitch(trace["x_m"], trace["y_m"])
-            color = DEFENDER_TRAIL_COLOR if str(key) in prepared.defender_keys else ATTACKER_COLOR
+            color = (
+                DEFENDER_TRAIL_COLOR
+                if str(key) in prepared.defender_keys
+                else ATTACKER_TRAIL_COLOR
+            )
             artists.append(ax.plot(tx, ty, color=color, alpha=.42, linewidth=1.2, zorder=3)[0])
             counts[str(key)] = len(trace)
     return counts
@@ -219,13 +229,13 @@ def _draw_snapshot(
     if not attackers.empty:
         x, y = centered_to_pitch(attackers["x_m"], attackers["y_m"])
         artists.append(
-            ax.scatter(x, y, s=75, c=ATTACKER_COLOR, edgecolors="#f7f7f7", linewidths=.7, zorder=4)
+            ax.scatter(x, y, s=75, c=ATTACKER_COLOR, edgecolors=ATTACKER_EDGE, linewidths=.8, zorder=4)
         )
     focal = players.loc[players["player_key"].eq(clip_spec.focal_player_key)]
     if not focal.empty:
         x, y = centered_to_pitch(focal["x_m"], focal["y_m"])
         artists.append(
-            ax.scatter(x, y, s=145, c=ATTACKER_COLOR, edgecolors=NEUTRAL_EDGE, linewidths=1.8, zorder=6)
+            ax.scatter(x, y, s=145, c=ATTACKER_COLOR, edgecolors=ATTACKER_EDGE, linewidths=1.8, zorder=6)
         )
 
     supported_keys: list[str] = []

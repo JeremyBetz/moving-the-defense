@@ -76,7 +76,8 @@ Animation rendered by Moving the Defense; no original match video is included.
 
 This retrospective analyst replay colors defenders by accumulated movement
 relative to the other nine defenders over the trailing two seconds. Values are
-raw metres shown on one fixed 0–6.25 m scale; the team meter is the arithmetic
+raw metres shown on one fixed 0–6.25 m scale. Attackers remain black while only
+defender marker fill uses the score color scale; the team meter is the arithmetic
 mean across all ten supported defenders. The centered smoother requires raw
 tracking just after the displayed time, so this is not a live detector. Missing
 ten-player support is shown as unavailable rather than interpolated.
