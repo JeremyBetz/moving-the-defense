@@ -10,12 +10,12 @@ centered smoother also requires raw tracking after the displayed time: 0.12 s
 for the approved 25 Hz/seven-frame Metrica convention and 0.10 s for the 10
 Hz/three-frame convention.
 
-Defender marker fill uses the prospectively audited fixed `cividis` scale from
-0 to 6.25 m. Values above 6.25 m saturate visually but remain unchanged in the
+Defender marker fill uses a fixed sequential yellow-to-red scale from 0 to 6.25
+m. Values above 6.25 m saturate visually but remain unchanged in the
 score table. The ceiling was selected as the lowest passing candidate in the
 [response-free display-scale audit v2](results/defensive_reorganization_replay_display_scale_v2.md).
-Attacking players use a fixed black fill and never enter the heat scale. Defender
-and attacker trails remain neutral gray and black respectively; marker fill is
+Attacking players use a fixed blue fill and never enter the heat scale. Defender
+and attacker trails remain neutral gray and dark blue respectively; marker fill is
 the primary score cue. An unsupported defender score is shown as a hollow gray
 marker; an invalid current coordinate hides the player. The ball remains white
 with a dark outline. The team meter is the arithmetic mean of all ten player

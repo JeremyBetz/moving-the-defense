@@ -32,21 +32,22 @@ from tracking_animation import (
 
 PITCH_COLOR = "#315d3a"
 LINE_COLOR = "#f5f5f0"
-ATTACKER_COLOR = "#000000"
+ATTACKER_COLOR = "#1565c0"
 ATTACKER_EDGE = "#f5f5f0"
-ATTACKER_TRAIL_COLOR = "#202020"
+ATTACKER_TRAIL_COLOR = "#0b3d91"
 DEFENDER_TRAIL_COLOR = "#9a9a9a"
+DEFENDER_CMAP = "YlOrRd"
 NEUTRAL_EDGE = "#252525"
 UNSUPPORTED_EDGE = "#b7b7b7"
 SCORE_LABEL = "Trailing 2 s defender-relative path (m)"
 DEFAULT_SCORE_VMAX_M = 6.25
 INTERPRETATION_NOTE = (
-    "Attackers: black · Defenders: color = trailing 2 s defender-relative path. "
+    "Attackers: blue · Defenders: yellow–red = trailing 2 s defender-relative path. "
     "Higher values indicate more accumulated movement relative to the defensive unit, "
     "not better or worse defending."
 )
 ANIMATION_NOTE = (
-    "Attackers: black · Defenders: color = trailing 2 s defender-relative path · "
+    "Attackers: blue · Defenders: yellow–red = trailing 2 s defender-relative path · "
     "not better/worse defending"
 )
 
@@ -379,7 +380,7 @@ def animate_defensive_reorganization(
         color="#303030",
         clip_on=False,
     )
-    cmap = plt.get_cmap("cividis")
+    cmap = plt.get_cmap(DEFENDER_CMAP)
     norm = Normalize(vmin=score_vmin_m, vmax=score_vmax_m, clip=True)
     scalar = plt.cm.ScalarMappable(norm=norm, cmap=cmap)
     colorbar = fig.colorbar(scalar, ax=ax, fraction=.028, pad=.025, extend="max")
@@ -512,7 +513,7 @@ def plot_defensive_reorganization_diagnostic(
     if len(matches) != 1:
         raise ValueError("selected diagnostic timestamp is unavailable exactly")
     frame_id = matches.iloc[0]["frame_id_provider"]
-    cmap = plt.get_cmap("cividis")
+    cmap = plt.get_cmap(DEFENDER_CMAP)
     norm = Normalize(vmin=score_vmin_m, vmax=score_vmax_m, clip=True)
 
     fig = plt.figure(figsize=(13, 6.2))

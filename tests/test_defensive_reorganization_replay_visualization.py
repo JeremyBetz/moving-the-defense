@@ -24,6 +24,7 @@ from defensive_reorganization_replay_visualization import (  # noqa: E402
     ATTACKER_COLOR,
     ATTACKER_TRAIL_COLOR,
     DEFAULT_SCORE_VMAX_M,
+    DEFENDER_CMAP,
     DEFENDER_TRAIL_COLOR,
     PITCH_COLOR,
     SCORE_LABEL,
@@ -180,7 +181,7 @@ def test_renderer_default_and_closed_demo_qa_use_frozen_625_scale():
     }
 
 
-def test_attackers_are_fixed_black_defenders_use_cividis_and_ball_is_white():
+def test_attackers_are_fixed_blue_defenders_use_warm_scale_and_ball_is_white():
     q = tracking()
     scores = with_known_supported_values(score(q))
     bundle = animate_defensive_reorganization(q, scores, clip_spec(), show_trails=True)
@@ -191,16 +192,17 @@ def test_attackers_are_fixed_black_defenders_use_cividis_and_ball_is_white():
         for collection in axis.collections
         if len(collection.get_sizes()) == 1
     }
-    assert ATTACKER_COLOR == "#000000"
-    assert ATTACKER_TRAIL_COLOR == "#202020"
+    assert ATTACKER_COLOR == "#1565c0"
+    assert ATTACKER_TRAIL_COLOR == "#0b3d91"
     assert DEFENDER_TRAIL_COLOR == "#9a9a9a"
-    assert scatters[75.0].get_facecolors()[0] == pytest.approx(to_rgba("black"))
-    assert scatters[145.0].get_facecolors()[0] == pytest.approx(to_rgba("black"))
+    assert DEFENDER_CMAP == "YlOrRd"
+    assert scatters[75.0].get_facecolors()[0] == pytest.approx(to_rgba(ATTACKER_COLOR))
+    assert scatters[145.0].get_facecolors()[0] == pytest.approx(to_rgba(ATTACKER_COLOR))
     assert scatters[35.0].get_facecolors()[0] == pytest.approx(to_rgba("white"))
     defender_faces = scatters[92.0].get_facecolors()
-    expected = plt.get_cmap("cividis")(Normalize(0.0, 6.25)(5.0))
+    expected = plt.get_cmap(DEFENDER_CMAP)(Normalize(0.0, 6.25)(5.0))
     assert any(np.allclose(face, expected) for face in defender_faces)
-    assert not any(np.allclose(face, to_rgba("black")) for face in defender_faces)
+    assert not any(np.allclose(face, to_rgba(ATTACKER_COLOR)) for face in defender_faces)
     finish(bundle)
 
 
