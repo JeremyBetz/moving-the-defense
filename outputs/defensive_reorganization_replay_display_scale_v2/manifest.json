@@ -1,0 +1,28 @@
+{
+  "audit_id": "defensive_reorganization_replay_display_scale_v2",
+  "ball_read": false,
+  "candidate_ceilings_m": [
+    6.25,
+    6.5,
+    7.0
+  ],
+  "classification": "A_FREEZE_6_25_M",
+  "events_read": false,
+  "game_3_accessed": false,
+  "qa_snapshot": {
+    "committed": false,
+    "rendered": true
+  },
+  "row_level_output_written": false,
+  "scientific_outcomes_used": false,
+  "selected_ceiling_m": 6.25,
+  "source_run_counts": {
+    "game_1_away": 5,
+    "game_1_home": 5,
+    "game_2_away": 3,
+    "game_2_home": 5
+  },
+  "supported_player_frame_count": 5713060,
+  "supported_team_frame_count": 571306,
+  "v1_population_reproduced": true
+}

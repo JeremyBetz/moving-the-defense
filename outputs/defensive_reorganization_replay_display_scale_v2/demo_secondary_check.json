@@ -1,0 +1,46 @@
+{
+  "displayed": {
+    "ceiling_m": 6.25,
+    "frames_at_least_1_saturated": 97,
+    "frames_at_least_2_saturated": 37,
+    "frames_at_least_5_saturated": 0,
+    "mean_saturated_defenders_per_frame": 0.5338645418326693,
+    "player_saturation_count": 134,
+    "player_saturation_fraction": 0.05338645418326693,
+    "team_mean_saturation_count": 0,
+    "team_mean_saturation_fraction": 0.0
+  },
+  "displayed_frame_count": 251,
+  "high_value_ordering_improved": true,
+  "native": {
+    "ceiling_m": 6.25,
+    "frames_at_least_1_saturated": 194,
+    "frames_at_least_2_saturated": 73,
+    "frames_at_least_5_saturated": 0,
+    "mean_saturated_defenders_per_frame": 0.5329341317365269,
+    "player_saturation_count": 267,
+    "player_saturation_fraction": 0.053293413173652694,
+    "team_mean_saturation_count": 0,
+    "team_mean_saturation_fraction": 0.0
+  },
+  "native_frame_count": 501,
+  "performed": true,
+  "predeclared_snapshot_summary": {
+    "t_+0_s": {
+      "distinct_display_values": 10,
+      "saturated_defender_count": 1,
+      "team_mean_m": 4.344056003731482
+    },
+    "t_+10_s": {
+      "distinct_display_values": 10,
+      "saturated_defender_count": 0,
+      "team_mean_m": 2.9176534529024907
+    },
+    "t_-10_s": {
+      "distinct_display_values": 10,
+      "saturated_defender_count": 0,
+      "team_mean_m": 1.4616197002775821
+    }
+  },
+  "selected_ceiling_m": 6.25
+}

@@ -1,0 +1,13 @@
+{
+  "ball_read": false,
+  "candidate_set_exact": true,
+  "events_read": false,
+  "game_3_accessed": false,
+  "passed": true,
+  "protected_outcomes_read": false,
+  "scorer_hash_unchanged": true,
+  "team_means_match_players": true,
+  "v1_player_count_exact": true,
+  "v1_run_count_exact": true,
+  "v1_team_count_exact": true
+}
