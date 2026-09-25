@@ -13,7 +13,9 @@ history, every negative branch, and machine-oriented provenance, use the
 - the IDSSE starting-context results for attacker--unit goalward position and
   attacker--ball distance;
 - the IDSSE outward-versus-goalward movement-direction analysis;
-- its SkillCorner Open Data directional replication; and
+- its original nine-match SkillCorner Open Data directional replication;
+- its prospectively frozen ten-match nonoverlapping SkillCorner directional
+  replication, estimated separately from the original cohort; and
 - the paper's Figure 1 temporal measurement figure, Figure 2 directional
   replication figure, and retained context/directional supplementary figures.
 

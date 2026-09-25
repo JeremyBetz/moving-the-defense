@@ -3,16 +3,16 @@
   "status": "SUBMISSION CANDIDATE V1 — NOT YET FINAL",
   "created_date": "2026-09-25",
   "repository": "moving-the-defense",
-  "source_head": "e8f7ca444883e1eda3afebdc60b2e48317d65c5d",
+  "source_head": "7e41808c9e538482959c036122724f34f0a21b5b",
   "candidate": {
     "editable_source": {
       "path": "submission/ssac27_abstract_candidate_v1.html",
-      "sha256": "fce08f76a77342be851ccd39d2b7d0c010b47cc383e6c14c4435e28cb18b3e7d"
+      "sha256": "84ec0b16953619e7ac39749ec245f2a1209d0a0be6a1d801a2ac70be515e3b75"
     },
     "pdf": {
       "path": "submission/SSAC27_abstract_candidate_v1.pdf",
-      "sha256": "8cd707bcdfa4a1f94d408dcdf388240036a94b611fe11ad8ba9ee80d9427bc7f",
-      "size_bytes": 261069,
+      "sha256": "3a8b5f45e0e5ae619877d7c5b162d0b65c2390885875fae76b0465c6fde7f867",
+      "size_bytes": 261437,
       "page_count": 3,
       "page_size": "US Letter"
     }
@@ -25,7 +25,7 @@
     "section_label_words": 4,
     "body_words": 403,
     "total_words": 416,
-    "normalized_text_sha256": "db2c8024a10df6f42312fa01880b935e65e0b2bf370f5cd96cd4d74dd060b4a4"
+    "normalized_text_sha256": "65f7b7d41b18d2cdfa98ea1992112dcaa0aa942b02c90cc5ec4673b29f4441c7"
   },
   "governed_figures": [
     {

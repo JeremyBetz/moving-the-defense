@@ -9,7 +9,7 @@ geometries lets us ask whether off-ball movement away from the pitch centreline
 (“outward”) is associated with different subsequent reorganization than comparable
 movement toward goal.
 
-**Methods.** Fixed, non-overlapping two-second intervals measured attacker movement
+**Methods.** Fixed, adjacent two-second intervals measured attacker movement
 and subsequent defender-relative path. We compared the average accumulated
 defender-relative path of the nearest three defenders with that of four
 middle-ranked defenders, fixing proximity ranks before the defender interval
@@ -300,6 +300,13 @@ attacker exposure $[t-2,t]$, and a subsequent defender interval $[t,t+2]$.
 Attacker movement was treated as an observed exposure, not as a causal treatment
 or tactical label.
 
+The nominal analytic intervals are adjacent and distinct. The frozen centred
+smoothers use bounded raw-frame support across their nominal boundaries:
+Metrica and IDSSE use a seven-frame mean at 25 Hz ($\pm3$ raw frames, or
+$\pm0.12$ s), while SkillCorner uses a three-frame mean at 10 Hz ($\pm1$ raw
+frame, or $\pm0.10$ s). This support convention does not change the anchor
+definitions, analytic intervals, estimates, or cohort results.
+
 For each eligible attacker and anchor, we calculated path length and signed
 displacement from standardized tracking coordinates during exposure. Eligibility
 required complete temporal support and excluded restarts, ball-out intervals,
@@ -309,10 +316,10 @@ prejudged runs, threats, or otherwise meaningful attacking actions.
 
 Standardized orientation made signed movement comparable within each environment
 and separated path magnitude from its directional components. The subsequent
-interval begins only after exposure ends, so later defender movement cannot
-construct the attacker-movement quantity. This non-overlap matters because the
-paper asks about ordered geometry, rather than describing a single simultaneous
-configuration.
+interval begins at the exposure endpoint in the nominal analytic definition, so
+the defender outcome does not construct the attacker-movement quantity. This
+ordering matters because the paper asks about ordered geometry, rather than
+describing a single simultaneous configuration.
 
 ### 4.2 Defender-relative representation
 

@@ -81,6 +81,8 @@ defender marker fill uses the yellow-to-red score scale; the team meter is the a
 mean across all ten supported defenders. The centered smoother requires raw
 tracking just after the displayed time, so this is not a live detector. Missing
 ten-player support is shown as unavailable rather than interpolated.
+This retrospective trailing player-level visualization analogue is not the
+paper's subsequent attacker-specific near-minus-middle inferential outcome.
 
 The replay describes tracking geometry only. It does not diagnose defensive
 quality, tactical error, marking, or causal attacker influence. Reproduce it

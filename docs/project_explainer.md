@@ -12,7 +12,9 @@ Tracking data records where players moved. It does not record why. The project a
 
 ## 2. What is the one-minute explanation?
 
-If the whole back line slides five metres left, that is mostly a defensive shift. If three defenders slide and one steps away from the unit, we want to separate that individual adjustment from the shared shift. The project has validated a narrow geometric measurement of that difference, shown that recent movement predicts much of it, and found only weak extra information from simple nearest-opponent geometry. It is now working upstream on how to break an attacker’s own movement into finite efforts without using what the defence subsequently did.
+If the whole back line slides five metres left, that is mostly a defensive shift. If nearby defenders also change position within that moving unit, that is localized defensive reorganization. The paper measures an off-ball attacker's movement over two seconds and then measures each defender's accumulated movement relative to the other nine defending outfield players over the next two seconds. Defenders are ranked by their distance to the attacker before the later interval, and the average path of the nearest three is compared with that of four middle-ranked defenders.
+
+The main directional question is whether comparable movement away from the pitch centreline (outward) and toward goal have different associations with this later near-minus-middle geometry. The outward-minus-goalward association was positive in seven IDSSE matches, an original nine-match SkillCorner cohort, and a prospectively frozen ten-match nonoverlapping SkillCorner cohort. The cohorts were estimated separately; no cross-provider or pooled 19-match effect was calculated.
 
 The project can measure movement. It cannot yet say that an attacker caused, deserved credit for, or tactically required a defensive action.
 
@@ -114,17 +116,17 @@ football question
 → value
 ```
 
-Every arrow is conditional. Current evidence reaches externally replicated defender-relative geometry, contextual-prediction feasibility, a small mixed opponent-information association, and a frozen within-provider bridge between preceding attacker path and subsequent local defender-relative movement. Tactical interpretation and everything after it remain unsupported.
+Every arrow is conditional. Current evidence reaches a replicated time-ordered association between preceding attacker movement and later localized defender-relative movement, plus a directional difference reproduced in separate IDSSE, original SkillCorner, and prospective additional SkillCorner cohorts. Tactical interpretation and everything after it remain unsupported.
 
-## 14. What is the current methodological frontier?
+## 14. What is the current evidence?
 
-> **How far can the replicated attacker-to-defender geometric association be interpreted without exceeding its observational, within-provider evidence?**
+The time-ordered analysis found a stronger association among the nearest three defenders than among the middle four. The central directional result then found a stronger localized association for outward than for goalward attacker movement. For a modeled 5 m comparison, the estimated near-minus-middle difference was approximately 28 cm in IDSSE, 24 cm in the original SkillCorner cohort, and 28 cm in the prospective additional SkillCorner cohort. Every match-level contrast was positive across the separately estimated 7-, 9-, and 10-match cohorts.
 
-The first frozen relationship test is now **FINAL BRIDGE A**. Using unchanged two-second attacker path and subsequent focal-relative movement among the nearest three defenders, the positive local association replicated across both Metrica sample matches and exceeded farthest-three and reverse-time controls under the frozen criteria. This is the first empirical bridge, but it remains observational geometry—not a validated tactical response, attacker effect, or value measure.
+This is prospective replication of an observational association, not evidence that outward runs are better or that an attacker caused, manipulated, or created space through the observed defensive movement. The two SkillCorner cohorts are nonoverlapping within this project but come from the same provider environment, and no pooled estimate was created.
 
 ## 15. What could the work eventually support?
 
-Conditional future applications include defensive-style profiling, opponent- or zone-specific tendency analysis, scouting descriptions, candidate-moment surfacing, video indexing, and—only after semantic validation—coaching feedback.
+The current bounded application is candidate-passage organization for subsequent video review. The measurement can help surface passages in which nearby defenders moved differently from the wider unit, but football interpretation and analyst usefulness remain unvalidated. Broader uses such as defensive-style profiling, scouting descriptions, tactical labeling, or coaching feedback require separate semantic and application evidence.
 
 The project does not currently evaluate quality, identify correct decisions, label tactical concepts automatically, prescribe actions, measure gravity, or assign off-ball value.
 

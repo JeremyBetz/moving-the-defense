@@ -32,7 +32,7 @@ geometries lets us ask whether off-ball movement away from the pitch centreline
 (“outward”) is associated with different subsequent reorganization than comparable
 movement toward goal.
 
-**Methods.** Fixed, non-overlapping two-second intervals measured attacker movement
+**Methods.** Fixed, adjacent two-second intervals measured attacker movement
 and subsequent defender-relative path. We compared the average accumulated
 defender-relative path of the nearest three defenders with that of four
 middle-ranked defenders, fixing proximity ranks before the defender interval
