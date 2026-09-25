@@ -4,11 +4,27 @@
 
 **SUBMISSION CANDIDATE V1 — NOT YET FINAL**
 
+**Upload status:** upload-ready; not yet final and not yet submitted.
+
 - [x] Candidate source: [`submission/ssac27_abstract_candidate_v1.html`](../submission/ssac27_abstract_candidate_v1.html).
 - [x] Candidate PDF: [`submission/SSAC27_abstract_candidate_v1.pdf`](../submission/SSAC27_abstract_candidate_v1.pdf).
 - [x] Candidate manifest: [`submission/ssac27_abstract_candidate_v1_manifest.json`](../submission/ssac27_abstract_candidate_v1_manifest.json).
+- [x] Candidate PDF SHA-256: `3a8b5f45e0e5ae619877d7c5b162d0b65c2390885875fae76b0465c6fde7f867`.
+- [x] Figure 1 SVG SHA-256: `a73f9287b3bfd2f5b618efa10f018530921dd9837b86a3e3b3427d87d4c989de`.
+- [x] Figure 2 SVG SHA-256: `4971093833234293dace4d63ca829a7ad6a12c1edf9206aaecd9154e720a75d1`.
+- [x] Extractable text: 416 abstract words, 261 caption words, and 677 words total.
 - [x] Candidate is anonymous as a conservative formatting choice; the portal does not explicitly require an anonymous abstract file.
 - [ ] Candidate becomes final only after final science freeze, regeneration if anything changes, human visual review, and exact portal-upload verification.
+
+## Content freeze through September 28
+
+**SCIENCE AND SUBMISSION CONTENT FROZEN THROUGH SEPTEMBER 28**
+
+This project-management freeze permits operational QA, logged-out public-link
+verification, portal-field preparation, submission logistics, and correction of
+a genuine discovered error. By default it prohibits new analyses, cohorts,
+figures, clips, metric changes, editorial tinkering, claim expansion, and replay
+redesign. It is not a scientific claim.
 
 ## Verified portal requirements
 
