@@ -1,0 +1,91 @@
+{
+  "schema_version": 1,
+  "status": "SUBMISSION CANDIDATE V1 — NOT YET FINAL",
+  "created_date": "2026-09-25",
+  "repository": "moving-the-defense",
+  "source_head": "e8f7ca444883e1eda3afebdc60b2e48317d65c5d",
+  "candidate": {
+    "editable_source": {
+      "path": "submission/ssac27_abstract_candidate_v1.html",
+      "sha256": "fce08f76a77342be851ccd39d2b7d0c010b47cc383e6c14c4435e28cb18b3e7d"
+    },
+    "pdf": {
+      "path": "submission/SSAC27_abstract_candidate_v1.pdf",
+      "sha256": "8cd707bcdfa4a1f94d408dcdf388240036a94b611fe11ad8ba9ee80d9427bc7f",
+      "size_bytes": 261069,
+      "page_count": 3,
+      "page_size": "US Letter"
+    }
+  },
+  "abstract": {
+    "canonical_source": "docs/manuscript_skeleton.md",
+    "title": "Off-Ball Movement Direction and Localized Defensive Reorganization in Football",
+    "counting_convention": "Unicode-normalized whitespace-delimited tokens; title, four section labels, and body counted separately",
+    "title_words": 9,
+    "section_label_words": 4,
+    "body_words": 403,
+    "total_words": 416,
+    "normalized_text_sha256": "db2c8024a10df6f42312fa01880b935e65e0b2bf370f5cd96cd4d74dd060b4a4"
+  },
+  "governed_figures": [
+    {
+      "figure": 1,
+      "embedded_path": "docs/figures/sloan/temporal_footprint_flagship.svg",
+      "embedded_sha256": "a73f9287b3bfd2f5b618efa10f018530921dd9837b86a3e3b3427d87d4c989de",
+      "companion_pdf_path": "docs/figures/sloan/temporal_footprint_flagship.pdf",
+      "companion_pdf_sha256": "1513db3a6fe31abe68834ec49b02fd1e9fb20cb98c377c50afca490e9b474f18"
+    },
+    {
+      "figure": 2,
+      "embedded_path": "docs/figures/sloan/directional_replication.svg",
+      "embedded_sha256": "4971093833234293dace4d63ca829a7ad6a12c1edf9206aaecd9154e720a75d1",
+      "companion_pdf_path": "docs/figures/sloan/directional_replication.pdf",
+      "companion_pdf_sha256": "379a27398a1215837e948c33132c1408dc913bdc14a9976abdd4af6b594791bd"
+    }
+  ],
+  "portal_requirements": {
+    "abstract_entry": "one required file upload; no pasted-abstract field",
+    "accepted_file_types": "any file type",
+    "maximum_size_bytes": 1073741824,
+    "filename_restriction": null,
+    "title_entered_separately": true,
+    "title_included_in_uploaded_abstract": true,
+    "portal_word_count_displayed": false,
+    "required_sections": [
+      "Introduction",
+      "Methods",
+      "Results",
+      "Conclusion"
+    ],
+    "maximum_combined_figures_and_tables": 2,
+    "separate_figure_upload": false,
+    "figures_embedded_in_abstract": true,
+    "explicit_abstract_anonymity_requirement_found": false,
+    "candidate_anonymity_choice": "anonymous as a conservative formatting choice",
+    "competition_category": "Soccer"
+  },
+  "validation": {
+    "pdf_abstract_text_matches_source_after_whitespace_normalization": true,
+    "pdf_abstract_words": 416,
+    "caption_words": {
+      "figure_1": 134,
+      "figure_2": 127
+    },
+    "total_pdf_extracted_words_including_figure_labels": 678,
+    "selectable_text": true,
+    "all_pages_rendered_and_visually_inspected": true,
+    "author_metadata_blank": true,
+    "visible_author_or_institution": false,
+    "private_local_path_exposed": false,
+    "governed_figure_bytes_changed": false
+  },
+  "remaining_work_before_final_submission": [
+    "Complete final logged-out verification of the public repository and data links",
+    "Complete a final human visual read",
+    "Complete any separately approved bounded Project 1 improvements",
+    "Freeze science for submission",
+    "Regenerate and revalidate the final artifact if any governed input changes",
+    "Populate the portal and inspect its rendered upload without submitting prematurely",
+    "Submit only after explicit human confirmation"
+  ]
+}
