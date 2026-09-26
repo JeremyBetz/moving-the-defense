@@ -207,6 +207,7 @@ def _draw_snapshot(
     norm: Normalize,
     trail_seconds: float,
     show_trails: bool,
+    show_focal_highlight: bool,
     artists: list,
 ) -> dict[str, object]:
     time_s = float(
@@ -225,14 +226,22 @@ def _draw_snapshot(
     )
     attackers = players.loc[
         players["team_key"].eq(clip_spec.attacking_team_key)
-        & ~players["player_key"].eq(clip_spec.focal_player_key)
+        & (
+            True
+            if not show_focal_highlight
+            else ~players["player_key"].eq(clip_spec.focal_player_key)
+        )
     ]
     if not attackers.empty:
         x, y = centered_to_pitch(attackers["x_m"], attackers["y_m"])
         artists.append(
             ax.scatter(x, y, s=75, c=ATTACKER_COLOR, edgecolors=ATTACKER_EDGE, linewidths=.8, zorder=4)
         )
-    focal = players.loc[players["player_key"].eq(clip_spec.focal_player_key)]
+    focal = (
+        players.loc[players["player_key"].eq(clip_spec.focal_player_key)]
+        if show_focal_highlight
+        else players.iloc[0:0]
+    )
     if not focal.empty:
         x, y = centered_to_pitch(focal["x_m"], focal["y_m"])
         artists.append(
@@ -312,7 +321,7 @@ def _draw_snapshot(
 
 
 def _add_team_meter(fig: Figure, score_vmin_m: float, score_vmax_m: float):
-    meter = fig.add_axes([.13, .035, .30, .035])
+    meter = fig.add_axes([.13, .085, .30, .035])
     meter.set_xlim(score_vmin_m, score_vmax_m)
     meter.set_ylim(-.55, .55)
     meter.set_yticks([])
@@ -337,6 +346,7 @@ def animate_defensive_reorganization(
     score_vmax_m: float = DEFAULT_SCORE_VMAX_M,
     show_team_meter: bool = True,
     show_trails: bool = True,
+    show_focal_highlight: bool = True,
 ) -> AnimationBundle:
     """Animate committed trailing scores as a retrospective analyst replay."""
     if frame_step < 1 or playback_fps <= 0 or trail_seconds < 0:
@@ -357,7 +367,7 @@ def animate_defensive_reorganization(
         line_color=LINE_COLOR,
     )
     fig, ax = pitch.draw(figsize=(11, 7.2))
-    fig.subplots_adjust(bottom=.16, top=.87, right=.88)
+    fig.subplots_adjust(bottom=.20, top=.87, right=.88)
     fig.suptitle("Defender-relative movement replay", color="#202124", fontsize=13, y=.965)
     semantics = ax.text(
         .01,
@@ -370,15 +380,16 @@ def animate_defensive_reorganization(
     time_text = ax.text(
         .99, 1.02, "", transform=ax.transAxes, ha="right", fontsize=9, color="#202124"
     )
-    note = ax.text(
-        .99,
-        -.10,
-        ANIMATION_NOTE,
-        transform=ax.transAxes,
-        ha="right",
-        fontsize=8,
+    note = fig.text(
+        .62,
+        .045,
+        "Attackers: blue · Defender color: trailing 2 s relative path\n"
+        "Higher means more movement within the unit—not better or worse defending.",
+        ha="center",
+        va="bottom",
+        fontsize=7.5,
         color="#303030",
-        clip_on=False,
+        bbox={"facecolor": "white", "edgecolor": "none", "alpha": .92, "pad": 2.0},
     )
     cmap = plt.get_cmap(DEFENDER_CMAP)
     norm = Normalize(vmin=score_vmin_m, vmax=score_vmax_m, clip=True)
@@ -407,6 +418,7 @@ def animate_defensive_reorganization(
             norm=norm,
             trail_seconds=trail_seconds,
             show_trails=show_trails,
+            show_focal_highlight=show_focal_highlight,
             artists=artists,
         )
         relative = float(current_state["time_match_s"]) - clip_spec.anchor_time_s
@@ -478,6 +490,7 @@ def animate_defensive_reorganization(
             "unsupported_score_frame_count": int(unsupported_frames),
             "trail_seconds": float(trail_seconds),
             "show_team_meter": bool(show_team_meter),
+            "show_focal_highlight": bool(show_focal_highlight),
             "pitch_background": PITCH_COLOR,
         }
     )
@@ -505,11 +518,15 @@ def plot_defensive_reorganization_diagnostic(
     trail_seconds: float = 0.4,
     score_vmin_m: float = 0.0,
     score_vmax_m: float = DEFAULT_SCORE_VMAX_M,
+    show_focal_highlight: bool = True,
+    technical: bool = True,
 ) -> Figure:
     """Create the two-panel static explanation of the committed score."""
     prepared = _prepare_visualization(tracking, scores, clip_spec)
     selected = clip_spec.anchor_time_s if selected_time_s is None else float(selected_time_s)
-    matches = prepared.frames.loc[np.isclose(prepared.frames["time_match_s"], selected, atol=1e-7)]
+    matches = prepared.frames.loc[
+        np.isclose(prepared.frames["time_match_s"], selected, atol=1e-7, rtol=0)
+    ]
     if len(matches) != 1:
         raise ValueError("selected diagnostic timestamp is unavailable exactly")
     frame_id = matches.iloc[0]["frame_id_provider"]
@@ -541,14 +558,15 @@ def plot_defensive_reorganization_diagnostic(
         & scores.team_scores["team_key"].eq(clip_spec.defending_team_key)
         & scores.team_scores["time_match_s"].between(clip_spec.start_time_s, clip_spec.end_time_s)
     ]
-    for _, group in player.groupby("player_key", sort=True):
-        series_ax.plot(
-            group["time_match_s"] - clip_spec.anchor_time_s,
-            group["trailing_relative_path_m"],
-            color="#7d7d7d",
-            linewidth=.8,
-            alpha=.58,
-        )
+    if technical:
+        for _, group in player.groupby("player_key", sort=True):
+            series_ax.plot(
+                group["time_match_s"] - clip_spec.anchor_time_s,
+                group["trailing_relative_path_m"],
+                color="#7d7d7d",
+                linewidth=.8,
+                alpha=.58,
+            )
     series_ax.plot(
         team["time_match_s"] - clip_spec.anchor_time_s,
         team["mean_trailing_relative_path_m"],
@@ -565,7 +583,7 @@ def plot_defensive_reorganization_diagnostic(
     series_ax.legend(frameon=False, loc="upper right")
     finite = player["trailing_relative_path_m"].to_numpy(float)
     saturation_count = int(np.count_nonzero(np.isfinite(finite) & (finite > score_vmax_m)))
-    if saturation_count:
+    if technical and saturation_count:
         series_ax.text(
             .02,
             .98,
@@ -587,6 +605,7 @@ def plot_defensive_reorganization_diagnostic(
         norm=norm,
         trail_seconds=trail_seconds,
         show_trails=True,
+        show_focal_highlight=show_focal_highlight,
         artists=artists,
     )
     pitch_ax.set_title(f"B  Physical replay frame · t {selected - clip_spec.anchor_time_s:+.2f} s")
@@ -604,12 +623,18 @@ def plot_defensive_reorganization_diagnostic(
         bbox={"boxstyle": "round,pad=.25", "facecolor": "#202124", "alpha": .82, "edgecolor": "none"},
         zorder=10,
     )
-    fig.suptitle("Retrospective trailing defender-relative movement diagnostic", fontsize=13)
+    fig.suptitle(
+        "Technical defender-relative movement diagnostic"
+        if technical
+        else "Analyst review: within-unit movement",
+        fontsize=13,
+    )
     fig.text(.5, .015, INTERPRETATION_NOTE, ha="center", fontsize=8, color="#303030")
     fig._reorganization_metadata = MappingProxyType(
         {
             "selected_time_s": selected,
             "saturation_count": saturation_count,
+            "technical": bool(technical),
             "snapshot_state": state,
             "pitch_background": PITCH_COLOR,
         }

@@ -169,6 +169,12 @@ def test_renderer_default_and_closed_demo_qa_use_frozen_625_scale():
         "score_vmax_m"
     ].default
     assert default == 6.25
+    assert (
+        inspect.signature(animate_defensive_reorganization)
+        .parameters["show_focal_highlight"]
+        .default
+        is True
+    )
     assert EXPECTED_DEMO_QA == {
         "native_frame_count": 501,
         "displayed_frame_count": 251,
@@ -179,6 +185,57 @@ def test_renderer_default_and_closed_demo_qa_use_frozen_625_scale():
         "frames_at_least_5_saturated": 0,
         "team_mean_saturation_count": 0,
     }
+
+
+def test_application_view_can_disable_focal_highlight_without_changing_scores():
+    q = tracking()
+    scores = score(q)
+    bundle = animate_defensive_reorganization(
+        q, scores, clip_spec(), frame_step=2, show_focal_highlight=False
+    )
+    bundle.animation._draw_frame(1)
+    assert bundle.animation._reorganization_metadata["show_focal_highlight"] is False
+    expected = scores.player_scores.loc[
+        scores.player_scores["frame_id_provider"].eq("23")
+    ].set_index("player_key")["trailing_relative_path_m"]
+    assert bundle.animation._reorganization_state["player_scores_m"] == pytest.approx(
+        expected.to_dict()
+    )
+    finish(bundle)
+
+
+def test_large_match_timestamps_use_absolute_not_relative_diagnostic_tolerance():
+    q = tracking().copy()
+    q["time_match_s"] += 5000.0
+    settings = clip_spec()
+    shifted = TrackingClipSpec(
+        match_id=settings.match_id,
+        period=settings.period,
+        anchor_time_s=settings.anchor_time_s + 5000.0,
+        start_time_s=settings.start_time_s + 5000.0,
+        end_time_s=settings.end_time_s + 5000.0,
+        focal_player_key=settings.focal_player_key,
+        attacking_team_key=settings.attacking_team_key,
+        defending_team_key=settings.defending_team_key,
+        defender_ranks=settings.defender_ranks,
+    )
+    scores = score(q)
+    figure = plot_defensive_reorganization_diagnostic(
+        q, scores, shifted, selected_time_s=shifted.anchor_time_s
+    )
+    assert figure._reorganization_metadata["selected_time_s"] == shifted.anchor_time_s
+    plt.close(figure)
+
+
+def test_analyst_diagnostic_keeps_only_team_trace_and_separate_title():
+    q = tracking()
+    figure = plot_defensive_reorganization_diagnostic(
+        q, score(q), clip_spec(), technical=False
+    )
+    assert figure._reorganization_metadata["technical"] is False
+    assert len(figure.axes[0].lines) == 2  # team mean plus selected-time guide
+    assert figure._suptitle.get_text() == "Analyst review: within-unit movement"
+    plt.close(figure)
 
 
 def test_attackers_are_fixed_blue_defenders_use_warm_scale_and_ball_is_white():

@@ -90,6 +90,53 @@ with the output-free
 [defender-relative replay notebook](notebooks/defender_relative_replay_demo.ipynb)
 and the public Metrica Game 2 files.
 
+For an analyst-facing walkthrough, see the
+[fixed-passage and full-match case study](docs/match_application_case_study.md).
+The [local scoring API](docs/replay_scoring_api.md) exposes the same approved
+retrospective measurement over normalized tracking without adding provider or
+tactical logic.
+
+### Apply the metric to a match
+
+Python:
+
+```python
+from defensive_reorganization_application import MatchApplicationConfig, analyze_match
+
+result = analyze_match(
+    normalized_tracking,
+    defending_team_keys=("metrica:Home", "metrica:Away"),
+    excluded_player_keys={
+        "metrica:Home": ("metrica:Home:11",),
+        "metrica:Away": ("metrica:Away:25",),
+    },
+    events=normalized_events,
+    config=MatchApplicationConfig(source_fps=25.0, smoothing_frames=7),
+    output_dir="/tmp/moving_the_defense_match_application",
+)
+```
+
+Local CLI over the public Metrica Sample Game 2 files:
+
+```bash
+.venv/bin/python src/run_metrica_game2_application.py \
+  --output-dir /tmp/moving_the_defense_game2_application \
+  --render-selected
+```
+
+The analyst preset returns three distinct ten-second review passages: high
+within-unit movement, low defensive response conditioned on meaningful
+attacking activity, and a non-overlapping rapid increase. The rapid increase
+is presented as a possible counter-pressing passage identified by an analyst,
+not as a tactical label produced by the metric. Each passage includes a GIF,
+compact context card, simplified analyst diagnostic, and technical appendix.
+
+The flow is `raw provider data → normalized tracking → trailing scores →`
+`clustered moments → optional diagnostic/GIF`. See the
+[API contract](docs/replay_scoring_api.md) and
+[one-match case study](docs/match_application_case_study.md).
+The application outputs are descriptive and remain local by default.
+
 ### Temporal results
 
 Preceding attacker movement was associated with greater subsequent defender
