@@ -122,6 +122,11 @@ case = analyze_metrica_game2(
 )
 ```
 
+This compatibility helper intentionally reproduces the fixed reviewed Game 2
+high and rapid examples. For automatic selection on either public sample match,
+use `analyze_metrica_sample_match(game_number, ...)`; a missing conditional-low
+example is valid rather than a reason to relax the activity gate.
+
 - [Provider-neutral scoring API](replay_scoring_api.md)
 - [Visualization guide](defensive_reorganization_replay_visualization.md)
 - [Output-free fixed-passage notebook](../notebooks/defender_relative_replay_demo.ipynb)

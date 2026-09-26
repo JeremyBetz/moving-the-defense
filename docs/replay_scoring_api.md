@@ -123,28 +123,33 @@ checks remove obvious provider discontinuities and restart setups; they do not
 validate tactical meaning. Other provider adapters must supply an equivalent
 event/ball suitability layer rather than silently inheriting Metrica labels.
 
-For the public Metrica Sample Game 2, the preset resolves normalization, team
-identities, goalkeepers, 25 Hz cadence, seven-frame smoothing, events,
-ten-second analyst clips, context matching, and suitability gates from only two
-paths:
+For public Metrica Sample Games 1 and 2, the preset resolves normalization,
+team identities, goalkeepers, 25 Hz cadence, seven-frame smoothing, events,
+ten-second analyst clips, context matching, and suitability gates from the game
+number plus optional input/output paths. Automatic selection is the default;
+the reviewed Game 2 case-study identities require an explicit option.
 
 ```python
-from run_metrica_game2_application import analyze_metrica_game2
+from run_metrica_game2_application import analyze_metrica_sample_match
 
-case = analyze_metrica_game2(
-    data_dir="data/metrica_sample_game_2",
-    output_dir="/tmp/mtd_game2_analyst_case",
+case = analyze_metrica_sample_match(
+    1,
+    data_dir="data/metrica_sample_game_1",
+    output_dir="/tmp/mtd_game1_analyst_case",
     render_selected=True,
 )
 ```
 
-This is the recommended output-free notebook cell for the sample match. The
-lower-level normalized API remains the provider-neutral integration boundary.
+The lower-level normalized API remains the provider-neutral integration
+boundary. A missing conditional-low example is valid and does not relax the
+activity gate.
 
 The bounded public Game 2 application can be reproduced locally with:
 
 ```bash
 .venv/bin/python src/run_metrica_game2_application.py \
+  --game 2 \
+  --reviewed-game2-case-study \
   --output-dir /tmp/moving_the_defense_game2_application \
   --render-selected
 ```
@@ -152,6 +157,8 @@ The bounded public Game 2 application can be reproduced locally with:
 It scores maximal stable-roster runs for both teams, exports local Parquet
 timelines, selects moments, and aligns every recorded shot. The command does
 not publish its tracking-derived outputs.
+Use `--game 1` without `--reviewed-game2-case-study` for automatic Game 1
+selection.
 
 ## Meaning and limits
 

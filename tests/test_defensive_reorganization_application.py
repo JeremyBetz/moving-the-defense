@@ -29,6 +29,7 @@ from run_metrica_game2_application import (
     add_analyst_context,
     audit_visual_suitability,
     classify_attacking_activity,
+    metrica_sample_preset,
     select_analyst_moments,
 )
 
@@ -552,6 +553,7 @@ def test_analyst_selection_matches_context_and_deduplicates_categories():
     ]
     assert selected.peak_time_s.tolist() == [10.0, 70.0, 40.0]
     assert selected.default_render.all()
+    assert selected.selected_for_clip.all()
     assert metadata["conditional_low_available"] is True
     assert metadata["conditional_low_activity_score"] == 4
     assert metadata["reviewed_primary_passages_preserved"] is True
@@ -583,7 +585,32 @@ def test_inert_low_passage_is_not_promoted_to_primary_comparison():
         )
     selected, metadata = select_analyst_moments(pd.DataFrame(rows))
     assert selected.moment_type.tolist() == ["high", "rapid_increase"]
+    assert selected.default_render.all()
+    assert selected.selected_for_clip.all()
     assert metadata["conditional_low_available"] is False
+
+
+def test_metrica_match_presets_resolve_files_and_make_reviewed_examples_explicit():
+    game1 = metrica_sample_preset(1, data_dir="/tmp/game1")
+    assert game1.match_id == "metrica_sample_game_1"
+    assert game1.events_file == "Sample_Game_1_RawEventsData.csv"
+    assert game1.team_files == {
+        "metrica:Home": "Sample_Game_1_RawTrackingData_Home_Team.csv",
+        "metrica:Away": "Sample_Game_1_RawTrackingData_Away_Team.csv",
+    }
+    assert game1.reviewed_primary is None
+
+    automatic_game2 = metrica_sample_preset(2, data_dir="/tmp/game2")
+    reviewed_game2 = metrica_sample_preset(
+        2, data_dir="/tmp/game2", reviewed_game2_case_study=True
+    )
+    assert automatic_game2.reviewed_primary is None
+    assert reviewed_game2.reviewed_primary == {
+        "high": ("metrica:Home", 1, 845.16),
+        "rapid_increase": ("metrica:Home", 1, 335.68),
+    }
+    with pytest.raises(ValueError, match="only for the Game 2"):
+        metrica_sample_preset(1, reviewed_game2_case_study=True)
 
 
 def test_attacking_activity_gate_is_transparent_and_requires_possession_proxy():

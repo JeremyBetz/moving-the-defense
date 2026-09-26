@@ -120,6 +120,8 @@ Local CLI over the public Metrica Sample Game 2 files:
 
 ```bash
 .venv/bin/python src/run_metrica_game2_application.py \
+  --game 2 \
+  --reviewed-game2-case-study \
   --output-dir /tmp/moving_the_defense_game2_application \
   --render-selected
 ```
@@ -136,6 +138,9 @@ The flow is `raw provider data → normalized tracking → trailing scores →`
 [API contract](docs/replay_scoring_api.md) and
 [one-match case study](docs/match_application_case_study.md).
 The application outputs are descriptive and remain local by default.
+For a fully automatic stress test on Sample Game 1, use `--game 1` and omit
+`--reviewed-game2-case-study`. A conditional-low passage is returned only when
+the unchanged activity gate is met; no result is valid.
 
 ### Temporal results
 

@@ -7,6 +7,7 @@ the defending-team timeline to every recorded shot.
 from __future__ import annotations
 
 import argparse
+from dataclasses import dataclass
 import json
 from pathlib import Path
 
@@ -46,6 +47,48 @@ REVIEWED_PRIMARY_MOMENTS = {
     "high": ("metrica:Home", 1, 845.16),
     "rapid_increase": ("metrica:Home", 1, 335.68),
 }
+
+
+@dataclass(frozen=True)
+class MetricaApplicationPreset:
+    game_number: int
+    match_id: str
+    data_dir: Path
+    team_files: dict[str, str]
+    events_file: str
+    reviewed_primary: dict[str, tuple[str, int, float]] | None = None
+
+
+def metrica_sample_preset(
+    game_number: int,
+    *,
+    data_dir: str | Path | None = None,
+    reviewed_game2_case_study: bool = False,
+) -> MetricaApplicationPreset:
+    """Resolve one public Metrica sample match without changing analysis rules."""
+    if game_number not in {1, 2}:
+        raise ValueError("game_number must be 1 or 2")
+    if reviewed_game2_case_study and game_number != 2:
+        raise ValueError("reviewed identities exist only for the Game 2 case study")
+    base = (
+        ROOT / "data" / f"metrica_sample_game_{game_number}"
+        if data_dir is None
+        else Path(data_dir)
+    )
+    prefix = f"Sample_Game_{game_number}"
+    return MetricaApplicationPreset(
+        game_number=game_number,
+        match_id=f"metrica_sample_game_{game_number}",
+        data_dir=base,
+        team_files={
+            "metrica:Home": f"{prefix}_RawTrackingData_Home_Team.csv",
+            "metrica:Away": f"{prefix}_RawTrackingData_Away_Team.csv",
+        },
+        events_file=f"{prefix}_RawEventsData.csv",
+        reviewed_primary=(
+            REVIEWED_PRIMARY_MOMENTS if reviewed_game2_case_study else None
+        ),
+    )
 
 
 def _stoppage_intervals(events: pd.DataFrame) -> list[tuple[int, float, float]]:
@@ -511,6 +554,7 @@ def select_analyst_moments(
         )
         selected["display_order"] = (1, 2)
     selected["presentation_role"] = "primary_example"
+    selected["selected_for_clip"] = True
     selected["default_render"] = True
     selected = selected.sort_values("display_order", kind="mergesort")
     metadata = {
@@ -534,7 +578,9 @@ def select_analyst_moments(
     return selected.reset_index(drop=True), metadata
 
 
-def load_normalized_team(path: Path, team_key: str) -> pd.DataFrame:
+def load_normalized_team(
+    path: Path, team_key: str, *, match_id: str = MATCH_ID
+) -> pd.DataFrame:
     wide = pd.read_csv(path, skiprows=2)
     rows: list[pd.DataFrame] = []
     team = team_key.split(":")[-1]
@@ -548,7 +594,7 @@ def load_normalized_team(path: Path, team_key: str) -> pd.DataFrame:
         rows.append(
             pd.DataFrame(
                 {
-                    "match_id": MATCH_ID,
+                    "match_id": match_id,
                     "period": wide["Period"].astype(int),
                     "frame_id_provider": wide["Frame"].astype(int).astype(str),
                     "time_match_s": wide["Time [s]"].astype(float),
@@ -568,13 +614,13 @@ def load_normalized_team(path: Path, team_key: str) -> pd.DataFrame:
     return pd.concat(rows, ignore_index=True)
 
 
-def load_shots(path: Path) -> pd.DataFrame:
+def load_shots(path: Path, *, match_id: str = MATCH_ID) -> pd.DataFrame:
     events = pd.read_csv(path)
     shots = events.loc[events["Type"].eq("SHOT")].copy().reset_index(drop=True)
     return pd.DataFrame(
         {
-            "event_id": [f"game2-shot-{index + 1:02d}" for index in range(len(shots))],
-            "match_id": MATCH_ID,
+            "event_id": [f"{match_id}-shot-{index + 1:02d}" for index in range(len(shots))],
+            "match_id": match_id,
             "period": shots["Period"].astype(int),
             "event_time_s": shots["Start Time [s]"].astype(float),
             "event_type": np.where(
@@ -586,7 +632,7 @@ def load_shots(path: Path) -> pd.DataFrame:
     )
 
 
-def load_ball(path: Path) -> pd.DataFrame:
+def load_ball(path: Path, *, match_id: str = MATCH_ID) -> pd.DataFrame:
     wide = pd.read_csv(path, skiprows=2)
     index = list(wide.columns).index("Ball")
     x = pd.to_numeric(wide.iloc[:, index], errors="coerce")
@@ -594,7 +640,7 @@ def load_ball(path: Path) -> pd.DataFrame:
     valid = np.isfinite(x) & np.isfinite(y)
     return pd.DataFrame(
         {
-            "match_id": MATCH_ID,
+            "match_id": match_id,
             "period": wide["Period"].astype(int),
             "frame_id_provider": wide["Frame"].astype(int).astype(str),
             "time_match_s": wide["Time [s]"].astype(float),
@@ -617,10 +663,15 @@ def render_selected(
     output_dir: Path,
     data_dir: Path,
     *,
+    match_id: str = MATCH_ID,
+    team_files: dict[str, str] = TEAM_FILES,
     clip_context_seconds: float = ANALYST_CLIP_CONTEXT_SECONDS,
 ) -> list[dict[str, object]]:
     combined = pd.concat(
-        [*tracking_by_team.values(), load_ball(data_dir / TEAM_FILES["metrica:Home"])],
+        [
+            *tracking_by_team.values(),
+            load_ball(data_dir / team_files["metrica:Home"], match_id=match_id),
+        ],
         ignore_index=True,
     )
     rendered = []
@@ -661,7 +712,7 @@ def render_selected(
         if not focal_candidates:
             raise RuntimeError("selected clip lacks one complete attacking reference player")
         clip_spec = TrackingClipSpec(
-            match_id=MATCH_ID,
+            match_id=match_id,
             period=int(row.period),
             anchor_time_s=peak,
             start_time_s=start,
@@ -822,6 +873,10 @@ def run(
     output_dir: Path,
     data_dir: Path = DATA,
     *,
+    match_id: str = MATCH_ID,
+    team_files: dict[str, str] = TEAM_FILES,
+    events_file: str = "Sample_Game_2_RawEventsData.csv",
+    reviewed_primary: dict[str, tuple[str, int, float]] | None = None,
     render_selected_clips: bool = False,
 ) -> dict[str, object]:
     output_dir.mkdir(parents=True, exist_ok=True)
@@ -829,8 +884,10 @@ def run(
     tracking_by_team = {}
     moment_tables = []
     distribution_rows = []
-    for team_key, filename in TEAM_FILES.items():
-        tracking = load_normalized_team(data_dir / filename, team_key)
+    for team_key, filename in team_files.items():
+        tracking = load_normalized_team(
+            data_dir / filename, team_key, match_id=match_id
+        )
         tracking_by_team[team_key] = tracking
         scores = score_stable_runs(
             tracking,
@@ -858,7 +915,7 @@ def run(
         quantiles = np.quantile(values, [0, .05, .25, .5, .75, .95, 1])
         distribution_rows.append(
             {
-                "match_id": MATCH_ID,
+                "match_id": match_id,
                 "defending_team_key": team_key,
                 "supported_frames": int(len(values)),
                 "stable_runs": int(len(scores.metadata["stable_runs"])),
@@ -873,8 +930,10 @@ def run(
             }
         )
 
-    raw_events = pd.read_csv(data_dir / "Sample_Game_2_RawEventsData.csv")
-    ball_tracking = load_ball(data_dir / TEAM_FILES["metrica:Home"])
+    raw_events = pd.read_csv(data_dir / events_file)
+    ball_tracking = load_ball(
+        data_dir / team_files["metrica:Home"], match_id=match_id
+    )
     moment_audit = audit_visual_suitability(
         pd.concat(moment_tables, ignore_index=True),
         tracking_by_team,
@@ -893,7 +952,7 @@ def run(
     )
     moment_audit["selected_for_clip"] = False
     moments, matching_metadata = select_analyst_moments(
-        contextual_candidates, reviewed_primary=REVIEWED_PRIMARY_MOMENTS
+        contextual_candidates, reviewed_primary=reviewed_primary
     )
     context_columns = [
         column for column in contextual_candidates.columns if column not in moment_audit.columns
@@ -917,7 +976,7 @@ def run(
     distributions = pd.DataFrame(distribution_rows)
     distributions.to_csv(output_dir / "team_score_distributions.csv", index=False, lineterminator="\n")
 
-    shots = load_shots(data_dir / "Sample_Game_2_RawEventsData.csv")
+    shots = load_shots(data_dir / events_file, match_id=match_id)
     event_tables = []
     for defending_team, scores in score_by_team.items():
         attacking_team = "metrica:Away" if defending_team == "metrica:Home" else "metrica:Home"
@@ -939,6 +998,8 @@ def run(
             score_by_team,
             output_dir / "selected_clips",
             data_dir,
+            match_id=match_id,
+            team_files=team_files,
             clip_context_seconds=ANALYST_CLIP_CONTEXT_SECONDS,
         )
         if render_selected_clips
@@ -947,7 +1008,7 @@ def run(
 
     result = {
         "status": "EXPLORATORY_APPLICATION_COMPLETE",
-        "match_id": MATCH_ID,
+        "match_id": match_id,
         "teams": sorted(score_by_team),
         "shot_count": int(len(event_summary)),
         "goal_count": int(event_summary.event_type.eq("GOAL").sum()),
@@ -986,6 +1047,35 @@ def analyze_metrica_game2(
     return run(
         Path(output_dir),
         Path(data_dir),
+        match_id=MATCH_ID,
+        team_files=TEAM_FILES,
+        events_file="Sample_Game_2_RawEventsData.csv",
+        reviewed_primary=REVIEWED_PRIMARY_MOMENTS,
+        render_selected_clips=render_selected,
+    )
+
+
+def analyze_metrica_sample_match(
+    game_number: int,
+    output_dir: str | Path,
+    *,
+    data_dir: str | Path | None = None,
+    render_selected: bool = True,
+    reviewed_game2_case_study: bool = False,
+) -> dict[str, object]:
+    """Run the same automatic workflow over public Sample Game 1 or 2."""
+    preset = metrica_sample_preset(
+        game_number,
+        data_dir=data_dir,
+        reviewed_game2_case_study=reviewed_game2_case_study,
+    )
+    return run(
+        Path(output_dir),
+        preset.data_dir,
+        match_id=preset.match_id,
+        team_files=preset.team_files,
+        events_file=preset.events_file,
+        reviewed_primary=preset.reviewed_primary,
         render_selected_clips=render_selected,
     )
 
@@ -995,17 +1085,28 @@ def main() -> None:
     parser.add_argument(
         "--output-dir",
         type=Path,
-        default=Path("/tmp/moving_the_defense_game2_application"),
+        default=None,
     )
-    parser.add_argument("--data-dir", type=Path, default=DATA)
+    parser.add_argument("--game", type=int, choices=(1, 2), default=2)
+    parser.add_argument("--data-dir", type=Path, default=None)
+    parser.add_argument(
+        "--reviewed-game2-case-study",
+        action="store_true",
+        help="reproduce the fixed reviewed Game 2 high/rapid examples",
+    )
     parser.add_argument("--render-selected", action="store_true")
     args = parser.parse_args()
+    output_dir = args.output_dir or Path(
+        f"/tmp/moving_the_defense_game{args.game}_application"
+    )
     print(
         json.dumps(
-            run(
-                args.output_dir,
-                args.data_dir,
-                render_selected_clips=args.render_selected,
+            analyze_metrica_sample_match(
+                args.game,
+                output_dir,
+                data_dir=args.data_dir,
+                render_selected=args.render_selected,
+                reviewed_game2_case_study=args.reviewed_game2_case_study,
             ),
             indent=2,
             sort_keys=True,
