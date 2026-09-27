@@ -8,7 +8,7 @@ from __future__ import annotations
 from dataclasses import dataclass
 import json
 from pathlib import Path
-from typing import Iterable
+from typing import Iterable, Literal
 from types import MappingProxyType
 from typing import Mapping
 
@@ -60,6 +60,68 @@ EVENT_SUMMARY_BASE_COLUMNS = (
     "score_at_event_m",
     "within_match_percentile",
 )
+
+EVENT_WINDOW_COLUMNS = (
+    "event_id", "match_id", "period", "event_time_s", "event_type",
+    "event_detail", "attacking_team_key", "defending_team_key",
+    "pre_score_m", "anchor_score_m", "post_score_m", "maximum_score_m",
+    "post_minus_pre_change_m", "time_to_peak_s", "leading_player_contributors",
+    "support_status", "suitability_status", "suitability_reason", "rank_by",
+    "rank_value", "rank",
+)
+
+
+@dataclass(frozen=True)
+class EventWindowQuery:
+    """Provider-neutral request for event-anchored analyst review windows."""
+
+    defending_team_key: str
+    event_types: tuple[str, ...] = ()
+    explicit_timestamps: tuple[tuple[int, float], ...] = ()
+    attacking_team_key: str | None = None
+    pre_seconds: float = 3.0
+    post_seconds: float = 3.0
+    rank_by: Literal[
+        "anchor_score", "maximum_score", "post_minus_pre_change", "time_to_peak"
+    ] = "maximum_score"
+    limit: int = 3
+    require_suitable: bool = True
+    leading_players: int = 3
+
+    def __post_init__(self) -> None:
+        if not str(self.defending_team_key):
+            raise ValueError("defending_team_key is required")
+        if not self.event_types and not self.explicit_timestamps:
+            raise ValueError("event_types and/or explicit_timestamps are required")
+        normalized = tuple(str(value).strip().upper() for value in self.event_types)
+        if any(not value for value in normalized):
+            raise ValueError("event_types cannot contain blanks")
+        object.__setattr__(self, "event_types", normalized)
+        for period, time_s in self.explicit_timestamps:
+            if int(period) < 1 or not np.isfinite(float(time_s)):
+                raise ValueError("explicit timestamps require positive periods and finite times")
+        if (
+            not np.isfinite([self.pre_seconds, self.post_seconds]).all()
+            or self.pre_seconds <= 0
+            or self.post_seconds <= 0
+        ):
+            raise ValueError("pre_seconds and post_seconds must be finite and positive")
+        if self.limit < 1 or self.leading_players < 1:
+            raise ValueError("limit and leading_players must be positive")
+        if self.rank_by not in {
+            "anchor_score", "maximum_score", "post_minus_pre_change", "time_to_peak"
+        }:
+            raise ValueError("rank_by is not supported")
+
+
+@dataclass(frozen=True)
+class EventWindowResult:
+    windows: pd.DataFrame
+    metadata: Mapping[str, object]
+
+    def __post_init__(self) -> None:
+        object.__setattr__(self, "windows", self.windows.copy(deep=True))
+        object.__setattr__(self, "metadata", MappingProxyType(dict(self.metadata)))
 
 
 @dataclass(frozen=True)
@@ -567,6 +629,173 @@ def align_events(
     return pd.DataFrame(rows)
 
 
+def query_event_windows(
+    events: pd.DataFrame,
+    scores: DefensiveReorganizationScores,
+    query: EventWindowQuery,
+) -> EventWindowResult:
+    """Rank event-anchored windows using already-computed replay scores.
+
+    Event labels narrow review candidates; they do not classify tactics or
+    infer possession, intent, success, or causation.
+    """
+    required = {"event_id", "match_id", "period", "event_time_s", "event_type", "team_key"}
+    missing = required - set(events.columns)
+    if missing:
+        raise ValueError(f"missing event columns: {sorted(missing)}")
+    candidates = events.copy(deep=True)
+    candidates["event_type"] = candidates["event_type"].astype(str).str.upper()
+    if query.explicit_timestamps:
+        match_ids = scores.team_scores["match_id"].dropna().astype(str).unique()
+        if len(match_ids) != 1:
+            raise ValueError("explicit timestamps require exactly one event match_id")
+        additions = []
+        for index, (period, time_s) in enumerate(query.explicit_timestamps, start=1):
+            exists = candidates["period"].eq(int(period)) & np.isclose(
+                candidates["event_time_s"].astype(float), float(time_s), atol=1e-7, rtol=0
+            )
+            if not exists.any():
+                additions.append(
+                    {
+                        "event_id": f"explicit-p{int(period)}-{float(time_s):.6f}-{index}",
+                        "match_id": match_ids[0], "period": int(period),
+                        "event_time_s": float(time_s), "event_type": "EXPLICIT_TIMESTAMP",
+                        "team_key": query.attacking_team_key or "unspecified",
+                        "event_detail": "analyst-supplied timestamp",
+                    }
+                )
+        if additions:
+            candidates = pd.concat([candidates, pd.DataFrame(additions)], ignore_index=True)
+    masks = []
+    if query.event_types:
+        masks.append(candidates["event_type"].isin(query.event_types))
+    if query.explicit_timestamps:
+        timestamp_mask = pd.Series(False, index=candidates.index)
+        for period, time_s in query.explicit_timestamps:
+            timestamp_mask |= candidates["period"].eq(int(period)) & np.isclose(
+                candidates["event_time_s"].astype(float), float(time_s), atol=1e-7, rtol=0
+            )
+        masks.append(timestamp_mask)
+    keep = masks[0]
+    for mask in masks[1:]:
+        keep |= mask
+    candidates = candidates.loc[keep]
+    if query.attacking_team_key is not None:
+        candidates = candidates.loc[candidates["team_key"].eq(query.attacking_team_key)]
+
+    team = scores.team_scores.loc[
+        scores.team_scores["team_key"].eq(query.defending_team_key)
+        & scores.team_scores["support_status"].eq(SUPPORTED)
+        & np.isfinite(scores.team_scores["mean_trailing_relative_path_m"])
+    ].copy()
+    players = scores.player_scores.loc[
+        scores.player_scores["team_key"].eq(query.defending_team_key)
+        & scores.player_scores["support_status"].eq(SUPPORTED)
+        & np.isfinite(scores.player_scores["trailing_relative_path_m"])
+    ].copy()
+    rows: list[dict[str, object]] = []
+    ordered = candidates.sort_values(
+        ["match_id", "period", "event_time_s", "event_id"], kind="mergesort"
+    )
+    for event in ordered.itertuples(index=False):
+        event_time = float(event.event_time_s)
+        timeline = team.loc[
+            team["match_id"].eq(event.match_id)
+            & team["period"].eq(event.period)
+            & team["time_match_s"].between(
+                event_time - query.pre_seconds, event_time + query.post_seconds
+            )
+        ].sort_values("time_match_s", kind="mergesort")
+        anchor = timeline.loc[timeline["time_match_s"] <= event_time]
+        cadence = 1.0 / float(scores.metadata["source_fps"])
+        complete = (
+            not timeline.empty
+            and not anchor.empty
+            and float(timeline.iloc[0]["time_match_s"])
+            <= event_time - query.pre_seconds + cadence / 2 + 1e-7
+            and float(timeline.iloc[-1]["time_match_s"])
+            >= event_time + query.post_seconds - cadence / 2 - 1e-7
+        )
+        suitability = bool(getattr(event, "visual_suitable", True))
+        reason = str(getattr(event, "visual_suitability_reason", ""))
+        row: dict[str, object] = {
+            "event_id": str(event.event_id), "match_id": str(event.match_id),
+            "period": int(event.period), "event_time_s": event_time,
+            "event_type": str(event.event_type),
+            "event_detail": str(getattr(event, "event_detail", "")),
+            "attacking_team_key": str(event.team_key),
+            "defending_team_key": query.defending_team_key,
+            "pre_score_m": np.nan, "anchor_score_m": np.nan, "post_score_m": np.nan,
+            "maximum_score_m": np.nan, "post_minus_pre_change_m": np.nan,
+            "time_to_peak_s": np.nan, "leading_player_contributors": "",
+            "support_status": "supported" if complete else "unsupported",
+            "suitability_status": "suitable" if suitability else "unsuitable",
+            "suitability_reason": reason,
+            "rank_by": query.rank_by, "rank_value": np.nan, "rank": pd.NA,
+        }
+        if complete:
+            pre_value = float(timeline.iloc[0]["mean_trailing_relative_path_m"])
+            anchor_value = float(anchor.iloc[-1]["mean_trailing_relative_path_m"])
+            post_value = float(timeline.iloc[-1]["mean_trailing_relative_path_m"])
+            peak_index = timeline["mean_trailing_relative_path_m"].astype(float).idxmax()
+            peak = timeline.loc[peak_index]
+            peak_time = float(peak["time_match_s"])
+            at_peak = players.loc[
+                players["match_id"].eq(event.match_id)
+                & players["period"].eq(event.period)
+                & np.isclose(players["time_match_s"], peak_time, atol=1e-7, rtol=0)
+            ].sort_values(
+                ["trailing_relative_path_m", "player_key"],
+                ascending=[False, True], kind="mergesort"
+            )
+            leaders = at_peak.head(query.leading_players)["player_key"].astype(str).tolist()
+            row.update(
+                pre_score_m=pre_value, anchor_score_m=anchor_value,
+                post_score_m=post_value,
+                maximum_score_m=float(peak["mean_trailing_relative_path_m"]),
+                post_minus_pre_change_m=post_value - pre_value,
+                time_to_peak_s=peak_time - event_time,
+                leading_player_contributors="|".join(leaders),
+            )
+            rank_columns = {
+                "anchor_score": "anchor_score_m", "maximum_score": "maximum_score_m",
+                "post_minus_pre_change": "post_minus_pre_change_m",
+                "time_to_peak": "time_to_peak_s",
+            }
+            row["rank_value"] = row[rank_columns[query.rank_by]]
+        rows.append(row)
+    frame = pd.DataFrame(rows, columns=EVENT_WINDOW_COLUMNS)
+    eligible = frame.loc[frame.support_status.eq("supported")]
+    if query.require_suitable:
+        eligible = eligible.loc[eligible.suitability_status.eq("suitable")]
+    ascending = query.rank_by == "time_to_peak"
+    eligible = eligible.sort_values(
+        ["rank_value", "event_time_s", "event_id"],
+        ascending=[ascending, True, True], kind="mergesort"
+    ).head(query.limit).copy()
+    eligible["rank"] = np.arange(1, len(eligible) + 1)
+    no_result_reasons = []
+    if candidates.empty:
+        no_result_reasons.append("no matching events")
+    elif eligible.empty:
+        if frame.support_status.ne("supported").all():
+            no_result_reasons.append("no matching event has complete score support")
+        elif query.require_suitable:
+            no_result_reasons.append("no supported matching event passed suitability checks")
+    return EventWindowResult(
+        eligible.reset_index(drop=True),
+        {
+            "question": "What defensive reorganization happened around the requested events?",
+            "candidate_count": int(len(candidates)), "result_count": int(len(eligible)),
+            "rank_by": query.rank_by, "no_result_reasons": tuple(no_result_reasons),
+            "claim_boundary": (
+                "event-anchored retrospective geometry for human review; event labels do not "
+                "classify tactics, intent, quality, cause, success, or value"
+            ),
+        },
+    )
+
+
 def render_selected_passage(
     tracking: pd.DataFrame,
     scores: DefensiveReorganizationScores,
@@ -579,6 +808,7 @@ def render_selected_passage(
     playback_fps: float = 12.5,
     score_vmax_m: float = DEFAULT_SCORE_VMAX_M,
     show_focal_highlight: bool = False,
+    diagnostic_anchor_label: str | None = None,
 ) -> dict[str, Path]:
     """Render one caller-selected window using the existing visualization."""
     destination = Path(output_dir)
@@ -591,6 +821,8 @@ def render_selected_passage(
         score_vmax_m=score_vmax_m,
         show_focal_highlight=show_focal_highlight,
     )
+    if diagnostic_anchor_label is not None and figure.axes:
+        figure.axes[0].set_xlabel(diagnostic_anchor_label)
     png = destination / f"{stem}_diagnostic.png"
     figure.savefig(png, dpi=160, bbox_inches="tight")
     import matplotlib.pyplot as plt

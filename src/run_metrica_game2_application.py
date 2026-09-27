@@ -15,10 +15,12 @@ import numpy as np
 import pandas as pd
 
 from defensive_reorganization_application import (
+    EventWindowQuery,
     MomentDiscoverySpec,
     align_events,
     discover_moments,
     export_scores,
+    query_event_windows,
     render_selected_passage,
     score_stable_runs,
 )
@@ -530,7 +532,11 @@ def select_analyst_moments(
         raise RuntimeError("no distinct suitable rapid-increase passage exists")
     selected = pd.DataFrame(chosen)
     if pairs:
-        selected["public_category"] = ("high movement", "conditional low response", "rapid increase")
+        selected["public_category"] = (
+            "high movement",
+            "low trailing movement during active attack",
+            "rapid increase",
+        )
         selected["selection_reason"] = (
             "primary high-movement review passage",
             "primary low response under meaningful attacking activity",
@@ -538,8 +544,8 @@ def select_analyst_moments(
         )
         selected["analyst_interpretation"] = (
             "High within-unit movement candidate",
-            "Low defensive response while the attack remains active",
-            "Counter-pressing candidate (analyst interpretation, not a metric label)",
+            "Low trailing within-unit movement at the selected anchor during active attack",
+            "Rapid increase in within-unit movement",
         )
         selected["display_order"] = (1, 3, 2)
     else:
@@ -550,10 +556,34 @@ def select_analyst_moments(
         )
         selected["analyst_interpretation"] = (
             "High within-unit movement candidate",
-            "Counter-pressing candidate (analyst interpretation, not a metric label)",
+            "Rapid increase in within-unit movement",
         )
         selected["display_order"] = (1, 2)
     selected["presentation_role"] = "primary_example"
+    selected["coach_review_question"] = [
+        (
+            "What team or opponent action explains the unusually large "
+            "within-unit movement?"
+            if row.moment_type == "high"
+            else (
+                "What attacking action is occurring while trailing defensive "
+                "movement is still low at this anchor?"
+                if row.moment_type == "low"
+                else (
+                    "Does the video show a counter-pressing action, or another "
+                    "cause of the rapid increase?"
+                    if reviewed_primary is not None
+                    else "What changes immediately before the within-unit movement increases?"
+                )
+            )
+        )
+        for row in selected.itertuples(index=False)
+    ]
+    selected["review_question_source"] = (
+        "human-authored Game 2 case-study question"
+        if reviewed_primary is not None
+        else "neutral review-question template"
+    )
     selected["selected_for_clip"] = True
     selected["default_render"] = True
     selected = selected.sort_values("display_order", kind="mergesort")
@@ -743,6 +773,11 @@ def render_selected(
             stem=stem,
             selected_time_s=peak,
             show_focal_highlight=False,
+            diagnostic_anchor_label=(
+                "Time relative to selected event (s)"
+                if str(getattr(row, "presentation_role", "")) == "event_window"
+                else None
+            ),
         )
         technical = destination / f"{stem}_technical_appendix.png"
         Path(paths["diagnostic_png"]).replace(technical)
@@ -754,12 +789,23 @@ def render_selected(
             show_focal_highlight=False,
             technical=False,
         )
+        if str(getattr(row, "presentation_role", "")) == "event_window":
+            analyst_figure.axes[0].set_xlabel("Time relative to selected event (s)")
         analyst = destination / f"{stem}_analyst_diagnostic.png"
         analyst_figure.savefig(analyst, dpi=160, bbox_inches="tight")
         import matplotlib.pyplot as plt
 
         plt.close(analyst_figure)
-        card = render_moment_card(row, destination / f"{stem}_moment_card.png")
+        if str(getattr(row, "presentation_role", "")) == "event_window":
+            card = render_event_review_card(
+                row, destination / f"{stem}_event_review_card.png"
+            )
+            coach_card = card
+        else:
+            card = render_moment_card(row, destination / f"{stem}_moment_card.png")
+            coach_card = render_coach_card(
+                row, destination / f"{stem}_coach_review_card.png"
+            )
         rendered.append(
             {
                 "moment_type": row.moment_type,
@@ -772,9 +818,75 @@ def render_selected(
                 "technical_appendix_png": str(technical),
                 "gif": str(paths["gif"]),
                 "moment_card_png": str(card),
+                "coach_review_card_png": str(coach_card),
             }
         )
     return rendered
+
+
+def event_review_card_content(row: object) -> dict[str, str]:
+    """Return sparse event-first content without automatic tactical interpretation."""
+    defending = str(row.team_key).split(":")[-1]
+    attacking = str(row.attacking_team_key).split(":")[-1]
+    change = float(row.post_minus_pre_change_m)
+    direction = "increased" if change > 0 else "decreased" if change < 0 else "was unchanged"
+    return {
+        "title": f"{str(row.event_type).title()} review · {row.match_clock}",
+        "teams": f"Attacking: {attacking} · Defending: {defending}",
+        "description": (
+            f"Mean trailing defender-relative path {direction} by {abs(change):.2f} m "
+            f"from the pre-event to post-event sample; the local maximum was "
+            f"{float(row.maximum_score_m):.2f} m."
+        ),
+        "question": "What movement pattern accompanied this football event?",
+        "boundary": (
+            "Analyst review question: the event anchor and score do not identify a tactic, "
+            "intent, quality, cause, success, or value."
+        ),
+    }
+
+
+def render_event_review_card(row: object, path: Path) -> Path:
+    """Render one sparse event-first review card."""
+    import matplotlib.pyplot as plt
+
+    content = event_review_card_content(row)
+    fig = plt.figure(figsize=(10, 5.625), facecolor="#f7f4ed")
+    ax = fig.add_axes([0, 0, 1, 1])
+    ax.axis("off")
+    fig.text(.07, .84, content["title"], fontsize=23, weight="bold")
+    fig.text(.07, .72, content["teams"], fontsize=15)
+    fig.text(.07, .54, "Observed movement", fontsize=13, weight="bold", color="#8f1d14")
+    fig.text(.07, .43, content["description"], fontsize=15, wrap=True)
+    fig.text(.07, .27, "Analyst review question", fontsize=13, weight="bold")
+    fig.text(.07, .19, content["question"], fontsize=17)
+    fig.text(.07, .06, content["boundary"], fontsize=10.5, color="#444444")
+    fig.savefig(path, dpi=160, facecolor=fig.get_facecolor())
+    plt.close(fig)
+    return path
+
+
+def write_event_query_summary(path: Path, windows: pd.DataFrame, metadata: dict[str, object]) -> Path:
+    """Write a human-readable event-first result or explicit no-result."""
+    lines = [
+        "# Event-window analyst review", "",
+        f"**Football question:** {metadata['question']}", "",
+        f"**Ranking basis:** `{metadata['rank_by']}`", "",
+        f"**Selected windows:** {metadata['result_count']} of {metadata['candidate_count']} matching events", "",
+    ]
+    if windows.empty:
+        lines.extend(["## No result", "", *[f"- {reason}" for reason in metadata["no_result_reasons"]]])
+    else:
+        lines.extend(["## Ranked windows", ""])
+        for row in windows.itertuples(index=False):
+            lines.append(
+                f"- **#{int(row.rank)} {row.event_type} · P{int(row.period)} "
+                f"{_clock_label(float(row.event_time_s))}:** maximum {float(row.maximum_score_m):.2f} m; "
+                f"post-minus-pre {float(row.post_minus_pre_change_m):+.2f} m."
+            )
+    lines.extend(["", "Event anchors organize human review; they do not classify counter-pressing or any other tactic.", ""])
+    path.write_text("\n".join(lines), encoding="utf-8")
+    return path
 
 
 def render_moment_card(row: object, path: Path) -> Path:
@@ -869,6 +981,141 @@ def render_moment_card(row: object, path: Path) -> Path:
     return path
 
 
+def coach_card_content(row: object) -> dict[str, str]:
+    """Return the deliberately sparse, non-tactical coach-review content."""
+    defending = str(row.team_key).split(":")[-1]
+    attacking = str(row.attacking_team_key).split(":")[-1]
+    if row.moment_type == "high":
+        why = "Trailing within-unit movement was unusually high at this anchor."
+    elif row.moment_type == "rapid_increase":
+        why = "Trailing within-unit movement increased rapidly near this anchor."
+    else:
+        why = (
+            "Trailing within-unit movement was low at this anchor while the "
+            "unchanged attacking-activity gate passed."
+        )
+    return {
+        "title": str(row.public_category).title(),
+        "match_context": f"{row.match_clock} · {row.score_state}",
+        "teams": f"Defending: {defending} · Attacking: {attacking}",
+        "why_surfaced": why,
+        "review_question_label": f"Review question ({row.review_question_source})",
+        "review_question": str(row.coach_review_question),
+        "boundary": (
+            "Review prompt only: the metric does not identify intent, quality, "
+            "cause, tactical success, or value."
+        ),
+    }
+
+
+def render_coach_card(row: object, path: Path) -> Path:
+    """Render one low-density coach-facing review prompt."""
+    import matplotlib.pyplot as plt
+
+    content = coach_card_content(row)
+    fig = plt.figure(figsize=(10, 5.625), facecolor="#f7f4ed")
+    ax = fig.add_axes([0, 0, 1, 1])
+    ax.axis("off")
+    fig.text(.07, .86, content["title"], fontsize=24, weight="bold")
+    fig.text(.07, .76, content["match_context"], fontsize=15)
+    fig.text(.07, .68, content["teams"], fontsize=15)
+    fig.text(.07, .52, "Why surfaced", fontsize=13, weight="bold", color="#8f1d14")
+    fig.text(.07, .45, content["why_surfaced"], fontsize=16)
+    fig.text(.07, .30, content["review_question_label"], fontsize=13, weight="bold")
+    fig.text(.07, .22, content["review_question"], fontsize=16)
+    fig.text(.07, .07, content["boundary"], fontsize=11, color="#444444")
+    fig.savefig(path, dpi=160, facecolor=fig.get_facecolor())
+    plt.close(fig)
+    return path
+
+
+def render_no_result_card(path: Path) -> Path:
+    """Render an intentional no-result surface for the conditional low category."""
+    import matplotlib.pyplot as plt
+
+    fig = plt.figure(figsize=(10, 5.625), facecolor="#f7f4ed")
+    ax = fig.add_axes([0, 0, 1, 1])
+    ax.axis("off")
+    fig.text(.07, .82, "No qualifying low-trailing-movement passage", fontsize=22, weight="bold")
+    fig.text(
+        .07,
+        .59,
+        "No visually suitable low-trailing-movement candidate passed the\n"
+        "unchanged attacking-activity gate in this match.",
+        fontsize=17,
+        linespacing=1.5,
+    )
+    fig.text(
+        .07,
+        .36,
+        "This is a valid no-result outcome, not a failed run or missing render.",
+        fontsize=15,
+    )
+    fig.text(
+        .07,
+        .12,
+        "No threshold was relaxed and no substitute passage was selected.",
+        fontsize=12,
+        color="#444444",
+    )
+    fig.savefig(path, dpi=160, facecolor=fig.get_facecolor())
+    plt.close(fig)
+    return path
+
+
+def write_match_review_summary(
+    path: Path,
+    selected: pd.DataFrame,
+    *,
+    reviewed_primary: bool,
+) -> Path:
+    """Write a compact human-readable selection and no-result summary."""
+    lines = [
+        "# Defensive reorganization match review",
+        "",
+        "This application organizes passages for human review. It does not classify tactics, quality, intent, cause, or value.",
+        "",
+        "## Selection provenance",
+        "",
+        (
+            "Game 2 high and rapid identities are fixed reviewed case-study examples; the low-trailing-movement passage is selected by the unchanged automatic gate."
+            if reviewed_primary
+            else "All displayed passages were selected automatically under the unchanged rules."
+        ),
+        "",
+        "## Selected passages",
+        "",
+    ]
+    for row in selected.sort_values("display_order", kind="mergesort").itertuples(index=False):
+        lines.append(
+            f"- **{row.public_category.title()} — {row.match_clock}:** "
+            f"{coach_card_content(row)['why_surfaced']}"
+        )
+    if not selected["moment_type"].eq("low").any():
+        lines.extend(
+            [
+                "",
+                "## Valid no-result",
+                "",
+                "No visually suitable low-trailing-movement candidate passed the unchanged attacking-activity gate in this match.",
+                "",
+                "No threshold was relaxed and no substitute passage was selected.",
+            ]
+        )
+    lines.extend(
+        [
+            "",
+            "## Audience guide",
+            "",
+            "- Coach review: GIF plus coach card and a human analyst's video note.",
+            "- Analyst appendix: moment card, team trace, player traces, CSV, and Parquet outputs.",
+            "",
+        ]
+    )
+    path.write_text("\n".join(lines), encoding="utf-8")
+    return path
+
+
 def run(
     output_dir: Path,
     data_dir: Path = DATA,
@@ -878,6 +1125,8 @@ def run(
     events_file: str = "Sample_Game_2_RawEventsData.csv",
     reviewed_primary: dict[str, tuple[str, int, float]] | None = None,
     render_selected_clips: bool = False,
+    discovery_audit: bool = False,
+    event_query_limit: int = 2,
 ) -> dict[str, object]:
     output_dir.mkdir(parents=True, exist_ok=True)
     score_by_team = {}
@@ -971,8 +1220,9 @@ def run(
         (row.moment_type, row.team_key, row.period, row.peak_time_s) in selected_keys
         for row in moment_audit.itertuples(index=False)
     ]
-    moment_audit.to_csv(output_dir / "moment_audit.csv", index=False, lineterminator="\n")
-    moments.to_csv(output_dir / "selected_moments.csv", index=False, lineterminator="\n")
+    if discovery_audit:
+        moment_audit.to_csv(output_dir / "moment_audit.csv", index=False, lineterminator="\n")
+        moments.to_csv(output_dir / "selected_moments.csv", index=False, lineterminator="\n")
     distributions = pd.DataFrame(distribution_rows)
     distributions.to_csv(output_dir / "team_score_distributions.csv", index=False, lineterminator="\n")
 
@@ -991,19 +1241,108 @@ def run(
     )
     event_summary.to_csv(output_dir / "shot_event_summary.csv", index=False, lineterminator="\n")
 
-    rendered = (
+    shot_suitability = audit_visual_suitability(
+        shots.rename(columns={"event_time_s": "peak_time_s"}),
+        tracking_by_team,
+        raw_events,
+        ball_tracking=ball_tracking,
+        clip_context_seconds=ANALYST_CLIP_CONTEXT_SECONDS,
+    ).rename(columns={"peak_time_s": "event_time_s"})
+    event_window_tables = []
+    query_metadata = []
+    for defending_team, scores in score_by_team.items():
+        attacking_team = "metrica:Away" if defending_team == "metrica:Home" else "metrica:Home"
+        query = EventWindowQuery(
+            defending_team_key=defending_team,
+            attacking_team_key=attacking_team,
+            event_types=("SHOT", "GOAL"),
+            pre_seconds=ANALYST_CLIP_CONTEXT_SECONDS,
+            post_seconds=ANALYST_CLIP_CONTEXT_SECONDS,
+            rank_by="maximum_score",
+            limit=event_query_limit,
+            require_suitable=True,
+        )
+        queried = query_event_windows(shot_suitability, scores, query)
+        event_window_tables.append(queried.windows)
+        query_metadata.append(dict(queried.metadata))
+    event_windows = (
+        pd.concat(event_window_tables, ignore_index=True)
+        .sort_values(["rank_value", "event_time_s", "event_id"], ascending=[False, True, True], kind="mergesort")
+        .head(event_query_limit)
+        .reset_index(drop=True)
+    )
+    event_windows["rank"] = np.arange(1, len(event_windows) + 1)
+    event_windows.to_csv(output_dir / "ranked_event_windows.csv", index=False, lineterminator="\n")
+    (output_dir / "ranked_event_windows.json").write_text(
+        event_windows.to_json(orient="records", indent=2) + "\n", encoding="utf-8"
+    )
+    combined_query_metadata = {
+        "question": "What defensive reorganization happened around shots and goals?",
+        "candidate_count": sum(int(item["candidate_count"]) for item in query_metadata),
+        "result_count": int(len(event_windows)),
+        "rank_by": "maximum_score",
+        "no_result_reasons": tuple(
+            reason for item in query_metadata for reason in item["no_result_reasons"]
+        ),
+    }
+    event_query_summary = write_event_query_summary(
+        output_dir / "event_window_review_summary.md", event_windows, combined_query_metadata
+    )
+
+    event_render_rows = pd.DataFrame()
+    if not event_windows.empty:
+        event_render_rows = event_windows.rename(
+            columns={"defending_team_key": "team_key", "event_time_s": "peak_time_s"}
+        ).copy()
+        event_render_rows["moment_type"] = "event_window"
+        event_render_rows["public_category"] = event_render_rows["event_type"].str.lower() + " window"
+        event_render_rows["presentation_role"] = "event_window"
+        event_render_rows["analyst_interpretation"] = "Event-anchored descriptive movement window"
+        event_render_rows["display_order"] = event_render_rows["rank"].astype(int)
+        event_render_rows["selected_for_clip"] = True
+        event_render_rows["default_render"] = True
+        event_render_rows = add_analyst_context(
+            event_render_rows,
+            tracking_by_team,
+            ball_tracking,
+            raw_events,
+            context_seconds=ANALYST_CLIP_CONTEXT_SECONDS,
+        )
+
+    rendered_events = (
         render_selected(
-            moments,
+            event_render_rows,
             tracking_by_team,
             score_by_team,
-            output_dir / "selected_clips",
+            output_dir / "event_review",
             data_dir,
             match_id=match_id,
             team_files=team_files,
             clip_context_seconds=ANALYST_CLIP_CONTEXT_SECONDS,
         )
-        if render_selected_clips
+        if render_selected_clips and not event_render_rows.empty
         else []
+    )
+    rendered = (
+        render_selected(
+            moments, tracking_by_team, score_by_team, output_dir / "discovery_audit",
+            data_dir, match_id=match_id, team_files=team_files,
+            clip_context_seconds=ANALYST_CLIP_CONTEXT_SECONDS,
+        )
+        if render_selected_clips and discovery_audit else []
+    )
+    no_result_cards: list[str] = []
+    if render_selected_clips and discovery_audit and not moments["moment_type"].eq("low").any():
+        no_result = output_dir / "discovery_audit" / "primary_examples" / "03_low_no_result.png"
+        no_result_cards.append(str(render_no_result_card(no_result)))
+    review_summary = (
+        write_match_review_summary(
+            output_dir / "match_review_summary.md",
+            moments,
+            reviewed_primary=reviewed_primary is not None,
+        )
+        if discovery_audit
+        else None
     )
 
     result = {
@@ -1012,10 +1351,20 @@ def run(
         "teams": sorted(score_by_team),
         "shot_count": int(len(event_summary)),
         "goal_count": int(event_summary.event_type.eq("GOAL").sum()),
-        "selected_moment_count": int(len(moments)),
-        "primary_moment_count": int(moments.default_render.astype(bool).sum()),
+        "selected_moment_count": int(len(moments)) if discovery_audit else 0,
+        "primary_moment_count": (
+            int(moments.default_render.astype(bool).sum()) if discovery_audit else 0
+        ),
         "rendered_clip_count": int(len(rendered)),
         "rendered_clips": rendered,
+        "event_window_count": int(len(event_windows)),
+        "event_window_review_summary": event_query_summary.name,
+        "rendered_event_window_count": int(len(rendered_events)),
+        "rendered_event_windows": rendered_events,
+        "default_workflow": "event_first",
+        "discovery_audit_enabled": bool(discovery_audit),
+        "no_result_cards": no_result_cards,
+        "match_review_summary": None if review_summary is None else review_summary.name,
         "boundary_candidate_count": int(moment_audit.boundary_flag.sum()),
         "interior_guard_seconds": ANALYST_INTERIOR_GUARD_SECONDS,
         "analyst_clip_duration_seconds": 2 * ANALYST_CLIP_CONTEXT_SECONDS,
@@ -1042,6 +1391,7 @@ def analyze_metrica_game2(
     output_dir: str | Path,
     *,
     render_selected: bool = True,
+    discovery_audit: bool = False,
 ) -> dict[str, object]:
     """Low-decision preset for the public Metrica Sample Game 2 files."""
     return run(
@@ -1052,6 +1402,7 @@ def analyze_metrica_game2(
         events_file="Sample_Game_2_RawEventsData.csv",
         reviewed_primary=REVIEWED_PRIMARY_MOMENTS,
         render_selected_clips=render_selected,
+        discovery_audit=discovery_audit,
     )
 
 
@@ -1062,6 +1413,7 @@ def analyze_metrica_sample_match(
     data_dir: str | Path | None = None,
     render_selected: bool = True,
     reviewed_game2_case_study: bool = False,
+    discovery_audit: bool = False,
 ) -> dict[str, object]:
     """Run the same automatic workflow over public Sample Game 1 or 2."""
     preset = metrica_sample_preset(
@@ -1077,6 +1429,7 @@ def analyze_metrica_sample_match(
         events_file=preset.events_file,
         reviewed_primary=preset.reviewed_primary,
         render_selected_clips=render_selected,
+        discovery_audit=discovery_audit,
     )
 
 
@@ -1095,6 +1448,11 @@ def main() -> None:
         help="reproduce the fixed reviewed Game 2 high/rapid examples",
     )
     parser.add_argument("--render-selected", action="store_true")
+    parser.add_argument(
+        "--discovery-audit",
+        action="store_true",
+        help="also render high/rapid/low-under-activity audit examples",
+    )
     args = parser.parse_args()
     output_dir = args.output_dir or Path(
         f"/tmp/moving_the_defense_game{args.game}_application"
@@ -1107,6 +1465,7 @@ def main() -> None:
                 data_dir=args.data_dir,
                 render_selected=args.render_selected,
                 reviewed_game2_case_study=args.reviewed_game2_case_study,
+                discovery_audit=args.discovery_audit,
             ),
             indent=2,
             sort_keys=True,

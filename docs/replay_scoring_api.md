@@ -88,13 +88,37 @@ result = analyze_match(
 ```
 
 One call scores both defending teams, splits support at cadence/roster/missing
-coordinate boundaries, audits high/low/rapid-increase candidates, applies the
-six-second interior guard, selects two candidates per category across the match,
-aligns supplied events, and exports score timelines plus compact audit tables.
-Set `render_selected=True` to add six-second diagnostics and GIFs. The default
+coordinate boundaries, aligns supplied events, and exports score timelines plus
+compact audit tables. Category discovery is retained as an audit facility, not
+the default analyst workflow. The default
 policy—trailing two-second window, six-second boundary guard, one-second
 clustering adjacency, two clips per category, 2/5/10-second event windows,
 fixed 6.25 m display ceiling—is recorded in `application_metadata.json`.
+
+The public question-first boundary is `EventWindowQuery`:
+
+```python
+from defensive_reorganization_application import EventWindowQuery, query_event_windows
+
+query = EventWindowQuery(
+    defending_team_key="metrica:Home",
+    attacking_team_key="metrica:Away",
+    event_types=("SHOT", "GOAL"),
+    pre_seconds=5.0,
+    post_seconds=5.0,
+    rank_by="maximum_score",
+    limit=3,
+)
+result = query_event_windows(normalized_events, home_scores, query)
+```
+
+Queries may use event types and/or explicit `(period, time)` timestamps. Ranking
+is limited to the existing anchor score, window maximum, post-minus-pre change,
+or time to peak. The result includes pre/anchor/post values, local maximum,
+time to peak, leading player contributors, support/suitability, deterministic
+rank, and explicit no-result reasons. These are existing score summaries, not a
+new estimator. A future dashboard can consume the table without changing the
+measurement API.
 
 Analyst cards report adjacent-event offsets and whether each event falls inside
 the replay, shirt-number display labels, the safely inferred physical attacking
@@ -102,7 +126,7 @@ direction, a ball start-to-end arrow, and compact endpoint shape summaries.
 Raw provider keys and physical-coordinate fields remain in audit metadata.
 
 The Game 2 preset does not promote a low defensive-movement passage merely
-because its score is small. A conditional-low candidate must retain the
+because its score is small. A low-trailing-movement candidate must retain the
 attacking possession proxy and pass at least two of four transparent on-ball
 checks over the same ten-second review window: 15 m ball path, 10 m endpoint
 change, 5 m directed progression, or two recorded attacking actions. Attacking
@@ -141,7 +165,7 @@ case = analyze_metrica_sample_match(
 ```
 
 The lower-level normalized API remains the provider-neutral integration
-boundary. A missing conditional-low example is valid and does not relax the
+boundary. A missing low-trailing-movement example is valid and does not relax the
 activity gate.
 
 The bounded public Game 2 application can be reproduced locally with:
@@ -159,6 +183,14 @@ timelines, selects moments, and aligns every recorded shot. The command does
 not publish its tracking-derived outputs.
 Use `--game 1` without `--reviewed-game2-case-study` for automatic Game 1
 selection.
+
+Every run writes `event_window_review_summary.md` plus ranked event-window CSV
+and JSON files. Rendered runs add sparse event-review cards, GIFs, and traces.
+Metric traces, event details, player contributions, CSV, and Parquet outputs
+remain analyst appendix material. `match_review_summary.md` and category cards
+belong to the explicit discovery/audit mode. These artifacts support
+deterministic passage retrieval for review, not tactical classification,
+defensive quality, causation, success, or value.
 
 ## Meaning and limits
 

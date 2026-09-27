@@ -98,49 +98,56 @@ tactical logic.
 
 ### Apply the metric to a match
 
-Python:
+Python (default analyst path):
 
 ```python
-from defensive_reorganization_application import MatchApplicationConfig, analyze_match
+from defensive_reorganization_application import EventWindowQuery, query_event_windows
 
-result = analyze_match(
-    normalized_tracking,
-    defending_team_keys=("metrica:Home", "metrica:Away"),
-    excluded_player_keys={
-        "metrica:Home": ("metrica:Home:11",),
-        "metrica:Away": ("metrica:Away:25",),
-    },
-    events=normalized_events,
-    config=MatchApplicationConfig(source_fps=25.0, smoothing_frames=7),
-    output_dir="/tmp/moving_the_defense_match_application",
+query = EventWindowQuery(
+    defending_team_key="metrica:Home",
+    attacking_team_key="metrica:Away",
+    event_types=("SHOT", "GOAL"),
+    rank_by="maximum_score",
+    limit=3,
 )
+ranked = query_event_windows(normalized_events, home_scores, query)
 ```
+
+This asks a football question first—here, “what defensive reorganization
+happened around shots and goals?”—then ranks supported event windows using the
+existing retrospective score. It returns pre/anchor/post values, the local
+maximum and time to peak, leading player contributors, support/suitability, and
+explicit no-result reasons. Event labels organize review; they do not classify
+tactics or intent.
 
 Local CLI over the public Metrica Sample Game 2 files:
 
 ```bash
 .venv/bin/python src/run_metrica_game2_application.py \
   --game 2 \
-  --reviewed-game2-case-study \
   --output-dir /tmp/moving_the_defense_game2_application \
   --render-selected
 ```
 
-The analyst preset returns three distinct ten-second review passages: high
-within-unit movement, low defensive response conditioned on meaningful
-attacking activity, and a non-overlapping rapid increase. The rapid increase
-is presented as a possible counter-pressing passage identified by an analyst,
-not as a tactical label produced by the metric. Each passage includes a GIF,
-compact context card, simplified analyst diagnostic, and technical appendix.
+The Metrica runner's default output is an event-first shot/goal review package:
+a ranked CSV/JSON table, human-readable query summary, sparse event-review card,
+GIF, and analyst trace. The existing high/rapid/low-under-activity retrieval is
+retained only as an explicit `--discovery-audit` mode for metric validation and
+exploratory retrieval.
 
-The flow is `raw provider data → normalized tracking → trailing scores →`
-`clustered moments → optional diagnostic/GIF`. See the
+The flow is `football question/events → normalized tracking → trailing scores →`
+`supported ranked windows → human video review`. See the
 [API contract](docs/replay_scoring_api.md) and
 [one-match case study](docs/match_application_case_study.md).
 The application outputs are descriptive and remain local by default.
-For a fully automatic stress test on Sample Game 1, use `--game 1` and omit
-`--reviewed-game2-case-study`. A conditional-low passage is returned only when
-the unchanged activity gate is met; no result is valid.
+For a fully automatic second public example, use `--game 1` and omit
+`--reviewed-game2-case-study`. A query with no supported suitable event window
+returns an explicit valid no-result; thresholds are not relaxed.
+
+The GIF and coach card support passage review. Detailed traces, event context,
+CSV, and Parquet outputs belong in the analyst appendix. The workflow can claim
+deterministic geometric retrieval for review; it cannot identify tactics,
+intent, defensive quality, causation, success, or player value.
 
 ### Temporal results
 

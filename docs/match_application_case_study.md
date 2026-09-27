@@ -1,132 +1,95 @@
-# Case study: three active passages for defensive-unit review
+# Case study: event-first defensive-unit review
 
 ## The analyst question
 
-When does a defence move substantially within its own shape, which defenders
-contribute most, and which contrasting passages should be opened in video next?
+**What defensive reorganization happened around shots and goals?**
 
-This case study scans public Metrica Sample Game 2 and returns three distinct
-review moments: high within-unit movement, low defensive response while the
-attack remains active, and one non-overlapping rapid increase. The score is
-trailing two-second movement relative to the other nine defenders. It retrieved
-the passages; an analyst—not the metric—supplied any football interpretation.
+The workflow starts with recorded football events, not metric extremes. For
+each supported shot or goal, it opens a fixed ten-second window, summarizes the
+existing trailing two-second defender-relative score before, at, and after the
+event, and ranks windows by their local maximum. The ranked result is a review
+queue—not a claim that the movement caused the event or identifies a tactic.
 
-## Three review moments
+## Deterministic public examples
 
-### 1. High movement · 14:05 · Home defending
+The same predeclared query was run without manual swapping on public Metrica
+Sample Games 1 and 2. It required complete score support, complete ball support,
+and the existing visual-suitability checks. Game 1 returned two review windows:
 
-Home led 1–0. Away was the last recorded possession team and the ball was in
-the physical left third, attacking toward the physical right. The previous
-Away pass was 1.3 seconds before the anchor and the next Home challenge was
-2.8 seconds after it; both occur inside the replay. Across the view, the ball endpoint moved
-25.7 m horizontally and 19.3 m laterally. Home's team score reached 5.66 m
-(99.7th percentile). Players 8, 7, and 4 had the three largest individual
-defender-relative paths. Defensive width changed from 55.5 m to 32.0 m, depth
-from 39.4 m to 36.0 m, and the centroid shifted 4.0 m.
+1. Away shot at period 1, 778.80 s (12:59), Home defending: local maximum
+   5.16 m; post-minus-pre change −0.65 m.
+2. Away shot at period 2, 3010.48 s (50:10), Home defending: local maximum
+   4.61 m; post-minus-pre change +0.93 m.
 
-Why review it: this is the fixed reviewed high-movement reference. It is not a
-claim that the defending was good, bad, or caused by the opponent, and it is
-not presented as a fully matched pair with the conditional-low passage.
+Game 2 returned one suitable review window:
 
-### 2. Rapid increase · 5:36 · Home defending
+1. Home shot at period 1, 2243.16 s (37:23), Away defending: local maximum
+   3.45 m; post-minus-pre change −0.80 m.
 
-At 0–0, with Away as the last recorded possession team in the physical middle
-third and attacking toward the physical right, Home's score rose into the
-98.4th percentile. Away passes occur 0.3 seconds before and 0.8 seconds after
-the anchor, both inside the replay. The ball endpoint changed 17.6 m;
-defensive width changed from 64.0 m to 36.9 m, depth from 33.6 m to 27.1 m,
-and the centroid shifted 11.2 m. Players 8, 7, and 1 contributed the largest
-individual paths.
+These values describe mean trailing movement within the defending unit. They do
+not grade the defence, explain the shot, or imply that larger values are better.
+Fewer returned windows is a valid result of the frozen support/suitability gates.
 
-Why review it: the metric retrieved the strongest suitable non-overlapping
-rapid increase. On visual review, an analyst may reasonably treat it as a
-counter-pressing candidate. That interpretation is not an automatic tactical
-classification and has not been independently validated.
+## How the review proceeds
 
-### 3. Conditional low response · 83:59 · Home defending
+The ranked CSV/JSON table answers where to look first. Each selected window then
+receives a ten-second GIF, sparse event-review card, and analyst trace. The card
+contains one factual movement description and the explicitly human question:
 
-Home led 3–2. Away held the possession proxy in the physical right third and
-attacked toward the physical left. Across the ten-second window, the ball
-travelled 64.1 m, moved 26.9 m in the attacking direction, and changed endpoint
-by 37.4 m; two Away actions were recorded. Five of six transparent activity
-components passed. Home's defender-relative team score nevertheless remained
-1.12 m (4.9th percentile). Defensive width changed from 39.4 m to 42.7 m,
-depth from 25.2 m to 35.4 m, and the centroid shifted 3.2 m. Players 9, 14, and
-13 supplied the largest individual paths.
+> What movement pattern accompanied this football event?
 
-Why review it: this answers the useful low-response question—what unusually low
-defensive relative movement looks like while the attack is still doing
-something. It was selected only after passing an activity gate requiring the
-attacking possession proxy and at least two of four on-ball components.
+An analyst next opens the original match video, records relevant context, and
+writes any coaching question in their own words. The software does not label
+counter-pressing, defensive intent, quality, tactical success, or player value.
+The detailed trace, event context, player contributions, CSV, and Parquet files
+remain an analyst appendix rather than coach-facing output.
 
-The generated analyst package contains a ten-second GIF, compact context card,
-simplified analyst diagnostic, and technical appendix for each moment. Those
-local artifacts are generated below the caller's chosen temporary output
-directory in `selected_clips/` and are not committed provider-derived outputs.
+Metrica possession context is only a last-recorded-event proxy, not a true
+provider possession state. Transition-like event anchors can narrow review
+candidates, but cannot classify counter-pressing or other tactical intent.
 
-The main analyst diagnostic shows only the team trace, anchor, replay frame,
-and context. A separately named technical appendix retains all ten player
-traces and saturation disclosure.
-
-## What the comparison adds
-
-The high passage was fixed first as the strongest suitable high candidate. The
-conditional-low search then prioritized genuine attacking activity before
-matching context. It matched the high passage on defending team and possession
-proxy, but not period or physical field third. This tradeoff is explicit: a
-perfect contextual match would have returned the visually inert passage the
-activity gate was designed to reject.
-
-The high passage combines substantial within-unit movement with large changes
-in ball location and defensive width. The conditional-low passage shows active
-ball progression with relatively little within-unit movement. The rapid-increase
-passage identifies a separate episode in which the metric changes sharply.
-These are review cues, not tactical categories.
-
-## Supporting match scan
-
-| Defending team | Stable runs | Supported frames | Median | 5th–95th percentile |
-|---|---:|---:|---:|---:|
-| Home | 5 | 140,873 | 2.52 m | 1.12–4.27 m |
-| Away | 3 | 140,987 | 2.35 m | 0.97–4.15 m |
-
-All 24 recorded shots, including five goals, were aligned descriptively to the
-defending-team timeline. Goal percentiles ranged from 15.2% to 98.8%, evidence
-against treating the score as a goal detector. The event table remains a local
-review aid rather than a performance evaluation.
-
-## Suitability and interpretation boundary
-
-The fixed high and rapid-increase identities were selected in the earlier
-review and are reproduced deterministically here. The conditional-low search
-is automatic and occurs before viewing its candidates. Candidate episodes must
-be at least eight seconds from support boundaries and their full ten-second replay
-must have complete ball support, live-play event context, no restart/dead-ball
-overlap, no out-of-pitch players, and no gross tracking discontinuity above
-15 m/s. Episodes are deduplicated across public categories.
-
-The possession field is a last-recorded-event proxy, not a provider possession
-state. Physical thirds are not attack-normalized. Shape summaries are endpoint
-descriptions. None of these fields identifies marking, intent, defensive
-quality, causal influence, tactical effectiveness, or value.
-
-## Run it with two paths
+## Minimal use
 
 ```python
-from run_metrica_game2_application import analyze_metrica_game2
+from defensive_reorganization_application import EventWindowQuery, query_event_windows
 
-case = analyze_metrica_game2(
-    data_dir="data/metrica_sample_game_2",
-    output_dir="/tmp/mtd_game2_analyst_case",
-    render_selected=True,
+query = EventWindowQuery(
+    defending_team_key="metrica:Home",
+    attacking_team_key="metrica:Away",
+    event_types=("SHOT", "GOAL"),
+    pre_seconds=5.0,
+    post_seconds=5.0,
+    rank_by="maximum_score",
+    limit=3,
 )
+result = query_event_windows(normalized_events, home_scores, query)
+ranked_windows = result.windows
 ```
 
-This compatibility helper intentionally reproduces the fixed reviewed Game 2
-high and rapid examples. For automatic selection on either public sample match,
-use `analyze_metrica_sample_match(game_number, ...)`; a missing conditional-low
-example is valid rather than a reason to relax the activity gate.
+The public Metrica runner performs normalization, scoring, suitability checks,
+ranking, export, and optional rendering:
 
-- [Provider-neutral scoring API](replay_scoring_api.md)
-- [Visualization guide](defensive_reorganization_replay_visualization.md)
-- [Output-free fixed-passage notebook](../notebooks/defender_relative_replay_demo.ipynb)
+```bash
+.venv/bin/python src/run_metrica_game2_application.py \
+  --game 2 \
+  --output-dir /tmp/mtd_game2_event_review \
+  --render-selected
+```
+
+## Audit and metric demonstration
+
+High movement, rapid increase, and low trailing movement under an attacking-
+activity gate remain useful for validating and demonstrating the score's
+extremes. They are not the default analyst workflow. To render those examples,
+use the explicit `--discovery-audit` option. The reviewed Game 2 audit retains
+its fixed 14:05 high, 5:36 rapid-increase, and 83:59 low-under-activity passages.
+Any counter-pressing interpretation remains a human review hypothesis, not an
+automated category.
+
+## Interpretation boundary
+
+The score is accumulated movement relative to the other nine defenders over
+trailing `[t−2,t]`, using the committed retrospective smoother. Event windows
+do not create a new estimator. This workflow can support deterministic passage
+retrieval and review. It does not establish marking, causation, tactics,
+defensive quality, success, effectiveness, or value.

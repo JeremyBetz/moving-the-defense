@@ -13,6 +13,7 @@ ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "src"))
 
 from defensive_reorganization_application import (
+    EventWindowQuery,
     MOMENT_COLUMNS,
     MatchApplicationConfig,
     MomentDiscoverySpec,
@@ -20,6 +21,7 @@ from defensive_reorganization_application import (
     align_events,
     discover_moments,
     export_scores,
+    query_event_windows,
     score_match,
     score_stable_runs,
     _select_global_moments,
@@ -29,9 +31,101 @@ from run_metrica_game2_application import (
     add_analyst_context,
     audit_visual_suitability,
     classify_attacking_activity,
+    coach_card_content,
+    event_review_card_content,
     metrica_sample_preset,
+    render_no_result_card,
     select_analyst_moments,
+    write_match_review_summary,
 )
+
+
+def test_event_window_query_validates_filters_ranks_and_ties_deterministically():
+    scores = synthetic_scores()
+    events = pd.DataFrame(
+        [
+            {"event_id": "z", "match_id": "m", "period": 1, "event_time_s": 5.0,
+             "event_type": "SHOT", "event_detail": "ON TARGET", "team_key": "A"},
+            {"event_id": "a", "match_id": "m", "period": 1, "event_time_s": 5.0,
+             "event_type": "GOAL", "event_detail": "GOAL", "team_key": "A"},
+            {"event_id": "other", "match_id": "m", "period": 1, "event_time_s": 10.0,
+             "event_type": "SHOT", "event_detail": "", "team_key": "B"},
+        ]
+    )
+    query = EventWindowQuery(
+        defending_team_key="D", attacking_team_key="A", event_types=("shot", "goal"),
+        pre_seconds=2, post_seconds=2, rank_by="maximum_score", limit=2,
+    )
+    result = query_event_windows(events, scores, query)
+    assert result.windows.event_id.tolist() == ["a", "z"]
+    assert result.windows["rank"].tolist() == [1, 2]
+    assert result.windows.pre_score_m.tolist() == pytest.approx([8, 8])
+    assert result.windows.anchor_score_m.tolist() == pytest.approx([8, 8])
+    assert result.windows.post_score_m.tolist() == pytest.approx([1, 1])
+    assert result.windows.maximum_score_m.tolist() == pytest.approx([9, 9])
+    assert result.windows.time_to_peak_s.tolist() == pytest.approx([-1, -1])
+    assert result.windows.leading_player_contributors.str.startswith("D9").all()
+    assert result.metadata["question"].startswith("What defensive reorganization")
+
+
+def test_event_window_query_reports_no_match_and_rejects_invalid_requests():
+    scores = synthetic_scores()
+    events = pd.DataFrame(
+        [{"event_id": "e", "match_id": "m", "period": 1, "event_time_s": 5.0,
+          "event_type": "PASS", "team_key": "A"}]
+    )
+    result = query_event_windows(
+        events, scores,
+        EventWindowQuery(defending_team_key="D", event_types=("SHOT",)),
+    )
+    assert result.windows.empty
+    assert result.metadata["no_result_reasons"] == ("no matching events",)
+    with pytest.raises(ValueError, match="event_types"):
+        EventWindowQuery(defending_team_key="D")
+    with pytest.raises(ValueError, match="positive"):
+        EventWindowQuery(defending_team_key="D", event_types=("SHOT",), pre_seconds=0)
+
+    explicit = query_event_windows(
+        events,
+        scores,
+        EventWindowQuery(
+            defending_team_key="D", explicit_timestamps=((1, 5.0),),
+            pre_seconds=2, post_seconds=2,
+        ),
+    )
+    assert explicit.windows.event_time_s.tolist() == [5.0]
+
+
+def test_event_window_query_excludes_unsupported_and_unsuitable_windows():
+    scores = synthetic_scores()
+    events = pd.DataFrame(
+        [
+            {"event_id": "edge", "match_id": "m", "period": 1, "event_time_s": 1.0,
+             "event_type": "SHOT", "team_key": "A", "visual_suitable": True},
+            {"event_id": "bad", "match_id": "m", "period": 1, "event_time_s": 5.0,
+             "event_type": "SHOT", "team_key": "A", "visual_suitable": False,
+             "visual_suitability_reason": "restart_event_in_clip"},
+        ]
+    )
+    result = query_event_windows(
+        events, scores,
+        EventWindowQuery(defending_team_key="D", event_types=("SHOT",), pre_seconds=2, post_seconds=2),
+    )
+    assert result.windows.empty
+    assert result.metadata["no_result_reasons"]
+
+
+def test_event_review_card_separates_observation_from_human_question():
+    row = pd.Series({
+        "event_type": "SHOT", "match_clock": "12:34", "team_key": "metrica:Home",
+        "attacking_team_key": "metrica:Away", "post_minus_pre_change_m": .75,
+        "maximum_score_m": 3.2,
+    })
+    content = event_review_card_content(row)
+    assert "increased by 0.75 m" in content["description"]
+    assert content["question"] == "What movement pattern accompanied this football event?"
+    assert "counter" not in " ".join(content.values()).lower()
+    assert "do not identify a tactic" in content["boundary"]
 
 
 def test_global_selection_deduplicates_overlapping_categories():
@@ -549,7 +643,7 @@ def test_analyst_selection_matches_context_and_deduplicates_categories():
     assert selected.public_category.tolist() == [
         "high movement",
         "rapid increase",
-        "conditional low response",
+        "low trailing movement during active attack",
     ]
     assert selected.peak_time_s.tolist() == [10.0, 70.0, 40.0]
     assert selected.default_render.all()
@@ -559,6 +653,10 @@ def test_analyst_selection_matches_context_and_deduplicates_categories():
     assert metadata["reviewed_primary_passages_preserved"] is True
     assert metadata["matched_defending_team"] is True
     assert metadata["matched_possession"] is True
+    rapid = selected.loc[selected.moment_type.eq("rapid_increase")].iloc[0]
+    assert rapid.analyst_interpretation == "Rapid increase in within-unit movement"
+    assert "counter-pressing" in rapid.coach_review_question.lower()
+    assert rapid.review_question_source == "human-authored Game 2 case-study question"
 
 
 def test_inert_low_passage_is_not_promoted_to_primary_comparison():
@@ -588,6 +686,58 @@ def test_inert_low_passage_is_not_promoted_to_primary_comparison():
     assert selected.default_render.all()
     assert selected.selected_for_clip.all()
     assert metadata["conditional_low_available"] is False
+    rapid = selected.loc[selected.moment_type.eq("rapid_increase")].iloc[0]
+    assert "counter-pressing" not in rapid.analyst_interpretation.lower()
+    assert "counter-pressing" not in rapid.coach_review_question.lower()
+
+
+def test_human_readable_summary_and_coach_card_keep_no_result_explicit(tmp_path):
+    rows = []
+    for kind, time, value, change in (
+        ("high", 10.0, 6.0, .1),
+        ("rapid_increase", 70.0, 5.0, .8),
+    ):
+        rows.append(
+            {
+                "moment_type": kind,
+                "team_key": "D",
+                "period": 1,
+                "peak_time_s": time,
+                "team_score_m": value,
+                "positive_change_m": change,
+                "possession_team_key": "A",
+                "field_zone": "middle",
+                "visual_suitable": True,
+                "meaningful_attacking_activity": True,
+                "attacking_activity_score": 4,
+                "match_clock": "00:10",
+                "score_state": "Home 0–0 Away",
+                "attacking_team_key": "A",
+            }
+        )
+    selected, _ = select_analyst_moments(pd.DataFrame(rows))
+    summary = write_match_review_summary(
+        tmp_path / "summary.md", selected, reviewed_primary=False
+    )
+    text = summary.read_text()
+    assert "No visually suitable low-trailing-movement candidate passed" in text
+    assert "valid no-result" in text.lower()
+    assert "No threshold was relaxed" in text
+
+    content = coach_card_content(selected.iloc[0])
+    assert set(content) == {
+        "title",
+        "match_context",
+        "teams",
+        "why_surfaced",
+        "review_question_label",
+        "review_question",
+        "boundary",
+    }
+    assert "player" not in " ".join(content.values()).lower()
+    assert "centroid" not in " ".join(content.values()).lower()
+    no_result = render_no_result_card(tmp_path / "no_result.png")
+    assert no_result.is_file()
 
 
 def test_metrica_match_presets_resolve_files_and_make_reviewed_examples_explicit():
