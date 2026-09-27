@@ -125,9 +125,11 @@ outcome/subtype, deterministic score state, physical event location, safely
 inferred attacking orientation, and the immediately preceding same-period
 event with signed offset. The coach-facing card uses plain “within-unit
 movement” and prominently says whether the maximum occurred before or after the
-event. Exact metric values, contributor identities, traces, and diagnostics
+event. Exact metric values, changes, contributor identities, traces, and diagnostics
 remain in the analyst appendix. Missing context is labeled unavailable rather
-than inferred.
+than inferred. Event-first GIFs use the same plain “within-unit movement”
+language and hide the numeric team meter; the renderer's technical default and
+the analyst diagnostic remain unchanged.
 
 Analyst cards report adjacent-event offsets and whether each event falls inside
 the replay, shirt-number display labels, the safely inferred physical attacking
@@ -200,6 +202,30 @@ remain analyst appendix material. `match_review_summary.md` and category cards
 belong to the explicit discovery/audit mode. These artifacts support
 deterministic passage retrieval for review, not tactical classification,
 defensive quality, causation, success, or value.
+
+## Local event-review dashboard
+
+`src/event_review_dashboard.py` is a thin, dependency-free browser layer over
+`EventWindowQuery` and the Metrica match runner. It does not define a score or
+own query logic. The default Event Review view lets an analyst choose Sample
+Game 1 or 2, a defending perspective, shots/goals, bounded two-, three-, or
+five-second context, one of the existing rank fields, and a result limit.
+
+```bash
+.venv/bin/python src/event_review_dashboard.py \
+  --output-root /tmp/moving_the_defense_dashboard
+```
+
+The ranked table exposes factual event context. The selected football card and
+GIF appear before a collapsed analyst appendix containing the exact trace and
+technical diagnostic. A supported query with no suitable window is reported as
+a valid no-result; thresholds are not relaxed. Discovery/Audit is a visibly
+separate optional mode for the existing high/rapid/conditional-low checks.
+
+The server binds to `127.0.0.1` by default, fetches nothing externally, and
+serves artifacts only from the configured output root. It adds no authentication,
+telemetry, deployment, provider adapter, or tactical inference. Runtime output
+remains local and untracked.
 
 ## Meaning and limits
 

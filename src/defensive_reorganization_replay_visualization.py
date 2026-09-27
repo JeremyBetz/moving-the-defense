@@ -347,6 +347,7 @@ def animate_defensive_reorganization(
     show_team_meter: bool = True,
     show_trails: bool = True,
     show_focal_highlight: bool = True,
+    coach_facing: bool = False,
 ) -> AnimationBundle:
     """Animate committed trailing scores as a retrospective analyst replay."""
     if frame_step < 1 or playback_fps <= 0 or trail_seconds < 0:
@@ -368,11 +369,18 @@ def animate_defensive_reorganization(
     )
     fig, ax = pitch.draw(figsize=(11, 7.2))
     fig.subplots_adjust(bottom=.20, top=.87, right=.88)
-    fig.suptitle("Defender-relative movement replay", color="#202124", fontsize=13, y=.965)
+    fig.suptitle(
+        "Within-unit movement around the event"
+        if coach_facing else "Defender-relative movement replay",
+        color="#202124", fontsize=13, y=.965,
+    )
     semantics = ax.text(
         .01,
         1.02,
-        "Retrospective analyst replay · score interval [t−2, t]",
+        (
+            "Retrospective replay · movement measured over the previous 2 s"
+            if coach_facing else "Retrospective analyst replay · score interval [t−2, t]"
+        ),
         transform=ax.transAxes,
         fontsize=9,
         color="#202124",
@@ -383,8 +391,13 @@ def animate_defensive_reorganization(
     note = fig.text(
         .62,
         .045,
-        "Attackers: blue · Defender color: trailing 2 s relative path\n"
-        "Higher means more movement within the unit—not better or worse defending.",
+        (
+            "Attackers: blue · Warmer defenders: more within-unit movement\n"
+            "Review prompt only—not better or worse defending."
+            if coach_facing else
+            "Attackers: blue · Defender color: trailing 2 s relative path\n"
+            "Higher means more movement within the unit—not better or worse defending."
+        ),
         ha="center",
         va="bottom",
         fontsize=7.5,
@@ -395,7 +408,7 @@ def animate_defensive_reorganization(
     norm = Normalize(vmin=score_vmin_m, vmax=score_vmax_m, clip=True)
     scalar = plt.cm.ScalarMappable(norm=norm, cmap=cmap)
     colorbar = fig.colorbar(scalar, ax=ax, fraction=.028, pad=.025, extend="max")
-    colorbar.set_label(SCORE_LABEL, fontsize=8)
+    colorbar.set_label("Within-unit movement" if coach_facing else SCORE_LABEL, fontsize=8)
     colorbar.ax.tick_params(labelsize=8)
     meter_ax = _add_team_meter(fig, score_vmin_m, score_vmax_m) if show_team_meter else None
 
@@ -491,6 +504,7 @@ def animate_defensive_reorganization(
             "trail_seconds": float(trail_seconds),
             "show_team_meter": bool(show_team_meter),
             "show_focal_highlight": bool(show_focal_highlight),
+            "coach_facing": bool(coach_facing),
             "pitch_background": PITCH_COLOR,
         }
     )

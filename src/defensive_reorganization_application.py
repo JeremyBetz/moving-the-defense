@@ -813,6 +813,7 @@ def render_selected_passage(
     score_vmax_m: float = DEFAULT_SCORE_VMAX_M,
     show_focal_highlight: bool = False,
     diagnostic_anchor_label: str | None = None,
+    coach_facing: bool = False,
 ) -> dict[str, Path]:
     """Render one caller-selected window using the existing visualization."""
     destination = Path(output_dir)
@@ -840,6 +841,8 @@ def render_selected_passage(
         playback_fps=playback_fps,
         score_vmax_m=score_vmax_m,
         show_focal_highlight=show_focal_highlight,
+        coach_facing=coach_facing,
+        show_team_meter=not coach_facing,
     )
     gif = export_animation(bundle, destination / f"{stem}.gif")
     plt.close(bundle.figure)

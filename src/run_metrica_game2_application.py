@@ -856,6 +856,7 @@ def render_selected(
                 if str(getattr(row, "presentation_role", "")) == "event_window"
                 else None
             ),
+            coach_facing=str(getattr(row, "presentation_role", "")) == "event_window",
         )
         technical = destination / f"{stem}_technical_appendix.png"
         Path(paths["diagnostic_png"]).replace(technical)
@@ -909,7 +910,6 @@ def event_review_card_content(row: object) -> dict[str, str]:
 
     defending = str(row.team_key).split(":")[-1]
     attacking = str(row.attacking_team_key).split(":")[-1]
-    change = float(row.post_minus_pre_change_m)
     event_name = "shot" if str(row.event_type).upper() in {"SHOT", "GOAL"} else str(row.event_type).lower()
     outcome = normalize_event_outcome(row.event_type, field("event_detail", np.nan))
     peak_text = time_to_peak_text(float(row.time_to_peak_s), event_name)
@@ -936,8 +936,7 @@ def event_review_card_content(row: object) -> dict[str, str]:
         "previous_event": f"Previous: {previous}",
         "why_surfaced": (
             f"Rank #{int(rank) if rank != 'unranked' else rank} by the maximum within-unit movement in the ±5 s event window. "
-            f"{peak_text} Maximum {float(row.maximum_score_m):.2f} m; "
-            f"pre-to-post change {change:+.2f} m."
+            f"{peak_text}"
         ),
         "question": (
             f"Which defenders changed position most around the {event_name}, and was the "
@@ -1244,7 +1243,16 @@ def run(
     render_selected_clips: bool = False,
     discovery_audit: bool = False,
     event_query_limit: int = 2,
+    event_types: tuple[str, ...] = ("SHOT", "GOAL"),
+    event_pre_seconds: float = ANALYST_CLIP_CONTEXT_SECONDS,
+    event_post_seconds: float = ANALYST_CLIP_CONTEXT_SECONDS,
+    event_rank_by: str = "maximum_score",
+    event_defending_team: str | None = None,
 ) -> dict[str, object]:
+    if event_pre_seconds > ANALYST_CLIP_CONTEXT_SECONDS or event_post_seconds > ANALYST_CLIP_CONTEXT_SECONDS:
+        raise ValueError("event review windows cannot exceed the rendered ±5 s clip")
+    if event_defending_team is not None and event_defending_team not in team_files:
+        raise ValueError("event_defending_team must name one of the two match teams")
     output_dir.mkdir(parents=True, exist_ok=True)
     score_by_team = {}
     tracking_by_team = {}
@@ -1346,6 +1354,8 @@ def run(
     shots = load_shots(data_dir / events_file, match_id=match_id)
     event_tables = []
     for defending_team, scores in score_by_team.items():
+        if event_defending_team is not None and defending_team != event_defending_team:
+            continue
         attacking_team = "metrica:Away" if defending_team == "metrica:Home" else "metrica:Home"
         relevant = shots.loc[shots.team_key.eq(attacking_team)]
         aligned = align_events(relevant, scores, defending_team_key=defending_team)
@@ -1372,10 +1382,10 @@ def run(
         query = EventWindowQuery(
             defending_team_key=defending_team,
             attacking_team_key=attacking_team,
-            event_types=("SHOT", "GOAL"),
-            pre_seconds=ANALYST_CLIP_CONTEXT_SECONDS,
-            post_seconds=ANALYST_CLIP_CONTEXT_SECONDS,
-            rank_by="maximum_score",
+            event_types=event_types,
+            pre_seconds=event_pre_seconds,
+            post_seconds=event_post_seconds,
+            rank_by=event_rank_by,
             limit=event_query_limit,
             require_suitable=True,
         )
@@ -1390,10 +1400,10 @@ def run(
     )
     event_windows["rank"] = np.arange(1, len(event_windows) + 1)
     combined_query_metadata = {
-        "question": "What defensive reorganization happened around shots and goals?",
+        "question": "What within-unit movement happened around the selected events?",
         "candidate_count": sum(int(item["candidate_count"]) for item in query_metadata),
         "result_count": int(len(event_windows)),
-        "rank_by": "maximum_score",
+        "rank_by": event_rank_by,
         "no_result_reasons": tuple(
             reason for item in query_metadata for reason in item["no_result_reasons"]
         ),
@@ -1538,6 +1548,12 @@ def analyze_metrica_sample_match(
     render_selected: bool = True,
     reviewed_game2_case_study: bool = False,
     discovery_audit: bool = False,
+    event_query_limit: int = 2,
+    event_types: tuple[str, ...] = ("SHOT", "GOAL"),
+    event_pre_seconds: float = ANALYST_CLIP_CONTEXT_SECONDS,
+    event_post_seconds: float = ANALYST_CLIP_CONTEXT_SECONDS,
+    event_rank_by: str = "maximum_score",
+    event_defending_team: str | None = None,
 ) -> dict[str, object]:
     """Run the same automatic workflow over public Sample Game 1 or 2."""
     preset = metrica_sample_preset(
@@ -1554,6 +1570,12 @@ def analyze_metrica_sample_match(
         reviewed_primary=preset.reviewed_primary,
         render_selected_clips=render_selected,
         discovery_audit=discovery_audit,
+        event_query_limit=event_query_limit,
+        event_types=event_types,
+        event_pre_seconds=event_pre_seconds,
+        event_post_seconds=event_post_seconds,
+        event_rank_by=event_rank_by,
+        event_defending_team=event_defending_team,
     )
 
 

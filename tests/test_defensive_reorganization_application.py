@@ -8,10 +8,12 @@ import numpy as np
 import pandas as pd
 import polars as pl
 import pytest
+import matplotlib.pyplot as plt
 
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "src"))
 
+import defensive_reorganization_application as application_module
 from defensive_reorganization_application import (
     EventWindowQuery,
     MOMENT_COLUMNS,
@@ -22,6 +24,7 @@ from defensive_reorganization_application import (
     discover_moments,
     export_scores,
     query_event_windows,
+    render_selected_passage,
     score_match,
     score_stable_runs,
     _select_global_moments,
@@ -134,9 +137,36 @@ def test_event_review_card_separates_observation_from_human_question():
     assert "physical left third" in content["location"]
     assert "0.68 s after the shot" in content["why_surfaced"]
     assert "maximum within-unit movement" in content["why_surfaced"]
+    assert "3.2 m" not in content["why_surfaced"]
+    assert "pre-to-post" not in content["why_surfaced"]
     assert content["question"].startswith("Which defenders changed position most")
     assert "counter" not in " ".join(content.values()).lower()
     assert "do not identify a tactic" in content["boundary"]
+
+
+def test_event_render_coach_flag_reaches_animation_only(tmp_path, monkeypatch):
+    captured = {}
+
+    def fake_plot(*args, **kwargs):
+        captured["plot_kwargs"] = kwargs
+        return plt.figure()
+
+    class Bundle:
+        figure = plt.figure()
+
+    def fake_animate(*args, **kwargs):
+        captured["animate_kwargs"] = kwargs
+        return Bundle()
+
+    monkeypatch.setattr(application_module, "plot_defensive_reorganization_diagnostic", fake_plot)
+    monkeypatch.setattr(application_module, "animate_defensive_reorganization", fake_animate)
+    monkeypatch.setattr(application_module, "export_animation", lambda bundle, path: path)
+    render_selected_passage(
+        pd.DataFrame(), object(), object(), tmp_path, stem="event", coach_facing=True
+    )
+    assert "coach_facing" not in captured["plot_kwargs"]
+    assert captured["animate_kwargs"]["coach_facing"] is True
+    assert captured["animate_kwargs"]["show_team_meter"] is False
 
 
 def test_event_display_helpers_are_factual_and_fail_cleanly():

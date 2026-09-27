@@ -151,6 +151,24 @@ CSV, and Parquet outputs belong in the analyst appendix. The workflow can claim
 deterministic geometric retrieval for review; it cannot identify tactics,
 intent, defensive quality, causation, success, or player value.
 
+### Local event-review dashboard prototype
+
+The dependency-free local dashboard puts the football card and replay first,
+with exact traces and technical fields behind an analyst appendix. It supports
+Metrica Sample Games 1 and 2, either defending-team perspective, shots/goals,
+bounded before/after windows, the existing ranking choices, and explicit
+no-result messages. Discovery/Audit remains a separate optional mode.
+
+```bash
+.venv/bin/python src/event_review_dashboard.py \
+  --output-root /tmp/moving_the_defense_dashboard
+```
+
+Open `http://127.0.0.1:8765`, choose the match and football question, then use
+**Run review**. Runtime cards, GIFs, traces, and score tables stay under the
+configured temporary output root and are not repository artifacts. This is an
+analyst-review prototype, not a deployed product or a tactical classifier.
+
 ### Temporal results
 
 Preceding attacker movement was associated with greater subsequent defender

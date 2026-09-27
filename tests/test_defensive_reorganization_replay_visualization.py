@@ -289,6 +289,28 @@ def test_fixed_display_scale_saturation_and_raw_values_are_preserved():
     finish(bundle)
 
 
+def test_coach_facing_replay_uses_plain_language_without_changing_defaults():
+    q = tracking()
+    scores = score(q)
+    bundle = animate_defensive_reorganization(
+        q, scores, clip_spec(), coach_facing=True, show_team_meter=False
+    )
+    assert bundle.figure._suptitle.get_text() == "Within-unit movement around the event"
+    assert bundle.animation._reorganization_metadata["coach_facing"] is True
+    labels = [axis.get_ylabel() for axis in bundle.figure.axes]
+    assert "Within-unit movement" in labels
+    assert SCORE_LABEL not in labels
+    texts = " ".join(text.get_text() for text in bundle.figure.texts)
+    assert "Warmer defenders: more within-unit movement" in texts
+    assert "relative path" not in texts
+    finish(bundle)
+
+    default = animate_defensive_reorganization(q, scores, clip_spec(), show_team_meter=False)
+    assert default.figure._suptitle.get_text() == "Defender-relative movement replay"
+    assert default.animation._reorganization_metadata["coach_facing"] is False
+    finish(default)
+
+
 def test_unsupported_scores_are_hollow_and_team_meter_is_unavailable():
     q = tracking(missing_frame=10)
     scores = score(q)
