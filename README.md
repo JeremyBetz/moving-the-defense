@@ -151,23 +151,41 @@ CSV, and Parquet outputs belong in the analyst appendix. The workflow can claim
 deterministic geometric retrieval for review; it cannot identify tactics,
 intent, defensive quality, causation, success, or player value.
 
-### Local event-review dashboard prototype
+### Analyst review-pack product demo
 
-The dependency-free local dashboard puts the football card and replay first,
-with exact traces and technical fields behind an analyst appendix. It supports
-Metrica Sample Games 1 and 2, either defending-team perspective, shots/goals,
-bounded before/after windows, the existing ranking choices, and explicit
-no-result messages. Discovery/Audit remains a separate optional mode.
+The dependency-free local application starts with a football question: which
+passages around shots, goals, or changes of possession are worth watching more
+closely? It prepares
+each match once, lets the analyst change the team, event, time window, and review
+order quickly, renders only selected passages, and exports them as a portable
+HTML review pack. Exact traces and technical fields remain in a separate analyst
+appendix.
 
 ```bash
 .venv/bin/python src/event_review_dashboard.py \
   --output-root /tmp/moving_the_defense_dashboard
 ```
 
-Open `http://127.0.0.1:8765`, choose the match and football question, then use
-**Run review**. Runtime cards, GIFs, traces, and score tables stay under the
-configured temporary output root and are not repository artifacts. This is an
-analyst-review prototype, not a deployed product or a tactical classifier.
+Open `http://127.0.0.1:8765`, choose the match and football question, then:
+
+1. **Prepare match review** once. Progress remains visible; later choices reuse
+   the prepared match rather than processing it again.
+2. Open a candidate and **Render this replay**. The GIF is cached for reuse.
+3. **Keep** the passages that merit discussion and export the resulting ZIP.
+
+“Possession changes” are event-derived: the first recorded pass, recovery, or
+shot by a different team on the established possession-event clock. Restarts
+are not review anchors, and challenges, ball-loss labels, tracking geometry,
+and the movement score never infer possession. For the defending perspective,
+the card describes the moment plainly as **Possession lost**—not a forced
+turnover, press win, or tactical success.
+
+The ZIP contains a portable `index.html`, its selected media, and a compact
+record of what was selected. Runtime indexes, cards, GIFs, traces, and exports stay under the
+configured temporary output root and are not repository artifacts. See the
+[product and portfolio guide](docs/event_review_product_demo.md) for the user
+journey, architecture, and demonstration script. This remains a bounded local
+product demo—not a deployed service or a tactical classifier.
 
 ### Temporal results
 

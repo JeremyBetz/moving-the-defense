@@ -292,9 +292,12 @@ def time_to_peak_text(seconds: float, event_name: str) -> str:
     value = float(seconds)
     label = str(event_name).strip().lower() or "event"
     if np.isclose(value, 0.0, atol=0.005):
-        return f"Peak within-unit movement occurred at the {label}."
+        return f"Defenders moved most within the unit at the {label}."
     relation = "after" if value > 0 else "before"
-    return f"Peak within-unit movement occurred {abs(value):.2f} s {relation} the {label}."
+    return (
+        f"Defenders moved most within the unit "
+        f"{abs(value):.2f} s {relation} the {label}."
+    )
 
 
 def classify_attacking_activity(
@@ -910,8 +913,17 @@ def event_review_card_content(row: object) -> dict[str, str]:
 
     defending = str(row.team_key).split(":")[-1]
     attacking = str(row.attacking_team_key).split(":")[-1]
-    event_name = "shot" if str(row.event_type).upper() in {"SHOT", "GOAL"} else str(row.event_type).lower()
-    outcome = normalize_event_outcome(row.event_type, field("event_detail", np.nan))
+    event_type = str(row.event_type).upper()
+    event_name = (
+        "shot" if event_type in {"SHOT", "GOAL"}
+        else "possession change" if event_type == "POSSESSION_CHANGE"
+        else str(row.event_type).lower()
+    )
+    outcome = (
+        "Possession lost"
+        if event_type == "POSSESSION_CHANGE"
+        else normalize_event_outcome(row.event_type, field("event_detail", np.nan))
+    )
     peak_text = time_to_peak_text(float(row.time_to_peak_s), event_name)
     location = physical_event_location(
         field("event_x_m", np.nan), field("event_y_m", np.nan)
@@ -928,14 +940,21 @@ def event_review_card_content(row: object) -> dict[str, str]:
         field("attacking_direction", "direction unavailable")
     )
     rank = field("rank", "unranked")
+    pre_seconds = float(field("review_pre_seconds", 5.0))
+    post_seconds = float(field("review_post_seconds", 5.0))
+    rank_label = str(
+        field("review_rank_label", "Most movement within the defensive unit")
+    ).lower()
+    rank_text = int(rank) if rank != "unranked" else rank
     return {
-        "title": f"{str(row.event_type).title()} review · {row.match_clock}",
+        "title": f"{event_name.capitalize()} review · {row.match_clock}",
         "match_context": f"{score_state} · {outcome}",
         "teams": f"Attacking: {attacking} · Defending: {defending}",
         "location": f"{location} · {attacking_direction}",
         "previous_event": f"Previous: {previous}",
         "why_surfaced": (
-            f"Rank #{int(rank) if rank != 'unranked' else rank} by the maximum within-unit movement in the ±5 s event window. "
+            f"Ranked #{rank_text} by {rank_label} during the {pre_seconds:g} s before "
+            f"and {post_seconds:g} s after the {event_name}. "
             f"{peak_text}"
         ),
         "question": (
@@ -943,8 +962,8 @@ def event_review_card_content(row: object) -> dict[str, str]:
             "unit still reorganizing afterward?"
         ),
         "boundary": (
-            "Analyst review prompt: the event anchor and score do not identify a tactic, "
-            "intent, quality, cause, success, or value."
+            "Analyst review prompt: the event and movement display do not identify a "
+            "tactic, intent, responsibility, quality, cause, success, or value."
         ),
     }
 

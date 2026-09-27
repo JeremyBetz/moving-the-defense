@@ -295,13 +295,13 @@ def test_coach_facing_replay_uses_plain_language_without_changing_defaults():
     bundle = animate_defensive_reorganization(
         q, scores, clip_spec(), coach_facing=True, show_team_meter=False
     )
-    assert bundle.figure._suptitle.get_text() == "Within-unit movement around the event"
+    assert bundle.figure._suptitle.get_text() == "How defenders moved within the unit around the event"
     assert bundle.animation._reorganization_metadata["coach_facing"] is True
     labels = [axis.get_ylabel() for axis in bundle.figure.axes]
-    assert "Within-unit movement" in labels
+    assert "Movement within the defensive unit" in labels
     assert SCORE_LABEL not in labels
     texts = " ".join(text.get_text() for text in bundle.figure.texts)
-    assert "Warmer defenders: more within-unit movement" in texts
+    assert "Warmer defenders moved more relative to teammates" in texts
     assert "relative path" not in texts
     finish(bundle)
 

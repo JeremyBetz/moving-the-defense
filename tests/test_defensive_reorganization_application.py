@@ -131,17 +131,37 @@ def test_event_review_card_separates_observation_from_human_question():
         "event_x_m": -31.0, "event_y_m": 2.0, "score_state": "Home 1–0 Away",
         "attacking_direction": "toward physical left", "previous_event": "Away PASS",
         "previous_event_offset_s": -1.2, "rank": 1,
+        "review_pre_seconds": 3.0, "review_post_seconds": 2.0,
+        "review_rank_label": "Most movement within the defensive unit",
     })
     content = event_review_card_content(row)
     assert content["match_context"] == "Home 1–0 Away · saved"
     assert "physical left third" in content["location"]
     assert "0.68 s after the shot" in content["why_surfaced"]
-    assert "maximum within-unit movement" in content["why_surfaced"]
+    assert "most movement within the defensive unit" in content["why_surfaced"]
+    assert "during the 3 s before and 2 s after the shot" in content["why_surfaced"]
     assert "3.2 m" not in content["why_surfaced"]
     assert "pre-to-post" not in content["why_surfaced"]
     assert content["question"].startswith("Which defenders changed position most")
     assert "counter" not in " ".join(content.values()).lower()
     assert "do not identify a tactic" in content["boundary"]
+
+
+def test_possession_change_card_uses_football_language_without_tactical_claim():
+    row = pd.Series({
+        "event_type": "POSSESSION_CHANGE", "match_clock": "21:10",
+        "team_key": "metrica:Home", "attacking_team_key": "metrica:Away",
+        "time_to_peak_s": -0.4, "event_detail": "POSSESSION WON",
+        "event_x_m": 0.0, "event_y_m": 0.0, "score_state": "Home 0–0 Away",
+        "attacking_direction": "toward physical right", "rank": 2,
+    })
+    content = event_review_card_content(row)
+    assert content["title"].startswith("Possession change review")
+    assert content["match_context"].endswith("Possession lost")
+    assert "possession change" in content["why_surfaced"].lower()
+    joined = " ".join(content.values()).lower()
+    assert "turnover" not in joined
+    assert "press win" not in joined
 
 
 def test_event_render_coach_flag_reaches_animation_only(tmp_path, monkeypatch):
@@ -176,7 +196,7 @@ def test_event_display_helpers_are_factual_and_fail_cleanly():
     assert physical_event_location(-20, 0) == "physical left third · central band"
     assert physical_event_location(np.nan, 0) == "location unavailable"
     assert time_to_peak_text(.68, "shot") == (
-        "Peak within-unit movement occurred 0.68 s after the shot."
+        "Defenders moved most within the unit 0.68 s after the shot."
     )
     assert "3.32 s before" in time_to_peak_text(-3.32, "shot")
     minimal = pd.Series(

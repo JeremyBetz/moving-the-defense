@@ -370,7 +370,7 @@ def animate_defensive_reorganization(
     fig, ax = pitch.draw(figsize=(11, 7.2))
     fig.subplots_adjust(bottom=.20, top=.87, right=.88)
     fig.suptitle(
-        "Within-unit movement around the event"
+        "How defenders moved within the unit around the event"
         if coach_facing else "Defender-relative movement replay",
         color="#202124", fontsize=13, y=.965,
     )
@@ -392,7 +392,7 @@ def animate_defensive_reorganization(
         .62,
         .045,
         (
-            "Attackers: blue · Warmer defenders: more within-unit movement\n"
+            "Attackers: blue · Warmer defenders moved more relative to teammates\n"
             "Review prompt only—not better or worse defending."
             if coach_facing else
             "Attackers: blue · Defender color: trailing 2 s relative path\n"
@@ -408,7 +408,10 @@ def animate_defensive_reorganization(
     norm = Normalize(vmin=score_vmin_m, vmax=score_vmax_m, clip=True)
     scalar = plt.cm.ScalarMappable(norm=norm, cmap=cmap)
     colorbar = fig.colorbar(scalar, ax=ax, fraction=.028, pad=.025, extend="max")
-    colorbar.set_label("Within-unit movement" if coach_facing else SCORE_LABEL, fontsize=8)
+    colorbar.set_label(
+        "Movement within the defensive unit" if coach_facing else SCORE_LABEL,
+        fontsize=8,
+    )
     colorbar.ax.tick_params(labelsize=8)
     meter_ax = _add_team_meter(fig, score_vmin_m, score_vmax_m) if show_team_meter else None
 
