@@ -1,7 +1,7 @@
 # Full-Match Application Case Study v1
 
-**Status:** frozen before event-aligned execution  
-**Frozen:** 2026-09-27  
+**Status:** frozen before event-aligned execution
+**Frozen:** 2026-09-27
 **Starting application commit:** `6a614cb561c202f389d40b3d047584a5cca946ec`
 
 ## Purpose and boundary

@@ -1,6 +1,8 @@
 from __future__ import annotations
 
 from pathlib import Path
+import hashlib
+import json
 import sys
 
 import numpy as np
@@ -374,3 +376,18 @@ def test_arbitrary_window_renderer_keeps_fixed_scale_and_static_only(tmp_path, m
     assert paths["diagnostic_png"].exists()
     assert captured["score_vmax_m"] == pytest.approx(6.25)
     assert captured["show_focal_highlight"] is False
+
+
+def test_public_case_study_manifest_hashes_exact_compact_media_package():
+    directory = ROOT / "figures" / "presentation" / "full_match_application_case_study"
+    manifest = json.loads((directory / "manifest.json").read_text(encoding="utf-8"))
+    assert manifest["status"] == "DESCRIPTIVE_APPLICATION_COMPLETE"
+    assert manifest["display_scale_m"] == [0.0, 6.25]
+    assert manifest["reference_counts"]["stable_runs"] == 18
+    assert manifest["event_counts"] == {
+        "goals": 5, "matched": 24, "shots": 24, "shots_on_target": 11
+    }
+    assert len([name for name in manifest["files_sha256"] if name.endswith(".gif")]) == 3
+    assert len([name for name in manifest["files_sha256"] if name.endswith("_diagnostic.png")]) == 6
+    for name, expected in manifest["files_sha256"].items():
+        assert hashlib.sha256((directory / name).read_bytes()).hexdigest() == expected

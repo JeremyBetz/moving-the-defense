@@ -196,6 +196,70 @@ not publish its tracking-derived outputs.
 Use `--game 1` without `--reviewed-game2-case-study` for automatic Game 1
 selection.
 
+## Pooled-reference full-match scanner
+
+`src/full_match_application_case_study.py` adds a separate opt-in application
+layer without changing `discover_moments(...)` or the event-review dashboard.
+Its `PooledScoreReference` stores sorted raw player, team, and one-second-change
+reference arrays in memory. Player and team empirical percentiles are always
+separate and use `searchsorted(..., side="right") / N`.
+
+```python
+from full_match_application_case_study import (
+    ReferenceMomentSpec,
+    analyze_match_with_reference,
+    align_events_to_reference,
+    build_pooled_reference,
+    render_reorganization_window,
+)
+
+reference = build_pooled_reference(
+    reference_scores_by_game_team,
+    source_fps=25.0,
+)
+analysis = analyze_match_with_reference(
+    normalized_tracking,
+    defending_team_keys=("metrica:Home", "metrica:Away"),
+    reference=reference,
+    smoothing_frames=7,
+    excluded_player_keys=goalkeepers,
+    moment_spec=ReferenceMomentSpec(),
+)
+events = align_events_to_reference(
+    normalized_shots,
+    analysis,
+    reference,
+    defending_team_by_attacking_team=opponents,
+)
+```
+
+The frozen case-study defaults use pooled team P95/P05 thresholds, pooled P95
+for exact same-run one-second increases, one continuous second for high/low
+episodes, two selections per category, and five seconds of complete rendering
+context on each side. Category overlaps remain in the result.
+
+Event alignment selects the nearest supported frame in the same period only
+within half a native frame. It returns descriptive current, preceding 2/5/10
+second, and exact one-/two-second change fields. Incomplete same-run windows are
+missing rather than shortened or interpolated.
+
+`export_application_tables(...)` can write local CSV/Parquet analyst tables.
+`render_reorganization_window(...)` renders any supported selected interval
+through the existing 0–6.25 m visualization without changing renderer defaults.
+Detailed player/time exports are not public artifacts.
+
+Reproduce the committed Game 2 application case study with:
+
+```bash
+.venv/bin/python src/run_full_match_application_case_study.py \
+  --output-dir /tmp/moving_the_defense_full_match_case_study
+```
+
+The reference percentile is descriptive calibration context—not DRS,
+probability, prediction, quality, tactics, or value. See the
+[case study](match_application_case_study.md) and its
+[frozen protocol](protocols/full_match_application_case_study_v1.md).
+
 Every run writes `event_window_review_summary.md` plus ranked event-window CSV
 and JSON files. Rendered runs add sparse event-review cards, GIFs, and traces.
 Metric traces, event details, player contributions, CSV, and Parquet outputs

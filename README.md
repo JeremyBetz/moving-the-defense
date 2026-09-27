@@ -98,53 +98,47 @@ tactical logic.
 
 ### Apply the metric to a match
 
-Python (default analyst path):
+The pooled-reference scanner keeps raw metres authoritative while adding a
+descriptive Games 1–2 reference percentile:
 
 ```python
-from defensive_reorganization_application import EventWindowQuery, query_event_windows
-
-query = EventWindowQuery(
-    defending_team_key="metrica:Home",
-    attacking_team_key="metrica:Away",
-    event_types=("SHOT", "GOAL"),
-    rank_by="maximum_score",
-    limit=3,
+from full_match_application_case_study import (
+    analyze_match_with_reference,
 )
-ranked = query_event_windows(normalized_events, home_scores, query)
+
+analysis = analyze_match_with_reference(
+    normalized_tracking,
+    defending_team_keys=("metrica:Home", "metrica:Away"),
+    reference=pooled_reference,
+    smoothing_frames=7,
+    excluded_player_keys=goalkeepers,
+)
+moments = analysis.selected_moments
 ```
 
-This asks a football question first—here, “what defensive reorganization
-happened around shots and goals?”—then ranks supported event windows using the
-existing retrospective score. It returns pre/anchor/post values, the local
-maximum and time to peak, leading player contributors, support/suitability, and
-explicit no-result reasons. The review card adds the provider-recorded outcome,
-score state, physical event location, attacking orientation, preceding event,
-and signed peak timing. Event labels organize review; they do not classify
-tactics or intent.
+The scanner identifies sustained high/low and rapid one-second-change episodes
+from predeclared pooled-reference thresholds. A separate strict event join
+reports the score context preceding recorded shots and goals. Event labels
+organize review; they do not classify tactics, quality, intent, or cause.
 
 Local CLI over the public Metrica Sample Game 2 files:
 
 ```bash
-.venv/bin/python src/run_metrica_game2_application.py \
-  --game 2 \
-  --output-dir /tmp/moving_the_defense_game2_application \
-  --render-selected
+.venv/bin/python src/run_full_match_application_case_study.py \
+  --output-dir /tmp/moving_the_defense_full_match_case_study
 ```
 
-The Metrica runner's default output is an event-first shot/goal review package:
-a ranked CSV/JSON table, human-readable query summary, sparse event-review card,
-GIF, and analyst trace. The existing high/rapid/low-under-activity retrieval is
-retained only as an explicit `--discovery-audit` mode for metric validation and
-exploratory retrieval.
+Use `--no-media` for a faster aggregate/event synchronization pass. The complete
+command creates local detailed tables, while the repository publishes only the
+compact [Game 2 case study](docs/match_application_case_study.md), its timeline,
+six deterministic diagnostics, and three representative GIFs.
 
 The flow is `football question/events → normalized tracking → trailing scores →`
 `supported ranked windows → human video review`. See the
 [API contract](docs/replay_scoring_api.md) and
 [one-match case study](docs/match_application_case_study.md).
-The application outputs are descriptive and remain local by default.
-For a fully automatic second public example, use `--game 1` and omit
-`--reviewed-game2-case-study`. A query with no supported suitable event window
-returns an explicit valid no-result; thresholds are not relaxed.
+Detailed application outputs remain local by default. Missing support remains
+missing; moment thresholds and event alignment tolerance are never relaxed.
 
 The GIF and coach card support passage review. Detailed traces, event context,
 CSV, and Parquet outputs belong in the analyst appendix. The workflow can claim
