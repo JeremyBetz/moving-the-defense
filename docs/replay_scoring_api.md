@@ -204,6 +204,121 @@ Its `PooledScoreReference` stores sorted raw player, team, and one-second-change
 reference arrays in memory. Player and team empirical percentiles are always
 separate and use `searchsorted(..., side="right") / N`.
 
+### First successful review
+
+The CLI is the complete end-to-end reference workflow for the public Metrica
+case study. Run it from the repository root after placing the public Sample
+Games 1 and 2 files in the documented ignored data directories:
+
+```bash
+.venv/bin/python src/run_full_match_application_case_study.py \
+  --output-dir /tmp/moving_the_defense_full_match_case_study
+```
+
+The Python API is the normalized-data integration interface. The complete
+equivalent path is necessarily more explicit: normalize each provider file,
+score the pooled reference population, analyze Game 2, align events, render one
+selected window, and export local tables.
+
+```python
+from pathlib import Path
+
+import pandas as pd
+
+from defensive_reorganization_application import score_stable_runs
+from full_match_application_case_study import (
+    ReferenceMomentSpec,
+    align_events_to_reference,
+    analyze_match_with_reference,
+    build_pooled_reference,
+    export_application_tables,
+    render_reorganization_window,
+)
+from run_metrica_game2_application import (
+    GOALKEEPERS,
+    load_ball,
+    load_normalized_team,
+    load_shots,
+    metrica_sample_preset,
+)
+
+population = {}
+game2_tracking = {}
+for game in (1, 2):
+    preset = metrica_sample_preset(game)
+    for team, filename in sorted(preset.team_files.items()):
+        tracking = load_normalized_team(
+            preset.data_dir / filename,
+            team,
+            match_id=preset.match_id,
+        )
+        population[f"game{game}:{team}"] = score_stable_runs(
+            tracking,
+            defending_team_key=team,
+            source_fps=25.0,
+            smoothing_frames=7,
+            window_seconds=2.0,
+            excluded_player_keys=(GOALKEEPERS[team],),
+        )
+        if game == 2:
+            game2_tracking[team] = tracking
+
+reference = build_pooled_reference(population, source_fps=25.0)
+normalized_tracking = pd.concat(game2_tracking.values(), ignore_index=True)
+analysis = analyze_match_with_reference(
+    normalized_tracking,
+    defending_team_keys=("metrica:Home", "metrica:Away"),
+    reference=reference,
+    smoothing_frames=7,
+    excluded_player_keys={
+        team: (GOALKEEPERS[team],) for team in game2_tracking
+    },
+    moment_spec=ReferenceMomentSpec(),
+)
+moments = analysis.selected_moments
+
+preset = metrica_sample_preset(2)
+shots = load_shots(preset.data_dir / preset.events_file, match_id=preset.match_id)
+events = align_events_to_reference(
+    shots,
+    analysis,
+    reference,
+    defending_team_by_attacking_team={
+        "metrica:Home": "metrica:Away",
+        "metrica:Away": "metrica:Home",
+    },
+)
+
+tracking_with_ball = pd.concat(
+    [
+        normalized_tracking,
+        load_ball(
+            preset.data_dir / preset.team_files["metrica:Home"],
+            match_id=preset.match_id,
+        ),
+    ],
+    ignore_index=True,
+)
+selected = moments.iloc[0]
+render_reorganization_window(
+    tracking_with_ball,
+    analysis.scores_by_team[str(selected.team_key)],
+    selected,
+    Path("/tmp/mtd_first_review/media"),
+    stem="selected_window",
+    render_gif=False,
+)
+export_application_tables(
+    analysis,
+    Path("/tmp/mtd_first_review/tables"),
+    formats=("csv",),
+)
+```
+
+Those local tables can contain detailed player/time rows and must remain
+untracked. Other providers enter at `normalized_tracking`; the scorer and
+application layer do not accept raw provider objects.
+
 ```python
 from full_match_application_case_study import (
     ReferenceMomentSpec,

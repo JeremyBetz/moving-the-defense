@@ -101,6 +101,11 @@ tactical logic.
 The pooled-reference scanner keeps raw metres authoritative while adding a
 descriptive Games 1–2 reference percentile:
 
+The command-line workflow below is the complete end-to-end route for the public
+Metrica case study. The Python interface is the normalized-data integration
+boundary for analysts bringing another provider adapter; its complete first-use
+sequence is documented in the [API guide](docs/replay_scoring_api.md).
+
 ```python
 from full_match_application_case_study import (
     analyze_match_with_reference,
@@ -131,7 +136,9 @@ Local CLI over the public Metrica Sample Game 2 files:
 Use `--no-media` for a faster aggregate/event synchronization pass. The complete
 command creates local detailed tables, while the repository publishes only the
 compact [Game 2 case study](docs/match_application_case_study.md), its timeline,
-six deterministic diagnostics, and three representative GIFs.
+six deterministic diagnostics, and two nonredundant representative GIFs. The
+rapid-increase diagnostic remains available, while its near-duplicate GIF is
+intentionally omitted.
 
 The flow is `football question/events → normalized tracking → trailing scores →`
 `supported ranked windows → human video review`. See the

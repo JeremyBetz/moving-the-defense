@@ -32,6 +32,8 @@ from run_metrica_game2_application import (
 ROOT = Path(__file__).resolve().parents[1]
 CONFIG = ROOT / "config" / "full_match_application_case_study_v1.json"
 DEFAULT_OUTPUT = Path("/tmp/moving_the_defense_full_match_case_study")
+TIMELINE_Y_HEADROOM_FRACTION = 0.05
+PUBLIC_GIF_CATEGORIES = frozenset({"high", "low"})
 
 
 def sha256(path: Path) -> str:
@@ -107,6 +109,25 @@ def _reference_and_game2(config: dict[str, object]):
     return reference, analysis, game2_tracking
 
 
+def timeline_shared_y_range(analysis) -> tuple[float, float]:
+    """Return one deterministic raw-metre range for both timeline panels."""
+    supported_values = np.concatenate(
+        [
+            scores.team_scores.loc[
+                scores.team_scores.support_status.eq("supported"),
+                "mean_trailing_relative_path_m",
+            ].to_numpy(float)
+            for scores in analysis.scores_by_team.values()
+        ]
+    )
+    if not len(supported_values) or not np.isfinite(supported_values).all():
+        raise RuntimeError("timeline requires finite supported team scores")
+    return (
+        0.0,
+        float(supported_values.max()) * (1.0 + TIMELINE_Y_HEADROOM_FRACTION),
+    )
+
+
 def plot_full_match_timeline(
     analysis,
     events: pd.DataFrame,
@@ -114,6 +135,7 @@ def plot_full_match_timeline(
 ) -> Path:
     fig, axes = plt.subplots(2, 1, figsize=(12, 6), sharex=False, constrained_layout=True)
     colors = {"metrica:Home": "#2563a7", "metrica:Away": "#d17a22"}
+    shared_y_range = timeline_shared_y_range(analysis)
     for axis, (team, scores) in zip(axes, sorted(analysis.scores_by_team.items()), strict=True):
         q = scores.team_scores.loc[scores.team_scores.support_status.eq("supported")]
         for period, group in q.groupby("period", sort=True):
@@ -131,6 +153,7 @@ def plot_full_match_timeline(
                         alpha=.35 if event.event_type == "SHOT" else .8)
         axis.set_title(f"{team.split(':')[-1]} defending")
         axis.set_ylabel("Mean trailing path (m)")
+        axis.set_ylim(shared_y_range)
         axis.grid(alpha=.16)
     axes[0].legend(
         handles=[
@@ -200,7 +223,10 @@ def execute(output_dir: Path = DEFAULT_OUTPUT, *, render_media: bool = True) -> 
         for index, row in analysis.selected_moments.iterrows():
             category = str(row.moment_type)
             key = (str(row.team_key), int(row.period), float(row.peak_time_s))
-            want_gif = index == first_by_category[category]
+            want_gif = (
+                category in PUBLIC_GIF_CATEGORIES
+                and index == first_by_category[category]
+            )
             stem = f"{category}_{str(row.team_key).split(':')[-1].lower()}_p{int(row.period)}_{float(row.peak_time_s):.2f}"
             if want_gif and key in rendered_intervals:
                 paths = {"diagnostic_png": render_reorganization_window(

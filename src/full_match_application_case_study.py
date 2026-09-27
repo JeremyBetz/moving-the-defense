@@ -189,6 +189,18 @@ def empirical_reference_percentile(
     return np.searchsorted(reference, raw, side="right") / float(reference.size)
 
 
+def format_reference_percentile(value: float) -> str:
+    """Format reference context without implying rounded empirical endpoints."""
+    percentile = float(value)
+    if not np.isfinite(percentile) or not 0.0 <= percentile <= 1.0:
+        raise ValueError("reference percentile must be finite and in [0, 1]")
+    if percentile >= 0.999:
+        return ">P99.9"
+    if percentile <= 0.001:
+        return "<P0.1"
+    return f"P{100 * percentile:.1f}"
+
+
 def _supported_team_with_runs(scores: DefensiveReorganizationScores) -> pd.DataFrame:
     team = scores.team_scores.loc[
         scores.team_scores["support_status"].eq(SUPPORTED)
@@ -949,7 +961,11 @@ def render_reorganization_window(
     percentile = row.get("reference_percentile", np.nan)
     figure.suptitle(
         f"{category.replace('|', ' + ')} · raw team mean {float(row.get('team_score_m', np.nan)):.2f} m"
-        + ("" if not np.isfinite(float(percentile)) else f" · reference P{100 * float(percentile):.1f}"),
+        + (
+            ""
+            if not np.isfinite(float(percentile))
+            else f" · reference {format_reference_percentile(float(percentile))}"
+        ),
         fontsize=10,
     )
     figure.savefig(png, dpi=160, bbox_inches="tight")

@@ -83,9 +83,14 @@ descriptions identifies why the defenders moved.
 
 ![Lowest sustained passage](../figures/presentation/full_match_application_case_study/low_away_p2_2734.56.gif)
 
-**Largest rapid-increase passage**
+The selected episode qualifies under the frozen sustained-low rule at the marked
+moment. The surrounding ten-second review window later contains increasing
+reorganization, so “lowest sustained passage” describes the selected episode,
+not every frame in the GIF.
 
-![Largest rapid-increase passage](../figures/presentation/full_match_application_case_study/rapid_increase_away_p2_5391.92.gif)
+The largest rapid-increase selection is retained in the table and static
+diagnostic. Its peak is only 0.28 seconds from the highest-passage example, so a
+second near-duplicate GIF is intentionally omitted from the public package.
 
 All replays retain the existing raw 0–6.25 m visual scale. Values beyond the
 display ceiling remain unchanged in the scorer and are disclosed by the
@@ -96,7 +101,11 @@ GIFs in `figures/presentation/full_match_application_case_study/`.
 
 All 24 Game 2 shots matched a supported native tracking frame within the frozen
 half-frame tolerance. The source recorded five goals and 11 shots on target
-under the predeclared subtype rule. Across this one match:
+under the predeclared subtype rule. These 24 shots, five goals, and 11 shots on
+target are a one-match descriptive inventory only and are too few for
+group-comparison inference. The rows are not mutually exclusive: the
+shots-on-target row includes goals. Differences between rows are descriptive,
+not predictive or causal.
 
 | Event group | Count | Matched | Mean raw score at event | Median reference percentile |
 |---|---:|---:|---:|---:|
@@ -105,8 +114,7 @@ under the predeclared subtype rule. Across this one match:
 | Shots on target | 11 | 11 | 3.056 m | 74.3 |
 
 This table answers where the recorded events sat within the descriptive score
-distribution. It is not a comparison model and cannot establish prediction or
-causation.
+distribution. It is not a comparison model.
 
 | Event | P | Time | Attack | Type | On target | At event (m) | Ref pct | Prior 5 s mean | Prior 5 s max |
 |---|---:|---:|---|---|:---:|---:|---:|---:|---:|

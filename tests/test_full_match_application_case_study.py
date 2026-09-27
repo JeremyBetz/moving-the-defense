@@ -27,6 +27,7 @@ from full_match_application_case_study import (
     build_pooled_reference,
     classify_shot_on_target,
     empirical_reference_percentile,
+    format_reference_percentile,
     export_application_tables,
     find_reorganization_windows,
     normalize_case_study_events,
@@ -125,6 +126,14 @@ def test_empirical_reference_percentile_is_right_sided_and_validates_boundaries(
         empirical_reference_percentile([1], [1, 0])
     with pytest.raises(ValueError, match="finite"):
         empirical_reference_percentile([np.nan], reference)
+
+
+def test_reference_percentile_formatter_does_not_imply_rounded_endpoints():
+    assert format_reference_percentile(0.9997) == ">P99.9"
+    assert format_reference_percentile(0.0003) == "<P0.1"
+    assert format_reference_percentile(0.731) == "P73.1"
+    with pytest.raises(ValueError, match="finite and in"):
+        format_reference_percentile(np.nan)
 
 
 def test_pooled_reference_keeps_player_team_and_one_second_distributions_separate():
@@ -379,6 +388,8 @@ def test_arbitrary_window_renderer_keeps_fixed_scale_and_static_only(tmp_path, m
 
 
 def test_public_case_study_manifest_hashes_exact_compact_media_package():
+    from run_full_match_application_case_study import PUBLIC_GIF_CATEGORIES
+
     directory = ROOT / "figures" / "presentation" / "full_match_application_case_study"
     manifest = json.loads((directory / "manifest.json").read_text(encoding="utf-8"))
     assert manifest["status"] == "DESCRIPTIVE_APPLICATION_COMPLETE"
@@ -387,7 +398,26 @@ def test_public_case_study_manifest_hashes_exact_compact_media_package():
     assert manifest["event_counts"] == {
         "goals": 5, "matched": 24, "shots": 24, "shots_on_target": 11
     }
-    assert len([name for name in manifest["files_sha256"] if name.endswith(".gif")]) == 3
+    assert manifest["timeline_shared_y_headroom_fraction"] == pytest.approx(0.05)
+    assert manifest["timeline_shared_y_axis_m"] == pytest.approx(
+        [0.0, 16.844605117167227]
+    )
+    assert len([name for name in manifest["files_sha256"] if name.endswith(".gif")]) == 2
+    assert PUBLIC_GIF_CATEGORIES == frozenset({"high", "low"})
+    assert "rapid_increase_away_p2_5391.92.gif" not in manifest["files_sha256"]
     assert len([name for name in manifest["files_sha256"] if name.endswith("_diagnostic.png")]) == 6
     for name, expected in manifest["files_sha256"].items():
         assert hashlib.sha256((directory / name).read_bytes()).hexdigest() == expected
+
+
+def test_timeline_shared_y_range_uses_all_teams_and_fixed_headroom():
+    from types import SimpleNamespace
+    from run_full_match_application_case_study import timeline_shared_y_range
+
+    analysis = SimpleNamespace(
+        scores_by_team={
+            "A": score_package([1.0, 4.0]),
+            "B": score_package([2.0, 10.0], team="B"),
+        }
+    )
+    assert timeline_shared_y_range(analysis) == pytest.approx((0.0, 10.5))
