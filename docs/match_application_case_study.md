@@ -17,26 +17,33 @@ Sample Games 1 and 2. It required complete score support, complete ball support,
 and the existing visual-suitability checks. Game 1 returned two review windows:
 
 1. Away shot at period 1, 778.80 s (12:59), Home defending: local maximum
-   5.16 m; post-minus-pre change −0.65 m.
+   5.16 m at 0.68 s after the shot; post-minus-pre change −0.65 m.
 2. Away shot at period 2, 3010.48 s (50:10), Home defending: local maximum
-   4.61 m; post-minus-pre change +0.93 m.
+   4.61 m at 1.08 s before the shot; post-minus-pre change +0.93 m.
 
 Game 2 returned one suitable review window:
 
 1. Home shot at period 1, 2243.16 s (37:23), Away defending: local maximum
-   3.45 m; post-minus-pre change −0.80 m.
+   3.45 m at 3.32 s before the shot; post-minus-pre change −0.80 m.
 
 These values describe mean trailing movement within the defending unit. They do
 not grade the defence, explain the shot, or imply that larger values are better.
 Fewer returned windows is a valid result of the frozen support/suitability gates.
+Together, the examples form three timing profiles: a peak just after a shot, a
+peak immediately before a shot, and a peak earlier in the attacking sequence.
+That contrast is why signed time-to-peak is displayed rather than describing
+every window as a defensive reaction.
 
 ## How the review proceeds
 
 The ranked CSV/JSON table answers where to look first. Each selected window then
 receives a ten-second GIF, sparse event-review card, and analyst trace. The card
-contains one factual movement description and the explicitly human question:
+shows the event outcome, score state, physical location and orientation,
+preceding event, rank basis, and signed peak timing. It also contains the
+explicitly human question:
 
-> What movement pattern accompanied this football event?
+> Which defenders changed position most around the shot, and was the unit still
+> reorganizing afterward?
 
 An analyst next opens the original match video, records relevant context, and
 writes any coaching question in their own words. The software does not label

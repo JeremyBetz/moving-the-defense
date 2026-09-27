@@ -216,8 +216,85 @@ def _clock_label(time_s: float) -> str:
 
 
 def _event_label(row: pd.Series) -> str:
-    subtype = "" if pd.isna(row.get("Subtype")) else f" {row['Subtype']}"
+    raw_subtype = "" if pd.isna(row.get("Subtype")) else str(row.get("Subtype", "")).strip()
+    subtype = "" if not raw_subtype else f" {raw_subtype}"
     return f"{row['Team']} {row['Type']}{subtype}"
+
+
+def normalize_event_outcome(event_type: object, detail: object) -> str:
+    """Turn provider event detail into concise factual display text."""
+    kind = str(event_type).strip().upper()
+    raw = "" if pd.isna(detail) else str(detail).strip().upper()
+    if not raw or raw in {"NAN", "NONE", "UNSPECIFIED"}:
+        return "Outcome unavailable"
+    if kind != "SHOT" and kind != "GOAL":
+        return raw.replace("-", " ").title()
+    parts = []
+    if "HEAD" in raw:
+        parts.append("Header")
+    if "GOAL" in raw:
+        parts.append("goal")
+    elif "SAVED" in raw:
+        parts.append("saved")
+    elif "BLOCK" in raw:
+        parts.append("blocked")
+    elif "OFF TARGET" in raw:
+        parts.append("off target")
+    elif "ON TARGET" in raw:
+        parts.append("on target")
+    return ", ".join(parts) if parts else raw.replace("-", " ").title()
+
+
+def score_state_at_event(events: pd.DataFrame, *, period: int, time_s: float) -> str:
+    """Return deterministic home-away score including a goal at the anchor."""
+    goals = events.loc[
+        events["Type"].eq("SHOT")
+        & events["Subtype"].astype(str).str.contains("GOAL", na=False)
+        & (
+            events["Period"].lt(int(period))
+            | (
+                events["Period"].eq(int(period))
+                & events["Start Time [s]"].le(float(time_s))
+            )
+        )
+    ]
+    home = int(goals["Team"].eq("Home").sum())
+    away = int(goals["Team"].eq("Away").sum())
+    return f"Home {home}–{away} Away"
+
+
+def preceding_event_context(
+    events: pd.DataFrame, *, period: int, time_s: float
+) -> tuple[str, float]:
+    """Return the immediately preceding same-period event, never the anchor."""
+    prior = events.loc[
+        events["Period"].eq(int(period))
+        & events["Start Time [s]"].lt(float(time_s) - 1e-7)
+    ].sort_values(["Start Time [s]"], kind="mergesort")
+    if prior.empty:
+        return "none in this period", np.nan
+    row = prior.iloc[-1]
+    return _event_label(row), float(row["Start Time [s]"] - float(time_s))
+
+
+def physical_event_location(x_m: object, y_m: object) -> str:
+    """Describe provider-normalized physical coordinates without tactical labels."""
+    if pd.isna(x_m) or pd.isna(y_m):
+        return "location unavailable"
+    x, y = float(x_m), float(y_m)
+    longitudinal = "physical left third" if x < -17.5 else "physical right third" if x > 17.5 else "physical middle third"
+    lateral = "lower side" if y < -11.33 else "upper side" if y > 11.33 else "central band"
+    return f"{longitudinal} · {lateral}"
+
+
+def time_to_peak_text(seconds: float, event_name: str) -> str:
+    """Describe signed event-to-peak timing explicitly."""
+    value = float(seconds)
+    label = str(event_name).strip().lower() or "event"
+    if np.isclose(value, 0.0, atol=0.005):
+        return f"Peak within-unit movement occurred at the {label}."
+    relation = "after" if value > 0 else "before"
+    return f"Peak within-unit movement occurred {abs(value):.2f} s {relation} the {label}."
 
 
 def classify_attacking_activity(
@@ -285,24 +362,25 @@ def add_analyst_context(
         ball_path = float(
             np.hypot(ball["x_m"].diff(), ball["y_m"].diff()).iloc[1:].sum()
         )
-        prior = event_rows.loc[
+        prior_or_anchor = event_rows.loc[
             event_rows["Period"].eq(period) & event_rows["Start Time [s]"].le(peak)
         ]
         following = event_rows.loc[
             event_rows["Period"].eq(period) & event_rows["Start Time [s]"].gt(peak)
         ]
-        previous_event = (
-            "none"
-            if prior.empty
-            else _event_label(prior.iloc[-1])
+        previous_event, previous_offset = preceding_event_context(
+            event_rows, period=period, time_s=peak
         )
         next_event = (
             "none"
             if following.empty
             else _event_label(following.iloc[0])
         )
-        possession = "unknown" if prior.empty else f"metrica:{prior.iloc[-1]['Team']}"
-        previous_offset = np.nan if prior.empty else float(prior.iloc[-1]["Start Time [s]"] - peak)
+        possession = (
+            "unknown"
+            if prior_or_anchor.empty
+            else f"metrica:{prior_or_anchor.iloc[-1]['Team']}"
+        )
         next_offset = np.nan if following.empty else float(following.iloc[0]["Start Time [s]"] - peak)
         direction = "direction unavailable"
         if possession in tracking_by_team:
@@ -331,14 +409,6 @@ def add_analyst_context(
                 {"PASS", "CHALLENGE", "RECOVERY", "BALL LOST", "SHOT", "SET PIECE"}
             ).sum()
         )
-        goals = event_rows.loc[
-            event_rows["Start Time [s]"].le(peak)
-            & event_rows["Type"].eq("SHOT")
-            & event_rows["Subtype"].astype(str).str.contains("GOAL", na=False)
-        ]
-        home_goals = int(goals["Team"].eq("Home").sum())
-        away_goals = int(goals["Team"].eq("Away").sum())
-
         defenders = tracking_by_team[defending].loc[
             tracking_by_team[defending]["period"].eq(period)
             & tracking_by_team[defending]["time_match_s"].between(start, end)
@@ -427,7 +497,9 @@ def add_analyst_context(
                 "match_clock": _clock_label(peak),
                 "attacking_team_key": attacking,
                 "possession_team_key": possession,
-                "score_state": f"Home {home_goals}–{away_goals} Away",
+                "score_state": score_state_at_event(
+                    event_rows, period=period, time_s=peak
+                ),
                 "field_zone": zone,
                 "ball_start_x_m": float(ball.iloc[0].x_m),
                 "ball_start_y_m": float(ball.iloc[0].y_m),
@@ -462,7 +534,11 @@ def add_analyst_context(
                 "defensive_centroid_shift_m": centroid_shift,
             }
         )
-    return pd.concat([result.reset_index(drop=True), pd.DataFrame(records)], axis=1)
+    result = result.reset_index(drop=True)
+    context = pd.DataFrame(records)
+    for column in context.columns:
+        result[column] = context[column].to_numpy()
+    return result
 
 
 def select_analyst_moments(
@@ -657,6 +733,8 @@ def load_shots(path: Path, *, match_id: str = MATCH_ID) -> pd.DataFrame:
                 shots["Subtype"].astype(str).str.contains("GOAL", na=False), "GOAL", "SHOT"
             ),
             "event_detail": shots["Subtype"].fillna("UNSPECIFIED").astype(str),
+            "event_x_m": pd.to_numeric(shots["Start X"], errors="coerce") * 105.0 - 52.5,
+            "event_y_m": pd.to_numeric(shots["Start Y"], errors="coerce") * 68.0 - 34.0,
             "team_key": "metrica:" + shots["Team"].astype(str),
         }
     )
@@ -826,21 +904,47 @@ def render_selected(
 
 def event_review_card_content(row: object) -> dict[str, str]:
     """Return sparse event-first content without automatic tactical interpretation."""
+    def field(name: str, default: object = None) -> object:
+        return row.get(name, default) if isinstance(row, (pd.Series, dict)) else getattr(row, name, default)
+
     defending = str(row.team_key).split(":")[-1]
     attacking = str(row.attacking_team_key).split(":")[-1]
     change = float(row.post_minus_pre_change_m)
-    direction = "increased" if change > 0 else "decreased" if change < 0 else "was unchanged"
+    event_name = "shot" if str(row.event_type).upper() in {"SHOT", "GOAL"} else str(row.event_type).lower()
+    outcome = normalize_event_outcome(row.event_type, field("event_detail", np.nan))
+    peak_text = time_to_peak_text(float(row.time_to_peak_s), event_name)
+    location = physical_event_location(
+        field("event_x_m", np.nan), field("event_y_m", np.nan)
+    )
+    previous_offset = field("previous_event_offset_s", np.nan)
+    previous_offset = np.nan if pd.isna(previous_offset) else float(previous_offset)
+    previous = (
+        "No earlier event in this period"
+        if not np.isfinite(previous_offset)
+        else f"{field('previous_event', 'event unavailable')} ({previous_offset:+.2f} s)"
+    )
+    score_state = str(field("score_state", "Score unavailable"))
+    attacking_direction = str(
+        field("attacking_direction", "direction unavailable")
+    )
+    rank = field("rank", "unranked")
     return {
         "title": f"{str(row.event_type).title()} review · {row.match_clock}",
+        "match_context": f"{score_state} · {outcome}",
         "teams": f"Attacking: {attacking} · Defending: {defending}",
-        "description": (
-            f"Mean trailing defender-relative path {direction} by {abs(change):.2f} m "
-            f"from the pre-event to post-event sample; the local maximum was "
-            f"{float(row.maximum_score_m):.2f} m."
+        "location": f"{location} · {attacking_direction}",
+        "previous_event": f"Previous: {previous}",
+        "why_surfaced": (
+            f"Rank #{int(rank) if rank != 'unranked' else rank} by the maximum within-unit movement in the ±5 s event window. "
+            f"{peak_text} Maximum {float(row.maximum_score_m):.2f} m; "
+            f"pre-to-post change {change:+.2f} m."
         ),
-        "question": "What movement pattern accompanied this football event?",
+        "question": (
+            f"Which defenders changed position most around the {event_name}, and was the "
+            "unit still reorganizing afterward?"
+        ),
         "boundary": (
-            "Analyst review question: the event anchor and score do not identify a tactic, "
+            "Analyst review prompt: the event anchor and score do not identify a tactic, "
             "intent, quality, cause, success, or value."
         ),
     }
@@ -854,13 +958,16 @@ def render_event_review_card(row: object, path: Path) -> Path:
     fig = plt.figure(figsize=(10, 5.625), facecolor="#f7f4ed")
     ax = fig.add_axes([0, 0, 1, 1])
     ax.axis("off")
-    fig.text(.07, .84, content["title"], fontsize=23, weight="bold")
-    fig.text(.07, .72, content["teams"], fontsize=15)
-    fig.text(.07, .54, "Observed movement", fontsize=13, weight="bold", color="#8f1d14")
-    fig.text(.07, .43, content["description"], fontsize=15, wrap=True)
-    fig.text(.07, .27, "Analyst review question", fontsize=13, weight="bold")
-    fig.text(.07, .19, content["question"], fontsize=17)
-    fig.text(.07, .06, content["boundary"], fontsize=10.5, color="#444444")
+    fig.text(.06, .89, content["title"], fontsize=22, weight="bold")
+    fig.text(.06, .81, content["match_context"], fontsize=15, weight="bold")
+    fig.text(.06, .74, content["teams"], fontsize=13.5)
+    fig.text(.06, .68, content["location"], fontsize=12.5)
+    fig.text(.06, .61, content["previous_event"], fontsize=12)
+    fig.text(.06, .49, "Why this surfaced", fontsize=13, weight="bold", color="#8f1d14")
+    fig.text(.06, .38, content["why_surfaced"], fontsize=14.2, wrap=True)
+    fig.text(.06, .25, "Analyst review prompt", fontsize=13, weight="bold")
+    fig.text(.06, .16, content["question"], fontsize=15.5, wrap=True)
+    fig.text(.06, .045, content["boundary"], fontsize=10, color="#444444")
     fig.savefig(path, dpi=160, facecolor=fig.get_facecolor())
     plt.close(fig)
     return path
@@ -879,10 +986,20 @@ def write_event_query_summary(path: Path, windows: pd.DataFrame, metadata: dict[
     else:
         lines.extend(["## Ranked windows", ""])
         for row in windows.itertuples(index=False):
+            event_time = float(
+                row.event_time_s if hasattr(row, "event_time_s") else row.peak_time_s
+            )
+            context = ""
+            if hasattr(row, "score_state"):
+                context = (
+                    f" {row.score_state}; {normalize_event_outcome(row.event_type, row.event_detail)}; "
+                    f"{physical_event_location(row.event_x_m, row.event_y_m)}; "
+                    f"{time_to_peak_text(float(row.time_to_peak_s), 'shot')}"
+                )
             lines.append(
                 f"- **#{int(row.rank)} {row.event_type} · P{int(row.period)} "
-                f"{_clock_label(float(row.event_time_s))}:** maximum {float(row.maximum_score_m):.2f} m; "
-                f"post-minus-pre {float(row.post_minus_pre_change_m):+.2f} m."
+                f"{_clock_label(event_time)}:** maximum {float(row.maximum_score_m):.2f} m; "
+                f"post-minus-pre {float(row.post_minus_pre_change_m):+.2f} m.{context}"
             )
     lines.extend(["", "Event anchors organize human review; they do not classify counter-pressing or any other tactic.", ""])
     path.write_text("\n".join(lines), encoding="utf-8")
@@ -1272,10 +1389,6 @@ def run(
         .reset_index(drop=True)
     )
     event_windows["rank"] = np.arange(1, len(event_windows) + 1)
-    event_windows.to_csv(output_dir / "ranked_event_windows.csv", index=False, lineterminator="\n")
-    (output_dir / "ranked_event_windows.json").write_text(
-        event_windows.to_json(orient="records", indent=2) + "\n", encoding="utf-8"
-    )
     combined_query_metadata = {
         "question": "What defensive reorganization happened around shots and goals?",
         "candidate_count": sum(int(item["candidate_count"]) for item in query_metadata),
@@ -1285,10 +1398,6 @@ def run(
             reason for item in query_metadata for reason in item["no_result_reasons"]
         ),
     }
-    event_query_summary = write_event_query_summary(
-        output_dir / "event_window_review_summary.md", event_windows, combined_query_metadata
-    )
-
     event_render_rows = pd.DataFrame()
     if not event_windows.empty:
         event_render_rows = event_windows.rename(
@@ -1308,6 +1417,21 @@ def run(
             raw_events,
             context_seconds=ANALYST_CLIP_CONTEXT_SECONDS,
         )
+    summary_rows = event_windows
+    if not event_render_rows.empty:
+        summary_rows = event_render_rows.assign(
+            event_time_s=event_render_rows["peak_time_s"],
+            defending_team_key=event_render_rows["team_key"],
+        )
+    event_query_summary = write_event_query_summary(
+        output_dir / "event_window_review_summary.md", summary_rows, combined_query_metadata
+    )
+    summary_rows.to_csv(
+        output_dir / "ranked_event_windows.csv", index=False, lineterminator="\n"
+    )
+    (output_dir / "ranked_event_windows.json").write_text(
+        summary_rows.to_json(orient="records", indent=2) + "\n", encoding="utf-8"
+    )
 
     rendered_events = (
         render_selected(

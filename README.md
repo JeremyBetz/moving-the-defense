@@ -117,7 +117,9 @@ This asks a football question first—here, “what defensive reorganization
 happened around shots and goals?”—then ranks supported event windows using the
 existing retrospective score. It returns pre/anchor/post values, the local
 maximum and time to peak, leading player contributors, support/suitability, and
-explicit no-result reasons. Event labels organize review; they do not classify
+explicit no-result reasons. The review card adds the provider-recorded outcome,
+score state, physical event location, attacking orientation, preceding event,
+and signed peak timing. Event labels organize review; they do not classify
 tactics or intent.
 
 Local CLI over the public Metrica Sample Game 2 files:

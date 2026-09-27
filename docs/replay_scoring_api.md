@@ -120,6 +120,15 @@ rank, and explicit no-result reasons. These are existing score summaries, not a
 new estimator. A future dashboard can consume the table without changing the
 measurement API.
 
+The Metrica adapter enriches selected event windows with provider-recorded
+outcome/subtype, deterministic score state, physical event location, safely
+inferred attacking orientation, and the immediately preceding same-period
+event with signed offset. The coach-facing card uses plain “within-unit
+movement” and prominently says whether the maximum occurred before or after the
+event. Exact metric values, contributor identities, traces, and diagnostics
+remain in the analyst appendix. Missing context is labeled unavailable rather
+than inferred.
+
 Analyst cards report adjacent-event offsets and whether each event falls inside
 the replay, shirt-number display labels, the safely inferred physical attacking
 direction, a ball start-to-end arrow, and compact endpoint shape summaries.

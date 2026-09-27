@@ -63,7 +63,7 @@ EVENT_SUMMARY_BASE_COLUMNS = (
 
 EVENT_WINDOW_COLUMNS = (
     "event_id", "match_id", "period", "event_time_s", "event_type",
-    "event_detail", "attacking_team_key", "defending_team_key",
+    "event_detail", "event_x_m", "event_y_m", "attacking_team_key", "defending_team_key",
     "pre_score_m", "anchor_score_m", "post_score_m", "maximum_score_m",
     "post_minus_pre_change_m", "time_to_peak_s", "leading_player_contributors",
     "support_status", "suitability_status", "suitability_reason", "rank_by",
@@ -699,6 +699,8 @@ def query_event_windows(
     )
     for event in ordered.itertuples(index=False):
         event_time = float(event.event_time_s)
+        raw_event_x = getattr(event, "event_x_m", np.nan)
+        raw_event_y = getattr(event, "event_y_m", np.nan)
         timeline = team.loc[
             team["match_id"].eq(event.match_id)
             & team["period"].eq(event.period)
@@ -723,6 +725,8 @@ def query_event_windows(
             "period": int(event.period), "event_time_s": event_time,
             "event_type": str(event.event_type),
             "event_detail": str(getattr(event, "event_detail", "")),
+            "event_x_m": np.nan if pd.isna(raw_event_x) else float(raw_event_x),
+            "event_y_m": np.nan if pd.isna(raw_event_y) else float(raw_event_y),
             "attacking_team_key": str(event.team_key),
             "defending_team_key": query.defending_team_key,
             "pre_score_m": np.nan, "anchor_score_m": np.nan, "post_score_m": np.nan,

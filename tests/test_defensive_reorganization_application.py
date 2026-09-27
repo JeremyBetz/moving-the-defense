@@ -34,8 +34,13 @@ from run_metrica_game2_application import (
     coach_card_content,
     event_review_card_content,
     metrica_sample_preset,
+    normalize_event_outcome,
+    physical_event_location,
+    preceding_event_context,
     render_no_result_card,
+    score_state_at_event,
     select_analyst_moments,
+    time_to_peak_text,
     write_match_review_summary,
 )
 
@@ -119,13 +124,71 @@ def test_event_review_card_separates_observation_from_human_question():
     row = pd.Series({
         "event_type": "SHOT", "match_clock": "12:34", "team_key": "metrica:Home",
         "attacking_team_key": "metrica:Away", "post_minus_pre_change_m": .75,
-        "maximum_score_m": 3.2,
+        "maximum_score_m": 3.2, "time_to_peak_s": .68, "event_detail": "ON TARGET-SAVED",
+        "event_x_m": -31.0, "event_y_m": 2.0, "score_state": "Home 1–0 Away",
+        "attacking_direction": "toward physical left", "previous_event": "Away PASS",
+        "previous_event_offset_s": -1.2, "rank": 1,
     })
     content = event_review_card_content(row)
-    assert "increased by 0.75 m" in content["description"]
-    assert content["question"] == "What movement pattern accompanied this football event?"
+    assert content["match_context"] == "Home 1–0 Away · saved"
+    assert "physical left third" in content["location"]
+    assert "0.68 s after the shot" in content["why_surfaced"]
+    assert "maximum within-unit movement" in content["why_surfaced"]
+    assert content["question"].startswith("Which defenders changed position most")
     assert "counter" not in " ".join(content.values()).lower()
     assert "do not identify a tactic" in content["boundary"]
+
+
+def test_event_display_helpers_are_factual_and_fail_cleanly():
+    assert normalize_event_outcome("SHOT", "ON TARGET-SAVED") == "saved"
+    assert normalize_event_outcome("SHOT", "HEAD-OFF TARGET-OUT") == "Header, off target"
+    assert normalize_event_outcome("SHOT", np.nan) == "Outcome unavailable"
+    assert physical_event_location(-20, 0) == "physical left third · central band"
+    assert physical_event_location(np.nan, 0) == "location unavailable"
+    assert time_to_peak_text(.68, "shot") == (
+        "Peak within-unit movement occurred 0.68 s after the shot."
+    )
+    assert "3.32 s before" in time_to_peak_text(-3.32, "shot")
+    minimal = pd.Series(
+        {
+            "event_type": "SHOT", "match_clock": "00:01", "team_key": "D",
+            "attacking_team_key": "A", "post_minus_pre_change_m": 0.0,
+            "maximum_score_m": 1.0, "time_to_peak_s": 0.0, "rank": 1,
+        }
+    )
+    content = event_review_card_content(minimal)
+    assert "Score unavailable" in content["match_context"]
+    assert "location unavailable" in content["location"]
+    assert "No earlier event" in content["previous_event"]
+
+
+def test_score_state_includes_goals_before_and_at_event_deterministically():
+    events = pd.DataFrame(
+        [
+            {"Period": 1, "Start Time [s]": 10.0, "Type": "SHOT", "Subtype": "ON TARGET-GOAL", "Team": "Home"},
+            {"Period": 1, "Start Time [s]": 20.0, "Type": "SHOT", "Subtype": "HEAD-ON TARGET-GOAL", "Team": "Away"},
+            {"Period": 2, "Start Time [s]": 30.0, "Type": "SHOT", "Subtype": "ON TARGET-GOAL", "Team": "Home"},
+        ]
+    )
+    assert score_state_at_event(events, period=1, time_s=19.9) == "Home 1–0 Away"
+    assert score_state_at_event(events, period=1, time_s=20.0) == "Home 1–1 Away"
+    assert score_state_at_event(events.sample(frac=1, random_state=4), period=2, time_s=30.0) == "Home 2–1 Away"
+
+
+def test_preceding_event_never_reuses_anchor_or_crosses_period():
+    events = pd.DataFrame(
+        [
+            {"Period": 1, "Start Time [s]": 8.0, "Type": "PASS", "Subtype": "", "Team": "Away"},
+            {"Period": 1, "Start Time [s]": 10.0, "Type": "SHOT", "Subtype": "SAVED", "Team": "Away"},
+            {"Period": 2, "Start Time [s]": 9.0, "Type": "PASS", "Subtype": "", "Team": "Home"},
+        ]
+    )
+    label, offset = preceding_event_context(events, period=1, time_s=10.0)
+    assert label == "Away PASS"
+    assert offset == pytest.approx(-2.0)
+    label, offset = preceding_event_context(events, period=2, time_s=9.0)
+    assert label == "none in this period"
+    assert np.isnan(offset)
 
 
 def test_global_selection_deduplicates_overlapping_categories():
@@ -212,6 +275,13 @@ def test_add_analyst_context_computes_on_ball_activity_and_fails_on_incomplete_s
     contextual = add_analyst_context(
         moments, teams, ball, events, context_seconds=1.0
     ).iloc[0]
+    assert add_analyst_context(
+        moments.assign(attacking_team_key="stale"),
+        teams,
+        ball,
+        events,
+        context_seconds=1.0,
+    ).columns.is_unique
     assert contextual.ball_path_length_m == pytest.approx(20.0)
     assert contextual.ball_progression_m == pytest.approx(20.0)
     assert contextual.directed_ball_progress_m == pytest.approx(20.0)
