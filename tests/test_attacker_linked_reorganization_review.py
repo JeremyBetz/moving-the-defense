@@ -1,5 +1,7 @@
 from __future__ import annotations
 
+import json
+
 import numpy as np
 import pandas as pd
 import pytest
@@ -14,10 +16,13 @@ from attacker_linked_reorganization_review import (
     summarize_pair_geometry,
 )
 from run_attacker_linked_reorganization_review import (
+    CONFIG,
     EpisodeSupportError,
+    ROOT,
     _require_open_play,
     _smoothed_cube,
     load_config,
+    sha256,
 )
 
 
@@ -189,10 +194,30 @@ def test_category_and_rankings_are_deterministic():
 
 
 def test_frozen_config_and_historical_hashes_validate():
-    config = load_config()
+    config = json.loads(CONFIG.read_text(encoding="utf-8"))
+    assert config["status"] == "FROZEN_BEFORE_ATTACKER_LINK_REFERENCE_OR_CANDIDATE_INSPECTION"
+    for relative, expected in config["dependency_sha256"].items():
+        assert sha256(ROOT / relative) == expected
+    manifests = {
+        "v1": ROOT / "figures/presentation/full_match_application_case_study/manifest.json",
+        "v2": ROOT / "figures/presentation/possession_aware_defensive_review/manifest.json",
+        "v3": ROOT / "figures/presentation/rapid_change_defensive_review/manifest.json",
+        "v4": ROOT / "figures/presentation/ball_alignment_reorganization_review/manifest.json",
+    }
+    for label, manifest in manifests.items():
+        assert sha256(manifest) == config["historical_manifest_sha256"][label]
+        payload = json.loads(manifest.read_text(encoding="utf-8"))
+        for name, expected in payload.get("files_sha256", {}).items():
+            assert sha256(manifest.parent / name) == expected
     assert config["strong_link"]["geometry_any"]["minimum_distance_m"]["value"] == 8.0
     assert config["strong_link"]["geometry_any"]["absolute_distance_change_m"]["value"] == 3.0
     assert config["off_ball"]["minimum_frames"] == 41
+
+
+@pytest.mark.provider_data
+def test_frozen_metrica_source_hashes_validate():
+    config = load_config()
+    assert config["source_sha256"]
 
 
 def test_frozen_candidate_population_excludes_transition_and_restart_contexts():

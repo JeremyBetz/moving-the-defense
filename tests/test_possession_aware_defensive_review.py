@@ -288,7 +288,7 @@ def test_transition_window_is_closed_and_historical_audit_is_explicit():
     ]
 
 
-def test_state_summary_is_aggregate_and_source_hash_is_frozen():
+def test_state_summary_is_aggregate_and_publication_safe():
     source = pd.DataFrame([event("Away", "PASS", 0)])
     context = build_metrica_possession_context(source, frames(60), match_id="m")
     summary = possession_state_summary(context)
@@ -296,6 +296,10 @@ def test_state_summary_is_aggregate_and_source_hash_is_frozen():
         "team_key", "period", "possession_state", "frame_count", "eligible_frame_count"
     }
     assert not {"frame_id_provider", "time_match_s", "possession_team_key"}.intersection(summary.columns)
+
+
+@pytest.mark.provider_data
+def test_game2_event_source_hash_is_frozen():
     event_path = ROOT / "data/metrica_sample_game_2/Sample_Game_2_RawEventsData.csv"
     assert hashlib.sha256(event_path.read_bytes()).hexdigest() == "edf31a18599265b77a8baf150f2ce6d89456fb0324b62ea7a391229657a619ba"
 
