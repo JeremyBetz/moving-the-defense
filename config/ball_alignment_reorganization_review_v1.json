@@ -67,10 +67,18 @@
   },
   "frozen_dependencies_sha256": {
     "src/defensive_reorganization_match_review.py": "5dcc2f8d3020a0f04ec187927be09bc3bdb2be82d25fa6b4e83d81a6384c2036",
-    "src/possession_aware_defensive_review.py": "05d0831442a08e93ae6ebf0b91c2a320fdff710f233c94486306d5d452eb406b",
+    "src/possession_aware_defensive_review.py": "1a2ca8e08b5c62660f2bb97a1c8f1d54caebc0707a3cdea2b16a65639d49f231",
     "src/rapid_change_defensive_review.py": "86108989513ddd0ff6411c29268503f48baa3523025c62edef355cdcdae8d08b",
     "src/run_rapid_change_defensive_review.py": "76c2eda4e26c8c570bef2be339b6e07dd7ea128fde7f337336ea5556b18ed0cf",
     "config/rapid_change_first_defensive_review_v1.json": "865ec84c7904a8331c93d9e5411f5557426d799dbae649db291541c58ff54f1b"
+  },
+  "dependency_reconciliation": {
+    "reason": "approved event-type-specific endpoint-compatibility implementation only",
+    "compatibility_audit_closure_commit": "edee9ff0434229892dcb42fe43ee6254073591a4",
+    "compatibility_implementation_commit": "6d09b9c45b1ece06056f937e4f50ae63a7ce19d5",
+    "previous_possession_module_sha256": "05d0831442a08e93ae6ebf0b91c2a320fdff710f233c94486306d5d452eb406b",
+    "current_possession_module_sha256": "1a2ca8e08b5c62660f2bb97a1c8f1d54caebc0707a3cdea2b16a65639d49f231",
+    "scientific_or_application_design_changed": false
   },
   "historical_packages": {
     "v1": {"manifest": "figures/presentation/full_match_application_case_study/manifest.json", "manifest_sha256": "bd8680ff2e860823d6556fd8d6671b6ec1defa651c62f01b5dbd26f8c8be6fcd"},
