@@ -39,14 +39,68 @@ continuous second. Selection used raw scores only, retained at most two passages
 per category, and preserved overlap between categories.
 
 The original scanner measured relational reorganization anywhere in the match.
-The current defensive-review layer adds conservative context from the public
+The defensive-review layer adds conservative context from the public
 Metrica event record: a scored team must be continuously and unambiguously out
 of possession for at least two seconds. This event-derived state is a review
 aid, not provider-ground-truth possession. Ambiguous, in-possession, restart,
 dead-ball, and newly changed-possession frames are excluded rather than guessed.
 The score, thresholds, reference percentiles, and event alignment are unchanged.
 
-## Possession-gated defensive review
+## Rapid-change-first defensive review
+
+The headline review question is: **When did the defensive unit begin
+reorganizing much more strongly than one second earlier?** The raw team level
+still describes absolute relational reorganization. The rapid-change view asks
+how much that level rose over exactly one second. It ranks the six largest
+eligible rises above the unchanged 0.6251746256690309 m threshold, then adds
+context without changing the score or selection.
+
+![Rapid-change Game 2 timeline](../figures/presentation/rapid_change_defensive_review/rapid_change_timeline.png)
+
+All six leading rises occurred in open play, outside the frozen five-second
+restart-adjacency boundary. Their one-second increases ranged from 1.419 m to
+1.786 m. Contribution summaries distinguish rises concentrated among three
+defenders (`localized`) from broader or mixed patterns; identities are not
+published. These are descriptions of the measured movement pattern, not
+tactical labels.
+
+| Rank | Defending team | Period | Peak time | Before | After | One-second rise | Ref pct after | Pattern | Out of possession |
+|---:|---|---:|---:|---:|---:|---:|---:|---|---:|
+| 1 | Home | 1 | 1734.72 s | 2.202 m | 3.988 m | 1.786 m | 92.23 | Localized | 9.16 s |
+| 2 | Home | 2 | 4443.16 s | 2.992 m | 4.725 m | 1.733 m | 98.09 | Mixed | 3.72 s |
+| 3 | Home | 1 | 14.40 s | 2.793 m | 4.355 m | 1.561 m | 96.01 | Localized | 12.32 s |
+| 4 | Away | 2 | 4473.88 s | 3.954 m | 5.467 m | 1.513 m | 99.60 | Broad unit | 3.36 s |
+| 5 | Home | 2 | 5042.36 s | 1.903 m | 3.376 m | 1.472 m | 80.61 | Mixed | 9.56 s |
+| 6 | Home | 1 | 336.76 s | 5.046 m | 6.465 m | 1.419 m | 99.92 | Localized | 3.00 s |
+
+Two public examples were selected deterministically. Rank 1 is always retained;
+rank 2 is the first remaining example with a different contribution pattern.
+No third example met the frozen requirement for both a new context and a new
+pattern, so none was substituted for visual variety.
+
+**Rank 1 — localized rise**
+
+![Rank 1 localized rapid increase](../figures/presentation/rapid_change_defensive_review/rapid_increase_home_p1_1734.72.gif)
+
+[Open the rank 1 diagnostic](../figures/presentation/rapid_change_defensive_review/rapid_increase_home_p1_1734.72_diagnostic.png)
+
+**Rank 2 — mixed rise**
+
+![Rank 2 mixed rapid increase](../figures/presentation/rapid_change_defensive_review/rapid_increase_home_p2_4443.16.gif)
+
+[Open the rank 2 diagnostic](../figures/presentation/rapid_change_defensive_review/rapid_increase_home_p2_4443.16_diagnostic.png)
+
+The markers show nearby recorded events only as review context. The examples do
+not show that an event or opponent caused the rise, or that the defending was
+good or bad. Three rapid decreases were inspected locally. They show readable
+settling passages, but did not add enough distinct public value to justify a
+second retrieval workflow in this pass.
+
+## Historical possession-gated level review
+
+High and low passages answer a different question: when was the absolute raw
+level unusually high or low? They remain available for distribution inspection
+and provenance, but are no longer the headline defensive-review workflow.
 
 ![Possession-aware Game 2 timeline](../figures/presentation/possession_aware_defensive_review/possession_aware_timeline.png)
 
@@ -237,23 +291,23 @@ With the public Metrica Sample Games 1 and 2 files in the repository's ignored
 `data/metrica_sample_game_*/` directories:
 
 ```bash
-.venv/bin/python src/run_possession_aware_defensive_review.py \
-  --output-dir /tmp/moving_the_defense_possession_aware_review
+.venv/bin/python src/run_rapid_change_defensive_review.py \
+  --output-dir /tmp/moving_the_defense_rapid_change_review
 ```
 
-Use `--no-media` for the much faster state/selection check. Detailed frame-state,
-transition, and event CSV outputs remain in the chosen local directory. The
-committed public v2 package contains only its aggregate manifest, timeline, and
-selected communication media. The historical ungated command remains
-`src/run_full_match_application_case_study.py`.
+The command writes the six-item local review queue, all local review media, the
+three local rapid-decrease diagnostics, and the bounded public subset. Detailed
+frame-state and event tables remain in the chosen local directory. The v1
+ungated and v2 possession-aware level packages remain linked above as
+byte-identical provenance.
 
 ## What this demonstrates—and what it does not
 
-The tool can deterministically score full-match stable support, separate general
-relational reorganization from possession-gated defensive review and transition
-context, align public events without distant snapping, and prepare a small
-review queue. An analyst can then open match video and add football context
-manually.
+The tool can deterministically score full-match stable support, identify sharp
+eligible increases, separate open-play, transition, restart and ambiguous
+context, and prepare a small review queue. An analyst can then open match video
+and add football context manually. Sustained high/low retrieval remains a
+separate extreme-state inspection tool.
 
 The scanner does **not** show that reorganization caused a shot or goal, predicts
 events, identifies marking, diagnoses confusion, grades defending, establishes

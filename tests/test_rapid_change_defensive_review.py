@@ -1,6 +1,8 @@
 from __future__ import annotations
 
 from copy import deepcopy
+import hashlib
+import json
 from pathlib import Path
 import sys
 
@@ -230,3 +232,42 @@ def test_input_order_and_score_packages_are_unchanged():
     pd.testing.assert_frame_equal(first.review_set, second.review_set)
     pd.testing.assert_frame_equal(first.public_examples, second.public_examples)
     pd.testing.assert_frame_equal(scores["metrica:Home"].player_scores, original_players)
+
+
+def test_committed_public_package_is_bounded_and_hash_valid():
+    package = ROOT / "figures" / "presentation" / "rapid_change_defensive_review"
+    manifest = json.loads((package / "manifest.json").read_text(encoding="utf-8"))
+    assert manifest["status"] == "RAPID_CHANGE_FIRST_REVIEW_COMPLETE"
+    assert manifest["rapid_threshold_m"] == 0.6251746256690309
+    assert len(manifest["top_six"]) == 6
+    assert len(manifest["public_examples"]) == 2
+    assert manifest["qc"]["player_identities_public"] is False
+    assert manifest["qc"]["rapid_decreases_public"] is False
+    assert {path.name for path in package.iterdir()} == {
+        "manifest.json",
+        "rapid_change_timeline.png",
+        "rapid_increase_home_p1_1734.72.gif",
+        "rapid_increase_home_p1_1734.72_diagnostic.png",
+        "rapid_increase_home_p2_4443.16.gif",
+        "rapid_increase_home_p2_4443.16_diagnostic.png",
+    }
+    for name, expected in manifest["files_sha256"].items():
+        assert hashlib.sha256((package / name).read_bytes()).hexdigest() == expected
+    serialized = json.dumps(manifest, sort_keys=True).lower()
+    assert "player_key" not in serialized
+    assert "coordinate" not in serialized
+    assert "frame_id_provider" not in serialized
+
+
+def test_historical_public_packages_remain_hash_bound():
+    v1 = ROOT / "figures" / "presentation" / "full_match_application_case_study"
+    v2 = ROOT / "figures" / "presentation" / "possession_aware_defensive_review"
+    expected_manifests = {
+        v1: "bd8680ff2e860823d6556fd8d6671b6ec1defa651c62f01b5dbd26f8c8be6fcd",
+        v2: "f695ed86990fbcfd7d92014802a83cab02aecaf5095259b1d4ae4b0aa34a9656",
+    }
+    for directory, expected in expected_manifests.items():
+        assert hashlib.sha256((directory / "manifest.json").read_bytes()).hexdigest() == expected
+        manifest = json.loads((directory / "manifest.json").read_text(encoding="utf-8"))
+        for name, digest in manifest["files_sha256"].items():
+            assert hashlib.sha256((directory / name).read_bytes()).hexdigest() == digest

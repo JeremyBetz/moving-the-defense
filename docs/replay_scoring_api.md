@@ -426,6 +426,48 @@ probability, prediction, quality, tactics, or value. See the
 [case study](match_application_case_study.md) and its
 [possession protocol](protocols/possession_aware_defensive_review_v1.md).
 
+### Rapid-change-first review queue
+
+For defensive review, the recommended question is when the unit's raw team
+score rose much more strongly than one second earlier. This layer consumes the
+existing possession-aware result and unchanged score packages:
+
+```python
+from rapid_change_defensive_review import (
+    RapidReviewPrioritySpec,
+    find_rapid_reorganization_windows,
+)
+
+rapid = find_rapid_reorganization_windows(
+    review,
+    analysis.scores_by_team,
+    events=normalized_events,
+    spec=RapidReviewPrioritySpec(),
+)
+queue = rapid.review_set       # frozen top-six audit
+examples = rapid.public_examples
+```
+
+`queue` ranks the six largest eligible one-second increases. Both endpoints
+must be in the same uninterrupted out-of-possession state run; ambiguous and
+restart-adjacent passages fail closed. Context and anonymized contribution
+patterns organize human review but do not explain cause or classify tactics.
+`rapid.decrease_diagnostics` is a secondary local-only inspection table.
+Sustained high/low outputs in `review` remain unchanged and serve
+extreme-state inspection rather than the primary queue.
+
+Run the complete public Game 2 workflow with:
+
+```bash
+.venv/bin/python src/run_rapid_change_defensive_review.py \
+  --output-dir /tmp/moving_the_defense_rapid_change_review
+```
+
+The public package contains only its aggregate audit, timeline and
+deterministically selected examples. All-six review media and decrease media
+remain local. See the
+[rapid-change protocol](protocols/rapid_change_first_defensive_review_v1.md).
+
 Every run writes `event_window_review_summary.md` plus ranked event-window CSV
 and JSON files. Rendered runs add sparse event-review cards, GIFs, and traces.
 Metric traces, event details, player contributions, CSV, and Parquet outputs

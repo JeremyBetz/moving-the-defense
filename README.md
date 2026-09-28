@@ -115,6 +115,10 @@ from possession_aware_defensive_review import (
     build_metrica_possession_context,
     find_defensive_review_windows,
 )
+from rapid_change_defensive_review import (
+    RapidReviewPrioritySpec,
+    find_rapid_reorganization_windows,
+)
 
 analysis = analyze_match_with_reference(
     normalized_tracking,
@@ -137,12 +141,21 @@ defensive_review = find_defensive_review_windows(
     pooled_reference,
     possession,
 )
+rapid_review = find_rapid_reorganization_windows(
+    defensive_review,
+    analysis.scores_by_team,
+    spec=RapidReviewPrioritySpec(),
+)
 ```
 
-The raw scanner identifies sustained high/low and rapid one-second-change
-episodes from predeclared pooled-reference thresholds. The possession-aware
-layer then keeps defensive-review passages only when the scored team has been
-continuously and unambiguously out of possession for at least two seconds.
+The primary review queue asks when the defensive unit began reorganizing much
+more strongly than one second earlier. It ranks possession-eligible rapid rises
+using the unchanged frozen threshold, then classifies open-play, transition and
+restart context plus anonymized contribution breadth. Sustained high/low
+retrieval remains available as extreme-state inspection and historical
+provenance. The possession-aware layer keeps defensive-review passages only
+when the scored team has been continuously and unambiguously out of possession
+for at least two seconds.
 Possession is conservatively reconstructed from Metrica events and is contextual
 metadata, not provider ground truth. Transition/restart passages remain separate.
 A strict event join reports score context preceding shots and goals. None of
@@ -151,15 +164,15 @@ these labels classifies tactics, quality, intent, or cause.
 Local CLI over the public Metrica Sample Game 2 files:
 
 ```bash
-.venv/bin/python src/run_possession_aware_defensive_review.py \
-  --output-dir /tmp/moving_the_defense_possession_aware_review
+.venv/bin/python src/run_rapid_change_defensive_review.py \
+  --output-dir /tmp/moving_the_defense_rapid_change_review
 ```
 
-Use `--no-media` for a faster state/selection pass. The complete command creates
-local detailed tables, while the repository publishes only the compact
-[Game 2 case study](docs/match_application_case_study.md), a possession-aware
-timeline, six deterministic diagnostics, and three representative GIFs. The
-historical ungated v1 package remains linked as provenance.
+The complete command creates all six rapid-review diagnostics and GIFs plus
+secondary rapid-decrease diagnostics locally. The repository publishes only the
+compact [Game 2 case study](docs/match_application_case_study.md), the rapid
+timeline, and two deterministically diverse examples. Historical ungated v1
+and possession-aware level v2 packages remain linked as provenance.
 
 The flow is `football question/events → normalized tracking → trailing scores →`
 `supported ranked windows → human video review`. See the
