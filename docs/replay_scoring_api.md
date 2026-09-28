@@ -353,6 +353,53 @@ for exact same-run one-second increases, one continuous second for high/low
 episodes, two selections per category, and five seconds of complete rendering
 context on each side. Category overlaps remain in the result.
 
+### Possession-aware defensive review
+
+`find_reorganization_windows(...)` remains the possession-agnostic raw scanner.
+For Metrica events, the opt-in contextual layer reconstructs a conservative
+native-frame state and applies the same frozen thresholds only after the scored
+team has been continuously out of possession for two seconds:
+
+```python
+from possession_aware_defensive_review import (
+    DefensiveReviewEligibilitySpec,
+    build_metrica_possession_context,
+    find_defensive_review_windows,
+)
+
+eligibility = DefensiveReviewEligibilitySpec(
+    continuous_out_of_possession_seconds=2.0,
+    transition_radius_seconds=2.0,
+)
+possession = build_metrica_possession_context(
+    metrica_event_rows,
+    normalized_tracking,
+    match_id="metrica_sample_game_2",
+    source_fps=25.0,
+    spec=eligibility,
+)
+review = find_defensive_review_windows(
+    analysis.scores_by_team,
+    reference,
+    possession,
+    eligibility_spec=eligibility,
+    historical_selected=analysis.selected_moments,
+)
+```
+
+`review.moments` contains the high, low, and rapid passages that pass the
+opponent-possession buffer; `review.selected_moments` contains the frozen
+two-per-category review queue. `review.transition_moments` is a separate
+descriptive view around direct event-derived possession changes, and
+`review.historical_selection_audit` explains how an earlier ungated selection
+is now classified. Ineligible frames split clusters; rapid changes require both
+endpoints in the same eligible state run. No proximity or ball-location logic
+fills ambiguous possession.
+
+The native-frame possession table is detailed local working data and must remain
+untracked. Its states are derived from Metrica events under the frozen rules;
+they are not provider-ground-truth possession and do not alter the score.
+
 Event alignment selects the nearest supported frame in the same period only
 within half a native frame. It returns descriptive current, preceding 2/5/10
 second, and exact one-/two-second change fields. Incomplete same-run windows are
@@ -366,14 +413,18 @@ Detailed player/time exports are not public artifacts.
 Reproduce the committed Game 2 application case study with:
 
 ```bash
-.venv/bin/python src/run_full_match_application_case_study.py \
-  --output-dir /tmp/moving_the_defense_full_match_case_study
+.venv/bin/python src/run_possession_aware_defensive_review.py \
+  --output-dir /tmp/moving_the_defense_possession_aware_review
 ```
+
+Add `--no-media` for the faster state and selection check. The historical
+ungated v1 command remains available as
+`src/run_full_match_application_case_study.py`.
 
 The reference percentile is descriptive calibration context—not DRS,
 probability, prediction, quality, tactics, or value. See the
 [case study](match_application_case_study.md) and its
-[frozen protocol](protocols/full_match_application_case_study_v1.md).
+[possession protocol](protocols/possession_aware_defensive_review_v1.md).
 
 Every run writes `event_window_review_summary.md` plus ranked event-window CSV
 and JSON files. Rendered runs add sparse event-review cards, GIFs, and traces.

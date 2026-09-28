@@ -38,9 +38,66 @@ High and low passages had to remain beyond their threshold for at least one
 continuous second. Selection used raw scores only, retained at most two passages
 per category, and preserved overlap between categories.
 
-## Full-match scan
+The original scanner measured relational reorganization anywhere in the match.
+The current defensive-review layer adds conservative context from the public
+Metrica event record: a scored team must be continuously and unambiguously out
+of possession for at least two seconds. This event-derived state is a review
+aid, not provider-ground-truth possession. Ambiguous, in-possession, restart,
+dead-ball, and newly changed-possession frames are excluded rather than guessed.
+The score, thresholds, reference percentiles, and event alignment are unchanged.
 
-![Full-match Game 2 timeline](../figures/presentation/full_match_application_case_study/full_match_timeline.png)
+## Possession-gated defensive review
+
+![Possession-aware Game 2 timeline](../figures/presentation/possession_aware_defensive_review/possession_aware_timeline.png)
+
+The timeline shows the unchanged raw score only during eligible opponent-
+possession spells. Gaps are deliberate: they represent in-possession,
+ambiguous, restart/dead-ball, or insufficient two-second support. Shot and goal
+markers remain descriptive context.
+
+| Category | Defending team | Period | Selected time | Raw team mean | Reference percentile | Continuously out of possession |
+|---|---|---:|---:|---:|---:|---:|
+| High | Away | 2 | 4475.56 s | 6.840 m | 99.96 | 5.04 s |
+| High | Home | 1 | 336.92 s | 6.491 m | 99.93 | 3.16 s |
+| Low | Home | 1 | 2271.80 s | 0.775 m | 1.36 | 26.48 s |
+| Low | Home | 1 | 2707.88 s | 0.837 m | 1.95 | 23.12 s |
+| Rapid increase | Home | 1 | 1734.72 s | 3.988 m | 92.23 | 9.16 s |
+| Rapid increase | Home | 2 | 4443.16 s | 4.725 m | 98.09 | 3.72 s |
+
+### Representative defensive-review replays
+
+**Highest eligible sustained passage**
+
+![Highest eligible sustained passage](../figures/presentation/possession_aware_defensive_review/defensive_high_away_p2_4475.56.gif)
+
+**Lowest eligible sustained passage**
+
+![Lowest eligible sustained passage](../figures/presentation/possession_aware_defensive_review/defensive_low_home_p1_2271.80.gif)
+
+**Largest eligible rapid increase**
+
+![Largest eligible rapid increase](../figures/presentation/possession_aware_defensive_review/defensive_rapid_increase_home_p1_1734.72.gif)
+
+Each overlay says that the opponent had possession at the selected moment and
+reports the uninterrupted out-of-possession duration. It does not claim that
+possession caused the movement or that the defending was good or bad.
+
+### Possession-aware static diagnostics
+
+- [High — Away defending](../figures/presentation/possession_aware_defensive_review/defensive_high_away_p2_4475.56_diagnostic.png)
+- [High — Home defending](../figures/presentation/possession_aware_defensive_review/defensive_high_home_p1_336.92_diagnostic.png)
+- [Low — Home defending, 2271.80 s](../figures/presentation/possession_aware_defensive_review/defensive_low_home_p1_2271.80_diagnostic.png)
+- [Low — Home defending, 2707.88 s](../figures/presentation/possession_aware_defensive_review/defensive_low_home_p1_2707.88_diagnostic.png)
+- [Rapid increase — Home defending, 1734.72 s](../figures/presentation/possession_aware_defensive_review/defensive_rapid_increase_home_p1_1734.72_diagnostic.png)
+- [Rapid increase — Home defending, 4443.16 s](../figures/presentation/possession_aware_defensive_review/defensive_rapid_increase_home_p2_4443.16_diagnostic.png)
+
+## Historical ungated scan
+
+The [original v1 package](../figures/presentation/full_match_application_case_study/manifest.json)
+is preserved byte-for-byte as provenance. It shows relational reorganization
+across the full match before possession gating was added.
+
+![Historical full-match Game 2 timeline](../figures/presentation/full_match_application_case_study/full_match_timeline.png)
 
 The vertical gray lines are the 24 recorded shots; five heavier lines are goals.
 Black symbols show the six frozen selection slots. Because high and rapid
@@ -56,7 +113,7 @@ Away had 83 sustained-high, 66 sustained-low, and 222 rapid-increase episodes.
 Home had 106, 53, and 263 respectively. These are scanner outputs under the
 frozen definitions, not counts of tactics or errors.
 
-## Automatically selected passages
+### Historical automatically selected passages
 
 | Category | Defending team | Period | Peak time | Raw team mean | Reference percentile | One-second change | Other membership |
 |---|---|---:|---:|---:|---:|---:|---|
@@ -73,7 +130,7 @@ them with visually different clips. The low passages are long, sustained
 periods of comparatively little movement relative to the unit. None of these
 descriptions identifies why the defenders moved.
 
-### Representative replays
+### Historical representative replays
 
 **Highest sustained passage**
 
@@ -97,7 +154,7 @@ display ceiling remain unchanged in the scorer and are disclosed by the
 diagnostics. The six deterministic diagnostic images are stored beside these
 GIFs in `figures/presentation/full_match_application_case_study/`.
 
-### Static diagnostics
+### Historical static diagnostics
 
 - [High — Away defending](../figures/presentation/full_match_application_case_study/high_away_p2_5392.20_diagnostic.png)
 - [High — Home defending](../figures/presentation/full_match_application_case_study/high_home_p2_4630.88_diagnostic.png)
@@ -105,6 +162,23 @@ GIFs in `figures/presentation/full_match_application_case_study/`.
 - [Low — Away defending, 3017.48 s](../figures/presentation/full_match_application_case_study/low_away_p2_3017.48_diagnostic.png)
 - [Rapid increase — Away defending](../figures/presentation/full_match_application_case_study/rapid_increase_away_p2_5391.92_diagnostic.png)
 - [Rapid increase — Home defending](../figures/presentation/full_match_application_case_study/rapid_increase_home_p2_4629.20_diagnostic.png)
+
+### Audit of the six historical selections
+
+| Historical selection | Possession-aware classification | Reason |
+|---|---|---|
+| High — Away, 5392.20 s | Transition context | Only 0.56 s continuously out of possession |
+| High — Home, 4630.88 s | Restart/dead ball | Event-derived state was not active possession |
+| Low — Away, 2734.56 s | Ambiguous | Ownership was not established unambiguously |
+| Low — Away, 3017.48 s | Restart/dead ball | Event-derived state was not active possession |
+| Rapid — Away, 5391.92 s | Transition context | Only 0.28 s continuously out of possession |
+| Rapid — Home, 4629.20 s | Restart/dead ball | Event-derived state was not active possession |
+
+This audit is why v2 does not present the old clips as settled defensive phases.
+The old geometry remains valid; only its football-review context has changed.
+The separate transition scan found 337 raw high-or-rapid episodes within the
+frozen two-second change window. That count is descriptive and is not a tally
+of turnovers, tactical transitions, or defensive errors.
 
 ## Event-aligned view
 
@@ -163,20 +237,23 @@ With the public Metrica Sample Games 1 and 2 files in the repository's ignored
 `data/metrica_sample_game_*/` directories:
 
 ```bash
-.venv/bin/python src/run_full_match_application_case_study.py \
-  --output-dir /tmp/moving_the_defense_full_match_case_study
+.venv/bin/python src/run_possession_aware_defensive_review.py \
+  --output-dir /tmp/moving_the_defense_possession_aware_review
 ```
 
-Use `--no-media` for the much faster aggregate/event synchronization check.
-Detailed CSV outputs remain in the chosen local directory. The committed public
-package contains only the compact case study and selected communication media.
+Use `--no-media` for the much faster state/selection check. Detailed frame-state,
+transition, and event CSV outputs remain in the chosen local directory. The
+committed public v2 package contains only its aggregate manifest, timeline, and
+selected communication media. The historical ungated command remains
+`src/run_full_match_application_case_study.py`.
 
 ## What this demonstrates—and what it does not
 
-The tool can deterministically score full-match stable support, identify raw
-high/low/change passages, align public events without distant snapping, and
-prepare a small review queue. An analyst can then open match video and add
-football context manually.
+The tool can deterministically score full-match stable support, separate general
+relational reorganization from possession-gated defensive review and transition
+context, align public events without distant snapping, and prepare a small
+review queue. An analyst can then open match video and add football context
+manually.
 
 The scanner does **not** show that reorganization caused a shot or goal, predicts
 events, identifies marking, diagnoses confusion, grades defending, establishes

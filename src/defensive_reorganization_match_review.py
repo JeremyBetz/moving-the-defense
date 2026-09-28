@@ -930,6 +930,14 @@ def render_reorganization_window(
     png = destination / f"{stem}_diagnostic.png"
     import matplotlib.pyplot as plt
     paths: dict[str, Path] = {"diagnostic_png": png}
+    context_note = None
+    if bool(row.get("defensive_review_eligible", False)):
+        context_note = (
+            "Selected moment · possession: opponent · defensive review eligible: yes · "
+            f"continuously out for {float(row['continuous_out_of_possession_s']):.1f} s"
+        )
+    elif row.get("context_classification") == "possession_transition":
+        context_note = "Context: possession transition"
     if render_gif:
         rendered = render_selected_passage(
             clip,
@@ -942,6 +950,7 @@ def render_reorganization_window(
             playback_fps=playback_fps,
             score_vmax_m=score_vmax_m,
             show_focal_highlight=False,
+            context_note=context_note,
         )
         paths["gif"] = Path(rendered["gif"])
     # Draw last so the committed static diagnostic always retains the explicit
@@ -959,15 +968,17 @@ def render_reorganization_window(
         figure.axes[0].set_xlabel("Time relative to selected moment (s)")
     category = str(row.get("category_memberships", row.get("moment_type", "selected")))
     percentile = row.get("reference_percentile", np.nan)
-    figure.suptitle(
+    title = (
         f"{category.replace('|', ' + ')} · raw team mean {float(row.get('team_score_m', np.nan)):.2f} m"
         + (
             ""
             if not np.isfinite(float(percentile))
             else f" · reference {format_reference_percentile(float(percentile))}"
-        ),
-        fontsize=10,
+        )
     )
+    if context_note:
+        title += f"\n{context_note}"
+    figure.suptitle(title, fontsize=10)
     figure.savefig(png, dpi=160, bbox_inches="tight")
     plt.close(figure)
     return paths

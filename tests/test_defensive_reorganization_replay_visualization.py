@@ -311,6 +311,36 @@ def test_coach_facing_replay_uses_plain_language_without_changing_defaults():
     finish(default)
 
 
+def test_optional_context_note_is_visible_without_changing_default_replay():
+    q = tracking()
+    scores = score(q)
+    note = (
+        "Selected moment · possession: opponent · defensive review eligible: yes · "
+        "continuously out for 5.0 s"
+    )
+    annotated = animate_defensive_reorganization(
+        q, scores, clip_spec(), show_team_meter=False, context_note=note
+    )
+    annotated_text = " ".join(
+        text.get_text()
+        for axis in annotated.figure.axes
+        for text in axis.texts
+    )
+    assert note in annotated_text
+    finish(annotated)
+
+    default = animate_defensive_reorganization(
+        q, scores, clip_spec(), show_team_meter=False
+    )
+    default_text = " ".join(
+        text.get_text()
+        for axis in default.figure.axes
+        for text in axis.texts
+    )
+    assert "defensive review eligible" not in default_text
+    finish(default)
+
+
 def test_unsupported_scores_are_hollow_and_team_meter_is_unavailable():
     q = tracking(missing_frame=10)
     scores = score(q)

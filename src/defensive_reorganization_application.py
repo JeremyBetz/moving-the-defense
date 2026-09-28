@@ -814,6 +814,7 @@ def render_selected_passage(
     show_focal_highlight: bool = False,
     diagnostic_anchor_label: str | None = None,
     coach_facing: bool = False,
+    context_note: str | None = None,
 ) -> dict[str, Path]:
     """Render one caller-selected window using the existing visualization."""
     destination = Path(output_dir)
@@ -843,6 +844,7 @@ def render_selected_passage(
         show_focal_highlight=show_focal_highlight,
         coach_facing=coach_facing,
         show_team_meter=not coach_facing,
+        context_note=context_note,
     )
     gif = export_animation(bundle, destination / f"{stem}.gif")
     plt.close(bundle.figure)

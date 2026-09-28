@@ -348,6 +348,7 @@ def animate_defensive_reorganization(
     show_trails: bool = True,
     show_focal_highlight: bool = True,
     coach_facing: bool = False,
+    context_note: str | None = None,
 ) -> AnimationBundle:
     """Animate committed trailing scores as a retrospective analyst replay."""
     if frame_step < 1 or playback_fps <= 0 or trail_seconds < 0:
@@ -374,13 +375,16 @@ def animate_defensive_reorganization(
         if coach_facing else "Defender-relative movement replay",
         color="#202124", fontsize=13, y=.965,
     )
+    semantics_text = (
+        "Retrospective replay · movement measured over the previous 2 s"
+        if coach_facing else "Retrospective analyst replay · score interval [t−2, t]"
+    )
+    if context_note:
+        semantics_text += f"\n{context_note}"
     semantics = ax.text(
         .01,
         1.02,
-        (
-            "Retrospective replay · movement measured over the previous 2 s"
-            if coach_facing else "Retrospective analyst replay · score interval [t−2, t]"
-        ),
+        semantics_text,
         transform=ax.transAxes,
         fontsize=9,
         color="#202124",

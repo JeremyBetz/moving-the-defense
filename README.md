@@ -110,6 +110,11 @@ sequence is documented in the [API guide](docs/replay_scoring_api.md).
 from defensive_reorganization_match_review import (
     analyze_match_with_reference,
 )
+from possession_aware_defensive_review import (
+    DefensiveReviewEligibilitySpec,
+    build_metrica_possession_context,
+    find_defensive_review_windows,
+)
 
 analysis = analyze_match_with_reference(
     normalized_tracking,
@@ -119,26 +124,42 @@ analysis = analyze_match_with_reference(
     excluded_player_keys=goalkeepers,
 )
 moments = analysis.selected_moments
+
+possession = build_metrica_possession_context(
+    metrica_event_rows,
+    normalized_tracking,
+    match_id="metrica_sample_game_2",
+    source_fps=25.0,
+    spec=DefensiveReviewEligibilitySpec(),
+)
+defensive_review = find_defensive_review_windows(
+    analysis.scores_by_team,
+    pooled_reference,
+    possession,
+)
 ```
 
-The scanner identifies sustained high/low and rapid one-second-change episodes
-from predeclared pooled-reference thresholds. A separate strict event join
-reports the score context preceding recorded shots and goals. Event labels
-organize review; they do not classify tactics, quality, intent, or cause.
+The raw scanner identifies sustained high/low and rapid one-second-change
+episodes from predeclared pooled-reference thresholds. The possession-aware
+layer then keeps defensive-review passages only when the scored team has been
+continuously and unambiguously out of possession for at least two seconds.
+Possession is conservatively reconstructed from Metrica events and is contextual
+metadata, not provider ground truth. Transition/restart passages remain separate.
+A strict event join reports score context preceding shots and goals. None of
+these labels classifies tactics, quality, intent, or cause.
 
 Local CLI over the public Metrica Sample Game 2 files:
 
 ```bash
-.venv/bin/python src/run_full_match_application_case_study.py \
-  --output-dir /tmp/moving_the_defense_full_match_case_study
+.venv/bin/python src/run_possession_aware_defensive_review.py \
+  --output-dir /tmp/moving_the_defense_possession_aware_review
 ```
 
-Use `--no-media` for a faster aggregate/event synchronization pass. The complete
-command creates local detailed tables, while the repository publishes only the
-compact [Game 2 case study](docs/match_application_case_study.md), its timeline,
-six deterministic diagnostics, and two nonredundant representative GIFs. The
-rapid-increase diagnostic remains available, while its near-duplicate GIF is
-intentionally omitted.
+Use `--no-media` for a faster state/selection pass. The complete command creates
+local detailed tables, while the repository publishes only the compact
+[Game 2 case study](docs/match_application_case_study.md), a possession-aware
+timeline, six deterministic diagnostics, and three representative GIFs. The
+historical ungated v1 package remains linked as provenance.
 
 The flow is `football question/events → normalized tracking → trailing scores →`
 `supported ranked windows → human video review`. See the
