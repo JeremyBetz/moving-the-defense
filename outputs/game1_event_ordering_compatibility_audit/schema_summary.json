@@ -1,0 +1,76 @@
+{
+  "audit_id": "game1_event_ordering_compatibility_audit",
+  "provider_documentation": {
+    "documented": "event types, subtypes, possession terminology, and tracking/event synchronization",
+    "event_definitions": "https://github.com/metrica-sports/sample-data/blob/master/documentation/events-definitions.pdf",
+    "event_definitions_sha256": "5afb1ee34931447223ef8b9dc6a30b827fd0ba57ac9b6e2d7125ee87b083a866",
+    "not_documented": "raw CSV Start Frame/Time and End Frame/Time semantics",
+    "sample_repository": "https://github.com/metrica-sports/sample-data"
+  },
+  "relevant_fields": [
+    {
+      "current_use": "ownership evidence",
+      "name": "Team",
+      "nullable": false,
+      "period_basis": null,
+      "semantic_evidence": "project implementation",
+      "units": null
+    },
+    {
+      "current_use": "state-operation category",
+      "name": "Type",
+      "nullable": false,
+      "period_basis": null,
+      "semantic_evidence": "provider event definitions",
+      "units": null
+    },
+    {
+      "current_use": "restart/dead-ball subtype",
+      "name": "Subtype",
+      "nullable": true,
+      "period_basis": null,
+      "semantic_evidence": "provider event definitions",
+      "units": null
+    },
+    {
+      "current_use": "state reset and clock reconciliation",
+      "name": "Period",
+      "nullable": false,
+      "period_basis": "match period",
+      "semantic_evidence": "source schema and project implementation",
+      "units": null
+    },
+    {
+      "current_use": "event ordering and state change",
+      "name": "Start Frame",
+      "nullable": false,
+      "period_basis": "provider frame identifier",
+      "semantic_evidence": "source pattern and project implementation; provider PDF does not define the column",
+      "units": "native frame"
+    },
+    {
+      "current_use": "ordering tie-break and validation",
+      "name": "Start Time [s]",
+      "nullable": false,
+      "period_basis": "match clock",
+      "semantic_evidence": "field label/source synchronization; provider PDF does not define the column",
+      "units": "seconds"
+    },
+    {
+      "current_use": "SHOT GOAL/OUT dead-ball boundary",
+      "name": "End Frame",
+      "nullable": false,
+      "period_basis": "provider frame identifier",
+      "semantic_evidence": "project implementation; provider PDF does not define the column",
+      "units": "native frame"
+    },
+    {
+      "current_use": "validation only",
+      "name": "End Time [s]",
+      "nullable": false,
+      "period_basis": "match clock",
+      "semantic_evidence": "field label; provider PDF does not define the column",
+      "units": "seconds"
+    }
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "audit_id": "game1_event_ordering_compatibility_audit",
+  "checks": {
+    "aggregate_only": true,
+    "required_endpoint_integrity": true,
+    "start_integrity": true
+  },
+  "classification_count": 1,
+  "no_possession_reconstruction": true,
+  "no_raw_rows_serialized": true,
+  "no_score_or_candidate_access": true,
+  "source_unmodified": true,
+  "status": "PASS"
+}

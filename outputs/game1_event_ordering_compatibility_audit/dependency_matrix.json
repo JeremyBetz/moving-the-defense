@@ -1,0 +1,96 @@
+{
+  "audit_id": "game1_event_ordering_compatibility_audit",
+  "operations": [
+    {
+      "needs_end_frame": false,
+      "needs_end_time": false,
+      "needs_start": true,
+      "operation": "PASS possession establishment/change",
+      "reason": "evaluated at the event start"
+    },
+    {
+      "needs_end_frame": false,
+      "needs_end_time": false,
+      "needs_start": true,
+      "operation": "RECOVERY possession establishment/change",
+      "reason": "evaluated at the event start"
+    },
+    {
+      "needs_end_frame": false,
+      "needs_end_time": false,
+      "needs_start": true,
+      "operation": "SET PIECE restart",
+      "reason": "restart frame and pending owner use the event start"
+    },
+    {
+      "needs_end_frame": false,
+      "needs_end_time": false,
+      "needs_start": true,
+      "operation": "SHOT possession evidence",
+      "reason": "possession evidence uses the shot start"
+    },
+    {
+      "needs_end_frame": false,
+      "needs_end_time": false,
+      "needs_start": true,
+      "operation": "BALL LOST ambiguity",
+      "reason": "ambiguity begins at the event start"
+    },
+    {
+      "needs_end_frame": false,
+      "needs_end_time": false,
+      "needs_start": true,
+      "operation": "CHALLENGE",
+      "reason": "inspected at its start but does not establish possession"
+    },
+    {
+      "needs_end_frame": false,
+      "needs_end_time": false,
+      "needs_start": true,
+      "operation": "BALL OUT dead-ball opening",
+      "reason": "dead ball opens at the event start"
+    },
+    {
+      "needs_end_frame": false,
+      "needs_end_time": false,
+      "needs_start": true,
+      "operation": "FAULT RECEIVED dead-ball opening",
+      "reason": "dead ball opens at the event start"
+    },
+    {
+      "needs_end_frame": false,
+      "needs_end_time": false,
+      "needs_start": true,
+      "operation": "CARD dead-ball opening",
+      "reason": "dead ball opens at the event start"
+    },
+    {
+      "needs_end_frame": true,
+      "needs_end_time": false,
+      "needs_start": true,
+      "operation": "SHOT GOAL/OUT dead-ball opening",
+      "reason": "dead ball opens at the recorded End Frame"
+    },
+    {
+      "needs_end_frame": false,
+      "needs_end_time": false,
+      "needs_start": true,
+      "operation": "FORCED-END HALF",
+      "reason": "period-ending state begins at the event start"
+    },
+    {
+      "needs_end_frame": false,
+      "needs_end_time": false,
+      "needs_start": true,
+      "operation": "restart-frame handling",
+      "reason": "SET PIECE start remains dead; possession starts next frame"
+    },
+    {
+      "needs_end_frame": false,
+      "needs_end_time": false,
+      "needs_start": true,
+      "operation": "period boundary",
+      "reason": "state initializes from native period frames and does not carry over"
+    }
+  ]
+}

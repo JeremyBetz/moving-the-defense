@@ -1,0 +1,24 @@
+{
+  "audit_id": "game1_event_ordering_compatibility_audit",
+  "classification": "B. EVENT-TYPE-SPECIFIC COMPATIBILITY JUSTIFIED",
+  "prospective_rule": {
+    "all_events": "require finite whole Start Frame, finite Start Time, provider ordering, exact native-clock reconciliation, and unchanged simultaneous-ownership checks",
+    "applies_identically_to": [
+      "Metrica Sample Game 1",
+      "Metrica Sample Game 2"
+    ],
+    "endpoint_dependent_events": "for SHOT subtypes containing GOAL or OUT, additionally require finite ordered End Frame and End Time and native tracking reconciliation",
+    "forbidden_repairs": [
+      "swap",
+      "clamp",
+      "absolute_duration",
+      "zero_duration",
+      "row_drop"
+    ],
+    "other_events": "preserve and report malformed End metadata but do not reject possession reconstruction because those End fields are not consumed"
+  },
+  "provider_semantics_status": "raw Start/End column semantics are not explicitly defined",
+  "required_endpoint_integrity_passed": true,
+  "source_pattern_evidence": "the sole anomaly is an opening SET PIECE/KICK OFF boundary record; its Start maps exactly to the first native tracking frame while its End precedes support",
+  "start_integrity_passed": true
+}
