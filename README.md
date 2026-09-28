@@ -10,7 +10,19 @@ The directional difference appeared in separate analyses of seven IDSSE and nine
 
 The measurement could organize candidate passages for later video review; its football interpretation and review usefulness remain unvalidated. It does not establish causation, marking responsibility, tactical effectiveness, or attacking value.
 
-**Reproduce and inspect:** start with [REPRODUCE.md](REPRODUCE.md), or browse the [frozen protocols](docs/protocols/), [public result summaries](docs/results/), and [tests](tests/).
+## SSAC27 submission: reviewer quick path
+
+- **Submission artifact:** [Candidate V1 PDF](submission/SSAC27_abstract_candidate_v1.pdf) and its [manifest](submission/ssac27_abstract_candidate_v1_manifest.json).
+- **Canonical text:** [structured abstract and manuscript](docs/manuscript_skeleton.md).
+- **Main evidence:** [Figure 1 — temporal measurement](docs/figures/sloan/temporal_footprint_flagship.svg) and [Figure 2 — directional replication](docs/figures/sloan/directional_replication.svg).
+- **Reproduction:** [human-first paper guide](REPRODUCE.md), [technical guide](docs/reproducibility.md), and [claim-status ledger](docs/claim_status.md).
+- **Public data provenance:** [Metrica Sample Games](https://github.com/metrica-sports/sample-data), [IDSSE/DFL](https://doi.org/10.6084/m9.figshare.28196177.v1), and [SkillCorner Open Data](https://github.com/SkillCorner/opendata).
+
+The two governed figures and the results summarized above are the submission
+evidence. Replays, match-review tools, possession context, ball alignment, and
+attacker-linked review are exploratory analyst applications. They illustrate
+possible workflows but are not additional validation or confirmed paper
+results.
 
 ## Main finding: directional replication
 
@@ -54,6 +66,13 @@ the preceding two seconds; defender-relative path over the subsequent two second
 The fixed Metrica Game 2 passage contrasts absolute defender paths with net
 defender-relative displacement over the same subsequent interval. The statistical
 outcome is accumulated defender-relative path, not the illustrated net arrows.*
+
+## Exploratory analyst applications — not paper evidence
+
+The following artifacts demonstrate how the measurement could support later
+analyst review. They do not change the frozen scientific result or establish
+the football meaning, usefulness, or tactical interpretation of the retrieved
+passages.
 
 ### Illustrative replay
 
