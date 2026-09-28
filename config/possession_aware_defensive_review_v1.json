@@ -1,0 +1,81 @@
+{
+  "protocol_id": "possession_aware_defensive_review_v1",
+  "status": "FROZEN_BEFORE_POSSESSION_AWARE_GAME2_RESCAN",
+  "frozen_date": "2026-09-27",
+  "starting_commit": "988b00baae33db5140c238914307e5c7f9769050",
+  "measurement": {
+    "raw_name": "team_relational_reorganization",
+    "raw_units": "metres",
+    "score_changed": false,
+    "thresholds_changed": false,
+    "reference_percentiles_changed": false,
+    "production_scorer_path": "src/defensive_reorganization_replay.py",
+    "production_scorer_sha256": "6b5f33de5a034ae4000270e847ebcefe0164b1df1d21d4f3a7ed8adf9bd24a8a"
+  },
+  "source": {
+    "provider": "Metrica Sports public sample data",
+    "game": 2,
+    "match_id": "metrica_sample_game_2",
+    "source_fps": 25.0,
+    "event_path": "data/metrica_sample_game_2/Sample_Game_2_RawEventsData.csv",
+    "event_sha256": "edf31a18599265b77a8baf150f2ce6d89456fb0324b62ea7a391229657a619ba",
+    "required_event_columns": [
+      "Team", "Type", "Subtype", "Period", "Start Frame", "Start Time [s]",
+      "End Frame", "End Time [s]"
+    ],
+    "possession_establishing_types": ["PASS", "RECOVERY", "SET PIECE", "SHOT"],
+    "non_establishing_types": ["CHALLENGE"]
+  },
+  "frozen_dependencies_sha256": {
+    "src/defensive_reorganization_match_review.py": "55a60092e91051ce6fc501bc9efa7bc9622d9f9836a8af7793b9770dbcbdaca1",
+    "src/run_metrica_game2_application.py": "81487099bf960389e9bdc6e59272cbff40dc7bc385f6f23b40d4284081f9b819",
+    "src/run_full_match_application_case_study.py": "8c7df48f8b5dce85cd5555d87ea738f99a4a6a6285072437135c14b96e886886",
+    "tests/test_defensive_reorganization_match_review.py": "272b0b7bc5b33c2f2b2c7a8260a1a85a1f4b9e085afe45e6fc30276c65699cdf"
+  },
+  "state_machine": {
+    "states": ["in_possession", "out_of_possession", "dead_ball_or_restart", "ambiguous"],
+    "ball_lost_creates_ambiguity": true,
+    "dead_ball_start_types": ["BALL OUT", "FAULT RECEIVED", "CARD"],
+    "dead_ball_shot_subtype_tokens": ["GOAL", "OUT"],
+    "forced_end_half_token": "FORCED-END HALF",
+    "restart_type": "SET PIECE",
+    "restart_frame_excluded": true,
+    "period_state_carry": false,
+    "simultaneous_priority": ["period_or_dead_ball_boundary", "restart", "possession_evidence"],
+    "infer_from_proximity_or_ball_location": false,
+    "silent_gap_expiry": false
+  },
+  "eligibility": {
+    "continuous_out_of_possession_seconds": 2.0,
+    "continuous_out_of_possession_native_increments": 50,
+    "inclusive_at_boundary": true,
+    "transition_radius_seconds": 2.0,
+    "transition_interval_closed": true
+  },
+  "moments": {
+    "high_reference_quantile": 0.95,
+    "low_reference_quantile": 0.05,
+    "rapid_change_seconds": 1.0,
+    "rapid_reference_quantile": 0.95,
+    "high_low_minimum_duration_seconds": 1.0,
+    "selection_per_category": 2,
+    "render_context_seconds_each_side": 5.0,
+    "rapid_requires_both_endpoints_eligible": true,
+    "preserve_cross_category_overlap": true,
+    "relaxation_if_shortfall": false,
+    "transition_categories": ["high", "rapid_increase"]
+  },
+  "publication": {
+    "historical_v1_immutable": true,
+    "new_package_id": "possession_aware_defensive_review_v1",
+    "aggregate_only": true,
+    "detailed_state_rows_committed": false,
+    "maximum_unique_gifs": 3,
+    "display_scale_metres": [0.0, 6.25]
+  },
+  "prohibited": [
+    "metrica_game_3", "bounded_drs", "protected_outcomes", "score_changes",
+    "threshold_changes", "event_alignment_changes", "renderer_default_changes",
+    "causal_claims", "predictive_claims", "tactical_quality_claims"
+  ]
+}
