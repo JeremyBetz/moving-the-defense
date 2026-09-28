@@ -107,7 +107,9 @@ def _normalize_native_frames(native_frames: pd.DataFrame, source_fps: float) -> 
     return frames
 
 
-def _normalize_events(events: pd.DataFrame) -> pd.DataFrame:
+def _normalize_events(
+    events: pd.DataFrame, *, block_required_malformed: bool = True
+) -> pd.DataFrame:
     required = {
         "Team", "Type", "Subtype", "Period", "Start Frame", "Start Time [s]",
         "End Frame", "End Time [s]",
@@ -124,20 +126,58 @@ def _normalize_events(events: pd.DataFrame) -> pd.DataFrame:
     q["team_key"] = "metrica:" + q["Team"]
     q["Period"] = _whole_frame(q["Period"], "Period")
     q["start_frame"] = _whole_frame(q["Start Frame"], "Start Frame")
-    q["end_frame"] = _whole_frame(q["End Frame"], "End Frame")
     q["start_time"] = pd.to_numeric(q["Start Time [s]"], errors="raise")
-    q["end_time"] = pd.to_numeric(q["End Time [s]"], errors="raise")
-    if not np.isfinite(q[["start_time", "end_time"]].to_numpy(float)).all():
-        raise ValueError("event times must be finite")
-    if (q["end_frame"] < q["start_frame"]).any() or (q["end_time"] < q["start_time"]).any():
-        raise ValueError("event end precedes event start")
+    if not np.isfinite(q["start_time"].to_numpy(float)).all():
+        raise ValueError("event start times must be finite")
+    if np.any(np.diff(q["Period"].to_numpy(np.int64)) < 0):
+        raise ValueError("event periods must remain in provider order")
+    for period, group in q.groupby("Period", sort=False):
+        if (
+            np.any(np.diff(group["start_frame"].to_numpy(np.int64)) < 0)
+            or np.any(np.diff(group["start_time"].to_numpy(float)) < 0)
+        ):
+            raise ValueError(f"event starts are disordered in period {period}")
+
+    q["endpoint_required"] = q["Type"].eq("SHOT") & q["Subtype"].str.contains(
+        "GOAL|OUT", regex=True
+    )
+    raw_end_frame = pd.to_numeric(q["End Frame"], errors="coerce").to_numpy(float)
+    raw_end_time = pd.to_numeric(q["End Time [s]"], errors="coerce").to_numpy(float)
+    end_frame_finite = np.isfinite(raw_end_frame)
+    end_frame_whole = end_frame_finite & np.equal(raw_end_frame, np.floor(raw_end_frame))
+    end_time_finite = np.isfinite(raw_end_time)
+    end_frame_ordered = end_frame_whole & (raw_end_frame >= q["start_frame"].to_numpy(float))
+    end_time_ordered = end_time_finite & (raw_end_time >= q["start_time"].to_numpy(float))
+    malformed_end = ~(end_frame_ordered & end_time_ordered)
+    endpoint_required = q["endpoint_required"].to_numpy(bool)
+    endpoint_qc = {
+        "total_event_count": int(len(q)),
+        "endpoint_required_count": int(endpoint_required.sum()),
+        "malformed_unused_end_count": int((malformed_end & ~endpoint_required).sum()),
+        "malformed_required_end_count": int((malformed_end & endpoint_required).sum()),
+        "tolerated_unused_end_count": int((malformed_end & ~endpoint_required).sum()),
+        "blocked_required_end_count": int((malformed_end & endpoint_required).sum()),
+    }
+    if block_required_malformed and endpoint_qc["blocked_required_end_count"]:
+        raise ValueError("required Metrica event endpoint is malformed")
+    q["end_frame"] = np.where(end_frame_whole, raw_end_frame, np.nan)
+    q["end_time"] = np.where(end_time_finite, raw_end_time, np.nan)
+    q["end_metadata_malformed"] = malformed_end
     establishing = q["Type"].isin({"PASS", "RECOVERY", "SET PIECE", "SHOT"})
     conflicts = q.loc[establishing].groupby(["Period", "start_frame"])["team_key"].nunique()
     if conflicts.gt(1).any():
         raise ValueError("conflicting possession teams share one provider frame")
-    return q.sort_values(
+    normalized = q.sort_values(
         ["Period", "start_frame", "start_time", "provider_event_index"], kind="mergesort"
     ).reset_index(drop=True)
+    normalized.attrs["event_endpoint_qc"] = endpoint_qc
+    return normalized
+
+
+def metrica_event_endpoint_qc(events: pd.DataFrame) -> Mapping[str, int]:
+    """Return aggregate endpoint QC under the frozen event-type-specific rule."""
+    normalized = _normalize_events(events, block_required_malformed=False)
+    return MappingProxyType(dict(normalized.attrs["event_endpoint_qc"]))
 
 
 def build_metrica_possession_context(
@@ -161,6 +201,7 @@ def build_metrica_possession_context(
     if set(frames["match_id"].astype(str)) != {str(match_id)}:
         raise ValueError("native frames do not match the requested match")
     q = _normalize_events(events)
+    endpoint_qc = dict(q.attrs["event_endpoint_qc"])
     if not set(q["Period"]).issubset(set(frames["period"])):
         raise ValueError("event period is absent from native frames")
 
@@ -170,10 +211,31 @@ def build_metrica_possession_context(
     for period, period_frames in frames.groupby("period", sort=True):
         period_events = q.loc[q["Period"].eq(period)].copy()
         frame_ids = set(period_frames["frame_int"].tolist())
-        in_range = period_events["start_frame"].between(min(frame_ids), max(frame_ids))
-        missing_start = set(period_events.loc[in_range, "start_frame"]) - frame_ids
+        native_time_by_frame = period_frames.set_index("frame_int")["time_match_s"]
+        missing_start = set(period_events["start_frame"]) - frame_ids
         if missing_start:
             raise ValueError("event start frame cannot be reconciled to native tracking")
+        event_start_time = period_events["start_frame"].map(native_time_by_frame).to_numpy(float)
+        if not np.allclose(
+            event_start_time,
+            period_events["start_time"].to_numpy(float),
+            atol=1e-7,
+            rtol=0,
+        ):
+            raise ValueError("event start time cannot be reconciled to native tracking")
+        required_endpoints = period_events.loc[period_events["endpoint_required"]]
+        required_end_frames = required_endpoints["end_frame"].astype(np.int64)
+        missing_end = set(required_end_frames) - frame_ids
+        if missing_end:
+            raise ValueError("required event end frame cannot be reconciled to native tracking")
+        required_end_time = required_end_frames.map(native_time_by_frame).to_numpy(float)
+        if not np.allclose(
+            required_end_time,
+            required_endpoints["end_time"].to_numpy(float),
+            atol=1e-7,
+            rtol=0,
+        ):
+            raise ValueError("required event end time cannot be reconciled to native tracking")
         starts = {int(key): group for key, group in period_events.groupby("start_frame", sort=False)}
         end_dead = period_events.loc[
             period_events["Type"].eq("SHOT")
@@ -297,10 +359,12 @@ def build_metrica_possession_context(
             )
         )
         expanded.append(table.loc[:, POSSESSION_CONTEXT_COLUMNS])
-    return pd.concat(expanded, ignore_index=True).sort_values(
+    result = pd.concat(expanded, ignore_index=True).sort_values(
         ["match_id", "team_key", "period", "time_match_s", "frame_id_provider"],
         kind="mergesort",
     ).reset_index(drop=True)
+    result.attrs["event_endpoint_qc"] = endpoint_qc
+    return result
 
 
 def _context_clusters(candidates: pd.DataFrame, cadence: float, *, transition: bool = False):

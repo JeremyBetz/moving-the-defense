@@ -29,8 +29,10 @@ from possession_aware_defensive_review import (
     IN_POSSESSION,
     OUT_OF_POSSESSION,
     DefensiveReviewEligibilitySpec,
+    _normalize_events,
     build_metrica_possession_context,
     find_defensive_review_windows,
+    metrica_event_endpoint_qc,
     possession_state_summary,
 )
 
@@ -123,12 +125,16 @@ def test_period_boundary_never_carries_possession_and_conflicts_fail_closed():
         event("Home", "PASS", 0, period=1),
         event("Away", "PASS", 51, period=2),
     ])
+    source.loc[1, ["Start Time [s]", "End Time [s]"]] = 20.0
     context = build_metrica_possession_context(source, native, match_id="m")
     home = context.loc[context.team_key.eq("metrica:Home")]
     assert home.loc[home.period.eq(2)].iloc[0].possession_state == OUT_OF_POSSESSION
     conflicting = pd.DataFrame([event("Home", "PASS", 0), event("Away", "RECOVERY", 0)])
     with pytest.raises(ValueError, match="conflicting possession teams"):
         build_metrica_possession_context(conflicting, frames(10), match_id="m")
+    contradictory = pd.DataFrame([event("Home", "PASS", 0, period=2)])
+    with pytest.raises(ValueError, match="event period is absent"):
+        build_metrica_possession_context(contradictory, frames(10), match_id="m")
 
 
 def test_challenge_never_establishes_possession_and_nonfinite_clock_fails():
@@ -136,8 +142,70 @@ def test_challenge_never_establishes_possession_and_nonfinite_clock_fails():
     context = build_metrica_possession_context(source, frames(30), match_id="m")
     assert set(context.possession_state) == {AMBIGUOUS}
     bad = source.copy(); bad.loc[0, "Start Time [s]"] = np.nan
-    with pytest.raises(ValueError, match="event times must be finite"):
+    with pytest.raises(ValueError, match="event start times must be finite"):
         build_metrica_possession_context(bad, frames(30), match_id="m")
+
+
+def test_unused_malformed_endpoint_is_preserved_tolerated_and_reported():
+    source = pd.DataFrame([
+        event("Home", "SET PIECE", 1, subtype="KICK OFF", end_frame=0),
+        event("Home", "PASS", 2),
+    ])
+    original = source.copy(deep=True)
+    normalized = _normalize_events(source)
+    assert normalized.loc[0, "End Frame"] == 0
+    assert normalized.loc[0, "End Time [s]"] == 0.0
+    assert bool(normalized.loc[0, "end_metadata_malformed"])
+    qc = metrica_event_endpoint_qc(source)
+    assert dict(qc) == {
+        "total_event_count": 2,
+        "endpoint_required_count": 0,
+        "malformed_unused_end_count": 1,
+        "malformed_required_end_count": 0,
+        "tolerated_unused_end_count": 1,
+        "blocked_required_end_count": 0,
+    }
+    context = build_metrica_possession_context(source, frames(10), match_id="m")
+    assert context.attrs["event_endpoint_qc"] == dict(qc)
+    pd.testing.assert_frame_equal(source, original)
+
+
+def test_malformed_required_endpoint_blocks_without_repair():
+    source = pd.DataFrame([
+        event("Home", "SHOT", 2, subtype="ON TARGET-GOAL", end_frame=1),
+    ])
+    original = source.copy(deep=True)
+    qc = metrica_event_endpoint_qc(source)
+    assert qc["malformed_required_end_count"] == 1
+    assert qc["blocked_required_end_count"] == 1
+    with pytest.raises(ValueError, match="required Metrica event endpoint is malformed"):
+        build_metrica_possession_context(source, frames(10), match_id="m")
+    pd.testing.assert_frame_equal(source, original)
+
+
+def test_disordered_or_unreconciled_start_still_blocks():
+    disordered = pd.DataFrame([event("Home", "PASS", 2), event("Home", "PASS", 1)])
+    with pytest.raises(ValueError, match="event starts are disordered"):
+        build_metrica_possession_context(disordered, frames(10), match_id="m")
+    mismatch = pd.DataFrame([event("Home", "PASS", 2)])
+    mismatch.loc[0, "Start Time [s]"] = 0.09
+    mismatch.loc[0, "End Time [s]"] = 0.09
+    with pytest.raises(ValueError, match="start time cannot be reconciled"):
+        build_metrica_possession_context(mismatch, frames(10), match_id="m")
+
+
+def test_required_endpoint_must_reconcile_to_native_tracking():
+    missing = pd.DataFrame([
+        event("Home", "SHOT", 2, subtype="ON TARGET-GOAL", end_frame=20),
+    ])
+    with pytest.raises(ValueError, match="required event end frame cannot be reconciled"):
+        build_metrica_possession_context(missing, frames(10), match_id="m")
+    mismatch = pd.DataFrame([
+        event("Home", "SHOT", 2, subtype="ON TARGET-GOAL", end_frame=3),
+    ])
+    mismatch.loc[0, "End Time [s]"] = 0.13
+    with pytest.raises(ValueError, match="required event end time cannot be reconciled"):
+        build_metrica_possession_context(mismatch, frames(10), match_id="m")
 
 
 def test_defensive_selector_keeps_thresholds_but_excludes_ineligible_peaks_and_splits_states():
@@ -256,3 +324,24 @@ def test_public_v2_package_is_aggregate_and_historical_v1_bytes_are_unchanged():
     v1_manifest = json.loads((v1 / "manifest.json").read_text())
     for name, expected_hash in v1_manifest["files_sha256"].items():
         assert hashlib.sha256((v1 / name).read_bytes()).hexdigest() == expected_hash
+
+
+def test_endpoint_compatibility_qc_is_aggregate_and_complete():
+    qc_path = ROOT / "outputs/metrica_event_endpoint_compatibility/compatibility_qc.json"
+    qc = json.loads(qc_path.read_text())
+    assert qc["status"] == "COMPATIBILITY_RULE_IMPLEMENTED_AND_VALIDATED"
+    assert qc["no_provider_rows_serialized"] is True
+    assert qc["games"]["game_1"]["endpoint_qc"] == {
+        "blocked_required_end_count": 0,
+        "endpoint_required_count": 15,
+        "malformed_required_end_count": 0,
+        "malformed_unused_end_count": 1,
+        "tolerated_unused_end_count": 1,
+        "total_event_count": 1745,
+    }
+    assert qc["games"]["game_2"]["endpoint_qc"]["malformed_unused_end_count"] == 0
+    serialized = json.dumps(qc).lower()
+    assert not any(
+        forbidden in serialized
+        for forbidden in ("start time [s]", "end time [s]", "frame_id_provider", "player_key")
+    )
