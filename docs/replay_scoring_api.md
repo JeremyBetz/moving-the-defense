@@ -523,6 +523,61 @@ decompositions remain local. See the
 [frozen protocol](protocols/ball_alignment_reorganization_review_v1.md) and
 [closed result](results/ball_alignment_reorganization_review_v1.md).
 
+### Attacker-linked off-ball review
+
+`src/attacker_linked_reorganization_review.py` adds a provider-neutral,
+descriptive layer after the existing rapid, possession, trajectory-integrity
+and ball-alignment gates. It accepts normalized attacker, defender and ball
+tracking plus the already classified low-ballward episodes; provider loading
+remains in `src/run_attacker_linked_reorganization_review.py`.
+
+```python
+from attacker_linked_reorganization_review import (
+    AttackerLinkedReviewSpec,
+    classify_episode_links,
+    derive_reference_thresholds,
+    rank_attacker_linked_episodes,
+    summarize_off_ball_attackers,
+    summarize_pair_geometry,
+)
+
+spec = AttackerLinkedReviewSpec()
+attackers = summarize_off_ball_attackers(attacker_xy, ball_xy, attacker_keys, spec=spec)
+pairs = summarize_pair_geometry(
+    attacker_xy,
+    defender_xy,
+    attacker_keys,
+    defender_keys,
+    defender_relative_paths_m,
+    attackers,
+    spec=spec,
+)
+thresholds = derive_reference_thresholds(reference_attacker_paths, reference_pair_paths)
+episode = classify_episode_links(attackers, pairs, thresholds, spec=spec)
+ranked = rank_attacker_linked_episodes(episode_table)
+```
+
+The nearest attacker to the ball at each frame is treated as on ball; exact
+ties use canonical key order. An attacker must be off ball for at least 41 of
+51 smoothed frames. A strong link additionally requires an attacker path at or
+above the frozen reference P75, a top-three defender contributor, and one of
+the frozen distance, distance-change, or relative-vector-path conditions.
+“Linked” therefore means concurrent geometric criteria only—not marking,
+attacker influence, tactical effectiveness, space creation, or value.
+
+Reproduce the aggregate-only public application package with:
+
+```bash
+.venv/bin/python src/run_attacker_linked_reorganization_review.py \
+  --output-dir /tmp/moving_the_defense_attacker_linked_review
+```
+
+The runner freezes anonymous Games 1–2 reference thresholds before evaluating
+Game 2, publishes only episode-local labels and compact aggregate artifacts,
+and retains provider identities and detailed pair rows locally. See the
+[protocol](protocols/attacker_linked_off_ball_reorganization_review_v1.md) and
+[closed result](results/attacker_linked_off_ball_reorganization_review_v1.md).
+
 Every run writes `event_window_review_summary.md` plus ranked event-window CSV
 and JSON files. Rendered runs add sparse event-review cards, GIFs, and traces.
 Metric traces, event details, player contributions, CSV, and Parquet outputs

@@ -182,6 +182,15 @@ aligned or directed away. The public [low/high contrast](docs/match_application_
 is descriptive review context only—it does not infer cause, defensive quality,
 or tactical success.
 
+A final descriptive layer reviews substantial off-ball attacker movement that
+co-occurs with spatially related movement by the leading defender contributors
+in integrity-clean, open-play, low-ballward passages. The public
+[distributed, localized and no-link examples](docs/match_application_case_study.md#co-occurring-off-ball-attacker-movement)
+use episode-local player labels and frozen Games 1–2 reference thresholds.
+“Linked” means only that the geometric review rules were satisfied together;
+it does not infer marking, causal attacker influence, tactical success, space
+creation, or player value.
+
 The flow is `football question/events → normalized tracking → trailing scores →`
 `supported ranked windows → human video review`. See the
 [API contract](docs/replay_scoring_api.md) and

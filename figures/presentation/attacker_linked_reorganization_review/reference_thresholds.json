@@ -1,0 +1,14 @@
+{
+  "attacker_count": 212,
+  "attacker_path_p75_m": 7.698808811507602,
+  "config_sha256": "6ef73a503fc6d2e8b86482ae4a852d552ec485cc9b2f9b3d763ed3b8e128ede1",
+  "pair_count": 636,
+  "protocol_sha256": "726e246d7597592b1ae390352afb8bed4f1e43c2ae76793771a500102a7a4275",
+  "quantile_method": "numpy_linear",
+  "relative_vector_path_p75_m": 7.981480549844381,
+  "status": "REFERENCE_THRESHOLDS_FROZEN_BEFORE_GAME2_CANDIDATE_EXPOSURE",
+  "support_exclusions": {
+    "game1": 0,
+    "game2": 0
+  }
+}

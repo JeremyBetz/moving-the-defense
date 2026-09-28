@@ -136,6 +136,47 @@ that an attacker caused the movement, that the unit defended well or badly, or
 that movement toward the ball was desirable. The complete aggregate audit and
 media hashes are in the [package manifest](../figures/presentation/ball_alignment_reorganization_review/manifest.json).
 
+## Co-occurring off-ball attacker movement
+
+For integrity-clean, possession-valid, open-play, low-ballward rapid passages,
+the next review question is whether substantial off-ball attacker movement
+occurred alongside spatially related movement by the leading defender
+contributors. At each frame, the attacker nearest the ball is excluded;
+eligible attackers must be off ball for at least 41 of the 51 smoothed frames.
+The rules do not infer marking or responsibility.
+
+The aggregate Games 1–2 reference froze an attacker-path P75 of **7.699 m** and
+an attacker–defender relative-vector-path P75 of **7.981 m** before Game 2
+candidate identities were exposed. Among 12 qualifying Game 2 passages, five
+had at least three strong attacker–defender links (`distributed`), three had
+one or two (`localized`), and four had none.
+
+**Distributed co-occurrence — 12 strong links**
+
+![Distributed attacker-linked example](../figures/presentation/attacker_linked_reorganization_review/distributed_home_p2_4443.16.gif)
+
+[Open the distributed diagnostic](../figures/presentation/attacker_linked_reorganization_review/distributed_home_p2_4443.16_diagnostic.png)
+
+**Localized co-occurrence — two strong links**
+
+![Localized attacker-linked example](../figures/presentation/attacker_linked_reorganization_review/localized_home_p2_5355.64.gif)
+
+[Open the localized diagnostic](../figures/presentation/attacker_linked_reorganization_review/localized_home_p2_5355.64_diagnostic.png)
+
+**No-link contrast**
+
+![No-link attacker example](../figures/presentation/attacker_linked_reorganization_review/none_home_p1_978.32.gif)
+
+[Open the no-link diagnostic](../figures/presentation/attacker_linked_reorganization_review/none_home_p1_978.32_diagnostic.png)
+
+The Home-period-2 passage at 4443.16 s contains substantial off-ball
+association under these frozen rules: eight eligible off-ball attackers and 12
+strong links across the three leading defender contributors. This means the
+passage is not described only by ball flight or a shape reset, but it still does
+not show that an attacker caused the defensive movement. See the
+[closed result](results/attacker_linked_off_ball_reorganization_review_v1.md)
+and [package manifest](../figures/presentation/attacker_linked_reorganization_review/manifest.json).
+
 ## Historical possession-gated level review
 
 High and low passages answer a different question: when was the absolute raw

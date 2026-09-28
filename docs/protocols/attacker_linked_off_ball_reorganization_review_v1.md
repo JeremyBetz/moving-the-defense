@@ -109,4 +109,3 @@ Construct the anonymous reference gate first, then evaluate candidates, select
 examples, and render. Repeat mechanically in an isolated destination and require
 byte-identical governed outputs before promotion. Preserve null or sparse
 results without changing thresholds, categories, or clips.
-
