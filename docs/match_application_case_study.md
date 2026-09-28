@@ -97,6 +97,15 @@ display ceiling remain unchanged in the scorer and are disclosed by the
 diagnostics. The six deterministic diagnostic images are stored beside these
 GIFs in `figures/presentation/full_match_application_case_study/`.
 
+### Static diagnostics
+
+- [High — Away defending](../figures/presentation/full_match_application_case_study/high_away_p2_5392.20_diagnostic.png)
+- [High — Home defending](../figures/presentation/full_match_application_case_study/high_home_p2_4630.88_diagnostic.png)
+- [Low — Away defending, 2734.56 s](../figures/presentation/full_match_application_case_study/low_away_p2_2734.56_diagnostic.png)
+- [Low — Away defending, 3017.48 s](../figures/presentation/full_match_application_case_study/low_away_p2_3017.48_diagnostic.png)
+- [Rapid increase — Away defending](../figures/presentation/full_match_application_case_study/rapid_increase_away_p2_5391.92_diagnostic.png)
+- [Rapid increase — Home defending](../figures/presentation/full_match_application_case_study/rapid_increase_home_p2_4629.20_diagnostic.png)
+
 ## Event-aligned view
 
 All 24 Game 2 shots matched a supported native tracking frame within the frozen
