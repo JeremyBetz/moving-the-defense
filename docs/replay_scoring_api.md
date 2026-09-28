@@ -198,7 +198,7 @@ selection.
 
 ## Pooled-reference full-match scanner
 
-`src/full_match_application_case_study.py` adds a separate opt-in application
+`src/defensive_reorganization_match_review.py` adds a separate opt-in application
 layer without changing `discover_moments(...)` or the event-review dashboard.
 Its `PooledScoreReference` stores sorted raw player, team, and one-second-change
 reference arrays in memory. Player and team empirical percentiles are always
@@ -226,7 +226,7 @@ from pathlib import Path
 import pandas as pd
 
 from defensive_reorganization_application import score_stable_runs
-from full_match_application_case_study import (
+from defensive_reorganization_match_review import (
     ReferenceMomentSpec,
     align_events_to_reference,
     analyze_match_with_reference,
@@ -320,7 +320,7 @@ untracked. Other providers enter at `normalized_tracking`; the scorer and
 application layer do not accept raw provider objects.
 
 ```python
-from full_match_application_case_study import (
+from defensive_reorganization_match_review import (
     ReferenceMomentSpec,
     analyze_match_with_reference,
     align_events_to_reference,

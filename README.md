@@ -107,7 +107,7 @@ boundary for analysts bringing another provider adapter; its complete first-use
 sequence is documented in the [API guide](docs/replay_scoring_api.md).
 
 ```python
-from full_match_application_case_study import (
+from defensive_reorganization_match_review import (
     analyze_match_with_reference,
 )
 

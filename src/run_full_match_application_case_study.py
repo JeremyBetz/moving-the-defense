@@ -12,7 +12,7 @@ import numpy as np
 import pandas as pd
 
 from defensive_reorganization_application import score_stable_runs
-from full_match_application_case_study import (
+from defensive_reorganization_match_review import (
     ReferenceMomentSpec,
     align_events_to_reference,
     analyze_match_with_reference,

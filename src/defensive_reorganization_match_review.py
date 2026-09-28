@@ -1,4 +1,4 @@
-"""Reference-calibrated full-match application helpers.
+"""Reference-calibrated defensive-reorganization match-review helpers.
 
 This module is an analyst-facing wrapper around the committed retrospective
 scorer.  Raw metres remain authoritative; empirical reference percentiles are

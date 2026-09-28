@@ -18,7 +18,7 @@ from defensive_reorganization_replay import (
     SUPPORTED,
     DefensiveReorganizationScores,
 )
-from full_match_application_case_study import (
+from defensive_reorganization_match_review import (
     PooledScoreReference,
     ReferenceMatchAnalysis,
     ReferenceMomentSpec,
@@ -365,7 +365,7 @@ def test_arbitrary_window_renderer_keeps_fixed_scale_and_static_only(tmp_path, m
         captured.update(kwargs)
         return plt.figure()
 
-    import full_match_application_case_study as module
+    import defensive_reorganization_match_review as module
 
     monkeypatch.setattr(module, "plot_defensive_reorganization_diagnostic", fake_plot)
     paths = render_reorganization_window(
