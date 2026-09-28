@@ -1,7 +1,7 @@
 # Project 1 post-submission application audit v1
 
-**Status:** frozen before application hardening  
-**Frozen:** 2026-09-28  
+**Status:** frozen before application hardening
+**Frozen:** 2026-09-28
 **Starting HEAD:** `6ecab49d8a1b663f9d962ef218e78992b7a2d3d3`
 
 ## Purpose

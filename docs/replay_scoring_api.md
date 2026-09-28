@@ -198,6 +198,45 @@ selection.
 
 ## Pooled-reference full-match scanner
 
+### Current analyst facade
+
+For first use, prefer the compact facade over manually joining historical
+research-stage modules:
+
+```python
+from match_reorganization_review import analyze_match_reorganization
+
+review = analyze_match_reorganization(
+    ball_alignment_episode_records,
+    attacker_linked_episode_records,
+)
+
+review.rapid_episodes
+review.integrity_clean
+review.low_ballward
+review.high_ballward
+review.attacker_linked
+review.representative_examples  # valid and integrity-clean only
+review.diagnostic_examples      # valid special/context contrasts
+review.rejected_examples        # failed support or integrity
+```
+
+The facade only composes frozen fields. It does not calculate a new score,
+relax a gate or select by timestamp. Current timestamps are regression-test
+expectations, never production selection rules.
+
+```bash
+.venv/bin/python src/run_match_reorganization_demo.py \
+  --game 2 --data-root data \
+  --output-dir /tmp/moving_the_defense_match_demo --no-media
+```
+
+The command validates closed package hashes and writes four separate CSV queues
+plus a summary. Use `--render-media` to copy valid and diagnostic governed
+media; rejected media are never copied as defaults. This fast path does not
+rerun the historical pipelines. The commands below remain the full public-data
+reproduction routes.
+
 `src/defensive_reorganization_match_review.py` adds a separate opt-in application
 layer without changing `discover_moments(...)` or the event-review dashboard.
 Its `PooledScoreReference` stores sorted raw player, team, and one-second-change

@@ -117,55 +117,47 @@ tactical logic.
 
 ### Apply the metric to a match
 
-The pooled-reference scanner keeps raw metres authoritative while adding a
-descriptive Games 1–2 reference percentile:
+#### Analyst demo
 
-The command-line workflow below is the complete end-to-end route for the public
-Metrica case study. The Python interface is the normalized-data integration
-boundary for analysts bringing another provider adapter; its complete first-use
-sequence is documented in the [API guide](docs/replay_scoring_api.md).
+The current demo separates five application layers: **team relational
+reorganization** is the raw possession-agnostic score; **defensive
+reorganization** adds valid defending context; **rapid defensive
+reorganization** retrieves frozen one-second rises; **ball alignment** describes
+movement orientation; and **attacker-linked review** describes concurrent
+off-ball geometry only.
+
+Build the compact Game 2 review from the hash-validated closed public packages:
+
+```bash
+.venv/bin/python src/run_match_reorganization_demo.py \
+  --game 2 --data-root data \
+  --output-dir /tmp/moving_the_defense_match_demo --no-media
+```
+
+Use `--render-media` instead of `--no-media` to copy the deterministically
+selected governed media into the local package. The fast demo does not rerun the
+historical Games 1–2 pipelines; their full reproduction commands remain in the
+[API guide](docs/replay_scoring_api.md).
+
+The facade keeps valid examples, special-context diagnostics and rejected
+integrity examples structurally separate:
 
 ```python
-from defensive_reorganization_match_review import (
-    analyze_match_with_reference,
-)
-from possession_aware_defensive_review import (
-    DefensiveReviewEligibilitySpec,
-    build_metrica_possession_context,
-    find_defensive_review_windows,
-)
-from rapid_change_defensive_review import (
-    RapidReviewPrioritySpec,
-    find_rapid_reorganization_windows,
+from match_reorganization_review import analyze_match_reorganization
+
+review = analyze_match_reorganization(
+    ball_alignment_episode_records,
+    attacker_linked_episode_records,
 )
 
-analysis = analyze_match_with_reference(
-    normalized_tracking,
-    defending_team_keys=("metrica:Home", "metrica:Away"),
-    reference=pooled_reference,
-    smoothing_frames=7,
-    excluded_player_keys=goalkeepers,
-)
-moments = analysis.selected_moments
-
-possession = build_metrica_possession_context(
-    metrica_event_rows,
-    normalized_tracking,
-    match_id="metrica_sample_game_2",
-    source_fps=25.0,
-    spec=DefensiveReviewEligibilitySpec(),
-)
-defensive_review = find_defensive_review_windows(
-    analysis.scores_by_team,
-    pooled_reference,
-    possession,
-)
-rapid_review = find_rapid_reorganization_windows(
-    defensive_review,
-    analysis.scores_by_team,
-    spec=RapidReviewPrioritySpec(),
-)
+valid = review.representative_examples
+special_context = review.diagnostic_examples
+rejected = review.rejected_examples
 ```
+
+The pooled-reference scanner keeps raw metres authoritative while adding a
+descriptive Games 1–2 reference percentile. Advanced normalized-data use
+remains documented in the API guide.
 
 The primary review queue asks when the defensive unit began reorganizing much
 more strongly than one second earlier. It ranks possession-eligible rapid rises

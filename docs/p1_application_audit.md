@@ -1,7 +1,7 @@
 # Project 1 application audit
 
-**Audit date:** 2026-09-28  
-**Scope:** application and public-demo layers only  
+**Audit date:** 2026-09-28
+**Scope:** application and public-demo layers only
 **Frozen scope:** [post-submission audit protocol](protocols/p1_post_submission_audit_v1.md)
 
 ## Outcome
