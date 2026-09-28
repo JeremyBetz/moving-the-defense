@@ -1,0 +1,389 @@
+{
+  "artifact_id": "possession_aware_defensive_review_v1",
+  "case_study_match": "Metrica Sample Game 2",
+  "created": "2026-09-27",
+  "defensive_review_buffer_seconds": 2.0,
+  "display_scale_m": [
+    0.0,
+    6.25
+  ],
+  "event_counts_unchanged": {
+    "goals": 5,
+    "matched": 24,
+    "shots": 24,
+    "shots_on_target": 11
+  },
+  "files_sha256": {
+    "defensive_high_away_p2_4475.56.gif": "d4ffb4610605674a6e0357021cbdb90a1553df1eedffe2c3e832906dcbd59c89",
+    "defensive_high_away_p2_4475.56_diagnostic.png": "d45f8e2eafbd3c5eb50c9ea9e65a875da13bd966d4841ade32db4076d9ec2ad6",
+    "defensive_high_home_p1_336.92_diagnostic.png": "94cc8f79e1e343278c7fe8b582adfa3e9cb2db97b625812233f40c89b8786cf1",
+    "defensive_low_home_p1_2271.80.gif": "fa865f8d8833ce129514dfbe852ef1d71ab23b80f6d114dc24ce2a10dbcbd9a3",
+    "defensive_low_home_p1_2271.80_diagnostic.png": "40da577593632705d9b22cdced84e19d97ca239ab4510d968e5fad256962db25",
+    "defensive_low_home_p1_2707.88_diagnostic.png": "7ce9591af7d721775c46e64bd78d5df81e5bb0e2733a992b2600609d8d9f340d",
+    "defensive_rapid_increase_home_p1_1734.72.gif": "ebac8b93425ff35a5a45029cd7ef2c734a73c031e979aa15f7865f6eff0cb055",
+    "defensive_rapid_increase_home_p1_1734.72_diagnostic.png": "8c255c0b86179ed4d883a302c9987dc84f189b5c8826461daa471b358643b430",
+    "defensive_rapid_increase_home_p2_4443.16_diagnostic.png": "00cadae1f20cdeeb33da88454fe7b58a84801fa5565e2f1809b8605599f38cf5",
+    "possession_aware_timeline.png": "a2abc9b27cd77b254ff6e8b94a7973aa06062d726abbeb9f84a0e467b08e73fc"
+  },
+  "historical_selection_audit": [
+    {
+      "classification": "transition_context",
+      "continuous_out_of_possession_s": 0.56,
+      "moment_type": "high",
+      "nearest_possession_change_offset_s": 0.56,
+      "peak_time_s": 5392.2,
+      "period": 2,
+      "possession_state": "out_of_possession",
+      "team_key": "metrica:Away"
+    },
+    {
+      "classification": "restart_or_dead_ball",
+      "continuous_out_of_possession_s": null,
+      "moment_type": "high",
+      "nearest_possession_change_offset_s": -95.48,
+      "peak_time_s": 4630.88,
+      "period": 2,
+      "possession_state": "dead_ball_or_restart",
+      "team_key": "metrica:Home"
+    },
+    {
+      "classification": "ambiguous",
+      "continuous_out_of_possession_s": null,
+      "moment_type": "low",
+      "nearest_possession_change_offset_s": -7.6,
+      "peak_time_s": 2734.56,
+      "period": 2,
+      "possession_state": "ambiguous",
+      "team_key": "metrica:Away"
+    },
+    {
+      "classification": "restart_or_dead_ball",
+      "continuous_out_of_possession_s": null,
+      "moment_type": "low",
+      "nearest_possession_change_offset_s": -43.4,
+      "peak_time_s": 3017.48,
+      "period": 2,
+      "possession_state": "dead_ball_or_restart",
+      "team_key": "metrica:Away"
+    },
+    {
+      "classification": "transition_context",
+      "continuous_out_of_possession_s": 0.28,
+      "moment_type": "rapid_increase",
+      "nearest_possession_change_offset_s": 0.28,
+      "peak_time_s": 5391.92,
+      "period": 2,
+      "possession_state": "out_of_possession",
+      "team_key": "metrica:Away"
+    },
+    {
+      "classification": "restart_or_dead_ball",
+      "continuous_out_of_possession_s": null,
+      "moment_type": "rapid_increase",
+      "nearest_possession_change_offset_s": -97.16,
+      "peak_time_s": 4629.2,
+      "period": 2,
+      "possession_state": "dead_ball_or_restart",
+      "team_key": "metrica:Home"
+    }
+  ],
+  "measurement": "team relational reorganization in raw metres",
+  "possession_source": "conservative event-derived context; not provider ground truth",
+  "production_scorer_sha256": "6b5f33de5a034ae4000270e847ebcefe0164b1df1d21d4f3a7ed8adf9bd24a8a",
+  "protocol": "docs/protocols/possession_aware_defensive_review_v1.md",
+  "qc": {
+    "both_teams_and_periods_have_eligible_support": true,
+    "event_alignment_unchanged": true,
+    "historical_v1_package_modified": false,
+    "native_state_rows_published": false,
+    "raw_scores_unchanged": true,
+    "reference_percentiles_unchanged": true,
+    "tactical_or_causal_claim_created": false
+  },
+  "selected_moments": [
+    {
+      "before_reference_percentile": 0.9989147672,
+      "before_score_m": 6.2679766324,
+      "category_memberships": "high",
+      "context_classification": "defensive_review",
+      "continuous_out_of_possession_s": 5.04,
+      "defensive_review_eligible": true,
+      "duration_s": 5.04,
+      "end_time_s": 4478.08,
+      "leading_player_scores_m": "[10.081846,9.94091,9.707339]",
+      "match_id": "metrica_sample_game_2",
+      "moment_type": "high",
+      "nearest_possession_change_offset_s": 5.04,
+      "one_second_change_m": 0.5722466659,
+      "peak_time_s": 4475.56,
+      "period": 2,
+      "possession_state": "out_of_possession",
+      "possession_team_key": "metrica:Home",
+      "reference_percentile": 0.9995501535,
+      "render_eligible": true,
+      "run_id": "metrica_sample_game_2::p2::run2",
+      "selected_for_case_study": true,
+      "start_time_s": 4473.08,
+      "team_key": "metrica:Away",
+      "team_score_m": 6.8402232983
+    },
+    {
+      "before_reference_percentile": 0.995375508,
+      "before_score_m": 5.38702759,
+      "category_memberships": "high",
+      "context_classification": "defensive_review",
+      "continuous_out_of_possession_s": 3.16,
+      "defensive_review_eligible": true,
+      "duration_s": 5.04,
+      "end_time_s": 340.76,
+      "leading_player_scores_m": "[12.046153,9.168849,8.030914]",
+      "match_id": "metrica_sample_game_2",
+      "moment_type": "high",
+      "nearest_possession_change_offset_s": 3.16,
+      "one_second_change_m": 1.1040932597,
+      "peak_time_s": 336.92,
+      "period": 1,
+      "possession_state": "out_of_possession",
+      "possession_team_key": "metrica:Away",
+      "reference_percentile": 0.9992858468,
+      "render_eligible": true,
+      "run_id": "metrica_sample_game_2::p1::run1",
+      "selected_for_case_study": true,
+      "start_time_s": 335.76,
+      "team_key": "metrica:Home",
+      "team_score_m": 6.4911208498
+    },
+    {
+      "before_reference_percentile": 0.0469485705,
+      "before_score_m": 1.0246889881,
+      "category_memberships": "low",
+      "context_classification": "defensive_review",
+      "continuous_out_of_possession_s": 26.48,
+      "defensive_review_eligible": true,
+      "duration_s": 2.44,
+      "end_time_s": 2273.2,
+      "leading_player_scores_m": "[1.977976,1.01351,0.953023]",
+      "match_id": "metrica_sample_game_2",
+      "moment_type": "low",
+      "nearest_possession_change_offset_s": -58.68,
+      "one_second_change_m": -0.2495207433,
+      "peak_time_s": 2271.8,
+      "period": 1,
+      "possession_state": "out_of_possession",
+      "possession_team_key": "metrica:Away",
+      "reference_percentile": 0.0136109195,
+      "render_eligible": true,
+      "run_id": "metrica_sample_game_2::p1::run1",
+      "selected_for_case_study": true,
+      "start_time_s": 2270.8,
+      "team_key": "metrica:Home",
+      "team_score_m": 0.7751682448
+    },
+    {
+      "before_reference_percentile": 0.0340360507,
+      "before_score_m": 0.9537666095,
+      "category_memberships": "low",
+      "context_classification": "defensive_review",
+      "continuous_out_of_possession_s": 23.12,
+      "defensive_review_eligible": true,
+      "duration_s": 3.2,
+      "end_time_s": 2709.72,
+      "leading_player_scores_m": "[1.554523,1.197467,0.986897]",
+      "match_id": "metrica_sample_game_2",
+      "moment_type": "low",
+      "nearest_possession_change_offset_s": 37.0,
+      "one_second_change_m": -0.1166369166,
+      "peak_time_s": 2707.88,
+      "period": 1,
+      "possession_state": "out_of_possession",
+      "possession_team_key": "metrica:Away",
+      "reference_percentile": 0.0194641751,
+      "render_eligible": true,
+      "run_id": "metrica_sample_game_2::p1::run1",
+      "selected_for_case_study": true,
+      "start_time_s": 2706.56,
+      "team_key": "metrica:Home",
+      "team_score_m": 0.8371296929
+    },
+    {
+      "before_reference_percentile": 0.4125249866,
+      "before_score_m": 2.2020868699,
+      "category_memberships": "rapid_increase",
+      "context_classification": "defensive_review",
+      "continuous_out_of_possession_s": 9.16,
+      "defensive_review_eligible": true,
+      "duration_s": 1.2,
+      "end_time_s": 1735.56,
+      "leading_player_scores_m": "[16.240565,3.83506,3.421641]",
+      "match_id": "metrica_sample_game_2",
+      "moment_type": "rapid_increase",
+      "nearest_possession_change_offset_s": -4.36,
+      "one_second_change_m": 1.7862683779,
+      "peak_time_s": 1734.72,
+      "period": 1,
+      "possession_state": "out_of_possession",
+      "possession_team_key": "metrica:Away",
+      "reference_percentile": 0.9223445929,
+      "render_eligible": true,
+      "run_id": "metrica_sample_game_2::p1::run1",
+      "selected_for_case_study": true,
+      "start_time_s": 1734.4,
+      "team_key": "metrica:Home",
+      "team_score_m": 3.9883552477
+    },
+    {
+      "before_reference_percentile": 0.6906613969,
+      "before_score_m": 2.9915010675,
+      "category_memberships": "rapid_increase",
+      "context_classification": "defensive_review",
+      "continuous_out_of_possession_s": 3.72,
+      "defensive_review_eligible": true,
+      "duration_s": 2.36,
+      "end_time_s": 4444.76,
+      "leading_player_scores_m": "[7.652126,6.54219,6.062324]",
+      "match_id": "metrica_sample_game_2",
+      "moment_type": "rapid_increase",
+      "nearest_possession_change_offset_s": 3.72,
+      "one_second_change_m": 1.7332448761,
+      "peak_time_s": 4443.16,
+      "period": 2,
+      "possession_state": "out_of_possession",
+      "possession_team_key": "metrica:Away",
+      "reference_percentile": 0.9809051542,
+      "render_eligible": true,
+      "run_id": "metrica_sample_game_2::p2::run3",
+      "selected_for_case_study": true,
+      "start_time_s": 4442.44,
+      "team_key": "metrica:Home",
+      "team_score_m": 4.7247459436
+    }
+  ],
+  "selection_counts": {
+    "high": 2,
+    "low": 2,
+    "rapid_increase": 2
+  },
+  "source_event_sha256": "edf31a18599265b77a8baf150f2ce6d89456fb0324b62ea7a391229657a619ba",
+  "state_summary": [
+    {
+      "eligible_frame_count": 0,
+      "frame_count": 5673,
+      "period": 1,
+      "possession_state": "ambiguous",
+      "team_key": "metrica:Away"
+    },
+    {
+      "eligible_frame_count": 0,
+      "frame_count": 18002,
+      "period": 1,
+      "possession_state": "dead_ball_or_restart",
+      "team_key": "metrica:Away"
+    },
+    {
+      "eligible_frame_count": 0,
+      "frame_count": 21913,
+      "period": 1,
+      "possession_state": "in_possession",
+      "team_key": "metrica:Away"
+    },
+    {
+      "eligible_frame_count": 18591,
+      "frame_count": 22353,
+      "period": 1,
+      "possession_state": "out_of_possession",
+      "team_key": "metrica:Away"
+    },
+    {
+      "eligible_frame_count": 0,
+      "frame_count": 7933,
+      "period": 2,
+      "possession_state": "ambiguous",
+      "team_key": "metrica:Away"
+    },
+    {
+      "eligible_frame_count": 0,
+      "frame_count": 30944,
+      "period": 2,
+      "possession_state": "dead_ball_or_restart",
+      "team_key": "metrica:Away"
+    },
+    {
+      "eligible_frame_count": 0,
+      "frame_count": 15819,
+      "period": 2,
+      "possession_state": "in_possession",
+      "team_key": "metrica:Away"
+    },
+    {
+      "eligible_frame_count": 15276,
+      "frame_count": 18519,
+      "period": 2,
+      "possession_state": "out_of_possession",
+      "team_key": "metrica:Away"
+    },
+    {
+      "eligible_frame_count": 0,
+      "frame_count": 5673,
+      "period": 1,
+      "possession_state": "ambiguous",
+      "team_key": "metrica:Home"
+    },
+    {
+      "eligible_frame_count": 0,
+      "frame_count": 18002,
+      "period": 1,
+      "possession_state": "dead_ball_or_restart",
+      "team_key": "metrica:Home"
+    },
+    {
+      "eligible_frame_count": 0,
+      "frame_count": 22353,
+      "period": 1,
+      "possession_state": "in_possession",
+      "team_key": "metrica:Home"
+    },
+    {
+      "eligible_frame_count": 18309,
+      "frame_count": 21913,
+      "period": 1,
+      "possession_state": "out_of_possession",
+      "team_key": "metrica:Home"
+    },
+    {
+      "eligible_frame_count": 0,
+      "frame_count": 7933,
+      "period": 2,
+      "possession_state": "ambiguous",
+      "team_key": "metrica:Home"
+    },
+    {
+      "eligible_frame_count": 0,
+      "frame_count": 30944,
+      "period": 2,
+      "possession_state": "dead_ball_or_restart",
+      "team_key": "metrica:Home"
+    },
+    {
+      "eligible_frame_count": 0,
+      "frame_count": 18519,
+      "period": 2,
+      "possession_state": "in_possession",
+      "team_key": "metrica:Home"
+    },
+    {
+      "eligible_frame_count": 12582,
+      "frame_count": 15819,
+      "period": 2,
+      "possession_state": "out_of_possession",
+      "team_key": "metrica:Home"
+    }
+  ],
+  "status": "POSSESSION_AWARE_DEFENSIVE_REVIEW_COMPLETE",
+  "thresholds_m": {
+    "high_p95": 4.233209465237362,
+    "low_p05": 1.041340265771382,
+    "rapid_one_second_p95": 0.6251746256690309
+  },
+  "transition_episode_count": 337,
+  "transition_radius_seconds": 2.0
+}

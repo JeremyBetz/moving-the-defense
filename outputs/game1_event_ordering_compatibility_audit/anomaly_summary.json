@@ -1,0 +1,55 @@
+{
+  "audit_id": "game1_event_ordering_compatibility_audit",
+  "end_frame_before_start_frame": {
+    "count": 1,
+    "same_record_set_as_time_anomalies": true
+  },
+  "end_time_before_start_time": {
+    "by_period": {
+      "1": 1
+    },
+    "by_subtype": {
+      "KICK OFF": 1
+    },
+    "by_type": {
+      "SET PIECE": 1
+    },
+    "count": 1,
+    "negative_duration_distribution": {
+      "maximum_s": -0.04,
+      "median_s": -0.04,
+      "minimum_s": -0.04,
+      "p25_s": -0.04,
+      "p75_s": -0.04
+    },
+    "rate": 0.0005730659025787965
+  },
+  "endpoint_dependent_records": {
+    "count": 15,
+    "definition": "SHOT subtype containing GOAL or OUT",
+    "frame_order_anomaly_count": 0,
+    "time_order_anomaly_count": 0
+  },
+  "start_integrity": {
+    "all_start_frames_finite_whole": true,
+    "all_start_times_finite": true,
+    "provider_order_by_period": {
+      "1": {
+        "start_frame_nondecreasing": true,
+        "start_time_nondecreasing": true
+      },
+      "2": {
+        "start_frame_nondecreasing": true,
+        "start_time_nondecreasing": true
+      }
+    },
+    "tracking_reconciliation": {
+      "all_reconciled_starts_exact": true,
+      "event_start_count": 1745,
+      "home_away_tracking_clocks_identical": true,
+      "maximum_absolute_start_time_mismatch_s": 0.0,
+      "unreconciled_start_count": 0
+    }
+  },
+  "total_event_count": 1745
+}

@@ -6,6 +6,10 @@
 
 **Upload status:** upload-ready; not yet final and not yet submitted.
 
+**Reviewer-experience hardening:** complete on the local application branch;
+not public on the submission repository's default branch until a separate
+reviewed merge and push.
+
 - [x] Candidate source: [`submission/ssac27_abstract_candidate_v1.html`](../submission/ssac27_abstract_candidate_v1.html).
 - [x] Candidate PDF: [`submission/SSAC27_abstract_candidate_v1.pdf`](../submission/SSAC27_abstract_candidate_v1.pdf).
 - [x] Candidate manifest: [`submission/ssac27_abstract_candidate_v1_manifest.json`](../submission/ssac27_abstract_candidate_v1_manifest.json).
@@ -15,6 +19,28 @@
 - [x] Extractable text: 416 abstract words, 261 caption words, and 677 words total.
 - [x] Candidate is anonymous as a conservative formatting choice; the portal does not explicitly require an anonymous abstract file.
 - [ ] Candidate becomes final only after final science freeze, regeneration if anything changes, human visual review, and exact portal-upload verification.
+
+## Portal entry sheet
+
+- **Title:** `Off-Ball Movement Direction and Localized Defensive Reorganization in Football`
+- **Competition category:** `Soccer`
+- **Repository URL:** `https://github.com/JeremyBetz/moving-the-defense`
+- **Upload file:** `submission/SSAC27_abstract_candidate_v1.pdf`
+- **Upload SHA-256:** `3a8b5f45e0e5ae619877d7c5b162d0b65c2390885875fae76b0465c6fde7f867`
+- **Word count:** 416, including the nine-word title and four required section labels
+- **Embedded material:** Figure 1 and Figure 2; no table and no separate figure upload
+- **Document identity:** anonymous by conservative choice; author information is entered separately in the portal
+
+Complete directly from the authors' authoritative records when populating the
+portal; do not infer or fabricate any field:
+
+- [ ] Author names, order, email addresses and affiliations.
+- [ ] Phone, city, state/region, country, date of birth or demographic fields if the live portal requires them.
+- [ ] Prior-publication and simultaneous-submission disclosures.
+- [ ] Funding and conflict-of-interest disclosures.
+- [ ] AI/tool-use disclosure if requested.
+- [ ] Data-licensing, permissions and open-source attestations.
+- [ ] All consent and accuracy checkboxes.
 
 ## Content freeze through September 28
 
@@ -52,7 +78,10 @@ redesign. It is not a scientific claim.
 ## Must verify in the portal
 
 - [ ] Confirm Soccer is selected when the final portal form is populated.
-- [ ] Confirm the intended author/affiliation and required personal fields when the final portal form is populated.
+- [ ] Confirm the title exactly matches the portal entry sheet.
+- [ ] Confirm the intended author order, affiliations and required personal fields.
+- [ ] Confirm the repository field contains `https://github.com/JeremyBetz/moving-the-defense` and opens while logged out.
+- [ ] Confirm the uploaded PDF preview is the file with the recorded SHA-256.
 - [ ] Eligibility and prior-publication rules.
 - [ ] Any portal-specific repository, data, or supplemental-material requirements.
 

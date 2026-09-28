@@ -6,6 +6,51 @@ Football*. It assumes that you have the required data access. For protocol
 history, every negative branch, and machine-oriented provenance, use the
 [technical reproducibility guide](docs/reproducibility.md) instead.
 
+## Reviewer fast path
+
+From a fresh clone, create the documented environment before running checks:
+
+```bash
+git clone https://github.com/JeremyBetz/moving-the-defense.git
+cd moving-the-defense
+python3 -m venv .venv
+source .venv/bin/activate
+python -m ensurepip --upgrade
+python -m pip install -r requirements-phase0.txt -r requirements-dev.txt
+```
+
+The [Candidate V1 PDF](submission/SSAC27_abstract_candidate_v1.pdf),
+[Figure 1](docs/figures/sloan/temporal_footprint_flagship.svg),
+[Figure 2](docs/figures/sloan/directional_replication.svg), compact results,
+protocols, configurations, and hash ledgers can be inspected immediately
+without downloading provider rows. The [paper-to-code map](#paper-to-code-map)
+records the exact entry point, frozen protocol, compact output, and expected
+headline value for every paper result. The
+[fast paper-artifact path](#fast-paper-artifact-path) checks committed results
+without authorizing a response rerun.
+
+Full data-to-result reproduction uses only the documented public releases:
+[Metrica Sample Games 1–2](https://github.com/metrica-sports/sample-data),
+[IDSSE/DFL](https://doi.org/10.6084/m9.figshare.28196177.v1), and
+[SkillCorner Open Data](https://github.com/SkillCorner/opendata). Raw provider
+files are deliberately absent from Git history and must be downloaded into the
+local paths below. Commands that consume them will fail until those downloads
+are present. No paper command requires Metrica Game 3, a sibling repository, or
+any protected response-mode or DRD output.
+
+For a quick data-free repository check:
+
+```bash
+python -m compileall -q src tests
+pytest -q -m "not provider_data"
+.venv/bin/python src/skillcorner_additional_directional_replication_v1.py \
+  publication-check \
+  --output outputs/skillcorner_additional_directional_replication_v1
+```
+
+The portable suite is an implementation/governance check, not a substitute for
+the full public-data reproductions described later in this guide.
+
 ## What this reproduces
 
 - the time-ordered localized defensive-reorganization result in Metrica and

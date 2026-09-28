@@ -1,0 +1,48 @@
+{
+  "audit_authority": {
+    "classification": "B. EVENT-TYPE-SPECIFIC COMPATIBILITY JUSTIFIED",
+    "closure_commit": "edee9ff0434229892dcb42fe43ee6254073591a4"
+  },
+  "games": {
+    "game_1": {
+      "context_row_count": 290012,
+      "endpoint_qc": {
+        "blocked_required_end_count": 0,
+        "endpoint_required_count": 15,
+        "malformed_required_end_count": 0,
+        "malformed_unused_end_count": 1,
+        "tolerated_unused_end_count": 1,
+        "total_event_count": 1745
+      },
+      "event_sha256": "097dda6345e17390dca095331458fd00e47960c480c76f4356fd4edf2575ef05",
+      "possession_reconstruction": "passed",
+      "start_reconciliation": "exact"
+    },
+    "game_2": {
+      "context_row_count": 282312,
+      "endpoint_qc": {
+        "blocked_required_end_count": 0,
+        "endpoint_required_count": 16,
+        "malformed_required_end_count": 0,
+        "malformed_unused_end_count": 0,
+        "tolerated_unused_end_count": 0,
+        "total_event_count": 1935
+      },
+      "event_sha256": "edf31a18599265b77a8baf150f2ce6d89456fb0324b62ea7a391229657a619ba",
+      "possession_reconstruction": "passed",
+      "row_for_row_regression": "unchanged",
+      "start_reconciliation": "exact"
+    }
+  },
+  "no_provider_rows_serialized": true,
+  "rule": {
+    "all_starts_strict": true,
+    "malformed_unused_ends_preserved_and_reported": true,
+    "required_endpoint_class": "SHOT subtype containing GOAL or OUT",
+    "required_ends_strict_and_tracking_reconciled": true,
+    "source_repair": false
+  },
+  "schema_version": 1,
+  "starting_commit": "edee9ff0434229892dcb42fe43ee6254073591a4",
+  "status": "COMPATIBILITY_RULE_IMPLEMENTED_AND_VALIDATED"
+}

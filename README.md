@@ -10,7 +10,19 @@ The directional difference appeared in separate analyses of seven IDSSE and nine
 
 The measurement could organize candidate passages for later video review; its football interpretation and review usefulness remain unvalidated. It does not establish causation, marking responsibility, tactical effectiveness, or attacking value.
 
-**Reproduce and inspect:** start with [REPRODUCE.md](REPRODUCE.md), or browse the [frozen protocols](docs/protocols/), [public result summaries](docs/results/), and [tests](tests/).
+## SSAC27 submission: reviewer quick path
+
+- **Submission artifact:** [Candidate V1 PDF](submission/SSAC27_abstract_candidate_v1.pdf) and its [manifest](submission/ssac27_abstract_candidate_v1_manifest.json).
+- **Canonical text:** [structured abstract and manuscript](docs/manuscript_skeleton.md).
+- **Main evidence:** [Figure 1 — temporal measurement](docs/figures/sloan/temporal_footprint_flagship.svg) and [Figure 2 — directional replication](docs/figures/sloan/directional_replication.svg).
+- **Reproduction:** [human-first paper guide](REPRODUCE.md), [technical guide](docs/reproducibility.md), and [claim-status ledger](docs/claim_status.md).
+- **Public data provenance:** [Metrica Sample Games](https://github.com/metrica-sports/sample-data), [IDSSE/DFL](https://doi.org/10.6084/m9.figshare.28196177.v1), and [SkillCorner Open Data](https://github.com/SkillCorner/opendata).
+
+The two governed figures and the results summarized above are the submission
+evidence. Replays, match-review tools, possession context, ball alignment, and
+attacker-linked review are exploratory analyst applications. They illustrate
+possible workflows but are not additional validation or confirmed paper
+results.
 
 ## Main finding: directional replication
 
@@ -55,6 +67,13 @@ The fixed Metrica Game 2 passage contrasts absolute defender paths with net
 defender-relative displacement over the same subsequent interval. The statistical
 outcome is accumulated defender-relative path, not the illustrated net arrows.*
 
+## Exploratory analyst applications — not paper evidence
+
+The following artifacts demonstrate how the measurement could support later
+analyst review. They do not change the frozen scientific result or establish
+the football meaning, usefulness, or tactical interpretation of the retrieved
+passages.
+
 ### Illustrative replay
 
 ![Six-second Metrica Game 2 tracking replay](figures/presentation/tracking_replay_game2.gif)
@@ -89,6 +108,155 @@ quality, tactical error, marking, or causal attacker influence. Reproduce it
 with the output-free
 [defender-relative replay notebook](notebooks/defender_relative_replay_demo.ipynb)
 and the public Metrica Game 2 files.
+
+For an analyst-facing walkthrough, see the
+[fixed-passage and full-match case study](docs/match_application_case_study.md).
+The [local scoring API](docs/replay_scoring_api.md) exposes the same approved
+retrospective measurement over normalized tracking without adding provider or
+tactical logic.
+
+### Apply the metric to a match
+
+The pooled-reference scanner keeps raw metres authoritative while adding a
+descriptive Games 1–2 reference percentile:
+
+The command-line workflow below is the complete end-to-end route for the public
+Metrica case study. The Python interface is the normalized-data integration
+boundary for analysts bringing another provider adapter; its complete first-use
+sequence is documented in the [API guide](docs/replay_scoring_api.md).
+
+```python
+from defensive_reorganization_match_review import (
+    analyze_match_with_reference,
+)
+from possession_aware_defensive_review import (
+    DefensiveReviewEligibilitySpec,
+    build_metrica_possession_context,
+    find_defensive_review_windows,
+)
+from rapid_change_defensive_review import (
+    RapidReviewPrioritySpec,
+    find_rapid_reorganization_windows,
+)
+
+analysis = analyze_match_with_reference(
+    normalized_tracking,
+    defending_team_keys=("metrica:Home", "metrica:Away"),
+    reference=pooled_reference,
+    smoothing_frames=7,
+    excluded_player_keys=goalkeepers,
+)
+moments = analysis.selected_moments
+
+possession = build_metrica_possession_context(
+    metrica_event_rows,
+    normalized_tracking,
+    match_id="metrica_sample_game_2",
+    source_fps=25.0,
+    spec=DefensiveReviewEligibilitySpec(),
+)
+defensive_review = find_defensive_review_windows(
+    analysis.scores_by_team,
+    pooled_reference,
+    possession,
+)
+rapid_review = find_rapid_reorganization_windows(
+    defensive_review,
+    analysis.scores_by_team,
+    spec=RapidReviewPrioritySpec(),
+)
+```
+
+The primary review queue asks when the defensive unit began reorganizing much
+more strongly than one second earlier. It ranks possession-eligible rapid rises
+using the unchanged frozen threshold, then classifies open-play, transition and
+restart context plus anonymized contribution breadth. Sustained high/low
+retrieval remains available as extreme-state inspection and historical
+provenance. The possession-aware layer keeps defensive-review passages only
+when the scored team has been continuously and unambiguously out of possession
+for at least two seconds.
+Possession is conservatively reconstructed from Metrica events and is contextual
+metadata, not provider ground truth. Transition/restart passages remain separate.
+A strict event join reports score context preceding shots and goals. None of
+these labels classifies tactics, quality, intent, or cause.
+
+Local CLI over the public Metrica Sample Game 2 files:
+
+```bash
+.venv/bin/python src/run_rapid_change_defensive_review.py \
+  --output-dir /tmp/moving_the_defense_rapid_change_review
+```
+
+The complete command creates all six rapid-review diagnostics and GIFs plus
+secondary rapid-decrease diagnostics locally. The repository publishes only the
+compact [Game 2 case study](docs/match_application_case_study.md), the rapid
+timeline, and two deterministically diverse examples. Historical ungated v1
+and possession-aware level v2 packages remain linked as provenance.
+
+The case study also applies a frozen trajectory-integrity check and a
+ball-alignment diagnostic to rapid passages. Rapid change identifies when
+relational reorganization accelerates; the alignment layer distinguishes
+movement directed substantially toward the ball from movement that is weakly
+aligned or directed away. The public [low/high contrast](docs/match_application_case_study.md#trajectory-integrity-and-movement-toward-the-ball)
+is descriptive review context only—it does not infer cause, defensive quality,
+or tactical success.
+
+A final descriptive layer reviews substantial off-ball attacker movement that
+co-occurs with spatially related movement by the leading defender contributors
+in integrity-clean, open-play, low-ballward passages. The public
+[distributed, localized and no-link examples](docs/match_application_case_study.md#co-occurring-off-ball-attacker-movement)
+use episode-local player labels and frozen Games 1–2 reference thresholds.
+“Linked” means only that the geometric review rules were satisfied together;
+it does not infer marking, causal attacker influence, tactical success, space
+creation, or player value.
+
+The flow is `football question/events → normalized tracking → trailing scores →`
+`supported ranked windows → human video review`. See the
+[API contract](docs/replay_scoring_api.md) and
+[one-match case study](docs/match_application_case_study.md).
+Detailed application outputs remain local by default. Missing support remains
+missing; moment thresholds and event alignment tolerance are never relaxed.
+
+The GIF and coach card support passage review. Detailed traces, event context,
+CSV, and Parquet outputs belong in the analyst appendix. The workflow can claim
+deterministic geometric retrieval for review; it cannot identify tactics,
+intent, defensive quality, causation, success, or player value.
+
+### Analyst review-pack product demo
+
+The dependency-free local application starts with a football question: which
+passages around shots, goals, or changes of possession are worth watching more
+closely? It prepares
+each match once, lets the analyst change the team, event, time window, and review
+order quickly, renders only selected passages, and exports them as a portable
+HTML review pack. Exact traces and technical fields remain in a separate analyst
+appendix.
+
+```bash
+.venv/bin/python src/event_review_dashboard.py \
+  --output-root /tmp/moving_the_defense_dashboard
+```
+
+Open `http://127.0.0.1:8765`, choose the match and football question, then:
+
+1. **Prepare match review** once. Progress remains visible; later choices reuse
+   the prepared match rather than processing it again.
+2. Open a candidate and **Render this replay**. The GIF is cached for reuse.
+3. **Keep** the passages that merit discussion and export the resulting ZIP.
+
+“Possession changes” are event-derived: the first recorded pass, recovery, or
+shot by a different team on the established possession-event clock. Restarts
+are not review anchors, and challenges, ball-loss labels, tracking geometry,
+and the movement score never infer possession. For the defending perspective,
+the card describes the moment plainly as **Possession lost**—not a forced
+turnover, press win, or tactical success.
+
+The ZIP contains a portable `index.html`, its selected media, and a compact
+record of what was selected. Runtime indexes, cards, GIFs, traces, and exports stay under the
+configured temporary output root and are not repository artifacts. See the
+[product and portfolio guide](docs/event_review_product_demo.md) for the user
+journey, architecture, and demonstration script. This remains a bounded local
+product demo—not a deployed service or a tactical classifier.
 
 ### Temporal results
 

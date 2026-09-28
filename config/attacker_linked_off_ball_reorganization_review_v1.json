@@ -1,0 +1,116 @@
+{
+  "protocol_id": "attacker_linked_off_ball_reorganization_review_v1",
+  "status": "FROZEN_BEFORE_ATTACKER_LINK_REFERENCE_OR_CANDIDATE_INSPECTION",
+  "frozen_date": "2026-09-28",
+  "starting_commit": "a3c3ac99a3f119fed317aea7df4eb448a7e43fee",
+  "population": {
+    "reference_games": [1, 2],
+    "public_candidate_game": 2,
+    "required_existing_filters": [
+      "trajectory_integrity_clean",
+      "possession_valid",
+      "open_play",
+      "renderable",
+      "ball_alignment_supported",
+      "low_ballward"
+    ],
+    "low_ballward_rule": "team_B<=closed_reference_P25"
+  },
+  "timing": {
+    "source_fps": 25.0,
+    "review_interval_relative_seconds": [-2.0, 0.0],
+    "raw_support_relative_seconds": [-2.12, 0.12],
+    "smoothing_method": "centered_mean",
+    "smoothing_frames": 7,
+    "smoothed_frame_count": 51,
+    "increment_count": 50,
+    "interpolation": false
+  },
+  "off_ball": {
+    "frame_rule": "not_nearest_attacking_outfielder_to_ball",
+    "tie_break": "canonical_player_key_ascending",
+    "minimum_fraction": 0.8,
+    "minimum_frames": 41,
+    "requires_complete_ten_attacker_and_ball_support": true
+  },
+  "attacker_metrics": [
+    "absolute_path_m",
+    "net_displacement_m",
+    "attacker_minus_ball_path_m"
+  ],
+  "defender_contributors": {
+    "primary": "top_3_raw_defender_relative_path_desc_then_key",
+    "secondary": "strictly_above_ten_player_median"
+  },
+  "pair_metrics": [
+    "start_distance_m",
+    "end_distance_m",
+    "signed_distance_change_m",
+    "absolute_distance_change_m",
+    "minimum_distance_m",
+    "relative_vector_path_m",
+    "attacker_absolute_vs_defender_relative_net_cosine"
+  ],
+  "reference": {
+    "quantile_method": "numpy_linear",
+    "quantile": 0.75,
+    "attacker_path_population": "all_eligible_off_ball_attackers_in_reference_episodes",
+    "relative_vector_population": "all_eligible_off_ball_attacker_x_top3_contributor_pairs_in_reference_episodes",
+    "threshold_gate_before_candidate_identity_exposure": true
+  },
+  "strong_link": {
+    "attacker_path_operator": ">=P75",
+    "defender_requirement": "top_3_contributor",
+    "geometry_any": {
+      "minimum_distance_m": {"operator": "<=", "value": 8.0},
+      "absolute_distance_change_m": {"operator": ">=", "value": 3.0},
+      "relative_vector_path_m": {"operator": ">=", "value": "reference_P75"}
+    }
+  },
+  "episode_categories": {
+    "none": [0, 0],
+    "localized": [1, 2],
+    "distributed_minimum": 3
+  },
+  "public_selection": [
+    "highest_rapid_magnitude_distributed",
+    "highest_rapid_magnitude_localized",
+    "optional_highest_rapid_magnitude_none"
+  ],
+  "public_identity": "episode_local_labels_only",
+  "source_sha256": {
+    "data/metrica_sample_game_1/Sample_Game_1_RawTrackingData_Home_Team.csv": "0a3d0eff7785950379c587d3597b86a2d91c2492281b4652e1abb97c99b6b364",
+    "data/metrica_sample_game_1/Sample_Game_1_RawTrackingData_Away_Team.csv": "0a3df68a92af0290ede472e62de3b6489ddee29223da09bdf0cf76c8e0ab0618",
+    "data/metrica_sample_game_1/Sample_Game_1_RawEventsData.csv": "097dda6345e17390dca095331458fd00e47960c480c76f4356fd4edf2575ef05",
+    "data/metrica_sample_game_2/Sample_Game_2_RawTrackingData_Home_Team.csv": "3f9990ac204b07133e4202441d6fcbb386897c7c7f81e1bc3ce4d35bc8644694",
+    "data/metrica_sample_game_2/Sample_Game_2_RawTrackingData_Away_Team.csv": "aa639f40762eade46c389020fe4458266b5ba14027b1e96e22e75db62803718b",
+    "data/metrica_sample_game_2/Sample_Game_2_RawEventsData.csv": "edf31a18599265b77a8baf150f2ce6d89456fb0324b62ea7a391229657a619ba"
+  },
+  "dependency_sha256": {
+    "src/defensive_reorganization_replay.py": "6b5f33de5a034ae4000270e847ebcefe0164b1df1d21d4f3a7ed8adf9bd24a8a",
+    "src/defensive_reorganization_match_review.py": "5dcc2f8d3020a0f04ec187927be09bc3bdb2be82d25fa6b4e83d81a6384c2036",
+    "src/possession_aware_defensive_review.py": "1a2ca8e08b5c62660f2bb97a1c8f1d54caebc0707a3cdea2b16a65639d49f231",
+    "src/rapid_change_defensive_review.py": "86108989513ddd0ff6411c29268503f48baa3523025c62edef355cdcdae8d08b",
+    "src/ball_alignment_reorganization_review.py": "20a4a3e043ad82b0d135c438792cc3f9a72f18c9e3ac4917a397d372cae18817",
+    "src/run_ball_alignment_reorganization_review.py": "ddd18cab76b7e722fed6be37d653248d372076a21b0622790cb9e94a803a72c3",
+    "config/ball_alignment_reorganization_review_v1.json": "e2057e393cd837a99bb198a183f949606e7c83dab841ed8090d4000c99deccf0"
+  },
+  "historical_manifest_sha256": {
+    "v1": "bd8680ff2e860823d6556fd8d6671b6ec1defa651c62f01b5dbd26f8c8be6fcd",
+    "v2": "f695ed86990fbcfd7d92014802a83cab02aecaf5095259b1d4ae4b0aa34a9656",
+    "v3": "9719e7e418c77834775976641e8661a2e79dce16e8a7d75a8ea0523ab2b1cabf",
+    "v4": "23d51e89e6eedf82bd1981515b28573ffcd686b2d422b818aa2beb0ee17bff0d"
+  },
+  "prohibited": [
+    "causation",
+    "marking_assignment",
+    "tactical_success_or_failure",
+    "space_creation",
+    "player_value",
+    "intent",
+    "threshold_retuning",
+    "manual_clip_substitution",
+    "provider_identity_publication",
+    "raw_coordinate_or_pair_row_publication"
+  ]
+}

@@ -1,0 +1,39 @@
+{
+  "artifact_id": "full_match_application_case_study_v1",
+  "case_study_match": "Metrica Sample Game 2",
+  "created": "2026-09-27",
+  "display_scale_m": [0.0, 6.25],
+  "event_counts": {
+    "goals": 5,
+    "matched": 24,
+    "shots": 24,
+    "shots_on_target": 11
+  },
+  "files_sha256": {
+    "full_match_timeline.png": "21f8cbb10dc99df536dfb4fcce15c4cdb6707568ae19335a5a8b71af98416864",
+    "high_away_p2_5392.20.gif": "7a822d425ff3f3d36c7c1f0ef660a02b82e7ad41374f13b2b62708304bbd9ea6",
+    "high_away_p2_5392.20_diagnostic.png": "76ae519621e200712e5c51399d9d173c520e4ea41a2d48411c84fe9dac8ea239",
+    "high_home_p2_4630.88_diagnostic.png": "1895fd6a48d797370168c1fe90e26bd8160a627b7dc12ec9164856a6b29c0afc",
+    "low_away_p2_2734.56.gif": "19d6f96674d253d8f7d4bb0f94d4c14dfe6d72b169768a7aa749819b4dfa29d5",
+    "low_away_p2_2734.56_diagnostic.png": "63f6631026cdfdf2b18fe9595abe2053c56d83d663ac22edd837ecfe7caa39e7",
+    "low_away_p2_3017.48_diagnostic.png": "16090caeac93fc794dec73ca4c13db67dd42dce2971cc92d289128038246d696",
+    "rapid_increase_away_p2_5391.92_diagnostic.png": "275ac9c771e5e16cbd20bd1c038c109dfc1b943d11136e463f27c139f27f09bc",
+    "rapid_increase_home_p2_4629.20_diagnostic.png": "805ab738bad8c6b8f8348e1e34cb5f8526b6b6649a2d002f080f2fbf6f8aded9"
+  },
+  "media_policy": "six deterministic static slots; representative high and low GIFs; near-duplicate rapid-increase GIF omitted",
+  "protocol": "docs/protocols/full_match_application_case_study_v1.md",
+  "reference_counts": {
+    "one_second_changes": 570856,
+    "player_frames": 5713060,
+    "stable_runs": 18,
+    "team_frames": 571306
+  },
+  "status": "DESCRIPTIVE_APPLICATION_COMPLETE",
+  "timeline_shared_y_axis_m": [0.0, 16.844605117167227],
+  "timeline_shared_y_headroom_fraction": 0.05,
+  "thresholds_m": {
+    "high_p95": 4.233209465237362,
+    "low_p05": 1.041340265771382,
+    "rapid_one_second_p95": 0.6251746256690309
+  }
+}
