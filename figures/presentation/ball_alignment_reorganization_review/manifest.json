@@ -1,0 +1,850 @@
+{
+  "artifact_id": "ball_alignment_reorganization_review_v1",
+  "claim_boundary": "descriptive retrieval context only; no causal, predictive, tactical, quality, effectiveness, or value interpretation",
+  "created": "2026-09-28",
+  "files_sha256": {
+    "ball_alignment_comparison.png": "b7aea95a21c9979efad453074369365fb8550f8fa2e40032c0152c88843ed5ff",
+    "high_ballward_home_p1_336.76.gif": "1f667ef40130eb3e64c76b03e7bc3d1893518d4c23b96e9a0883cc20bb891dfa",
+    "high_ballward_home_p1_336.76_diagnostic.png": "d4dcecc486a0f8c7d190f0eac927c554885a4cb9efcbc7bf82973b0cfd45c588",
+    "low_ballward_home_p2_4443.16.gif": "43c2bf66ca8af78564abeb9c17cf061a28a9b8ea34a675b74bdb226feba07093",
+    "low_ballward_home_p2_4443.16_diagnostic.png": "9ce1c03082c45264f337d302863ace8ebdf319d6531ee76c32ae2c5090cabac7"
+  },
+  "historical_manifest_sha256": {
+    "v1": "bd8680ff2e860823d6556fd8d6671b6ec1defa651c62f01b5dbd26f8c8be6fcd",
+    "v2": "f695ed86990fbcfd7d92014802a83cab02aecaf5095259b1d4ae4b0aa34a9656",
+    "v3": "9719e7e418c77834775976641e8661a2e79dce16e8a7d75a8ea0523ab2b1cabf"
+  },
+  "historical_six_audit": [
+    {
+      "after_score_m": 3.9883552477369206,
+      "ballward_stratum": "mid_ballward",
+      "before_score_m": 2.202086869872677,
+      "continuous_out_of_possession_s": 9.160000000000082,
+      "contribution_pattern": "localized",
+      "historical_review_rank": 1,
+      "identity_swap_suspicion_count": 0,
+      "impossible_speed_count": 6,
+      "one_second_change_m": 1.7862683778642436,
+      "peak_time_s": 1734.72,
+      "period": 1,
+      "rapid_context": "open_play",
+      "reference_percentile": 0.9223445929151803,
+      "team_ballward_projection_share": 0.3672171231737723,
+      "team_key": "metrica:Home",
+      "team_score_m": 3.9883552477369206,
+      "team_signed_ball_alignment": 0.0784580160261691,
+      "top_three_player_raw_path_shares": [
+        0.4071995484,
+        0.0961564387,
+        0.0857907866
+      ],
+      "top_three_player_raw_paths_m": [
+        16.2405645567,
+        3.8350603678,
+        3.4216413386
+      ],
+      "trajectory_integrity_status": "trajectory_integrity_failed"
+    },
+    {
+      "after_score_m": 4.724745943570303,
+      "ballward_stratum": "low_ballward",
+      "before_score_m": 2.9915010674601286,
+      "continuous_out_of_possession_s": 3.7200000000002547,
+      "contribution_pattern": "mixed",
+      "historical_review_rank": 2,
+      "identity_swap_suspicion_count": 0,
+      "impossible_speed_count": 0,
+      "one_second_change_m": 1.7332448761101746,
+      "peak_time_s": 4443.16,
+      "period": 2,
+      "rapid_context": "open_play",
+      "reference_percentile": 0.9809051541555663,
+      "team_ballward_projection_share": 0.15838873526390282,
+      "team_key": "metrica:Home",
+      "team_score_m": 4.724745943570303,
+      "team_signed_ball_alignment": -0.36344206966500375,
+      "top_three_player_raw_path_shares": [
+        0.1619584585,
+        0.1384664905,
+        0.1283100458
+      ],
+      "top_three_player_raw_paths_m": [
+        7.6521257004,
+        6.5421898937,
+        6.0623236849
+      ],
+      "trajectory_integrity_status": "trajectory_integrity_clean"
+    },
+    {
+      "after_score_m": 4.35466265405166,
+      "ballward_stratum": "mid_ballward",
+      "before_score_m": 2.7934183100710115,
+      "continuous_out_of_possession_s": 12.32,
+      "contribution_pattern": "localized",
+      "historical_review_rank": 3,
+      "identity_swap_suspicion_count": 0,
+      "impossible_speed_count": 9,
+      "one_second_change_m": 1.5612443439806487,
+      "peak_time_s": 14.4,
+      "period": 1,
+      "rapid_context": "open_play",
+      "reference_percentile": 0.9600931899892527,
+      "team_ballward_projection_share": 0.35837840334321897,
+      "team_key": "metrica:Home",
+      "team_score_m": 4.35466265405166,
+      "team_signed_ball_alignment": -0.047970182140217726,
+      "top_three_player_raw_path_shares": [
+        0.1861095705,
+        0.1423594914,
+        0.1184581324
+      ],
+      "top_three_player_raw_paths_m": [
+        8.104443962,
+        6.1992756084,
+        5.1584520541
+      ],
+      "trajectory_integrity_status": "trajectory_integrity_failed"
+    },
+    {
+      "after_score_m": 5.467281614560823,
+      "ballward_stratum": "unsupported",
+      "before_score_m": 3.9538931157314536,
+      "continuous_out_of_possession_s": 3.3599999999996726,
+      "contribution_pattern": "broad_unit",
+      "historical_review_rank": 4,
+      "identity_swap_suspicion_count": 0,
+      "impossible_speed_count": 0,
+      "one_second_change_m": 1.5133884988293698,
+      "peak_time_s": 4473.88,
+      "period": 2,
+      "rapid_context": "open_play",
+      "reference_percentile": 0.9960336492177572,
+      "team_ballward_projection_share": null,
+      "team_key": "metrica:Away",
+      "team_score_m": 5.467281614560823,
+      "team_signed_ball_alignment": null,
+      "top_three_player_raw_path_shares": [],
+      "top_three_player_raw_paths_m": [],
+      "trajectory_integrity_status": "trajectory_integrity_clean"
+    },
+    {
+      "after_score_m": 3.375506136538218,
+      "ballward_stratum": "mid_ballward",
+      "before_score_m": 1.9031997642482772,
+      "continuous_out_of_possession_s": 9.55999999999949,
+      "contribution_pattern": "mixed",
+      "historical_review_rank": 5,
+      "identity_swap_suspicion_count": 0,
+      "impossible_speed_count": 0,
+      "one_second_change_m": 1.472306372289941,
+      "peak_time_s": 5042.36,
+      "period": 2,
+      "rapid_context": "open_play",
+      "reference_percentile": 0.8060741529057983,
+      "team_ballward_projection_share": 0.3892726912427638,
+      "team_key": "metrica:Home",
+      "team_score_m": 3.375506136538218,
+      "team_signed_ball_alignment": -0.04885430718684539,
+      "top_three_player_raw_path_shares": [
+        0.244792602,
+        0.1611811556,
+        0.1011745001
+      ],
+      "top_three_player_raw_paths_m": [
+        8.2629893007,
+        5.440679797,
+        3.4151514591
+      ],
+      "trajectory_integrity_status": "trajectory_integrity_clean"
+    },
+    {
+      "after_score_m": 6.464620678641973,
+      "ballward_stratum": "high_ballward",
+      "before_score_m": 5.045881597681654,
+      "continuous_out_of_possession_s": 3.0,
+      "contribution_pattern": "localized",
+      "historical_review_rank": 6,
+      "identity_swap_suspicion_count": 0,
+      "impossible_speed_count": 0,
+      "one_second_change_m": 1.4187390809603189,
+      "peak_time_s": 336.76,
+      "period": 1,
+      "rapid_context": "open_play",
+      "reference_percentile": 0.9992438378032088,
+      "team_ballward_projection_share": 0.7303150203689067,
+      "team_key": "metrica:Home",
+      "team_score_m": 6.464620678641973,
+      "team_signed_ball_alignment": 0.6874769825761007,
+      "top_three_player_raw_path_shares": [
+        0.1878261335,
+        0.1359422985,
+        0.1243723095
+      ],
+      "top_three_player_raw_paths_m": [
+        12.142247063,
+        8.7881539401,
+        8.0401980403
+      ],
+      "trajectory_integrity_status": "trajectory_integrity_clean"
+    }
+  ],
+  "protocol": "docs/protocols/ball_alignment_reorganization_review_v1.md",
+  "qc": {
+    "historical_packages_unchanged": true,
+    "identity_repair": false,
+    "player_identities_public": false,
+    "possession_rules_unchanged": true,
+    "rapid_threshold_unchanged": true,
+    "raw_rows_or_coordinates_public": false,
+    "raw_scores_unchanged": true
+  },
+  "question": "When rapid relational reorganization begins, how strongly is it directed toward the ball?",
+  "rapid_threshold_m": 0.6251746256690309,
+  "reference_summary": {
+    "ballward_share": {
+      "count": 270,
+      "maximum": 0.8598714593532137,
+      "minimum": 0.08622762571671577,
+      "p25": 0.32205854321076716,
+      "p50": 0.43738143742738156,
+      "p75": 0.5455186279055756
+    },
+    "eligible_rapid_episode_count": 282,
+    "signed_alignment": {
+      "maximum": 0.8368755697203828,
+      "minimum": -0.4425076229107869,
+      "p25": -0.046448929332018954,
+      "p50": 0.18681643493468392,
+      "p75": 0.4044162513246037
+    },
+    "supported_alignment_count": 270
+  },
+  "selected_public_contrast": [
+    {
+      "after_score_m": 4.724745943570303,
+      "ballward_stratum": "low_ballward",
+      "before_score_m": 2.9915010674601286,
+      "continuous_out_of_possession_s": 3.7200000000002547,
+      "contribution_pattern": "mixed",
+      "identity_swap_suspicion_count": 0,
+      "impossible_speed_count": 0,
+      "one_second_change_m": 1.7332448761101746,
+      "overall_rank": 1,
+      "peak_time_s": 4443.16,
+      "period": 2,
+      "public_rank": 1,
+      "public_selection_reason": "top_low_ballward",
+      "rapid_context": "open_play",
+      "reference_percentile": 0.9809051541555663,
+      "stratum_rank": 1,
+      "team_ballward_projection_share": 0.15838873526390282,
+      "team_key": "metrica:Home",
+      "team_score_m": 4.724745943570303,
+      "team_signed_ball_alignment": -0.36344206966500375,
+      "top_three_player_raw_path_shares": [
+        0.1619584585,
+        0.1384664905,
+        0.1283100458
+      ],
+      "top_three_player_raw_paths_m": [
+        7.6521257004,
+        6.5421898937,
+        6.0623236849
+      ],
+      "trajectory_integrity_status": "trajectory_integrity_clean"
+    },
+    {
+      "after_score_m": 6.464620678641973,
+      "ballward_stratum": "high_ballward",
+      "before_score_m": 5.045881597681654,
+      "continuous_out_of_possession_s": 3.0,
+      "contribution_pattern": "localized",
+      "identity_swap_suspicion_count": 0,
+      "impossible_speed_count": 0,
+      "one_second_change_m": 1.4187390809603189,
+      "overall_rank": 3,
+      "peak_time_s": 336.76,
+      "period": 1,
+      "public_rank": 2,
+      "public_selection_reason": "top_high_ballward",
+      "rapid_context": "open_play",
+      "reference_percentile": 0.9992438378032088,
+      "stratum_rank": 1,
+      "team_ballward_projection_share": 0.7303150203689067,
+      "team_key": "metrica:Home",
+      "team_score_m": 6.464620678641973,
+      "team_signed_ball_alignment": 0.6874769825761007,
+      "top_three_player_raw_path_shares": [
+        0.1878261335,
+        0.1359422985,
+        0.1243723095
+      ],
+      "top_three_player_raw_paths_m": [
+        12.142247063,
+        8.7881539401,
+        8.0401980403
+      ],
+      "trajectory_integrity_status": "trajectory_integrity_clean"
+    }
+  ],
+  "status": "BALL_ALIGNMENT_REVIEW_COMPLETE",
+  "top_high_ballward": [
+    {
+      "after_score_m": 6.464620678641973,
+      "ballward_stratum": "high_ballward",
+      "before_score_m": 5.045881597681654,
+      "continuous_out_of_possession_s": 3.0,
+      "contribution_pattern": "localized",
+      "identity_swap_suspicion_count": 0,
+      "impossible_speed_count": 0,
+      "one_second_change_m": 1.4187390809603189,
+      "overall_rank": 3,
+      "peak_time_s": 336.76,
+      "period": 1,
+      "rapid_context": "open_play",
+      "reference_percentile": 0.9992438378032088,
+      "stratum_rank": 1,
+      "team_ballward_projection_share": 0.7303150203689067,
+      "team_key": "metrica:Home",
+      "team_score_m": 6.464620678641973,
+      "team_signed_ball_alignment": 0.6874769825761007,
+      "top_three_player_raw_path_shares": [
+        0.1878261335,
+        0.1359422985,
+        0.1243723095
+      ],
+      "top_three_player_raw_paths_m": [
+        12.142247063,
+        8.7881539401,
+        8.0401980403
+      ],
+      "trajectory_integrity_status": "trajectory_integrity_clean"
+    },
+    {
+      "after_score_m": 3.5574391828922414,
+      "ballward_stratum": "high_ballward",
+      "before_score_m": 2.311092974662345,
+      "continuous_out_of_possession_s": 4.600000000000023,
+      "contribution_pattern": "localized",
+      "identity_swap_suspicion_count": 0,
+      "impossible_speed_count": 0,
+      "one_second_change_m": 1.2463462082298964,
+      "overall_rank": 5,
+      "peak_time_s": 269.8,
+      "period": 1,
+      "rapid_context": "transition",
+      "reference_percentile": 0.8488638312918121,
+      "stratum_rank": 2,
+      "team_ballward_projection_share": 0.7215183299327893,
+      "team_key": "metrica:Home",
+      "team_score_m": 3.5574391828922414,
+      "team_signed_ball_alignment": 0.675778556845585,
+      "top_three_player_raw_path_shares": [
+        0.2743940892,
+        0.1437549742,
+        0.1091703452
+      ],
+      "top_three_player_raw_paths_m": [
+        9.7614028441,
+        5.1139957802,
+        3.883668635
+      ],
+      "trajectory_integrity_status": "trajectory_integrity_clean"
+    },
+    {
+      "after_score_m": 3.477943025820399,
+      "ballward_stratum": "high_ballward",
+      "before_score_m": 2.250014007665688,
+      "continuous_out_of_possession_s": 17.159999999999997,
+      "contribution_pattern": "localized",
+      "identity_swap_suspicion_count": 0,
+      "impossible_speed_count": 0,
+      "one_second_change_m": 1.2279290181547111,
+      "overall_rank": 7,
+      "peak_time_s": 145.76,
+      "period": 1,
+      "rapid_context": "open_play",
+      "reference_percentile": 0.8311745369381732,
+      "stratum_rank": 3,
+      "team_ballward_projection_share": 0.7141675542018571,
+      "team_key": "metrica:Away",
+      "team_score_m": 3.477943025820399,
+      "team_signed_ball_alignment": 0.6939079079557028,
+      "top_three_player_raw_path_shares": [
+        0.2401623652,
+        0.1846430862,
+        0.1107667792
+      ],
+      "top_three_player_raw_paths_m": [
+        8.3527102304,
+        6.421781339,
+        3.8524054721
+      ],
+      "trajectory_integrity_status": "trajectory_integrity_clean"
+    },
+    {
+      "after_score_m": 3.282038586963163,
+      "ballward_stratum": "high_ballward",
+      "before_score_m": 2.091842402484768,
+      "continuous_out_of_possession_s": 35.720000000000255,
+      "contribution_pattern": "localized",
+      "identity_swap_suspicion_count": 0,
+      "impossible_speed_count": 0,
+      "one_second_change_m": 1.190196184478395,
+      "overall_rank": 9,
+      "peak_time_s": 2239.44,
+      "period": 1,
+      "rapid_context": "open_play",
+      "reference_percentile": 0.7813098409608861,
+      "stratum_rank": 4,
+      "team_ballward_projection_share": 0.6021538541529522,
+      "team_key": "metrica:Away",
+      "team_score_m": 3.282038586963163,
+      "team_signed_ball_alignment": 0.5441478600487502,
+      "top_three_player_raw_path_shares": [
+        0.1935642448,
+        0.1874723571,
+        0.1640897733
+      ],
+      "top_three_player_raw_paths_m": [
+        6.3528532057,
+        6.1529151013,
+        5.3854896779
+      ],
+      "trajectory_integrity_status": "trajectory_integrity_clean"
+    },
+    {
+      "after_score_m": 4.604415109836509,
+      "ballward_stratum": "high_ballward",
+      "before_score_m": 3.4369014852498614,
+      "continuous_out_of_possession_s": 3.0400000000000205,
+      "contribution_pattern": "localized",
+      "identity_swap_suspicion_count": 0,
+      "impossible_speed_count": 0,
+      "one_second_change_m": 1.1675136245866478,
+      "overall_rank": 11,
+      "peak_time_s": 468.68,
+      "period": 1,
+      "rapid_context": "open_play",
+      "reference_percentile": 0.9755945150234725,
+      "stratum_rank": 5,
+      "team_ballward_projection_share": 0.564377796528207,
+      "team_key": "metrica:Away",
+      "team_score_m": 4.604415109836509,
+      "team_signed_ball_alignment": 0.33209620085697467,
+      "top_three_player_raw_path_shares": [
+        0.1817148359,
+        0.1551552345,
+        0.12883973
+      ],
+      "top_three_player_raw_paths_m": [
+        8.3669053618,
+        7.1439910628,
+        5.932315996
+      ],
+      "trajectory_integrity_status": "trajectory_integrity_clean"
+    },
+    {
+      "after_score_m": 3.4910011381971073,
+      "ballward_stratum": "high_ballward",
+      "before_score_m": 2.3479731784652094,
+      "continuous_out_of_possession_s": 42.599999999999994,
+      "contribution_pattern": "localized",
+      "identity_swap_suspicion_count": 0,
+      "impossible_speed_count": 0,
+      "one_second_change_m": 1.143027959731898,
+      "overall_rank": 13,
+      "peak_time_s": 171.2,
+      "period": 1,
+      "rapid_context": "open_play",
+      "reference_percentile": 0.8342394443608154,
+      "stratum_rank": 6,
+      "team_ballward_projection_share": 0.5837838046068833,
+      "team_key": "metrica:Away",
+      "team_score_m": 3.4910011381971073,
+      "team_signed_ball_alignment": 0.5305517029430397,
+      "top_three_player_raw_path_shares": [
+        0.2619441688,
+        0.1818740079,
+        0.1125886524
+      ],
+      "top_three_player_raw_paths_m": [
+        9.1444739138,
+        6.3492236863,
+        3.9304711377
+      ],
+      "trajectory_integrity_status": "trajectory_integrity_clean"
+    }
+  ],
+  "top_low_ballward": [
+    {
+      "after_score_m": 4.724745943570303,
+      "ballward_stratum": "low_ballward",
+      "before_score_m": 2.9915010674601286,
+      "continuous_out_of_possession_s": 3.7200000000002547,
+      "contribution_pattern": "mixed",
+      "identity_swap_suspicion_count": 0,
+      "impossible_speed_count": 0,
+      "one_second_change_m": 1.7332448761101746,
+      "overall_rank": 1,
+      "peak_time_s": 4443.16,
+      "period": 2,
+      "rapid_context": "open_play",
+      "reference_percentile": 0.9809051541555663,
+      "stratum_rank": 1,
+      "team_ballward_projection_share": 0.15838873526390282,
+      "team_key": "metrica:Home",
+      "team_score_m": 4.724745943570303,
+      "team_signed_ball_alignment": -0.36344206966500375,
+      "top_three_player_raw_path_shares": [
+        0.1619584585,
+        0.1384664905,
+        0.1283100458
+      ],
+      "top_three_player_raw_paths_m": [
+        7.6521257004,
+        6.5421898937,
+        6.0623236849
+      ],
+      "trajectory_integrity_status": "trajectory_integrity_clean"
+    },
+    {
+      "after_score_m": 2.6929046470484197,
+      "ballward_stratum": "low_ballward",
+      "before_score_m": 1.703830194441237,
+      "continuous_out_of_possession_s": 6.279999999999973,
+      "contribution_pattern": "mixed",
+      "identity_swap_suspicion_count": 0,
+      "impossible_speed_count": 0,
+      "one_second_change_m": 0.9890744526071826,
+      "overall_rank": 20,
+      "peak_time_s": 1126.08,
+      "period": 1,
+      "rapid_context": "transition",
+      "reference_percentile": 0.5858174078339804,
+      "stratum_rank": 2,
+      "team_ballward_projection_share": 0.3100018903159366,
+      "team_key": "metrica:Home",
+      "team_score_m": 2.6929046470484197,
+      "team_signed_ball_alignment": 0.05876321100227599,
+      "top_three_player_raw_path_shares": [
+        0.1976346392,
+        0.1619140056,
+        0.1073940019
+      ],
+      "top_three_player_raw_paths_m": [
+        5.3221123821,
+        4.3601897819,
+        2.8920180667
+      ],
+      "trajectory_integrity_status": "trajectory_integrity_clean"
+    },
+    {
+      "after_score_m": 3.8460520520792527,
+      "ballward_stratum": "low_ballward",
+      "before_score_m": 2.910753466120231,
+      "continuous_out_of_possession_s": 3.480000000000018,
+      "contribution_pattern": "localized",
+      "identity_swap_suspicion_count": 0,
+      "impossible_speed_count": 0,
+      "one_second_change_m": 0.9352985859590217,
+      "overall_rank": 29,
+      "peak_time_s": 647.96,
+      "period": 1,
+      "rapid_context": "transition",
+      "reference_percentile": 0.9017479249298974,
+      "stratum_rank": 3,
+      "team_ballward_projection_share": 0.26745437522261795,
+      "team_key": "metrica:Home",
+      "team_score_m": 3.8460520520792527,
+      "team_signed_ball_alignment": -0.06353258725061132,
+      "top_three_player_raw_path_shares": [
+        0.1663952443,
+        0.139100869,
+        0.1339606327
+      ],
+      "top_three_player_raw_paths_m": [
+        6.399647707,
+        5.3498918248,
+        5.1521956623
+      ],
+      "trajectory_integrity_status": "trajectory_integrity_clean"
+    },
+    {
+      "after_score_m": 4.0552035942319025,
+      "ballward_stratum": "low_ballward",
+      "before_score_m": 3.126175380903466,
+      "continuous_out_of_possession_s": 28.16000000000031,
+      "contribution_pattern": "broad_unit",
+      "identity_swap_suspicion_count": 0,
+      "impossible_speed_count": 0,
+      "one_second_change_m": 0.9290282133284364,
+      "overall_rank": 31,
+      "peak_time_s": 2058.76,
+      "period": 1,
+      "rapid_context": "open_play",
+      "reference_percentile": 0.9307901544881377,
+      "stratum_rank": 4,
+      "team_ballward_projection_share": 0.22967739820928673,
+      "team_key": "metrica:Away",
+      "team_score_m": 4.0552035942319025,
+      "team_signed_ball_alignment": -0.010204524108289663,
+      "top_three_player_raw_path_shares": [
+        0.1331720265,
+        0.1254065262,
+        0.1247570205
+      ],
+      "top_three_player_raw_paths_m": [
+        5.4003968051,
+        5.0854899584,
+        5.0591511804
+      ],
+      "trajectory_integrity_status": "trajectory_integrity_clean"
+    },
+    {
+      "after_score_m": 3.7687866778399846,
+      "ballward_stratum": "low_ballward",
+      "before_score_m": 2.881039801522288,
+      "continuous_out_of_possession_s": 61.24000000000001,
+      "contribution_pattern": "mixed",
+      "identity_swap_suspicion_count": 0,
+      "impossible_speed_count": 0,
+      "one_second_change_m": 0.8877468763176966,
+      "overall_rank": 34,
+      "peak_time_s": 978.32,
+      "period": 1,
+      "rapid_context": "open_play",
+      "reference_percentile": 0.8890139434908788,
+      "stratum_rank": 5,
+      "team_ballward_projection_share": 0.2341617969837946,
+      "team_key": "metrica:Home",
+      "team_score_m": 3.7687866778399846,
+      "team_signed_ball_alignment": -0.13413488822528283,
+      "top_three_player_raw_path_shares": [
+        0.1800314535,
+        0.1464948778,
+        0.1317977286
+      ],
+      "top_three_player_raw_paths_m": [
+        6.785001437,
+        5.5210794394,
+        4.967175238
+      ],
+      "trajectory_integrity_status": "trajectory_integrity_clean"
+    },
+    {
+      "after_score_m": 3.785077876535147,
+      "ballward_stratum": "low_ballward",
+      "before_score_m": 2.971958908513078,
+      "continuous_out_of_possession_s": 45.48000000000002,
+      "contribution_pattern": "localized",
+      "identity_swap_suspicion_count": 0,
+      "impossible_speed_count": 0,
+      "one_second_change_m": 0.813118968022069,
+      "overall_rank": 43,
+      "peak_time_s": 840.48,
+      "period": 1,
+      "rapid_context": "transition",
+      "reference_percentile": 0.8918618043570345,
+      "stratum_rank": 6,
+      "team_ballward_projection_share": 0.2187066956354364,
+      "team_key": "metrica:Away",
+      "team_score_m": 3.785077876535147,
+      "team_signed_ball_alignment": -0.25621758267328837,
+      "top_three_player_raw_path_shares": [
+        0.2013178203,
+        0.1586747728,
+        0.1531591193
+      ],
+      "top_three_player_raw_paths_m": [
+        7.6200362765,
+        6.0059637221,
+        5.7971919402
+      ],
+      "trajectory_integrity_status": "trajectory_integrity_clean"
+    }
+  ],
+  "top_overall": [
+    {
+      "after_score_m": 4.724745943570303,
+      "ballward_stratum": "low_ballward",
+      "before_score_m": 2.9915010674601286,
+      "continuous_out_of_possession_s": 3.7200000000002547,
+      "contribution_pattern": "mixed",
+      "identity_swap_suspicion_count": 0,
+      "impossible_speed_count": 0,
+      "one_second_change_m": 1.7332448761101746,
+      "overall_rank": 1,
+      "peak_time_s": 4443.16,
+      "period": 2,
+      "rapid_context": "open_play",
+      "reference_percentile": 0.9809051541555663,
+      "team_ballward_projection_share": 0.15838873526390282,
+      "team_key": "metrica:Home",
+      "team_score_m": 4.724745943570303,
+      "team_signed_ball_alignment": -0.36344206966500375,
+      "top_three_player_raw_path_shares": [
+        0.1619584585,
+        0.1384664905,
+        0.1283100458
+      ],
+      "top_three_player_raw_paths_m": [
+        7.6521257004,
+        6.5421898937,
+        6.0623236849
+      ],
+      "trajectory_integrity_status": "trajectory_integrity_clean"
+    },
+    {
+      "after_score_m": 3.375506136538218,
+      "ballward_stratum": "mid_ballward",
+      "before_score_m": 1.9031997642482772,
+      "continuous_out_of_possession_s": 9.55999999999949,
+      "contribution_pattern": "mixed",
+      "identity_swap_suspicion_count": 0,
+      "impossible_speed_count": 0,
+      "one_second_change_m": 1.472306372289941,
+      "overall_rank": 2,
+      "peak_time_s": 5042.36,
+      "period": 2,
+      "rapid_context": "open_play",
+      "reference_percentile": 0.8060741529057983,
+      "team_ballward_projection_share": 0.3892726912427638,
+      "team_key": "metrica:Home",
+      "team_score_m": 3.375506136538218,
+      "team_signed_ball_alignment": -0.04885430718684539,
+      "top_three_player_raw_path_shares": [
+        0.244792602,
+        0.1611811556,
+        0.1011745001
+      ],
+      "top_three_player_raw_paths_m": [
+        8.2629893007,
+        5.440679797,
+        3.4151514591
+      ],
+      "trajectory_integrity_status": "trajectory_integrity_clean"
+    },
+    {
+      "after_score_m": 6.464620678641973,
+      "ballward_stratum": "high_ballward",
+      "before_score_m": 5.045881597681654,
+      "continuous_out_of_possession_s": 3.0,
+      "contribution_pattern": "localized",
+      "identity_swap_suspicion_count": 0,
+      "impossible_speed_count": 0,
+      "one_second_change_m": 1.4187390809603189,
+      "overall_rank": 3,
+      "peak_time_s": 336.76,
+      "period": 1,
+      "rapid_context": "open_play",
+      "reference_percentile": 0.9992438378032088,
+      "team_ballward_projection_share": 0.7303150203689067,
+      "team_key": "metrica:Home",
+      "team_score_m": 6.464620678641973,
+      "team_signed_ball_alignment": 0.6874769825761007,
+      "top_three_player_raw_path_shares": [
+        0.1878261335,
+        0.1359422985,
+        0.1243723095
+      ],
+      "top_three_player_raw_paths_m": [
+        12.142247063,
+        8.7881539401,
+        8.0401980403
+      ],
+      "trajectory_integrity_status": "trajectory_integrity_clean"
+    },
+    {
+      "after_score_m": 4.756572745299438,
+      "ballward_stratum": "mid_ballward",
+      "before_score_m": 3.492437367977361,
+      "continuous_out_of_possession_s": 10.119999999999997,
+      "contribution_pattern": "broad_unit",
+      "identity_swap_suspicion_count": 0,
+      "impossible_speed_count": 0,
+      "one_second_change_m": 1.2641353773220776,
+      "overall_rank": 4,
+      "peak_time_s": 37.04,
+      "period": 1,
+      "rapid_context": "open_play",
+      "reference_percentile": 0.9819886365625426,
+      "team_ballward_projection_share": 0.3659626337192979,
+      "team_key": "metrica:Home",
+      "team_score_m": 4.756572745299438,
+      "team_signed_ball_alignment": 0.11522738431560688,
+      "top_three_player_raw_path_shares": [
+        0.180423144,
+        0.1503450584,
+        0.1288174107
+      ],
+      "top_three_player_raw_paths_m": [
+        8.5819580923,
+        7.1512720735,
+        6.1272938486
+      ],
+      "trajectory_integrity_status": "trajectory_integrity_clean"
+    },
+    {
+      "after_score_m": 3.5574391828922414,
+      "ballward_stratum": "high_ballward",
+      "before_score_m": 2.311092974662345,
+      "continuous_out_of_possession_s": 4.600000000000023,
+      "contribution_pattern": "localized",
+      "identity_swap_suspicion_count": 0,
+      "impossible_speed_count": 0,
+      "one_second_change_m": 1.2463462082298964,
+      "overall_rank": 5,
+      "peak_time_s": 269.8,
+      "period": 1,
+      "rapid_context": "transition",
+      "reference_percentile": 0.8488638312918121,
+      "team_ballward_projection_share": 0.7215183299327893,
+      "team_key": "metrica:Home",
+      "team_score_m": 3.5574391828922414,
+      "team_signed_ball_alignment": 0.675778556845585,
+      "top_three_player_raw_path_shares": [
+        0.2743940892,
+        0.1437549742,
+        0.1091703452
+      ],
+      "top_three_player_raw_paths_m": [
+        9.7614028441,
+        5.1139957802,
+        3.883668635
+      ],
+      "trajectory_integrity_status": "trajectory_integrity_clean"
+    },
+    {
+      "after_score_m": 3.029427212284376,
+      "ballward_stratum": "mid_ballward",
+      "before_score_m": 1.7912974228449154,
+      "continuous_out_of_possession_s": 33.79999999999973,
+      "contribution_pattern": "localized",
+      "identity_swap_suspicion_count": 0,
+      "impossible_speed_count": 0,
+      "one_second_change_m": 1.2381297894394605,
+      "overall_rank": 6,
+      "peak_time_s": 2279.12,
+      "period": 1,
+      "rapid_context": "open_play",
+      "reference_percentile": 0.7031153182357616,
+      "team_ballward_projection_share": 0.45619914439684406,
+      "team_key": "metrica:Home",
+      "team_score_m": 3.029427212284376,
+      "team_signed_ball_alignment": 0.12860491310178804,
+      "top_three_player_raw_path_shares": [
+        0.2281789673,
+        0.1959606336,
+        0.1530815217
+      ],
+      "top_three_player_raw_paths_m": [
+        6.9125157285,
+        5.9364847599,
+        4.6374932758
+      ],
+      "trajectory_integrity_status": "trajectory_integrity_clean"
+    }
+  ],
+  "trajectory_maximum_speed_mps": 15.0
+}

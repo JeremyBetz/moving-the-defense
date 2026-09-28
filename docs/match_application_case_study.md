@@ -96,6 +96,46 @@ good or bad. Three rapid decreases were inspected locally. They show readable
 settling passages, but did not add enough distinct public value to justify a
 second retrieval workflow in this pass.
 
+## Trajectory integrity and movement toward the ball
+
+Rapid change answers *when* relational reorganization accelerated. A second,
+descriptive review asks whether that movement was directed largely toward the
+ball or was only weakly aligned with it. Before making that comparison, native
+tracking transitions above 15 m/s fail trajectory integrity; no coordinates or
+identities are repaired.
+
+![Rapid increase and ballward movement](../figures/presentation/ball_alignment_reorganization_review/ball_alignment_comparison.png)
+
+Across 282 possession-eligible rapid episodes in the public Games 1–2
+reference, 270 had complete ball-alignment support. The middle half of the
+ballward projection share ran from **0.322 to 0.546**. Two of the historical
+top-six Game 2 passages failed the frozen impossible-speed check, including the
+old rank 1; neither showed the separate identity-swap signature.
+
+The public contrast is deterministic. The strongest integrity-clean
+low-ballward rise had a **1.733 m** one-second increase but only **0.158** of
+measured movement projected positively toward the ball (signed alignment
+**-0.363**). The strongest integrity-clean high-ballward rise had a **1.419 m**
+increase and a **0.730** ballward share (signed alignment **0.687**). This shows
+why a large rise alone does not describe the direction of the movement.
+
+**Low ballward — strong reorganization, weak ball alignment**
+
+![Low-ballward rapid passage](../figures/presentation/ball_alignment_reorganization_review/low_ballward_home_p2_4443.16.gif)
+
+[Open the low-ballward diagnostic](../figures/presentation/ball_alignment_reorganization_review/low_ballward_home_p2_4443.16_diagnostic.png)
+
+**High ballward — movement substantially toward the ball**
+
+![High-ballward rapid passage](../figures/presentation/ball_alignment_reorganization_review/high_ballward_home_p1_336.76.gif)
+
+[Open the high-ballward diagnostic](../figures/presentation/ball_alignment_reorganization_review/high_ballward_home_p1_336.76_diagnostic.png)
+
+Ball alignment is review context, not a tactical score. It does not establish
+that an attacker caused the movement, that the unit defended well or badly, or
+that movement toward the ball was desirable. The complete aggregate audit and
+media hashes are in the [package manifest](../figures/presentation/ball_alignment_reorganization_review/manifest.json).
+
 ## Historical possession-gated level review
 
 High and low passages answer a different question: when was the absolute raw

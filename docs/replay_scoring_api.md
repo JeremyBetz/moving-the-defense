@@ -468,6 +468,61 @@ deterministically selected examples. All-six review media and decrease media
 remain local. See the
 [rapid-change protocol](protocols/rapid_change_first_defensive_review_v1.md).
 
+### Trajectory integrity and ball alignment
+
+The optional review layer in `src/ball_alignment_reorganization_review.py`
+keeps the production score and rapid ordering unchanged. It first checks the
+complete native-frame support for impossible movement and a narrowly defined
+identity-swap signature. It then decomposes each defender-relative increment
+against the contemporaneous player-to-ball direction.
+
+```python
+from ball_alignment_reorganization_review import (
+    TrajectoryIntegritySpec,
+    audit_native_trajectory_integrity,
+    compute_ball_alignment_at_time,
+)
+
+spec = TrajectoryIntegritySpec()
+integrity = audit_native_trajectory_integrity(
+    defending_tracking,
+    defending_scores,
+    match_id=match_id,
+    period=period,
+    team_key=defending_team_key,
+    peak_time_s=peak_time_s,
+    spec=spec,
+)
+alignment = compute_ball_alignment_at_time(
+    defending_tracking,
+    ball_tracking,
+    defending_scores,
+    match_id=match_id,
+    period=period,
+    team_key=defending_team_key,
+    time_s=peak_time_s,
+    spec=spec,
+)
+```
+
+`alignment.team_ballward_projection_share` is the positive projection toward
+the ball divided by total defender-relative path; `team_signed_alignment`
+retains toward-versus-away direction. Both are path-weighted team summaries.
+They describe movement geometry and do not classify tactics, quality, cause,
+effectiveness, or value. The frozen Games 1–2 review can be reproduced locally
+with:
+
+```bash
+.venv/bin/python src/run_ball_alignment_reorganization_review.py \
+  --output-dir /tmp/moving_the_defense_ball_alignment_review
+```
+
+The public package contains only the aggregate audit, comparison, and
+deterministically selected low/high examples. Detailed candidate media and
+decompositions remain local. See the
+[frozen protocol](protocols/ball_alignment_reorganization_review_v1.md) and
+[closed result](results/ball_alignment_reorganization_review_v1.md).
+
 Every run writes `event_window_review_summary.md` plus ranked event-window CSV
 and JSON files. Rendered runs add sparse event-review cards, GIFs, and traces.
 Metric traces, event details, player contributions, CSV, and Parquet outputs

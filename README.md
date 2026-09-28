@@ -174,6 +174,14 @@ compact [Game 2 case study](docs/match_application_case_study.md), the rapid
 timeline, and two deterministically diverse examples. Historical ungated v1
 and possession-aware level v2 packages remain linked as provenance.
 
+The case study also applies a frozen trajectory-integrity check and a
+ball-alignment diagnostic to rapid passages. Rapid change identifies when
+relational reorganization accelerates; the alignment layer distinguishes
+movement directed substantially toward the ball from movement that is weakly
+aligned or directed away. The public [low/high contrast](docs/match_application_case_study.md#trajectory-integrity-and-movement-toward-the-ball)
+is descriptive review context only—it does not infer cause, defensive quality,
+or tactical success.
+
 The flow is `football question/events → normalized tracking → trailing scores →`
 `supported ranked windows → human video review`. See the
 [API contract](docs/replay_scoring_api.md) and
