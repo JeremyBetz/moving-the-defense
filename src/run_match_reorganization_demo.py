@@ -10,6 +10,7 @@ import shutil
 import pandas as pd
 
 from match_reorganization_review import analyze_match_reorganization
+from analyst_review_index import write_index
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -75,30 +76,53 @@ def run_demo(output_dir: Path, *, data_root: Path | None = None, render_media: b
         metadata={"match": "Metrica Sample Game 2", "media_rendered": render_media},
     )
     output_dir.mkdir(parents=True)
-    _write_frame(review.rapid_episodes, output_dir / "rapid_episodes.csv")
-    _write_frame(review.representative_examples, output_dir / "representative_examples.csv")
-    _write_frame(review.diagnostic_examples, output_dir / "diagnostic_examples.csv")
-    _write_frame(review.rejected_examples, output_dir / "rejected_examples.csv")
+    groups = [("Representative", review.representative_examples.copy(deep=True)),
+              ("Diagnostic", review.diagnostic_examples.copy(deep=True)),
+              ("Rejected", review.rejected_examples.copy(deep=True))]
     copied_media: list[str] = []
-    if render_media:
-        media_dir = output_dir / "media"
+    for role, frame in groups:
+        media_dir = output_dir / f"{role.lower()}_examples"
         media_dir.mkdir()
-        valid = pd.concat(
-            [review.representative_examples, review.diagnostic_examples], ignore_index=True
-        )
-        packages = (BALL_MANIFEST, ATTACKER_MANIFEST)
-        for time_s in valid.peak_time_s:
-            token = f"{float(time_s):.2f}"
-            for manifest_path in packages:
-                payload = json.loads(manifest_path.read_text(encoding="utf-8"))
-                for name in payload["files_sha256"]:
-                    if token not in name or Path(name).suffix.lower() not in {".png", ".gif"}:
-                        continue
-                    source = manifest_path.parent / name
-                    destination = media_dir / name
-                    if not destination.exists():
-                        shutil.copyfile(source, destination)
-                        copied_media.append(str(destination.relative_to(output_dir)))
+        for index, row in frame.iterrows():
+            failed = row.trajectory_integrity_status != "trajectory_integrity_clean"
+            frame.at[index, "ball_alignment_support_status"] = (
+                "integrity_failed" if failed else
+                "unsupported" if row.ballward_stratum == "unsupported" else "supported"
+            )
+            frame.at[index, "media_status"] = "not_rendered"
+            if not render_media or role == "Rejected":
+                continue
+            manifest_path = BALL_MANIFEST if row.ballward_stratum == "high_ballward" else ATTACKER_MANIFEST
+            payload = ball_manifest if manifest_path == BALL_MANIFEST else attacker_manifest
+            token = f"_{str(row.team_key).split(':')[-1].lower()}_p{int(row.period)}_{float(row.peak_time_s):.2f}"
+            matched = {}
+            for name in payload["files_sha256"]:
+                suffix = Path(name).suffix.lower()
+                if token not in name or suffix not in {".png", ".gif"}:
+                    continue
+                if suffix in matched:
+                    raise RuntimeError("ambiguous governed media identity")
+                destination = media_dir / name
+                shutil.copyfile(manifest_path.parent / name, destination)
+                matched[suffix] = str(destination.relative_to(output_dir))
+                copied_media.append(matched[suffix])
+            if set(matched) != {".png", ".gif"}:
+                raise RuntimeError("selected example lacks governed media")
+            frame.at[index, "static_path"] = matched[".png"]
+            frame.at[index, "gif_path"] = matched[".gif"]
+            frame.at[index, "media_status"] = "supported"
+        _write_frame(frame, output_dir / f"{role.lower()}_examples.csv")
+    detailed = review.rapid_episodes.copy(deep=True)
+    detailed["media_status"] = "not_rendered"
+    for _, frame in groups:
+        for _, row in frame.iterrows():
+            mask = (detailed.team_key.eq(row.team_key) & detailed.period.eq(row.period)
+                    & detailed.peak_time_s.eq(row.peak_time_s))
+            for field in ("ball_alignment_support_status", "media_status", "static_path", "gif_path"):
+                detailed.loc[mask, field] = row[field]
+    _write_frame(detailed, output_dir / "rapid_episodes.csv")
+    _write_frame(detailed, output_dir / "detailed_episode_table.csv")
+    write_index(output_dir, groups)
     summary = {
         "status": "MATCH_REORGANIZATION_DEMO_COMPLETE",
         "measurement": review.metadata["measurement"],
@@ -108,11 +132,23 @@ def run_demo(output_dir: Path, *, data_root: Path | None = None, render_media: b
         "diagnostic_example_count": len(review.diagnostic_examples),
         "rejected_example_count": len(review.rejected_examples),
         "media_copied": copied_media,
+        "index": "analyst_review_index.html",
+        "presentation_limitations": [
+            "Historical media durations and link overlays reused unchanged",
+            "Contributor values absent from closed summaries remain not_evaluated",
+        ],
         "claim_boundary": "descriptive analyst review; no causal, tactical, marking, quality or value interpretation",
     }
     (output_dir / "summary.json").write_text(
         json.dumps(summary, indent=2, sort_keys=True) + "\n", encoding="utf-8"
     )
+    files = sorted(path for path in output_dir.rglob("*") if path.is_file())
+    (output_dir / "manifest.json").write_text(json.dumps({
+        "source_manifests_sha256": {
+            "ball_alignment": _sha256(BALL_MANIFEST), "attacker_linked": _sha256(ATTACKER_MANIFEST)},
+        "files_sha256": {str(path.relative_to(output_dir)): _sha256(path) for path in files},
+        "status": "NAVIGATION_READY_MEDIA_POLISH_INCOMPLETE",
+    }, indent=2, sort_keys=True) + "\n", encoding="utf-8")
     return summary
 
 
@@ -126,9 +162,12 @@ def main() -> None:
     args = parser.parse_args()
     if args.render_media and args.no_media:
         parser.error("choose either --render-media or --no-media")
-    print(json.dumps(run_demo(
+    result = run_demo(
         args.output_dir, data_root=args.data_root, render_media=args.render_media
-    ), indent=2))
+    )
+    print(f"Review complete.\nOpen:\n  {args.output_dir.resolve() / 'analyst_review_index.html'}")
+    print(f"Representative: {result['representative_example_count']}\n"
+          f"Diagnostic: {result['diagnostic_example_count']}\nRejected: {result['rejected_example_count']}")
 
 
 if __name__ == "__main__":
