@@ -237,6 +237,22 @@ media; rejected media are never copied as defaults. This fast path does not
 rerun the historical pipelines. The commands below remain the full public-data
 reproduction routes.
 
+The command also writes `analyst_review_index.html`, `compact_episode_review.csv`,
+`detailed_episode_table.csv`, and a file-hash manifest. Open the index as a local
+file. All copied media links are relative to the output directory and remain
+valid when the whole package is moved. Role-specific media directories are
+`representative_examples/`, `diagnostic_examples/`, and `rejected_examples/`;
+the last remains empty to avoid presenting failed tracking as valid evidence.
+The original four detailed CSV exports remain available.
+
+Representative = valid default example; Diagnostic = valid special context or
+method contrast; Rejected = failed integrity, retained for QC explanation only.
+The presentation shows explicit support states and `not_rendered` for absent
+media. Contributor details absent from the closed summary are reported as
+`not_evaluated — absent from closed summary`, never estimated from image colors.
+The existing clips retain their durations and link overlays. See the
+[remaining media requirements](results/p1_demo_ux_polish_followup.md).
+
 `src/defensive_reorganization_match_review.py` adds a separate opt-in application
 layer without changing `discover_moments(...)` or the event-review dashboard.
 Its `PooledScoreReference` stores sorted raw player, team, and one-second-change

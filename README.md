@@ -139,6 +139,19 @@ selected governed media into the local package. The fast demo does not rerun the
 historical Games 1–2 pipelines; their full reproduction commands remain in the
 [API guide](docs/replay_scoring_api.md).
 
+Open the generated `analyst_review_index.html` directly in your browser; no
+server is needed. It provides separate Representative, Diagnostic and Rejected
+sections, direct static/GIF links, and a compact CSV alongside the detailed
+export. Representative means a valid default review example; Diagnostic means
+a valid special-context or methodological contrast; Rejected means failed QC
+and never valid analyst evidence. With `--no-media`, media is explicitly marked
+`not_rendered`.
+
+This navigation pass reuses existing media. Longer attacker-linked clips,
+capped link overlays and the missing contributor values for one representative
+remain unresolved under the no-rescoring constraint; see the
+[UX follow-up](docs/results/p1_demo_ux_polish_followup.md).
+
 The facade keeps valid examples, special-context diagnostics and rejected
 integrity examples structurally separate:
 
