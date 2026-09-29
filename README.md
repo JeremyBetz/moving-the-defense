@@ -119,13 +119,13 @@ tactical logic.
 
 #### Analyst demo
 
-The curated [static analyst demo](docs/demo/index.html) is **prepared, not yet
-deployed**. Download this checkout and open that file locally: two representative
-clips are expanded; the goalkeeper-distribution diagnostic and rejected QC
-lesson are separate collapsed sections. It contains unchanged, allowlisted
-media—not the local cache or technical exports. See the
-[static-export instructions](docs/replay_scoring_api.md#static-public-presentation)
-and [public provenance manifest](docs/demo/manifest.json).
+The curated **[live analyst demo](https://jeremybetz.github.io/moving-the-defense/)**
+presents two representative passages, a goalkeeper-distribution diagnostic, and a rejected
+trajectory-QC example. It contains only reviewed, allowlisted static media and aggregate
+presentation fields—not provider data, local caches, or technical exports. The checked-in
+source is [docs/demo/index.html](docs/demo/index.html); see the
+[static-export instructions](docs/replay_scoring_api.md#static-public-presentation) and
+[public provenance manifest](docs/demo/manifest.json).
 
 The current demo separates five application layers: **team relational
 reorganization** is the raw possession-agnostic score; **defensive
