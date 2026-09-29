@@ -269,6 +269,40 @@ counts and categories remain unchanged. The 12-link diagnostic displays 3/12.
 No historical media is overwritten. See the
 [bounded-recovery review](results/p1_selected_window_demo_media.md).
 
+### Static public presentation
+
+The [curated static site](demo/index.html) is **prepared, not yet deployed**.
+Open its `index.html` from a downloaded checkout, or serve `docs/demo` locally.
+It is separate from the five-example local review: two representatives are
+expanded, the goalkeeper-distribution diagnostic and rejected QC lesson are
+collapsed, and the no-link diagnostic is omitted. Raw metres remain authoritative;
+unsupported linkage remains “not evaluated” and rejected downstream fields
+remain “integrity failed”.
+
+Export from the exact previously verified presentation package, without
+provider data, scoring or rendering:
+
+```bash
+.venv/bin/python src/export_match_reorganization_demo_site.py \
+  --demo-root <verified-demo-package> \
+  --output-dir <new-static-directory>
+```
+
+The [frozen publication contract](protocols/p1_demo_public_asset_allowlist_v1.md)
+pins all 20 input files through the source manifest and exactly eight media
+assets individually. Both protocol and exporter must be committed and unchanged.
+A newly generated or altered demo package is not interchangeable: hash mismatch,
+unknown files, symlinks, unsafe paths or an existing destination stop export.
+Use a new destination to verify reproduction; never overwrite `docs/demo`.
+The exporter copies the eight approved PNG/GIF files byte-for-byte and creates
+HTML, CSS and a [public hash manifest](demo/manifest.json), with no timestamps
+or machine paths. It never publishes caches or CSV exports.
+
+No hosting workflow or Pages configuration is included. Deployment requires
+separate authorization and review, integration/push, main-only GitHub Actions
+configuration and logged-out verification. The media remain Metrica-derived;
+rasterization is not anonymization or a general redistribution permission.
+
 `src/defensive_reorganization_match_review.py` adds a separate opt-in application
 layer without changing `discover_moments(...)` or the event-review dashboard.
 Its `PooledScoreReference` stores sorted raw player, team, and one-second-change

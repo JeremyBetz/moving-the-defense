@@ -200,3 +200,18 @@ Do not push, merge, implement the site or change GitHub settings in this pass.
 Recommended next action after this report is committed: separately authorize
 the bounded static-export implementation and exact public asset allowlist;
 keep deployment itself gated until that implementation has passed review.
+
+## Authorized static-preparation follow-up
+
+The [static package](../demo/index.html) is now **prepared, not yet deployed**
+under the [exact public allowlist](../protocols/p1_demo_public_asset_allowlist_v1.md).
+It contains only HTML, CSS, its public manifest and the eight unchanged approved
+media files. No cache or detailed CSV is included. The
+[export instructions](../replay_scoring_api.md#static-public-presentation)
+require the pinned verified input package and a new output destination.
+
+This follow-up does not change the historical deployment assessment above.
+No workflow, Pages setting, push, merge or deployment is authorized by static
+preparation. The next stage requires separate authorization to add/review the
+manual workflow, integrate and push the reviewed branch, configure GitHub
+Actions Pages with a main-only environment, and verify the live assets logged out.

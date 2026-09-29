@@ -119,6 +119,14 @@ tactical logic.
 
 #### Analyst demo
 
+The curated [static analyst demo](docs/demo/index.html) is **prepared, not yet
+deployed**. Download this checkout and open that file locally: two representative
+clips are expanded; the goalkeeper-distribution diagnostic and rejected QC
+lesson are separate collapsed sections. It contains unchanged, allowlisted
+media—not the local cache or technical exports. See the
+[static-export instructions](docs/replay_scoring_api.md#static-public-presentation)
+and [public provenance manifest](docs/demo/manifest.json).
+
 The current demo separates five application layers: **team relational
 reorganization** is the raw possession-agnostic score; **defensive
 reorganization** adds valid defending context; **rapid defensive
