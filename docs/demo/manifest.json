@@ -1,0 +1,151 @@
+{
+  "allowlist_sha256": "67adb9886cdc441f9fe0e1bd29f39b4bac7c35cd6c8b79bb78cfe3bb733363ba",
+  "examples": [
+    {
+      "attacker_link_category": "localized",
+      "ballward_share": 0.1678827392,
+      "ballward_stratum": "low_ballward",
+      "category": "representative",
+      "context_label": "open play (event-derived context)",
+      "evaluated_team": "Home",
+      "integrity_status": "trajectory_integrity_clean",
+      "period": 2,
+      "rapid_change_m": 0.7912990158,
+      "reorganization_level_m": 2.6850518891,
+      "timestamp_s": 5355.64,
+      "top_three_defender_contributions_m": [
+        8.188739692428577,
+        5.541440715037958,
+        3.062612793142351
+      ],
+      "total_strong_link_count": 2
+    },
+    {
+      "attacker_link_category": "not_evaluated",
+      "ballward_share": 0.7303150204,
+      "ballward_stratum": "high_ballward",
+      "category": "representative",
+      "context_label": "open play (event-derived context)",
+      "evaluated_team": "Home",
+      "integrity_status": "trajectory_integrity_clean",
+      "period": 1,
+      "rapid_change_m": 1.418739081,
+      "reorganization_level_m": 6.4646206786,
+      "timestamp_s": 336.76,
+      "top_three_defender_contributions_m": [
+        12.14224706300597,
+        8.788153940122914,
+        8.040198040281235
+      ],
+      "total_strong_link_count": "not_evaluated"
+    },
+    {
+      "attacker_link_category": "distributed",
+      "ballward_share": 0.1583887353,
+      "ballward_stratum": "low_ballward",
+      "category": "diagnostic",
+      "context_label": "goalkeeper-distribution special context",
+      "evaluated_team": "Home",
+      "integrity_status": "trajectory_integrity_clean",
+      "period": 2,
+      "rapid_change_m": 1.7332448761,
+      "reorganization_level_m": 4.7247459436,
+      "timestamp_s": 4443.16,
+      "top_three_defender_contributions_m": [
+        7.652125700405476,
+        6.542189893726806,
+        6.062323684902713
+      ],
+      "total_strong_link_count": 12
+    },
+    {
+      "attacker_link_category": "integrity_failed",
+      "ballward_share": "integrity_failed",
+      "ballward_stratum": "integrity_failed",
+      "category": "rejected",
+      "context_label": "rejected / integrity failure",
+      "evaluated_team": "Home",
+      "integrity_status": "integrity_failed",
+      "period": 1,
+      "rapid_change_m": 1.7862683779,
+      "reorganization_level_m": 3.9883552477,
+      "timestamp_s": 1734.72,
+      "top_three_defender_contributions_m": [
+        16.240564556733577,
+        3.8350603677810198,
+        3.4216413386106432
+      ],
+      "total_strong_link_count": "integrity_failed"
+    }
+  ],
+  "exporter": {
+    "commit": "4c18a9c907f3460d5c67cf61f2500c9b8bdae1b8",
+    "sha256": "df56dfe3f4a7edd72a79749885c1a36ca2af6ae722d6554d45608654351174b1",
+    "version": "1.0.0"
+  },
+  "files_sha256": {
+    "assets/diagnostic/home_p2_4443.16.gif": "e636575d4a77b3bed1a70d24c82e2486eb7e08307290991b081f17d7c2130c92",
+    "assets/diagnostic/home_p2_4443.16.png": "243aebde46abe92673e57b4b04d82ee0a2b2db9d607d7625ba33a19eb2373ec8",
+    "assets/rejected/home_p1_1734.72.gif": "9f04017ab69923fb8e888e7417165cb090377384804c42d73aed014a866e8896",
+    "assets/rejected/home_p1_1734.72.png": "09ff526c269b386648ef0692536f2a4cb71d2349897faa12eb24edad5b0b23e1",
+    "assets/representative/home_p1_336.76.gif": "e82aabab10f02de70982472360cd740d01e74bb9262842294e53888521346f05",
+    "assets/representative/home_p1_336.76.png": "15a5e468bdabc367ca6678f39eaefcda1da33b1cc5cbc215e38d5f7fbe3ae406",
+    "assets/representative/home_p2_5355.64.gif": "91a083330946a87a187bca3301d06dfc4beb00c3b458a72cf358ed4f42ea40e6",
+    "assets/representative/home_p2_5355.64.png": "844a699a65c48548b5114014c41bcdc49b45c2dece0afd5e544be2b0a2e42832",
+    "index.html": "c37f69ed657f90a539268dcfd616a5c8647805d3391297f96c7927b4de82cf02",
+    "styles.css": "54afe435a26d969f4e7d138cd7206454665dc654ed69236acb6394d8e95646de"
+  },
+  "media": [
+    {
+      "destination": "assets/representative/home_p2_5355.64.png",
+      "exported_sha256": "844a699a65c48548b5114014c41bcdc49b45c2dece0afd5e544be2b0a2e42832",
+      "source": "representative_examples/home_p2_5355.64.png",
+      "source_sha256": "844a699a65c48548b5114014c41bcdc49b45c2dece0afd5e544be2b0a2e42832"
+    },
+    {
+      "destination": "assets/representative/home_p2_5355.64.gif",
+      "exported_sha256": "91a083330946a87a187bca3301d06dfc4beb00c3b458a72cf358ed4f42ea40e6",
+      "source": "representative_examples/home_p2_5355.64.gif",
+      "source_sha256": "91a083330946a87a187bca3301d06dfc4beb00c3b458a72cf358ed4f42ea40e6"
+    },
+    {
+      "destination": "assets/representative/home_p1_336.76.png",
+      "exported_sha256": "15a5e468bdabc367ca6678f39eaefcda1da33b1cc5cbc215e38d5f7fbe3ae406",
+      "source": "representative_examples/home_p1_336.76.png",
+      "source_sha256": "15a5e468bdabc367ca6678f39eaefcda1da33b1cc5cbc215e38d5f7fbe3ae406"
+    },
+    {
+      "destination": "assets/representative/home_p1_336.76.gif",
+      "exported_sha256": "e82aabab10f02de70982472360cd740d01e74bb9262842294e53888521346f05",
+      "source": "representative_examples/home_p1_336.76.gif",
+      "source_sha256": "e82aabab10f02de70982472360cd740d01e74bb9262842294e53888521346f05"
+    },
+    {
+      "destination": "assets/diagnostic/home_p2_4443.16.png",
+      "exported_sha256": "243aebde46abe92673e57b4b04d82ee0a2b2db9d607d7625ba33a19eb2373ec8",
+      "source": "diagnostic_examples/home_p2_4443.16.png",
+      "source_sha256": "243aebde46abe92673e57b4b04d82ee0a2b2db9d607d7625ba33a19eb2373ec8"
+    },
+    {
+      "destination": "assets/diagnostic/home_p2_4443.16.gif",
+      "exported_sha256": "e636575d4a77b3bed1a70d24c82e2486eb7e08307290991b081f17d7c2130c92",
+      "source": "diagnostic_examples/home_p2_4443.16.gif",
+      "source_sha256": "e636575d4a77b3bed1a70d24c82e2486eb7e08307290991b081f17d7c2130c92"
+    },
+    {
+      "destination": "assets/rejected/home_p1_1734.72.png",
+      "exported_sha256": "09ff526c269b386648ef0692536f2a4cb71d2349897faa12eb24edad5b0b23e1",
+      "source": "rejected_examples/home_p1_1734.72.png",
+      "source_sha256": "09ff526c269b386648ef0692536f2a4cb71d2349897faa12eb24edad5b0b23e1"
+    },
+    {
+      "destination": "assets/rejected/home_p1_1734.72.gif",
+      "exported_sha256": "9f04017ab69923fb8e888e7417165cb090377384804c42d73aed014a866e8896",
+      "source": "rejected_examples/home_p1_1734.72.gif",
+      "source_sha256": "9f04017ab69923fb8e888e7417165cb090377384804c42d73aed014a866e8896"
+    }
+  ],
+  "source_demo_head": "1e3f206d39bdd476741f35dc2e4355725823343c",
+  "source_manifest_sha256": "b48cb40bfb79052e952267afc5354615aade06dec3c4a5d3b2b1df6614483a4b",
+  "status": "PREPARED_NOT_DEPLOYED"
+}

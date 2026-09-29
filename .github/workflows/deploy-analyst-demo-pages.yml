@@ -1,0 +1,90 @@
+name: Deploy reviewed analyst demo
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    if: github.ref == 'refs/heads/main' && github.event_name == 'workflow_dispatch'
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Checkout reviewed commit
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - name: Validate exact reviewed package
+        shell: bash
+        run: |
+          set -euo pipefail
+          # Runner-provided Python, standard library only; no setup or installs.
+          python3 - <<'PY'
+          import hashlib
+          import json
+          from pathlib import Path
+          import re
+
+          def require(condition, message):
+              if not condition:
+                  raise SystemExit(message)
+
+          root = Path('docs/demo')
+          require(not Path('docs').is_symlink(), 'symlinked docs directory')
+          pins = {
+              'docs/demo/manifest.json': '4f8ba5051ef90077091724a1faa7fe1c42a43e8e9febef17456fda3afdf9036f',
+              'docs/protocols/p1_demo_public_asset_allowlist_v1.md': '67adb9886cdc441f9fe0e1bd29f39b4bac7c35cd6c8b79bb78cfe3bb733363ba',
+              'src/export_match_reorganization_demo_site.py': 'df56dfe3f4a7edd72a79749885c1a36ca2af6ae722d6554d45608654351174b1',
+          }
+          for name, digest in pins.items():
+              path = Path(name)
+              require(not path.is_symlink() and path.is_file(), 'invalid validation input')
+              require(hashlib.sha256(path.read_bytes()).hexdigest() == digest, 'reviewed input hash mismatch: ' + name)
+
+          # Import only the hash-verified, standard-library presentation validator.
+          from src.export_match_reorganization_demo_site import inventory, expected_inventory, validate_site
+          expected = {
+              'index.html', 'styles.css', 'manifest.json',
+              'assets/representative/home_p2_5355.64.png',
+              'assets/representative/home_p2_5355.64.gif',
+              'assets/representative/home_p1_336.76.png',
+              'assets/representative/home_p1_336.76.gif',
+              'assets/diagnostic/home_p2_4443.16.png',
+              'assets/diagnostic/home_p2_4443.16.gif',
+              'assets/rejected/home_p1_1734.72.png',
+              'assets/rejected/home_p1_1734.72.gif',
+          }
+          require(inventory(root) == expected_inventory(expected), 'unexpected package entry')
+          manifest = json.loads((root / 'manifest.json').read_text(encoding='utf-8'))
+          protocol = Path('docs/protocols/p1_demo_public_asset_allowlist_v1.md').read_text(encoding='utf-8')
+          contract = json.loads(re.findall(r'```json\n(.*?)\n```', protocol, re.S)[0])
+          validate_site(root, contract, manifest['examples'], manifest['exporter'])
+          for name in ('index.html', 'styles.css', 'manifest.json'):
+              text = (root / name).read_text(encoding='utf-8')
+              require(not any(token in text for token in ('/Users/', '/home/', '/tmp/', '/private/', 'file://')), 'private path in public text')
+          print('Validated exactly 11 reviewed static files; no analysis or rendering.')
+          PY
+      - name: Configure existing Pages site
+        uses: actions/configure-pages@45bfe0192ca1faeb007ade9deae92b16b8254a0d # v6.0.0
+        with:
+          enablement: false
+      - name: Upload only reviewed static directory
+        uses: actions/upload-pages-artifact@fc324d3547104276b827a68afc52ff2a11cc49c9 # v5.0.0
+        with:
+          path: docs/demo
+          include-hidden-files: false
+          retention-days: 1
+      - name: Deploy reviewed artifact
+        id: deployment
+        uses: actions/deploy-pages@368f82528645a54fb793d4d04e342629a3f51346 # v5.0.1

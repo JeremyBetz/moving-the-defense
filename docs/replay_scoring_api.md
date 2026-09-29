@@ -198,6 +198,111 @@ selection.
 
 ## Pooled-reference full-match scanner
 
+### Current analyst facade
+
+For first use, prefer the compact facade over manually joining historical
+research-stage modules:
+
+```python
+from match_reorganization_review import analyze_match_reorganization
+
+review = analyze_match_reorganization(
+    ball_alignment_episode_records,
+    attacker_linked_episode_records,
+)
+
+review.rapid_episodes
+review.integrity_clean
+review.low_ballward
+review.high_ballward
+review.attacker_linked
+review.representative_examples  # valid and integrity-clean only
+review.diagnostic_examples      # valid special/context contrasts
+review.rejected_examples        # failed support or integrity
+```
+
+The facade only composes frozen fields. It does not calculate a new score,
+relax a gate or select by timestamp. Current timestamps are regression-test
+expectations, never production selection rules.
+
+```bash
+.venv/bin/python src/run_match_reorganization_demo.py \
+  --game 2 --data-root data \
+  --output-dir /tmp/moving_the_defense_match_demo --no-media
+```
+
+The command validates closed package hashes and loads only the five previously
+frozen demo identities, without calling the facade's candidate ranking. Its
+queues contain those five selected examples, not the former 25-record overview.
+Use `--render-media` for bounded Game 2 recovery and new demo-only media;
+`--no-media` requires no provider data. The full reproduction routes below are
+separate workflows, not prerequisites for this demo.
+
+The command also writes `analyst_review_index.html`, `compact_episode_review.csv`,
+`detailed_episode_table.csv`, and a file-hash manifest. Open the index as a local
+file. All generated media links are relative to the output directory and remain
+valid when the whole package is moved. Role-specific media directories are
+`representative_examples/`, `diagnostic_examples/`, and `rejected_examples/`;
+the last contains explicitly rejected QC-only media in media mode. It is never
+part of the representative queue. The four CSV exports remain available.
+
+Representative = valid default example; Diagnostic = valid special context or
+method contrast; Rejected = failed integrity, retained for QC explanation only.
+The presentation shows explicit support states and `not_rendered` for absent
+media. Contributor details absent from the closed summary are reported as
+`not_evaluated — absent from closed summary`, never estimated from image colors.
+In media mode, all three contributor fields are recovered using the unchanged
+scorer. The demo reads only bounded coordinate slices from the two hash-pinned
+Game 2 tracking CSVs; source hashing and clock filtering stream the files.
+No event or Game 1 data are needed. Raw support is `[t−7.12,t+5.12]`, allowing
+trailing scores throughout the displayed `[t−5,t+5]` interval. Selected analysis
+remains `[t−2,t]`. Each GIF has 126 displayed frames at 12.5 FPS: 10.00 seconds
+first-to-last source span, 10.08 seconds encoded duration.
+
+`selected_window_cache.json` stays in the local output directory. It records
+source/code/config/reference hashes, bounds, anonymous contributor/link detail
+and consistency checks, never coordinates or stable player identities. The
+percentile and possession context are inherited exactly from closed records,
+not recomputed. A mismatch stops rendering. Strong links are capped at three
+by defender contribution, attacker path and canonical-ID tie-breaks; total
+counts and categories remain unchanged. The 12-link diagnostic displays 3/12.
+No historical media is overwritten. See the
+[bounded-recovery review](results/p1_selected_window_demo_media.md).
+
+### Static public presentation
+
+The [curated static site](demo/index.html) is **prepared, not yet deployed**.
+Open its `index.html` from a downloaded checkout, or serve `docs/demo` locally.
+It is separate from the five-example local review: two representatives are
+expanded, the goalkeeper-distribution diagnostic and rejected QC lesson are
+collapsed, and the no-link diagnostic is omitted. Raw metres remain authoritative;
+unsupported linkage remains “not evaluated” and rejected downstream fields
+remain “integrity failed”.
+
+Export from the exact previously verified presentation package, without
+provider data, scoring or rendering:
+
+```bash
+.venv/bin/python src/export_match_reorganization_demo_site.py \
+  --demo-root <verified-demo-package> \
+  --output-dir <new-static-directory>
+```
+
+The [frozen publication contract](protocols/p1_demo_public_asset_allowlist_v1.md)
+pins all 20 input files through the source manifest and exactly eight media
+assets individually. Both protocol and exporter must be committed and unchanged.
+A newly generated or altered demo package is not interchangeable: hash mismatch,
+unknown files, symlinks, unsafe paths or an existing destination stop export.
+Use a new destination to verify reproduction; never overwrite `docs/demo`.
+The exporter copies the eight approved PNG/GIF files byte-for-byte and creates
+HTML, CSS and a [public hash manifest](demo/manifest.json), with no timestamps
+or machine paths. It never publishes caches or CSV exports.
+
+No hosting workflow or Pages configuration is included. Deployment requires
+separate authorization and review, integration/push, main-only GitHub Actions
+configuration and logged-out verification. The media remain Metrica-derived;
+rasterization is not anonymization or a general redistribution permission.
+
 `src/defensive_reorganization_match_review.py` adds a separate opt-in application
 layer without changing `discover_moments(...)` or the event-review dashboard.
 Its `PooledScoreReference` stores sorted raw player, team, and one-second-change

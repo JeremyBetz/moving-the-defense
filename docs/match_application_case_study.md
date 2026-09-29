@@ -1,4 +1,4 @@
-# Applying Defensive Reorganization to a Match
+# Applying Team Relational Reorganization to a Match
 
 This public case study shows how an analyst can scan a full match, find a small
 set of passages, align the timeline to recorded shots and goals, and then decide
@@ -17,6 +17,29 @@ distribution from both teams and periods of public Metrica Sample Games 1 and
 2. It is descriptive context only—not a probability, rating, bounded DRS, or
 measure of defensive quality. The retrospective centered smoother requires
 tracking just after the displayed time, so this is not a live detector.
+
+## Current analyst path
+
+The current landing path composes the closed application layers rather than
+treating every historical selection as equally reviewable. It retrieves rapid
+defensive reorganization, then applies trajectory integrity, possession/context,
+ball alignment and attacker-linked descriptive context.
+
+Valid representative examples, valid special-context diagnostics and rejected
+examples are separate outputs. The goalkeeper-distribution passage remains a
+valid special-context diagnostic. The old rapid Rank 1 remains visible only as
+a rejected QC example.
+
+- Representative: [clean localized low-ballward review](../figures/presentation/attacker_linked_reorganization_review/localized_home_p2_5355.64.gif).
+- Representative: [clean high-ballward contrast](../figures/presentation/ball_alignment_reorganization_review/high_ballward_home_p1_336.76.gif).
+- Special-context diagnostic: [goalkeeper distribution](../figures/presentation/attacker_linked_reorganization_review/distributed_home_p2_4443.16.gif).
+- Rejected QC example: [preserved trajectory failure](../figures/presentation/rapid_change_defensive_review/rapid_increase_home_p1_1734.72_diagnostic.png).
+
+```bash
+.venv/bin/python src/run_match_reorganization_demo.py \
+  --game 2 --data-root data \
+  --output-dir /tmp/moving_the_defense_match_demo --no-media
+```
 
 ## Match and frozen selection
 
@@ -73,24 +96,25 @@ tactical labels.
 | 5 | Home | 2 | 5042.36 s | 1.903 m | 3.376 m | 1.472 m | 80.61 | Mixed | 9.56 s |
 | 6 | Home | 1 | 336.76 s | 5.046 m | 6.465 m | 1.419 m | 99.92 | Localized | 3.00 s |
 
-Two public examples were selected deterministically. Rank 1 is always retained;
-rank 2 is the first remaining example with a different contribution pattern.
-No third example met the frozen requirement for both a new context and a new
-pattern, so none was substituted for visual variety.
+These are the preserved historical v3 selections. That selection predated the
+native-trajectory audit and is not the current valid-example queue.
 
-**Rank 1 — localized rise**
+**Historical Rank 1 — rejected by later trajectory QC**
 
-![Rank 1 localized rapid increase](../figures/presentation/rapid_change_defensive_review/rapid_increase_home_p1_1734.72.gif)
+[Open the preserved historical GIF](../figures/presentation/rapid_change_defensive_review/rapid_increase_home_p1_1734.72.gif)
+or [its diagnostic](../figures/presentation/rapid_change_defensive_review/rapid_increase_home_p1_1734.72_diagnostic.png).
+Six native player transitions exceeded the frozen 15 m/s integrity limit, so
+this passage cannot enter the current representative queue.
 
-[Open the rank 1 diagnostic](../figures/presentation/rapid_change_defensive_review/rapid_increase_home_p1_1734.72_diagnostic.png)
-
-**Rank 2 — mixed rise**
+**Historical Rank 2 — valid special context**
 
 ![Rank 2 mixed rapid increase](../figures/presentation/rapid_change_defensive_review/rapid_increase_home_p2_4443.16.gif)
 
 [Open the rank 2 diagnostic](../figures/presentation/rapid_change_defensive_review/rapid_increase_home_p2_4443.16_diagnostic.png)
 
-The markers show nearby recorded events only as review context. The examples do
+The goalkeeper-distribution passage remains valid but is surfaced as a
+special-context diagnostic rather than an ordinary default. The markers show
+nearby recorded events only as review context. The examples do
 not show that an event or opponent caused the rise, or that the defending was
 good or bad. Three rapid decreases were inspected locally. They show readable
 settling passages, but did not add enough distinct public value to justify a
