@@ -94,8 +94,8 @@ def test_demo_fails_closed_for_existing_destination(tmp_path):
 
 
 def test_demo_fails_clearly_for_missing_public_data_root(tmp_path):
-    with pytest.raises(FileNotFoundError, match="missing public Metrica Sample Game 1"):
-        run_demo(tmp_path / "output", data_root=tmp_path / "data")
+    with pytest.raises(FileNotFoundError, match="missing public Metrica Sample Game 2"):
+        run_demo(tmp_path / "output", data_root=tmp_path / "data", render_media=True)
 
 
 def test_closed_demo_is_fast_deterministic_and_separates_outputs(tmp_path):
