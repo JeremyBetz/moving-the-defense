@@ -23,9 +23,20 @@ class Links(HTMLParser):
 
 
 @pytest.mark.parametrize("media", [False, True])
-def test_portable_review_navigation_and_roles(tmp_path, media):
+def test_portable_review_navigation_and_roles(tmp_path, media, monkeypatch):
+    if media:
+        import selected_window_demo as bounded
+        monkeypatch.setattr(bounded, 'recover', lambda *a: {'cache': {'top_three_contributions_m':[3.,2.,1.]}})
+        def render(row, detail, destination):
+            files = [destination / f'{row.peak_time_s}.{ext}' for ext in ('png','gif')]
+            for path in files:
+                path.write_bytes(b'synthetic media')
+            return files
+        monkeypatch.setattr(bounded, 'render_detail', render)
+    data = tmp_path / 'data'
+    (data / 'metrica_sample_game_2').mkdir(parents=True)
     output = tmp_path / "review"
-    run_demo(output, render_media=media)
+    run_demo(output, render_media=media, data_root=data)
     html = (output / "analyst_review_index.html").read_text()
     links = Links(); links.feed(html)
     assert all(not Path(path).is_absolute() and (output / path).is_file() for path in links.paths)
@@ -39,7 +50,10 @@ def test_portable_review_navigation_and_roles(tmp_path, media):
     assert tuple(compact.columns) == COMPACT_COLUMNS
     assert len(compact) == 5
     assert not compact.eq("").any().any()
-    assert "not_evaluated — absent from closed summary" in compact["Top defender contributors"].tolist()
+    if not media:
+        assert "not_evaluated — absent from closed summary" in compact["Top defender contributors"].tolist()
+    else:
+        assert compact['Top defender contributors'].str.contains('#3: 1.00 m').all()
     reps = pd.read_csv(output / "representative_examples.csv")
     assert reps.peak_time_s.tolist() == [5355.64, 336.76]
     assert reps.ball_alignment_support_status.eq("supported").all()
@@ -48,14 +62,15 @@ def test_portable_review_navigation_and_roles(tmp_path, media):
         assert all((output / p).is_file() for p in reps.gif_path)
     rejected = pd.read_csv(output / "rejected_examples.csv")
     assert rejected.peak_time_s.tolist() == [1734.72]
-    assert rejected.media_status.eq("not_rendered").all()
-    assert list((output / "rejected_examples").iterdir()) == []
-    assert pd.read_csv(output / "detailed_episode_table.csv").shape == (25, 38)
+    assert rejected.media_status.eq("integrity_failed" if media else "not_rendered").all()
+    if not media:
+        assert list((output / "rejected_examples").iterdir()) == []
+    assert len(pd.read_csv(output / "detailed_episode_table.csv")) == 5
 
 
-def test_double_media_package_is_byte_identical(tmp_path):
+def test_double_data_free_package_is_byte_identical(tmp_path):
     left, right = tmp_path / "left", tmp_path / "right"
-    run_demo(left, render_media=True); run_demo(right, render_media=True)
+    run_demo(left); run_demo(right)
     a = {str(p.relative_to(left)): p.read_bytes() for p in left.rglob("*") if p.is_file()}
     b = {str(p.relative_to(right)): p.read_bytes() for p in right.rglob("*") if p.is_file()}
     assert a == b

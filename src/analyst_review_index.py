@@ -91,7 +91,7 @@ def write_index(destination: Path, groups):
                 cells.append(f"<td>{value}</td>")
             table = '<div class="scroll"><table><thead><tr>' + ''.join(f'<th>{escape(k)}</th>' for k in COMPACT_COLUMNS) + '</tr></thead><tbody><tr>' + ''.join(cells) + '</tr></tbody></table></div>'
             media = ""
-            if role != "Rejected" and text(row.get("static_path"), "not_rendered") != "not_rendered":
+            if text(row.get("static_path"), "not_rendered") != "not_rendered":
                 media = f'<a href="{escape(str(row["gif_path"]), quote=True)}"><img loading="lazy" src="{escape(str(row["static_path"]), quote=True)}" alt="{escape(label, quote=True)} — static diagnostic; open GIF"></a>'
             cue = ("QC failure — exclude from football interpretation" if role == "Rejected" else
                    f"Ballward: {compact['Ballward stratum'].replace('_ballward', '').upper()} ({compact['Ballward share']})")
@@ -108,6 +108,6 @@ body{font:16px/1.55 system-ui,sans-serif;color:#17212b;background:#f3f5f7;margin
 <p>Find moments when the defending unit's movement relative to teammates increased sharply, then inspect ball orientation and off-ball attacker movement. Metres remain the measurement; a reference percentile is descriptive context.</p>
 <aside>Representative = valid default review example. Diagnostic = valid special context or method contrast. Rejected = failed QC, never valid analyst evidence. This retrospective tracking review does not establish cause, marking, tactical success or player value.</aside>
 <nav><a href="#representative">Representative</a><a href="#diagnostic">Diagnostic</a><a href="#rejected">Rejected QC</a><a href="compact_episode_review.csv">Compact CSV</a><a href="detailed_episode_table.csv">Detailed CSV</a><a href="summary.json">Summary</a></nav>
-<p>Ballward LOW/HIGH labels and shares use the frozen classification. Defender colors show trailing two-second relative path. Historical media retain their original duration and overlays; linked clips span two seconds and ball-alignment clips ten seconds. Missing closed-summary details are explicitly marked.</p>
+<p>Ballward LOW/HIGH labels and shares use the frozen classification. Defender colors show trailing two-second relative path on a fixed 0–6.25 m scale. Demo clips span five seconds before and after the fixed moment; extra frames are visual context only. At most three links are shown during the original two-second interval; counts retain all links. Rejected media are QC-only. Without provider data, media and missing contributor details remain explicitly unavailable.</p>
 ''' + ''.join(sections) + '</body></html>\n'
     (destination / "analyst_review_index.html").write_text(document, encoding="utf-8")

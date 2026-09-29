@@ -134,9 +134,11 @@ Build the compact Game 2 review from the hash-validated closed public packages:
   --output-dir /tmp/moving_the_defense_match_demo --no-media
 ```
 
-Use `--render-media` instead of `--no-media` to copy the deterministically
-selected governed media into the local package. The fast demo does not rerun the
-historical Games 1–2 pipelines; their full reproduction commands remain in the
+Use `--render-media` instead of `--no-media` to recover presentation details
+only for the five already-frozen Game 2 examples and render ten-second clips.
+This needs the two public Game 2 tracking CSVs under `--data-root`;
+`--no-media` needs no provider files. Neither mode scans or ranks candidates.
+The demo does not rerun the historical Games 1–2 pipelines; their commands remain in the
 [API guide](docs/replay_scoring_api.md).
 
 Open the generated `analyst_review_index.html` directly in your browser; no
@@ -147,10 +149,13 @@ a valid special-context or methodological contrast; Rejected means failed QC
 and never valid analyst evidence. With `--no-media`, media is explicitly marked
 `not_rendered`.
 
-This navigation pass reuses existing media. Longer attacker-linked clips,
-capped link overlays and the missing contributor values for one representative
-remain unresolved under the no-rescoring constraint; see the
-[UX follow-up](docs/results/p1_demo_ux_polish_followup.md).
+Media mode checks recovered values against closed results before rendering,
+fills all three contributor values and displays at most three strong links
+while retaining total link counts. Five seconds on each side provide visual
+context only. Its local cache is a demo derivative, not a scientific result or
+selection input. Rejected media stay in the QC section, never valid examples.
+Historical media remain unchanged; see the
+[bounded-recovery review](docs/results/p1_selected_window_demo_media.md).
 
 The facade keeps valid examples, special-context diagnostics and rejected
 integrity examples structurally separate:

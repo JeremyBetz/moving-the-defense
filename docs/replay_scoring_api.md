@@ -231,27 +231,43 @@ expectations, never production selection rules.
   --output-dir /tmp/moving_the_defense_match_demo --no-media
 ```
 
-The command validates closed package hashes and writes four separate CSV queues
-plus a summary. Use `--render-media` to copy valid and diagnostic governed
-media; rejected media are never copied as defaults. This fast path does not
-rerun the historical pipelines. The commands below remain the full public-data
-reproduction routes.
+The command validates closed package hashes and loads only the five previously
+frozen demo identities, without calling the facade's candidate ranking. Its
+queues contain those five selected examples, not the former 25-record overview.
+Use `--render-media` for bounded Game 2 recovery and new demo-only media;
+`--no-media` requires no provider data. The full reproduction routes below are
+separate workflows, not prerequisites for this demo.
 
 The command also writes `analyst_review_index.html`, `compact_episode_review.csv`,
 `detailed_episode_table.csv`, and a file-hash manifest. Open the index as a local
-file. All copied media links are relative to the output directory and remain
+file. All generated media links are relative to the output directory and remain
 valid when the whole package is moved. Role-specific media directories are
 `representative_examples/`, `diagnostic_examples/`, and `rejected_examples/`;
-the last remains empty to avoid presenting failed tracking as valid evidence.
-The original four detailed CSV exports remain available.
+the last contains explicitly rejected QC-only media in media mode. It is never
+part of the representative queue. The four CSV exports remain available.
 
 Representative = valid default example; Diagnostic = valid special context or
 method contrast; Rejected = failed integrity, retained for QC explanation only.
 The presentation shows explicit support states and `not_rendered` for absent
 media. Contributor details absent from the closed summary are reported as
 `not_evaluated — absent from closed summary`, never estimated from image colors.
-The existing clips retain their durations and link overlays. See the
-[remaining media requirements](results/p1_demo_ux_polish_followup.md).
+In media mode, all three contributor fields are recovered using the unchanged
+scorer. The demo reads only bounded coordinate slices from the two hash-pinned
+Game 2 tracking CSVs; source hashing and clock filtering stream the files.
+No event or Game 1 data are needed. Raw support is `[t−7.12,t+5.12]`, allowing
+trailing scores throughout the displayed `[t−5,t+5]` interval. Selected analysis
+remains `[t−2,t]`. Each GIF has 126 displayed frames at 12.5 FPS: 10.00 seconds
+first-to-last source span, 10.08 seconds encoded duration.
+
+`selected_window_cache.json` stays in the local output directory. It records
+source/code/config/reference hashes, bounds, anonymous contributor/link detail
+and consistency checks, never coordinates or stable player identities. The
+percentile and possession context are inherited exactly from closed records,
+not recomputed. A mismatch stops rendering. Strong links are capped at three
+by defender contribution, attacker path and canonical-ID tie-breaks; total
+counts and categories remain unchanged. The 12-link diagnostic displays 3/12.
+No historical media is overwritten. See the
+[bounded-recovery review](results/p1_selected_window_demo_media.md).
 
 `src/defensive_reorganization_match_review.py` adds a separate opt-in application
 layer without changing `discover_moments(...)` or the event-review dashboard.

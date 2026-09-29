@@ -204,9 +204,9 @@ def render_detail(row, detail, destination):
             ax.plot(trail.x_m+52.5,trail.y_m+34,color='#b9bfc4' if defending else '#2468b4',lw=1,alpha=.75)
             ax.scatter(*xy,c=[color],edgecolors='#202124' if defending else 'white',s=55,zorder=5)
             if defending and detail['dlabels'][key] in {'D1','D2','D3'}:
-                ax.text(xy[0]+.7,xy[1]+.7,detail['dlabels'][key],color='white',fontsize=8,zorder=8)
+                ax.text(xy[0]+(-3 if xy[0]>100 else .7),xy[1]+(-1.5 if xy[1]>64 else .7),detail['dlabels'][key],color='white',fontsize=8,zorder=8)
             if not defending and not selected.empty and key in set(selected.attacker_key):
-                ax.text(xy[0]+.7,xy[1]+.7,detail['alabels'][key],color='white',fontsize=8,zorder=8)
+                ax.text(xy[0]+(-3 if xy[0]>100 else .7),xy[1]+(-1.5 if xy[1]>64 else .7),detail['alabels'][key],color='white',fontsize=8,zorder=8)
         bxy=point(ball,t); trail=ball.loc[ball.time_match_s.between(t-.4-1e-7,t+1e-7)]
         ax.plot(trail.x_m+52.5,trail.y_m+34,color='white',lw=1.5)
         ax.scatter(*bxy,c='white',edgecolors='black',s=45,zorder=9)
